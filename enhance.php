@@ -304,6 +304,27 @@ function reduceToLimitCps ($subtitle,$sequence,$cps) {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 function fillEmptySpace ($subtitle,$thisSequence,$cps) {
 	$previousSequence = $thisSequence - 1;
 	$nextSequence = $thisSequence + 1;
@@ -370,14 +391,19 @@ function fillEmptySpace ($subtitle,$thisSequence,$cps) {
 	return;
 }
 
-
-
 function fillEmptySpaceBefore($subtitle,$thisSequence,$cps) {
-
+	
 }
 
 function fillEmptySpaceAfter($subtitle,$thisSequence,$cps) {
-	
+	$nextSequence = $thisSequence + 1;
+	$totalAvailableTime = 0;
+	$missingTime = checkMissingTime($subtitle->$thisSequence,$cps);
+
+	if(property_exists($subtitle,$nextSequence)) {
+		$availableTimeAfter = checkAvailableTimeAfter($subtitle,$thisSequence);
+		$totalAvailableTime += $availableTimeAfter;
+	}
 }
 
 function moveLineBackward() {
@@ -388,18 +414,12 @@ function moveLineForward() {
 
 }
 
-function changeCps() {
-
-}
-
 function firstNeighbourLevel($subtitle,$thisSequence,$cps,$maxVariation) {
 	$previousSequence = $thisSequence - 1;
 	$previousSequenceLevel2 = $previousSequence - 1;
 	$nextSequence = $thisSequence + 1;
 	$nextSequenceLevel2 = $nextSequence + 1;
 	$missingTime = checkMissingTime($subtitle->$thisSequence,$cps);
-
-	
 
 	$switch = 0;
 
@@ -490,10 +510,6 @@ function firstNeighbourLevel($subtitle,$thisSequence,$cps,$maxVariation) {
 	// } elseif() {
 
 
-
-
-
-
 		fillEmptySpace($subtitle,$thisSequence,$cps);
 		$missingTime = checkMissingTime($subtitle->$thisSequence,$cps);
 
@@ -545,11 +561,6 @@ function firstNeighbourLevel($subtitle,$thisSequence,$cps,$maxVariation) {
 	updateSequenceData($subtitle,$previousSequence);
 	updateSequenceData($subtitle,$nextSequence);
 }
-
-
-
-
-
 
 function secondNeighbourLevel($subtitle,$thisSequence,$cps,$maxVariation) {
 }
