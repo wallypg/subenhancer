@@ -1,31 +1,35 @@
 <?php
-/************************************************************/
-/** Análisis del archivo subido **/ 
-/************************************************************/
-// header('Content-Type: text/html; charset=utf-8');
-if(!isset($_FILES["uploadedFile"])) {header('Location: index.html');exit();}
-$uploadOk = 1;
-// Chequeo tamaño del archivo
-if ($_FILES["uploadedFile"]["size"] > 300000) {
-	echo "Sorry, your file is too large.<br />";
-	$uploadOk = 0;
+if(isset($_POST['subtitleUrl']) && filter_var($_POST['subtitleUrl'], FILTER_VALIDATE_URL)) {
+	$subtitleContent = getSubtitleFromUrl($_POST['subtitleUrl']);
+} elseif(isset($_FILES["uploadedFile"]) && !empty( $_FILES["uploadedFile"]["name"])) {
+
+	/************************************************************/
+	/** Análisis del archivo subido **/ 
+	/************************************************************/
+	$uploadOk = 1;
+	// Chequeo tamaño del archivo
+	if ($_FILES["uploadedFile"]["size"] > 300000) {
+		echo "Sorry, your file is too large.<br />";
+		$uploadOk = 0;
+	}
+
+	// Chequeo el formato del archivo
+	$fileType = pathinfo($_FILES['uploadedFile']['name'],PATHINFO_EXTENSION);
+	if($fileType != "srt" ) {
+		echo "Sorry, only SRT files are allowed.<br />";
+		$uploadOk = 0;
+	}
+
+	// Chequeo si $uploadOk está 0 por alguno de los errores
+	if ($uploadOk == 0) exit();
+
+	$fileContent = file_get_contents($_FILES['uploadedFile']['tmp_name']);
+	$subtitleContent = utf8_encode ( $fileContent );
+	// $fileContent = mb_convert_encoding($fileContent, 'HTML-ENTITIES', "UTF-8");
+} else {
+	echo 'Error en el archivo o URL';
+	die();
 }
-
-// Chequeo el formato del archivo
-$fileType = pathinfo($_FILES['uploadedFile']['name'],PATHINFO_EXTENSION);
-if($fileType != "srt" ) {
-	echo "Sorry, only SRT files are allowed.<br />";
-	$uploadOk = 0;
-}
-
-// Chequeo si $uploadOk está 0 por alguno de los errores
-if ($uploadOk == 0) exit();
-
-$fileContent = file_get_contents($_FILES['uploadedFile']['tmp_name']);
-$fileContent = utf8_encode ( $fileContent );
-// $fileContent = mb_convert_encoding($fileContent, 'HTML-ENTITIES', "UTF-8");
-
-
 
 /************************************************************/
 /** Valores iniciales para la optimización **/ 
@@ -43,7 +47,7 @@ $totalSegmentsOverCps = array();
 
 // Segmento -> conjunto de 3 lineas {secuencia, tiempo, texto}
 
-foreach(preg_split("/\n\s*\n/s", $fileContent) as $segmentKey => $segment){
+foreach(preg_split("/\n\s*\n/s", $subtitleContent) as $segmentKey => $segment){
 	$segmentObject = new stdClass();
 	$segmentObject->sequence = $segmentKey+1;
 	$segmentArray = array();
@@ -66,6 +70,8 @@ foreach(preg_split("/\n\s*\n/s", $fileContent) as $segmentKey => $segment){
 			$segmentObject->endTimeInMilliseconds = calculateMilliseconds($endHour,$endMinute,$endSecond,$endMillisecond);
 			$segmentObject->sequenceDuration = $segmentObject->endTimeInMilliseconds - $segmentObject->startTimeInMilliseconds;
 			$segmentObject->startTimeInMillisecondsOriginal = $segmentObject->startTimeInMilliseconds;
+			$segmentObject->endTimeInMillisecondsOriginal = $segmentObject->endTimeInMilliseconds;
+			$segmentObject->sequenceDurationOriginal = $segmentObject->sequenceDuration;
 		}
 	}
 
@@ -103,7 +109,7 @@ $totalSequences = count((array)$subtitle);
 // [textLine1] (...)
 // [cps]
 // [startTimeInMillisecondsOriginal]
-
+// [sequenceDurationOriginal]
 
 
 // echo '<h1>Lineas que superaban los 25 CPS: '.count($totalSegmentsOverCps).'</h1>';//op
@@ -177,36 +183,30 @@ $totalSequences = count((array)$subtitle);
 
 foreach ($totalSegmentsOverCps as $segmentOverCps) fillEmptySpace($subtitle,$segmentOverCps,$cps);
 $totalSegmentsOverCps = checkLinesOverCps($subtitle,$totalSegmentsOverCps,$cps);
+foreach ($totalSegmentsOverCps as $segmentOverCps) {
+	$previousSegment = $segmentOverCps - 1;
+	if(checkCpsReductionGain($subtitle->$previousSegment,$cps) > checkMissingTime($subtitle->$segmentOverCps,$cps)) {
+		// echo 'GAIN: '.checkCpsReductionGain($subtitle->$previousSegment,$cps).' - Missing time: '.checkMissingTime($subtitle->$segmentOverCps,$cps).'<br>';
+		reduceDuration ($subtitle,$segmentOverCps-1,checkMissingTime($subtitle->$segmentOverCps,$cps));
+		fillEmptySpaceBefore($subtitle,$segmentOverCps,$cps);
+	} else {
 
+		// fillEmptySpaceBefore($subtitle,$segmentOverCps-1,$cps);
+	}
+}
+$totalSegmentsOverCps = checkLinesOverCps($subtitle,$totalSegmentsOverCps,$cps);
 // foreach ($totalSegmentsOverCps as $segmentOverCps) echo $segmentOverCps.'<br>';
 
 // foreach ($totalSegmentsOverCps as $segmentOverCps) firstNeighbourLevel($subtitle,$segmentOverCps,$cps,$maxVariation);
 
-
-
-/************************************************************/
-/** Reconstrucción del subtítulo **/
-/************************************************************/
-foreach ($subtitle as $thisSegmentKey => $segment) {
-	// echo $segment->sequence;//ss
-	// echo '<br />';//ss
-	// echo formatMilliseconds($segment->startTimeInMilliseconds).' --> '.formatMilliseconds($segment->endTimeInMilliseconds);//ss
-	// echo '<br />';//ss
-	// if(isset($segment->textLine1)) echo $segment->textLine1.'<br />';//ss
-	// if(isset($segment->textLine2)) echo $segment->textLine2.'<br />';//ss
-	// if(isset($segment->textLine3)) echo $segment->textLine3.'<br />';//ss
-	// echo '<br />';//ss
-}
-
-
-
-/************************************************************/
-/** Descarga del subtitítulo optimizado **/
-/************************************************************/
 // echo '<h1>Lineas que superan los 25 CPS después de la optimización: '.count($totalSegmentsOverCps).'</h1>';//op
 // print_r($subtitle);
 // print_r($totalSegmentsOverCps);
 
+
+printEnhancedSubtitleOnScreen($subtitle);
+// downloadEnhancedSubtitle($subtitle);
+die();
 
 
 
@@ -220,10 +220,73 @@ foreach ($subtitle as $thisSegmentKey => $segment) {
 // ██╔══╝  ██║   ██║██║╚██╗██║██║        ██║   ██║██║   ██║██║╚██╗██║╚════██║
 // ██║     ╚██████╔╝██║ ╚████║╚██████╗   ██║   ██║╚██████╔╝██║ ╚████║███████║
 // ╚═╝      ╚═════╝ ╚═╝  ╚═══╝ ╚═════╝   ╚═╝   ╚═╝ ╚═════╝ ╚═╝  ╚═══╝╚══════╝
+
+// calculateMilliseconds($hour,$minute,$second,$millisecond)
+// calculateCps($duration,$characters)
+// formatMilliseconds($milliseconds
+// updateSequenceData ($subtitle,$segment)
+// updateSequenceDuration ($subtitle,$segment)
+// updateSequenceCps ($subtitle,$segment)
+// checkNeededTime ($segment,$cps)
+// checkMissingTime ($segment,$cps)
+// checkSpareTimeForward ($segment,$requiredCps)
+// checkSpareTimeBackward ($segment,$requiredCps)
+// checkAvailableTimeBefore ($subtitle,$segment)
+// checkAvailableTimeAfter ($subtitle,$segment)
+// checkLinesOverCps ($subtitle,$totalSegmentsOverCps,$cps)
+// reduceToLimitCps ($subtitle,$segment,$cps)
+// checkCpsReductionGain ($segment,$cps)
+// reduceDuration ($subtitle,$segment,$milliseconds)
+// thisLineOverCps ($subtitle,$segment,$cps)
+// updateSequenceTimes ($timeType,$subtitle,$sequence)
+// fillEmptySpace ($subtitle,$segment,$cps)
+// fillEmptySpaceBefore ($subtitle,$segment,$cps)
+// fillEmptySpaceAfter ($subtitle,$segment,$cps)
+// fillEmptySpaceOld ($subtitle,$thisSequence,$cps)
+// moveLineBackward()
+// moveLineForward()
+// firstNeighbourLevel($subtitle,$thisSequence,$cps,$maxVariation)
+// secondNeighbourLevel($subtitle,$thisSequence,$cps,$maxVariation)
                                                                           
 /************************************************************/
 /************************* Functions ************************/
 /************************************************************/
+// Muestra el subtítulo optimizado en pantalla
+function printEnhancedSubtitleOnScreen($subtitle) {
+	foreach ($subtitle as $thisSegmentKey => $segment) {
+		/* Reconstrucción del subtítulo */
+		echo $segment->sequence;//ss
+		echo '<br />';//ss
+		echo formatMilliseconds($segment->startTimeInMilliseconds).' --> '.formatMilliseconds($segment->endTimeInMilliseconds);//ss
+		echo '<br />';//ss
+		if(isset($segment->textLine1)) echo $segment->textLine1.'<br />';//ss
+		if(isset($segment->textLine2)) echo $segment->textLine2.'<br />';//ss
+		if(isset($segment->textLine3)) echo $segment->textLine3.'<br />';//ss
+		echo '<br />';//ss
+	}
+}
+
+// Muestra el subtítulo optimizado en pantalla
+function downloadEnhancedSubtitle($subtitle) {
+	$subtitleString = '';
+	foreach ($subtitle as $thisSegmentKey => $segment) {
+		$sequenceString = $segment->sequence."\n";//sf
+		$sequenceString .= formatMilliseconds($segment->startTimeInMilliseconds).' --> '.formatMilliseconds($segment->endTimeInMilliseconds)."\n";//sf
+		if(isset($segment->textLine1)) $sequenceString .= $segment->textLine1."\n";//sf
+		if(isset($segment->textLine2)) $sequenceString .= $segment->textLine2."\n";//sf
+		if(isset($segment->textLine3)) $sequenceString .= $segment->textLine3."\n";//sf
+		$sequenceString .= "\n";//sf
+		$subtitleString .= $sequenceString;//sf
+	}
+
+	/* Descarga del subtitítulo optimizado */
+	$filename = 'optimizedSubtitle.srt';//sf
+	header("Content-Type: text/plain");//sf
+	header('Content-Disposition: attachment; filename="'.$filename.'"');//sf
+	header("Content-Length: " . strlen($subtitleString));//sf
+	echo $subtitleString;//sf
+}
+
 // Recibe horas, minutos, segundos y milisegundos. Devuelve el tiempo total en milisegundos.
 function calculateMilliseconds($hour,$minute,$second,$millisecond) {
 	$totalMilliseconds = $hour*3600000+$minute*60000+$second*1000+$millisecond;
@@ -319,9 +382,9 @@ function reduceToLimitCps ($subtitle,$segment,$cps) {
 
 // IMPORTANTE: Llamar a esta funcion solo cuando la línea supera los X cps
 // Recibe el subtítulo, una secuencia y los cps. Reduce los cps de dicha línea hasta alcanzar el límite. Devuelve los milisegundos que ganaría.
-function checkCpsReductionGain ($subtitle,$segment,$cps) {
-	$idealSequenceDuration = checkNeededTime($subtitle->$segment,$cps);
-	return $subtitle->$segment->sequenceDuration - $idealSequenceDuration;
+function checkCpsReductionGain ($segment,$cps) {
+	$idealSequenceDuration = checkNeededTime($segment,$cps);
+	return $segment->sequenceDuration - $idealSequenceDuration;
 }
 
 // Recibe el subtítulo, una secuencia y una cantidad de milisegundos. Reduce la duración de dicha línea en esa cantidad de milisegundos.
@@ -388,7 +451,7 @@ function fillEmptySpaceBefore ($subtitle,$segment,$cps) {
 	}
 	// Update sequence duration
 	updateSequenceData($subtitle,$segment);
-	return;
+	return $subtitle->$segment->startTimeInMillisecondsOriginal - $subtitle->$segment->startTimeInMilliseconds;
 }
 
 function fillEmptySpaceAfter ($subtitle,$segment,$cps) {
@@ -411,7 +474,7 @@ function fillEmptySpaceAfter ($subtitle,$segment,$cps) {
 	}
 	// Update sequence duration
 	updateSequenceData($subtitle,$segment);
-	return;
+	return $subtitle->$segment->endTimeInMilliseconds - $subtitle->$segment->endTimeInMillisecondsOriginal;
 }
 
 
@@ -675,6 +738,26 @@ function firstNeighbourLevel($subtitle,$thisSequence,$cps,$maxVariation) {
 
 function secondNeighbourLevel($subtitle,$thisSequence,$cps,$maxVariation) {
 
+}
+
+
+function getSubtitleFromUrl($url) {
+	// $refererUrl = 'https://www.tusubtitulo.com/serie/star-wars-rebels/3/8/2235/';
+	// $curlUrl = 'https://www.tusubtitulo.com/updated/5/52632/0';
+
+	$ch=curl_init();
+	curl_setopt($ch, CURLOPT_URL, $url);
+	curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
+	curl_setopt($ch, CURLOPT_ENCODING ,"windows-1252");
+	curl_setopt($ch, CURLOPT_REFERER, 'Referer:https://www.tusubtitulo.com/');
+
+	$curlResult = curl_exec($ch);
+	if(!$curlResult){
+	  die('Error: "' . curl_error($ch) . '" - Code: ' . curl_errno($ch));
+	}
+
+	$curlResult = mb_convert_encoding($curlResult, 'utf-8', "windows-1252");
+	return $curlResult;
 }
 
 // Cambiar la duración siempre que mantenga los cps y dure más de 1 seg
