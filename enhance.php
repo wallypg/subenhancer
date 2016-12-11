@@ -65,6 +65,7 @@ foreach(preg_split("/\n\s*\n/s", $fileContent) as $segmentKey => $segment){
 			$segmentObject->startTimeInMilliseconds = calculateMilliseconds($startHour,$startMinute,$startSecond,$startMillisecond);
 			$segmentObject->endTimeInMilliseconds = calculateMilliseconds($endHour,$endMinute,$endSecond,$endMillisecond);
 			$segmentObject->sequenceDuration = $segmentObject->endTimeInMilliseconds - $segmentObject->startTimeInMilliseconds;
+			$segmentObject->startTimeInMillisecondsOriginal = $segmentObject->startTimeInMilliseconds;
 		}
 	}
 
@@ -83,6 +84,8 @@ foreach(preg_split("/\n\s*\n/s", $fileContent) as $segmentKey => $segment){
 	if($segmentObject->totalCharacters>0) $subtitle->$segmentKey = $segmentObject;
 }
 
+$totalSequences = count((array)$subtitle);
+
 /* Object properties */
 // [sequence]
 // [startHour]
@@ -99,28 +102,85 @@ foreach(preg_split("/\n\s*\n/s", $fileContent) as $segmentKey => $segment){
 // [totalCharacters]
 // [textLine1] (...)
 // [cps]
+// [startTimeInMillisecondsOriginal]
 
 
+
+// echo '<h1>Lineas que superaban los 25 CPS: '.count($totalSegmentsOverCps).'</h1>';//op
+
+
+//  ██████╗ ██████╗ ████████╗██╗███╗   ███╗██╗███████╗ █████╗ ████████╗██╗ ██████╗ ███╗   ██╗
+// ██╔═══██╗██╔══██╗╚══██╔══╝██║████╗ ████║██║╚══███╔╝██╔══██╗╚══██╔══╝██║██╔═══██╗████╗  ██║
+// ██║   ██║██████╔╝   ██║   ██║██╔████╔██║██║  ███╔╝ ███████║   ██║   ██║██║   ██║██╔██╗ ██║
+// ██║   ██║██╔═══╝    ██║   ██║██║╚██╔╝██║██║ ███╔╝  ██╔══██║   ██║   ██║██║   ██║██║╚██╗██║
+// ╚██████╔╝██║        ██║   ██║██║ ╚═╝ ██║██║███████╗██║  ██║   ██║   ██║╚██████╔╝██║ ╚████║
+//  ╚═════╝ ╚═╝        ╚═╝   ╚═╝╚═╝     ╚═╝╚═╝╚══════╝╚═╝  ╚═╝   ╚═╝   ╚═╝ ╚═════╝ ╚═╝  ╚═══╝
+//                                                                                          
+// ██████╗ ██████╗  ██████╗  ██████╗███████╗██████╗ ██╗   ██╗██████╗ ███████╗                
+// ██╔══██╗██╔══██╗██╔═══██╗██╔════╝██╔════╝██╔══██╗██║   ██║██╔══██╗██╔════╝                
+// ██████╔╝██████╔╝██║   ██║██║     █████╗  ██║  ██║██║   ██║██████╔╝█████╗                  
+// ██╔═══╝ ██╔══██╗██║   ██║██║     ██╔══╝  ██║  ██║██║   ██║██╔══██╗██╔══╝                  
+// ██║     ██║  ██║╚██████╔╝╚██████╗███████╗██████╔╝╚██████╔╝██║  ██║███████╗                
+// ╚═╝     ╚═╝  ╚═╝ ╚═════╝  ╚═════╝╚══════╝╚═════╝  ╚═════╝ ╚═╝  ╚═╝╚══════╝                
 
 /************************************************************/
 /** Optimización del objeto subtítulo **/
 /************************************************************/
-// echo '<h1>Lineas que superaban los 25 CPS: '.count($totalSegmentsOverCps).'</h1>';//op
-// Fill empty space after and before according to needed time
+
+// (Linea excedida "A" de Xcps) -> ¿Cuanto tiempo necesita? Xms
+// 	¿Linea anterior "B-" excede Xcps?
+//  		S Fin
+//  		N Ocupo espacio anterior a "A" (hasta completar espacio o alcanzar Xcps)
+//  			¿A cumple con los Xcps?
+//  				S Fin
+//  				N (1)
+// 	¿Linea siguiente "B+" excede Xcps?
+//  		S Fin
+//  		N Ocupo espacio posterior a "A" (hasta completar espacio o alcanzar Xcps)
+//  			¿A cumple con los Xcps?
+//  				S Fin
+//  				N Si "C+" no supera los Xcps -> (4)
+
+
+// ------------------------------------------------------------------------------------
+// (1)	Reduzco CPS de "B-" hasta que "A" alcance los Xcps o "B-" alcance los Xcps
+// 	¿"A" cumple con Xcps?
+// 		S Fin
+// 		N Muevo "B-" hacia atrás espacio disponible (max 700ms de posicion original)
+// 		  Ocupo espacio liberado detrás de "A"
+// 		  Chequeo
+// 		   S Fin
+// 		   N ¿"B-" se movio >= 700ms?
+// 		   	S Fin
+// 		   	N ¿"C-" tiene mas de Xcps?
+// 		   		S Fin
+// 		   		N Si "D-" no supera los Xcps -> (2)
+
+// (1)(2)(3) -> Revisar incrementalmente corrimiento de lineas
+// -> Reducir cps, mover atrás
+// ------------------------------------------------------------------------------------
+// (4)	Reduzco CPS de "B+" hasta que "A" alcance los Xcps o "B+" alcance los Xcps
+// 	¿"A" cumple con Xcps?
+// 		S Fin
+// 		N Muevo "B+" hacia adelante espacio disponible (max 700ms de posicion original)
+// 		  Ocupo espacio liberado delante de "A"
+// 		  Chequeo
+// 		   S Fin
+// 		   N ¿"B+" se movio >= 700ms?
+// 		   	S Fin
+// 		   	N ¿"C+" tiene mas de Xcps?
+// 		   		S Fin
+// 		   		N Si "D+" no supera los Xcps -> (5)
+
+// (4)(5)(6) -> Revisar incrementalmente corrimiento de lineas
+// -> Reducir cps, mover adelante
+
 foreach ($totalSegmentsOverCps as $segmentOverCps) fillEmptySpace($subtitle,$segmentOverCps,$cps);
 $totalSegmentsOverCps = checkLinesOverCps($subtitle,$totalSegmentsOverCps,$cps);
-foreach ($totalSegmentsOverCps as $segmentOverCps) firstNeighbourLevel($subtitle,$segmentOverCps,$cps,$maxVariation);
-$totalSegmentsOverCps = checkLinesOverCps($subtitle,$totalSegmentsOverCps,$cps);
 
-// foreach ($totalSegmentsOverCps as $segmentOverCps) fillEmptySpace($subtitle,$segmentOverCps);
-// foreach ($totalSegmentsOverCps as $segmentOverCps) fillEmptySpace($subtitle,$segmentOverCps);
+// foreach ($totalSegmentsOverCps as $segmentOverCps) echo $segmentOverCps.'<br>';
 
-
-	// firstNeighbourLevel(maxVariation)
-	// secondNeighbourLevel(maxVariation)
-	// thirdNeighbourLevel(maxVariation)
-
-// echo '<h1>Lineas que superan los 25 CPS después de la optimización: '.count($totalSegmentsOverCps).'</h1>';//op
+// foreach ($totalSegmentsOverCps as $segmentOverCps) firstNeighbourLevel($subtitle,$segmentOverCps,$cps,$maxVariation);
 
 
 
@@ -128,14 +188,14 @@ $totalSegmentsOverCps = checkLinesOverCps($subtitle,$totalSegmentsOverCps,$cps);
 /** Reconstrucción del subtítulo **/
 /************************************************************/
 foreach ($subtitle as $thisSegmentKey => $segment) {
-	echo $segment->sequence;//ss
-	echo '<br />';//ss
-	echo formatMilliseconds($segment->startTimeInMilliseconds).' --> '.formatMilliseconds($segment->endTimeInMilliseconds);//ss
-	echo '<br />';//ss
-	if(isset($segment->textLine1)) echo $segment->textLine1.'<br />';//ss
-	if(isset($segment->textLine2)) echo $segment->textLine2.'<br />';//ss
-	if(isset($segment->textLine3)) echo $segment->textLine3.'<br />';//ss
-	echo '<br />';//ss
+	// echo $segment->sequence;//ss
+	// echo '<br />';//ss
+	// echo formatMilliseconds($segment->startTimeInMilliseconds).' --> '.formatMilliseconds($segment->endTimeInMilliseconds);//ss
+	// echo '<br />';//ss
+	// if(isset($segment->textLine1)) echo $segment->textLine1.'<br />';//ss
+	// if(isset($segment->textLine2)) echo $segment->textLine2.'<br />';//ss
+	// if(isset($segment->textLine3)) echo $segment->textLine3.'<br />';//ss
+	// echo '<br />';//ss
 }
 
 
@@ -143,7 +203,9 @@ foreach ($subtitle as $thisSegmentKey => $segment) {
 /************************************************************/
 /** Descarga del subtitítulo optimizado **/
 /************************************************************/
+// echo '<h1>Lineas que superan los 25 CPS después de la optimización: '.count($totalSegmentsOverCps).'</h1>';//op
 // print_r($subtitle);
+// print_r($totalSegmentsOverCps);
 
 
 
@@ -152,15 +214,13 @@ foreach ($subtitle as $thisSegmentKey => $segment) {
 
 
 
-
-
-
-
-
-/********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
-
-
-
+// ███████╗██╗   ██╗███╗   ██╗ ██████╗████████╗██╗ ██████╗ ███╗   ██╗███████╗
+// ██╔════╝██║   ██║████╗  ██║██╔════╝╚══██╔══╝██║██╔═══██╗████╗  ██║██╔════╝
+// █████╗  ██║   ██║██╔██╗ ██║██║        ██║   ██║██║   ██║██╔██╗ ██║███████╗
+// ██╔══╝  ██║   ██║██║╚██╗██║██║        ██║   ██║██║   ██║██║╚██╗██║╚════██║
+// ██║     ╚██████╔╝██║ ╚████║╚██████╗   ██║   ██║╚██████╔╝██║ ╚████║███████║
+// ╚═╝      ╚═════╝ ╚═╝  ╚═══╝ ╚═════╝   ╚═╝   ╚═╝ ╚═════╝ ╚═╝  ╚═══╝╚══════╝
+                                                                          
 /************************************************************/
 /************************* Functions ************************/
 /************************************************************/
@@ -190,21 +250,21 @@ function formatMilliseconds($milliseconds){
 }
 
 // Recibe el subtítulo y una secuencia. Actualiza los datos de duración y cps de dicha secuencia (a partir del tiempo de inicio y fin de la línea). No devuelve nada.
-function updateSequenceData ($subtitle,$sequence) {
-	$subtitle->$sequence->sequenceDuration = $subtitle->$sequence->endTimeInMilliseconds - $subtitle->$sequence->startTimeInMilliseconds;
-	$subtitle->$sequence->cps = calculateCps($subtitle->$sequence->sequenceDuration,$subtitle->$sequence->totalCharacters);
-	// updateSequenceTimes('start',$subtitle,$sequence);
-	// updateSequenceTimes('end',$subtitle,$sequence);
+function updateSequenceData ($subtitle,$segment) {
+	$subtitle->$segment->sequenceDuration = $subtitle->$segment->endTimeInMilliseconds - $subtitle->$segment->startTimeInMilliseconds;
+	$subtitle->$segment->cps = calculateCps($subtitle->$segment->sequenceDuration,$subtitle->$segment->totalCharacters);
+	// updateSequenceTimes('start',$subtitle,$segment);
+	// updateSequenceTimes('end',$subtitle,$segment);
 }
 
 // Recibe el subtítulo y una secuencia. Actualiza la duración de dicha secuencia. No devuelve nada.
-function updateSequenceDuration ($subtitle,$sequence) {
-	$subtitle->$sequence->sequenceDuration = $subtitle->$sequence->endTimeInMilliseconds - $subtitle->$sequence->startTimeInMilliseconds;
+function updateSequenceDuration ($subtitle,$segment) {
+	$subtitle->$segment->sequenceDuration = $subtitle->$segment->endTimeInMilliseconds - $subtitle->$segment->startTimeInMilliseconds;
 }
 
 // Recibe el subtítulo y una secuencia. Actualiza los cps de dicha secuencia. No devuelve nada.
-function updateSequenceCps ($subtitle,$sequence) {
-	$subtitle->$sequence->cps = calculateCps($subtitle->$sequence->sequenceDuration,$subtitle->$sequence->totalCharacters);
+function updateSequenceCps ($subtitle,$segment) {
+	$subtitle->$segment->cps = calculateCps($subtitle->$segment->sequenceDuration,$subtitle->$segment->totalCharacters);
 }
 
 // Recibe un segmento y los cps. Retorna la duración total que requiere la linea para cumplir con dichos cps.
@@ -226,22 +286,22 @@ function checkMissingTime ($segment,$cps) {
 // }
 
 // Recibe el subtítulo y una secuencia. Retorna el tiempo libre disponible antes de dicha secuencia.
-function checkAvailableTimeBefore ($subtitle,$sequence) {
-	$previousSequence = $sequence - 1;
-	return $subtitle->$sequence->startTimeInMilliseconds - $subtitle->$previousSequence->endTimeInMilliseconds;
+function checkAvailableTimeBefore ($subtitle,$segment) {
+	$previousSequence = $segment - 1;
+	return $subtitle->$segment->startTimeInMilliseconds - $subtitle->$previousSequence->endTimeInMilliseconds;
 }
 
 // Recibe el subtítulo y una secuencia. Retorna el tiempo libre disponible después de dicha secuencia.
-function checkAvailableTimeAfter ($subtitle,$sequence) {
-	$nextSequence = $sequence + 1;
-	return $subtitle->$nextSequence->startTimeInMilliseconds - $subtitle->$sequence->endTimeInMilliseconds;
+function checkAvailableTimeAfter ($subtitle,$segment) {
+	$nextSequence = $segment + 1;
+	return $subtitle->$nextSequence->startTimeInMilliseconds - $subtitle->$segment->endTimeInMilliseconds;
 }
 
 // Recibe el subtítulo, un array con los segmentos que superan los cps originales y los cps a comprobar ahora (pueden ser los mismos que los originales).
 // Devuelve un nuevo array con las líneas que superan actualmente los cps.
-function checkLinesOverCps ($subtitle,$totalSegmentsOverCps,$maxCps) {
+function checkLinesOverCps ($subtitle,$totalSegmentsOverCps,$cps) {
 	foreach ($totalSegmentsOverCps as $key => $segmentOverCps) {
-		if($subtitle->$segmentOverCps->cps <= $maxCps) {
+		if($subtitle->$segmentOverCps->cps <= $cps) {
 			// echo '<br>'.$totalSegmentsOverCps[$key];//op
 			unset($totalSegmentsOverCps[$key]);
 		}
@@ -250,13 +310,32 @@ function checkLinesOverCps ($subtitle,$totalSegmentsOverCps,$maxCps) {
 }
 
 // Recibe el subtítulo, una secuencia y los cps. Reduce los cps de dicha línea hasta alcanzar el límite. No devuelve nada.
-function reduceToLimitCps ($subtitle,$sequence,$cps) {
+function reduceToLimitCps ($subtitle,$segment,$cps) {
 	// Se llama a esta funcion solo cuando la linea supera los X cps
-	$subtitle->$sequence->sequenceDuration = checkNeededTime($subtitle->$sequence,$cps);
-	$subtitle->$sequence->endTimeInMilliseconds = $subtitle->$sequence->startTimeInMilliseconds + $subtitle->$sequence->sequenceDuration;
-	updateSequenceCps($subtitle,$sequence);
+	$subtitle->$segment->sequenceDuration = checkNeededTime($subtitle->$segment,$cps);
+	$subtitle->$segment->endTimeInMilliseconds = $subtitle->$segment->startTimeInMilliseconds + $subtitle->$segment->sequenceDuration;
+	updateSequenceCps($subtitle,$segment);
 }
 
+
+
+function checkCpsReductionGain ($subtitle,$segment,$cps) {
+
+}
+
+function reduceDuration ($subtitle,$segment,$seconds) {
+
+}
+
+
+
+// Recibe el subtitulo, una secuencia y los cps. Devuelve "true" si supera esos cps o no existe la línea, y "false" si no los supera.
+function thisLineOverCps ($subtitle,$segment,$cps) {
+	if(property_exists($subtitle,$segment) && $subtitle->$segment->cps >= $cps) return false;
+	return true;
+}
+
+// Actualiza los datos de tiempo en un segmento. No es necesaria.
 // function updateSequenceTimes ($timeType,$subtitle,$sequence) {
 // 	$timeTypeDuration = $timeType.'TimeInMilliseconds';
 // 	$hourType = $timeType.'Hour';
@@ -278,6 +357,60 @@ function reduceToLimitCps ($subtitle,$sequence,$cps) {
 // 	$subtitle->$sequence->$millisecondType = $secondsFraction;
 // }
 
+function fillEmptySpace ($subtitle,$segment,$cps) {
+	// fillEmptySpaceBefore si es la primer línea o hay una línea anterior pero no supera los $cps
+	if(thisLineOverCps($subtitle,$segment-1,$cps)) fillEmptySpaceBefore($subtitle,$segment,$cps);
+	// fillEmptySpaceAfter si es la última línea o hay una línea posterior pero no supera los $cps y si la línea sigue superando los $cps
+	if(thisLineOverCps($subtitle,$segment,$cps) && thisLineOverCps($subtitle,$segment+1,$cps)) fillEmptySpaceAfter($subtitle,$segment,$cps);
+}
+
+function fillEmptySpaceBefore ($subtitle,$segment,$cps) {
+	$previousSegment = $segment - 1;
+
+	$missingTime = checkMissingTime($subtitle->$segment,$cps);
+
+	if(property_exists($subtitle,$previousSegment)) $availableTimeBefore = checkAvailableTimeBefore($subtitle,$segment);
+	
+	if(isset($availableTimeBefore)) {
+		if($availableTimeBefore<$missingTime) {
+			// Ocupo todo el espacio que tengo disponible aunque no alcance
+			$subtitle->$segment->startTimeInMilliseconds = $subtitle->$previousSegment->endTimeInMilliseconds+1;	
+		} else {
+			// Tengo espacio para alcanzar los cps deseados
+			$subtitle->$segment->startTimeInMilliseconds -= $missingTime;
+		}
+	} else {
+		// Primera línea
+		$subtitle->$segment->startTimeInMilliseconds -= $missingTime;
+		if($subtitle->$segment->startTimeInMilliseconds<0) $subtitle->$segment->startTimeInMilliseconds = 0;
+	}
+	// Update sequence duration
+	updateSequenceData($subtitle,$segment);
+	return;
+}
+
+function fillEmptySpaceAfter ($subtitle,$segment,$cps) {
+	$nextSegment = $segment + 1;
+	$missingTime = checkMissingTime($subtitle->$segment,$cps);
+
+	if(property_exists($subtitle,$nextSegment)) $availableTimeAfter = checkAvailableTimeAfter($subtitle,$segment);
+	
+	if(isset($availableTimeAfter)) {
+		if($availableTimeAfter<$missingTime) {
+			// Ocupo todo el espacio que tengo disponible aunque no alcance
+			$subtitle->$segment->endTimeInMilliseconds = $subtitle->$nextSegment->startTimeInMilliseconds-1;	
+		} else {
+			// Tengo espacio para alcanzar los cps deseados
+			$subtitle->$segment->endTimeInMilliseconds -= $missingTime;
+		}
+	} else {
+		// Última línea
+		$subtitle->$segment->endTimeInMilliseconds -= $missingTime;
+	}
+	// Update sequence duration
+	updateSequenceData($subtitle,$segment);
+	return;
+}
 
 
 
@@ -310,22 +443,12 @@ function reduceToLimitCps ($subtitle,$sequence,$cps) {
 
 
 
+/************************************************************/
+/*********************** Old Functions **********************/
+/************************************************************/
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-function fillEmptySpace ($subtitle,$thisSequence,$cps) {
+function fillEmptySpaceOld ($subtitle,$thisSequence,$cps) {
 	$previousSequence = $thisSequence - 1;
 	$nextSequence = $thisSequence + 1;
 	$totalAvailableTime = 0;
@@ -391,20 +514,6 @@ function fillEmptySpace ($subtitle,$thisSequence,$cps) {
 	return;
 }
 
-function fillEmptySpaceBefore($subtitle,$thisSequence,$cps) {
-	
-}
-
-function fillEmptySpaceAfter($subtitle,$thisSequence,$cps) {
-	$nextSequence = $thisSequence + 1;
-	$totalAvailableTime = 0;
-	$missingTime = checkMissingTime($subtitle->$thisSequence,$cps);
-
-	if(property_exists($subtitle,$nextSequence)) {
-		$availableTimeAfter = checkAvailableTimeAfter($subtitle,$thisSequence);
-		$totalAvailableTime += $availableTimeAfter;
-	}
-}
 
 function moveLineBackward() {
 
@@ -563,10 +672,9 @@ function firstNeighbourLevel($subtitle,$thisSequence,$cps,$maxVariation) {
 }
 
 function secondNeighbourLevel($subtitle,$thisSequence,$cps,$maxVariation) {
+
 }
 
-
 // Cambiar la duración siempre que mantenga los cps y dure más de 1 seg
-
-// Upcoming fixes: Lines under  second
+// Arreglar líneas de menos de 1 segundo
 ?>
