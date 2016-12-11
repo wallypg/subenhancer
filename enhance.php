@@ -309,25 +309,27 @@ function checkLinesOverCps ($subtitle,$totalSegmentsOverCps,$cps) {
 	return $totalSegmentsOverCps;
 }
 
+// IMPORTANTE: Llamar a esta funcion solo cuando la línea supera los X cps
 // Recibe el subtítulo, una secuencia y los cps. Reduce los cps de dicha línea hasta alcanzar el límite. No devuelve nada.
 function reduceToLimitCps ($subtitle,$segment,$cps) {
-	// Se llama a esta funcion solo cuando la linea supera los X cps
 	$subtitle->$segment->sequenceDuration = checkNeededTime($subtitle->$segment,$cps);
 	$subtitle->$segment->endTimeInMilliseconds = $subtitle->$segment->startTimeInMilliseconds + $subtitle->$segment->sequenceDuration;
 	updateSequenceCps($subtitle,$segment);
 }
 
-
-
+// IMPORTANTE: Llamar a esta funcion solo cuando la línea supera los X cps
+// Recibe el subtítulo, una secuencia y los cps. Reduce los cps de dicha línea hasta alcanzar el límite. Devuelve los milisegundos que ganaría.
 function checkCpsReductionGain ($subtitle,$segment,$cps) {
-
+	$idealSequenceDuration = checkNeededTime($subtitle->$segment,$cps);
+	return $subtitle->$segment->sequenceDuration - $idealSequenceDuration;
 }
 
-function reduceDuration ($subtitle,$segment,$seconds) {
-
+// Recibe el subtítulo, una secuencia y una cantidad de milisegundos. Reduce la duración de dicha línea en esa cantidad de milisegundos.
+function reduceDuration ($subtitle,$segment,$milliseconds) {
+	$subtitle->$segment->sequenceDuration -= $milliseconds;
+	$subtitle->$segment->endTimeInMilliseconds = $subtitle->$segment->startTimeInMilliseconds + $subtitle->$segment->sequenceDuration;
+	updateSequenceCps($subtitle,$segment);
 }
-
-
 
 // Recibe el subtitulo, una secuencia y los cps. Devuelve "true" si supera esos cps o no existe la línea, y "false" si no los supera.
 function thisLineOverCps ($subtitle,$segment,$cps) {
