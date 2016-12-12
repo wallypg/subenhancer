@@ -1,0 +1,48 @@
+D-|C-|B-|A|B+|C+|D+
+
+(Linea excedida "A" de Xcps) -> ¿Cuanto tiempo necesita? Yms
+	¿Linea anterior "B-" excede Xcps? (hasta completar espacio o alcanzar Xcps)
+ 		S Fin
+ 		N Ocupo espacio anterior a "A"
+ 			¿A cumple con los Xcps?
+ 				S Fin
+ 				N (1)
+	¿Linea siguiente "B+" excede Xcps?
+ 		S Fin
+ 		N Ocupo espacio posterior a "A" (hasta completar espacio o alcanzar Xcps)
+ 			¿A cumple con los Xcps?
+ 				S Fin
+ 				N Si "C+" no supera los Xcps -> (4)
+
+------------------------------------------------------------------------------------
+(1)	Reduzco CPS de "B-" hasta que "A" alcance los Xcps o "B-" alcance los Xcps
+	¿"A" cumple con Xcps?
+		S Fin
+		N Muevo "B-" hacia atrás espacio disponible (max 700ms de posicion original)
+		  Ocupo espacio liberado detrás de "A"
+		  Chequeo
+		   S Fin
+		   N ¿"B-" se movio >= 700ms?
+		   	S Fin
+		   	N ¿"C-" tiene mas de Xcps?
+		   		S Fin
+		   		N Si "D-" no supera los Xcps -> (2)
+
+(1)(2)(3) -> Revisar incrementalmente corrimiento de lineas
+-> Reducir cps, mover atrás
+------------------------------------------------------------------------------------
+(4)	Reduzco CPS de "B+" hasta que "A" alcance los Xcps o "B+" alcance los Xcps
+	¿"A" cumple con Xcps?
+		S Fin
+		N Muevo "B+" hacia adelante espacio disponible (max 700ms de posicion original)
+		  Ocupo espacio liberado delante de "A"
+		  Chequeo
+		   S Fin
+		   N ¿"B+" se movio >= 700ms?
+		   	S Fin
+		   	N ¿"C+" tiene mas de Xcps?
+		   		S Fin
+		   		N Si "D+" no supera los Xcps -> (5)
+
+(4)(5)(6) -> Revisar incrementalmente corrimiento de lineas
+-> Reducir cps, mover adelante
