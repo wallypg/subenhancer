@@ -38,7 +38,6 @@ $cps = 25;
 $maxVariation = 700;
 
 
-
 /************************************************************/
 /** Parseo del string a un objeto **/
 /************************************************************/
@@ -54,7 +53,6 @@ foreach(preg_split("/\n\s*\n/s", $subtitleContent) as $segmentKey => $segment){
 	foreach(preg_split("/((\r?\n)|(\r\n?))/", $segment) as $key => $line){
 		// Guardo temporalmente cada línea del segmento en un array
 		$segmentArray[$key] = $line;
-		
 		if(preg_match('/\d{2}:\d{2}:\d{2},\d{3} --> \d{2}:\d{2}:\d{2},\d{3}/',$line)) {
 			sscanf($line, "%d:%d:%d,%d --> %d:%d:%d,%d",$startHour,$startMinute,$startSecond,$startMillisecond,$endHour,$endMinute,$endSecond,$endMillisecond);
 			$segmentObject->startHour = $startHour;
@@ -106,11 +104,13 @@ $totalSequences = count((array)$subtitle);
 // [endTimeInMilliseconds]
 // [sequenceDuration]
 // [totalCharacters]
-// [textLine1] (...)
+// [textLine1] [textLine2] [textLine3]
 // [cps]
 // [startTimeInMillisecondsOriginal]
 // [sequenceDurationOriginal]
 
+$lastLine = $totalSequences-1;
+if(md5($subtitle->$lastLine->textLine1) == '4bab2f9ce44d40cf4f268094f76bac69') die('Subtítulo ya optimizado');
 
 // echo '<h1>Lineas que superaban los 25 CPS: '.count($totalSegmentsOverCps).'</h1>';//op
 
@@ -121,13 +121,6 @@ $totalSequences = count((array)$subtitle);
 // ██║   ██║██╔═══╝    ██║   ██║██║╚██╔╝██║██║ ███╔╝  ██╔══██║   ██║   ██║██║   ██║██║╚██╗██║
 // ╚██████╔╝██║        ██║   ██║██║ ╚═╝ ██║██║███████╗██║  ██║   ██║   ██║╚██████╔╝██║ ╚████║
 //  ╚═════╝ ╚═╝        ╚═╝   ╚═╝╚═╝     ╚═╝╚═╝╚══════╝╚═╝  ╚═╝   ╚═╝   ╚═╝ ╚═════╝ ╚═╝  ╚═══╝
-//                                                                                          
-// ██████╗ ██████╗  ██████╗  ██████╗███████╗██████╗ ██╗   ██╗██████╗ ███████╗                
-// ██╔══██╗██╔══██╗██╔═══██╗██╔════╝██╔════╝██╔══██╗██║   ██║██╔══██╗██╔════╝                
-// ██████╔╝██████╔╝██║   ██║██║     █████╗  ██║  ██║██║   ██║██████╔╝█████╗                  
-// ██╔═══╝ ██╔══██╗██║   ██║██║     ██╔══╝  ██║  ██║██║   ██║██╔══██╗██╔══╝                  
-// ██║     ██║  ██║╚██████╔╝╚██████╗███████╗██████╔╝╚██████╔╝██║  ██║███████╗                
-// ╚═╝     ╚═╝  ╚═╝ ╚═════╝  ╚═════╝╚══════╝╚═════╝  ╚═════╝ ╚═╝  ╚═╝╚══════╝                
 
 /************************************************************/
 /** Optimización del objeto subtítulo **/
@@ -204,8 +197,8 @@ $totalSegmentsOverCps = checkLinesOverCps($subtitle,$totalSegmentsOverCps,$cps);
 // print_r($totalSegmentsOverCps);
 
 
-printEnhancedSubtitleOnScreen($subtitle);
-// downloadEnhancedSubtitle($subtitle);
+printEnhancedSubtitleOnScreen($subtitle,$totalSequences);
+// downloadEnhancedSubtitle($subtitle,$totalSequences);
 die();
 
 
@@ -221,9 +214,11 @@ die();
 // ██║     ╚██████╔╝██║ ╚████║╚██████╗   ██║   ██║╚██████╔╝██║ ╚████║███████║
 // ╚═╝      ╚═════╝ ╚═╝  ╚═══╝ ╚═════╝   ╚═╝   ╚═╝ ╚═════╝ ╚═╝  ╚═══╝╚══════╝
 
-// calculateMilliseconds($hour,$minute,$second,$millisecond)
-// calculateCps($duration,$characters)
-// formatMilliseconds($milliseconds
+// printEnhancedSubtitleOnScreen ($subtitle,$totalSequences)
+// downloadEnhancedSubtitle ($subtitle,$totalSequences)
+// calculateMilliseconds ($hour,$minute,$second,$millisecond)
+// calculateCps ($duration,$characters)
+// formatMilliseconds ($milliseconds)
 // updateSequenceData ($subtitle,$segment)
 // updateSequenceDuration ($subtitle,$segment)
 // updateSequenceCps ($subtitle,$segment)
@@ -242,6 +237,7 @@ die();
 // fillEmptySpace ($subtitle,$segment,$cps)
 // fillEmptySpaceBefore ($subtitle,$segment,$cps)
 // fillEmptySpaceAfter ($subtitle,$segment,$cps)
+// getSubtitleFromUrl($url)
 // fillEmptySpaceOld ($subtitle,$thisSequence,$cps)
 // moveLineBackward()
 // moveLineForward()
@@ -252,7 +248,7 @@ die();
 /************************* Functions ************************/
 /************************************************************/
 // Muestra el subtítulo optimizado en pantalla
-function printEnhancedSubtitleOnScreen($subtitle) {
+function printEnhancedSubtitleOnScreen ($subtitle,$totalSequences) {
 	foreach ($subtitle as $thisSegmentKey => $segment) {
 		/* Reconstrucción del subtítulo */
 		echo $segment->sequence;//ss
@@ -264,31 +260,34 @@ function printEnhancedSubtitleOnScreen($subtitle) {
 		if(isset($segment->textLine3)) echo $segment->textLine3.'<br />';//ss
 		echo '<br />';//ss
 	}
+	echo ($totalSequences+1)."<br />99:99:99,000 --> 99:99:99,999<br />Enhanced with Love in SubAdictos.net<br />";
 }
 
 // Muestra el subtítulo optimizado en pantalla
-function downloadEnhancedSubtitle($subtitle) {
+function downloadEnhancedSubtitle ($subtitle,$totalSequences) {
 	$subtitleString = '';
 	foreach ($subtitle as $thisSegmentKey => $segment) {
-		$sequenceString = $segment->sequence."\n";//sf
-		$sequenceString .= formatMilliseconds($segment->startTimeInMilliseconds).' --> '.formatMilliseconds($segment->endTimeInMilliseconds)."\n";//sf
-		if(isset($segment->textLine1)) $sequenceString .= $segment->textLine1."\n";//sf
-		if(isset($segment->textLine2)) $sequenceString .= $segment->textLine2."\n";//sf
-		if(isset($segment->textLine3)) $sequenceString .= $segment->textLine3."\n";//sf
-		$sequenceString .= "\n";//sf
+		$sequenceString = $segment->sequence."\r\n";//sf
+		$sequenceString .= formatMilliseconds($segment->startTimeInMilliseconds).' --> '.formatMilliseconds($segment->endTimeInMilliseconds)."\r\n";//sf
+		if(isset($segment->textLine1)) $sequenceString .= $segment->textLine1."\r\n";//sf
+		if(isset($segment->textLine2)) $sequenceString .= $segment->textLine2."\r\n";//sf
+		if(isset($segment->textLine3)) $sequenceString .= $segment->textLine3."\r\n";//sf
+		$sequenceString .= "\r\n";//sf
 		$subtitleString .= $sequenceString;//sf
 	}
+	$subtitleString .= ($totalSequences+1)."\r\n99:99:99,000 --> 99:99:99,999\r\nEnhanced with Love in SubAdictos.net\r\n";
+
 
 	/* Descarga del subtitítulo optimizado */
 	$filename = 'optimizedSubtitle.srt';//sf
-	header("Content-Type: text/plain");//sf
+	header("Content-Type: text/plain;charset=utf-8");//sf
 	header('Content-Disposition: attachment; filename="'.$filename.'"');//sf
 	header("Content-Length: " . strlen($subtitleString));//sf
 	echo $subtitleString;//sf
 }
 
 // Recibe horas, minutos, segundos y milisegundos. Devuelve el tiempo total en milisegundos.
-function calculateMilliseconds($hour,$minute,$second,$millisecond) {
+function calculateMilliseconds ($hour,$minute,$second,$millisecond) {
 	$totalMilliseconds = $hour*3600000+$minute*60000+$second*1000+$millisecond;
 	return $totalMilliseconds;
 }
@@ -300,7 +299,7 @@ function calculateCps($duration,$characters) {
 }
 
 // Recibe un tiempo en milisegundos. Devuelve el tiempo en el formato hh:mm:ss,ms
-function formatMilliseconds($milliseconds){
+function formatMilliseconds ($milliseconds) {
 	$totalSeconds = $milliseconds/1000;
 	$secondsWhole = floor($totalSeconds);
 	$secondsFraction = round($totalSeconds - $secondsWhole,3)*1000;
@@ -477,7 +476,24 @@ function fillEmptySpaceAfter ($subtitle,$segment,$cps) {
 	return $subtitle->$segment->endTimeInMilliseconds - $subtitle->$segment->endTimeInMillisecondsOriginal;
 }
 
+function getSubtitleFromUrl($url) {
+	// $refererUrl = 'https://www.tusubtitulo.com/serie/star-wars-rebels/3/8/2235/';
+	// $curlUrl = 'https://www.tusubtitulo.com/updated/5/52632/0';
 
+	$ch=curl_init();
+	curl_setopt($ch, CURLOPT_URL, $url);
+	curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
+	curl_setopt($ch, CURLOPT_ENCODING ,"windows-1252");
+	curl_setopt($ch, CURLOPT_REFERER, 'Referer:https://www.tusubtitulo.com/');
+
+	$curlResult = curl_exec($ch);
+	if(!$curlResult){
+	  die('Error: "' . curl_error($ch) . '" - Code: ' . curl_errno($ch));
+	}
+
+	$curlResult = mb_convert_encoding($curlResult, 'utf-8', "windows-1252");
+	return $curlResult;
+}
 
 
 
@@ -740,26 +756,21 @@ function secondNeighbourLevel($subtitle,$thisSequence,$cps,$maxVariation) {
 
 }
 
-
-function getSubtitleFromUrl($url) {
-	// $refererUrl = 'https://www.tusubtitulo.com/serie/star-wars-rebels/3/8/2235/';
-	// $curlUrl = 'https://www.tusubtitulo.com/updated/5/52632/0';
-
-	$ch=curl_init();
-	curl_setopt($ch, CURLOPT_URL, $url);
-	curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
-	curl_setopt($ch, CURLOPT_ENCODING ,"windows-1252");
-	curl_setopt($ch, CURLOPT_REFERER, 'Referer:https://www.tusubtitulo.com/');
-
-	$curlResult = curl_exec($ch);
-	if(!$curlResult){
-	  die('Error: "' . curl_error($ch) . '" - Code: ' . curl_errno($ch));
-	}
-
-	$curlResult = mb_convert_encoding($curlResult, 'utf-8', "windows-1252");
-	return $curlResult;
-}
-
 // Cambiar la duración siempre que mantenga los cps y dure más de 1 seg
 // Arreglar líneas de menos de 1 segundo
+
+// Próximamente en index:
+// Campo opcional para la URL de la página del subtítulo con el cual precarga campos de datos.
+// Datos para el nombre del archivo y créditos.
+// Datos guardados en json y sugeridos con select.
+// Serie
+// # Temporada
+// # Capítulo
+// Nombre capítulo
+// HDTV / DVDRIP / WEBDL
+// XVID/x264
+// LOL-FLEET lo que sea
+// Correctores
+// Traducción Original
+// Drag and drop del archivo de subtítulo.
 ?>
