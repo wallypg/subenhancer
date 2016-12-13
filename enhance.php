@@ -90,7 +90,7 @@ foreach(preg_split("/\n\s*\n/s", $subtitleContent) as $segmentKey => $segment){
 
 $totalSequences = count((array)$subtitle);
 
-/* Object properties */
+/* PROPIEDADES DE CADA SEGMENTO DEL SUBTÍTULO */
 // [sequence]
 // [startHour]
 // [startMinute]
@@ -217,7 +217,7 @@ die();
 // printEnhancedSubtitleOnScreen ($subtitle,$totalSequences)
 // downloadEnhancedSubtitle ($subtitle,$totalSequences)
 // calculateMilliseconds ($hour,$minute,$second,$millisecond)
-// calculateCps ($duration,$characters)
+// calculateCps($duration,$characters)
 // formatMilliseconds ($milliseconds)
 // updateSequenceData ($subtitle,$segment)
 // updateSequenceDuration ($subtitle,$segment)
@@ -238,11 +238,8 @@ die();
 // fillEmptySpaceBefore ($subtitle,$segment,$cps)
 // fillEmptySpaceAfter ($subtitle,$segment,$cps)
 // getSubtitleFromUrl($url)
-// fillEmptySpaceOld ($subtitle,$thisSequence,$cps)
-// moveLineBackward()
-// moveLineForward()
-// firstNeighbourLevel($subtitle,$thisSequence,$cps,$maxVariation)
-// secondNeighbourLevel($subtitle,$thisSequence,$cps,$maxVariation)
+// moveLineBackward($subtitle,$segment,$milliseconds,$maxVariation,$cps)
+// moveLineForward($subtitle,$segment,$milliseconds,$maxVariation,$cps)
                                                                           
 /************************************************************/
 /************************* Functions ************************/
