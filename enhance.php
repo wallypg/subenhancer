@@ -311,7 +311,7 @@ function formatMilliseconds ($milliseconds) {
 	return sprintf("%02d:%02d:%02d,%03d",$hours,$minutes,$seconds,$secondsFraction);
 }
 
-// Recibe el subtítulo y una secuencia. Actualiza los datos de duración y cps de dicha secuencia (a partir del tiempo de inicio y fin de la línea). No devuelve nada.
+// Recibe el subtítulo y un segmento. Actualiza los datos de duración y cps de dicha secuencia (a partir del tiempo de inicio y fin de la línea). No devuelve nada.
 function updateSequenceData ($subtitle,$segment) {
 	$subtitle->$segment->sequenceDuration = $subtitle->$segment->endTimeInMilliseconds - $subtitle->$segment->startTimeInMilliseconds;
 	$subtitle->$segment->cps = calculateCps($subtitle->$segment->sequenceDuration,$subtitle->$segment->totalCharacters);
@@ -319,12 +319,12 @@ function updateSequenceData ($subtitle,$segment) {
 	// updateSequenceTimes('end',$subtitle,$segment);
 }
 
-// Recibe el subtítulo y una secuencia. Actualiza la duración de dicha secuencia. No devuelve nada.
+// Recibe el subtítulo y un segmento. Actualiza la duración de dicha secuencia. No devuelve nada.
 function updateSequenceDuration ($subtitle,$segment) {
 	$subtitle->$segment->sequenceDuration = $subtitle->$segment->endTimeInMilliseconds - $subtitle->$segment->startTimeInMilliseconds;
 }
 
-// Recibe el subtítulo y una secuencia. Actualiza los cps de dicha secuencia. No devuelve nada.
+// Recibe el subtítulo y un segmento. Actualiza los cps de dicha secuencia. No devuelve nada.
 function updateSequenceCps ($subtitle,$segment) {
 	$subtitle->$segment->cps = calculateCps($subtitle->$segment->sequenceDuration,$subtitle->$segment->totalCharacters);
 }
@@ -347,13 +347,13 @@ function checkMissingTime ($segment,$cps) {
 // 	return $segment->sequenceDuration - floor($segment->totalCharacters*1000/$requiredCps);
 // }
 
-// Recibe el subtítulo y una secuencia. Retorna el tiempo libre disponible antes de dicha secuencia.
+// Recibe el subtítulo y un segmento. Retorna el tiempo libre disponible antes de dicha secuencia.
 function checkAvailableTimeBefore ($subtitle,$segment) {
 	$previousSequence = $segment - 1;
 	return $subtitle->$segment->startTimeInMilliseconds - $subtitle->$previousSequence->endTimeInMilliseconds;
 }
 
-// Recibe el subtítulo y una secuencia. Retorna el tiempo libre disponible después de dicha secuencia.
+// Recibe el subtítulo y un segmento. Retorna el tiempo libre disponible después de dicha secuencia.
 function checkAvailableTimeAfter ($subtitle,$segment) {
 	$nextSequence = $segment + 1;
 	return $subtitle->$nextSequence->startTimeInMilliseconds - $subtitle->$segment->endTimeInMilliseconds;
@@ -372,7 +372,7 @@ function checkLinesOverCps ($subtitle,$totalSegmentsOverCps,$cps) {
 }
 
 // IMPORTANTE: Llamar a esta funcion solo cuando la línea supera los X cps
-// Recibe el subtítulo, una secuencia y los cps. Reduce los cps de dicha línea hasta alcanzar el límite. No devuelve nada.
+// Recibe el subtítulo, un segmento y los cps. Reduce los cps de dicha línea hasta alcanzar el límite. No devuelve nada.
 function reduceToLimitCps ($subtitle,$segment,$cps) {
 	$subtitle->$segment->sequenceDuration = checkNeededTime($subtitle->$segment,$cps);
 	$subtitle->$segment->endTimeInMilliseconds = $subtitle->$segment->startTimeInMilliseconds + $subtitle->$segment->sequenceDuration;
@@ -380,20 +380,20 @@ function reduceToLimitCps ($subtitle,$segment,$cps) {
 }
 
 // IMPORTANTE: Llamar a esta funcion solo cuando la línea supera los X cps
-// Recibe el subtítulo, una secuencia y los cps. Reduce los cps de dicha línea hasta alcanzar el límite. Devuelve los milisegundos que ganaría.
+// Recibe el subtítulo, un segmento y los cps. Reduce los cps de dicha línea hasta alcanzar el límite. Devuelve los milisegundos que ganaría.
 function checkCpsReductionGain ($segment,$cps) {
 	$idealSequenceDuration = checkNeededTime($segment,$cps);
 	return $segment->sequenceDuration - $idealSequenceDuration;
 }
 
-// Recibe el subtítulo, una secuencia y una cantidad de milisegundos. Reduce la duración de dicha línea en esa cantidad de milisegundos.
+// Recibe el subtítulo, un segmento y una cantidad de milisegundos. Reduce la duración de dicha línea en esa cantidad de milisegundos.
 function reduceDuration ($subtitle,$segment,$milliseconds) {
 	$subtitle->$segment->sequenceDuration -= $milliseconds;
 	$subtitle->$segment->endTimeInMilliseconds = $subtitle->$segment->startTimeInMilliseconds + $subtitle->$segment->sequenceDuration;
 	updateSequenceCps($subtitle,$segment);
 }
 
-// Recibe el subtitulo, una secuencia y los cps. Devuelve "true" si supera esos cps o no existe la línea, y "false" si no los supera.
+// Recibe el subtitulo, un segmento y los cps. Devuelve "true" si supera esos cps o no existe la línea, y "false" si no los supera.
 function thisLineOverCps ($subtitle,$segment,$cps) {
 	if(property_exists($subtitle,$segment) && $subtitle->$segment->cps >= $cps) return false;
 	return true;
@@ -421,6 +421,7 @@ function thisLineOverCps ($subtitle,$segment,$cps) {
 // 	$subtitle->$sequence->$millisecondType = $secondsFraction;
 // }
 
+// Corre la funcion fillEmptySpaceBefore si la línea anterior no supera los $cps y fillEmptySpaceAfter si fillEmptySpaceBefore no soluciono el problema de cps y la línea posterior no supera los $cps. 
 function fillEmptySpace ($subtitle,$segment,$cps) {
 	// fillEmptySpaceBefore si es la primer línea o hay una línea anterior pero no supera los $cps
 	if(thisLineOverCps($subtitle,$segment-1,$cps)) fillEmptySpaceBefore($subtitle,$segment,$cps);
@@ -428,6 +429,7 @@ function fillEmptySpace ($subtitle,$segment,$cps) {
 	if(thisLineOverCps($subtitle,$segment,$cps) && thisLineOverCps($subtitle,$segment+1,$cps)) fillEmptySpaceAfter($subtitle,$segment,$cps);
 }
 
+// Recibe el subtitulo, un segmento y los cps. Completa el espacio vacío antes de la secuencia. Devuelve la cantidad de milisegundos ganados.
 function fillEmptySpaceBefore ($subtitle,$segment,$cps) {
 	$previousSegment = $segment - 1;
 
@@ -453,6 +455,7 @@ function fillEmptySpaceBefore ($subtitle,$segment,$cps) {
 	return $subtitle->$segment->startTimeInMillisecondsOriginal - $subtitle->$segment->startTimeInMilliseconds;
 }
 
+// Recibe el subtitulo, un segmento y los cps. Completa el espacio vacío después de la secuencia. Devuelve la cantidad de milisegundos ganados.
 function fillEmptySpaceAfter ($subtitle,$segment,$cps) {
 	$nextSegment = $segment + 1;
 	$missingTime = checkMissingTime($subtitle->$segment,$cps);
@@ -476,6 +479,7 @@ function fillEmptySpaceAfter ($subtitle,$segment,$cps) {
 	return $subtitle->$segment->endTimeInMilliseconds - $subtitle->$segment->endTimeInMillisecondsOriginal;
 }
 
+// Recibe la url de un subtítulo y devuelve el subtítulo en un string.
 function getSubtitleFromUrl($url) {
 	// $refererUrl = 'https://www.tusubtitulo.com/serie/star-wars-rebels/3/8/2235/';
 	// $curlUrl = 'https://www.tusubtitulo.com/updated/5/52632/0';
@@ -495,24 +499,98 @@ function getSubtitleFromUrl($url) {
 	return $curlResult;
 }
 
+// Recibe el subtítulo, un segmento, los cps, la variación máxima permitida y los milisegundos a mover el subtítulo hacia atrás.
+// Considera si es primera línea, si el movimiento pisaría la línea anterior o si ya no puede moverse más según $maxVariation. 
+function moveLineBackward($subtitle,$segment,$milliseconds,$maxVariation,$cps) {
+	$previousSegment = $segment-1;
+	$startVariation = $subtitle->$segment->startTimeInMillisecondsOriginal - $subtitle->$segment->startTimeInMilliseconds;
+	$availableVariation = $maxVariation - $startVariation;
+
+	if($startVariation < $maxVariation) {
+		// El comienzo de la secuencia todavía tiene tiempo para moverse sin superar la variación máxima permitida.
+		if($milliseconds < $availableVariation) {
+			// El tiempo que se pide de movimiento de línea no supera el tiempo disponible para movimiento.
+			if(property_exists($subtitle,$previousSegment)) {
+				if(($subtitle->$segment->startTimeInMilliseconds - $milliseconds) <= $subtitle->$previousSegment->endTimeInMilliseconds) {
+					// La variación pedida pisaría el fin de línea anterior.
+					$subtitle->$segment->startTimeInMilliseconds = $subtitle->$previousSegment->endTimeInMilliseconds + 1;
+				} else {
+					// Puede hacerse la variación de milisegundos pedida.
+					$subtitle->$segment->startTimeInMilliseconds -= $milliseconds;
+				}
+			} else {
+				// Primera línea
+				$subtitle->$segment->startTimeInMilliseconds -= $milliseconds;
+				if($subtitle->$segment->startTimeInMilliseconds < 0) $subtitle->$segment->startTimeInMilliseconds = 0;
+			}
+		} else {
+			// El tiempo que se pide de movimiento de línea supera el tiempo disponible para movimiento.
+			// Solo varío el tiempo $availableVariation.
+			if(property_exists($subtitle,$previousSegment)) {
+				if(($subtitle->$segment->startTimeInMilliseconds - $availableVariation) <= $subtitle->$previousSegment->endTimeInMilliseconds) {
+					// La variación disponible pisaría el fin de línea anterior.
+					$subtitle->$segment->startTimeInMilliseconds = $subtitle->$previousSegment->endTimeInMilliseconds + 1;
+				} else {
+					// Puede hacerse la variación de milisegundos disponible.
+					$subtitle->$segment->startTimeInMilliseconds -= $availableVariation;
+				}
+			} else {
+				// Primera línea
+				$subtitle->$segment->startTimeInMilliseconds -= $availableVariation;
+				if($subtitle->$segment->startTimeInMilliseconds < 0) $subtitle->$segment->startTimeInMilliseconds = 0;
+			}
+
+		}
+		$subtitle->$segment->endTimeInMilliseconds = $subtitle->$segment->startTimeInMilliseconds + $subtitle->$segment->sequenceDuration;
+	}
+	updateSequenceData($subtitle,$segment);
+}
 
 
+// Recibe el subtítulo, un segmento, los cps, la variación máxima permitida y los milisegundos a mover el subtítulo hacia adelante.
+// Considera si es última línea, si el movimiento pisaría la línea posterior o si ya no puede moverse más según $maxVariation. 
+function moveLineForward($subtitle,$segment,$milliseconds,$maxVariation,$cps) {
+	$nextSegment = $segment+1;
+	$startVariation = $subtitle->$segment->startTimeInMilliseconds - $subtitle->$segment->startTimeInMillisecondsOriginal;
+	$availableVariation = $maxVariation - $startVariation;
 
+	if($startVariation < $maxVariation) {
+		// El comienzo de la secuencia todavía tiene tiempo para moverse sin superar la variación máxima permitida.
+		if($milliseconds < $availableVariation) {
+			// El tiempo que se pide de movimiento de línea no supera el tiempo disponible para movimiento.
+			if(property_exists($subtitle,$nextSegment)) {
+				if(($subtitle->$segment->startTimeInMilliseconds + $milliseconds + $subtitle->$segment->sequenceDuration) >= $subtitle->$nextSegment->startTimeInMilliseconds) {
+					// La variación pedida pisaría el fin de línea siguiente.
+					$subtitle->$segment->startTimeInMilliseconds += checkAvailableTimeAfter($subtitle,$segment);
+				} else {
+					// Puede hacerse la variación de milisegundos pedida.
+					$subtitle->$segment->startTimeInMilliseconds += $milliseconds;
+				}
+			} else {
+				// Última línea
+				$subtitle->$segment->startTimeInMilliseconds += $milliseconds;
+			}
+		} else {
+			// El tiempo que se pide de movimiento de línea supera el tiempo disponible para movimiento.
+			// Solo varío el tiempo $availableVariation.
+			if(property_exists($subtitle,$nextSegment)) {
+				if(($subtitle->$segment->startTimeInMilliseconds + $availableVariation + $subtitle->$segment->sequenceDuration) >= $subtitle->$nextSegment->startTimeInMilliseconds) {
+					// La variación disponible pisaría el principio de línea siguiente.
+					$subtitle->$segment->startTimeInMilliseconds += checkAvailableTimeAfter($subtitle,$segment);
+				} else {
+					// Puede hacerse la variación de milisegundos disponible.
+					$subtitle->$segment->startTimeInMilliseconds += $availableVariation;
+				}
+			} else {
+				// Última línea
+				$subtitle->$segment->startTimeInMilliseconds += $availableVariation;
+			}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+		}
+		$subtitle->$segment->endTimeInMilliseconds = $subtitle->$segment->startTimeInMilliseconds + $subtitle->$segment->sequenceDuration;
+	}
+	updateSequenceData($subtitle,$segment);
+}
 
 
 
@@ -525,7 +603,8 @@ function getSubtitleFromUrl($url) {
 
 
 /************************************************************/
-/*********************** Old Functions **********************/
+/********************* FUNCIONES VIEJAS *********************/
+/************************** NO USAR *************************/
 /************************************************************/
 
 
@@ -593,15 +672,6 @@ function fillEmptySpaceOld ($subtitle,$thisSequence,$cps) {
 	// Update sequence duration
 	updateSequenceData($subtitle,$thisSequence);
 	return;
-}
-
-
-function moveLineBackward() {
-
-}
-
-function moveLineForward() {
-
 }
 
 function firstNeighbourLevel($subtitle,$thisSequence,$cps,$maxVariation) {
