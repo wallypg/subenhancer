@@ -260,7 +260,7 @@ function printEnhancedSubtitleOnScreen ($subtitle,$totalSequences) {
 		if(isset($segment->textLine3)) echo $segment->textLine3.'<br />';//ss
 		echo '<br />';//ss
 	}
-	echo ($totalSequences+1)."<br />99:99:99,000 --> 99:99:99,999<br />Enhanced with Love in SubAdictos.net<br />";
+	echo ($totalSequences+1)."<br />99:99:90,000 --> 99:99:99,999<br />Enhanced with Love in SubAdictos.net<br />";
 }
 
 // Muestra el subtítulo optimizado en pantalla
@@ -275,7 +275,7 @@ function downloadEnhancedSubtitle ($subtitle,$totalSequences) {
 		$sequenceString .= "\r\n";//sf
 		$subtitleString .= $sequenceString;//sf
 	}
-	$subtitleString .= ($totalSequences+1)."\r\n99:99:99,000 --> 99:99:99,999\r\nEnhanced with Love in SubAdictos.net\r\n";
+	$subtitleString .= ($totalSequences+1)."\r\n99:99:90,000 --> 99:99:99,999\r\nEnhanced with Love in SubAdictos.net\r\n";
 
 
 	/* Descarga del subtitítulo optimizado */
