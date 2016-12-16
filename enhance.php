@@ -180,7 +180,7 @@ if(md5($subtitle->$lastLine->textLine1) == '4bab2f9ce44d40cf4f268094f76bac69') d
 // foreach ($totalSegmentsOverCps as $segmentOverCps) echo $segmentOverCps.'<br>';
 
 // Elegir método de optimización (0 para mostrar el subtítulo original)
-$method = 2;
+$method = 1;
 
 switch($method) {
     case 0:
@@ -224,7 +224,15 @@ die();
 // ╚═╝     ╚═╝╚══════╝   ╚═╝   ╚═╝  ╚═╝ ╚═════╝ ╚═════╝ ╚══════╝
 
 function runMethod1 ($subtitle,$totalSegmentsOverCps,$cps,$maxVariation) {
-    foreach ($totalSegmentsOverCps as $segmentOverCps) fillEmptySpace($subtitle,$segmentOverCps,$cps);
+    
+
+    $totalSegmentsOverCps = checkLinesOverCps($subtitle,$totalSegmentsOverCps,$cps);
+    foreach ($totalSegmentsOverCps as $segmentOverCps) {
+        $nextSegment = $segmentOverCps + 1;
+        fillEmptySpaceBefore($subtitle,$segmentOverCps,$cps);
+    }
+
+	foreach ($totalSegmentsOverCps as $segmentOverCps) fillEmptySpace($subtitle,$segmentOverCps,$cps);
     $totalSegmentsOverCps = checkLinesOverCps($subtitle,$totalSegmentsOverCps,$cps);
     foreach ($totalSegmentsOverCps as $segmentOverCps) {
         $previousSegment = $segmentOverCps - 1;
@@ -239,6 +247,63 @@ function runMethod1 ($subtitle,$totalSegmentsOverCps,$cps,$maxVariation) {
         }
     }
     $totalSegmentsOverCps = checkLinesOverCps($subtitle,$totalSegmentsOverCps,$cps);
+    foreach ($totalSegmentsOverCps as $segmentOverCps) {
+        $previousSegment = $segmentOverCps - 2;
+        if(checkCpsIncreaseGain($subtitle->$previousSegment,$cps) > checkMissingTime($subtitle->$segmentOverCps,$cps)) 	{
+					$reduceTime=checkMissingTime($subtitle->$segmentOverCps,$cps);
+		} 
+		else {
+			        $reduceTime=checkCpsIncreaseGain($subtitle->$previousSegment,$cps);
+		}
+		reduceDuration ($subtitle,$segmentOverCps-2,$reduceTime,$cps);
+		moveLineBackward($subtitle,$segmentOverCps-1,$reduceTime,$maxVariation,$cps);
+		fillEmptySpaceBefore($subtitle,$segmentOverCps,$cps);
+			
+    }
+
+    $totalSegmentsOverCps = checkLinesOverCps($subtitle,$totalSegmentsOverCps,$cps);
+    foreach ($totalSegmentsOverCps as $segmentOverCps) {
+        $previousSegment = $segmentOverCps - 3;
+        if(checkCpsIncreaseGain($subtitle->$previousSegment,$cps) > checkMissingTime($subtitle->$segmentOverCps,$cps)) 	{
+					$reduceTime=checkMissingTime($subtitle->$segmentOverCps,$cps);
+		} 
+		else {
+			        $reduceTime=checkCpsIncreaseGain($subtitle->$previousSegment,$cps);
+		}
+		reduceDuration ($subtitle,$segmentOverCps-3,$reduceTime,$cps);
+		moveLineBackward($subtitle,$segmentOverCps-2,$reduceTime,$maxVariation,$cps);
+		moveLineBackward($subtitle,$segmentOverCps-1,$reduceTime,$maxVariation,$cps);
+		fillEmptySpaceBefore($subtitle,$segmentOverCps,$cps);
+			
+    }
+
+    $totalSegmentsOverCps = checkLinesOverCps($subtitle,$totalSegmentsOverCps,$cps);
+    foreach ($totalSegmentsOverCps as $segmentOverCps) {
+        $nextSegment = $segmentOverCps + 1;
+        fillEmptySpaceAfter($subtitle,$segmentOverCps,$cps);
+    }
+	
+
+    $totalSegmentsOverCps = checkLinesOverCps($subtitle,$totalSegmentsOverCps,$cps);
+    foreach ($totalSegmentsOverCps as $segmentOverCps) {
+        $nextSegment = $segmentOverCps + 1;
+        if(checkCpsIncreaseGain($subtitle->$nextSegment,$cps) > checkMissingTime($subtitle->$segmentOverCps,$cps)) {
+			$reduceTime=checkMissingTime($subtitle->$segmentOverCps,$cps);
+        } else {
+	        $reduceTime=checkCpsIncreaseGain($subtitle->$previousSegment,$cps);
+            reduceDuration ($subtitle,$nextSegment,checkCpsIncreaseGain($subtitle->$nextSegment,$cps));
+        }
+		reduceDuration ($subtitle,$nextSegment,$reduceTime,$cps);
+		moveLineForward($subtitle,$nextSegment,$reduceTime,$maxVariation,$cps);
+		fillEmptySpaceAfter($subtitle,$segmentOverCps,$cps);
+		}
+
+	foreach ($totalSegmentsOverCps as $segmentOverCps) fillEmptySpace($subtitle,$segmentOverCps,$cps);
+    $totalSegmentsOverCps = checkLinesOverCps($subtitle,$totalSegmentsOverCps,$cps);
+
+	
+	//function moveLineForward($subtitle,$segment,$milliseconds,$maxVariation,$cps) {
+
     // foreach ($totalSegmentsOverCps as $segmentOverCps) firstNeighbourLevel($subtitle,$segmentOverCps,$cps,$maxVariation);
     return $subtitle;
 }
@@ -510,7 +575,7 @@ function fillEmptySpaceAfter ($subtitle,$segment,$cps) {
             $subtitle->$segment->endTimeInMilliseconds = $subtitle->$nextSegment->startTimeInMilliseconds-1;    
         } else {
             // Tengo espacio para alcanzar los cps deseados
-            $subtitle->$segment->endTimeInMilliseconds -= $missingTime;
+            $subtitle->$segment->endTimeInMilliseconds += $missingTime;
         }
     } else {
         // Última línea
