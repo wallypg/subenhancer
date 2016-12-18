@@ -236,6 +236,57 @@ i.fa-info-circle:hover {
   color: #64b6d8;
 }
 
+.more-options:hover,.more-options:link,.more-options:visited,.more-options:focus,.more-options:active {
+  outline:none!important;
+  color: #fafafa!important;
+  background-color: #4c5056!important;
+  border:none!important;
+}
+
+.more-options {
+  background-color: #444954;
+  color: #fff;
+  border: none!important;
+  font-size: 22px;
+  padding-top: 3px;
+  padding-bottom: 0px;
+  height:35px;
+}
+
+.dropdown-menu,.dropdown-item {
+  background-color: #444954;
+  color: #fff;
+  font-size:16px;
+}
+
+.dropdown-item {
+  padding: 2px 10px;
+  cursor: pointer;
+}
+
+.dropdown-item:hover {
+  background-color: #29a1d2;
+}
+
+.dropdown-menu {
+  /*max-height: 80px;*/
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /* Progress bars */
 

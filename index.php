@@ -1,3 +1,18 @@
+<?php 
+if (file_exists('json/data.json'))
+  $dataArray = json_decode(file_get_contents('json/data.json'), true);
+// print_r($dataArray['tv_show']);
+
+// tv_show
+// codec
+// format
+// rip_group
+// other
+// editor
+// translation
+
+// die();
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -61,13 +76,26 @@
                       <input type="text" name="info_url" id="info_url" class="form-control input-sm" placeholder="Ej: https://www.tusubtitulo.com/serie/community/3/4/367/">
                     </div>
                   </div>
-                  <!--  -->
+                  <!--  -->                  
+
                   <div class="col-xs-6 col-sm-8 col-md-8">
                     <div class="form-group">
                       <label for="tv_show">Serie</label>
-                      <input type="text" name="tv_show" id="tv_show" class="form-control input-sm">
+                      <div class="input-group">
+                        <input type="text" name="tv_show" id="tv_show" class="form-control input-sm">
+                        <div class="input-group-btn">
+                          <button type="button" class="btn dropdown-toggle more-options" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-caret-down" aria-hidden="true"></i></button>
+                          <ul class="dropdown-menu dropdown-menu-right" data-list="tv_show">
+                            <?php foreach($dataArray['tv_show'] as $show) { ?>
+                              <li class="dropdown-item"><?=$show?></li>
+                            <?php } ?>
+                          </ul>
+                        </div>
+                      </div>
                     </div>
                   </div>
+
+                  <!--  -->
                   <div class="col-xs-3 col-sm-2 col-md-2">
                     <div class="form-group small-size-input">
                       <label class="align-center" for="season">Temporada</label>
@@ -95,39 +123,99 @@
                   <div class="col-xs-3 col-sm-3 col-md-3">
                     <div class="form-group">
                       <label for="codec">Codec</label>
-                      <input type="text" name="codec" id="codec" class="form-control input-sm">
+                        <div class="input-group"> 
+                          <input type="text" name="codec" id="codec" class="form-control input-sm">
+                          <div class="input-group-btn">
+                            <button type="button" class="btn dropdown-toggle more-options" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-caret-down" aria-hidden="true"></i></button>
+                            <ul class="dropdown-menu dropdown-menu-right" data-list="codec">
+                              <?php foreach($dataArray['codec'] as $codec) { ?>
+                                <li class="dropdown-item"><?=$codec?></li>
+                              <?php } ?>
+                            </ul>
+                          </div>
+                        </div>
                     </div>
                   </div>
                   <div class="col-xs-3 col-sm-3 col-md-3">
                     <div class="form-group">
                       <label for="format" class="no-padding-xs">Formato</label>
-                      <input type="text" name="format" id="format" class="form-control input-sm">
+                      <div class="input-group">
+                        <input type="text" name="format" id="format" class="form-control input-sm">
+                        <div class="input-group-btn">
+                          <button type="button" class="btn dropdown-toggle more-options" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-caret-down" aria-hidden="true"></i></button>
+                          <ul class="dropdown-menu dropdown-menu-right" data-list="format">
+                            <?php foreach($dataArray['format'] as $format) { ?>
+                              <li class="dropdown-item"><?=$format?></li>
+                            <?php } ?>
+                          </ul>
+                        </div>
+                      </div>
                     </div>
                   </div>
                   <div class="col-xs-3 col-sm-3 col-md-3">
                     <div class="form-group">
-                      <label for="rip_group">Grupo</label>
-                      <input type="text" name="rip_group" id="rip_group" class="form-control input-sm">
+                        <label for="rip_group">Grupo</label>
+                        <div class="input-group">
+                          <input type="text" name="rip_group" id="rip_group" class="form-control input-sm">
+                          <div class="input-group-btn">
+                            <button type="button" class="btn dropdown-toggle more-options" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-caret-down" aria-hidden="true"></i></button>
+                            <ul class="dropdown-menu dropdown-menu-right" data-list="rip_group">
+                              <?php foreach($dataArray['rip_group'] as $group) { ?>
+                                <li class="dropdown-item"><?=$group?></li>
+                              <?php } ?>
+                            </ul>
+                          </div>
+                        </div>
                     </div>
                   </div>
                   <div class="col-xs-3 col-sm-3 col-md-3">
                     <div class="form-group">
-                      <label for="other">Otro</label>
-                      <input type="text" name="other" id="other" class="form-control input-sm">
+                        <label for="other">Otro</label>
+                        <div class="input-group">  
+                          <input type="text" name="other" id="other" class="form-control input-sm">
+                          <div class="input-group-btn">
+                            <button type="button" class="btn dropdown-toggle more-options" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-caret-down" aria-hidden="true"></i></button>
+                            <ul class="dropdown-menu dropdown-menu-right" data-list="other">
+                              <?php foreach($dataArray['other'] as $other) { ?>
+                                <li class="dropdown-item"><?=$other?></li>
+                              <?php } ?>
+                            </ul>
+                          </div>
+                        </div>
                     </div>
                   </div>
                   <!--  -->
                   <div class="col-xs-12 col-sm-12 col-md-12">
                     <div class="form-group">
-                      <label for="editor">Correctores</label>
-                      <input type="text" name="editor" id="editor" class="form-control input-sm">
+                        <label for="editor">Correctores</label>
+                        <div class="input-group">  
+                          <input type="text" name="editor" id="editor" class="form-control input-sm">
+                          <div class="input-group-btn">
+                            <button type="button" class="btn dropdown-toggle more-options" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-caret-down" aria-hidden="true"></i></button>
+                            <ul class="dropdown-menu dropdown-menu-right" data-list="editor">
+                              <?php foreach($dataArray['editor'] as $editor) { ?>
+                                <li class="dropdown-item"><?=$editor?></li>
+                              <?php } ?>
+                            </ul>
+                          </div>
+                        </div>
                     </div>
                   </div>
                   <!--  -->
                   <div class="col-xs-12 col-sm-12 col-md-12">
                     <div class="form-group">
                       <label for="translation">Traducción original</label>
-                      <input type="text" name="translation" id="translation" class="form-control input-sm">
+                      <div class="input-group">
+                        <input type="text" name="translation" id="translation" class="form-control input-sm">
+                        <div class="input-group-btn">
+                          <button type="button" class="btn dropdown-toggle more-options" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-caret-down" aria-hidden="true"></i></button>
+                          <ul class="dropdown-menu dropdown-menu-right" data-list="translation">
+                            <?php foreach($dataArray['translation'] as $translation) { ?>
+                              <li class="dropdown-item"><?=$translation?></li>
+                            <?php } ?>
+                          </ul>
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>

@@ -143,7 +143,6 @@
 
     $(window).bind('keydown', function(event) {
         if (event.ctrlKey || event.metaKey) {
-            event.preventDefault();
             switch (String.fromCharCode(event.which).toLowerCase()) {
             case 's':
                 event.preventDefault();

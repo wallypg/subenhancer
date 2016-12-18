@@ -1,5 +1,4 @@
 Tareas pendientes:
-- levantar datos del json en el form
 - créditos
 - crear la descripción para la subida subdivx (avisar si supera el límite caracteres)
 - pantalla del resultado de la optimización puede mostrar (podría ser un modal en la misma pantalla):

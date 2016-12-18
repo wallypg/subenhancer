@@ -75,6 +75,10 @@ $(document).ready(function(){
       });
   });
 
+  $('li.dropdown-item').on('click',function(){
+    $('#'+$(this).parent().attr('data-list')).val($(this).html());
+  });
+
 });
 
 function showLoading() {
