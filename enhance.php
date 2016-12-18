@@ -1,35 +1,113 @@
 <?php
-if(isset($_POST['subtitleUrl']) && filter_var($_POST['subtitleUrl'], FILTER_VALIDATE_URL)) {
-    $subtitleContent = getSubtitleFromUrl($_POST['subtitleUrl']);
-} elseif(isset($_FILES["uploadedFile"]) && !empty( $_FILES["uploadedFile"]["name"])) {
+
+
+$validUrlPatternSub = '#^https://www.tusubtitulo.com/[^/]+/[0-9]+/[0-9]+(/[0-9]+)?$#';
+
+if(isset($_POST['sub_url']) && preg_match($validUrlPatternSub, $_POST['sub_url'])) {
+    $subtitleContent = getSubtitleFromUrl($_POST['sub_url']);
+} elseif(isset($_FILES["uploaded_file"]) && !empty( $_FILES["uploaded_file"]["name"])) {
 
     /************************************************************/
     /** Análisis del archivo subido **/ 
     /************************************************************/
     $uploadOk = 1;
     // Chequeo tamaño del archivo
-    if ($_FILES["uploadedFile"]["size"] > 300000) {
-        echo "Sorry, your file is too large.<br />";
+    if ($_FILES["uploaded_file"]["size"] > 300000) {
+        $error = "Sorry, your file is too large.<br />";
         $uploadOk = 0;
     }
 
     // Chequeo el formato del archivo
-    $fileType = pathinfo($_FILES['uploadedFile']['name'],PATHINFO_EXTENSION);
+    $fileType = pathinfo($_FILES['uploaded_file']['name'],PATHINFO_EXTENSION);
     if($fileType != "srt" ) {
-        echo "Sorry, only SRT files are allowed.<br />";
+        $error = "Sorry, only SRT files are allowed.<br />";
         $uploadOk = 0;
     }
 
     // Chequeo si $uploadOk está 0 por alguno de los errores
-    if ($uploadOk == 0) exit();
+    if ($uploadOk == 0) 
+        // ERROR VIEW
+        die();
 
-    $fileContent = file_get_contents($_FILES['uploadedFile']['tmp_name']);
+    $fileContent = file_get_contents($_FILES['uploaded_file']['tmp_name']);
     $subtitleContent = utf8_encode ( $fileContent );
     // $fileContent = mb_convert_encoding($fileContent, 'HTML-ENTITIES', "UTF-8");
 } else {
-    echo 'Error en el archivo o URL';
+    // ERROR VIEW
+    $error = 'Error en el archivo o URL';
     die();
 }
+
+/************************************************************/
+/**     Guardado de datos en un JSON      **/
+/** y construcción del nombre del archivo **/
+/************************************************************/
+
+if (file_exists('json/data.json'))
+  $dataArray = json_decode(file_get_contents('json/data.json'), true);
+ else
+  $dataArray = array(
+                        'tv_show' => array(),
+                        'codec' => array(),
+                        'format' => array(),
+                        'rip_group' => array(),
+                        'other' => array(),
+                        'editor' => array(),
+                        'translation' => array(),
+                        'enhanced' => array()
+                    );
+
+$filename = '';
+
+if(isset($_POST['tv_show'])) {
+    $filename = trim($_POST['tv_show']);
+    array_push($dataArray['tv_show'], $_POST['tv_show']);
+}
+if(isset($_POST['season']) && is_numeric($_POST['season'])) {
+    $filename .= '.S'.str_pad($_POST['season'], 2, "0", STR_PAD_LEFT);
+}
+if(isset($_POST['episode_number']) && is_numeric($_POST['episode_number'])) {
+    $filename .= 'E'.str_pad($_POST['episode_number'], 2, "0", STR_PAD_LEFT);
+}
+if(isset($_POST['episode_title'])) {
+    $filename .= '.'.trim($_POST['episode_title']);
+}
+echo $_POST['other'];
+if(isset($_POST['other'])) {
+    $filename .= '.'.trim($_POST['other']);
+    array_push($dataArray['other'], $_POST['other']);
+}
+if(isset($_POST['format'])) {
+    $filename .= '.'.trim($_POST['format']);
+    array_push($dataArray['format'], $_POST['format']);
+}
+if(isset($_POST['codec'])) {
+    $filename .= '.'.trim($_POST['codec']);
+    array_push($dataArray['codec'], $_POST['codec']);
+}
+if(isset($_POST['rip_group'])) {
+    $filename .= '-'.trim($_POST['rip_group']);
+    array_push($dataArray['rip_group'], $_POST['rip_group']);
+}
+if(isset($_POST['editor'])) {
+    array_push($dataArray['editor'], $_POST['editor']);
+}
+if(isset($_POST['translation'])) {
+    array_push($dataArray['translation'], $_POST['translation']);
+}
+
+$filename .= '.srt';
+
+$filename = preg_replace('/\s+/', '.', $filename);
+$notAllowed = array_merge(
+                array_map('chr', range(0,31)),
+                array("<", ">", ":", '"', "/", "\\", "|", "?", "*"));
+$filename = str_replace($notAllowed, ".", $filename);
+$filename = preg_replace('/\.+/', '.', $filename);
+
+array_push($dataArray['enhanced'], $filename);
+file_put_contents("json/data.json",json_encode($dataArray,JSON_PRETTY_PRINT));
+
 
 /************************************************************/
 /** Valores iniciales para la optimización **/ 
@@ -110,7 +188,9 @@ $totalSequences = count((array)$subtitle);
 // [sequenceDurationOriginal]
 
 $lastLine = $totalSequences-1;
-if(md5($subtitle->$lastLine->textLine1) == '4bab2f9ce44d40cf4f268094f76bac69') die('Subtítulo ya optimizado');
+if(md5($subtitle->$lastLine->textLine1) == '4bab2f9ce44d40cf4f268094f76bac69') 
+    // ERROR VIEW
+    die('Subtítulo ya optimizado');
 
 // echo '<h1>Lineas que superaban los 25 CPS: '.count($totalSegmentsOverCps).'</h1>';//op
 
@@ -184,15 +264,15 @@ $method = 1;
 
 switch($method) {
     case 0:
-        printEnhancedSubtitleOnScreen($subtitle,$totalSequences);
+        printEnhancedSubtitle($subtitle,$totalSequences);
         break;
     case 1:
         // $subtitle1 = $subtitle; -> se puede crear otra variable para probar varios metodos de optimizacion al mismo tiempo y ver cual funciona mejor
-        printEnhancedSubtitleOnScreen(runMethod1($subtitle,$totalSegmentsOverCps,$cps,$maxVariation),$totalSequences);
+        downloadEnhancedSubtitle(runMethod1($subtitle,$totalSegmentsOverCps,$cps,$maxVariation),$totalSequences,$filename);
         break;
     case 2:
         // $subtitle2 = $subtitle;
-        printEnhancedSubtitleOnScreen(runMethod2($subtitle,$totalSegmentsOverCps,$cps,$maxVariation),$totalSequences);
+        printEnhancedSubtitle(runMethod2($subtitle,$totalSegmentsOverCps,$cps,$maxVariation),$totalSequences);
         break;
     case 3:
         // $subtitle3 = $subtitle;
@@ -210,9 +290,9 @@ switch($method) {
 // OBJETO:
 // print_r($subtitle);
 // MOSTRAR EN PANTALLA:
-// printEnhancedSubtitleOnScreen($subtitle,$totalSequences);
+// printEnhancedSubtitle($subtitle,$totalSequences);
 // DESCARGAR SRT:
-// downloadEnhancedSubtitle($subtitle,$totalSequences);
+// downloadEnhancedSubtitle($subtitle,$totalSequences,$filename);
 die();
 
 
@@ -334,8 +414,8 @@ function runMethod4 ($subtitle,$totalSegmentsOverCps,$cps,$maxVariation) {
 // ██║     ╚██████╔╝██║ ╚████║╚██████╗   ██║   ██║╚██████╔╝██║ ╚████║███████║
 // ╚═╝      ╚═════╝ ╚═╝  ╚═══╝ ╚═════╝   ╚═╝   ╚═╝ ╚═════╝ ╚═╝  ╚═══╝╚══════╝
 
-// printEnhancedSubtitleOnScreen ($subtitle,$totalSequences)
-// downloadEnhancedSubtitle ($subtitle,$totalSequences)
+// printEnhancedSubtitle ($subtitle,$totalSequences)
+// downloadEnhancedSubtitle ($subtitle,$totalSequences,$filename)
 // calculateMilliseconds ($hour,$minute,$second,$millisecond)
 // calculateCps($duration,$characters)
 // formatMilliseconds ($milliseconds)
@@ -363,7 +443,7 @@ function runMethod4 ($subtitle,$totalSegmentsOverCps,$cps,$maxVariation) {
 /************************* Functions ************************/
 /************************************************************/
 // Muestra el subtítulo optimizado en pantalla
-function printEnhancedSubtitleOnScreen ($subtitle,$totalSequences) {
+function printEnhancedSubtitle ($subtitle,$totalSequences) {
     foreach ($subtitle as $thisSegmentKey => $segment) {
         /* Reconstrucción del subtítulo */
         echo $segment->sequence;//ss
@@ -379,7 +459,7 @@ function printEnhancedSubtitleOnScreen ($subtitle,$totalSequences) {
 }
 
 // Muestra el subtítulo optimizado en pantalla
-function downloadEnhancedSubtitle ($subtitle,$totalSequences) {
+function downloadEnhancedSubtitle ($subtitle,$totalSequences,$filename) {
     $subtitleString = '';
     foreach ($subtitle as $thisSegmentKey => $segment) {
         $sequenceString = $segment->sequence."\r\n";//sf
@@ -394,7 +474,7 @@ function downloadEnhancedSubtitle ($subtitle,$totalSequences) {
 
 
     /* Descarga del subtitítulo optimizado */
-    $filename = 'optimizedSubtitle.srt';//sf
+    // $filename = 'optimizedSubtitle.srt';//sf
     header("Content-Type: text/plain;charset=utf-8");//sf
     header('Content-Disposition: attachment; filename="'.$filename.'"');//sf
     header("Content-Length: " . strlen($subtitleString));//sf
@@ -599,7 +679,9 @@ function getSubtitleFromUrl($url) {
 
     $curlResult = curl_exec($ch);
     if(!$curlResult){
-      die('Error: "' . curl_error($ch) . '" - Code: ' . curl_errno($ch));
+        // ERROR VIEW
+        $error = 'Error: "' . curl_error($ch) . '" - Code: ' . curl_errno($ch);
+        die();
     }
 
     $curlResult = mb_convert_encoding($curlResult, 'utf-8', "windows-1252");
@@ -699,22 +781,4 @@ function moveLineForward($subtitle,$segment,$milliseconds,$maxVariation,$cps) {
     updateSequenceData($subtitle,$segment);
 }
 
-
-// Cambiar la duración siempre que mantenga los cps y dure más de 1 seg
-// Arreglar líneas de menos de 1 segundo
-
-// Próximamente en index:
-// Campo opcional para la URL de la página del subtítulo con el cual precarga campos de datos.
-// Datos para el nombre del archivo y créditos.
-// Datos guardados en json y sugeridos con select.
-// Serie
-// # Temporada
-// # Capítulo
-// Nombre capítulo
-// HDTV / DVDRIP / WEBDL
-// XVID/x264
-// LOL-FLEET lo que sea
-// Correctores
-// Traducción Original
-// Drag and drop del archivo de subtítulo.
 ?>

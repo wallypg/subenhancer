@@ -1,0 +1,86 @@
+<!----------------------------------------------->
+<!--     Subtitle Workshop OCR Script file     -->
+<!--       Copyright © 2001-2004 URUSoft       -->
+<!--           http://www.urusoft.net          -->
+<!--                                           -->
+<!--    ¡Específico para lenguaje español!     -->
+<!----------------------------------------------->
+
+<SWOCR WordChars="0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ_ñÑáéíóúÁÉÍÓÚäëïöü">
+
+<!-- PUNTOS SUSPENSIVOS AL FINAL (en lugar de la coma)-->
+<ERROR Find="(,)$" ReplaceBy="...">
+
+<!-- PUNTOS SUSPENSIVOS AL PRINCIPIO (No quiero que vaya)-->
+<ERROR UseREOnlyToFind=False Find="^(\.\.\. )" ReplaceBy="">
+<ERROR Find="^(\.\.\.)" ReplaceBy="">
+
+<!-- NUMEROS (cambiar puntos por comas)-->
+<ERROR Find="[0-9](\.)[0-9][0-9]\b" ReplaceBy=",">
+<ERROR Find="[0-9](,)[0-9][0-9][0-9]" ReplaceBy=".">
+<ERROR Find="[0-9](\.)[0-9]\b" ReplaceBy=",">
+
+<!-- "1 :", "2 :"... "n :" to "n:" -->
+<ERROR Find="\d( :)" ReplaceBy=":">
+
+<!-- ",,," or similar to "..." -->
+<ERROR UseREOnlyToFind="False" Find=",{2,}" ReplaceBy="...">
+
+<!-- "--" or more to "..." -->
+<ERROR UseREOnlyToFind="False" Find="-{2,}" ReplaceBy="...">
+
+<!-- Space after last of some consecutive dots (eg. "...") -->
+<ERROR Find="(\.\.)[^(\s\n\.\?\!)]" ReplaceBy=".. ">
+
+
+<!-- AUSENCIA DE PUNTUACIÓN (mostrar error)-->
+<ERROR UseREOnlyToFind=False Find="(0)$" ReplaceBy="0...">
+<ERROR UseREOnlyToFind=False Find="(1)$" ReplaceBy="1...">
+<ERROR UseREOnlyToFind=False Find="(2)$" ReplaceBy="2...">
+<ERROR UseREOnlyToFind=False Find="(3)$" ReplaceBy="3...">
+<ERROR UseREOnlyToFind=False Find="(4)$" ReplaceBy="4...">
+<ERROR UseREOnlyToFind=False Find="(5)$" ReplaceBy="5...">
+<ERROR UseREOnlyToFind=False Find="(6)$" ReplaceBy="6...">
+<ERROR UseREOnlyToFind=False Find="(7)$" ReplaceBy="7...">
+<ERROR UseREOnlyToFind=False Find="(8)$" ReplaceBy="8...">
+<ERROR UseREOnlyToFind=False Find="(9)$" ReplaceBy="9...">
+<ERROR UseREOnlyToFind=False Find="(a)$" ReplaceBy="a...">
+<ERROR UseREOnlyToFind=False Find="(b)$" ReplaceBy="b...">
+<ERROR UseREOnlyToFind=False Find="(c)$" ReplaceBy="c...">
+<ERROR UseREOnlyToFind=False Find="(d)$" ReplaceBy="d...">
+<ERROR UseREOnlyToFind=False Find="(e)$" ReplaceBy="e...">
+<ERROR UseREOnlyToFind=False Find="(f)$" ReplaceBy="f...">
+<ERROR UseREOnlyToFind=False Find="(g)$" ReplaceBy="g...">
+<ERROR UseREOnlyToFind=False Find="(h)$" ReplaceBy="h...">
+<ERROR UseREOnlyToFind=False Find="(i)$" ReplaceBy="i...">
+<ERROR UseREOnlyToFind=False Find="(j)$" ReplaceBy="j...">
+<ERROR UseREOnlyToFind=False Find="(k)$" ReplaceBy="k...">
+<ERROR UseREOnlyToFind=False Find="(l)$" ReplaceBy="l...">
+<ERROR UseREOnlyToFind=False Find="(m)$" ReplaceBy="m...">
+<ERROR UseREOnlyToFind=False Find="(n)$" ReplaceBy="n...">
+<ERROR UseREOnlyToFind=False Find="(o)$" ReplaceBy="o...">
+<ERROR UseREOnlyToFind=False Find="(p)$" ReplaceBy="p...">
+<ERROR UseREOnlyToFind=False Find="(q)$" ReplaceBy="q...">
+<ERROR UseREOnlyToFind=False Find="(r)$" ReplaceBy="r...">
+<ERROR UseREOnlyToFind=False Find="(s)$" ReplaceBy="s...">
+<ERROR UseREOnlyToFind=False Find="(t)$" ReplaceBy="t...">
+<ERROR UseREOnlyToFind=False Find="(u)$" ReplaceBy="u...">
+<ERROR UseREOnlyToFind=False Find="(v)$" ReplaceBy="v...">
+<ERROR UseREOnlyToFind=False Find="(w)$" ReplaceBy="w...">
+<ERROR UseREOnlyToFind=False Find="(x)$" ReplaceBy="x...">
+<ERROR UseREOnlyToFind=False Find="(y)$" ReplaceBy="y...">
+<ERROR UseREOnlyToFind=False Find="(z)$" ReplaceBy="z...">
+<ERROR UseREOnlyToFind=False Find="(á)$" ReplaceBy="á...">
+<ERROR UseREOnlyToFind=False Find="(é)$" ReplaceBy="é...">
+<ERROR UseREOnlyToFind=False Find="(í)$" ReplaceBy="í...">
+<ERROR UseREOnlyToFind=False Find="(ó)$" ReplaceBy="ó...">
+<ERROR UseREOnlyToFind=False Find="(ú)$" ReplaceBy="ú...">
+
+<!-- Remplazar -- por ... -->
+<ERROR UseREOnlyToFind=False Find="(--)$" ReplaceBy="...">
+
+<!-- Eliminar puntos suspensivos en 2 diálogos -->
+<ERROR UseREOnlyToFind=False Find="(-\.\.\. )" ReplaceBy="-">
+<ERROR Find="(- \.\.\.)" ReplaceBy="- ">
+
+</SWOCR>

@@ -1,0 +1,86 @@
+
+<!----------------------------------------------->
+<!--     Subtitle Workshop OCR Script file     -->
+<!--       Copyright © 2001-2004 URUSoft       -->
+<!--           http://www.urusoft.net          -->
+<!--                                           -->
+<!--    ¡Específico para lenguaje español!     -->
+<!----------------------------------------------->
+
+<SWOCR WordChars="0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ_ñÑáéíóúÁÉÍÓÚäëïöü">
+
+<!-- Luis reemplazo directo-->
+<ERROR UseRE=False Find="-DIFUNDE LA PALABRA-" PreserveCase="True"  WholeWord="True" ReplaceBy="(TITULOS)">
+
+<ERROR UseRE=False Find="¿porque" WholeWord="True" PreserveCase="True" ReplaceBy="¿por qué">
+
+<!-- No se reemplazan -->
+
+<ERROR UseRE=False Find="a ti misma" WholeWord="True">
+<ERROR UseRE=False Find="a ella" WholeWord="True">
+<ERROR UseRE=False Find="a él" WholeWord="True">
+<ERROR UseRE=False Find="coñ" WholeWord="True">
+<ERROR UseRE=False Find="os" WholeWord="True">
+<ERROR UseRE=False Find="coger" WholeWord="True">
+<ERROR UseRE=False Find="cogido" WholeWord="True">
+<ERROR UseRE=False Find="coge" WholeWord="True">
+<ERROR UseRE=False Find="vale" WholeWord="True">
+<ERROR UseRE=False Find="follar" WholeWord="True">
+<ERROR UseRE=False Find="polla" WholeWord="True">
+<ERROR UseRE=False Find="chulo" WholeWord="True">
+
+
+
+<ERROR Find="\b(sla,|eis,|áis|dme,|aos,|ois,|ís,|dlo,|dla,|slo,|íos,)" ReplaceBy="">
+
+<ERROR UseRE=False Find="ya sabes," WholeWord="True">
+<ERROR UseRE=False Find="así que," WholeWord="True">
+<ERROR UseRE=False Find="¿saben qué?" WholeWord="True">
+<ERROR UseRE=False Find="¡oh!" WholeWord="True">
+<ERROR UseRE=False Find="¡ah!" WholeWord="True">
+<ERROR UseRE=False Find="eh," WholeWord="True">
+<ERROR UseRE=False Find="¡eh!" WholeWord="True">
+<ERROR UseRE=False Find="uh," WholeWord="True">
+<ERROR UseRE=False Find="¡uh!" WholeWord="True">
+<ERROR UseRE=False Find="Ow" WholeWord="True">
+<ERROR UseRE=False Find="Um" WholeWord="True">
+<ERROR UseRE=False Find="Whoa" WholeWord="True">
+
+<!--
+<ERROR UseRE=False Find="mm">
+-->
+
+<!-- Frases o palabras repetidas -->
+<!-- Ej. «No, no, no, no, no.» por «No, no, no.» -->
+<ERROR Find="([,\.]\s.{2})\1[\.,\s\?\!]">
+<!-- Ej. «¡está aquí, está aquí, está aquí!» por «¡está aquí!» -->
+<ERROR Find="(?i)([,\.]\s(.{3,}))\1[\.,\s\?\!]" ReplaceBy="">
+
+
+<!-- Terminaciones en «aos» -->
+<ERROR Find="(?i)\b(daos|[\wá-úñ]{2,15}aos)\b">
+<!-- Terminaciones en «íos» -->
+<ERROR Find="(?i)\b(([ru][en]|o)íos|(\w{2}[^dvpc]|[pdlmr][euo][cd])íos|([^abcdt]\w{3}|[tadc][ureibñtovsñ]\w[lutrpnmd]|atav)íos|([^s]\w{2}|\w\w[^m])[^fn\s][^f]íos|\w{3}(\w[^af]|[br]a)[\wñ]íos|[^m]\w{3}[^v][^f]\wíos|\w{6}[^f]\wíos|[^h]\w{8}íos|[^h]\w{9}íos|\w{11}íos)\b">
+<!-- Terminaciones en «dlo» y «dla» -->
+<ERROR Find="(?i)([á-ú]|\B)dl[oa]\b">
+<!-- Terminaciones en «osla» y «oslo» -->
+<ERROR Find="(?i)\Bosl[ao]\b">
+<!-- Terminaciones en «dme» -->
+<ERROR Find="(?i)(\B|[á-ú])dme\b">
+<!-- Terminaciones en «ís» -->
+<ERROR Find="(?i)(\B|\b)([^nah]|un)ís\b">
+<!-- Terminaciones en «ois» -->
+<ERROR Find="(?i)\Bois\b">
+<!-- Terminaciones en «eis», «éis», «ais» y «áis» -->
+<ERROR Find="(?i)[eéaá]is\b">
+
+<!--  Casos de mayúsculas con dos puntos  -->
+<ERROR Find="([a-z]): «([a-z])">
+<ERROR Find="([A-Z]): ([a-z])">	
+
+<!--  Onomatopeyas  -->
+<ERROR UseREOnlyToFind="False" Find="^(?i)([ !?¿¡.,;:—–'\x22\n\r-]|\x3C/?[ibuc]\x3E|\x3Cc:#[0-9a-fA-F]{6}\x3E|a+h+|o+h+|meh|e+h+|hm+|(g|a+r)r+|(a+|o+|e+)w+|b?p?g?ah+|phe+w+|o+uch|yack|n*h*u+n*h+|r*(u+|a+)r*n*g*h+|r+aa+|(e|h?i*|hi*-)ya+h*|heh*|a*ha+h*|oo+(f|h)|he+y|hyuh|whe+w|s+(s|h)h+|b?zz+t?|mm+|wh?(oo+|a+|o+a+)h?w?|wo+h?w?|bla+h*|whoo+sh|tsk|oi|mwah+|pff+t*|ps+(h|t)?|um+|ahem|wh?o+-ho+|(wh?)?oo+ps?(ie|y)?|e+u+gh+|y+ee+|bo+m|guau)+$" ReplaceBy="">
+
+<!--  Espacios después del guión  -->
+<ERROR UseREOnlyToFind="True" Find="^(-)[^ -]" ReplaceBy="- ">
+<ERROR UseREOnlyToFind="True" Find="\n(-)[^ -]" ReplaceBy="- ">

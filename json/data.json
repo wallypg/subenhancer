@@ -1,0 +1,44 @@
+{
+    "tv_show": [
+        "Better Call Saul",
+        "Mr. Robot",
+        "Fargo"
+    ],
+    "codec": [
+        "XviD",
+        "x264"
+    ],
+    "format": [
+        "HDTV",
+        "DVDRip",
+        "WEB-DL"
+    ],
+    "rip_group": [
+        "LOL",
+        "DIMENSION",
+        "ASAP",
+        "ORENJI",
+        "W4F",
+        "2HD"
+    ],
+    "other": [
+        "PROPER",
+        "INTERNAL",
+        "LIMITED",
+        "REPACK"
+    ],
+    "editor": [
+        "KingCreole",
+        "Fernando355",
+        "Wendy",
+        "Maigiri",
+        "GoKuroi",
+        "eltongous"
+    ],
+    "translation": [
+        "tusubtitulo.com"
+    ],
+    "enhanced": [
+        ""
+    ]
+}

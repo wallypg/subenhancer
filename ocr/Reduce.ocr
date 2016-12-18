@@ -1,0 +1,987 @@
+
+<!----------------------------------------------->
+<!--     Subtitle Workshop OCR Script file     -->
+<!--       Copyright © 2001-2004 URUSoft       -->
+<!--           http://www.urusoft.net          -->
+<!--                                           -->
+<!--    ¡Reducción de líneas!     			   -->
+<!----------------------------------------------->
+
+<SWOCR WordChars="0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ_ñÑáéíóúÁÉÍÓÚäëïöü">
+
+
+<!-- Vienen de Reduce@ -->
+
+<ERROR UseRE=False Find="Ni de coña" WholeWord="True" PreserveCase="True" ReplaceBy="Ni de casualidad">
+<ERROR UseRE=False Find="estar de broma" WholeWord="True" PreserveCase="True" ReplaceBy="estar bromeando">
+<ERROR UseRE=False Find="estás de broma" WholeWord="True" PreserveCase="True" ReplaceBy="bromeas">
+<ERROR UseRE=False Find="gilipollez" WholeWord="True" PreserveCase="True" ReplaceBy="estupidez">
+<ERROR UseRE=False Find="salir afuera" WholeWord="True" PreserveCase="True" ReplaceBy="salir">
+<ERROR UseRE=False Find="venir aquí" WholeWord="True" PreserveCase="True" ReplaceBy="venir">
+<ERROR UseRE=False Find="ven aquí" WholeWord="True" PreserveCase="True" ReplaceBy="ven">
+<ERROR UseRE=False Find="¿Okay?" WholeWord="True" PreserveCase="True" ReplaceBy="¿Sí?">
+<ERROR UseRE=False Find="Okay" WholeWord="True" PreserveCase="True" ReplaceBy="Bien">
+<ERROR UseRE=False Find="venga ya" WholeWord="True" PreserveCase="True" ReplaceBy="vamos">
+<ERROR UseRE=False Find="chaval" WholeWord="True" PreserveCase="True" ReplaceBy="muchacho">
+<ERROR UseRE=False Find="chavales" WholeWord="True" PreserveCase="True" ReplaceBy="muchachos">
+<ERROR UseRE=False Find="¿está bien?" WholeWord="True" PreserveCase="True" ReplaceBy="¿sí?">
+<ERROR UseRE=False Find="¿verdad?" WholeWord="True" PreserveCase="True" ReplaceBy="¿no?">
+<ERROR UseRE=False Find="guapo" WholeWord="True" PreserveCase="True" ReplaceBy="apuesto">
+<ERROR UseRE=False Find="¿ok?" WholeWord="True" PreserveCase="True" ReplaceBy="¿sí?">
+<ERROR UseRE=False Find="ok" WholeWord="True" PreserveCase="True" ReplaceBy="bien">
+
+
+
+<!-- Luis reemplazo directo-->
+
+<ERROR UseRE=False Find="www.SUBTITULOS.es" PreserveCase="False"  WholeWord="True" ReplaceBy="(TITULOS)">
+<ERROR UseRE=False Find="-DIFUNDE LA PALABRA-" PreserveCase="True"  WholeWord="True" ReplaceBy="">
+
+<ERROR UseRE=False Find="vosotros" WholeWord="True" PreserveCase="True" ReplaceBy="ustedes">
+<ERROR UseRE=False Find="vosotras" WholeWord="True" PreserveCase="True" ReplaceBy="ustedes">
+<ERROR UseRE=False Find="estás haciendo" WholeWord="True" PreserveCase="True" ReplaceBy="haces">
+<ERROR UseRE=False Find="ahora mismo" WholeWord="True" PreserveCase="True" ReplaceBy="ahora">
+<ERROR UseRE=False Find="que narices" WholeWord="True" PreserveCase="True" ReplaceBy="que demonios">
+<ERROR UseRE=False Find="qué narices" WholeWord="True" PreserveCase="True" ReplaceBy="qué demonios">
+<ERROR UseRE=False Find="ven aquí" WholeWord="True" PreserveCase="True" ReplaceBy="ven">
+<ERROR UseRE=False Find="nunca jamás" WholeWord="True" PreserveCase="True" ReplaceBy="nunca">
+<ERROR UseRE=False Find="a partir de" WholeWord="True" PreserveCase="True" ReplaceBy="desde">
+<ERROR UseRE=False Find="vuestro" PreserveCase="True" ReplaceBy="su">
+<ERROR UseRE=False Find="vuestra" PreserveCase="True" ReplaceBy="su">
+<ERROR UseRE=False Find="sobre ello" WholeWord="True" PreserveCase="True" ReplaceBy="al respecto">
+<ERROR UseRE=False Find="capullo" WholeWord="True" PreserveCase="True" ReplaceBy="imbécil">
+<ERROR UseRE=False Find="capullos" WholeWord="True" PreserveCase="True" ReplaceBy="imbéciles">
+<ERROR UseRE=False Find="gilipollas" WholeWord="True" PreserveCase="True" ReplaceBy="imbécil">
+<ERROR UseRE=False Find="gilipolleces" WholeWord="True" PreserveCase="True" ReplaceBy="tonterías">
+<ERROR UseRE=False Find="zumo" WholeWord="True" PreserveCase="True" ReplaceBy="jugo">
+<ERROR UseRE=False Find="guay" WholeWord="True" PreserveCase="True" ReplaceBy="genial">
+<ERROR UseRE=False Find="srita" WholeWord="True" PreserveCase="True" ReplaceBy="srta">
+<ERROR UseRE=False Find="ordenador" PreserveCase="True" ReplaceBy="computador">
+<ERROR UseRE=False Find="poli" WholeWord="True" PreserveCase="True" ReplaceBy="policía">
+<ERROR UseRE=False Find="polis" WholeWord="True" PreserveCase="True" ReplaceBy="policías">
+<ERROR UseRE=False Find="polla" WholeWord="True" PreserveCase="True" ReplaceBy="verga">
+<ERROR UseRE=False Find="quizás" WholeWord="True" PreserveCase="True" ReplaceBy="quizá">
+<ERROR UseRE=False Find="guau" WholeWord="True" PreserveCase="True" ReplaceBy="vaya">
+<ERROR UseRE=False Find="por eso es que" WholeWord="True" PreserveCase="True" ReplaceBy="por eso">
+<ERROR UseRE=False Find="hey" WholeWord="True" PreserveCase="True" ReplaceBy="oye">
+
+
+<ERROR UseRE=False Find="habéis" WholeWord="True" PreserveCase="True" ReplaceBy="han">
+<ERROR UseRE=False Find="habréis" WholeWord="True" PreserveCase="True" ReplaceBy="habrán">
+<ERROR UseRE=False Find="habríais" WholeWord="True" PreserveCase="True" ReplaceBy="habrían">
+<ERROR UseRE=False Find="hubísteis" WholeWord="True" PreserveCase="True" ReplaceBy="hubieron">
+<ERROR UseRE=False Find="algunas veces" WholeWord="True" PreserveCase="True" ReplaceBy="a veces">
+<ERROR UseRE=False Find="todavía" WholeWord="True" PreserveCase="True" ReplaceBy="aún">
+<ERROR UseRE=False Find="todos los días" WholeWord="True" PreserveCase="True" ReplaceBy="cada día">
+<ERROR UseRE=False Find="Estados Unidos" WholeWord="True" PreserveCase="False" ReplaceBy="EE.UU.">
+<ERROR UseRE=False Find="Sí. Sí," WholeWord="True" PreserveCase="False" ReplaceBy="Sí,">
+<ERROR UseRE=False Find="No. No," WholeWord="True" PreserveCase="False" ReplaceBy="No,">
+<ERROR UseRE=False Find="Sí, sí." WholeWord="True" PreserveCase="False" ReplaceBy="Sí.">
+<ERROR UseRE=False Find="No, no." WholeWord="True" PreserveCase="False" ReplaceBy="No.">
+
+<ERROR UseRE=False Find="¿bien?" WholeWord="True" PreserveCase="True" ReplaceBy="¿sí?">
+<ERROR UseRE=False Find="¿no es cierto?" WholeWord="True" PreserveCase="True" ReplaceBy="¿sí?">
+<ERROR UseRE=False Find="¿eh?" WholeWord="True" PreserveCase="True" ReplaceBy="¿no?">
+<ERROR UseRE=False Find="¿vale?" WholeWord="True" PreserveCase="True" ReplaceBy="¿sí?">
+<ERROR UseRE=False Find="¿de acuerdo?" WholeWord="True" PreserveCase="True" ReplaceBy="¿sí?">
+<ERROR UseRE=False Find="¿cierto?" WholeWord="True" PreserveCase="True" ReplaceBy="¿no?">
+<ERROR UseRE=False Find="¿bueno?" WholeWord="True" PreserveCase="True" ReplaceBy="¿sí?">
+
+<ERROR UseRE=False Find="como yo dije" WholeWord="True" PreserveCase="True" ReplaceBy="como dije">
+<ERROR UseRE=False Find="como tú dijiste" WholeWord="True" PreserveCase="True" ReplaceBy="como dijiste">
+<ERROR UseRE=False Find="como él dijo" WholeWord="True" PreserveCase="True" ReplaceBy="como dijo">
+<ERROR UseRE=False Find="como ella dijo" WholeWord="True" PreserveCase="True" ReplaceBy="como dijo">
+
+
+<ERROR UseRE=False Find="voy a ver" WholeWord="True" PreserveCase="True" ReplaceBy="veré">
+<ERROR UseRE=False Find="vas a ver" WholeWord="True" PreserveCase="True" ReplaceBy="verás">
+<ERROR UseRE=False Find="va a ver" WholeWord="True" PreserveCase="True" ReplaceBy="verá">
+<ERROR UseRE=False Find="vamos a ver" WholeWord="True" PreserveCase="True" ReplaceBy="veremos">
+<ERROR UseRE=False Find="vais a ver" WholeWord="True" PreserveCase="True" ReplaceBy="verán">
+<ERROR UseRE=False Find="van a ver" WholeWord="True" PreserveCase="True" ReplaceBy="verán">
+
+<ERROR UseRE=False Find="echo de menos" WholeWord="True" PreserveCase="True" ReplaceBy="extraño">
+<ERROR UseRE=False Find="echas de menos" WholeWord="True" PreserveCase="True" ReplaceBy="extrañas">
+<ERROR UseRE=False Find="echa de menos" WholeWord="True" PreserveCase="True" ReplaceBy="extraña">
+<ERROR UseRE=False Find="echamos de menos" WholeWord="True" PreserveCase="True" ReplaceBy="extrañamos">
+<ERROR UseRE=False Find="echáis de menos" WholeWord="True" PreserveCase="True" ReplaceBy="extrañan">
+<ERROR UseRE=False Find="echan de menos" WholeWord="True" PreserveCase="True" ReplaceBy="extrañan">
+
+<ERROR UseRE=False Find="echaré de menos" WholeWord="True" PreserveCase="True" ReplaceBy="extrañaré">
+<ERROR UseRE=False Find="echarás de menos" WholeWord="True" PreserveCase="True" ReplaceBy="extrañarás">
+<ERROR UseRE=False Find="echará de menos" WholeWord="True" PreserveCase="True" ReplaceBy="extrañará">
+<ERROR UseRE=False Find="echaremos de menos" WholeWord="True" PreserveCase="True" ReplaceBy="extrañaremos">
+<ERROR UseRE=False Find="echaréis de menos" WholeWord="True" PreserveCase="True" ReplaceBy="extrañarán">
+<ERROR UseRE=False Find="echarán de menos" WholeWord="True" PreserveCase="True" ReplaceBy="extrañarán">
+
+<ERROR UseRE=False Find="eché de menos" WholeWord="True" PreserveCase="True" ReplaceBy="extrañamos">
+<ERROR UseRE=False Find="echaste de menos" WholeWord="True" PreserveCase="True" ReplaceBy="extrañaste">
+<ERROR UseRE=False Find="echó de menos" WholeWord="True" PreserveCase="True" ReplaceBy="extrañó">
+<ERROR UseRE=False Find="echásteis de menos" WholeWord="True" PreserveCase="True" ReplaceBy="extrañaron">
+<ERROR UseRE=False Find="echaron de menos" WholeWord="True" PreserveCase="True" ReplaceBy="extrañaron">
+
+<ERROR UseRE=False Find="he sido" WholeWord="True" PreserveCase="True" ReplaceBy="fui">
+<ERROR UseRE=False Find="has sido" WholeWord="True" PreserveCase="True" ReplaceBy="fuiste">
+<ERROR UseRE=False Find="ha sido" WholeWord="True" PreserveCase="True" ReplaceBy="fue">
+<ERROR UseRE=False Find="hemos sido" WholeWord="True" PreserveCase="True" ReplaceBy="fuimos">
+<ERROR UseRE=False Find="habéis sido" WholeWord="True" PreserveCase="True" ReplaceBy="fueron">
+<ERROR UseRE=False Find="han sido" WholeWord="True" PreserveCase="True" ReplaceBy="fueron">
+
+<ERROR UseRE=False Find="he tenido" WholeWord="True" PreserveCase="True" ReplaceBy="tuve">
+<ERROR UseRE=False Find="has tenido" WholeWord="True" PreserveCase="True" ReplaceBy="tuviste">
+<ERROR UseRE=False Find="ha tenido" WholeWord="True" PreserveCase="True" ReplaceBy="tuvo">
+<ERROR UseRE=False Find="hemos tenido" WholeWord="True" PreserveCase="True" ReplaceBy="tuvimos">
+<ERROR UseRE=False Find="habéis tenido" WholeWord="True" PreserveCase="True" ReplaceBy="tuvieron">
+<ERROR UseRE=False Find="han tenido" WholeWord="True" PreserveCase="True" ReplaceBy="tuvieron">
+
+<ERROR UseRE=False Find="cerca de mí" WholeWord="True" PreserveCase="True" ReplaceBy="cerca mío">
+<ERROR UseRE=False Find="cerca de ti" WholeWord="True" PreserveCase="True" ReplaceBy="cerca tuyo">
+<ERROR UseRE=False Find="cerca de él" WholeWord="True" PreserveCase="True" ReplaceBy="cerca suyo">
+<ERROR UseRE=False Find="cerca de nosotros" WholeWord="True" PreserveCase="True" ReplaceBy="cerca nuestro">
+<ERROR UseRE=False Find="cerca de ellos" WholeWord="True" PreserveCase="True" ReplaceBy="cerca suyo">
+
+<ERROR UseRE=False Find="debería de" WholeWord="True" PreserveCase="True" ReplaceBy="debería">
+<ERROR UseRE=False Find="deberías de" WholeWord="True" PreserveCase="True" ReplaceBy="deberías">
+<ERROR UseRE=False Find="deberíamos de" WholeWord="True" PreserveCase="True" ReplaceBy="deberíamos">
+<ERROR UseRE=False Find="deberíais de" WholeWord="True" PreserveCase="True" ReplaceBy="deberían">
+<ERROR UseRE=False Find="deberían de" WholeWord="True" PreserveCase="True" ReplaceBy="deberían">
+
+<ERROR UseRE=False Find="debe de" WholeWord="True" PreserveCase="True" ReplaceBy="debe">
+<ERROR UseRE=False Find="debes de" WholeWord="True" PreserveCase="True" ReplaceBy="debes">
+<ERROR UseRE=False Find="debemos de" WholeWord="True" PreserveCase="True" ReplaceBy="debemos">
+<ERROR UseRE=False Find="debéis de" WholeWord="True" PreserveCase="True" ReplaceBy="deben">
+<ERROR UseRE=False Find="deben de" WholeWord="True" PreserveCase="True" ReplaceBy="deben">
+
+<ERROR UseRE=False Find="debía de" WholeWord="True" PreserveCase="True" ReplaceBy="debía">
+<ERROR UseRE=False Find="debías de" WholeWord="True" PreserveCase="True" ReplaceBy="debías">
+<ERROR UseRE=False Find="debíamos de" WholeWord="True" PreserveCase="True" ReplaceBy="debíamos">
+<ERROR UseRE=False Find="debíais de" WholeWord="True" PreserveCase="True" ReplaceBy="debíais">
+<ERROR UseRE=False Find="debían de" WholeWord="True" PreserveCase="True" ReplaceBy="debían">
+
+<ERROR UseRE=False Find="he hecho" WholeWord="True" PreserveCase="True" ReplaceBy="hice">
+<ERROR UseRE=False Find="has hecho" WholeWord="True" PreserveCase="True" ReplaceBy="hiciste">
+<ERROR UseRE=False Find="ha hecho" WholeWord="True" PreserveCase="True" ReplaceBy="hizo">
+<ERROR UseRE=False Find="hemos hecho" WholeWord="True" PreserveCase="True" ReplaceBy="hicimos">
+<ERROR UseRE=False Find="habéis hecho" WholeWord="True" PreserveCase="True" ReplaceBy="hicieron">
+<ERROR UseRE=False Find="han hecho" WholeWord="True" PreserveCase="True" ReplaceBy="hicieron">
+
+<ERROR UseRE=False Find="a por" WholeWord="True" PreserveCase="True" ReplaceBy="por">
+<ERROR UseRE=False Find="después de" WholeWord="True" PreserveCase="True" ReplaceBy="luego de">
+<ERROR UseRE=False Find="despues de" WholeWord="True" PreserveCase="True" ReplaceBy="luego de">
+<ERROR UseRE=False Find="es por eso que" WholeWord="True" PreserveCase="True" ReplaceBy="por eso">
+
+<!-- Borra ciertas expresiones americanas. -->
+<!-- Mayúscula después de un punto -->
+<ERROR UseREOnlyToFind="True" Find="\b(Bien\.\s|Oye\.\s|Quiero\sdecir\.\s|Es\sdecir\.\s|Ah\.\s|Eh\.\s|Oh\.\s|Ok\.\s|Okey\.\s|Ey\.\s|Oye\.\s|Vale\.\s|Bueno\.\s|Está\sbien\.\s|Esta\sbien\.\s|Venga(\sya)?\.\s|De\sacuerdo\.\s|Ya\ssabes\.\s)[A-ZÁ-Ú]" ReplaceBy="">
+
+
+<!-- Mayúscula después de coma -->
+<ERROR UseREOnlyToFind="True" Find="\b(Bien,\s|Oye,\s|Quiero\sdecir,\s|Es\sdecir,\s|Ah,\s|Eh,\s|Oh,\s|Ok,\s|Okey,\s|Ey,\s|Ok,\s|Okey,\s|Ey,\s|Oye,\s|Vale,\s|Bueno,\s|Está\sbien,\s|Esta\sbien,\s|Venga(\sya)?,\s|De\sacuerdo,\s|Ya\ssabes,\s)[A-ZÁ-Ú]" ReplaceBy="">
+
+
+<!-- Minúscula después de la coma -->
+<ERROR UseREOnlyToFind="False" Find="\b(Bien,\s|Oye,\s|Quiero\sdecir,\s|Es\sdecir,\s|Ah,\s|Eh,\s|Oh,\s|Ok,\s|Okey,\s|Ey,\s|Oye,\s|Vale,\s|Bueno,\s|Está\sbien,\s|Esta\sbien,\s|Venga(\sya)?,\s|De\sacuerdo,\s|Ya\ssabes,\s)a" ReplaceBy="A">
+<ERROR UseREOnlyToFind="False" Find="\b(Bien,\s|Oye,\s|Quiero\sdecir,\s|Es\sdecir,\s|Ah,\s|Eh,\s|Oh,\s|Ok,\s|Okey,\s|Ey,\s|Oye,\s|Vale,\s|Bueno,\s|Está\sbien,\s|Esta\sbien,\s|Venga(\sya)?,\s|De\sacuerdo,\s|Ya\ssabes,\s)b" ReplaceBy="B">
+<ERROR UseREOnlyToFind="False" Find="\b(Bien,\s|Oye,\s|Quiero\sdecir,\s|Es\sdecir,\s|Ah,\s|Eh,\s|Oh,\s|Ok,\s|Okey,\s|Ey,\s|Oye,\s|Vale,\s|Bueno,\s|Está\sbien,\s|Esta\sbien,\s|Venga(\sya)?,\s|De\sacuerdo,\s|Ya\ssabes,\s)c" ReplaceBy="C">
+<ERROR UseREOnlyToFind="False" Find="\b(Bien,\s|Oye,\s|Quiero\sdecir,\s|Es\sdecir,\s|Ah,\s|Eh,\s|Oh,\s|Ok,\s|Okey,\s|Ey,\s|Oye,\s|Vale,\s|Bueno,\s|Está\sbien,\s|Esta\sbien,\s|Venga(\sya)?,\s|De\sacuerdo,\s|Ya\ssabes,\s)d" ReplaceBy="D">
+<ERROR UseREOnlyToFind="False" Find="\b(Bien,\s|Oye,\s|Quiero\sdecir,\s|Es\sdecir,\s|Ah,\s|Eh,\s|Oh,\s|Ok,\s|Okey,\s|Ey,\s|Oye,\s|Vale,\s|Bueno,\s|Está\sbien,\s|Esta\sbien,\s|Venga(\sya)?,\s|De\sacuerdo,\s|Ya\ssabes,\s)e" ReplaceBy="E">
+<ERROR UseREOnlyToFind="False" Find="\b(Bien,\s|Oye,\s|Quiero\sdecir,\s|Es\sdecir,\s|Ah,\s|Eh,\s|Oh,\s|Ok,\s|Okey,\s|Ey,\s|Oye,\s|Vale,\s|Bueno,\s|Está\sbien,\s|Esta\sbien,\s|Venga(\sya)?,\s|De\sacuerdo,\s|Ya\ssabes,\s)f" ReplaceBy="F">
+<ERROR UseREOnlyToFind="False" Find="\b(Bien,\s|Oye,\s|Quiero\sdecir,\s|Es\sdecir,\s|Ah,\s|Eh,\s|Oh,\s|Ok,\s|Okey,\s|Ey,\s|Oye,\s|Vale,\s|Bueno,\s|Está\sbien,\s|Esta\sbien,\s|Venga(\sya)?,\s|De\sacuerdo,\s|Ya\ssabes,\s)g" ReplaceBy="G">
+<ERROR UseREOnlyToFind="False" Find="\b(Bien,\s|Oye,\s|Quiero\sdecir,\s|Es\sdecir,\s|Ah,\s|Eh,\s|Oh,\s|Ok,\s|Okey,\s|Ey,\s|Oye,\s|Vale,\s|Bueno,\s|Está\sbien,\s|Esta\sbien,\s|Venga(\sya)?,\s|De\sacuerdo,\s|Ya\ssabes,\s)h" ReplaceBy="H">
+<ERROR UseREOnlyToFind="False" Find="\b(Bien,\s|Oye,\s|Quiero\sdecir,\s|Es\sdecir,\s|Ah,\s|Eh,\s|Oh,\s|Ok,\s|Okey,\s|Ey,\s|Oye,\s|Vale,\s|Bueno,\s|Está\sbien,\s|Esta\sbien,\s|Venga(\sya)?,\s|De\sacuerdo,\s|Ya\ssabes,\s)i" ReplaceBy="I">
+<ERROR UseREOnlyToFind="False" Find="\b(Bien,\s|Oye,\s|Quiero\sdecir,\s|Es\sdecir,\s|Ah,\s|Eh,\s|Oh,\s|Ok,\s|Okey,\s|Ey,\s|Oye,\s|Vale,\s|Bueno,\s|Está\sbien,\s|Esta\sbien,\s|Venga(\sya)?,\s|De\sacuerdo,\s|Ya\ssabes,\s)j" ReplaceBy="J">
+<ERROR UseREOnlyToFind="False" Find="\b(Bien,\s|Oye,\s|Quiero\sdecir,\s|Es\sdecir,\s|Ah,\s|Eh,\s|Oh,\s|Ok,\s|Okey,\s|Ey,\s|Oye,\s|Vale,\s|Bueno,\s|Está\sbien,\s|Esta\sbien,\s|Venga(\sya)?,\s|De\sacuerdo,\s|Ya\ssabes,\s)k" ReplaceBy="K">
+<ERROR UseREOnlyToFind="False" Find="\b(Bien,\s|Oye,\s|Quiero\sdecir,\s|Es\sdecir,\s|Ah,\s|Eh,\s|Oh,\s|Ok,\s|Okey,\s|Ey,\s|Oye,\s|Vale,\s|Bueno,\s|Está\sbien,\s|Esta\sbien,\s|Venga(\sya)?,\s|De\sacuerdo,\s|Ya\ssabes,\s)l" ReplaceBy="L">
+<ERROR UseREOnlyToFind="False" Find="\b(Bien,\s|Oye,\s|Quiero\sdecir,\s|Es\sdecir,\s|Ah,\s|Eh,\s|Oh,\s|Ok,\s|Okey,\s|Ey,\s|Oye,\s|Vale,\s|Bueno,\s|Está\sbien,\s|Esta\sbien,\s|Venga(\sya)?,\s|De\sacuerdo,\s|Ya\ssabes,\s)m" ReplaceBy="M">
+<ERROR UseREOnlyToFind="False" Find="\b(Bien,\s|Oye,\s|Quiero\sdecir,\s|Es\sdecir,\s|Ah,\s|Eh,\s|Oh,\s|Ok,\s|Okey,\s|Ey,\s|Oye,\s|Vale,\s|Bueno,\s|Está\sbien,\s|Esta\sbien,\s|Venga(\sya)?,\s|De\sacuerdo,\s|Ya\ssabes,\s)n" ReplaceBy="N">
+<ERROR UseREOnlyToFind="False" Find="\b(Bien,\s|Oye,\s|Quiero\sdecir,\s|Es\sdecir,\s|Ah,\s|Eh,\s|Oh,\s|Ok,\s|Okey,\s|Ey,\s|Oye,\s|Vale,\s|Bueno,\s|Está\sbien,\s|Esta\sbien,\s|Venga(\sya)?,\s|De\sacuerdo,\s|Ya\ssabes,\s)o" ReplaceBy="O">
+<ERROR UseREOnlyToFind="False" Find="\b(Bien,\s|Oye,\s|Quiero\sdecir,\s|Es\sdecir,\s|Ah,\s|Eh,\s|Oh,\s|Ok,\s|Okey,\s|Ey,\s|Oye,\s|Vale,\s|Bueno,\s|Está\sbien,\s|Esta\sbien,\s|Venga(\sya)?,\s|De\sacuerdo,\s|Ya\ssabes,\s)p" ReplaceBy="P">
+<ERROR UseREOnlyToFind="False" Find="\b(Bien,\s|Oye,\s|Quiero\sdecir,\s|Es\sdecir,\s|Ah,\s|Eh,\s|Oh,\s|Ok,\s|Okey,\s|Ey,\s|Oye,\s|Vale,\s|Bueno,\s|Está\sbien,\s|Esta\sbien,\s|Venga(\sya)?,\s|De\sacuerdo,\s|Ya\ssabes,\s)q" ReplaceBy="Q">
+<ERROR UseREOnlyToFind="False" Find="\b(Bien,\s|Oye,\s|Quiero\sdecir,\s|Es\sdecir,\s|Ah,\s|Eh,\s|Oh,\s|Ok,\s|Okey,\s|Ey,\s|Oye,\s|Vale,\s|Bueno,\s|Está\sbien,\s|Esta\sbien,\s|Venga(\sya)?,\s|De\sacuerdo,\s|Ya\ssabes,\s)r" ReplaceBy="R">
+<ERROR UseREOnlyToFind="False" Find="\b(Bien,\s|Oye,\s|Quiero\sdecir,\s|Es\sdecir,\s|Ah,\s|Eh,\s|Oh,\s|Ok,\s|Okey,\s|Ey,\s|Oye,\s|Vale,\s|Bueno,\s|Está\sbien,\s|Esta\sbien,\s|Venga(\sya)?,\s|De\sacuerdo,\s|Ya\ssabes,\s)s" ReplaceBy="S">
+<ERROR UseREOnlyToFind="False" Find="\b(Bien,\s|Oye,\s|Quiero\sdecir,\s|Es\sdecir,\s|Ah,\s|Eh,\s|Oh,\s|Ok,\s|Okey,\s|Ey,\s|Oye,\s|Vale,\s|Bueno,\s|Está\sbien,\s|Esta\sbien,\s|Venga(\sya)?,\s|De\sacuerdo,\s|Ya\ssabes,\s)t" ReplaceBy="T">
+<ERROR UseREOnlyToFind="False" Find="\b(Bien,\s|Oye,\s|Quiero\sdecir,\s|Es\sdecir,\s|Ah,\s|Eh,\s|Oh,\s|Ok,\s|Okey,\s|Ey,\s|Oye,\s|Vale,\s|Bueno,\s|Está\sbien,\s|Esta\sbien,\s|Venga(\sya)?,\s|De\sacuerdo,\s|Ya\ssabes,\s)u" ReplaceBy="U">
+<ERROR UseREOnlyToFind="False" Find="\b(Bien,\s|Oye,\s|Quiero\sdecir,\s|Es\sdecir,\s|Ah,\s|Eh,\s|Oh,\s|Ok,\s|Okey,\s|Ey,\s|Oye,\s|Vale,\s|Bueno,\s|Está\sbien,\s|Esta\sbien,\s|Venga(\sya)?,\s|De\sacuerdo,\s|Ya\ssabes,\s)v" ReplaceBy="V">
+<ERROR UseREOnlyToFind="False" Find="\b(Bien,\s|Oye,\s|Quiero\sdecir,\s|Es\sdecir,\s|Ah,\s|Eh,\s|Oh,\s|Ok,\s|Okey,\s|Ey,\s|Oye,\s|Vale,\s|Bueno,\s|Está\sbien,\s|Esta\sbien,\s|Venga(\sya)?,\s|De\sacuerdo,\s|Ya\ssabes,\s)w" ReplaceBy="W">
+<ERROR UseREOnlyToFind="False" Find="\b(Bien,\s|Oye,\s|Quiero\sdecir,\s|Es\sdecir,\s|Ah,\s|Eh,\s|Oh,\s|Ok,\s|Okey,\s|Ey,\s|Oye,\s|Vale,\s|Bueno,\s|Está\sbien,\s|Esta\sbien,\s|Venga(\sya)?,\s|De\sacuerdo,\s|Ya\ssabes,\s)x" ReplaceBy="X">
+<ERROR UseREOnlyToFind="False" Find="\b(Bien,\s|Oye,\s|Quiero\sdecir,\s|Es\sdecir,\s|Ah,\s|Eh,\s|Oh,\s|Ok,\s|Okey,\s|Ey,\s|Oye,\s|Vale,\s|Bueno,\s|Está\sbien,\s|Esta\sbien,\s|Venga(\sya)?,\s|De\sacuerdo,\s|Ya\ssabes,\s)y" ReplaceBy="Y">
+<ERROR UseREOnlyToFind="False" Find="\b(Bien,\s|Oye,\s|Quiero\sdecir,\s|Es\sdecir,\s|Ah,\s|Eh,\s|Oh,\s|Ok,\s|Okey,\s|Ey,\s|Oye,\s|Vale,\s|Bueno,\s|Está\sbien,\s|Esta\sbien,\s|Venga(\sya)?,\s|De\sacuerdo,\s|Ya\ssabes,\s)z" ReplaceBy="Z">
+<ERROR UseREOnlyToFind="False" Find="\b(Bien,\s|Oye,\s|Quiero\sdecir,\s|Es\sdecir,\s|Ah,\s|Eh,\s|Oh,\s|Ok,\s|Okey,\s|Ey,\s|Oye,\s|Vale,\s|Bueno,\s|Está\sbien,\s|Esta\sbien,\s|Venga(\sya)?,\s|De\sacuerdo,\s|Ya\ssabes,\s)á" ReplaceBy="Á">
+<ERROR UseREOnlyToFind="False" Find="\b(Bien,\s|Oye,\s|Quiero\sdecir,\s|Es\sdecir,\s|Ah,\s|Eh,\s|Oh,\s|Ok,\s|Okey,\s|Ey,\s|Oye,\s|Vale,\s|Bueno,\s|Está\sbien,\s|Esta\sbien,\s|Venga(\sya)?,\s|De\sacuerdo,\s|Ya\ssabes,\s)é" ReplaceBy="É">
+<ERROR UseREOnlyToFind="False" Find="\b(Bien,\s|Oye,\s|Quiero\sdecir,\s|Es\sdecir,\s|Ah,\s|Eh,\s|Oh,\s|Ok,\s|Okey,\s|Ey,\s|Oye,\s|Vale,\s|Bueno,\s|Está\sbien,\s|Esta\sbien,\s|Venga(\sya)?,\s|De\sacuerdo,\s|Ya\ssabes,\s)í" ReplaceBy="Í">
+<ERROR UseREOnlyToFind="False" Find="\b(Bien,\s|Oye,\s|Quiero\sdecir,\s|Es\sdecir,\s|Ah,\s|Eh,\s|Oh,\s|Ok,\s|Okey,\s|Ey,\s|Oye,\s|Vale,\s|Bueno,\s|Está\sbien,\s|Esta\sbien,\s|Venga(\sya)?,\s|De\sacuerdo,\s|Ya\ssabes,\s)ó" ReplaceBy="Ó">
+<ERROR UseREOnlyToFind="False" Find="\b(Bien,\s|Oye,\s|Quiero\sdecir,\s|Es\sdecir,\s|Ah,\s|Eh,\s|Oh,\s|Ok,\s|Okey,\s|Ey,\s|Oye,\s|Vale,\s|Bueno,\s|Está\sbien,\s|Esta\sbien,\s|Venga(\sya)?,\s|De\sacuerdo,\s|Ya\ssabes,\s)ú" ReplaceBy="Ú">
+<ERROR UseREOnlyToFind="False" Find="\b(Bien,\s|Oye,\s|Quiero\sdecir,\s|Es\sdecir,\s|Ah,\s|Eh,\s|Oh,\s|Ok,\s|Okey,\s|Ey,\s|Oye,\s|Vale,\s|Bueno,\s|Está\sbien,\s|Esta\sbien,\s|Venga(\sya)?,\s|De\sacuerdo,\s|Ya\ssabes,\s)ñ" ReplaceBy="Ñ">
+
+
+<!-- 2da del Plural - Particularizar
+Presente - Pretérito Indefinido - Pretérito Imperfecto 
+Presente Subjuntivo
+Imperativos
+ -->
+
+<!-- ----- Haber ----- -->
+<ERROR UseREOnlyToFind="True" WholeWord="True" Find="\b[H|h](ab[e|é]is)\b" Replaceby="an">
+<ERROR UseREOnlyToFind="True" WholeWord="True" Find="\b[H|h](ub[i|í]steis)\b" Replaceby="ubieron">
+<ERROR UseREOnlyToFind="True" WholeWord="True" Find="\b[H|h](ab[i|í]ais)\b" Replaceby="abían">
+<ERROR UseREOnlyToFind="True" WholeWord="True" Find="\b[H|h](ay[a|á]is)\b" Replaceby="ayan">
+<ERROR UseREOnlyToFind="True" WholeWord="True" Find="\b[H|h](ab[e|é]d)\b" Replaceby="ayan">
+<ERROR UseREOnlyToFind="True" WholeWord="True" Find="\b[H|h](ab[e|é]dse)\b" Replaceby="áyanse">
+<ERROR UseREOnlyToFind="True" Find="\b[H|h](ab[e|é]dl)\b" Replaceby="áyanl">
+
+<!-- ----- Estar ----- -->
+<ERROR UseREOnlyToFind="True" WholeWord="True" Find="\b[E|e](st[a|á]is)\b" Replaceby="stán">
+<ERROR UseREOnlyToFind="True" WholeWord="True" Find="\b[E|e](stuv[i|í]steis)\b" Replaceby="stuvieron">
+<ERROR UseREOnlyToFind="True" WholeWord="True" Find="\b[E|e](st[a|á]bais)\b" Replaceby="staban">
+<ERROR UseREOnlyToFind="True" WholeWord="True" Find="\b[E|e](st[e|é]is)\b" Replaceby="stén">
+<ERROR UseREOnlyToFind="True" WholeWord="True" Find="\b[E|e](st[a|á]d)\b" Replaceby="stén">
+<ERROR UseREOnlyToFind="True" WholeWord="True" Find="\b[E|e](st[a|á]os)\b" Replaceby="stense">
+<ERROR UseREOnlyToFind="True" Find="\b[E|e](st[a|á]dl)\b" Replaceby="stenl">
+
+<!-- ----- Ser ----- -->
+<ERROR UseREOnlyToFind="True" WholeWord="True" Find="\b[S|s]([o|ó]is)\b" Replaceby="on">
+<ERROR UseREOnlyToFind="True" WholeWord="True" Find="\b[F|f](uis[i|í]steis)\b" Replaceby="ueron">
+<ERROR UseREOnlyToFind="True" WholeWord="True" Find="\b[E|é](rais)\b" Replaceby="ran">
+<ERROR UseREOnlyToFind="True" WholeWord="True" Find="\b[S|s]([e|é]as)\b" Replaceby="ean">
+<ERROR UseREOnlyToFind="True" WholeWord="True" Find="\b[S|s](e[a|á]is)\b" Replaceby="ean">
+
+<ERROR UseREOnlyToFind="True" Find="\b[S|s]([e|é]dl)\b" Replaceby="éanl">
+
+<!-- ----- Tener ----- -->
+<ERROR UseREOnlyToFind="True" WholeWord="True" Find="\b[T|t](en[e|é]is)\b" Replaceby="ienen">
+<ERROR UseREOnlyToFind="True" WholeWord="True" Find="\b[T|t](uv[i|í]steis)\b" Replaceby="uvieron">
+<ERROR UseREOnlyToFind="True" WholeWord="True" Find="\b[T|t](en[i|í]ais)\b" Replaceby="enían">
+<ERROR UseREOnlyToFind="True" WholeWord="True" Find="\b[T|t](eng[a|á]is)\b" Replaceby="engan">
+<ERROR UseREOnlyToFind="True" WholeWord="True" Find="\b[T|t](en[e|é]d)\b" Replaceby="engan">
+<ERROR UseREOnlyToFind="True" WholeWord="True" Find="\b[T|t](en[e|é]os)\b" Replaceby="énganse">
+<ERROR UseREOnlyToFind="True" Find="\b[T|t](en[e|é]dl)\b" Replaceby="énganl">
+
+<!-- ----- Hacer ----- -->
+<ERROR UseREOnlyToFind="True" WholeWord="True" Find="\b[H|h](ac[e|é]is)\b" Replaceby="acen">
+<ERROR UseREOnlyToFind="True" WholeWord="True" Find="\b[H|h](ic[i|í]steis)\b" Replaceby="icieron">
+<ERROR UseREOnlyToFind="True" WholeWord="True" Find="\b[H|h](ac[i|í]ais)\b" Replaceby="acían">
+<ERROR UseREOnlyToFind="True" WholeWord="True" Find="\b[H|h](ag[a|á]is)\b" Replaceby="agan">
+<ERROR UseREOnlyToFind="True" WholeWord="True" Find="\b[H|h](ac[e|é]d)\b" Replaceby="agan">
+<ERROR UseREOnlyToFind="True" WholeWord="True" Find="\b[H|h](ac[e|é]os)\b" Replaceby="áganse">
+<ERROR UseREOnlyToFind="True" Find="\b[H|h](ac[e|é]dl)\b" Replaceby="ánganl">
+
+<!-- ----- Decir ----- -->
+<ERROR UseREOnlyToFind="True" WholeWord="True" Find="\b[D|d](ec[i|í]s)\b" Replaceby="icen">
+<ERROR UseREOnlyToFind="True" WholeWord="True" Find="\b[D|d](ij[i|í]steis)\b" Replaceby="ijeron">
+<ERROR UseREOnlyToFind="True" WholeWord="True" Find="\b[D|d](ec[i|í]ais)\b" Replaceby="ecían">
+<ERROR UseREOnlyToFind="True" WholeWord="True" Find="\b[D|d](ig[a|á]is)\b" Replaceby="igan">
+<ERROR UseREOnlyToFind="True" WholeWord="True" Find="\b[D|d](ec[i|í]d)\b" Replaceby="igan">
+<ERROR UseREOnlyToFind="True" WholeWord="True" Find="\b[D|d](ec[i|í]os)\b" Replaceby="íganse">
+<ERROR UseREOnlyToFind="True" Find="\b[D|d](ec[i|í]dl)\b" Replaceby="íganl">
+
+<!-- ----- Ir ----- -->
+<ERROR UseREOnlyToFind="True" WholeWord="True" Find="\b[V|v]([a|á]is)\b" Replaceby="an">
+<ERROR UseREOnlyToFind="True" WholeWord="True" Find="\b[F|f](u[i|í]steis)\b" Replaceby="ueron">
+<ERROR UseREOnlyToFind="True" WholeWord="True" Find="\b[I|í](bais)\b" Replaceby="ban">
+<ERROR UseREOnlyToFind="True" WholeWord="True" Find="\b[V|v](ay[a|á]is)\b" Replaceby="ayan">
+
+<ERROR UseREOnlyToFind="True" WholeWord="True" Find="\b[I|i](dos)\b" Replaceby="áyanse">
+
+
+<!-- ----- Saber ----- -->
+<ERROR UseREOnlyToFind="True" WholeWord="True" Find="\b[S|s](ab[e|é]is)\b" Replaceby="aben">
+<ERROR UseREOnlyToFind="True" WholeWord="True" Find="\b[S|s](up[i|í]steis)\b" Replaceby="upieron">
+<ERROR UseREOnlyToFind="True" WholeWord="True" Find="\b[S|s](ab[i|í]ais)\b" Replaceby="abían">
+<ERROR UseREOnlyToFind="True" WholeWord="True" Find="\b[S|s](ep[a|á]is)\b" Replaceby="epan">
+<ERROR UseREOnlyToFind="True" WholeWord="True" Find="\b[S|s](ab[e|é]d)\b" Replaceby="epan">
+<ERROR UseREOnlyToFind="True" WholeWord="True" Find="\b[S|s](ab[e|é]os)\b" Replaceby="épanse">
+<ERROR UseREOnlyToFind="True" Find="\b[S|s](ab[e|é]dl)\b" Replaceby="abedl">
+
+<!-- ----- Dar ----- -->
+<ERROR UseREOnlyToFind="True" WholeWord="True" Find="\b[D|d]([a|á]is)\b" Replaceby="an">
+<ERROR UseREOnlyToFind="True" WholeWord="True" Find="\b[D|d]([i|í]steis)\b" Replaceby="ieron">
+<ERROR UseREOnlyToFind="True" WholeWord="True" Find="\b[D|d]([a|á]bais)\b" Replaceby="aban">
+<ERROR UseREOnlyToFind="True" WholeWord="True" Find="\b[D|d]([e|é]is)\b" Replaceby="en">
+<ERROR UseREOnlyToFind="True" WholeWord="True" Find="\b[D|d]([a|á]d)\b" Replaceby="en">
+<ERROR UseREOnlyToFind="True" WholeWord="True" Find="\b[D|d]([a|á]os)\b" Replaceby="ómense">
+<ERROR UseREOnlyToFind="True" Find="\b[D|d]([a|á]dl)\b" Replaceby="ómenl">
+
+<!-- ----- Ver ----- -->
+<ERROR UseREOnlyToFind="True" WholeWord="True" Find="\b[V|v]([e|é]is)\b" Replaceby="en">
+<ERROR UseREOnlyToFind="True" WholeWord="True" Find="\b[V|v]([i|í]steis)\b" Replaceby="ieron">
+<ERROR UseREOnlyToFind="True" WholeWord="True" Find="\b[V|v](e[i|í]ais)\b" Replaceby="eían">
+<ERROR UseREOnlyToFind="True" WholeWord="True" Find="\b[V|v](e[a|á]is)\b" Replaceby="ean">
+<ERROR UseREOnlyToFind="True" WholeWord="True" Find="\b[V|v]([e|é]d)\b" Replaceby="ean">
+<ERROR UseREOnlyToFind="True" WholeWord="True" Find="\b[V|v]([e|é]os)\b" Replaceby="éanse">
+<ERROR UseREOnlyToFind="True" Find="\b[V|v]([e|é]dl)\b" Replaceby="éanl">
+
+<!-- ----- Venir ----- -->
+<ERROR UseREOnlyToFind="True" WholeWord="True" Find="\b[V|v](en[i|í]s)\b" Replaceby="ienen">
+<ERROR UseREOnlyToFind="True" WholeWord="True" Find="\b[V|v](in[i|í]steis)\b" Replaceby="inieron">
+<ERROR UseREOnlyToFind="True" WholeWord="True" Find="\b[V|v](en[i|í]ais)\b" Replaceby="enían">
+<ERROR UseREOnlyToFind="True" WholeWord="True" Find="\b[V|v](eng[a|á]is)\b" Replaceby="engan">
+<ERROR UseREOnlyToFind="True" WholeWord="True" Find="\b[V|v](en[i|í]d)\b" Replaceby="engan">
+<ERROR UseREOnlyToFind="True" WholeWord="True" Find="\b[V|v](en[i|í]os)\b" Replaceby="énganse">
+<ERROR UseREOnlyToFind="True" Find="\b[V|v](en[i|í]dl)\b" Replaceby="énganl">
+
+<!-- ----- Pensar ----- -->
+<ERROR UseREOnlyToFind="True" WholeWord="True" Find="\b[P|p](ens[a|á]is)\b" Replaceby="iensan">
+<ERROR UseREOnlyToFind="True" WholeWord="True" Find="\b[P|p](ens[a|á]steis)\b" Replaceby="ensaron">
+<ERROR UseREOnlyToFind="True" WholeWord="True" Find="\b[P|p](ens[a|á]bais)\b" Replaceby="ensaban">
+<ERROR UseREOnlyToFind="True" WholeWord="True" Find="\b[P|p](ens[e|é]is)\b" Replaceby="iensen">
+<ERROR UseREOnlyToFind="True" WholeWord="True" Find="\b[P|p](ens[a|á]d)\b" Replaceby="iensen">
+<ERROR UseREOnlyToFind="True" WholeWord="True" Find="\b[P|p](ens[a|á]os)\b" Replaceby="iénsense">
+<ERROR UseREOnlyToFind="True" Find="\b[P|p](ens[a|á]dl)\b" Replaceby="iénsenl">
+
+<!-- ----- Mirar ----- -->
+<ERROR UseREOnlyToFind="True" WholeWord="True" Find="\b[M|m](ir[a|á]is)\b" Replaceby="iran">
+<ERROR UseREOnlyToFind="True" WholeWord="True" Find="\b[M|m](ir[a|á]steis)\b" Replaceby="iraron">
+<ERROR UseREOnlyToFind="True" WholeWord="True" Find="\b[M|m](ir[a|á]bais)\b" Replaceby="iraban">
+<ERROR UseREOnlyToFind="True" WholeWord="True" Find="\b[M|m](ir[e|é]is)\b" Replaceby="iren">
+<ERROR UseREOnlyToFind="True" WholeWord="True" Find="\b[M|m](ir[a|á]d)\b" Replaceby="iren">
+<ERROR UseREOnlyToFind="True" WholeWord="True" Find="\b[M|m](ir[a|á]os)\b" Replaceby="írense">
+<ERROR UseREOnlyToFind="True" Find="\b[M|m](ir[a|á]dl)\b" Replaceby="írenl">
+
+<!-- ----- Querer ----- -->
+<ERROR UseREOnlyToFind="True" WholeWord="True" Find="\b[Q|q](uer[e|é]is)\b" Replaceby="uieren">
+<ERROR UseREOnlyToFind="True" WholeWord="True" Find="\b[Q|q](uis[i|í]steis)\b" Replaceby="uisieron">
+<ERROR UseREOnlyToFind="True" WholeWord="True" Find="\b[Q|q](uer[i|í]ais)\b" Replaceby="uerían">
+<ERROR UseREOnlyToFind="True" WholeWord="True" Find="\b[Q|q](uer[a|á]is)\b" Replaceby="uieran">
+<ERROR UseREOnlyToFind="True" WholeWord="True" Find="\b[Q|q](uer[e|é]d)\b" Replaceby="uieran">
+<ERROR UseREOnlyToFind="True" WholeWord="True" Find="\b[Q|q](uer[e|é]os)\b" Replaceby="uiéranse">
+<ERROR UseREOnlyToFind="True" Find="\b[Q|q](uer[e|é]dl)\b" Replaceby="uiéranl">
+
+<!-- ----- Dar ----- -->
+<ERROR UseREOnlyToFind="True" WholeWord="True" Find="\b[D|d]([a|á]is)\b" Replaceby="an">
+<ERROR UseREOnlyToFind="True" WholeWord="True" Find="\b[D|d]([i|í]steis)\b" Replaceby="ieron">
+<ERROR UseREOnlyToFind="True" WholeWord="True" Find="\b[D|d]([a|á]bais)\b" Replaceby="aban">
+<ERROR UseREOnlyToFind="True" WholeWord="True" Find="\b[D|d]([e|é]is)\b" Replaceby="en">
+<ERROR UseREOnlyToFind="True" WholeWord="True" Find="\b[D|d]([a|á]d)\b" Replaceby="en">
+<ERROR UseREOnlyToFind="True" WholeWord="True" Find="\b[D|d]([a|á]os)\b" Replaceby="ense">
+<ERROR UseREOnlyToFind="True" Find="\b[D|d]([a|á]dl)\b" Replaceby="enl">
+
+<!-- ----- Tomar ----- -->
+<ERROR UseREOnlyToFind="True" WholeWord="True" Find="\b[T|t](om[a|á]is)\b" Replaceby="oman">
+<ERROR UseREOnlyToFind="True" WholeWord="True" Find="\b[T|t](om[a|á]steis)\b" Replaceby="omaron">
+<ERROR UseREOnlyToFind="True" WholeWord="True" Find="\b[T|t](om[a|á]bais)\b" Replaceby="omaban">
+<ERROR UseREOnlyToFind="True" WholeWord="True" Find="\b[T|t](om[e|é]is)\b" Replaceby="omen">
+<ERROR UseREOnlyToFind="True" WholeWord="True" Find="\b[T|t](om[a|á]d)\b" Replaceby="omen">
+<ERROR UseREOnlyToFind="True" WholeWord="True" Find="\b[T|t](om[a|á]os)\b" Replaceby="ómense">
+<ERROR UseREOnlyToFind="True" Find="\b[T|t](om[a|á]dl)\b" Replaceby="ómenl">
+
+
+
+<!-- Español Neutro PacoNaranjo -->
+
+<!-- Palabras en particular -->
+<ERROR UseRE=False Find="llegal" WholeWord="True" ReplaceBy="Ilegal">
+
+<!-- Correcciones ortográficas -->
+<!-- Terminaciones ción/sión -->
+<ERROR Find="(cion)\b" ReplaceBy="ción">
+<ERROR Find="(sion)\b" ReplaceBy="sión">
+
+<!-- Falta de tildes en preguntas -->
+<ERROR UseRE=False Find="¿que" WholeWord="True" PreserveCase="True" ReplaceBy="¿qué">
+<ERROR UseRE=False Find="que?" WholeWord="True" PreserveCase="True" ReplaceBy="qué?">
+<ERROR UseRE=False Find="¿como" WholeWord="True" PreserveCase="True" ReplaceBy="¿cómo">
+<ERROR UseRE=False Find="¿y como" WholeWord="True" PreserveCase="True" ReplaceBy="¿y cómo">
+<ERROR UseRE=False Find="¿cual" WholeWord="True" PreserveCase="True" ReplaceBy="¿cuál">
+<ERROR UseRE=False Find="¿en cual" WholeWord="True" PreserveCase="True" ReplaceBy="¿en cuál">
+<ERROR UseRE=False Find="¿cuando" WholeWord="True" PreserveCase="True" ReplaceBy="¿cuándo">
+<ERROR UseRE=False Find="¿cuanto" WholeWord="True" PreserveCase="True" ReplaceBy="¿cuánto">
+<ERROR UseRE=False Find="¿cuantos" WholeWord="True" PreserveCase="True" ReplaceBy="¿cuántos">
+<ERROR UseRE=False Find="¿donde" WholeWord="True" PreserveCase="True" ReplaceBy="¿dónde">
+<ERROR UseRE=False Find="¿de que" WholeWord="True" PreserveCase="True" ReplaceBy="¿de qué">
+<ERROR UseRE=False Find="¿por que" WholeWord="True" PreserveCase="True" ReplaceBy="¿por qué">
+<ERROR UseRE=False Find="¿porqué" WholeWord="True" PreserveCase="True" ReplaceBy="¿por qué">
+<ERROR UseRE=False Find="¿y que" WholeWord="True" PreserveCase="True" ReplaceBy="¿y qué">
+<ERROR UseRE=False Find="¿quien" WholeWord="True" PreserveCase="True" ReplaceBy="¿quién">
+
+<!-- Falta de tildes en general -->
+<ERROR UseRE=False Find="aca" WholeWord="True" PreserveCase="True" ReplaceBy="acá">
+<ERROR UseRE=False Find="actuas" WholeWord="True" PreserveCase="True" ReplaceBy="actúas">
+<ERROR UseRE=False Find="actues" WholeWord="True" PreserveCase="True" ReplaceBy="actúes">
+<ERROR UseRE=False Find="adios" WholeWord="True" PreserveCase="True" ReplaceBy="adiós">
+<ERROR UseRE=False Find="agarrenla" WholeWord="True" PreserveCase="True" ReplaceBy="agárrenla">
+<ERROR UseRE=False Find="agarrenlo" WholeWord="True" PreserveCase="True" ReplaceBy="agárrenlo">
+<ERROR UseRE=False Find="agarrandose" WholeWord="True" PreserveCase="True" ReplaceBy="agarrándose">
+<ERROR UseRE=False Find="algun" WholeWord="True" PreserveCase="True" ReplaceBy="algún">
+<ERROR UseRE=False Find="alli" WholeWord="True" PreserveCase="True" ReplaceBy="allí">
+<ERROR UseRE=False Find="alla" WholeWord="True" PreserveCase="True" ReplaceBy="allá">
+<ERROR UseRE=False Find="alejate" WholeWord="True" PreserveCase="True" ReplaceBy="aléjate">
+<ERROR UseRE=False Find="ahi" WholeWord="True" PreserveCase="True" ReplaceBy="ahí">
+<ERROR UseRE=False Find="angel" WholeWord="True" PreserveCase="True" ReplaceBy="ángel">
+<ERROR UseRE=False Find="angeles" WholeWord="True" PreserveCase="True" ReplaceBy="ángeles">
+<ERROR UseRE=False Find="apagala" WholeWord="True" PreserveCase="True" ReplaceBy="apágala">
+<ERROR UseRE=False Find="aqui" WholeWord="True" PreserveCase="True" ReplaceBy="aquí">
+<ERROR UseRE=False Find="asi" WholeWord="True" PreserveCase="True" ReplaceBy="así">
+<ERROR UseRE=False Find="bahia" WholeWord="True" PreserveCase="True" ReplaceBy="bahía">
+<ERROR UseRE=False Find="busqueda" WholeWord="True" PreserveCase="True" ReplaceBy="búsqueda">
+<ERROR UseRE=False Find="busquedas" WholeWord="True" PreserveCase="True" ReplaceBy="búsquedas">
+<ERROR UseRE=False Find="callate" WholeWord="True" PreserveCase="True" ReplaceBy="cállate">
+<ERROR UseRE=False Find="carcel" WholeWord="True" PreserveCase="True" ReplaceBy="cárcel">
+<ERROR UseRE=False Find="camara" WholeWord="True" PreserveCase="True" ReplaceBy="cámara">
+<ERROR UseRE=False Find="caido" WholeWord="True" PreserveCase="True" ReplaceBy="caído">
+<ERROR UseRE=False Find="cabron" WholeWord="True" PreserveCase="True" ReplaceBy="cabrón">
+<ERROR UseRE=False Find="camion" WholeWord="True" PreserveCase="True" ReplaceBy="camión">
+<ERROR UseRE=False Find="codigo" WholeWord="True" PreserveCase="True" ReplaceBy="código">
+<ERROR UseRE=False Find="codigos" WholeWord="True" PreserveCase="True" ReplaceBy="códigos">
+<ERROR UseRE=False Find="comence" WholeWord="True" PreserveCase="True" ReplaceBy="comencé">
+<ERROR UseRE=False Find="comprate" WholeWord="True" PreserveCase="True" ReplaceBy="cómprate">
+<ERROR UseRE=False Find="consegui" WholeWord="True" PreserveCase="True" ReplaceBy="conseguí">
+<ERROR UseRE=False Find="confias" WholeWord="True" PreserveCase="True" ReplaceBy="confías">
+<ERROR UseRE=False Find="convertira" WholeWord="True" PreserveCase="True" ReplaceBy="convertirá">
+<ERROR UseRE=False Find="corazon" WholeWord="True" PreserveCase="True" ReplaceBy="corazón">
+<ERROR UseRE=False Find="crei" WholeWord="True" PreserveCase="True" ReplaceBy="creí">
+<ERROR UseRE=False Find="creia" WholeWord="True" PreserveCase="True" ReplaceBy="creía">
+<ERROR UseRE=False Find="creido" WholeWord="True" PreserveCase="True" ReplaceBy="creído">
+<ERROR UseRE=False Find="creiste" WholeWord="True" PreserveCase="True" ReplaceBy="creíste">
+<ERROR UseRE=False Find="cubrenos" WholeWord="True" PreserveCase="True" ReplaceBy="cúbrenos">
+<ERROR UseRE=False Find="comio" WholeWord="True" PreserveCase="True" ReplaceBy="comió">
+<ERROR UseRE=False Find="dara" WholeWord="True" PreserveCase="True" ReplaceBy="dará">
+<ERROR UseRE=False Find="dia" WholeWord="True" PreserveCase="True" ReplaceBy="día">
+<ERROR UseRE=False Find="dias" WholeWord="True" PreserveCase="True" ReplaceBy="días">
+<ERROR UseRE=False Find="debio" WholeWord="True" PreserveCase="True" ReplaceBy="debió">
+<ERROR UseRE=False Find="dele" WholeWord="True" PreserveCase="True" ReplaceBy="déle">
+<ERROR UseRE=False Find="deme" WholeWord="True" PreserveCase="True" ReplaceBy="déme">
+<ERROR UseRE=False Find="denos" WholeWord="True" PreserveCase="True" ReplaceBy="dénos">
+<ERROR UseRE=False Find="dese" WholeWord="True" PreserveCase="True" ReplaceBy="dése">
+<ERROR UseRE=False Find="decia" WholeWord="True" PreserveCase="True" ReplaceBy="decía">
+<ERROR UseRE=False Find="decian" WholeWord="True" PreserveCase="True" ReplaceBy="decían">
+<ERROR UseRE=False Find="detras" WholeWord="True" PreserveCase="True" ReplaceBy="detrás">
+<ERROR UseRE=False Find="deberia" WholeWord="True" PreserveCase="True" ReplaceBy="debería">
+<ERROR UseRE=False Find="deberas" WholeWord="True" PreserveCase="True" ReplaceBy="deberás">
+<ERROR UseRE=False Find="deberias" WholeWord="True" PreserveCase="True" ReplaceBy="deberías">
+<ERROR UseRE=False Find="deberian" WholeWord="True" PreserveCase="True" ReplaceBy="deberían">
+<ERROR UseRE=False Find="deberiamos" WholeWord="True" PreserveCase="True" ReplaceBy="deberíamos">
+<ERROR UseRE=False Find="dejame" WholeWord="True" PreserveCase="True" ReplaceBy="déjame">
+<ERROR UseRE=False Find="dejate" WholeWord="True" PreserveCase="True" ReplaceBy="déjate">
+<ERROR UseRE=False Find="dejalo" WholeWord="True" PreserveCase="True" ReplaceBy="déjalo">
+<ERROR UseRE=False Find="dejarian" WholeWord="True" PreserveCase="True" ReplaceBy="dejarían">
+<ERROR UseRE=False Find="damela" WholeWord="True" PreserveCase="True" ReplaceBy="dámela">
+<ERROR UseRE=False Find="despues" WholeWord="True" PreserveCase="True" ReplaceBy="después">
+<ERROR UseRE=False Find="diciendome" WholeWord="True" PreserveCase="True" ReplaceBy="diciéndome">
+<ERROR UseRE=False Find="dificil" WholeWord="True" PreserveCase="True" ReplaceBy="difícil">
+<ERROR UseRE=False Find="dificiles" WholeWord="True" PreserveCase="True" ReplaceBy="difíciles">
+<ERROR UseRE=False Find="disculpate" WholeWord="True" PreserveCase="True" ReplaceBy="discúlpate">
+<ERROR UseRE=False Find="dolares" WholeWord="True" PreserveCase="True" ReplaceBy="dólares">
+<ERROR UseRE=False Find="hechar" WholeWord="True" PreserveCase="True" ReplaceBy="echar">
+<ERROR UseRE=False Find="examenes" WholeWord="True" PreserveCase="True" ReplaceBy="exámenes">
+<ERROR UseRE=False Find="empezo" WholeWord="True" PreserveCase="True" ReplaceBy="empezó">
+<ERROR UseRE=False Find="empujon" WholeWord="True" PreserveCase="True" ReplaceBy="empujón">
+<ERROR UseRE=False Find="empujalo" WholeWord="True" PreserveCase="True" ReplaceBy="empújalo">
+<ERROR UseRE=False Find="escondanme" WholeWord="True" PreserveCase="True" ReplaceBy="escóndanme">
+<ERROR UseRE=False Find="esperame" WholeWord="True" PreserveCase="True" ReplaceBy="espérame">
+<ERROR UseRE=False Find="estara" WholeWord="True" PreserveCase="True" ReplaceBy="estará">
+<ERROR UseRE=False Find="estaria" WholeWord="True" PreserveCase="True" ReplaceBy="estaría">
+<ERROR UseRE=False Find="estan" WholeWord="True" PreserveCase="True" ReplaceBy="están">
+<ERROR UseRE=False Find="estaran" WholeWord="True" PreserveCase="True" ReplaceBy="estarán">
+<ERROR UseRE=False Find="estabamos" WholeWord="True" PreserveCase="True" ReplaceBy="estábamos">
+<ERROR UseRE=False Find="estuvieramos" WholeWord="True" PreserveCase="True" ReplaceBy="estuviéramos">
+<ERROR UseRE=False Find="ésto" WholeWord="True" PreserveCase="True" ReplaceBy="esto">
+<ERROR UseRE=False Find="exito" WholeWord="True" PreserveCase="True" ReplaceBy="éxito">
+<ERROR UseRE=False Find="facil" WholeWord="True" PreserveCase="True" ReplaceBy="fácil">
+<ERROR UseRE=False Find="fiscalia" WholeWord="True" PreserveCase="True" ReplaceBy="fiscalía">
+<ERROR UseRE=False Find="fragil" WholeWord="True" PreserveCase="True" ReplaceBy="frágil">
+<ERROR UseRE=False Find="fragiles" WholeWord="True" PreserveCase="True" ReplaceBy="frágiles">
+<ERROR UseRE=False Find="frances" WholeWord="True" PreserveCase="True" ReplaceBy="francés">
+<ERROR UseRE=False Find="freir" WholeWord="True" PreserveCase="True" ReplaceBy="freír">
+<ERROR UseRE=False Find="gustaria" WholeWord="True" PreserveCase="True" ReplaceBy="gustaría">
+<ERROR UseRE=False Find="habia" WholeWord="True" PreserveCase="True" ReplaceBy="había">
+<ERROR UseRE=False Find="habias" WholeWord="True" PreserveCase="True" ReplaceBy="habías">
+<ERROR UseRE=False Find="habian" WholeWord="True" PreserveCase="True" ReplaceBy="habían">
+<ERROR UseRE=False Find="habrian" WholeWord="True" PreserveCase="True" ReplaceBy="habrían">
+<ERROR UseRE=False Find="habrias" WholeWord="True" PreserveCase="True" ReplaceBy="habrías">
+<ERROR UseRE=False Find="hagalo" WholeWord="True" PreserveCase="True" ReplaceBy="hagálo">
+<ERROR UseRE=False Find="haria" WholeWord="True" PreserveCase="True" ReplaceBy="haría">
+<ERROR UseRE=False Find="increible" WholeWord="True" PreserveCase="True" ReplaceBy="increíble">
+<ERROR UseRE=False Find="intentalo" WholeWord="True" PreserveCase="True" ReplaceBy="inténtalo">
+<ERROR UseRE=False Find="ire" WholeWord="True" PreserveCase="True" ReplaceBy="iré">
+<ERROR UseRE=False Find="jovenes" WholeWord="True" PreserveCase="True" ReplaceBy="jóvenes">
+<ERROR UseRE=False Find="ladron" WholeWord="True" PreserveCase="True" ReplaceBy="ladrón">
+<ERROR UseRE=False Find="linea" WholeWord="True" PreserveCase="True" ReplaceBy="línea">
+<ERROR UseRE=False Find="llamame" WholeWord="True" PreserveCase="True" ReplaceBy="llámame">
+<ERROR UseRE=False Find="llevalo" WholeWord="True" PreserveCase="True" ReplaceBy="llévalo">
+<ERROR UseRE=False Find="maricon" WholeWord="True" PreserveCase="True" ReplaceBy="maricón">
+<ERROR UseRE=False Find="mayoria" WholeWord="True" PreserveCase="True" ReplaceBy="mayoría">
+<ERROR UseRE=False Find="metodo" WholeWord="True" PreserveCase="True" ReplaceBy="método">
+<ERROR UseRE=False Find="metodos" WholeWord="True" PreserveCase="True" ReplaceBy="métodos">
+<ERROR UseRE=False Find="mio" WholeWord="True" PreserveCase="True" ReplaceBy="mío">
+<ERROR UseRE=False Find="mios" WholeWord="True" PreserveCase="True" ReplaceBy="míos">
+<ERROR UseRE=False Find="mostro" WholeWord="True" PreserveCase="True" ReplaceBy="mostró">
+<ERROR UseRE=False Find="morira" WholeWord="True" PreserveCase="True" ReplaceBy="morirá">
+<ERROR UseRE=False Find="muevete" WholeWord="True" PreserveCase="True" ReplaceBy="muévete">
+<ERROR UseRE=False Find="murio" WholeWord="True" PreserveCase="True" ReplaceBy="murió">
+<ERROR UseRE=False Find="numero" WholeWord="True" PreserveCase="True" ReplaceBy="número">
+<ERROR UseRE=False Find="numeros" WholeWord="True" PreserveCase="True" ReplaceBy="números">
+<ERROR UseRE=False Find="ningun" WholeWord="True" PreserveCase="True" ReplaceBy="ningún">
+<ERROR UseRE=False Find="oir" WholeWord="True" PreserveCase="True" ReplaceBy="oír">
+<ERROR UseRE=False Find="oido" WholeWord="True" PreserveCase="True" ReplaceBy="oído">
+<ERROR UseRE=False Find="oidos" WholeWord="True" PreserveCase="True" ReplaceBy="oídos">
+<ERROR UseRE=False Find="oimos" WholeWord="True" PreserveCase="True" ReplaceBy="oímos">
+<ERROR UseRE=False Find="oiste" WholeWord="True" PreserveCase="True" ReplaceBy="oíste">
+<ERROR UseRE=False Find="pasale" WholeWord="True" PreserveCase="True" ReplaceBy="pásale">
+<ERROR UseRE=False Find="pasame" WholeWord="True" PreserveCase="True" ReplaceBy="pásame">
+<ERROR UseRE=False Find="paraiso" WholeWord="True" PreserveCase="True" ReplaceBy="paraíso">
+<ERROR UseRE=False Find="parate" WholeWord="True" PreserveCase="True" ReplaceBy="párate">
+<ERROR UseRE=False Find="pense" WholeWord="True" PreserveCase="True" ReplaceBy="pensé">
+<ERROR UseRE=False Find="peluqueria" WholeWord="True" PreserveCase="True" ReplaceBy="peluquería">
+<ERROR UseRE=False Find="platano" WholeWord="True" PreserveCase="True" ReplaceBy="plátano">
+<ERROR UseRE=False Find="plastico" WholeWord="True" PreserveCase="True" ReplaceBy="plástico">
+<ERROR UseRE=False Find="plasticos" WholeWord="True" PreserveCase="True" ReplaceBy="plásticos">
+<ERROR UseRE=False Find="policia" WholeWord="True" PreserveCase="True" ReplaceBy="policía">
+<ERROR UseRE=False Find="policias" WholeWord="True" PreserveCase="True" ReplaceBy="policías">
+<ERROR UseRE=False Find="poster" WholeWord="True" PreserveCase="True" ReplaceBy="póster">
+<ERROR UseRE=False Find="podia" WholeWord="True" PreserveCase="True" ReplaceBy="podía">
+<ERROR UseRE=False Find="podias" WholeWord="True" PreserveCase="True" ReplaceBy="podías">
+<ERROR UseRE=False Find="podria" WholeWord="True" PreserveCase="True" ReplaceBy="podría">
+<ERROR UseRE=False Find="podrian" WholeWord="True" PreserveCase="True" ReplaceBy="podrían">
+<ERROR UseRE=False Find="podrias" WholeWord="True" PreserveCase="True" ReplaceBy="podrías">
+<ERROR UseRE=False Find="podriamos" WholeWord="True" PreserveCase="True" ReplaceBy="podríamos">
+<ERROR UseRE=False Find="prometio" WholeWord="True" PreserveCase="True" ReplaceBy="prometió">
+<ERROR UseRE=False Find="proposito" WholeWord="True" PreserveCase="True" ReplaceBy="propósito">
+<ERROR UseRE=False Find="pideselo" WholeWord="True" PreserveCase="True" ReplaceBy="pídeselo">
+<ERROR UseRE=False Find="ponganse" WholeWord="True" PreserveCase="True" ReplaceBy="pónganse">
+<ERROR UseRE=False Find="prometeme" WholeWord="True" PreserveCase="True" ReplaceBy="prométeme">
+<ERROR UseRE=False Find="publico" WholeWord="True" PreserveCase="True" ReplaceBy="público">
+<ERROR UseRE=False Find="publicos" WholeWord="True" PreserveCase="True" ReplaceBy="públicos">
+<ERROR UseRE=False Find="publicamente" WholeWord="True" PreserveCase="True" ReplaceBy="públicamente">
+<ERROR UseRE=False Find="quedate" WholeWord="True" PreserveCase="True" ReplaceBy="quédate">
+<ERROR UseRE=False Find="queria" WholeWord="True" PreserveCase="True" ReplaceBy="quería">
+<ERROR UseRE=False Find="querrias" WholeWord="True" PreserveCase="True" ReplaceBy="querrías">
+<ERROR UseRE=False Find="querian" WholeWord="True" PreserveCase="True" ReplaceBy="querían">
+<ERROR UseRE=False Find="rapido" WholeWord="True" PreserveCase="True" ReplaceBy="rápido">
+<ERROR UseRE=False Find="rapidamente" WholeWord="True" PreserveCase="True" ReplaceBy="rápidamente">
+<ERROR UseRE=False Find="razon" WholeWord="True" PreserveCase="True" ReplaceBy="razón">
+<ERROR UseRE=False Find="rehusen" WholeWord="True" PreserveCase="True" ReplaceBy="rehúsen">
+<ERROR UseRE=False Find="rie" WholeWord="True" PreserveCase="True" ReplaceBy="ríe">
+<ERROR UseRE=False Find="rias" WholeWord="True" PreserveCase="True" ReplaceBy="rías">
+<ERROR UseRE=False Find="rindete" WholeWord="True" PreserveCase="True" ReplaceBy="ríndete">
+<ERROR UseRE=False Find="sacame" WholeWord="True" PreserveCase="True" ReplaceBy="sácame">
+<ERROR UseRE=False Find="sentian" WholeWord="True" PreserveCase="True" ReplaceBy="sentían">
+<ERROR UseRE=False Find="sientate" WholeWord="True" PreserveCase="True" ReplaceBy="siéntate">
+<ERROR UseRE=False Find="sera" WholeWord="True" PreserveCase="True" ReplaceBy="será">
+<ERROR UseRE=False Find="soplon" WholeWord="True" PreserveCase="True" ReplaceBy="soplón">
+<ERROR UseRE=False Find="sueltalo" WholeWord="True" PreserveCase="True" ReplaceBy="suéltalo">
+<ERROR UseRE=False Find="tambien" WholeWord="True" PreserveCase="True" ReplaceBy="también">
+<ERROR UseRE=False Find="teoria" WholeWord="True" PreserveCase="True" ReplaceBy="teoría">
+<ERROR UseRE=False Find="tendra" WholeWord="True" PreserveCase="True" ReplaceBy="tendrá">
+<ERROR UseRE=False Find="telefono" WholeWord="True" PreserveCase="True" ReplaceBy="teléfono">
+<ERROR UseRE=False Find="tipica" WholeWord="True" PreserveCase="True" ReplaceBy="típica">
+<ERROR UseRE=False Find="tio" WholeWord="True" PreserveCase="True" ReplaceBy="tío">
+<ERROR UseRE=False Find="todavia" WholeWord="True" PreserveCase="True" ReplaceBy="todavía">
+<ERROR UseRE=False Find="tomalo" WholeWord="True" PreserveCase="True" ReplaceBy="tómalo">
+<ERROR UseRE=False Find="tonterias" WholeWord="True" PreserveCase="True" ReplaceBy="tonterías">
+<ERROR UseRE=False Find="torci" WholeWord="True" PreserveCase="True" ReplaceBy="torcí">
+<ERROR UseRE=False Find="traelos" WholeWord="True" PreserveCase="True" ReplaceBy="tráelos">
+<ERROR UseRE=False Find="traiganlo" WholeWord="True" PreserveCase="True" ReplaceBy="tráiganlo">
+<ERROR UseRE=False Find="traiganlos" WholeWord="True" PreserveCase="True" ReplaceBy="tráiganlos">
+<ERROR UseRE=False Find="trio" WholeWord="True" PreserveCase="True" ReplaceBy="trío">
+<ERROR UseRE=False Find="tuvieramos" WholeWord="True" PreserveCase="True" ReplaceBy="tuviéramos">
+<ERROR UseRE=False Find="union" WholeWord="True" PreserveCase="True" ReplaceBy="unión">
+<ERROR UseRE=False Find="ultimo" WholeWord="True" PreserveCase="True" ReplaceBy="último">
+<ERROR UseRE=False Find="ultima" WholeWord="True" PreserveCase="True" ReplaceBy="última">
+<ERROR UseRE=False Find="ultimos" WholeWord="True" PreserveCase="True" ReplaceBy="últimos">
+<ERROR UseRE=False Find="unica" WholeWord="True" PreserveCase="True" ReplaceBy="única">
+<ERROR UseRE=False Find="unico" WholeWord="True" PreserveCase="True" ReplaceBy="único">
+<ERROR UseRE=False Find="vamonos" WholeWord="True" PreserveCase="True" ReplaceBy="vámonos">
+<ERROR UseRE=False Find="vayanse" WholeWord="True" PreserveCase="True" ReplaceBy="váyanse">
+<ERROR UseRE=False Find="vision" WholeWord="True" PreserveCase="True" ReplaceBy="visión">
+<ERROR UseRE=False Find="vivira" WholeWord="True" PreserveCase="True" ReplaceBy="vivirá">
+<ERROR UseRE=False Find="volvio" WholeWord="True" PreserveCase="True" ReplaceBy="volvió">
+<ERROR UseRE=False Find="volvia" WholeWord="True" PreserveCase="True" ReplaceBy="volvía">
+<ERROR UseRE=False Find="volvio" WholeWord="True" PreserveCase="True" ReplaceBy="volvío">
+<ERROR UseRE=False Find="volvian" WholeWord="True" PreserveCase="True" ReplaceBy="volvían">
+
+<!-- Palabras que no tienen tilde -->
+<ERROR UseRE=False Find="bién" WholeWord="True" PreserveCase="True" ReplaceBy="bien">
+<ERROR UseRE=False Find="crímen" WholeWord="True" PreserveCase="True" ReplaceBy="crimen">
+<ERROR UseRE=False Find="fué" WholeWord="True" PreserveCase="True" ReplaceBy="fue">
+<ERROR UseRE=False Find="fuí" WholeWord="True" PreserveCase="True" ReplaceBy="fui">
+<ERROR UseRE=False Find="quiéres" WholeWord="True" PreserveCase="True" ReplaceBy="quieres">
+<ERROR UseRE=False Find="tí" WholeWord="True" PreserveCase="True" ReplaceBy="ti">
+<ERROR UseRE=False Find="vá" WholeWord="True" PreserveCase="True" ReplaceBy="va">
+<ERROR UseRE=False Find="vé" WholeWord="True" PreserveCase="True" ReplaceBy="ve">
+<ERROR UseRE=False Find="ví" WholeWord="True" PreserveCase="True" ReplaceBy="vi">
+<ERROR UseRE=False Find="vió" WholeWord="True" PreserveCase="True" ReplaceBy="vio">
+
+<!-- Errores no relacionados con los tildes -->
+<ERROR UseRE=False Find="coktel" WholeWord="True" PreserveCase="True" ReplaceBy="cóctel">
+<ERROR UseRE=False Find="cocktel" WholeWord="True" PreserveCase="True" ReplaceBy="cóctel">
+<ERROR UseRE=False Find="conciente" WholeWord="True" PreserveCase="True" ReplaceBy="consciente">
+<ERROR UseRE=False Find="comenzé" WholeWord="True" PreserveCase="True" ReplaceBy="comencé">
+<ERROR UseRE=False Find="desilucionarte" WholeWord="True" PreserveCase="True" ReplaceBy="desilusionarte">
+<ERROR UseRE=False Find="dió" WholeWord="True" PreserveCase="True" ReplaceBy="dio">
+<ERROR UseRE=False Find="dijieron" WholeWord="True" PreserveCase="True" ReplaceBy="dijeron">
+<ERROR UseRE=False Find="empezé" WholeWord="True" PreserveCase="True" ReplaceBy="empecé">
+<ERROR UseRE=False Find="hize" WholeWord="True" PreserveCase="True" ReplaceBy="hice">
+<ERROR UseRE=False Find="ilucionarte" WholeWord="True" PreserveCase="True" ReplaceBy="ilusionarte">
+<ERROR UseRE=False Find="inconciente" WholeWord="True" PreserveCase="True" ReplaceBy="inconsciente">
+<ERROR UseRE=False Find="quize" WholeWord="True" PreserveCase="True" ReplaceBy="quise">
+<ERROR UseRE=False Find="quizo" WholeWord="True" PreserveCase="True" ReplaceBy="quiso">
+<ERROR UseRE=False Find="verguenza" WholeWord="True" PreserveCase="True" ReplaceBy="vergüenza">
+
+<!-- casos específicos -->
+<ERROR UseRE=False Find="sllbato" PreserveCase="True"  WholeWord="True" ReplaceBy="silbato">
+<ERROR UseRE=False Find="sllenclo" PreserveCase="True"  WholeWord="True" ReplaceBy="silencio">
+<ERROR UseRE=False Find="clemencla" PreserveCase="True"  WholeWord="True" ReplaceBy="clemencia">
+<ERROR UseRE=False Find="socledad" PreserveCase="True"  WholeWord="True" ReplaceBy="sociedad">
+<ERROR UseRE=False Find="tlene" PreserveCase="True"  WholeWord="True" ReplaceBy="tiene">
+<ERROR UseRE=False Find="tlempo" PreserveCase="True"  WholeWord="True" ReplaceBy="tiempo">
+<ERROR UseRE=False Find="equlvocaba" PreserveCase="True"  WholeWord="True" ReplaceBy="equivocaba">
+<ERROR UseRE=False Find="qulnce" PreserveCase="True"  WholeWord="True" ReplaceBy="quince">
+<ERROR UseRE=False Find="comlen" PreserveCase="True"  ReplaceBy="comien">
+<ERROR UseRE=False Find="historl" PreserveCase="True" ReplaceBy="histori">
+<ERROR UseRE=False Find="misterl" PreserveCase="True" ReplaceBy="misteri">
+<ERROR UseRE=False Find="vivencl" PreserveCase="True" ReplaceBy="vivenci">
+
+
+<!--  Meses y días van en minúsculas  -->
+<ERROR UseREOnlyToFind="True" Find="[^\n\.][«'\s]\b(E)nero\b" ReplaceBy="e">
+<ERROR UseREOnlyToFind="True" Find="[^\n\.][«'\s]\b(F)ebrero\b" ReplaceBy="f">
+<ERROR UseREOnlyToFind="True" Find="[^\n\.][«'\s]\b(M)arzo\b" ReplaceBy="m">
+<ERROR UseREOnlyToFind="True" Find="[^\n\.][«'\s]\b(A)bril\b" ReplaceBy="a">
+<ERROR UseREOnlyToFind="True" Find="[^\n\.][«'\s]\b(M)ayo\b" ReplaceBy="m">
+<ERROR UseREOnlyToFind="True" Find="[^\n\.][«'\s]\b(J)unio\b" ReplaceBy="j">
+<ERROR UseREOnlyToFind="True" Find="[^\n\.][«'\s]\b(J)ulio\b" ReplaceBy="j">
+<ERROR UseREOnlyToFind="True" Find="[^\n\.][«'\s]\b(A)gosto\b" ReplaceBy="a">
+<ERROR UseREOnlyToFind="True" Find="[^\n\.][«'\s]\b(S)eptiembre\b" ReplaceBy="s">
+<ERROR UseREOnlyToFind="True" Find="[^\n\.][«'\s]\b(O)ctubre\b" ReplaceBy="o">
+<ERROR UseREOnlyToFind="True" Find="[^\n\.][«'\s]\b(N)oviembre\b" ReplaceBy="n">
+<ERROR UseREOnlyToFind="True" Find="[^\n\.][«'\s]\b(D)iciembre\b" ReplaceBy="d">
+<ERROR UseREOnlyToFind="True" Find="[^\n\.][«'\s]\b(L)unes\b" ReplaceBy="l">
+<ERROR UseREOnlyToFind="True" Find="[^\n\.][«'\s]\b(M)artes\b" ReplaceBy="m">
+<ERROR UseREOnlyToFind="True" Find="[^\n\.][«'\s]\b(Mi[eé])rcoles\b" ReplaceBy="mié">
+<ERROR UseREOnlyToFind="True" Find="[^\n\.][«'\s]\b(J)ueves\b" ReplaceBy="j">
+<ERROR UseREOnlyToFind="True" Find="[^\n\.][«'\s]\b(V)iernes\b" ReplaceBy="v">
+<ERROR UseREOnlyToFind="True" Find="[^\n\.][«'\s]\b(S[aá])bado\b" ReplaceBy="sá">
+<ERROR UseREOnlyToFind="True" Find="[^\n\.][«'\s]\b(D)omingo\b" ReplaceBy="d">
+
+	<!--  «aún» cuando son sinónimos de «incluso» o «hasta»  -->
+<ERROR UseREOnlyToFind="True" Find="\b[Aa](ú)n\sasí\b" ReplaceBy="u">
+<ERROR UseREOnlyToFind="True" Find="\b[Aa](ú)n\scuando\b" ReplaceBy="u">
+<ERROR UseREOnlyToFind="True" Find="\b[Aa](ú)n\slos\b" ReplaceBy="u">
+<ERROR UseREOnlyToFind="True" Find="\b[Aa](ú)n\slas\b" ReplaceBy="u">
+<ERROR UseREOnlyToFind="True" Find="\b[Aa](ú)n\snegarte\b" ReplaceBy="u">
+<ERROR UseREOnlyToFind="True" Find="\b[Aa](ú)n\snegarse\b" ReplaceBy="u">
+<ERROR UseREOnlyToFind="True" Find="\b[Nn]i\sa(ú)n\b" ReplaceBy="u">
+	
+<!-- Acentos al final de los signos de exclamación -->
+<ERROR UseRE="False" Find=" tu!" WholeWord="True" CaseSensitive="True" ReplaceBy=" tú!"> 
+<ERROR UseRE="False" Find=" si!" WholeWord="True" CaseSensitive="True" ReplaceBy=" sí!"> 
+<ERROR UseRE="False" Find=" mi!" WholeWord="True" CaseSensitive="True" ReplaceBy=" mí!"> 
+<ERROR UseRE="False" Find=" el!" WholeWord="True" CaseSensitive="True" ReplaceBy=" él!"> 
+	
+<!-- Acentos al final de los signos de interrogación -->
+<ERROR UseRE="False" Find=" tu?" WholeWord="True" CaseSensitive="True" ReplaceBy=" tú?"> 
+<ERROR UseRE="False" Find=" si?" WholeWord="True" CaseSensitive="True" ReplaceBy=" sí?"> 
+<ERROR UseRE="False" Find=" mi?" WholeWord="True" CaseSensitive="True" ReplaceBy=" mí?"> 
+<ERROR UseRE="False" Find=" el?" WholeWord="True" CaseSensitive="True" ReplaceBy=" él?"> 
+<ERROR UseRE="False" Find=" aun?" WholeWord="True" CaseSensitive="True" ReplaceBy=" aún?"> 
+<ERROR UseRE="False" Find=" mas?" WholeWord="True" CaseSensitive="True" ReplaceBy=" más?"> 
+<ERROR UseRE="False" Find=" que?" WholeWord="True" CaseSensitive="True" ReplaceBy=" qué?"> 
+<ERROR UseRE="False" Find=" paso?" WholeWord="True" CaseSensitive="True" ReplaceBy=" pasó?"> 
+<ERROR UseRE="False" Find=" cuando?" WholeWord="True" CaseSensitive="True" ReplaceBy=" cuándo?"> 
+<ERROR UseRE="False" Find=" cuanto?" WholeWord="True" CaseSensitive="True" ReplaceBy=" cuánto?"> 
+<ERROR UseRE="False" Find=" cuanta?" WholeWord="True" CaseSensitive="True" ReplaceBy=" cuánta?"> 
+<ERROR UseRE="False" Find=" cuantas?" WholeWord="True" CaseSensitive="True" ReplaceBy=" cuántas?"> 
+<ERROR UseRE="False" Find=" cuantos?" WholeWord="True" CaseSensitive="True" ReplaceBy=" cuántos?"> 
+<ERROR UseRE="False" Find=" donde?" WholeWord="True" CaseSensitive="True" ReplaceBy=" dónde?"> 
+<ERROR UseRE="False" Find=" quien?" WholeWord="True" CaseSensitive="True" ReplaceBy=" quién?"> 
+<ERROR UseRE="False" Find=" como?" WholeWord="True" CaseSensitive="True" ReplaceBy=" cómo?"> 
+<ERROR UseRE="False" Find=" adonde?" WholeWord="True" CaseSensitive="True" ReplaceBy=" adónde?"> 
+<ERROR UseRE="False" Find=" cual?" WholeWord="True" CaseSensitive="True" ReplaceBy=" cuál?"> 
+
+	<!-- Acentos al principio de los signos de interrogación con minúsculas -->
+	<ERROR UseRE="False" Find="¿aun" WholeWord="True" CaseSensitive="True" ReplaceBy="¿aún"> 
+	<ERROR UseRE="False" Find="¿tu " WholeWord="True" CaseSensitive="True" ReplaceBy="¿tú "> 
+	<ERROR UseRE="False" Find="¿que " WholeWord="True" CaseSensitive="True" ReplaceBy="¿qué "> 
+	<ERROR UseRE="False" Find="¿sabes que" WholeWord="True" CaseSensitive="True" ReplaceBy="¿sabes qué"> 
+	<ERROR UseRE="False" Find="¿sabes adonde" WholeWord="True" CaseSensitive="True" ReplaceBy="¿sabes adónde"> 
+	<ERROR UseRE="False" Find="¿sabes cual" WholeWord="True" CaseSensitive="True" ReplaceBy="¿sabes cuál"> 
+	<ERROR UseRE="False" Find="¿sabes quien" WholeWord="True" CaseSensitive="True" ReplaceBy="¿sabes quién"> 
+	<ERROR UseRE="False" Find="¿sabes como" WholeWord="True" CaseSensitive="True" ReplaceBy="¿sabes cómo"> 
+	<ERROR UseRE="False" Find="¿sabes cuan" WholeWord="True" CaseSensitive="True" ReplaceBy="¿sabes cuán"> 
+	<ERROR UseRE="False" Find="¿sabes cuanto" WholeWord="True" CaseSensitive="True" ReplaceBy="¿sabes cuánto"> 
+	<ERROR UseRE="False" Find="¿sabes cuanta" WholeWord="True" CaseSensitive="True" ReplaceBy="¿sabes cuánta"> 
+	<ERROR UseRE="False" Find="¿sabes cuantos" WholeWord="True" CaseSensitive="True" ReplaceBy="¿sabes cuántos"> 
+	<ERROR UseRE="False" Find="¿sabes cuantas" WholeWord="True" CaseSensitive="True" ReplaceBy="¿sabes cuántas"> 
+	<ERROR UseRE="False" Find="¿sabes cuando" WholeWord="True" CaseSensitive="True" ReplaceBy="¿sabes cuándo"> 
+	<ERROR UseRE="False" Find="¿sabes donde" WholeWord="True" CaseSensitive="True" ReplaceBy="¿sabes dónde"> 
+	<ERROR UseRE="False" Find="¿sabe que" WholeWord="True" CaseSensitive="True" ReplaceBy="¿sabe qué"> 
+	<ERROR UseRE="False" Find="¿sabe adonde" WholeWord="True" CaseSensitive="True" ReplaceBy="¿sabe adónde"> 
+	<ERROR UseRE="False" Find="¿sabe cual" WholeWord="True" CaseSensitive="True" ReplaceBy="¿sabe cuál"> 
+	<ERROR UseRE="False" Find="¿sabe quien" WholeWord="True" CaseSensitive="True" ReplaceBy="¿sabe quién"> 
+	<ERROR UseRE="False" Find="¿sabe como" WholeWord="True" CaseSensitive="True" ReplaceBy="¿sabe cómo"> 
+	<ERROR UseRE="False" Find="¿sabe cuan" WholeWord="True" CaseSensitive="True" ReplaceBy="¿sabe cuán"> 
+	<ERROR UseRE="False" Find="¿sabe cuanto" WholeWord="True" CaseSensitive="True" ReplaceBy="¿sabe cuánto"> 
+	<ERROR UseRE="False" Find="¿sabe cuanta" WholeWord="True" CaseSensitive="True" ReplaceBy="¿sabe cuánta"> 
+	<ERROR UseRE="False" Find="¿sabe cuantos" WholeWord="True" CaseSensitive="True" ReplaceBy="¿sabe cuántos"> 
+	<ERROR UseRE="False" Find="¿sabe cuantas" WholeWord="True" CaseSensitive="True" ReplaceBy="¿sabe cuántas"> 
+	<ERROR UseRE="False" Find="¿sabe cuando" WholeWord="True" CaseSensitive="True" ReplaceBy="¿sabe cuándo"> 
+	<ERROR UseRE="False" Find="¿sabe donde" WholeWord="True" CaseSensitive="True" ReplaceBy="¿sabe dónde"> 
+	<ERROR UseRE="False" Find="¿saben que" WholeWord="True" CaseSensitive="True" ReplaceBy="¿saben qué"> 
+	<ERROR UseRE="False" Find="¿saben adonde" WholeWord="True" CaseSensitive="True" ReplaceBy="¿saben adónde"> 
+	<ERROR UseRE="False" Find="¿saben cual" WholeWord="True" CaseSensitive="True" ReplaceBy="¿saben cuál"> 
+	<ERROR UseRE="False" Find="¿saben quien" WholeWord="True" CaseSensitive="True" ReplaceBy="¿saben quién"> 
+	<ERROR UseRE="False" Find="¿saben como" WholeWord="True" CaseSensitive="True" ReplaceBy="¿saben cómo"> 
+	<ERROR UseRE="False" Find="¿saben cuan" WholeWord="True" CaseSensitive="True" ReplaceBy="¿saben cuán"> 
+	<ERROR UseRE="False" Find="¿saben cuanto" WholeWord="True" CaseSensitive="True" ReplaceBy="¿saben cuánto"> 
+	<ERROR UseRE="False" Find="¿saben cuanta" WholeWord="True" CaseSensitive="True" ReplaceBy="¿saben cuánta"> 
+	<ERROR UseRE="False" Find="¿saben cuantos" WholeWord="True" CaseSensitive="True" ReplaceBy="¿saben cuántos"> 
+	<ERROR UseRE="False" Find="¿saben cuantas" WholeWord="True" CaseSensitive="True" ReplaceBy="¿saben cuántas"> 
+	<ERROR UseRE="False" Find="¿saben cuando" WholeWord="True" CaseSensitive="True" ReplaceBy="¿saben cuándo"> 
+	<ERROR UseRE="False" Find="¿saben donde" WholeWord="True" CaseSensitive="True" ReplaceBy="¿saben dónde"> 
+	<ERROR UseRE="False" Find="¿de que" WholeWord="True" CaseSensitive="True" ReplaceBy="¿de qué"> 
+	<ERROR UseRE="False" Find="¿de donde" WholeWord="True" CaseSensitive="True" ReplaceBy="¿de dónde"> 
+	<ERROR UseRE="False" Find="¿de cual" WholeWord="True" CaseSensitive="True" ReplaceBy="¿de cuál"> 
+	<ERROR UseRE="False" Find="¿de quien" WholeWord="True" CaseSensitive="True" ReplaceBy="¿de quién"> 
+	<ERROR UseRE="False" Find="¿de cuanto" WholeWord="True" CaseSensitive="True" ReplaceBy="¿de cuánto"> 
+	<ERROR UseRE="False" Find="¿de cuanta" WholeWord="True" CaseSensitive="True" ReplaceBy="¿de cuánta"> 
+	<ERROR UseRE="False" Find="¿de cuantos" WholeWord="True" CaseSensitive="True" ReplaceBy="¿de cuántos"> 
+	<ERROR UseRE="False" Find="¿de cuantas" WholeWord="True" CaseSensitive="True" ReplaceBy="¿de cuántas"> 
+	<ERROR UseRE="False" Find="¿de cuando" WholeWord="True" CaseSensitive="True" ReplaceBy="¿de cuándo"> 
+	<ERROR UseRE="False" Find="¿a que" WholeWord="True" CaseSensitive="True" ReplaceBy="¿a qué"> 
+	<ERROR UseRE="False" Find="¿sobre que" WholeWord="True" CaseSensitive="True" ReplaceBy="¿sobre qué"> 
+	<ERROR UseRE="False" Find="¿como " WholeWord="True" CaseSensitive="True" ReplaceBy="¿cómo "> 
+	<ERROR UseRE="False" Find="¿cual " WholeWord="True" CaseSensitive="True" ReplaceBy="¿cuál "> 
+	<ERROR UseRE="False" Find="¿en cual" WholeWord="True" CaseSensitive="True" ReplaceBy="¿en cuál"> 
+	<ERROR UseRE="False" Find="¿cuando" WholeWord="True" CaseSensitive="True" ReplaceBy="¿cuándo"> 
+	<ERROR UseRE="False" Find="¿hasta cual" WholeWord="True" CaseSensitive="True" ReplaceBy="¿hasta cuál"> 
+	<ERROR UseRE="False" Find="¿hasta quien" WholeWord="True" CaseSensitive="True" ReplaceBy="¿hasta quién"> 
+	<ERROR UseRE="False" Find="¿hasta cuanto" WholeWord="True" CaseSensitive="True" ReplaceBy="¿hasta cuánto"> 
+	<ERROR UseRE="False" Find="¿hasta cuantas" WholeWord="True" CaseSensitive="True" ReplaceBy="¿hasta cuántas"> 
+	<ERROR UseRE="False" Find="¿hasta cuantos" WholeWord="True" CaseSensitive="True" ReplaceBy="¿hasta cuántos"> 
+	<ERROR UseRE="False" Find="¿hasta cuando" WholeWord="True" CaseSensitive="True" ReplaceBy="¿hasta cuándo"> 
+	<ERROR UseRE="False" Find="¿hasta cuando" WholeWord="True" CaseSensitive="True" ReplaceBy="¿hasta cuándo"> 
+	<ERROR UseRE="False" Find="¿hasta donde" WholeWord="True" CaseSensitive="True" ReplaceBy="¿hasta dónde"> 
+	<ERROR UseRE="False" Find="¿hasta que" WholeWord="True" CaseSensitive="True" ReplaceBy="¿hasta qué"> 
+	<ERROR UseRE="False" Find="¿hasta adonde" WholeWord="True" CaseSensitive="True" ReplaceBy="¿hasta adónde"> 
+	<ERROR UseRE="False" Find="¿desde que" WholeWord="True" CaseSensitive="True" ReplaceBy="¿desde qué"> 
+	<ERROR UseRE="False" Find="¿desde cuando" WholeWord="True" CaseSensitive="True" ReplaceBy="¿desde cuándo"> 
+	<ERROR UseRE="False" Find="¿desde quien" WholeWord="True" CaseSensitive="True" ReplaceBy="¿desde quién"> 
+	<ERROR UseRE="False" Find="¿desde donde" WholeWord="True" CaseSensitive="True" ReplaceBy="¿desde dónde"> 
+	<ERROR UseRE="False" Find="¿cuanto" WholeWord="True" CaseSensitive="True" ReplaceBy="¿cuánto"> 
+	<ERROR UseRE="False" Find="¿cuantos" WholeWord="True" CaseSensitive="True" ReplaceBy="¿cuántos"> 
+	<ERROR UseRE="False" Find="¿donde" WholeWord="True" CaseSensitive="True" ReplaceBy="¿dónde"> 
+	<ERROR UseRE="False" Find="¿adonde" WholeWord="True" CaseSensitive="True" ReplaceBy="¿adónde"> 
+	<ERROR UseRE="False" Find="¿con que" WholeWord="True" CaseSensitive="True" ReplaceBy="¿con qué"> 
+	<ERROR UseRE="False" Find="¿con cual" WholeWord="True" CaseSensitive="True" ReplaceBy="¿con cuál"> 
+	<ERROR UseRE="False" Find="¿con quien" WholeWord="True" CaseSensitive="True" ReplaceBy="¿con quién"> 
+	<ERROR UseRE="False" Find="¿con cuantos" WholeWord="True" CaseSensitive="True" ReplaceBy="¿con cuántos"> 
+	<ERROR UseRE="False" Find="¿con cuantas" WholeWord="True" CaseSensitive="True" ReplaceBy="¿con cuántas"> 
+	<ERROR UseRE="False" Find="¿con cuanta" WholeWord="True" CaseSensitive="True" ReplaceBy="¿con cuánta"> 
+	<ERROR UseRE="False" Find="¿con cuanto" WholeWord="True" CaseSensitive="True" ReplaceBy="¿con cuánto"> 
+	<ERROR UseRE="False" Find="¿para donde" WholeWord="True" CaseSensitive="True" ReplaceBy="¿para dónde"> 
+	<ERROR UseRE="False" Find="¿para adonde" WholeWord="True" CaseSensitive="True" ReplaceBy="¿para adónde"> 
+	<ERROR UseRE="False" Find="¿para cuando" WholeWord="True" CaseSensitive="True" ReplaceBy="¿para cuándo"> 
+	<ERROR UseRE="False" Find="¿para que" WholeWord="True" CaseSensitive="True" ReplaceBy="¿para qué"> 
+	<ERROR UseRE="False" Find="¿para quien" WholeWord="True" CaseSensitive="True" ReplaceBy="¿para quién"> 
+	<ERROR UseRE="False" Find="¿para cuanto" WholeWord="True" CaseSensitive="True" ReplaceBy="¿para cuánto"> 
+	<ERROR UseRE="False" Find="¿para cuanta" WholeWord="True" CaseSensitive="True" ReplaceBy="¿para cuánta"> 
+	<ERROR UseRE="False" Find="¿para cuantos" WholeWord="True" CaseSensitive="True" ReplaceBy="¿para cuántos"> 
+	<ERROR UseRE="False" Find="¿para cuantas" WholeWord="True" CaseSensitive="True" ReplaceBy="¿para cuántas"> 
+	<ERROR UseRE="False" Find="¿a donde" WholeWord="True" CaseSensitive="True" ReplaceBy="¿a dónde"> 
+	<ERROR UseRE="False" Find="¿a cual" WholeWord="True" CaseSensitive="True" ReplaceBy="¿a cuál"> 
+	<ERROR UseRE="False" Find="¿a quien" WholeWord="True" CaseSensitive="True" ReplaceBy="¿a quien"> 
+	<ERROR UseRE="False" Find="¿a como" WholeWord="True" CaseSensitive="True" ReplaceBy="¿a cómo"> 
+	<ERROR UseRE="False" Find="¿a cuanto" WholeWord="True" CaseSensitive="True" ReplaceBy="¿a cuánto"> 
+	<ERROR UseRE="False" Find="¿a cuanta" WholeWord="True" CaseSensitive="True" ReplaceBy="¿a cuánta"> 
+	<ERROR UseRE="False" Find="¿a cuantos" WholeWord="True" CaseSensitive="True" ReplaceBy="¿a cuántos"> 
+	<ERROR UseRE="False" Find="¿a cuantas" WholeWord="True" CaseSensitive="True" ReplaceBy="¿a cuántas"> 
+	<ERROR UseRE="False" Find="¿por que" WholeWord="True" CaseSensitive="True" ReplaceBy="¿por qué"> 
+	<ERROR UseRE="False" Find="¿por cual" WholeWord="True" CaseSensitive="True" ReplaceBy="¿por cuál"> 
+	<ERROR UseRE="False" Find="¿por quien" WholeWord="True" CaseSensitive="True" ReplaceBy="¿por quién"> 
+	<ERROR UseRE="False" Find="¿por cuanto" WholeWord="True" CaseSensitive="True" ReplaceBy="¿por cuánto"> 
+	<ERROR UseRE="False" Find="¿por cuanta" WholeWord="True" CaseSensitive="True" ReplaceBy="¿por cuánta"> 
+	<ERROR UseRE="False" Find="¿por cuantos" WholeWord="True" CaseSensitive="True" ReplaceBy="¿por cuántos"> 
+	<ERROR UseRE="False" Find="¿por cuantas" WholeWord="True" CaseSensitive="True" ReplaceBy="¿por cuántas"> 
+	<ERROR UseRE="False" Find="¿por donde" WholeWord="True" CaseSensitive="True" ReplaceBy="¿por dónde"> 
+	<ERROR UseRE="False" Find="¿y que" WholeWord="True" CaseSensitive="True" ReplaceBy="¿y qué"> 
+	<ERROR UseRE="False" Find="¿y como" WholeWord="True" CaseSensitive="True" ReplaceBy="¿y cómo"> 
+	<ERROR UseRE="False" Find="¿y cuando" WholeWord="True" CaseSensitive="True" ReplaceBy="¿y cuándo"> 
+	<ERROR UseRE="False" Find="¿y cual" WholeWord="True" CaseSensitive="True" ReplaceBy="¿y cuál"> 
+	<ERROR UseRE="False" Find="¿y quien" WholeWord="True" CaseSensitive="True" ReplaceBy="¿y quién"> 
+	<ERROR UseRE="False" Find="¿y cuanto" WholeWord="True" CaseSensitive="True" ReplaceBy="¿y cuánto"> 
+	<ERROR UseRE="False" Find="¿y cuanta" WholeWord="True" CaseSensitive="True" ReplaceBy="¿y cuánta"> 
+	<ERROR UseRE="False" Find="¿y cuantos" WholeWord="True" CaseSensitive="True" ReplaceBy="¿y cuántos"> 
+	<ERROR UseRE="False" Find="¿y cuantas" WholeWord="True" CaseSensitive="True" ReplaceBy="¿y cuántas"> 
+	<ERROR UseRE="False" Find="¿y donde" WholeWord="True" CaseSensitive="True" ReplaceBy="¿y dónde"> 
+	<ERROR UseRE="False" Find="¿y adonde" WholeWord="True" CaseSensitive="True" ReplaceBy="¿y adónde"> 
+	<ERROR UseRE="False" Find="¿quien " WholeWord="True" CaseSensitive="True" ReplaceBy="¿quién "> 
+	<ERROR UseRE="False" Find="¿esta " WholeWord="True" CaseSensitive="True" ReplaceBy="¿está "> 
+	<ERROR UseRE="False" Find="¿estas " WholeWord="True" CaseSensitive="True" ReplaceBy="¿estás "> 
+	
+	<!-- Acentos al principio de los signos de interrogación con mayúsculas -->
+	<ERROR UseRE="False" Find="¿Que " WholeWord="True" CaseSensitive="True" ReplaceBy="¿Qué "> 
+	<ERROR UseRE="False" Find="¿Sabes adonde" WholeWord="True" CaseSensitive="True" ReplaceBy="¿Sabes adónde"> 
+	<ERROR UseRE="False" Find="¿Sabes cual" WholeWord="True" CaseSensitive="True" ReplaceBy="¿Sabes cuál"> 
+	<ERROR UseRE="False" Find="¿Sabes quien" WholeWord="True" CaseSensitive="True" ReplaceBy="¿Sabes quién"> 
+	<ERROR UseRE="False" Find="¿Sabes como" WholeWord="True" CaseSensitive="True" ReplaceBy="¿Sabes cómo"> 
+	<ERROR UseRE="False" Find="¿Sabes cuan" WholeWord="True" CaseSensitive="True" ReplaceBy="¿Sabes cuán"> 
+	<ERROR UseRE="False" Find="¿Sabes cuanto" WholeWord="True" CaseSensitive="True" ReplaceBy="¿Sabes cuánto"> 
+	<ERROR UseRE="False" Find="¿Sabes cuanta" WholeWord="True" CaseSensitive="True" ReplaceBy="¿Sabes cuánta"> 
+	<ERROR UseRE="False" Find="¿Sabes cuantos" WholeWord="True" CaseSensitive="True" ReplaceBy="¿Sabes cuántos"> 
+	<ERROR UseRE="False" Find="¿Sabes cuantas" WholeWord="True" CaseSensitive="True" ReplaceBy="¿Sabes cuántas"> 
+	<ERROR UseRE="False" Find="¿Sabes cuando" WholeWord="True" CaseSensitive="True" ReplaceBy="¿Sabes cuándo"> 
+	<ERROR UseRE="False" Find="¿Sabes donde" WholeWord="True" CaseSensitive="True" ReplaceBy="¿Sabes dónde"> 
+	<ERROR UseRE="False" Find="¿Sabe que" WholeWord="True" CaseSensitive="True" ReplaceBy="¿Sabe qué"> 
+	<ERROR UseRE="False" Find="¿Sabe adonde" WholeWord="True" CaseSensitive="True" ReplaceBy="¿Sabe adónde"> 
+	<ERROR UseRE="False" Find="¿Sabe cual" WholeWord="True" CaseSensitive="True" ReplaceBy="¿Sabe cuál"> 
+	<ERROR UseRE="False" Find="¿Sabe quien" WholeWord="True" CaseSensitive="True" ReplaceBy="¿Sabe quién"> 
+	<ERROR UseRE="False" Find="¿Sabe como" WholeWord="True" CaseSensitive="True" ReplaceBy="¿Sabe cómo"> 
+	<ERROR UseRE="False" Find="¿Sabe cuan" WholeWord="True" CaseSensitive="True" ReplaceBy="¿Sabe cuán"> 
+	<ERROR UseRE="False" Find="¿Sabe cuanto" WholeWord="True" CaseSensitive="True" ReplaceBy="¿Sabe cuánto"> 
+	<ERROR UseRE="False" Find="¿Sabe cuanta" WholeWord="True" CaseSensitive="True" ReplaceBy="¿Sabe cuánta"> 
+	<ERROR UseRE="False" Find="¿Sabe cuantos" WholeWord="True" CaseSensitive="True" ReplaceBy="¿Sabe cuántos"> 
+	<ERROR UseRE="False" Find="¿Sabe cuantas" WholeWord="True" CaseSensitive="True" ReplaceBy="¿Sabe cuántas"> 
+	<ERROR UseRE="False" Find="¿Sabe cuando" WholeWord="True" CaseSensitive="True" ReplaceBy="¿Sabe cuándo"> 
+	<ERROR UseRE="False" Find="¿Sabe donde" WholeWord="True" CaseSensitive="True" ReplaceBy="¿Sabe dónde"> 
+	<ERROR UseRE="False" Find="¿Saben que" WholeWord="True" CaseSensitive="True" ReplaceBy="¿Saben qué"> 
+	<ERROR UseRE="False" Find="¿Saben adonde" WholeWord="True" CaseSensitive="True" ReplaceBy="¿Saben adónde"> 
+	<ERROR UseRE="False" Find="¿Saben cual" WholeWord="True" CaseSensitive="True" ReplaceBy="¿Saben cuál"> 
+	<ERROR UseRE="False" Find="¿Saben quien" WholeWord="True" CaseSensitive="True" ReplaceBy="¿Saben quién"> 
+	<ERROR UseRE="False" Find="¿Saben como" WholeWord="True" CaseSensitive="True" ReplaceBy="¿Saben cómo"> 
+	<ERROR UseRE="False" Find="¿Saben cuan" WholeWord="True" CaseSensitive="True" ReplaceBy="¿Saben cuán"> 
+	<ERROR UseRE="False" Find="¿Saben cuanto" WholeWord="True" CaseSensitive="True" ReplaceBy="¿Saben cuánto"> 
+	<ERROR UseRE="False" Find="¿Saben cuanta" WholeWord="True" CaseSensitive="True" ReplaceBy="¿Saben cuánta"> 
+	<ERROR UseRE="False" Find="¿Saben cuantos" WholeWord="True" CaseSensitive="True" ReplaceBy="¿Saben cuántos"> 
+	<ERROR UseRE="False" Find="¿Saben cuantas" WholeWord="True" CaseSensitive="True" ReplaceBy="¿Saben cuántas"> 
+	<ERROR UseRE="False" Find="¿Saben cuando" WholeWord="True" CaseSensitive="True" ReplaceBy="¿Saben cuándo"> 
+	<ERROR UseRE="False" Find="¿Saben donde" WholeWord="True" CaseSensitive="True" ReplaceBy="¿Saben dónde"> 
+	<ERROR UseRE="False" Find="¿De que" WholeWord="True" CaseSensitive="True" ReplaceBy="¿De qué"> 
+	<ERROR UseRE="False" Find="¿De donde" WholeWord="True" CaseSensitive="True" ReplaceBy="¿De dónde"> 
+	<ERROR UseRE="False" Find="¿De cual" WholeWord="True" CaseSensitive="True" ReplaceBy="¿De cuál"> 
+	<ERROR UseRE="False" Find="¿De quien" WholeWord="True" CaseSensitive="True" ReplaceBy="¿De quién"> 
+	<ERROR UseRE="False" Find="¿De cuanto" WholeWord="True" CaseSensitive="True" ReplaceBy="¿De cuánto"> 
+	<ERROR UseRE="False" Find="¿De cuanta" WholeWord="True" CaseSensitive="True" ReplaceBy="¿De cuánta"> 
+	<ERROR UseRE="False" Find="¿De cuantos" WholeWord="True" CaseSensitive="True" ReplaceBy="¿De cuántos"> 
+	<ERROR UseRE="False" Find="¿De cuantas" WholeWord="True" CaseSensitive="True" ReplaceBy="¿De cuántas"> 
+	<ERROR UseRE="False" Find="¿De cuando" WholeWord="True" CaseSensitive="True" ReplaceBy="¿De cuándo"> 
+	<ERROR UseRE="False" Find="¿Desde que" WholeWord="True" CaseSensitive="True" ReplaceBy="¿Desde qué"> 
+	<ERROR UseRE="False" Find="¿Desde cuando" WholeWord="True" CaseSensitive="True" ReplaceBy="¿Desde cuándo"> 
+	<ERROR UseRE="False" Find="¿Desde quien" WholeWord="True" CaseSensitive="True" ReplaceBy="¿Desde quién"> 
+	<ERROR UseRE="False" Find="¿Desde donde" WholeWord="True" CaseSensitive="True" ReplaceBy="¿Desde dónde"> 
+	<ERROR UseRE="False" Find="¿Sobre que" WholeWord="True" CaseSensitive="True" ReplaceBy="¿Sobre qué"> 
+	<ERROR UseRE="False" Find="¿Como " WholeWord="True" CaseSensitive="True" ReplaceBy="¿Cómo "> 
+	<ERROR UseRE="False" Find="¿Cual " WholeWord="True" CaseSensitive="True" ReplaceBy="¿Cuál "> 
+	<ERROR UseRE="False" Find="¿En cual" WholeWord="True" CaseSensitive="True" ReplaceBy="¿En cuál"> 
+	<ERROR UseRE="False" Find="¿Cuando" WholeWord="True" CaseSensitive="True" ReplaceBy="¿Cuándo"> 
+	<ERROR UseRE="False" Find="¿Hasta cual" WholeWord="True" CaseSensitive="True" ReplaceBy="¿Hasta cuál"> 
+	<ERROR UseRE="False" Find="¿Hasta quien" WholeWord="True" CaseSensitive="True" ReplaceBy="¿Hasta quién"> 
+	<ERROR UseRE="False" Find="¿Hasta cuanto" WholeWord="True" CaseSensitive="True" ReplaceBy="¿Hasta cuánto"> 
+	<ERROR UseRE="False" Find="¿Hasta cuantas" WholeWord="True" CaseSensitive="True" ReplaceBy="¿Hasta cuántas"> 
+	<ERROR UseRE="False" Find="¿Hasta cuantos" WholeWord="True" CaseSensitive="True" ReplaceBy="¿Hasta cuántos"> 
+	<ERROR UseRE="False" Find="¿Hasta cuando" WholeWord="True" CaseSensitive="True" ReplaceBy="¿Hasta cuándo"> 
+	<ERROR UseRE="False" Find="¿Hasta cuando" WholeWord="True" CaseSensitive="True" ReplaceBy="¿Hasta cuándo"> 
+	<ERROR UseRE="False" Find="¿Hasta donde" WholeWord="True" CaseSensitive="True" ReplaceBy="¿Hasta dónde"> 
+	<ERROR UseRE="False" Find="¿Hasta que" WholeWord="True" CaseSensitive="True" ReplaceBy="¿Hasta qué"> 
+	<ERROR UseRE="False" Find="¿Hasta adonde" WholeWord="True" CaseSensitive="True" ReplaceBy="¿Hasta adónde"> 
+	<ERROR UseRE="False" Find="¿Cuanto" WholeWord="True" CaseSensitive="True" ReplaceBy="¿Cuánto"> 
+	<ERROR UseRE="False" Find="¿Cuantos" WholeWord="True" CaseSensitive="True" ReplaceBy="¿Cuántos"> 
+	<ERROR UseRE="False" Find="¿Donde" WholeWord="True" CaseSensitive="True" ReplaceBy="¿Dónde"> 
+	<ERROR UseRE="False" Find="¿Adonde" WholeWord="True" CaseSensitive="True" ReplaceBy="¿Adónde"> 
+	<ERROR UseRE="False" Find="¿Con que" WholeWord="True" CaseSensitive="True" ReplaceBy="¿Con qué"> 
+	<ERROR UseRE="False" Find="¿Con cual" WholeWord="True" CaseSensitive="True" ReplaceBy="¿Con cuál"> 
+	<ERROR UseRE="False" Find="¿Con quien" WholeWord="True" CaseSensitive="True" ReplaceBy="¿Con quién"> 
+	<ERROR UseRE="False" Find="¿Con cuantos" WholeWord="True" CaseSensitive="True" ReplaceBy="¿Con cuántos"> 
+	<ERROR UseRE="False" Find="¿Con cuanta" WholeWord="True" CaseSensitive="True" ReplaceBy="¿Con cuántas"> 
+	<ERROR UseRE="False" Find="¿Con cuanta" WholeWord="True" CaseSensitive="True" ReplaceBy="¿Con cuánta"> 
+	<ERROR UseRE="False" Find="¿Con cuanto" WholeWord="True" CaseSensitive="True" ReplaceBy="¿Con cuánto"> 
+	<ERROR UseRE="False" Find="¿Para donde" WholeWord="True" CaseSensitive="True" ReplaceBy="¿Para dónde"> 
+	<ERROR UseRE="False" Find="¿Para adonde" WholeWord="True" CaseSensitive="True" ReplaceBy="¿Para adónde"> 
+	<ERROR UseRE="False" Find="¿Para cuando" WholeWord="True" CaseSensitive="True" ReplaceBy="¿Para cuándo"> 
+	<ERROR UseRE="False" Find="¿Para que" WholeWord="True" CaseSensitive="True" ReplaceBy="¿Para qué"> 
+	<ERROR UseRE="False" Find="¿Para quien" WholeWord="True" CaseSensitive="True" ReplaceBy="¿Para quién"> 
+	<ERROR UseRE="False" Find="¿Para cuanto" WholeWord="True" CaseSensitive="True" ReplaceBy="¿Para cuánto"> 
+	<ERROR UseRE="False" Find="¿Para cuanta" WholeWord="True" CaseSensitive="True" ReplaceBy="¿Para cuánta"> 
+	<ERROR UseRE="False" Find="¿Para cuantos" WholeWord="True" CaseSensitive="True" ReplaceBy="¿Para cuántos"> 
+	<ERROR UseRE="False" Find="¿Para cuantas" WholeWord="True" CaseSensitive="True" ReplaceBy="¿Para cuántas"> 
+	<ERROR UseRE="False" Find="¿A donde" WholeWord="True" CaseSensitive="True" ReplaceBy="¿A dónde"> 
+	<ERROR UseRE="False" Find="¿A cual" WholeWord="True" CaseSensitive="True" ReplaceBy="¿A cuál"> 
+	<ERROR UseRE="False" Find="¿A quien" WholeWord="True" CaseSensitive="True" ReplaceBy="¿A quien"> 
+	<ERROR UseRE="False" Find="¿A como" WholeWord="True" CaseSensitive="True" ReplaceBy="¿A cómo"> 
+	<ERROR UseRE="False" Find="¿A cuanto" WholeWord="True" CaseSensitive="True" ReplaceBy="¿A cuánto"> 
+	<ERROR UseRE="False" Find="¿A cuanta" WholeWord="True" CaseSensitive="True" ReplaceBy="¿A cuánta"> 
+	<ERROR UseRE="False" Find="¿A cuantos" WholeWord="True" CaseSensitive="True" ReplaceBy="¿A cuántos"> 
+	<ERROR UseRE="False" Find="¿A cuantas" WholeWord="True" CaseSensitive="True" ReplaceBy="¿A cuántas"> 
+	<ERROR UseRE="False" Find="¿Por que" WholeWord="True" CaseSensitive="True" ReplaceBy="¿Por qué"> 
+	<ERROR UseRE="False" Find="¿Por cual" WholeWord="True" CaseSensitive="True" ReplaceBy="¿Por cuál"> 
+	<ERROR UseRE="False" Find="¿Por quien" WholeWord="True" CaseSensitive="True" ReplaceBy="¿Por quién"> 
+	<ERROR UseRE="False" Find="¿Por cuanto" WholeWord="True" CaseSensitive="True" ReplaceBy="¿Por cuánto"> 
+	<ERROR UseRE="False" Find="¿Por cuanta" WholeWord="True" CaseSensitive="True" ReplaceBy="¿Por cuánta"> 
+	<ERROR UseRE="False" Find="¿Por cuantos" WholeWord="True" CaseSensitive="True" ReplaceBy="¿Por cuántos"> 
+	<ERROR UseRE="False" Find="¿Por cuantas" WholeWord="True" CaseSensitive="True" ReplaceBy="¿Por cuántas"> 
+	<ERROR UseRE="False" Find="¿Por donde" WholeWord="True" CaseSensitive="True" ReplaceBy="¿Por dónde"> 
+	<ERROR UseRE="False" Find="¿Porque" WholeWord="True" CaseSensitive="True" ReplaceBy="¿Por qué"> 
+	<ERROR UseRE="False" Find="¿Porqué" WholeWord="True" CaseSensitive="True" ReplaceBy="¿Por qué"> 
+	<ERROR UseRE="False" Find="¿Y que" WholeWord="True" CaseSensitive="True" ReplaceBy="¿Y qué"> 
+	<ERROR UseRE="False" Find="¿Y como" WholeWord="True" CaseSensitive="True" ReplaceBy="¿Y cómo"> 
+	<ERROR UseRE="False" Find="¿Y cuando" WholeWord="True" CaseSensitive="True" ReplaceBy="¿Y cuándo"> 
+	<ERROR UseRE="False" Find="¿Y cual" WholeWord="True" CaseSensitive="True" ReplaceBy="¿Y cuál"> 
+	<ERROR UseRE="False" Find="¿Y quien" WholeWord="True" CaseSensitive="True" ReplaceBy="¿Y quién"> 
+	<ERROR UseRE="False" Find="¿Y cuanto" WholeWord="True" CaseSensitive="True" ReplaceBy="¿Y cuánto"> 
+	<ERROR UseRE="False" Find="¿Y cuanta" WholeWord="True" CaseSensitive="True" ReplaceBy="¿Y cuánta"> 
+	<ERROR UseRE="False" Find="¿Y cuantos" WholeWord="True" CaseSensitive="True" ReplaceBy="¿Y cuántos"> 
+	<ERROR UseRE="False" Find="¿Y cuantas" WholeWord="True" CaseSensitive="True" ReplaceBy="¿Y cuántas"> 
+	<ERROR UseRE="False" Find="¿Y donde" WholeWord="True" CaseSensitive="True" ReplaceBy="¿Y dónde"> 
+	<ERROR UseRE="False" Find="¿Y adonde" WholeWord="True" CaseSensitive="True" ReplaceBy="¿Y adónde"> 
+	<ERROR UseRE="False" Find="¿Quien " WholeWord="True" CaseSensitive="True" ReplaceBy="¿Quién "> 
+	<ERROR UseRE="False" Find="¿Esta " WholeWord="True" CaseSensitive="True" ReplaceBy="¿Está "> 
+
+		<!-- aún -->
+	<ERROR UseRE="False" Find="aun," WholeWord="True" CaseSensitive="True" ReplaceBy="aún,"> 
+	<ERROR UseRE="False" Find="aun no" WholeWord="True" CaseSensitive="True" ReplaceBy="aún no"> 
+
+	<!-- dé -->
+	<ERROR UseRE="False" Find="de y " WholeWord="True" CaseSensitive="True" ReplaceBy="dé y "> 
+	<ERROR UseRE="False" Find=" nos de " WholeWord="True" CaseSensitive="True" ReplaceBy=" nos dé "> 
+
+	<!-- tú -->
+	<ERROR UseRE="False" Find=" tu ya" WholeWord="True" CaseSensitive="True" ReplaceBy=" tú ya"> 
+	<ERROR UseRE="False" Find="Tu ya " WholeWord="True" CaseSensitive="True" ReplaceBy="Tú ya "> 
+
+	<!-- casos específicos antes de la coma -->
+	<ERROR UseRE="False" Find=" de, " WholeWord="True" CaseSensitive="True" ReplaceBy=" dé,"> 
+	<ERROR UseRE="False" Find=" mi, " WholeWord="True" CaseSensitive="True" ReplaceBy=" mí,"> 
+	<ERROR UseRE="False" Find=" tu, " WholeWord="True" CaseSensitive="True" ReplaceBy=" tú,"> 
+	<ERROR UseRE="False" Find=" el, " WholeWord="True" CaseSensitive="True" ReplaceBy=" él,"> 
+	<ERROR UseRE="False" Find=" te, " WholeWord="True" CaseSensitive="True" ReplaceBy=" té,"> 
+	<ERROR UseRE="False" Find=" mas, " WholeWord="True" CaseSensitive="True" ReplaceBy=" más,"> 
+	<ERROR UseRE="False" Find=" quien, " WholeWord="True" CaseSensitive="True" ReplaceBy=" quién,"> 
+	<ERROR UseRE="False" Find=" cual," WholeWord="True" CaseSensitive="True" ReplaceBy=" cuál,"> 
+	<ERROR UseRE="False" Find="porque, " WholeWord="True" CaseSensitive="True" ReplaceBy="porqué,"> 
+	<ERROR UseRE="False" Find="cuanto, " WholeWord="True" CaseSensitive="True" ReplaceBy="cuánto,"> 
+	<ERROR UseRE="False" Find="cuando, " WholeWord="True" CaseSensitive="True" ReplaceBy="cuándo,"> 
+
+	<!-- sé -->
+	<ERROR UseRE="False" Find=" se," WholeWord="True" CaseSensitive="True" ReplaceBy=" sé,"> 
+	<ERROR UseRE="False" Find="se donde" WholeWord="True" CaseSensitive="True" ReplaceBy="sé dónde"> 
+	<ERROR UseRE="False" Find="se cuando" WholeWord="True" CaseSensitive="True" ReplaceBy="sé cuándo"> 
+	<ERROR UseRE="False" Find="se adonde" WholeWord="True" CaseSensitive="True" ReplaceBy="sé adónde"> 
+	<ERROR UseRE="False" Find="se como" WholeWord="True" CaseSensitive="True" ReplaceBy="sé cómo"> 
+	<ERROR UseRE="False" Find="se cual" WholeWord="True" CaseSensitive="True" ReplaceBy="sé cuál"> 
+	<ERROR UseRE="False" Find="se quien" WholeWord="True" CaseSensitive="True" ReplaceBy="sé quién"> 
+	<ERROR UseRE="False" Find="se cuanto" WholeWord="True" CaseSensitive="True" ReplaceBy="sé cuánto"> 
+	<ERROR UseRE="False" Find="se cuanta" WholeWord="True" CaseSensitive="True" ReplaceBy="sé cuánta"> 
+	<ERROR UseRE="False" Find="se cuantos" WholeWord="True" CaseSensitive="True" ReplaceBy="sé cuántos"> 
+	<ERROR UseRE="False" Find="se cuantas" WholeWord="True" CaseSensitive="True" ReplaceBy="sé cuántas"> 
+	<ERROR UseRE="False" Find="se cuan" WholeWord="True" CaseSensitive="True" ReplaceBy="sé cuán"> 
+
+	<!-- si/sí -->
+	<ERROR UseRE="False" Find=" el si " WholeWord="True" CaseSensitive="True" ReplaceBy=" el sí "> 
+	<ERROR UseRE="False" Find="si mismo" WholeWord="True" CaseSensitive="True" ReplaceBy="sí mismo"> 
+	<ERROR UseRE="False" Find="si misma" WholeWord="True" CaseSensitive="True" ReplaceBy="sí misma"> 
+
+<ERROR UseREOnlyToFind="True" Find="(_)\s" ReplaceBy="-">
+<ERROR UseREOnlyToFind="True" Find="(_)\w" ReplaceBy="- ">
+
+	<!--  Abreviaturas simples -->
+	<ERROR UseRE="False" Find="KBs" WholeWord="True" CaseSensitive="True" ReplaceBy="kB"> 
+	<ERROR UseRE="False" Find="Vd" WholeWord="True" CaseSensitive="True" ReplaceBy="Ud"> 
+
+	<ERROR UseRE="False" Find="sip" WholeWord="True" CaseSensitive="True" ReplaceBy="sí"> 
+	<ERROR UseRE="False" Find="sipi" WholeWord="True" CaseSensitive="True" ReplaceBy="sí"> 
+	<ERROR UseRE="False" Find="nop" WholeWord="True" CaseSensitive="True" ReplaceBy="no"> 
+	<ERROR UseRE="False" Find="nope" WholeWord="True" CaseSensitive="True" ReplaceBy="no"> 
+	<ERROR UseRE="False" Find="nah" WholeWord="True" CaseSensitive="True" ReplaceBy="no"> 
+	<ERROR UseRE="False" Find="--" ReplaceBy="..."> 
+	
+	
+</SWOCR>
