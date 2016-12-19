@@ -1,0 +1,850 @@
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Manual</title>
+	<style>
+		body {
+			font-family: Verdana,Arial,Tahoma;
+			font-size: 8pt;
+			background : White;
+		}
+		table {
+			font-family: Verdana,Arial,Tahoma;
+			font-size: 8pt;
+		}
+		a,a:visisted {
+			color: #2E60B1;
+			text-decoration: none;
+		}
+		a:hover {
+			color: #0080ff;
+			text-decoration: underline;
+		}
+		.btitle {
+			color: #000000;
+			text-decoration: underline;
+		}
+		.btitle:hover {
+			color: #000000;
+			text-decoration: underline;
+		}
+	</style>
+</head>
+<body>
+<b>OCR Errors</b><br>
+As different languages have different OCR errors, the OCR scripts were born. For more information on the scripts, refer
+<a href="#5.5.3">here</a>.
+<br>
+<br>
+<br>
+
+<b>"-" in subtitles with one line</b><br>
+There is no sense in having subtitles with one line starting with "-" (open dialog) since only one person speaks in them. Thus, if
+you enable this option, Subtitle Workshop will delete the "-" if the subtitle contains only one line.
+<br>
+<br>
+<br>
+
+<b>Space after custom characters</b><br>
+Adds a space (if not present) after any of the characters in "Space after characters" in Information and Errors's settings/Advanced.
+Useful for example to add a space after the dialog start to turn:<br><br>
+<b>-This is it.<br>-Really</b><br><br>
+To:<br><br>
+<b>- This is it.<br>- Really</b><br><br>
+This feature has a bit of composed words detection, so it doesn't add a space after the character in words like "multi-line".
+<br>
+<br>
+<br>
+
+<b>Space before custom characters</b><br>
+Adds a space (if not present) before any of the characters in "Space before characters" in Information and Errors's settings/Advanced.
+Useful for example for french language, to add spaces before "?", "!" and ":".
+<br>
+<br>
+<br>
+
+<b>Unnecessary spaces</b><br>
+This is a must. Eliminates the unnecessary spaces you choose from the text of a subtitle file. Currently this type of spaces can be
+removed:
+<ol>
+	<li>Enters and spaces at the beginning and end</li>
+	<li>Spaces between enters (left and right)</li>
+	<li>Double spaces and enters (double enter = blank line)</li>
+	<li>Spaces in front of punctuation marks</li>
+	<li>Spaces after "¿" and "¡"</li>
+	<li>Spaces before "?" and "!"</li>
+	<li>Spaces between numbers</li>
+</ol>
+As different languages may require different spacings, all the types of spaces to remove are configurable.
+<br>
+<br>
+<br>
+
+<b>Subtitles over two lines</b><br>
+Just checks if a subtitle has three or more lines, and uses <a href="#3.1">Smart line adjust</a> to fix it.
+<br>
+<br>
+<br>
+
+<b>Too long/short duration</b><br>
+Subtitle Workshop can identify if the duration of a subtitle is longer/shorter that a specified minimum/maximum value
+and report it to you. Subtitles with too short duration can be unreadable and subtitles with too long duration can be
+annoying. This error must be fixed manually.
+<br>
+<br>
+<br>
+
+<b>Too long lines</b><br>
+Detects if a subtitle contains lines that are longer than a specified number of characters. Too long lines can exceed the
+width of the screen in some video players and this is potentially dangerous.
+<br>
+<br>
+<br>
+
+<a name="5.5.2"></a><h5>5.5.2 Settings explained</h5>
+To access to Information and Errors Settings, press <b>[Alt]+[I]</b> keys or the <b>"Tools/Information and errors/Settings..."</b>
+menu. Additionally you can access this Settings from the Information and Errors window, pressing the "Settings" button.<br>
+Now let's review all the options you will find.<br><br>
+
+<h5>General options</h5>
+
+<b>Mark errors in main form's list</b><br>
+You are able to let Subtitle Workshop mark the errors in the main list by enabling this option. You can specify Font Color/Style
+(bold, italic, underline).<br>
+If the errors are marked in the main list, it is very easy to fix them manually, and in a lot of cases this is very useful. For
+example, if you have lots of long three lines subtitles you can mark them in a certain color, and then fix them all (one by one)
+using <a href="#3.4">Divide lines</a>.<br>
+If the marked error is difficult to identify visually (for example it is very hard sometimes to tell that a subtitle has got
+unnecessary spaces or unnecessary dots) you can put the mouse over the subtitle with errors for half a second and you'll
+get a description specifying exactly what type of error it has.
+<br>
+<br>
+
+<b>Mark errors on load subtitle</b><br>
+If this option is enabled, it performs an automated check for errors each time you load a subtitle file. This option is going to
+take effect only if "Mark errors in main form's list" is enabled.
+<br>
+<br>
+
+<b>Fix errors on load subtitle</b><br>
+Automatically fixes all the errors when the subtitle is loaded.
+<br>
+<br>
+
+<b>Fix one unit overlap at load</b><br>
+Fixes the most common overlapping when the subtitle is loaded. Example:<br><br>
+
+<table>
+<tr>
+	<td><b>Start time</b></td>
+	<td><b>Final time</b></td>
+	<td><b>Text</b></td>
+</tr>
+<tr>
+	<td><b>00:00:01,000</b></td>
+	<td><b>00:00:02,000</b></td>
+	<td><b>This is subtitle 1<b></b></td>
+</tr>
+<tr>
+	<td><b>00:00:02,000</b></td>
+	<td><b>00:00:03,000</b></td>
+	<td><b>This is subtitle 2<b></b></td>
+</tr>
+</table>
+<br>
+Would be changed to:<br><br>
+<table>
+<tr>
+	<td><b>Start time</b></td>
+	<td><b>Final time</b></td>
+	<td><b>Text</b></td>
+</tr>
+<tr>
+	<td><b>00:00:01,000</b></td>
+	<td><b>00:00:02,000</b></td>
+	<td><b>This is subtitle 1<b></b></td>
+</tr>
+<tr>
+	<td><b>00:00:02,<FONT COLOR="Red">001</FONT></b></td>
+	<td><b>00:00:03,000</b></td>
+	<td><b>This is subtitle 2<b></b></td>
+</tr>
+</table>
+<br>
+Enabling this option is very safe.
+<br>
+<br>
+
+<b>OCR Script:</b><br>
+Specifies the name of the OCR Script you are currently using. This script has to be in the "OCRScripts" folder inside Subtitle
+Workshop's directory. All the scripts listed here are all the ".ocr" files found in the above mentioned folder. The "Edit" button
+will open Notepad so you can edit the file manually, add or remove possible OCR Errors.
+<br>
+<br>
+
+<h5>Advanced options</h5>
+
+<b>Repeatable characters</b><br>
+Specifies all the characters that can be repeated, and that are going to be fixed if the "Repeated characters" fixing is enabled.
+<br>
+<br>
+
+<b>Prohibited characters</b><br>
+Specifies all the characters that can't be in any subtitle, if the "Prohibited characters" fixing is enabled and a subtitle contains
+any of this characters, it will be deleted.
+<br>
+<br>
+
+<b>Tolerance for repeated subtitles</b><br>
+Specifies the maximum admittible difference between final time of the first subtitle and initial time of the second one to detect
+and eventually fix a repeated subtitle.
+<br>
+<br>
+
+<b>Space after characters</b><br>
+Specifies all the characters to use with the "Space after custom characters" repair. The characters have to be one after the other
+(not separated by comma or whatever).
+<br>
+<br>
+
+<b>Space before characters</b><br>
+The same as above but this characters will be used with the "Space before custom characters" repair.
+<br>
+<br>
+
+<b>Too long duration</b><br>
+Specifies the value after which a duration is considered as too long.
+<br>
+<br>
+
+<b>Too short duration</b><br>
+Specifies the value before which a duration is considered as too short.
+<br>
+<br>
+
+<b>Too long line</b><br>
+Specifies the number of characters after which a line is considered as too long.
+<br>
+<br>
+
+<h5>Check for, fix, unnecessary spaces</h5>
+You are able to choose what errors to check for, and what errors to fix. And also, you can choose what unnecessary spaces to check
+for and what to fix.
+<br>
+<br>
+<br>
+
+<a name="5.5.3"></a><h5>5.5.3 OCR Scripts</h5>
+The OCR Scripts are nothing but a serie of Find-ReplaceBy specifications in a human-friendly close to HTML syntax. What makes them
+powerful?. The commands that are available. The possibility of using regular expression makes possible for you to find and replace
+almost anything needed in any language. A <b>very</b> important thing to know about OCR Scripts is that all commands are performed
+consecutively, that is, in the order they are written.
+<br>
+Let's now see a small example of an OCR Script:
+
+<pre>
+&lt;SWOCR WordChars="0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ_ñÑáéíóúÁÉÍÓÚäëïöü"&gt;
+	&lt;!-- The comments are set just like in HTML --&gt;
+	&lt;ERROR Find="[A-ZÁ-Ú](l)" ReplaceBy="I"&gt;
+	&lt;ERROR Find="[a-zá-ú](I)" ReplaceBy="l"&gt;
+	&lt;ERROR Find="\d( :)" ReplaceBy=":"&gt;
+	&lt;ERROR UseREOnlyToFind="False" Find=",{2,}" ReplaceBy="..."&gt;
+&lt;/SWOCR&gt;
+</pre>
+WordChars represents all the charcters that can form a word in your language. The default is the string shown above. If no
+parameter is passed, the default will be used.
+
+This are one of the most common OCR errors in English language, as in OCR Engines, "l" (small "L") and "I" (big "i") have no
+difference at all, they are often misplaced. Another very common error is the inclussion of spaces before colon. In the short
+example above Subtitle Workshop will use regular expressions on the search for errors. And if we don't want to use regular
+expressions?. For that we need to take a look at the parameters that define how you want the search to be made:<br><br>
+
+<b>UseRE</b><br>
+UseRE="True" or UseRE="False". The default value is True. If it is set to false then regular expressions will not be used in the
+search. Use it as False only if you want to simplify the way find-replace commands are written, because if regular expressions are
+disabled then the OCR scripts have few power.
+<br>
+<br>
+
+<b>UseREOnlyToFind</b><br>
+UseREOnlyToFind="True" or UseREOnlyToFind="False". The default value is True. To explain how this works we need to see an example:<br>
+
+<pre>
+&lt;ERROR UseREOnlyToFind="True" Find="[a-z]at" ReplaceBy="dog"&gt;
+</pre>
+Applied to <i>"The name of my <b>cat</b> is Max"</i> will return <i>"The name of my <b>dog</b> is Max"</i>, but
+
+<pre>
+&lt;ERROR UseREOnlyToFind="False" Find="[a-z](at)" ReplaceBy="dog"&gt;
+</pre>
+Applied to <i>"The name of my <b>cat</b> is Max"</i> will return <i>"The name of my <b>cdog</b> is Max"</i>.<br><br>
+In the first situation, when we are about to replace we also replace the part that is a regular expression (in this case "[a-z]",
+matching "c" this time).<br>
+In the second situation, when we are about to replace we only use the regular expression part ("[a-z]") to search for the text, but
+we don't use it to replace. We will only replace the part o the "Find=" text that is <b>between parenthesis</b>, that is, you need to
+write the normal regular expression and the part that is "constant" and won't vary between parenthesis. This is extremely useful for
+the OCR Scripts (take a deep look at Default.ocr to understand).
+
+<br>
+<br>
+
+The following parameters are only available when "UseRE" is set to false:<br><br>
+
+<b>WholeWord</b><br>
+WholeWord="True" or WholeWord="False". Setting it to False is the same as not including it. If true, it will find the "Find=" text
+only if it is forming a Word.
+<br>
+<br>
+
+<b>CaseSensitive</b><br>
+CaseSensitive="True" or CaseSensitive="False". Setting it to False is the same as not including it. If true, it will be case
+sensitive while finding the text.
+<br>
+<br>
+This are the most used commands, you can do a lot with them. But there are more:<br><br>
+
+<b>PreserveCase</b><br>
+The default value is False. If true, it will preserve the case of "Find" text when replacing to "ReplaceBy" text. For example, if we
+have this error:
+<pre>
+&lt;ERROR UseRE="False" Find="DOG" WholeWord="True" PreserveCase="True" ReplaceBy="CAT"&gt;
+</pre>
+As it is not case sensitive, we suppose Subtitle Workshop finds the text "Dog" and not "DOG". When replacing to "CAT", it will clone
+the case of the text it found, so it will replace "Dog" by "Cat" and not by "CAT".
+<br>
+<br>
+
+<a name="5.5.4"></a><h5>Syntax of Regular Expressions</h5>
+
+<h5>Introduction</h5>
+<i>This document is taken from TRegExpr help file, an excellent Regular Expressions library for Delphi, by Andrey V. Sorokin.</i>
+<br>
+<br>
+Regular Expressions are a widely-used method of specifying patterns of text to search for. Special metacharacters allow You to
+specify, for instance, that a particular string You are looking for occurs at the beginning or end of a line, or contains n
+recurrences of a certain character.<br>
+Regular expressions look ugly for novices, but really they are very simple (well, usually simple ;) ), handly and powerfull tool.
+<br>
+<br>
+I strongly recommend you to play with regular expressions. Let's start our learning trip!
+<br>
+<br>
+
+<h5>Simple matches</h5>
+Any single character matches itself, unless it is a <b>metacharacter</b> with a special meaning described below.<br><br>
+A series of characters matches that series of characters in the target string, so the pattern "bluh" would match "bluh"
+in the target string. Quite simple, eh?<br><br>
+You can cause characters that normally function as <b>metacharacters</b> or <b>escape sequences</b> to be interpreted literally by
+'escaping' them by preceding them with a backslash "\", for instance: metacharacter "^" match beginning of string, but "\^" match
+character "^", "\\" match "\" and so on.<br><br>
+
+<b>Examples:</b><br>
+<table>
+<tr>
+	<td>foobar</td>
+	<td><i>matchs string 'foobar'</i></td>
+</tr>
+<tr>
+	<td>\^FooBarPtr</td>
+	<td><i>matchs '^FooBarPtr'</i></td>
+</tr>
+</table>
+
+<h5>Escape sequences</h5>
+Characters may be specified using a <b>escape sequences</b> syntax much like that used in C and Perl: "\n'' matches a newline,
+"\t'' a tab, etc. More generally, \xnn, where nn is a string of hexadecimal digits, matches the character whose ASCII value is nn.
+If You need wide (Unicode) character code, You can use '\x{nnnn}', where 'nnnn' - one or more hexadecimal digits.<br>
+<br>
+
+<table>
+<tr>
+	<td>\xnn</td>
+	<td><i>char with hex code nn</i></td>
+</tr>
+<tr>
+	<td>\x{nnnn}</td>
+	<td><i>char with hex code nnnn (one byte for plain text and two bytes for Unicode)</i></td>
+</tr>
+<tr>
+	<td>\t</td>
+	<td><i>tab (HT/TAB), same as \x09</i></td>
+</tr>
+<tr>
+	<td>\n</td>
+	<td><i>newline (NL), same as \x0a</i></td>
+</tr>
+<tr>
+	<td>\r</td>
+	<td><i>car.return (CR), same as \x0d</i></td>
+</tr>
+<tr>
+	<td>\f</td>
+	<td><i>form feed (FF), same as \x0c</i></td>
+</tr>
+<tr>
+	<td>\a</td>
+	<td><i>alarm (bell) (BEL), same as \x07</i></td>
+</tr>
+<tr>
+	<td>\e</td>
+	<td><i>escape (ESC), same as \x1b</i></td>
+</tr>
+</table>
+<br>
+
+<b>Examples:</b><br>
+<table>
+<tr>
+	<td>foo\x20bar</td>
+	<td><i>matchs 'foo bar' (note space in the middle)</i></td>
+</tr>
+<tr>
+	<td>\tfoobar</td>
+	<td><i>matchs 'foobar' predefined by tab</i></td>
+</tr>
+</table>
+<br>
+
+<h5>Character classes</h5>
+You can specify a <b>character class</b>, by enclosing a list of characters in [], which will match any one character from the list.
+<br>
+<br>
+If the first character after the "['' is "^'', the class matches any character <b>not</b> in the list.
+<br>
+<br>
+<b>Examples:</b><br>
+<table>
+<tr>
+	<td>foob[aeiou]r</td>
+	<td><i>finds strings 'foobar', 'foober' etc. but not 'foobbr', 'foobcr' etc.</i></td>
+</tr>
+<tr>
+	<td>foob[^aeiou]r</td>
+	<td><i>find strings 'foobbr', 'foobcr' etc. but not 'foobar', 'foober' etc.</i></td>
+</tr>
+</table>
+<br>
+Within a list, the "-'' character is used to specify a <b>range</b>, so that a-z represents all characters between "a'' and "z'',
+inclusive.<br><br>
+If you want "-'' itself to be a member of a class, put it at the start or end of the list, or escape it with a backslash. If you
+want ']' you may place it at the start of list or escape it with a backslash.
+<br>
+<br>
+<b>Examples:</b><br>
+<table>
+<tr>
+	<td>[-az]</td>
+	<td><i>matchs 'a', 'z' and '-'</i></td>
+</tr>
+<tr>
+	<td>[az-]</td>
+	<td><i>matchs 'a', 'z' and '-'</i></td>
+</tr>
+<tr>
+	<td>[a\-z]</td>
+	<td><i>matchs 'a', 'z' and '-'</i></td>
+</tr>
+<tr>
+	<td>[a-z]</td>
+	<td><i>matchs all twenty six small characters from 'a' to 'z'</i></td>
+</tr>
+<tr>
+	<td>[\n-\x0D]</td>
+	<td><i>matchs any of #10,#11,#12,#13.</i></td>
+</tr>
+<tr>
+	<td>[\d-t]</td>
+	<td><i>matchs any digit, '-' or 't'.</i></td>
+</tr>
+<tr>
+	<td>[]-a]</td>
+	<td><i>matchs any char from ']'..'a'.</i></td>
+</tr>
+</table>
+<br>
+
+<h5>Metacharacters</h5>
+Metacharacters are special characters which are the essence of Regular Expressions. There are different types of metacharacters,
+described below.
+<br>
+<br>
+
+<b>Metacharacters - line separators</b>
+<table>
+<tr>
+	<td>^</td>
+	<td><i>start of line</i></td>
+</tr>
+<tr>
+	<td>$</td>
+	<td><i>end of line</i></td>
+</tr>
+<tr>
+	<td>\A</td>
+	<td><i>start of text</i></td>
+</tr>
+<tr>
+	<td>\Z</td>
+	<td><i>end of text</i></td>
+</tr>
+<tr>
+	<td>.</td>
+	<td><i>any character in line</i></td>
+</tr>
+</table>
+<br>
+
+<b>Examples:</b><br>
+<table>
+<tr>
+	<td>^foobar</td>
+	<td><i>matchs string 'foobar' only if it's at the beginning of line</i></td>
+</tr>
+<tr>
+	<td>foobar$</td>
+	<td><i>matchs string 'foobar' only if it's at the end of line</i></td>
+</tr>
+<tr>
+	<td>^foobar$</td>
+	<td><i>matchs string 'foobar' only if it's the only string in line</i></td>
+</tr>
+<tr>
+	<td>foob.r</td>
+	<td><i>matchs strings like 'foobar', 'foobbr', 'foob1r' and so on</i></td>
+</tr>
+</table>
+<br>
+The "^" metacharacter by default is only guaranteed to match at the beginning of the input string/text, the "$" metacharacter only
+at the end. Embedded line separators will not be matched by "^'' or "$''.<br>
+You may, however, wish to treat a string as a multi-line buffer, such that the "^'' will match after any line separator within the
+string, and "$'' will match before any line separator. You can do this by switching On the modifier /m.<br>
+The \A and \Z are just like "^'' and "$'', except that they won't match multiple times when the modifier /m is used, while "^'' and
+"$'' will match at every internal line separator.<br><br>
+The ".'' metacharacter by default matches any character, but if You switch Off the modifier /s, then '.' won't match embedded line
+separators.<br><br>
+TRegExpr works with line separators as recommended at www.unicode.org (http://www.unicode.org/unicode/reports/tr18/):<br><br>
+
+ "^" is at the beginning of a input string, and, if modifier /m is On, also immediately following any occurrence of \x0D\x0A or
+ \x0A or \x0D (if You are using Unicode version of TRegExpr, then also \x2028 or  \x2029 or \x0B or \x0C or \x85). Note that there
+ is no empty line within the sequence \x0D\x0A.<br><br>
+
+"$" is at the end of a input string, and, if modifier /m is On, also immediately preceding any occurrence of  \x0D\x0A or \x0A or
+\x0D (if You are using Unicode version of TRegExpr, then also \x2028 or  \x2029 or \x0B or \x0C or \x85). Note that there is no
+empty line within the sequence \x0D\x0A.<br><br>
+
+"." matchs any character, but if You switch Off modifier /s then "." doesn't match \x0D\x0A and \x0A and \x0D (if You are using
+Unicode version of TRegExpr, then also \x2028 and  \x2029 and \x0B and \x0C and \x85).<br><br>
+
+Note that "^.*$" (an empty line pattern) doesnot match the empty string within the sequence \x0D\x0A, but matchs the empty string
+within the sequence \x0A\x0D.<br><br>
+
+Multiline processing can be easely tuned for Your own purpose with help of TRegExpr properties LineSeparators and
+LinePairedSeparator, You can use only Unix style separators \n or only DOS/Windows style \r\n or mix them together (as described
+above and used by default) or define Your own line separators!<br><br>
+
+
+<h5>Metacharacters - predefined classes</h5>
+<table>
+<tr>
+	<td>\w</td>
+	<td><i>an alphanumeric character (including "_")</i></td>
+</tr>
+<tr>
+	<td>\W</td>
+	<td><i>a nonalphanumeric</i></td>
+</tr>
+<tr>
+	<td>\d</td>
+	<td><i>a numeric character</i></td>
+</tr>
+<tr>
+	<td>\D</td>
+	<td><i>a non-numeric</i></td>
+</tr>
+<tr>
+	<td>\s</td>
+	<td><i>any space (same as [ \t\n\r\f])</i></td>
+</tr>
+<tr>
+	<td>\S</td>
+	<td><i>a non space</i></td>
+</tr>
+</table>
+<br>
+You may use \w, \d and \s within custom <b>character classes</b>.<br><br>
+
+<b>Examples:</b><br>
+<table>
+<tr>
+	<td>foob\dr</td>
+	<td><i>matchs strings like 'foob1r', ''foob6r' and so on but not 'foobar', 'foobbr' and so on</i></td>
+</tr>
+<tr>
+	<td>foob[\w\s]r</td>
+	<td><i>matchs strings like 'foobar', 'foob r', 'foobbr' and so on but not 'foob1r', 'foob=r' and so on</i></td>
+</tr>
+</table>
+<br>
+TRegExpr uses properties SpaceChars and WordChars to define character classes \w, \W, \s, \S, so You can easely redefine it.<br><br>
+
+<h5>Metacharacters - word boundaries</h5>
+<table>
+<tr>
+	<td>\b</td>
+	<td><i>Match a word boundary</i></td>
+</tr>
+<tr>
+	<td>\B</td>
+	<td><i>Match a non-(word boundary)</i></td>
+</tr>
+</table>
+<br>
+A word boundary (\b) is a spot between two characters that has a \w on one side of it and a \W on the other side of it (in either
+order), counting the imaginary characters off the beginning and end of the string as matching a \W.<br><br>
+
+<h5>Metacharacters - iterators</h5>
+Any item of a regular expression may be followed by another type of metacharacters - <b>iterators</b>. Using this metacharacters
+you can specify number of occurences of previous character, <b>metacharacter</b> or <b>subexpression</b>.<br>
+
+<table>
+<tr>
+	<td>*</td>
+	<td><i>zero or more ("greedy"), similar to {0,}</i></td>
+</tr>
+<tr>
+	<td>+</td>
+	<td><i>one or more ("greedy"), similar to {1,}</i></td>
+</tr>
+<tr>
+	<td>?</td>
+	<td><i>zero or one ("greedy"), similar to {0,1}</i></td>
+</tr>
+<tr>
+	<td>{n}</td>
+	<td><i>exactly n times ("greedy")</i></td>
+</tr>
+<tr>
+	<td>{n,}</td>
+	<td><i>at least n times ("greedy")</i></td>
+</tr>
+<tr>
+	<td>{n,m}</td>
+	<td><i>at least n but not more than m times ("greedy")</i></td>
+</tr>
+<tr>
+	<td>*?</td>
+	<td><i>zero or more ("non-greedy"), similar to {0,}?</i></td>
+</tr>
+<tr>
+	<td>+?</td>
+	<td><i>one or more ("non-greedy"), similar to {1,}?</i></td>
+</tr>
+<tr>
+	<td>??</td>
+	<td><i>zero or one ("non-greedy"), similar to {0,1}?</i></td>
+</tr>
+<tr>
+	<td>{n}?</td>
+	<td><i>exactly n times ("non-greedy")</i></td>
+</tr>
+<tr>
+	<td>{n,}?</td>
+	<td><i>at least n times ("non-greedy")</i></td>
+</tr>
+<tr>
+	<td>{n,m}?</td>
+	<td><i>at least n but not more than m times ("non-greedy")</i></td>
+</tr>
+</table>
+<br>
+So, digits in curly brackets of the form {n,m}, specify the minimum number of times to match the item n and the maximum m. The form
+{n} is equivalent to {n,n} and matches exactly n times. The form {n,} matches n or more times. There is no limit to the size of n
+or m, but large numbers will chew up more memory and slow down r.e. execution.<br><br>
+
+If a curly bracket occurs in any other context, it is treated as a regular character.<br><br>
+
+<b>Examples:</b>
+<table>
+<tr>
+	<td>foob.*r</td>
+	<td><i>matchs strings like 'foobar',  'foobalkjdflkj9r' and 'foobr'</i></td>
+</tr>
+<tr>
+	<td>foob.+r</td>
+	<td><i>matchs strings like 'foobar', 'foobalkjdflkj9r' but not 'foobr'</i></td>
+</tr>
+<tr>
+	<td>foob.?r</td>
+	<td><i>matchs strings like 'foobar', 'foobbr' and 'foobr' but not 'foobalkj9r'</i></td>
+</tr>
+<tr>
+	<td>fooba{2}r</td>
+	<td><i>matchs the string 'foobaar'</i></td>
+</tr>
+<tr>
+	<td>fooba{2,}r</td>
+	<td><i>matchs strings like 'foobaar', 'foobaaar', 'foobaaaar' etc.</i></td>
+</tr>
+<tr>
+	<td>fooba{2,3}r</td>
+	<td><i>matchs strings like 'foobaar', or 'foobaaar'  but not 'foobaaaar'</i></td>
+</tr>
+</table>
+<br>
+A little explanation about "greediness". "Greedy" takes as many as possible, "non-greedy" takes as few as possible. For example,
+'b+' and 'b*' applied to string 'abbbbc' return 'bbbb', 'b+?' returns 'b', 'b*?' returns empty string, 'b{2,3}?' returns 'bb',
+'b{2,3}' returns 'bbb'.<br><br>
+
+You can switch all iterators into "non-greedy" mode (see the modifier /g).<br><br>
+
+<h5>Metacharacters - alternatives</h5>
+You can specify a series of <b>alternatives</b> for a pattern using "|'' to separate them, so that fee|fie|foe will match any of
+"fee'', "fie'', or "foe'' in the target string (as would f(e|i|o)e). The first alternative includes everything from the last
+pattern delimiter ("('', "['', or the beginning of the pattern) up to the first "|'', and the last alternative contains everything
+from the last "|'' to the next pattern delimiter. For this reason, it's common practice to include alternatives in parentheses, to
+minimize confusion about where they start and end.<br>
+Alternatives are tried from left to right, so the first alternative found for which the entire expression matches, is the one that
+is chosen. This means that alternatives are not necessarily greedy. For example: when matching foo|foot against "barefoot'', only
+the "foo'' part will match, as that is the first alternative tried, and it successfully matches the target string. (This might not
+seem important, but it is important when you are capturing matched text using parentheses.)<br>
+Also remember that "|'' is interpreted as a literal within square brackets, so if You write [fee|fie|foe] You're really only
+matching [feio|].<br><br>
+
+<b>Examples:</b>
+<table>
+<tr>
+	<td>foo(bar|foo)</td>
+	<td><i>matchs strings 'foobar' or 'foofoo'.</i></td>
+</tr>
+</table>
+<br>
+
+<h5>Metacharacters - subexpressions</h5>
+The bracketing construct ( ... ) may also be used for define r.e. subexpressions (after parsing You can find subexpression
+positions, lengths and actual values in MatchPos, MatchLen and Match properties of TRegExpr, and substitute it in template strings
+by TRegExpr.Substitute).<br><br>
+Subexpressions are numbered based on the left to right order of their opening parenthesis.<br>
+First subexpression has number '1' (whole r.e. match has number '0' - You can substitute it in TRegExpr.Substitute as '$0' or '$&amp;').
+<br>
+<br>
+<b>Examples:</b>
+<table>
+<tr>
+	<td>(foobar){8,10}</td>
+	<td><i>matchs strings which contain 8, 9 or 10 instances of the 'foobar'</i></td>
+</tr>
+<tr>
+	<td>foob([0-9]|a+)r</td>
+	<td><i>matchs 'foob0r', 'foob1r' , 'foobar', 'foobaar', 'foobaar' etc.</i></td>
+</tr>
+</table>
+<br>
+
+<h5>Metacharacters - backreferences</h5>
+<b>Metacharacters</b> \1 through \9 are interpreted as backreferences. \&lt;n&gt; matches previously matched subexpression #&lt;n&gt;.
+<br>
+<br>
+
+<b>Examples:</b>
+<table>
+<tr>
+	<td>(.)\1+</td>
+	<td><i>matchs 'aaaa' and 'cc'.</i></td>
+</tr>
+<tr>
+	<td>(.+)\1+</td>
+	<td><i>also match 'abab' and '123123'</i></td>
+</tr>
+<tr>
+	<td>(['"]?)(\d+)\1</td>
+	<td><i>matchs '"13" (in double quotes), or '4' (in single quotes) or 77 (without quotes) etc</i></td>
+</tr>
+</table>
+<br>
+
+<h5>Modifiers</h5>
+Modifiers are for changing behaviour of TRegExpr.<br><br>
+There are many ways to set up modifiers. <br>
+Any of these modifiers may be embedded within the regular expression itself using the (?...) construct.<br>
+Also, you can assign to appropriate TRegExpr properties (Modifier for example to change /x, or ModifierStr to change all modifiers
+together). The default values for new instances of TRegExpr object defined in global variables, for example global variable
+RegExprModifierX defines value of new TRegExpr instance ModifierX property.
+<br>
+<br>
+
+<table>
+<tr>
+	<td><b>i</b></td>
+	<td>Do case-insensitive pattern matching (using installed in you system locale settings), see also InvertCase.</td>
+</tr>
+<tr>
+	<td><b>m</b></td>
+	<td>Treat string as multiple lines. That is, change "^'' and "$'' from matching at only the very start or end of the string to the start or end of any line anywhere within the string, see also Line separators.</td>
+</tr>
+<tr>
+	<td><b>s</b></td>
+	<td>Treat string as single line. That is, change ".'' to match any character whatsoever, even a line separators (see also Line separators), which it normally would not match.</td>
+</tr>
+<tr>
+	<td><b>g</b></td>
+	<td>Non standard modifier. Switching it Off You'll switch all following operators into non-greedy mode (by default this modifier is On). So, if modifier /g is Off then '+' works as '+?', '*' as '*?' and so on</td>
+</tr>
+<tr>
+	<td><b>x</b></td>
+	<td>Extend your pattern's legibility by permitting whitespace and comments (see explanation below).</td>
+</tr>
+<tr>
+	<td><b>r</b></td>
+	<td>Non-standard modifier. If is set then range à-ÿ additional include russian letter '¸', À-ß  additional include '¨', and à-ß include all russian symbols.
+Sorry for foreign users, but it's set by default. If you want switch if off by default - set false to global variable RegExprModifierR.</td>
+</tr>
+</table>
+<br>
+The modifier /x itself needs a little more explanation. It tells the TRegExpr to ignore whitespace that is neither backslashed nor
+within a character class. You can use this to break up your regular expression into (slightly) more readable parts. The # character
+is also treated as a metacharacter introducing a comment, for example:<br><br>
+
+<pre>
+(
+(abc) # comment 1
+  |   # You can use spaces to format r.e. - TRegExpr ignores it
+(efg) # comment 2
+)
+</pre>
+
+This also means that if you want real whitespace or # characters in the pattern (outside a character class, where they are
+unaffected by /x), that you'll either have to escape them or encode them using octal or hex escapes. Taken together, these features
+go a long way towards making regular expressions text more readable.
+<br>
+
+<h5>Perl extensions</h5>
+(?imsxr-imsxr)<br>
+You may use it into r.e. for modifying modifiers by the fly. If this construction inlined into subexpression, then it effects only
+into this subexpression.<br><br>
+
+<b>Examples:</b>
+<table>
+<tr>
+	<td>(?i)Saint-Petersburg</td>
+	<td><i>matchs 'Saint-petersburg' and 'Saint-Petersburg'</i></td>
+</tr>
+<tr>
+	<td>(?i)Saint-(?-i)Petersburg</td>
+	<td><i>matchs 'Saint-Petersburg' but not 'Saint-petersburg'</i></td>
+</tr>
+<tr>
+	<td> (?i)(Saint-)?Petersburg</td>
+	<td><i>matchs 'Saint-petersburg' and 'saint-petersburg'</i></td>
+</tr>
+<tr>
+	<td>((?i)Saint-)?Petersburg</td>
+	<td><i>matchs 'saint-Petersburg', but not 'saint-petersburg' </i></td>
+</tr>
+</table>
+<br>
+
+(?#text)
+A comment, the text is ignored. Note that TRegExpr closes the comment as soon as it sees a ")", so there is no way to put a literal
+")" in the comment.
+</body>
+</html>

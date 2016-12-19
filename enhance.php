@@ -72,7 +72,6 @@ if(isset($_POST['episode_number']) && is_numeric($_POST['episode_number'])) {
 if(isset($_POST['episode_title'])) {
     $filename .= '.'.trim($_POST['episode_title']);
 }
-echo $_POST['other'];
 if(isset($_POST['other'])) {
     $filename .= '.'.trim($_POST['other']);
     array_push($dataArray['other'], $_POST['other']);
@@ -268,7 +267,7 @@ switch($method) {
         break;
     case 1:
         // $subtitle1 = $subtitle; -> se puede crear otra variable para probar varios metodos de optimizacion al mismo tiempo y ver cual funciona mejor
-        downloadEnhancedSubtitle(runMethod1($subtitle,$totalSegmentsOverCps,$cps,$maxVariation),$totalSequences,$filename);
+        printEnhancedSubtitle(runMethod1($subtitle,$totalSegmentsOverCps,$cps,$maxVariation),$totalSequences,$filename);
         break;
     case 2:
         // $subtitle2 = $subtitle;
