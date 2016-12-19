@@ -17,4 +17,5 @@ Tareas pendientes:
 - pasar ocr (checkbox en el form para elgir cuales pasar)
 - admin (abm) expresiones regulares de ocr's [memoria de traducción]
 - unidades de sentido
+- batch enhancer?
 - full wiki-adictos style. mostrar cada línea del subtitulo en campos editables y permitir que se vayan tomando (abriendo un socket para no tener que refrescar la pag, donde un usuario toma una secuencia se deshabilita para el resto)... acá volverían todas las ideas para la plataforma que nunca llegamos a implementar... 

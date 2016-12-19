@@ -66,11 +66,20 @@ $(document).ready(function(){
     }
   });
 
-  $('i.fa-info-circle').on('click',function(){
+  $('i.fa-info-circle.sub-url').on('click',function(){
     $.alert({
           animation: 'top',
           title: '¿Qué link elijo?',
           content: '<img id="info-image" src="images/info.jpg" />',
+          backgroundDismiss: true
+      });
+  });
+
+  $('i.fa-info-circle.info-url').on('click',function(){
+    $.alert({
+          animation: 'top',
+          title: '¿Para qué sirve?',
+          content: 'Sólo se usa para completar de forma automática algunos de los campos.',
           backgroundDismiss: true
       });
   });

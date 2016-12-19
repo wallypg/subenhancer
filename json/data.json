@@ -1,8 +1,10 @@
 {
     "tv_show": [
-        "Better Call Saul",
-        "Mr. Robot",
-        "Fargo"
+        "Modern Family",
+        "Blackish",
+        "Criminal Minds",
+        "Last Man Standing",
+        "Law &amp; Order"
     ],
     "codec": [
         "XviD",
@@ -33,12 +35,9 @@
         "Wendy",
         "Maigiri",
         "GoKuroi",
-        "eltongous"
+        "eltongous",
+        "japezoa"
     ],
-    "translation": [
-        "tusubtitulo.com"
-    ],
-    "enhanced": [
-        ""
-    ]
+    "translation": [],
+    "enhanced": []
 }

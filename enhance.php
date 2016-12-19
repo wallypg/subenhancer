@@ -38,75 +38,6 @@ if(isset($_POST['sub_url']) && preg_match($validUrlPatternSub, $_POST['sub_url']
     die();
 }
 
-/************************************************************/
-/**     Guardado de datos en un JSON      **/
-/** y construcción del nombre del archivo **/
-/************************************************************/
-
-if (file_exists('json/data.json'))
-  $dataArray = json_decode(file_get_contents('json/data.json'), true);
- else
-  $dataArray = array(
-                        'tv_show' => array(),
-                        'codec' => array(),
-                        'format' => array(),
-                        'rip_group' => array(),
-                        'other' => array(),
-                        'editor' => array(),
-                        'translation' => array(),
-                        'enhanced' => array()
-                    );
-
-$filename = '';
-
-if(isset($_POST['tv_show'])) {
-    $filename = trim($_POST['tv_show']);
-    array_push($dataArray['tv_show'], $_POST['tv_show']);
-}
-if(isset($_POST['season']) && is_numeric($_POST['season'])) {
-    $filename .= '.S'.str_pad($_POST['season'], 2, "0", STR_PAD_LEFT);
-}
-if(isset($_POST['episode_number']) && is_numeric($_POST['episode_number'])) {
-    $filename .= 'E'.str_pad($_POST['episode_number'], 2, "0", STR_PAD_LEFT);
-}
-if(isset($_POST['episode_title'])) {
-    $filename .= '.'.trim($_POST['episode_title']);
-}
-if(isset($_POST['other'])) {
-    $filename .= '.'.trim($_POST['other']);
-    array_push($dataArray['other'], $_POST['other']);
-}
-if(isset($_POST['format'])) {
-    $filename .= '.'.trim($_POST['format']);
-    array_push($dataArray['format'], $_POST['format']);
-}
-if(isset($_POST['codec'])) {
-    $filename .= '.'.trim($_POST['codec']);
-    array_push($dataArray['codec'], $_POST['codec']);
-}
-if(isset($_POST['rip_group'])) {
-    $filename .= '-'.trim($_POST['rip_group']);
-    array_push($dataArray['rip_group'], $_POST['rip_group']);
-}
-if(isset($_POST['editor'])) {
-    array_push($dataArray['editor'], $_POST['editor']);
-}
-if(isset($_POST['translation'])) {
-    array_push($dataArray['translation'], $_POST['translation']);
-}
-
-$filename .= '.srt';
-
-$filename = preg_replace('/\s+/', '.', $filename);
-$notAllowed = array_merge(
-                array_map('chr', range(0,31)),
-                array("<", ">", ":", '"', "/", "\\", "|", "?", "*"));
-$filename = str_replace($notAllowed, ".", $filename);
-$filename = preg_replace('/\.+/', '.', $filename);
-
-array_push($dataArray['enhanced'], $filename);
-file_put_contents("json/data.json",json_encode($dataArray,JSON_PRETTY_PRINT));
-
 
 /************************************************************/
 /** Valores iniciales para la optimización **/ 
@@ -191,7 +122,77 @@ if(md5($subtitle->$lastLine->textLine1) == '4bab2f9ce44d40cf4f268094f76bac69')
     // ERROR VIEW
     die('Subtítulo ya optimizado');
 
-// echo '<h1>Lineas que superaban los 25 CPS: '.count($totalSegmentsOverCps).'</h1>';//op
+
+
+/************************************************************/
+/**     Guardado de datos en un JSON      **/
+/** y construcción del nombre del archivo **/
+/************************************************************/
+
+if (file_exists('json/data.json'))
+  $dataArray = json_decode(file_get_contents('json/data.json'), true);
+ else
+  $dataArray = array(
+                        'tv_show' => array(),
+                        'codec' => array(),
+                        'format' => array(),
+                        'rip_group' => array(),
+                        'other' => array(),
+                        'editor' => array(),
+                        'translation' => array(),
+                        'enhanced' => array()
+                    );
+
+$filename = '';
+
+if(isset($_POST['tv_show']) && !empty($_POST['tv_show'])) {
+    $filename = trim($_POST['tv_show']);
+    if(!in_array($_POST['tv_show'], $dataArray['tv_show'])) array_push($dataArray['tv_show'], $_POST['tv_show']);
+}
+if(isset($_POST['season']) && is_numeric($_POST['season'])) {
+    $filename .= '.S'.str_pad($_POST['season'], 2, "0", STR_PAD_LEFT);
+}
+if(isset($_POST['episode_number']) && !empty($_POST['episode_number']) && is_numeric($_POST['episode_number'])) {
+    $filename .= 'E'.str_pad($_POST['episode_number'], 2, "0", STR_PAD_LEFT);
+}
+if(isset($_POST['episode_title']) && !empty($_POST['episode_title'])) {
+    $filename .= '.'.trim($_POST['episode_title']);
+}
+if(isset($_POST['other']) && !empty($_POST['other'])) {
+    $filename .= '.'.trim($_POST['other']);
+    if(!in_array($_POST['other'], $dataArray['other'])) array_push($dataArray['other'], $_POST['other']);
+}
+if(isset($_POST['format']) && !empty($_POST['format'])) {
+    $filename .= '.'.trim($_POST['format']);
+    if(!in_array($_POST['format'], $dataArray['format'])) array_push($dataArray['format'], $_POST['format']);
+}
+if(isset($_POST['codec']) && !empty($_POST['codec'])) {
+    $filename .= '.'.trim($_POST['codec']);
+    if(!in_array($_POST['codec'], $dataArray['codec'])) array_push($dataArray['codec'], $_POST['codec']);
+}
+if(isset($_POST['rip_group']) && !empty($_POST['rip_group'])) {
+    $filename .= '-'.trim($_POST['rip_group']);
+    if(!in_array($_POST['rip_group'], $dataArray['rip_group'])) array_push($dataArray['rip_group'], $_POST['rip_group']);
+}
+if(isset($_POST['editor']) && !empty($_POST['editor'])) {
+    if(!in_array($_POST['editor'], $dataArray['editor'])) array_push($dataArray['editor'], $_POST['editor']);
+}
+if(isset($_POST['translation']) && !empty($_POST['translation'])) {
+    if(!in_array($_POST['translation'], $dataArray['translation'])) array_push($dataArray['translation'], $_POST['translation']);
+}
+
+$filename .= '.srt';
+
+$filename = preg_replace('/\s+/', '.', $filename);
+$notAllowed = array_merge(
+                array_map('chr', range(0,31)),
+                array("<", ">", ":", '"', "/", "\\", "|", "?", "*"));
+$filename = str_replace($notAllowed, ".", $filename);
+$filename = preg_replace('/\.+/', '.', $filename);
+
+array_push($dataArray['enhanced'], $filename);
+file_put_contents("json/data.json",json_encode($dataArray,JSON_PRETTY_PRINT));
+
 
 
 //  ██████╗ ██████╗ ████████╗██╗███╗   ███╗██╗███████╗ █████╗ ████████╗██╗ ██████╗ ███╗   ██╗
@@ -259,7 +260,7 @@ if(md5($subtitle->$lastLine->textLine1) == '4bab2f9ce44d40cf4f268094f76bac69')
 // foreach ($totalSegmentsOverCps as $segmentOverCps) echo $segmentOverCps.'<br>';
 
 // Elegir método de optimización (0 para mostrar el subtítulo original)
-$method = 1;
+$method = 2;
 
 switch($method) {
     case 0:
@@ -270,21 +271,15 @@ switch($method) {
         printEnhancedSubtitle(runMethod1($subtitle,$totalSegmentsOverCps,$cps,$maxVariation),$totalSequences,$filename);
         break;
     case 2:
-        // $subtitle2 = $subtitle;
-        printEnhancedSubtitle(runMethod2($subtitle,$totalSegmentsOverCps,$cps,$maxVariation),$totalSequences);
+        downloadEnhancedSubtitle(runMethod2($subtitle,$totalSegmentsOverCps,$cps,$maxVariation),$totalSequences,$filename);
         break;
     case 3:
-        // $subtitle3 = $subtitle;
-        // runMethod3($subtitle3);
+        printEnhancedSubtitle(runMethod3($subtitle,$totalSegmentsOverCps,$cps,$maxVariation),$totalSequences,$filename);
         break;
-    case 4:
-        // $subtitle4 = $subtitle;
-        // runMethod4($subtitle4);
+    case 4:        
         break;
 }
 
-// echo '<h1>Lineas que superan los 25 CPS después de la optimización: '.count($totalSegmentsOverCps).'</h1>';//op
-// print_r($totalSegmentsOverCps);
 
 // OBJETO:
 // print_r($subtitle);
@@ -303,7 +298,7 @@ die();
 // ╚═╝     ╚═╝╚══════╝   ╚═╝   ╚═╝  ╚═╝ ╚═════╝ ╚═════╝ ╚══════╝
 
 function runMethod1 ($subtitle,$totalSegmentsOverCps,$cps,$maxVariation) {
-    
+    // echo '<h1>Lineas que superaban los 25 CPS: '.count($totalSegmentsOverCps).'</h1>';//op2
 
     $totalSegmentsOverCps = checkLinesOverCps($subtitle,$totalSegmentsOverCps,$cps);
     foreach ($totalSegmentsOverCps as $segmentOverCps) {
@@ -382,21 +377,109 @@ function runMethod1 ($subtitle,$totalSegmentsOverCps,$cps,$maxVariation) {
 
 	
 	//function moveLineForward($subtitle,$segment,$milliseconds,$maxVariation,$cps) {
-
+    // echo '<h1>Lineas que superan los 25 CPS después de la optimización: '.count($totalSegmentsOverCps).'</h1>';//op2
     // foreach ($totalSegmentsOverCps as $segmentOverCps) firstNeighbourLevel($subtitle,$segmentOverCps,$cps,$maxVariation);
     return $subtitle;
 }
 
 function runMethod2 ($subtitle,$totalSegmentsOverCps,$cps,$maxVariation) {
+    // echo '<h1>Lineas que superaban los 25 CPS: '.count($totalSegmentsOverCps).'</h1>';//op1
+    
+    // 1)
+    // Ocupo espacios vacíos atrás, y luego adelante
     foreach ($totalSegmentsOverCps as $segmentOverCps) fillEmptySpaceBefore($subtitle,$segmentOverCps,$cps);
-    checkLinesOverCps($subtitle,$totalSegmentsOverCps,$cps);
+    $totalSegmentsOverCps = checkLinesOverCps($subtitle,$totalSegmentsOverCps,$cps);
     foreach ($totalSegmentsOverCps as $segmentOverCps) fillEmptySpaceAfter($subtitle,$segmentOverCps,$cps);
-    checkLinesOverCps($subtitle,$totalSegmentsOverCps,$cps);
+    $totalSegmentsOverCps = checkLinesOverCps($subtitle,$totalSegmentsOverCps,$cps);
+
+    
+    // 2)
+    // Siempre que sea posible incremento los cps de la línea anterior (nivel -1) hasta una de [-1] o [0] alcance los $cps
+    // Línea [0] aprovecha el espacio liberado atrás
+    foreach ($totalSegmentsOverCps as $segmentOverCps) {
+        $previousSegment = $segmentOverCps - 1;
+        if($subtitle->$previousSegment->cps < $cps) {
+            if(checkCpsIncreaseGain($subtitle->$previousSegment,$cps) > checkMissingTime($subtitle->$segmentOverCps,$cps)) {
+                $reduceTime = checkMissingTime($subtitle->$segmentOverCps,$cps);
+            } else {
+                $reduceTime = checkCpsIncreaseGain($subtitle->$previousSegment,$cps);
+            }
+            reduceDuration($subtitle,$segmentOverCps-1,$reduceTime);
+            fillEmptySpaceBefore($subtitle,$segmentOverCps,$cps);
+        } else {
+            // Línea anterior [-1] supera o iguala los $cps
+        }
+    }
+    $totalSegmentsOverCps = checkLinesOverCps($subtitle,$totalSegmentsOverCps,$cps);
+
+    
+    // 3)
+    // Siempre que sea posible incremento los cps de la línea anterior (nivel -2) hasta una de [-2] o [-1] alcance los $cps
+    // Línea [-1] se mueve hacia atrás
+    // Línea [0] aprovecha el espacio liberado atrás
+    foreach ($totalSegmentsOverCps as $segmentOverCps) {
+        $previousSegment = $segmentOverCps - 2;
+        if($subtitle->$previousSegment->cps < $cps) {
+            if(checkCpsIncreaseGain($subtitle->$previousSegment,$cps) > checkMissingTime($subtitle->$segmentOverCps,$cps))  {
+                $reduceTime = checkMissingTime($subtitle->$segmentOverCps,$cps);
+            } else {
+                $reduceTime = checkCpsIncreaseGain($subtitle->$previousSegment,$cps);
+            }            
+            reduceDuration ($subtitle,$segmentOverCps-2,$reduceTime);
+            moveLineBackward($subtitle,$segmentOverCps-1,$reduceTime,$maxVariation,$cps);
+            fillEmptySpaceBefore($subtitle,$segmentOverCps,$cps);
+        } else {
+            // Linea anterior nivel [-2] supera o iguala los $cps
+        }
+    }
+    $totalSegmentsOverCps = checkLinesOverCps($subtitle,$totalSegmentsOverCps,$cps);
+
+    // 4)
+    // 
+    foreach ($totalSegmentsOverCps as $segmentOverCps) {
+        $previousSegment = $segmentOverCps - 3;
+        if($subtitle->$previousSegment->cps < $cps) {
+            if(checkCpsIncreaseGain($subtitle->$previousSegment,$cps) > checkMissingTime($subtitle->$segmentOverCps,$cps))  {
+                $reduceTime = checkMissingTime($subtitle->$segmentOverCps,$cps);
+            } 
+            else {
+                $reduceTime = checkCpsIncreaseGain($subtitle->$previousSegment,$cps);
+            }
+            reduceDuration ($subtitle,$segmentOverCps-3,$reduceTime);
+            moveLineBackward($subtitle,$segmentOverCps-2,$reduceTime,$maxVariation,$cps);
+            moveLineBackward($subtitle,$segmentOverCps-1,$reduceTime,$maxVariation,$cps);
+            fillEmptySpaceBefore($subtitle,$segmentOverCps,$cps);
+        } else {
+            // Linea anterior nivel [-3] supera o iguala los $cps
+        }
+    }
+    $totalSegmentsOverCps = checkLinesOverCps($subtitle,$totalSegmentsOverCps,$cps);
+
+    // 5)
+    // 
+    foreach ($totalSegmentsOverCps as $segmentOverCps) {
+        $nextSegment = $segmentOverCps + 1;
+        if($subtitle->$nextSegment->cps < $cps) {
+            if(checkCpsIncreaseGain($subtitle->$nextSegment,$cps) > checkMissingTime($subtitle->$segmentOverCps,$cps)) {
+                $reduceTime=checkMissingTime($subtitle->$segmentOverCps,$cps);
+            } else {
+                $reduceTime=checkCpsIncreaseGain($subtitle->$nextSegment,$cps);
+            }
+            reduceDuration ($subtitle,$nextSegment,$reduceTime);
+            moveLineForward($subtitle,$nextSegment,$reduceTime,$maxVariation,$cps);
+            fillEmptySpaceAfter($subtitle,$segmentOverCps,$cps);
+        
+        } else {
+            // Linea siguiente nivel [1] supera o iguala los $cps
+        }
+    }
+    $totalSegmentsOverCps = checkLinesOverCps($subtitle,$totalSegmentsOverCps,$cps);
+    // echo '<h1>Lineas que superan los 25 CPS después de la optimización: '.count($totalSegmentsOverCps).'</h1>';//op1
     return $subtitle;
 }
 
 function runMethod3 ($subtitle,$totalSegmentsOverCps,$cps,$maxVariation) {
-    return $subtitle;   
+    return $subtitle;
 }
 
 function runMethod4 ($subtitle,$totalSegmentsOverCps,$cps,$maxVariation) {

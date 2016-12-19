@@ -52,7 +52,7 @@ if (file_exists('json/data.json'))
                 <div class="row">
                   <div class="col-xs-12 col-sm-6 col-md-6">
                     <div class="form-group">
-                      <label for="sub_url">URL del subtítulo&nbsp;&nbsp;<i class="fa fa-info-circle" aria-hidden="true"></i></label>
+                      <label for="sub_url">URL del subtítulo&nbsp;&nbsp;<i class="fa fa-info-circle sub-url" aria-hidden="true"></i></label>
                       <input type="text" name="sub_url" id="sub_url" class="form-control input-sm" placeholder="Ej: https://www.tusubtitulo.com/updated/5/20739/0">
                     </div>
                   </div>
@@ -72,7 +72,7 @@ if (file_exists('json/data.json'))
                 <div class="row">
                   <div class="col-xs-12 col-sm-12 col-md-12">
                     <div class="form-group">
-                      <label for="info_url">URL de la página del subtítulo (opcional)</label>
+                      <label for="info_url">URL de la página del subtítulo (opcional)&nbsp;&nbsp;<i class="fa fa-info-circle info-url" aria-hidden="true"></i></label>
                       <input type="text" name="info_url" id="info_url" class="form-control input-sm" placeholder="Ej: https://www.tusubtitulo.com/serie/community/3/4/367/">
                     </div>
                   </div>
