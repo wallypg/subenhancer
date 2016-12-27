@@ -1,4 +1,8 @@
 Tareas pendientes:
+- calidad (720p,1080p)
+- probar distintos metodos: [1][-1][2][-2][3][-3] [-1][1][-2][2][-3][3]
+- curl en servidor
+- campo de posicion de tiempo donde ubicar créditos
 - créditos
 - crear la descripción para la subida subdivx (avisar si supera el límite caracteres)
 - pantalla del resultado de la optimización puede mostrar (podría ser un modal en la misma pantalla):
