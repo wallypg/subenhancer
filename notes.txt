@@ -3,7 +3,7 @@ Tareas pendientes:
 - Modificar Reduce para que no reduzca mas de 900 ms.
 - Evaluar si decidir el metodo de optimizacion segun la cantidad de lineas de mas de 25 CPS (3 o 4)
 - Creditos... Evaluar si poner solo al final o hacer full creditos en el lugar donde encontremos un pattern.
-- Idea, subir los subs terminados a una base para no subirlos mas a los adjuntos ni a subdivx. Y que se puedan descargar con un link. Eso va a terminar en nuestro propio subdivx, je...
+- Idea, subir los subs terminados a una base para no subirlos mas a los adjuntos ni a subdivx. Y que se puedan descargar con un link. Eso va a terminar en nuestro propio subdivx, je... Sigo pensando, es una gran idea, sería "mejorar y subir" en un solo paso, para aquellos subs que no los mejoremos viendo el video... Y te devolveria como resultado un codigo para copiar en subadictos con el tag Serie Descarga y todo eso... De esa forma podriamos subir todos nuestros subtitulos mejorados en un solo paso, pero abririamos el juego del subEnhancer a los que publican las series... Para tenerlo en cuenta.
 - calidad (720p,1080p)
 - probar distintos metodos: [1][-1][2][-2][3][-3] [-1][1][-2][2][-3][3]
 - curl en servidor
