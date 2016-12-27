@@ -1,4 +1,5 @@
 Tareas pendientes:
+- Convertir de UTF8 a ANSI.
 - calidad (720p,1080p)
 - probar distintos metodos: [1][-1][2][-2][3][-3] [-1][1][-2][2][-3][3]
 - curl en servidor
