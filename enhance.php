@@ -44,7 +44,7 @@ if(isset($_POST['sub_url']) && preg_match($validUrlPatternSub, $_POST['sub_url']
 /************************************************************/
 $cps = 25;
 $maxVariation = 700;
-
+$minDuration = 900;
 
 /************************************************************/
 /** Parseo del string a un objeto **/
@@ -580,6 +580,7 @@ function runMethod3 ($subtitle,$totalSegmentsOverCps,$cps,$maxVariation) {
     $totalSegmentsOverCps = checkLinesOverCps($subtitle,$totalSegmentsOverCps,$cps);
     foreach ($totalSegmentsOverCps as $segmentOverCps) fillEmptySpaceAfter($subtitle,$segmentOverCps,$cps);
     $totalSegmentsOverCps = checkLinesOverCps($subtitle,$totalSegmentsOverCps,$cps);
+	$level = 0;
 
     for($level == 1; $level <= 3; $level++) {
         backwardMovement ($subtitle,$totalSegmentsOverCps,$cps,$maxVariation,$level);
@@ -600,11 +601,12 @@ function runMethod4 ($subtitle,$totalSegmentsOverCps,$cps,$maxVariation) {
     $totalSegmentsOverCps = checkLinesOverCps($subtitle,$totalSegmentsOverCps,$cps);
     foreach ($totalSegmentsOverCps as $segmentOverCps) fillEmptySpaceAfter($subtitle,$segmentOverCps,$cps);
     $totalSegmentsOverCps = checkLinesOverCps($subtitle,$totalSegmentsOverCps,$cps);
+	$level = 0;
 
     for($level == 1; $level <= 3; $level++) {
         forwardMovement ($subtitle,$totalSegmentsOverCps,$cps,$maxVariation,$level);
         $totalSegmentsOverCps = checkLinesOverCps($subtitle,$totalSegmentsOverCps,$cps);
-        backwardMovement ($subtitle,$totalSegmentsOverCps,$cps,$maxVariation,$level)
+        backwardMovement ($subtitle,$totalSegmentsOverCps,$cps,$maxVariation,$level);
         $totalSegmentsOverCps = checkLinesOverCps($subtitle,$totalSegmentsOverCps,$cps);
     }
     return $subtitle;
