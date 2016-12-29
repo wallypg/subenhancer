@@ -269,7 +269,7 @@ switch($method) {
         downloadEnhancedSubtitle(runMethod1($subtitle,$totalSegmentsOverCps,$cps,$maxVariation),$totalSequences,$filename);
         break;
     case 2:
-        downloadEnhancedSubtitle(runMethod2($subtitle,$totalSegmentsOverCps,$cps,$maxVariation),$totalSequences,$filename);
+        downloadEnhancedSubtitle(runMethod2($subtitle,$totalSegmentsOverCps,$cps,$maxVariation,$minDuration,$totalSequences),$totalSequences,$filename);
         break;
     case 3:
         printEnhancedSubtitle(runMethod3($subtitle,$totalSegmentsOverCps,$cps,$maxVariation),$totalSequences,$filename);
@@ -312,10 +312,10 @@ function runMethod1 ($subtitle,$totalSegmentsOverCps,$cps,$maxVariation) {
     foreach ($totalSegmentsOverCps as $segmentOverCps) {
         $nextSegment = $segmentOverCps + 1;
         if($subtitle->$nextSegment->cps < $cps) {
-            if(checkCpsIncreaseGain($subtitle->$nextSegment,$cps) > checkMissingTime($subtitle->$segmentOverCps,$cps)) {
+            if(checkCpsIncreaseGain($subtitle->$nextSegment,$cps,$minDuration) > checkMissingTime($subtitle->$segmentOverCps,$cps)) {
                 $reduceTime=checkMissingTime($subtitle->$segmentOverCps,$cps);
             } else {
-                $reduceTime=checkCpsIncreaseGain($subtitle->$nextSegment,$cps);
+                $reduceTime=checkCpsIncreaseGain($subtitle->$nextSegment,$cps,$minDuration);
             }
             reduceDuration ($subtitle,$nextSegment,$reduceTime);
             moveLineForward($subtitle,$nextSegment,$reduceTime,$maxVariation,$cps);
@@ -333,10 +333,10 @@ function runMethod1 ($subtitle,$totalSegmentsOverCps,$cps,$maxVariation) {
     foreach ($totalSegmentsOverCps as $segmentOverCps) {
         $previousSegment = $segmentOverCps - 1;
         if($subtitle->$previousSegment->cps < $cps) {
-            if(checkCpsIncreaseGain($subtitle->$previousSegment,$cps) > checkMissingTime($subtitle->$segmentOverCps,$cps)) {
+            if(checkCpsIncreaseGain($subtitle->$previousSegment,$cps,$minDuration) > checkMissingTime($subtitle->$segmentOverCps,$cps)) {
                 $reduceTime = checkMissingTime($subtitle->$segmentOverCps,$cps);
             } else {
-                $reduceTime = checkCpsIncreaseGain($subtitle->$previousSegment,$cps);
+                $reduceTime = checkCpsIncreaseGain($subtitle->$previousSegment,$cps,$minDuration);
             }
             reduceDuration($subtitle,$segmentOverCps-1,$reduceTime);
             fillEmptySpaceBefore($subtitle,$segmentOverCps,$cps);
@@ -351,10 +351,10 @@ function runMethod1 ($subtitle,$totalSegmentsOverCps,$cps,$maxVariation) {
     foreach ($totalSegmentsOverCps as $segmentOverCps) {
         $nextSegment = $segmentOverCps + 2;
         if($subtitle->$nextSegment->cps < $cps) {
-            if(checkCpsIncreaseGain($subtitle->$nextSegment,$cps) > checkMissingTime($subtitle->$segmentOverCps,$cps)) {
+            if(checkCpsIncreaseGain($subtitle->$nextSegment,$cps,$minDuration) > checkMissingTime($subtitle->$segmentOverCps,$cps)) {
                 $reduceTime=checkMissingTime($subtitle->$segmentOverCps,$cps);
             } else {
-                $reduceTime=checkCpsIncreaseGain($subtitle->$nextSegment,$cps);
+                $reduceTime=checkCpsIncreaseGain($subtitle->$nextSegment,$cps,$minDuration);
             }
             reduceDuration ($subtitle,$nextSegment,$reduceTime);
             moveLineForward($subtitle,$nextSegment,$reduceTime,$maxVariation,$cps);
@@ -374,10 +374,10 @@ function runMethod1 ($subtitle,$totalSegmentsOverCps,$cps,$maxVariation) {
     foreach ($totalSegmentsOverCps as $segmentOverCps) {
         $previousSegment = $segmentOverCps - 2;
         if($subtitle->$previousSegment->cps < $cps) {
-            if(checkCpsIncreaseGain($subtitle->$previousSegment,$cps) > checkMissingTime($subtitle->$segmentOverCps,$cps))  {
+            if(checkCpsIncreaseGain($subtitle->$previousSegment,$cps,$minDuration) > checkMissingTime($subtitle->$segmentOverCps,$cps))  {
                 $reduceTime = checkMissingTime($subtitle->$segmentOverCps,$cps);
             } else {
-                $reduceTime = checkCpsIncreaseGain($subtitle->$previousSegment,$cps);
+                $reduceTime = checkCpsIncreaseGain($subtitle->$previousSegment,$cps,$minDuration);
             }            
             reduceDuration ($subtitle,$segmentOverCps-2,$reduceTime);
             moveLineBackward($subtitle,$segmentOverCps-1,$reduceTime,$maxVariation,$cps);
@@ -393,10 +393,10 @@ function runMethod1 ($subtitle,$totalSegmentsOverCps,$cps,$maxVariation) {
     foreach ($totalSegmentsOverCps as $segmentOverCps) {
         $nextSegment = $segmentOverCps + 3;
         if($subtitle->$nextSegment->cps < $cps) {
-            if(checkCpsIncreaseGain($subtitle->$nextSegment,$cps) > checkMissingTime($subtitle->$segmentOverCps,$cps)) {
+            if(checkCpsIncreaseGain($subtitle->$nextSegment,$cps,$minDuration) > checkMissingTime($subtitle->$segmentOverCps,$cps)) {
                 $reduceTime=checkMissingTime($subtitle->$segmentOverCps,$cps);
             } else {
-                $reduceTime=checkCpsIncreaseGain($subtitle->$nextSegment,$cps);
+                $reduceTime=checkCpsIncreaseGain($subtitle->$nextSegment,$cps,$minDuration);
             }
             reduceDuration ($subtitle,$nextSegment,$reduceTime);
             moveLineForward($subtitle,$nextSegment,$reduceTime,$maxVariation,$cps);
@@ -415,11 +415,11 @@ function runMethod1 ($subtitle,$totalSegmentsOverCps,$cps,$maxVariation) {
     foreach ($totalSegmentsOverCps as $segmentOverCps) {
         $previousSegment = $segmentOverCps - 3;
         if($subtitle->$previousSegment->cps < $cps) {
-            if(checkCpsIncreaseGain($subtitle->$previousSegment,$cps) > checkMissingTime($subtitle->$segmentOverCps,$cps))  {
+            if(checkCpsIncreaseGain($subtitle->$previousSegment,$cps,$minDuration) > checkMissingTime($subtitle->$segmentOverCps,$cps))  {
                 $reduceTime = checkMissingTime($subtitle->$segmentOverCps,$cps);
             } 
             else {
-                $reduceTime = checkCpsIncreaseGain($subtitle->$previousSegment,$cps);
+                $reduceTime = checkCpsIncreaseGain($subtitle->$previousSegment,$cps,$minDuration);
             }
             reduceDuration ($subtitle,$segmentOverCps-3,$reduceTime);
             moveLineBackward($subtitle,$segmentOverCps-2,$reduceTime,$maxVariation,$cps);
@@ -429,11 +429,16 @@ function runMethod1 ($subtitle,$totalSegmentsOverCps,$cps,$maxVariation) {
             // Linea anterior nivel [-3] supera o iguala los $cps
         }
     }
-    $totalSegmentsOverCps = checkLinesOverCps($subtitle,$totalSegmentsOverCps,$cps);
+
+	
+//    $totalSegmentsOverCps = checkLinesOverCps($subtitle,$totalSegmentsOverCps,$cps);
+
+
+
     return $subtitle;
 }
 
-function runMethod2 ($subtitle,$totalSegmentsOverCps,$cps,$maxVariation) {
+function runMethod2 ($subtitle,$totalSegmentsOverCps,$cps,$maxVariation,$minDuration,$totalSequences) {
     // [-1][-2][-3][1][2][3]
     // echo '<h1>Lineas que superaban los 25 CPS: '.count($totalSegmentsOverCps).'</h1>';//op1
     
@@ -451,10 +456,10 @@ function runMethod2 ($subtitle,$totalSegmentsOverCps,$cps,$maxVariation) {
     foreach ($totalSegmentsOverCps as $segmentOverCps) {
         $previousSegment = $segmentOverCps - 1;
         if($subtitle->$previousSegment->cps < $cps) {
-            if(checkCpsIncreaseGain($subtitle->$previousSegment,$cps) > checkMissingTime($subtitle->$segmentOverCps,$cps)) {
+            if(checkCpsIncreaseGain($subtitle->$previousSegment,$cps,$minDuration) > checkMissingTime($subtitle->$segmentOverCps,$cps)) {
                 $reduceTime = checkMissingTime($subtitle->$segmentOverCps,$cps);
             } else {
-                $reduceTime = checkCpsIncreaseGain($subtitle->$previousSegment,$cps);
+                $reduceTime = checkCpsIncreaseGain($subtitle->$previousSegment,$cps,$minDuration);
             }
             reduceDuration($subtitle,$segmentOverCps-1,$reduceTime);
             fillEmptySpaceBefore($subtitle,$segmentOverCps,$cps);
@@ -472,10 +477,10 @@ function runMethod2 ($subtitle,$totalSegmentsOverCps,$cps,$maxVariation) {
     foreach ($totalSegmentsOverCps as $segmentOverCps) {
         $previousSegment = $segmentOverCps - 2;
         if($subtitle->$previousSegment->cps < $cps) {
-            if(checkCpsIncreaseGain($subtitle->$previousSegment,$cps) > checkMissingTime($subtitle->$segmentOverCps,$cps))  {
+            if(checkCpsIncreaseGain($subtitle->$previousSegment,$cps,$minDuration) > checkMissingTime($subtitle->$segmentOverCps,$cps))  {
                 $reduceTime = checkMissingTime($subtitle->$segmentOverCps,$cps);
             } else {
-                $reduceTime = checkCpsIncreaseGain($subtitle->$previousSegment,$cps);
+                $reduceTime = checkCpsIncreaseGain($subtitle->$previousSegment,$cps,$minDuration);
             }            
             reduceDuration ($subtitle,$segmentOverCps-2,$reduceTime);
             moveLineBackward($subtitle,$segmentOverCps-1,$reduceTime,$maxVariation,$cps);
@@ -491,11 +496,11 @@ function runMethod2 ($subtitle,$totalSegmentsOverCps,$cps,$maxVariation) {
     foreach ($totalSegmentsOverCps as $segmentOverCps) {
         $previousSegment = $segmentOverCps - 3;
         if($subtitle->$previousSegment->cps < $cps) {
-            if(checkCpsIncreaseGain($subtitle->$previousSegment,$cps) > checkMissingTime($subtitle->$segmentOverCps,$cps))  {
+            if(checkCpsIncreaseGain($subtitle->$previousSegment,$cps,$minDuration) > checkMissingTime($subtitle->$segmentOverCps,$cps))  {
                 $reduceTime = checkMissingTime($subtitle->$segmentOverCps,$cps);
             } 
             else {
-                $reduceTime = checkCpsIncreaseGain($subtitle->$previousSegment,$cps);
+                $reduceTime = checkCpsIncreaseGain($subtitle->$previousSegment,$cps,$minDuration);
             }
             reduceDuration ($subtitle,$segmentOverCps-3,$reduceTime);
             moveLineBackward($subtitle,$segmentOverCps-2,$reduceTime,$maxVariation,$cps);
@@ -512,10 +517,10 @@ function runMethod2 ($subtitle,$totalSegmentsOverCps,$cps,$maxVariation) {
     foreach ($totalSegmentsOverCps as $segmentOverCps) {
         $nextSegment = $segmentOverCps + 1;
         if($subtitle->$nextSegment->cps < $cps) {
-            if(checkCpsIncreaseGain($subtitle->$nextSegment,$cps) > checkMissingTime($subtitle->$segmentOverCps,$cps)) {
+            if(checkCpsIncreaseGain($subtitle->$nextSegment,$cps,$minDuration) > checkMissingTime($subtitle->$segmentOverCps,$cps)) {
                 $reduceTime=checkMissingTime($subtitle->$segmentOverCps,$cps);
             } else {
-                $reduceTime=checkCpsIncreaseGain($subtitle->$nextSegment,$cps);
+                $reduceTime=checkCpsIncreaseGain($subtitle->$nextSegment,$cps,$minDuration);
             }
             reduceDuration ($subtitle,$nextSegment,$reduceTime);
             moveLineForward($subtitle,$nextSegment,$reduceTime,$maxVariation,$cps);
@@ -532,10 +537,10 @@ function runMethod2 ($subtitle,$totalSegmentsOverCps,$cps,$maxVariation) {
     foreach ($totalSegmentsOverCps as $segmentOverCps) {
         $nextSegment = $segmentOverCps + 2;
         if($subtitle->$nextSegment->cps < $cps) {
-            if(checkCpsIncreaseGain($subtitle->$nextSegment,$cps) > checkMissingTime($subtitle->$segmentOverCps,$cps)) {
+            if(checkCpsIncreaseGain($subtitle->$nextSegment,$cps,$minDuration) > checkMissingTime($subtitle->$segmentOverCps,$cps)) {
                 $reduceTime=checkMissingTime($subtitle->$segmentOverCps,$cps);
             } else {
-                $reduceTime=checkCpsIncreaseGain($subtitle->$nextSegment,$cps);
+                $reduceTime=checkCpsIncreaseGain($subtitle->$nextSegment,$cps,$minDuration);
             }
             reduceDuration ($subtitle,$nextSegment,$reduceTime);
             moveLineForward($subtitle,$nextSegment,$reduceTime,$maxVariation,$cps);
@@ -553,10 +558,10 @@ function runMethod2 ($subtitle,$totalSegmentsOverCps,$cps,$maxVariation) {
     foreach ($totalSegmentsOverCps as $segmentOverCps) {
         $nextSegment = $segmentOverCps + 3;
         if($subtitle->$nextSegment->cps < $cps) {
-            if(checkCpsIncreaseGain($subtitle->$nextSegment,$cps) > checkMissingTime($subtitle->$segmentOverCps,$cps)) {
+            if(checkCpsIncreaseGain($subtitle->$nextSegment,$cps,$minDuration) > checkMissingTime($subtitle->$segmentOverCps,$cps)) {
                 $reduceTime=checkMissingTime($subtitle->$segmentOverCps,$cps);
             } else {
-                $reduceTime=checkCpsIncreaseGain($subtitle->$nextSegment,$cps);
+                $reduceTime=checkCpsIncreaseGain($subtitle->$nextSegment,$cps,$minDuration);
             }
             reduceDuration ($subtitle,$nextSegment,$reduceTime);
             moveLineForward($subtitle,$nextSegment,$reduceTime,$maxVariation,$cps);
@@ -568,9 +573,24 @@ function runMethod2 ($subtitle,$totalSegmentsOverCps,$cps,$maxVariation) {
             // Linea siguiente nivel [1] supera o iguala los $cps
         }
     }
+
+	// Extiendo las que puedo a hasta 18 CPS
+	$cps=18;
+
+	// rearmo el array
+	$totalSegmentsOverCps=array();
+	for($i=0; $i<$totalSequences; $i++) {
+		$subtitle->$i->cps = calculateCps($subtitle->$i->sequenceDuration, $subtitle->$i->totalCharacters);
+		if($subtitle->$i->cps > $cps) array_push($totalSegmentsOverCps, $i);
+	}
+
+    // relleno hacia adelante y hacia atras
+	$totalSegmentsOverCps = checkLinesOverCps($subtitle,$totalSegmentsOverCps,$cps);
+    foreach ($totalSegmentsOverCps as $segmentOverCps) fillEmptySpaceAfter($subtitle,$segmentOverCps,$cps);
+    $totalSegmentsOverCps = checkLinesOverCps($subtitle,$totalSegmentsOverCps,$cps);
+    foreach ($totalSegmentsOverCps as $segmentOverCps) fillEmptySpaceBefore($subtitle,$segmentOverCps,$cps);
     $totalSegmentsOverCps = checkLinesOverCps($subtitle,$totalSegmentsOverCps,$cps);
 
-    // echo '<h1>Lineas que superan los 25 CPS después de la optimización: '.count($totalSegmentsOverCps).'</h1>';//op1
     return $subtitle;
 }
 
@@ -626,11 +646,11 @@ function backwardMovement ($subtitle,$arrayOfSegments,$cps,$maxVariation,$level)
         // $previousSegment no es necesariamente el anterior a $thisSegment
         $previousSegment = $thisSegment - $level;
         if($subtitle->$previousSegment->cps < $cps) {
-            if(checkCpsIncreaseGain($subtitle->$previousSegment,$cps) > checkMissingTime($subtitle->$thisSegment,$cps))  {
+            if(checkCpsIncreaseGain($subtitle->$previousSegment,$cps,$minDuration) > checkMissingTime($subtitle->$thisSegment,$cps))  {
                 $reduceTime = checkMissingTime($subtitle->$thisSegment,$cps);
             } 
             else {
-                $reduceTime = checkCpsIncreaseGain($subtitle->$previousSegment,$cps);
+                $reduceTime = checkCpsIncreaseGain($subtitle->$previousSegment,$cps,$minDuration);
             }
             reduceDuration ($subtitle,$thisSegment-$level,$reduceTime);
             if($level >= 2) moveLineBackward($subtitle,$thisSegment-$level-1,$reduceTime,$maxVariation,$cps);
@@ -648,10 +668,10 @@ function forwardMovement ($subtitle,$arrayOfSegments,$cps,$maxVariation,$level) 
         // $nextSegment no es necesariamente el siguiente a $thisSegment
         $nextSegment = $thisSegment + $level;
         if($subtitle->$nextSegment->cps < $cps) {
-            if(checkCpsIncreaseGain($subtitle->$nextSegment,$cps) > checkMissingTime($subtitle->$thisSegment,$cps)) {
+            if(checkCpsIncreaseGain($subtitle->$nextSegment,$cps,$minDuration) > checkMissingTime($subtitle->$thisSegment,$cps)) {
                 $reduceTime=checkMissingTime($subtitle->$thisSegment,$cps);
             } else {
-                $reduceTime=checkCpsIncreaseGain($subtitle->$nextSegment,$cps);
+                $reduceTime=checkCpsIncreaseGain($subtitle->$nextSegment,$cps,$minDuration);
             }
             reduceDuration ($subtitle,$nextSegment,$reduceTime);
             if($level == 3) moveLineForward($subtitle,$thisSegment+3,$reduceTime,$maxVariation,$cps);
@@ -814,6 +834,21 @@ function checkLinesOverCps ($subtitle,$totalSegmentsOverCps,$cps) {
     return $totalSegmentsOverCps;
 }
 
+function checkLinesOverCpsFull ($subtitle,$totalSegmentsOverCps,$cps) {
+    foreach ($totalSegmentsOverCps as $key => $segmentOverCps) {
+        if($subtitle->$segmentOverCps->cps <= $cps) {
+            // echo '<br>'.$totalSegmentsOverCps[$key];//op
+            unset($totalSegmentsOverCps[$key]);
+        }
+		else {
+            // echo '<br>'.$totalSegmentsOverCps[$key];//op
+            set($totalSegmentsOverCps[$key]);
+        }
+    }
+    return $totalSegmentsOverCps;
+}
+
+
 // IMPORTANTE: Llamar a esta funcion solo cuando la línea supera los X cps
 // Recibe el subtítulo, un segmento y los cps. Reduce los cps de dicha línea hasta alcanzar el límite. No devuelve nada.
 function setToLimitCps ($subtitle,$segment,$cps) {
@@ -824,9 +859,21 @@ function setToLimitCps ($subtitle,$segment,$cps) {
 
 // IMPORTANTE: Llamar a esta funcion solo cuando la línea tiene menos de $cps
 // Recibe el subtítulo, un segmento y los cps. Devuelve los milisegundos que se ganarían/liberarían si se le incrementan los cps al máximo ($cps).
-function checkCpsIncreaseGain ($segment,$cps) {
+function checkCpsIncreaseGain ($segment,$cps,$minDuration) {
     $idealSequenceDuration = checkNeededTime($segment,$cps);
-    return $segment->sequenceDuration - $idealSequenceDuration;
+	if ($idealSequenceDuration > $minDuration)
+		$requiredSequenceDuration = $segment->sequenceDuration - $idealSequenceDuration;
+	else
+		$requiredSequenceDuration = $segment->sequenceDuration - $minDuration;
+	
+	
+	return $requiredSequenceDuration;
+	
+	/*
+	if ($requiredSequenceDuration > $minDuration)
+	else
+		return $minDuration;
+	*/
 }
 
 // Recibe el subtítulo, un segmento y una cantidad de milisegundos. Reduce la duración de dicha línea en esa cantidad de milisegundos.
