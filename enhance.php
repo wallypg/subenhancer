@@ -740,9 +740,9 @@ function downloadEnhancedSubtitle ($subtitle,$totalSequences,$filename) {
     foreach ($subtitle as $thisSegmentKey => $segment) {
         $sequenceString = $segment->sequence."\r\n";//sf
         $sequenceString .= formatMilliseconds($segment->startTimeInMilliseconds).' --> '.formatMilliseconds($segment->endTimeInMilliseconds)."\r\n";//sf
-        if(isset($segment->textLine1)) $sequenceString .= $segment->textLine1."\r\n";//sf
-        if(isset($segment->textLine2)) $sequenceString .= $segment->textLine2."\r\n";//sf
-        if(isset($segment->textLine3)) $sequenceString .= $segment->textLine3."\r\n";//sf
+        if(isset($segment->textLine1)) $sequenceString .= utf8_decode($segment->textLine1)."\r\n";//sf
+        if(isset($segment->textLine2)) $sequenceString .= utf8_decode($segment->textLine2)."\r\n";//sf
+        if(isset($segment->textLine3)) $sequenceString .= utf8_decode($segment->textLine3)."\r\n";//sf
         $sequenceString .= "\r\n";//sf
         $subtitleString .= $sequenceString;//sf
     }
@@ -751,7 +751,7 @@ function downloadEnhancedSubtitle ($subtitle,$totalSequences,$filename) {
 
     /* Descarga del subtitítulo optimizado */
     // $filename = 'optimizedSubtitle.srt';//sf
-    header("Content-Type: text/plain;charset=utf-8");//sf
+    header("Content-Type: text/plain;charset=windows-1252");//sf
     header('Content-Disposition: attachment; filename="'.$filename.'"');//sf
     header("Content-Length: " . strlen($subtitleString));//sf
     echo $subtitleString;//sf
