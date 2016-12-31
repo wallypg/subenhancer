@@ -1,17 +1,6 @@
 <?php 
 if (file_exists('json/data.json'))
   $dataArray = json_decode(file_get_contents('json/data.json'), true);
-// print_r($dataArray['tv_show']);
-
-// tv_show
-// codec
-// format
-// rip_group
-// other
-// editor
-// translation
-
-// die();
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -53,7 +42,7 @@ if (file_exists('json/data.json'))
                   <div class="col-xs-12 col-sm-6 col-md-6">
                     <div class="form-group">
                       <label for="sub_url">URL del subtítulo&nbsp;&nbsp;<i class="fa fa-info-circle sub-url" aria-hidden="true"></i></label>
-                      <input type="text" name="sub_url" id="sub_url" class="form-control input-sm" placeholder="Ej: https://www.tusubtitulo.com/updated/5/20739/0">
+                      <input disabled type="text" name="sub_url" id="sub_url" class="form-control input-sm" placeholder="Ej: https://www.tusubtitulo.com/updated/5/20739/0">
                     </div>
                   </div>
                   <label class="loose-text hidden-xs">o</label>
@@ -118,57 +107,9 @@ if (file_exists('json/data.json'))
                 </div>
 
                 <hr class="divider">
-                
+
                 <div class="row">
-                  <div class="col-xs-3 col-sm-3 col-md-3">
-                    <div class="form-group">
-                      <label for="codec">Codec</label>
-                        <div class="input-group"> 
-                          <input type="text" name="codec" id="codec" class="form-control input-sm">
-                          <div class="input-group-btn">
-                            <button type="button" class="btn dropdown-toggle more-options" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-caret-down" aria-hidden="true"></i></button>
-                            <ul class="dropdown-menu dropdown-menu-right" data-list="codec">
-                              <?php foreach($dataArray['codec'] as $codec) { ?>
-                                <li class="dropdown-item"><?=$codec?></li>
-                              <?php } ?>
-                            </ul>
-                          </div>
-                        </div>
-                    </div>
-                  </div>
-                  <div class="col-xs-3 col-sm-3 col-md-3">
-                    <div class="form-group">
-                      <label for="format" class="no-padding-xs">Formato</label>
-                      <div class="input-group">
-                        <input type="text" name="format" id="format" class="form-control input-sm">
-                        <div class="input-group-btn">
-                          <button type="button" class="btn dropdown-toggle more-options" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-caret-down" aria-hidden="true"></i></button>
-                          <ul class="dropdown-menu dropdown-menu-right" data-list="format">
-                            <?php foreach($dataArray['format'] as $format) { ?>
-                              <li class="dropdown-item"><?=$format?></li>
-                            <?php } ?>
-                          </ul>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-xs-3 col-sm-3 col-md-3">
-                    <div class="form-group">
-                        <label for="rip_group">Grupo</label>
-                        <div class="input-group">
-                          <input type="text" name="rip_group" id="rip_group" class="form-control input-sm">
-                          <div class="input-group-btn">
-                            <button type="button" class="btn dropdown-toggle more-options" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-caret-down" aria-hidden="true"></i></button>
-                            <ul class="dropdown-menu dropdown-menu-right" data-list="rip_group">
-                              <?php foreach($dataArray['rip_group'] as $group) { ?>
-                                <li class="dropdown-item"><?=$group?></li>
-                              <?php } ?>
-                            </ul>
-                          </div>
-                        </div>
-                    </div>
-                  </div>
-                  <div class="col-xs-3 col-sm-3 col-md-3">
+                  <div class="col-xs-4 col-sm-4 col-md-4">
                     <div class="form-group">
                         <label for="other">Otro</label>
                         <div class="input-group">  
@@ -184,6 +125,75 @@ if (file_exists('json/data.json'))
                         </div>
                     </div>
                   </div>
+
+                  <div class="col-xs-4 col-sm-4 col-md-4">
+                    <div class="form-group">
+                        <label for="quality">Calidad</label>
+                        <div class="input-group">  
+                          <input type="text" name="quality" id="quality" class="form-control input-sm">
+                          <div class="input-group-btn">
+                            <button type="button" class="btn dropdown-toggle more-options" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-caret-down" aria-hidden="true"></i></button>
+                            <ul class="dropdown-menu dropdown-menu-right" data-list="quality">
+                              <?php foreach($dataArray['quality'] as $quality) { ?>
+                                <li class="dropdown-item"><?=$quality?></li>
+                              <?php } ?>
+                            </ul>
+                          </div>
+                        </div>
+                    </div>
+                  </div>
+                  
+                  <div class="col-xs-4 col-sm-4 col-md-4">
+                    <div class="form-group">
+                      <label for="format">Formato</label>
+                      <div class="input-group">
+                        <input type="text" name="format" id="format" class="form-control input-sm">
+                        <div class="input-group-btn">
+                          <button type="button" class="btn dropdown-toggle more-options" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-caret-down" aria-hidden="true"></i></button>
+                          <ul class="dropdown-menu dropdown-menu-right" data-list="format">
+                            <?php foreach($dataArray['format'] as $format) { ?>
+                              <li class="dropdown-item"><?=$format?></li>
+                            <?php } ?>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                
+                  <div class="col-xs-4 col-sm-4 col-md-4">
+                    <div class="form-group">
+                      <label for="codec">Codec</label>
+                        <div class="input-group"> 
+                          <input type="text" name="codec" id="codec" class="form-control input-sm">
+                          <div class="input-group-btn">
+                            <button type="button" class="btn dropdown-toggle more-options" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-caret-down" aria-hidden="true"></i></button>
+                            <ul class="dropdown-menu dropdown-menu-right" data-list="codec">
+                              <?php foreach($dataArray['codec'] as $codec) { ?>
+                                <li class="dropdown-item"><?=$codec?></li>
+                              <?php } ?>
+                            </ul>
+                          </div>
+                        </div>
+                    </div>
+                  </div>
+
+                  <div class="col-xs-4 col-sm-4 col-md-4">
+                    <div class="form-group">
+                        <label for="rip_group">Grupo</label>
+                        <div class="input-group">
+                          <input type="text" name="rip_group" id="rip_group" class="form-control input-sm">
+                          <div class="input-group-btn">
+                            <button type="button" class="btn dropdown-toggle more-options" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-caret-down" aria-hidden="true"></i></button>
+                            <ul class="dropdown-menu dropdown-menu-right" data-list="rip_group">
+                              <?php foreach($dataArray['rip_group'] as $group) { ?>
+                                <li class="dropdown-item"><?=$group?></li>
+                              <?php } ?>
+                            </ul>
+                          </div>
+                        </div>
+                    </div>
+                  </div>
+                  
                   <!--  -->
                   <div class="col-xs-12 col-sm-12 col-md-12">
                     <div class="form-group">
@@ -231,7 +241,9 @@ if (file_exists('json/data.json'))
                       <input type="submit" value="OPTIMIZAR" class="btn btn-info optimize-button">
                     </div>
                   </div>
-                  <div class="col-xs-4"></div>
+                  <div class="col-xs-4 version">
+                    v161231.1
+                  </div>
                 </div>
               
             </div>

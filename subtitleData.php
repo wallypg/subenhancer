@@ -3,25 +3,45 @@
 // $_POST['sub_url'] = 'https://www.tusubtitulo.com/updated/5/52771/0';
 
 $validUrlPatternInfo = '#^https://www.tusubtitulo.com/serie/[^/]+/[0-9]+/[0-9]+/[0-9]+/$#';
+$validUrlPatternInfo2 = '#^https://www.tusubtitulo.com/episodes/[0-9]+/[^/]+(/)?$#';
 $validUrlPatternSub = '#^https://www.tusubtitulo.com/[^/]+/[0-9]+/[0-9]+(/[0-9]+)?$#';
 
-if(isset($_POST['info_url']) && preg_match($validUrlPatternInfo, $_POST['info_url'])) {
+if(isset($_POST['info_url']) && (preg_match($validUrlPatternInfo, $_POST['info_url']) || preg_match($validUrlPatternInfo2, $_POST['info_url']) )) {
 	$infoUrl = $_POST['info_url'];
 	if(isset($_POST['sub_url']) && preg_match($validUrlPatternSub, $_POST['sub_url'])) 
 		$subUrl = str_replace('https://www.tusubtitulo.com/', '', $_POST['sub_url']);
 } else die ('URL INVALIDA');
 
 // CURL
-$curlResource=curl_init();
-curl_setopt_array($curlResource, array(
-  CURLOPT_RETURNTRANSFER => 1,
-  CURLOPT_URL => $infoUrl
-));
-$curlResult = curl_exec($curlResource);
-if(!curl_exec($curlResource)){
-  die('Error: "' . curl_error($curlResource) . '" - Code: ' . curl_errno($curlResource));
+// $curlResource=curl_init();
+// curl_setopt_array($curlResource, array(
+//   CURLOPT_RETURNTRANSFER => 1,
+//   CURLOPT_URL => $infoUrl
+// ));
+// $curlResult = curl_exec($curlResource);
+require ('user_agent.php');
+$user_agent = random_user_agent();
+
+$ch=curl_init();
+$proxyServer = rand(1,7);
+$url = 'https://'.$proxyServer.'.hidemyass.com/includes/process.php?action=update&u='.urlencode($_POST['info_url']);
+// https://3.hidemyass.com/includes/process.php?action=update&u=https://www.tusubtitulo.com/episodes/53173/homeland-6x01-fair-game
+
+curl_setopt($ch, CURLOPT_URL, $url);
+curl_setopt($ch, CURLOPT_USERAGENT, $user_agent);
+curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 30);
+curl_setopt($ch, CURLOPT_AUTOREFERER, true); 
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
+
+$curlResult = curl_exec($ch);
+
+
+if(!curl_exec($ch)){
+  die('Error: "' . curl_error($ch) . '" - Code: ' . curl_errno($ch));
 }
-curl_close($curlResource);
+curl_close($ch);
 
 // Objeto DOM
 $dom = new domDocument;

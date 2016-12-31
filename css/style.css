@@ -272,7 +272,11 @@ i.fa-info-circle:hover {
   /*max-height: 80px;*/
 }
 
-
+.version {
+  text-align: right;
+  color: #838588;
+  padding-top: 7px
+}
 
 
 

@@ -3,7 +3,7 @@ $(document).ready(function(){
   $('#info_url').on('input',function(e){
     var info_url = $(this).val();
     var sub_url = $('#sub_url').val();
-    if(isValidDataUrl(info_url)) {
+    if(isValidDataUrl(info_url) || isValidDataUrl2(info_url)) {
       showLoading();
       ajaxRequestInfo(info_url,sub_url);
     }
@@ -12,7 +12,7 @@ $(document).ready(function(){
   $('#sub_url').on('input',function(e){
     var sub_url = $(this).val();
     var info_url = $('#info_url').val();
-    if(isValidDataUrl(info_url) && isValidSubUrl(sub_url)) {
+    if( (isValidDataUrl(info_url) || isValidDataUrl2(info_url)) && isValidSubUrl(sub_url)) {
       showLoading();
       ajaxRequestInfo(info_url,sub_url);
     }
@@ -129,6 +129,11 @@ function ajaxRequestInfo(info_url,sub_url){
 
 function isValidDataUrl(str) {
   var pattern = new RegExp('^https://www.tusubtitulo.com/serie/[^/]+/[0-9]+/[0-9]+/[0-9]+/$','i');
+  return pattern.test(str);
+}
+
+function isValidDataUrl2(str) {
+  var pattern = new RegExp('^^https://www.tusubtitulo.com/episodes/[0-9]+/[^/]+(/)?$','i');
   return pattern.test(str);
 }
 
