@@ -10,6 +10,10 @@ body{
     max-width:1100px;
     margin:0 auto;
 }
+body.modal-open {
+  overflow: auto;
+  padding-right:0px!important;
+}
 .container-fluid{
   position: relative;
 }
@@ -131,13 +135,28 @@ input, .input-sm, .form-control.file-caption.kv-fileinput-caption{
 .small-size-input{
   text-align: center!important;
 }  
+@media screen and (max-width: 600px){
+  .reset-col{
+    padding-left:0px!important;
+    padding-right:3px!important;
+  }
+  .optimize-col{
+    padding-left:3px!important;
+    padding-right:0px!important;
+  }
+}
 @media screen and (max-width: 538px){
   .form-group label.no-padding-xs{
     padding-left:0px!important;
   }
 }
+@media screen and (max-width: 520px){
+  .hidden-xxs{
+    display:none!important;
+  }
+}
 
-.optimize-button{
+.optimize-button, .reset-button{
   width:100%;
   color: #29a1d2!important;
   border:2px solid #29a1d2!important;
@@ -337,11 +356,27 @@ i.fa-info-circle:hover {
     word-wrap: break-word;       /* Internet Explorer 5.5+ */
 }
 
-.copy-btn,.close-btn {
+.copy-btn, .close-btn, .download-btn {
     background-color: #24242a!important;
     color: #29a1d2!important;
     border: 2px solid #29a1d2!important;
     padding-top: 8px!important;
+}
+
+.modal-footer div { 
+    display:inline-block;
+}
+.copy-btn { 
+    margin-right: 6px; 
+}
+.modal-body .form-control {
+  background-color: #fff!important;
+  border-color: #fff!important;
+  color:#4a4a4a!important;
+}
+.modal-body label {
+  margin-top:12px;
+  padding-left: 8px;
 }
 
 

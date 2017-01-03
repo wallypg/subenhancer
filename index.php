@@ -198,7 +198,7 @@ if (file_exists('json/data.json'))
                     <div class="form-group">
                         <label for="ocr" class="ocr-label">OCR</label>
                         <div class="ocr">
-                          <input type="checkbox" name="ocr" id="ocr" value="true" class="form-control ocr-checkbox">
+                          <input type="checkbox" name="ocr" id="ocr" value="true" class="form-control ocr-checkbox" disabled>
                         </div>
                     </div>
                   </div>
@@ -242,36 +242,37 @@ if (file_exists('json/data.json'))
                 <hr class="divider">
 
                 <div class="row">
-                  <div class="col-xs-4 edit-fields">
-                    <i class="fa fa-pencil fa-2" aria-hidden="true"></i>&nbsp;&nbsp;<a href="editor.php">Editar&nbsp;datos&nbsp;<span class="hidden-xs">guardados</span></a>
+                  <div class="col-xs-3 edit-fields">
+                    <i class="fa fa-pencil fa-2" aria-hidden="true"></i>&nbsp;&nbsp;<a href="editor.php">Editar<span class="hidden-xxs">&nbsp;datos</span><span class="hidden-xs">&nbsp;guardados</span></a>
                   </div>
-                  <div class="col-xs-4">
+                  <div class="col-xs-3 reset-col">
+                    <div class="form-group align-center">
+                      <input type="reset" id="reset-button" value="LIMPIAR" class="btn btn-info reset-button">
+                    </div>
+                  </div>
+                  <div class="col-xs-3 optimize-col">
                     <div class="form-group align-center">
                       <input type="submit" id="optimize-button" value="OPTIMIZAR" class="btn btn-info optimize-button">
                     </div>
                   </div>
-                  <div class="col-xs-4 version">
+                  <div class="col-xs-3 version">
                     v161231.2
                   </div>
                 </div>
+                <!-- <div class="row">
+                  <div class="col-xs-4"></div>
+                  <div class="col-xs-4">
+                    <div class="form-group align-center">
+                      <input type="reset" id="reset-button" value="LIMPIAR CAMPOS" class="btn btn-info optimize-button">
+                    </div>
+                  </div>
+                  <div class="col-xs-4 version"></div>
+                </div> -->
               
             </div>
           </div>
         </div>
       </div>
-    </div>
-  </form>
-
-  <div id="loading-info-overlay">
-    <div>
-      <div class="loading-animation">
-        <div class="meter animate">
-          <span style="width: 100%"><span></span></span>
-        </div>
-      </div>
-    </div>
-  </div>
-
   <!-- Modal -->
   <div id="myModal" class="modal fade" role="dialog">
     <div class="modal-dialog">
@@ -285,19 +286,40 @@ if (file_exists('json/data.json'))
         <div class="modal-body">
           <div id="efficiency"></div>
           <div id="enhancement"></div>
-          <p><pre id="pre-wrap" class="highlight">[CENTER][IMG]http://imagenes.subadictos.net/novedad/SubsDisponibles.gif[/IMG]
-          [B][SIZE=4]Capítulo: [COLOR="#FF0000"]</pre></p>
+          <p>
+            <label>Nombre del archivo:</label>
+            <input type="text" id="finalFileName" class="form-control" />
+          </p>
+          <p><pre id="pre-wrap" class="highlight"></pre></p>
         </div>
         <div class="modal-footer">
-          <button class="btn copy-btn" data-clipboard-target="#pre-wrap">
-              <i class="fa fa-clipboard" aria-hidden="true"></i>&nbsp;Copiar
-          </button>
-          <button type="button" class="btn btn-default close-btn" data-dismiss="modal">Cerrar</button>
+          <div class="pull-left">
+            <button type="button" class="btn btn-default download-btn pull-left" data-dismiss="modal"><i class="fa fa-arrow-circle-down" aria-hidden="true"></i>&nbsp;Descargar</button>
+          </div>
+          <div>
+            <button class="btn copy-btn" data-clipboard-target="#pre-wrap" data-toggle="tooltip" data-placement="left" title="¡Copiado!"><i class="fa fa-clipboard" aria-hidden="true"></i>&nbsp;Copiar</button>
+          </div>
+          <div>
+            <button type="button" class="btn btn-default close-btn" data-dismiss="modal">Cerrar</button>
+          </div>
         </div>
       </div>
 
     </div>
   </div>
+    </div>
+  </form>
+
+  <div id="loading-info-overlay">
+    <div>
+      <div class="loading-animation">
+        <div class="meter animate">
+          <span style="width: 100%"><span></span></span>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <script src="js/clipboard.min.js"></script>
 </body>
 </html>

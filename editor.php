@@ -128,6 +128,7 @@
                   ]
               }
           },
+          backgroundDismiss: true,
           content: '<i class="fa fa-caret-right" aria-hidden="true"></i> ¡No editar las categorías!<br /><i class="fa fa-caret-right" aria-hidden="true"></i> Respetar la sintaxis.<br /><i class="fa fa-caret-right" aria-hidden="true"></i> Presionar <kbd>Ctrl</kbd> + <kbd>s</kbd> para guardar.',
           animation: 'zoom',
           closeAnimation: 'zoom',

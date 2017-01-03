@@ -88,6 +88,7 @@ function saveEnhancedSubtitle ($subtitle,$totalSequences,$filename) {
     // header("Content-Length: " . strlen($subtitleString));//sf
     // echo $subtitleString;//sf
     $filename = uniqid('subtitle-');
+    deleteTemporaryFiles();
     file_put_contents('srt/enhanced/'.$filename.'.srt', $subtitleString);
     return $filename;
 }
@@ -415,4 +416,14 @@ function moveLineForward($subtitle,$segment,$milliseconds,$maxVariation,$cps) {
     updateSequenceData($subtitle,$segment);
 }
 
+function deleteTemporaryFiles() {
+    $files = glob('srt/enhanced/*.srt');
+    $now   = time();
+    foreach($files as $file){
+        if(is_file($file)) {
+            if ($now - filemtime($file) >= 60 * 10)
+            unlink($file);
+        }
+    }
+}
 ?>

@@ -1,7 +1,15 @@
 $(document).ready(function(){
-
-  new Clipboard('.copy-btn');
+  // $('#myModal').modal('show');
   
+  var clipboard = new Clipboard('.copy-btn');
+  clipboard.on('success', function(event) {
+    $('.copy-btn').tooltip({trigger: 'click'}).tooltip('show');
+  });
+
+  $('.copy-btn').mouseleave(function(){
+    $(this).tooltip('destroy')
+  });
+
   $('#info_url').on('input',function(e){
     var info_url = $(this).val();
     var sub_url = $('#sub_url').val();
@@ -39,10 +47,10 @@ $(document).ready(function(){
     if(spanishPosition>0) var title = tempString.slice(0,tempString.search(/\s\(Español/));
     else var title = tempString.slice(0,tempString.search(/\.srt/));
     
-    $('#tv_show').val(tvShow);
-    $('#season').val(season);
-    $('#episode_number').val(episode);
-    $('#episode_title').val(title);
+    if($('#tv_show').val() == '') $('#tv_show').val(tvShow);
+    if($('#season').val() == '') $('#season').val(season);
+    if($('#episode_number').val() == '') $('#episode_number').val(episode);
+    if($('#episode_title').val() == '') $('#episode_title').val(title);
   });
 
   $('#enhance').submit(function(event) {
@@ -101,7 +109,9 @@ $(document).ready(function(){
               $('#enhancement').html(data.enhancementMessage);
               $('#pre-wrap').html(data.threadMessage);
               $('#myModal').modal('show');
-              window.location = 'download.php?file='+data.tempFilename+'&name='+data.filename;
+              $('#finalFileName').val(data.filename);
+              $('#finalFileName').attr('data-temp-name', data.tempFilename);
+              // window.location = 'download.php?file='+data.tempFilename+'&name='+data.filename;
             });
         }
         reader.onerror = function (evt) {
@@ -109,6 +119,10 @@ $(document).ready(function(){
             // document.getElementById("fileContents").innerHTML = "error reading file";
         }
     }
+
+    $('.download-btn').on('click',function(){
+      window.location = 'download.php?file='+$('#finalFileName').attr('data-temp-name')+'&name='+$('#finalFileName').val();
+    });
 
     // var fileSelect = document.getElementById('input-sub-file');
     // var uploadButton = document.getElementById('optimize-button');
