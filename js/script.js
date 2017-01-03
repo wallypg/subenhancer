@@ -54,6 +54,7 @@ $(document).ready(function(){
   });
 
   $('#enhance').submit(function(event) {
+    NProgress.start();
 
     if(!$('#input-sub-file').val() && !isValidSubUrl($('#sub_url').val())) {
       $.alert({
@@ -105,6 +106,8 @@ $(document).ready(function(){
               }
             }).done(function(data){
               var data = $.parseJSON(data);
+              NProgress.done();
+              
               $('#efficiency').html(data.efficiencyMessage);
               $('#enhancement').html(data.enhancementMessage);
               $('#pre-wrap').html(data.threadMessage);

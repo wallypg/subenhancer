@@ -26,6 +26,7 @@ if (file_exists('json/data.json'))
   <link href="https://fonts.googleapis.com/css?family=Bitter:400,400i,700|Catamaran:300,400,500,600,700|Open+Sans:300,300i,400,400i,600,600i,700,700i|Rokkitt:400,700" rel="stylesheet">
   <link rel="stylesheet" href="css/font-awesome.min.css">
   <link rel="stylesheet" href="css/style.css">
+  <link rel='stylesheet' href='css/nprogress.css'/>
 </head>
 <body>
   <form action="enhance.php" method="POST" enctype="multipart/form-data" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" id="enhance">
@@ -321,5 +322,6 @@ if (file_exists('json/data.json'))
   </div>
 
   <script src="js/clipboard.min.js"></script>
+  <script src='js/nprogress.js'></script>
 </body>
 </html>

@@ -4,7 +4,7 @@
         "Blackish",
         "Criminal Minds",
         "Last Man Standing",
-        "Law & Order",
+        "Law &amp; Order",
         "CSI- Cyber",
         "Madam Secretary",
         "Law and Order- SVU",
@@ -13,7 +13,9 @@
         "Elementary",
         "Shooter",
         "Aftermath",
-        "ocr_test.sr"
+        "ocr_test.sr",
+        "Skam",
+        "The Royals"
     ],
     "codec": [
         "XviD",
@@ -57,36 +59,6 @@
         "TuSubtitulo"
     ],
     "enhanced": [
-        "Modern.Family.S08E08.(original).srt",
-        "Modern.Family.S08E08.(original).srt",
-        "Modern.Family.S08E08.(original).srt",
-        "Modern.Family.S08E08.(original).srt",
-        "Modern.Family.S08E08.(original).srt",
-        "Modern.Family.S08E08.(original).srt",
-        "Modern.Family.S08E08.(original).srt",
-        "Modern.Family.S08E08.(original).srt",
-        "Modern.Family.S08E08.(original).srt",
-        "Modern.Family.S08E08.(original).srt",
-        "Modern.Family.S08E08.(original).srt",
-        "Modern.Family.S08E08.(original).srt",
-        "Modern.Family.S08E08.(original).srt",
-        "Modern.Family.S08E08.(original).srt",
-        "Modern.Family.S08E08.(original).srt",
-        "Modern.Family.S08E08.(original).srt",
-        "Modern.Family.S08E08.(original).srt",
-        "Modern.Family.S08E08.(original).srt",
-        "Modern.Family.S08E08.(original).srt",
-        "Modern.Family.S08E08.(original).srt",
-        "Modern.Family.S08E08.(original).srt",
-        "Modern.Family.S08E08.(original).srt",
-        "Modern.Family.S08E08.(original).srt",
-        "Modern.Family.S08E08.(original).srt",
-        "Modern.Family.S08E08.(original).srt",
-        "ocr_test.sr.srt",
-        "ocr_test.sr.srt",
-        "Modern.Family.S08E08.(original).srt",
-        "Modern.Family.S08E08.(original).srt",
-        "Modern.Family.S08E08.(original).srt",
-        "Modern.Family.S08E08.(original).srt"
+
     ]
 }
