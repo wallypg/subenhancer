@@ -1,4 +1,6 @@
 $(document).ready(function(){
+
+  new Clipboard('.copy-btn');
   
   $('#info_url').on('input',function(e){
     var info_url = $(this).val();
@@ -43,7 +45,8 @@ $(document).ready(function(){
     $('#episode_title').val(title);
   });
 
-  $('#enhance').submit(function() {
+  $('#enhance').submit(function(event) {
+
     if(!$('#input-sub-file').val() && !isValidSubUrl($('#sub_url').val())) {
       $.alert({
           animation: 'top',
@@ -64,6 +67,77 @@ $(document).ready(function(){
       });
       return false;
     }
+
+    event.preventDefault();
+    var  srtContent;
+    var file = document.getElementById("input-sub-file").files[0];
+    if (file) {
+        var reader = new FileReader();
+        reader.readAsText(file, "windows-1252");
+        reader.onload = function (evt) {
+            // document.getElementById("fileContents").innerHTML = evt.target.result;
+            $.ajax({
+              method: "POST",
+              url: "enhance.php",
+              data: {
+                sub_url: $('[name="sub_url"]').val(),
+                ocr: $('[name="ocr"]').is(':checked'),
+                tv_show: $('[name="tv_show"]').val(),
+                season: $('[name="season"]').val(),
+                episode_number: $('[name="episode_number"]').val(),
+                episode_title: $('[name="episode_title"]').val(),
+                other: $('[name="other"]').val(),
+                quality: $('[name="quality"]').val(),
+                format: $('[name="format"]').val(),
+                codec: $('[name="codec"]').val(),
+                rip_group: $('[name="rip_group"]').val(),
+                editor: $('[name="editor"]').val(),
+                translation: $('[name="translation"]').val(),
+                srtContent: evt.target.result
+              }
+            }).done(function(data){
+              var data = $.parseJSON(data);
+              $('#efficiency').html(data.efficiencyMessage);
+              $('#enhancement').html(data.enhancementMessage);
+              $('#pre-wrap').html(data.threadMessage);
+              $('#myModal').modal('show');
+              window.location = 'download.php?file='+data.tempFilename+'&name='+data.filename;
+            });
+        }
+        reader.onerror = function (evt) {
+            console.log("error reading file");
+            // document.getElementById("fileContents").innerHTML = "error reading file";
+        }
+    }
+
+    // var fileSelect = document.getElementById('input-sub-file');
+    // var uploadButton = document.getElementById('optimize-button');
+
+    // uploadButton.innerHTML = 'Uploading...';
+    // var files = fileSelect.files;
+    // var formData = new FormData();
+
+    // for (var i = 0; i < files.length; i++) {
+    //   var file = files[i];
+    //   // if (!file.type.match('text/plain')) {
+    //   //   console.log('c');
+    //   //   continue;
+    //   // }
+    //   formData.append('srt[]', file, file.name);
+    // }
+    
+    // var xhr = new XMLHttpRequest();
+    // xhr.open('POST', 'enhance.php', true);
+
+    // xhr.onload = function () {
+    //   if (xhr.status === 200) {
+    //     uploadButton.innerHTML = 'Upload';
+    //   } else {
+    //     alert('An error occurred!');
+    //   }
+    // };
+
+    // xhr.send(formData);
   });
 
   $('i.fa-info-circle.sub-url').on('click',function(){
@@ -86,6 +160,27 @@ $(document).ready(function(){
 
   $('li.dropdown-item').on('click',function(){
     $('#'+$(this).parent().attr('data-list')).val($(this).html());
+  });
+
+
+  document.body.addEventListener('dblclick', function(e){
+    var target = e.target || e.srcElement;        
+    if (target.className.indexOf("highlight") !== -1 || target.parentNode.className.indexOf("highlight") !== -1){
+        var range, selection;
+
+        if (document.body.createTextRange) {
+            range = document.body.createTextRange();
+            range.moveToElementText(target);
+            range.select();
+        } else if (window.getSelection) {
+            selection = window.getSelection();
+            range = document.createRange();
+            range.selectNodeContents(target);
+            selection.removeAllRanges();
+            selection.addRange(range);
+        }
+         e.stopPropagation();
+    }
   });
 
 });

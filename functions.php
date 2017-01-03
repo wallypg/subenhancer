@@ -70,6 +70,28 @@ function downloadEnhancedSubtitle ($subtitle,$totalSequences,$filename) {
     echo $subtitleString;//sf
 }
 
+function saveEnhancedSubtitle ($subtitle,$totalSequences,$filename) {
+    $subtitleString = '';
+    foreach ($subtitle as $thisSegmentKey => $segment) {
+        $sequenceString = $segment->sequence."\r\n";//sf
+        $sequenceString .= formatMilliseconds($segment->startTimeInMilliseconds).' --> '.formatMilliseconds($segment->endTimeInMilliseconds)."\r\n";//sf
+        if(isset($segment->textLine1)) $sequenceString .= utf8_decode($segment->textLine1)."\r\n";//sf
+        if(isset($segment->textLine2)) $sequenceString .= utf8_decode($segment->textLine2)."\r\n";//sf
+        if(isset($segment->textLine3)) $sequenceString .= utf8_decode($segment->textLine3)."\r\n";//sf
+        $sequenceString .= "\r\n";//sf
+        $subtitleString .= $sequenceString;//sf
+    }
+    $subtitleString .= ($totalSequences+1)."\r\n99:99:90,000 --> 99:99:99,999\r\nEnhanced with Love in SubAdictos.net\r\n";
+
+    // header("Content-Type: text/plain;charset=windows-1252");//sf
+    // header('Content-Disposition: attachment; filename="'.$filename.'"');//sf
+    // header("Content-Length: " . strlen($subtitleString));//sf
+    // echo $subtitleString;//sf
+    $filename = uniqid('subtitle-');
+    file_put_contents('srt/enhanced/'.$filename.'.srt', $subtitleString);
+    return $filename;
+}
+
 // Recibe horas, minutos, segundos y milisegundos. Devuelve el tiempo total en milisegundos.
 function calculateMilliseconds ($hour,$minute,$second,$millisecond) {
     $totalMilliseconds = $hour*3600000+$minute*60000+$second*1000+$millisecond;

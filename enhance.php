@@ -1,5 +1,6 @@
 <?php
 require('functions.php');
+require('ocr.php');
 
 $validUrlPatternSub = '#^https://www.tusubtitulo.com/[^/]+/[0-9]+/[0-9]+(/[0-9]+)?$#';
 
@@ -32,6 +33,8 @@ if(isset($_POST['sub_url']) && preg_match($validUrlPatternSub, $_POST['sub_url']
     $fileContent = file_get_contents($_FILES['uploaded_file']['tmp_name']);
     $subtitleContent = utf8_encode ( $fileContent );
     // $fileContent = mb_convert_encoding($fileContent, 'HTML-ENTITIES', "UTF-8");
+} elseif(isset($_POST['srtContent'])) {
+  $subtitleContent = $_POST['srtContent'];
 } else {
     // ERROR VIEW
     $error = 'Error en el archivo o URL';
@@ -84,7 +87,9 @@ foreach(preg_split("/\n\s*\n/s", $subtitleContent) as $segmentKey => $segment){
     $segmentObject->totalCharacters = 0;
     for($i=2; $i<count($segmentArray)-1; $i++) {
         $textLine = 'textLine'.($i-1);
-        $segmentObject->$textLine = $segmentArray[$i];
+        if(isset($_POST['ocr']) && $_POST['ocr'] == 'true') $segmentObject->$textLine = ocrCheck($segmentArray[$i]);
+        else $segmentObject->$textLine = $segmentArray[$i];
+
         $segmentObject->totalCharacters += mb_strlen($segmentArray[$i]);
     }
 
@@ -97,7 +102,7 @@ foreach(preg_split("/\n\s*\n/s", $subtitleContent) as $segmentKey => $segment){
 }
 
 $totalSequences = count((array)$subtitle);
-
+$originalLinesOverCps = count($totalSegmentsOverCps);
 /* PROPIEDADES DE CADA SEGMENTO DEL SUBTÍTULO */
 // [sequence]
 // [startHour]
@@ -155,7 +160,7 @@ if(isset($_POST['season']) && is_numeric($_POST['season'])) {
 }
 if(isset($_POST['episode_number']) && !empty($_POST['episode_number']) && is_numeric($_POST['episode_number'])) {
     $filename .= 'E'.str_pad($_POST['episode_number'], 2, "0", STR_PAD_LEFT);
-}
+} else $_POST['episode_number'] = '';
 if(isset($_POST['episode_title']) && !empty($_POST['episode_title'])) {
     $filename .= '.'.trim($_POST['episode_title']);
 }
@@ -184,7 +189,7 @@ if(isset($_POST['editor']) && !empty($_POST['editor'])) {
 }
 if(isset($_POST['translation']) && !empty($_POST['translation'])) {
     if(!in_array($_POST['translation'], $dataArray['translation'])) array_push($dataArray['translation'], $_POST['translation']);
-}
+} else $_POST['translation'] = '';
 
 $filename .= '.srt';
 
@@ -206,38 +211,64 @@ file_put_contents("json/data.json",json_encode($dataArray,JSON_PRETTY_PRINT));
 /*
 /**************************************************************/
 
-// VER LINEAS QUE SUPERAN $CPS:
-// foreach ($totalSegmentsOverCps as $segmentOverCps) echo $segmentOverCps.'<br>';
+// OBJETO:
+// print_r($subtitle);
+// die();
+
 
 // Elegir método de optimización (0 para mostrar el subtítulo original)
 $method = 1;
 
+// MOSTRAR EN PANTALLA: printEnhancedSubtitle($subtitle,$totalSequences);
+// DESCARGAR SRT: downloadEnhancedSubtitle($subtitle,$totalSequences,$filename);
 switch($method) {
     case 0:
+        // Sub original
         printEnhancedSubtitle($subtitle,$totalSequences);
         break;
     case 1:
-        downloadEnhancedSubtitle(runMethod1($subtitle,$totalSegmentsOverCps,$cps,$maxVariation,$minDuration),$totalSequences,$filename);
+        // (-1|-2|-3|1|2|3) minificado
+        $tempFilename = saveEnhancedSubtitle(runMethod1($subtitle,$totalSegmentsOverCps,$cps,$maxVariation,$minDuration),$totalSequences,$filename);
         break;
     case 2:
+        // (-1|-2|-3|1|2|3) **** LEGACY ****
         downloadEnhancedSubtitle(runMethod2($subtitle,$totalSegmentsOverCps,$cps,$maxVariation,$minDuration),$totalSequences,$filename);
         break;
     case 3:
+        // (1|-1|2|-2|3|-3) minificado
         downloadEnhancedSubtitle(runMethod3($subtitle,$totalSegmentsOverCps,$cps,$maxVariation,$minDuration),$totalSequences,$filename);
         break;
     case 4:   
-        downloadEnhancedSubtitle(runMethod4($subtitle,$totalSegmentsOverCps,$cps,$maxVariation,$minDuration),$totalSequences,$filename);     
         break;
 }
 
-// OBJETO:
-// print_r($subtitle);
-// MOSTRAR EN PANTALLA:
-// printEnhancedSubtitle($subtitle,$totalSequences);
-// DESCARGAR SRT:
-// downloadEnhancedSubtitle($subtitle,$totalSequences,$filename);
-die();
+$afterEnhancementLinesOverCps = count(checkAllLinesCps($subtitle,25));
+$enhancedLines = $originalLinesOverCps-$afterEnhancementLinesOverCps;
 
+$threadMessage = '[CENTER][IMG]http://imagenes.subadictos.net/novedad/SubsDisponibles.gif[/IMG]
+
+[B][SIZE=4]Capítulo: [COLOR="#FF0000"]'.$_POST['episode_number'].'[/COLOR].[/SIZE][/B]
+[SIZE=3]
+Agradecimientos a:
+
+Traducción: [B]'.$_POST['translation'].'[/B]';
+if(isset($_POST['editor']) && !empty($_POST['editor'])) {
+    $threadMessage .= 'Corrección [B][COLOR="#800080"]'.$_POST['editor'].'[/COLOR][/B]';
+}
+$threadMessage .= '[/SIZE][/CENTER]';
+$efficiencyMessage = round($enhancedLines*100/$originalLinesOverCps,1).'% de eficiencia en la optimización.';
+$enhancementMessage = $enhancedLines.' líneas mejoradas de '.$originalLinesOverCps.' que superaban los 25 CPS.';
+
+// header('Location: index.php')
+$data = array(
+        'filename' => $filename,
+        'tempFilename' => $tempFilename,
+        'threadMessage' => $threadMessage,
+        'efficiencyMessage' => $efficiencyMessage,
+        'enhancementMessage' => $enhancementMessage
+        );
+echo json_encode($data);
+die();
 
 /**************************************************************/
 /*

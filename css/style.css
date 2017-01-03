@@ -71,10 +71,24 @@ input, .input-sm, .form-control.file-caption.kv-fileinput-caption{
   font-size:15px!important;
 }
 
-.form-group label{
+.ocr-checkbox {
+  width:35px!important;
+  margin: 0px!important;
+  display: inline-block!important;
+}
+
+.ocr {
+  /*padding-left: 9px*/
+}
+
+.form-group label, .ocr-label {
   font-size:14px!important;
   color: #29a1d2!important;
   padding-left: 9px
+}
+
+.ocr-label {
+  /*padding-left: 4px!important;*/
 }
 
 .loose-text{
@@ -132,7 +146,7 @@ input, .input-sm, .form-control.file-caption.kv-fileinput-caption{
 .adictito{
   margin-top: 8px;
   position: absolute;
-  z-index:9999;
+  z-index:9000;
   width:66px;
   float:right;
   height:auto;
@@ -278,18 +292,57 @@ i.fa-info-circle:hover {
   padding-top: 7px
 }
 
+#myModal {
+  z-index: 9999;
+}
 
+.modal-content {
+  color: #fafafa;
+  background-color: #444853;
+}
+.modal-header h4 {
+  color: #00b5ff;
+  font-size: 20px!important;
+  text-align: center;
+}
+.modal-header {
+  border-bottom: none;
+}
+.modal-header>.close {
+  color: #fafafa;
+}
+.modal-footer{
+  border-top: none;
+}
+.close {
+  opacity: 0.6;
+  color:#fff;
+  text-shadow: none;
+}
+.modal-body>div {
+  text-align: center;
+  font-size:18px;
+}
+.modal-body {
+  padding-top: 0px;
+  padding-bottom: 0px;
+}
+#pre-wrap {
+  color: #e4e3e3;
+  background-color: #404040;
+    white-space: pre-wrap;       /* Since CSS 2.1 */
+    white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
+    white-space: -pre-wrap;      /* Opera 4-6 */
+    white-space: -o-pre-wrap;    /* Opera 7 */
+    word-wrap: break-word;       /* Internet Explorer 5.5+ */
+}
 
-
-
-
-
-
-
-
-
-
-
+.copy-btn,.close-btn {
+    background-color: #24242a!important;
+    color: #29a1d2!important;
+    border: 2px solid #29a1d2!important;
+    padding-top: 8px!important;
+}
 
 
 /* Progress bars */

@@ -50,7 +50,7 @@ if (file_exists('json/data.json'))
                     <div class="form-group">
                       <label class="control-label" for="sub_url">Archivo del subtítulo</label>
                       <form action="" class="dropzone">
-                      <input id="input-sub-file" name="uploaded_file" type="file" class="file" data-show-preview="false" data-show-remove="true" data-show-upload="false">
+                      <input id="input-sub-file" name="uploaded_file" type="file" class="file" data-show-preview="false" data-show-remove="true" data-show-upload="false" multiple>
                       </form>
                     </div>
                   </div>
@@ -193,6 +193,15 @@ if (file_exists('json/data.json'))
                         </div>
                     </div>
                   </div>
+
+                  <div class="col-xs-4 col-sm-4 col-md-4">
+                    <div class="form-group">
+                        <label for="ocr" class="ocr-label">OCR</label>
+                        <div class="ocr">
+                          <input type="checkbox" name="ocr" id="ocr" value="true" class="form-control ocr-checkbox">
+                        </div>
+                    </div>
+                  </div>
                   
                   <!--  -->
                   <div class="col-xs-12 col-sm-12 col-md-12">
@@ -238,11 +247,11 @@ if (file_exists('json/data.json'))
                   </div>
                   <div class="col-xs-4">
                     <div class="form-group align-center">
-                      <input type="submit" value="OPTIMIZAR" class="btn btn-info optimize-button">
+                      <input type="submit" id="optimize-button" value="OPTIMIZAR" class="btn btn-info optimize-button">
                     </div>
                   </div>
                   <div class="col-xs-4 version">
-                    v161231.1
+                    v161231.2
                   </div>
                 </div>
               
@@ -263,5 +272,32 @@ if (file_exists('json/data.json'))
     </div>
   </div>
 
+  <!-- Modal -->
+  <div id="myModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">¡Subtítulo optimizado!</h4>
+        </div>
+        <div class="modal-body">
+          <div id="efficiency"></div>
+          <div id="enhancement"></div>
+          <p><pre id="pre-wrap" class="highlight">[CENTER][IMG]http://imagenes.subadictos.net/novedad/SubsDisponibles.gif[/IMG]
+          [B][SIZE=4]Capítulo: [COLOR="#FF0000"]</pre></p>
+        </div>
+        <div class="modal-footer">
+          <button class="btn copy-btn" data-clipboard-target="#pre-wrap">
+              <i class="fa fa-clipboard" aria-hidden="true"></i>&nbsp;Copiar
+          </button>
+          <button type="button" class="btn btn-default close-btn" data-dismiss="modal">Cerrar</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <script src="js/clipboard.min.js"></script>
 </body>
 </html>
