@@ -1,870 +1,870 @@
 {
     "regex": [
-    {
-        "find": "\\b[H|h](ab[e|é]is)\\b",
-        "replace": "an",
-        "useREonlyToFind": true
-    },
-    {
-        "find": "\\b[H|h](ub[i|í]steis)\\b",
-        "replace": "ubieron",
-        "useREonlyToFind": true
-    },
-    {
-        "find": "\\b[H|h](ab[i|í]ais)\\b",
-        "replace": "abían",
-        "useREonlyToFind": true
-    },
-    {
-        "find": "\\b[H|h](ay[a|á]is)\\b",
-        "replace": "ayan",
-        "useREonlyToFind": true
-    },
-    {
-        "find": "\\b[H|h](ab[e|é]d)\\b",
-        "replace": "ayan",
-        "useREonlyToFind": true
-    },
-    {
-        "find": "\\b[H|h](ab[e|é]dse)\\b",
-        "replace": "áyanse",
-        "useREonlyToFind": true
-    },
-    {
-        "find": "\\b[E|e](st[a|á]is)\\b",
-        "replace": "stán",
-        "useREonlyToFind": true
-    },
-    {
-        "find": "\\b[E|e](stuv[i|í]steis)\\b",
-        "replace": "stuvieron",
-        "useREonlyToFind": true
-    },
-    {
-        "find": "\\b[E|e](st[a|á]bais)\\b",
-        "replace": "staban",
-        "useREonlyToFind": true
-    },
-    {
-        "find": "\\b[E|e](st[e|é]is)\\b",
-        "replace": "stén",
-        "useREonlyToFind": true
-    },
-    {
-        "find": "\\b[E|e](st[a|á]d)\\b",
-        "replace": "stén",
-        "useREonlyToFind": true
-    },
-    {
-        "find": "\\b[E|e](st[a|á]os)\\b",
-        "replace": "stense",
-        "useREonlyToFind": true
-    },
-    {
-        "find": "\\b[S|s]([o|ó]is)\\b",
-        "replace": "on",
-        "useREonlyToFind": true
-    },
-    {
-        "find": "\\b[F|f](uis[i|í]steis)\\b",
-        "replace": "ueron",
-        "useREonlyToFind": true
-    },
-    {
-        "find": "\\b[E|é](rais)\\b",
-        "replace": "ran",
-        "useREonlyToFind": true
-    },
-    {
-        "find": "\\b[S|s]([e|é]as)\\b",
-        "replace": "ean",
-        "useREonlyToFind": true
-    },
-    {
-        "find": "\\b[S|s](e[a|á]is)\\b",
-        "replace": "ean",
-        "useREonlyToFind": true
-    },
-    {
-        "find": "\\b[T|t](en[e|é]is)\\b",
-        "replace": "ienen",
-        "useREonlyToFind": true
-    },
-    {
-        "find": "\\b[T|t](uv[i|í]steis)\\b",
-        "replace": "uvieron",
-        "useREonlyToFind": true
-    },
-    {
-        "find": "\\b[T|t](en[i|í]ais)\\b",
-        "replace": "enían",
-        "useREonlyToFind": true
-    },
-    {
-        "find": "\\b[T|t](eng[a|á]is)\\b",
-        "replace": "engan",
-        "useREonlyToFind": true
-    },
-    {
-        "find": "\\b[T|t](en[e|é]d)\\b",
-        "replace": "engan",
-        "useREonlyToFind": true
-    },
-    {
-        "find": "\\b[T|t](en[e|é]os)\\b",
-        "replace": "énganse",
-        "useREonlyToFind": true
-    },
-    {
-        "find": "\\b[H|h](ac[e|é]is)\\b",
-        "replace": "acen",
-        "useREonlyToFind": true
-    },
-    {
-        "find": "\\b[H|h](ic[i|í]steis)\\b",
-        "replace": "icieron",
-        "useREonlyToFind": true
-    },
-    {
-        "find": "\\b[H|h](ac[i|í]ais)\\b",
-        "replace": "acían",
-        "useREonlyToFind": true
-    },
-    {
-        "find": "\\b[H|h](ag[a|á]is)\\b",
-        "replace": "agan",
-        "useREonlyToFind": true
-    },
-    {
-        "find": "\\b[H|h](ac[e|é]d)\\b",
-        "replace": "agan",
-        "useREonlyToFind": true
-    },
-    {
-        "find": "\\b[H|h](ac[e|é]os)\\b",
-        "replace": "áganse",
-        "useREonlyToFind": true
-    },
-    {
-        "find": "\\b[D|d](ec[i|í]s)\\b",
-        "replace": "icen",
-        "useREonlyToFind": true
-    },
-    {
-        "find": "\\b[D|d](ij[i|í]steis)\\b",
-        "replace": "ijeron",
-        "useREonlyToFind": true
-    },
-    {
-        "find": "\\b[D|d](ec[i|í]ais)\\b",
-        "replace": "ecían",
-        "useREonlyToFind": true
-    },
-    {
-        "find": "\\b[D|d](ig[a|á]is)\\b",
-        "replace": "igan",
-        "useREonlyToFind": true
-    },
-    {
-        "find": "\\b[D|d](ec[i|í]d)\\b",
-        "replace": "igan",
-        "useREonlyToFind": true
-    },
-    {
-        "find": "\\b[D|d](ec[i|í]os)\\b",
-        "replace": "íganse",
-        "useREonlyToFind": true
-    },
-    {
-        "find": "\\b[V|v]([a|á]is)\\b",
-        "replace": "an",
-        "useREonlyToFind": true
-    },
-    {
-        "find": "\\b[F|f](u[i|í]steis)\\b",
-        "replace": "ueron",
-        "useREonlyToFind": true
-    },
-    {
-        "find": "\\b[I|í](bais)\\b",
-        "replace": "ban",
-        "useREonlyToFind": true
-    },
-    {
-        "find": "\\b[V|v](ay[a|á]is)\\b",
-        "replace": "ayan",
-        "useREonlyToFind": true
-    },
-    {
-        "find": "\\b[I|i](dos)\\b",
-        "replace": "áyanse",
-        "useREonlyToFind": true
-    },
-    {
-        "find": "\\b[S|s](ab[e|é]is)\\b",
-        "replace": "aben",
-        "useREonlyToFind": true
-    },
-    {
-        "find": "\\b[S|s](up[i|í]steis)\\b",
-        "replace": "upieron",
-        "useREonlyToFind": true
-    },
-    {
-        "find": "\\b[S|s](ab[i|í]ais)\\b",
-        "replace": "abían",
-        "useREonlyToFind": true
-    },
-    {
-        "find": "\\b[S|s](ep[a|á]is)\\b",
-        "replace": "epan",
-        "useREonlyToFind": true
-    },
-    {
-        "find": "\\b[S|s](ab[e|é]d)\\b",
-        "replace": "epan",
-        "useREonlyToFind": true
-    },
-    {
-        "find": "\\b[S|s](ab[e|é]os)\\b",
-        "replace": "épanse",
-        "useREonlyToFind": true
-    },
-    {
-        "find": "\\b[D|d]([a|á]is)\\b",
-        "replace": "an",
-        "useREonlyToFind": true
-    },
-    {
-        "find": "\\b[D|d]([i|í]steis)\\b",
-        "replace": "ieron",
-        "useREonlyToFind": true
-    },
-    {
-        "find": "\\b[D|d]([a|á]bais)\\b",
-        "replace": "aban",
-        "useREonlyToFind": true
-    },
-    {
-        "find": "\\b[D|d]([e|é]is)\\b",
-        "replace": "en",
-        "useREonlyToFind": true
-    },
-    {
-        "find": "\\b[D|d]([a|á]d)\\b",
-        "replace": "en",
-        "useREonlyToFind": true
-    },
-    {
-        "find": "\\b[D|d]([a|á]os)\\b",
-        "replace": "ómense",
-        "useREonlyToFind": true
-    },
-    {
-        "find": "\\b[V|v]([e|é]is)\\b",
-        "replace": "en",
-        "useREonlyToFind": true
-    },
-    {
-        "find": "\\b[V|v]([i|í]steis)\\b",
-        "replace": "ieron",
-        "useREonlyToFind": true
-    },
-    {
-        "find": "\\b[V|v](e[i|í]ais)\\b",
-        "replace": "eían",
-        "useREonlyToFind": true
-    },
-    {
-        "find": "\\b[V|v](e[a|á]is)\\b",
-        "replace": "ean",
-        "useREonlyToFind": true
-    },
-    {
-        "find": "\\b[V|v]([e|é]d)\\b",
-        "replace": "ean",
-        "useREonlyToFind": true
-    },
-    {
-        "find": "\\b[V|v]([e|é]os)\\b",
-        "replace": "éanse",
-        "useREonlyToFind": true
-    },
-    {
-        "find": "\\b[V|v](en[i|í]s)\\b",
-        "replace": "ienen",
-        "useREonlyToFind": true
-    },
-    {
-        "find": "\\b[V|v](in[i|í]steis)\\b",
-        "replace": "inieron",
-        "useREonlyToFind": true
-    },
-    {
-        "find": "\\b[V|v](en[i|í]ais)\\b",
-        "replace": "enían",
-        "useREonlyToFind": true
-    },
-    {
-        "find": "\\b[V|v](eng[a|á]is)\\b",
-        "replace": "engan",
-        "useREonlyToFind": true
-    },
-    {
-        "find": "\\b[V|v](en[i|í]d)\\b",
-        "replace": "engan",
-        "useREonlyToFind": true
-    },
-    {
-        "find": "\\b[V|v](en[i|í]os)\\b",
-        "replace": "énganse",
-        "useREonlyToFind": true
-    },
-    {
-        "find": "\\b[P|p](ens[a|á]is)\\b",
-        "replace": "iensan",
-        "useREonlyToFind": true
-    },
-    {
-        "find": "\\b[P|p](ens[a|á]steis)\\b",
-        "replace": "ensaron",
-        "useREonlyToFind": true
-    },
-    {
-        "find": "\\b[P|p](ens[a|á]bais)\\b",
-        "replace": "ensaban",
-        "useREonlyToFind": true
-    },
-    {
-        "find": "\\b[P|p](ens[e|é]is)\\b",
-        "replace": "iensen",
-        "useREonlyToFind": true
-    },
-    {
-        "find": "\\b[P|p](ens[a|á]d)\\b",
-        "replace": "iensen",
-        "useREonlyToFind": true
-    },
-    {
-        "find": "\\b[P|p](ens[a|á]os)\\b",
-        "replace": "iénsense",
-        "useREonlyToFind": true
-    },
-    {
-        "find": "\\b[M|m](ir[a|á]is)\\b",
-        "replace": "iran",
-        "useREonlyToFind": true
-    },
-    {
-        "find": "\\b[M|m](ir[a|á]steis)\\b",
-        "replace": "iraron",
-        "useREonlyToFind": true
-    },
-    {
-        "find": "\\b[M|m](ir[a|á]bais)\\b",
-        "replace": "iraban",
-        "useREonlyToFind": true
-    },
-    {
-        "find": "\\b[M|m](ir[e|é]is)\\b",
-        "replace": "iren",
-        "useREonlyToFind": true
-    },
-    {
-        "find": "\\b[M|m](ir[a|á]d)\\b",
-        "replace": "iren",
-        "useREonlyToFind": true
-    },
-    {
-        "find": "\\b[M|m](ir[a|á]os)\\b",
-        "replace": "írense",
-        "useREonlyToFind": true
-    },
-    {
-        "find": "\\b[Q|q](uer[e|é]is)\\b",
-        "replace": "uieren",
-        "useREonlyToFind": true
-    },
-    {
-        "find": "\\b[Q|q](uis[i|í]steis)\\b",
-        "replace": "uisieron",
-        "useREonlyToFind": true
-    },
-    {
-        "find": "\\b[Q|q](uer[i|í]ais)\\b",
-        "replace": "uerían",
-        "useREonlyToFind": true
-    },
-    {
-        "find": "\\b[Q|q](uer[a|á]is)\\b",
-        "replace": "uieran",
-        "useREonlyToFind": true
-    },
-    {
-        "find": "\\b[Q|q](uer[e|é]d)\\b",
-        "replace": "uieran",
-        "useREonlyToFind": true
-    },
-    {
-        "find": "\\b[Q|q](uer[e|é]os)\\b",
-        "replace": "uiéranse",
-        "useREonlyToFind": true
-    },
-    {
-        "find": "\\b[D|d]([a|á]is)\\b",
-        "replace": "an",
-        "useREonlyToFind": true
-    },
-    {
-        "find": "\\b[D|d]([i|í]steis)\\b",
-        "replace": "ieron",
-        "useREonlyToFind": true
-    },
-    {
-        "find": "\\b[D|d]([a|á]bais)\\b",
-        "replace": "aban",
-        "useREonlyToFind": true
-    },
-    {
-        "find": "\\b[D|d]([e|é]is)\\b",
-        "replace": "en",
-        "useREonlyToFind": true
-    },
-    {
-        "find": "\\b[D|d]([a|á]d)\\b",
-        "replace": "en",
-        "useREonlyToFind": true
-    },
-    {
-        "find": "\\b[D|d]([a|á]os)\\b",
-        "replace": "ense",
-        "useREonlyToFind": true
-    },
-    {
-        "find": "\\b[T|t](om[a|á]is)\\b",
-        "replace": "oman",
-        "useREonlyToFind": true
-    },
-    {
-        "find": "\\b[T|t](om[a|á]steis)\\b",
-        "replace": "omaron",
-        "useREonlyToFind": true
-    },
-    {
-        "find": "\\b[T|t](om[a|á]bais)\\b",
-        "replace": "omaban",
-        "useREonlyToFind": true
-    },
-    {
-        "find": "\\b[T|t](om[e|é]is)\\b",
-        "replace": "omen",
-        "useREonlyToFind": true
-    },
-    {
-        "find": "\\b[T|t](om[a|á]d)\\b",
-        "replace": "omen",
-        "useREonlyToFind": true
-    },
-    {
-        "find": "\\b[T|t](om[a|á]os)\\b",
-        "replace": "ómense",
-        "useREonlyToFind": true
-    },
-    {
-        "find": "\\b(Bien,\\s|Oye,\\s|Quiero\\sdecir,\\s|Es\\sdecir,\\s|Ah,\\s|Eh,\\s|Oh,\\s|Ok,\\s|Okey,\\s|Ey,\\s|Oye,\\s|Vale,\\s|Bueno,\\s|Está\\sbien,\\s|Esta\\sbien,\\s|Venga(\\sya)?,\\s|De\\sacuerdo,\\s|Ya\\ssabes,\\s)a",
-        "replace": "A",
-        "useREonlyToFind": false
-    },
-    {
-        "find": "\\b(Bien,\\s|Oye,\\s|Quiero\\sdecir,\\s|Es\\sdecir,\\s|Ah,\\s|Eh,\\s|Oh,\\s|Ok,\\s|Okey,\\s|Ey,\\s|Oye,\\s|Vale,\\s|Bueno,\\s|Está\\sbien,\\s|Esta\\sbien,\\s|Venga(\\sya)?,\\s|De\\sacuerdo,\\s|Ya\\ssabes,\\s)b",
-        "replace": "B",
-        "useREonlyToFind": false
-    },
-    {
-        "find": "\\b(Bien,\\s|Oye,\\s|Quiero\\sdecir,\\s|Es\\sdecir,\\s|Ah,\\s|Eh,\\s|Oh,\\s|Ok,\\s|Okey,\\s|Ey,\\s|Oye,\\s|Vale,\\s|Bueno,\\s|Está\\sbien,\\s|Esta\\sbien,\\s|Venga(\\sya)?,\\s|De\\sacuerdo,\\s|Ya\\ssabes,\\s)c",
-        "replace": "C",
-        "useREonlyToFind": false
-    },
-    {
-        "find": "\\b(Bien,\\s|Oye,\\s|Quiero\\sdecir,\\s|Es\\sdecir,\\s|Ah,\\s|Eh,\\s|Oh,\\s|Ok,\\s|Okey,\\s|Ey,\\s|Oye,\\s|Vale,\\s|Bueno,\\s|Está\\sbien,\\s|Esta\\sbien,\\s|Venga(\\sya)?,\\s|De\\sacuerdo,\\s|Ya\\ssabes,\\s)d",
-        "replace": "D",
-        "useREonlyToFind": false
-    },
-    {
-        "find": "\\b(Bien,\\s|Oye,\\s|Quiero\\sdecir,\\s|Es\\sdecir,\\s|Ah,\\s|Eh,\\s|Oh,\\s|Ok,\\s|Okey,\\s|Ey,\\s|Oye,\\s|Vale,\\s|Bueno,\\s|Está\\sbien,\\s|Esta\\sbien,\\s|Venga(\\sya)?,\\s|De\\sacuerdo,\\s|Ya\\ssabes,\\s)e",
-        "replace": "E",
-        "useREonlyToFind": false
-    },
-    {
-        "find": "\\b(Bien,\\s|Oye,\\s|Quiero\\sdecir,\\s|Es\\sdecir,\\s|Ah,\\s|Eh,\\s|Oh,\\s|Ok,\\s|Okey,\\s|Ey,\\s|Oye,\\s|Vale,\\s|Bueno,\\s|Está\\sbien,\\s|Esta\\sbien,\\s|Venga(\\sya)?,\\s|De\\sacuerdo,\\s|Ya\\ssabes,\\s)f",
-        "replace": "F",
-        "useREonlyToFind": false
-    },
-    {
-        "find": "\\b(Bien,\\s|Oye,\\s|Quiero\\sdecir,\\s|Es\\sdecir,\\s|Ah,\\s|Eh,\\s|Oh,\\s|Ok,\\s|Okey,\\s|Ey,\\s|Oye,\\s|Vale,\\s|Bueno,\\s|Está\\sbien,\\s|Esta\\sbien,\\s|Venga(\\sya)?,\\s|De\\sacuerdo,\\s|Ya\\ssabes,\\s)g",
-        "replace": "G",
-        "useREonlyToFind": false
-    },
-    {
-        "find": "\\b(Bien,\\s|Oye,\\s|Quiero\\sdecir,\\s|Es\\sdecir,\\s|Ah,\\s|Eh,\\s|Oh,\\s|Ok,\\s|Okey,\\s|Ey,\\s|Oye,\\s|Vale,\\s|Bueno,\\s|Está\\sbien,\\s|Esta\\sbien,\\s|Venga(\\sya)?,\\s|De\\sacuerdo,\\s|Ya\\ssabes,\\s)h",
-        "replace": "H",
-        "useREonlyToFind": false
-    },
-    {
-        "find": "\\b(Bien,\\s|Oye,\\s|Quiero\\sdecir,\\s|Es\\sdecir,\\s|Ah,\\s|Eh,\\s|Oh,\\s|Ok,\\s|Okey,\\s|Ey,\\s|Oye,\\s|Vale,\\s|Bueno,\\s|Está\\sbien,\\s|Esta\\sbien,\\s|Venga(\\sya)?,\\s|De\\sacuerdo,\\s|Ya\\ssabes,\\s)i",
-        "replace": "I",
-        "useREonlyToFind": false
-    },
-    {
-        "find": "\\b(Bien,\\s|Oye,\\s|Quiero\\sdecir,\\s|Es\\sdecir,\\s|Ah,\\s|Eh,\\s|Oh,\\s|Ok,\\s|Okey,\\s|Ey,\\s|Oye,\\s|Vale,\\s|Bueno,\\s|Está\\sbien,\\s|Esta\\sbien,\\s|Venga(\\sya)?,\\s|De\\sacuerdo,\\s|Ya\\ssabes,\\s)j",
-        "replace": "J",
-        "useREonlyToFind": false
-    },
-    {
-        "find": "\\b(Bien,\\s|Oye,\\s|Quiero\\sdecir,\\s|Es\\sdecir,\\s|Ah,\\s|Eh,\\s|Oh,\\s|Ok,\\s|Okey,\\s|Ey,\\s|Oye,\\s|Vale,\\s|Bueno,\\s|Está\\sbien,\\s|Esta\\sbien,\\s|Venga(\\sya)?,\\s|De\\sacuerdo,\\s|Ya\\ssabes,\\s)k",
-        "replace": "K",
-        "useREonlyToFind": false
-    },
-    {
-        "find": "\\b(Bien,\\s|Oye,\\s|Quiero\\sdecir,\\s|Es\\sdecir,\\s|Ah,\\s|Eh,\\s|Oh,\\s|Ok,\\s|Okey,\\s|Ey,\\s|Oye,\\s|Vale,\\s|Bueno,\\s|Está\\sbien,\\s|Esta\\sbien,\\s|Venga(\\sya)?,\\s|De\\sacuerdo,\\s|Ya\\ssabes,\\s)l",
-        "replace": "L",
-        "useREonlyToFind": false
-    },
-    {
-        "find": "\\b(Bien,\\s|Oye,\\s|Quiero\\sdecir,\\s|Es\\sdecir,\\s|Ah,\\s|Eh,\\s|Oh,\\s|Ok,\\s|Okey,\\s|Ey,\\s|Oye,\\s|Vale,\\s|Bueno,\\s|Está\\sbien,\\s|Esta\\sbien,\\s|Venga(\\sya)?,\\s|De\\sacuerdo,\\s|Ya\\ssabes,\\s)m",
-        "replace": "M",
-        "useREonlyToFind": false
-    },
-    {
-        "find": "\\b(Bien,\\s|Oye,\\s|Quiero\\sdecir,\\s|Es\\sdecir,\\s|Ah,\\s|Eh,\\s|Oh,\\s|Ok,\\s|Okey,\\s|Ey,\\s|Oye,\\s|Vale,\\s|Bueno,\\s|Está\\sbien,\\s|Esta\\sbien,\\s|Venga(\\sya)?,\\s|De\\sacuerdo,\\s|Ya\\ssabes,\\s)n",
-        "replace": "N",
-        "useREonlyToFind": false
-    },
-    {
-        "find": "\\b(Bien,\\s|Oye,\\s|Quiero\\sdecir,\\s|Es\\sdecir,\\s|Ah,\\s|Eh,\\s|Oh,\\s|Ok,\\s|Okey,\\s|Ey,\\s|Oye,\\s|Vale,\\s|Bueno,\\s|Está\\sbien,\\s|Esta\\sbien,\\s|Venga(\\sya)?,\\s|De\\sacuerdo,\\s|Ya\\ssabes,\\s)o",
-        "replace": "O",
-        "useREonlyToFind": false
-    },
-    {
-        "find": "\\b(Bien,\\s|Oye,\\s|Quiero\\sdecir,\\s|Es\\sdecir,\\s|Ah,\\s|Eh,\\s|Oh,\\s|Ok,\\s|Okey,\\s|Ey,\\s|Oye,\\s|Vale,\\s|Bueno,\\s|Está\\sbien,\\s|Esta\\sbien,\\s|Venga(\\sya)?,\\s|De\\sacuerdo,\\s|Ya\\ssabes,\\s)p",
-        "replace": "P",
-        "useREonlyToFind": false
-    },
-    {
-        "find": "\\b(Bien,\\s|Oye,\\s|Quiero\\sdecir,\\s|Es\\sdecir,\\s|Ah,\\s|Eh,\\s|Oh,\\s|Ok,\\s|Okey,\\s|Ey,\\s|Oye,\\s|Vale,\\s|Bueno,\\s|Está\\sbien,\\s|Esta\\sbien,\\s|Venga(\\sya)?,\\s|De\\sacuerdo,\\s|Ya\\ssabes,\\s)q",
-        "replace": "Q",
-        "useREonlyToFind": false
-    },
-    {
-        "find": "\\b(Bien,\\s|Oye,\\s|Quiero\\sdecir,\\s|Es\\sdecir,\\s|Ah,\\s|Eh,\\s|Oh,\\s|Ok,\\s|Okey,\\s|Ey,\\s|Oye,\\s|Vale,\\s|Bueno,\\s|Está\\sbien,\\s|Esta\\sbien,\\s|Venga(\\sya)?,\\s|De\\sacuerdo,\\s|Ya\\ssabes,\\s)r",
-        "replace": "R",
-        "useREonlyToFind": false
-    },
-    {
-        "find": "\\b(Bien,\\s|Oye,\\s|Quiero\\sdecir,\\s|Es\\sdecir,\\s|Ah,\\s|Eh,\\s|Oh,\\s|Ok,\\s|Okey,\\s|Ey,\\s|Oye,\\s|Vale,\\s|Bueno,\\s|Está\\sbien,\\s|Esta\\sbien,\\s|Venga(\\sya)?,\\s|De\\sacuerdo,\\s|Ya\\ssabes,\\s)s",
-        "replace": "S",
-        "useREonlyToFind": false
-    },
-    {
-        "find": "\\b(Bien,\\s|Oye,\\s|Quiero\\sdecir,\\s|Es\\sdecir,\\s|Ah,\\s|Eh,\\s|Oh,\\s|Ok,\\s|Okey,\\s|Ey,\\s|Oye,\\s|Vale,\\s|Bueno,\\s|Está\\sbien,\\s|Esta\\sbien,\\s|Venga(\\sya)?,\\s|De\\sacuerdo,\\s|Ya\\ssabes,\\s)t",
-        "replace": "T",
-        "useREonlyToFind": false
-    },
-    {
-        "find": "\\b(Bien,\\s|Oye,\\s|Quiero\\sdecir,\\s|Es\\sdecir,\\s|Ah,\\s|Eh,\\s|Oh,\\s|Ok,\\s|Okey,\\s|Ey,\\s|Oye,\\s|Vale,\\s|Bueno,\\s|Está\\sbien,\\s|Esta\\sbien,\\s|Venga(\\sya)?,\\s|De\\sacuerdo,\\s|Ya\\ssabes,\\s)u",
-        "replace": "U",
-        "useREonlyToFind": false
-    },
-    {
-        "find": "\\b(Bien,\\s|Oye,\\s|Quiero\\sdecir,\\s|Es\\sdecir,\\s|Ah,\\s|Eh,\\s|Oh,\\s|Ok,\\s|Okey,\\s|Ey,\\s|Oye,\\s|Vale,\\s|Bueno,\\s|Está\\sbien,\\s|Esta\\sbien,\\s|Venga(\\sya)?,\\s|De\\sacuerdo,\\s|Ya\\ssabes,\\s)v",
-        "replace": "V",
-        "useREonlyToFind": false
-    },
-    {
-        "find": "\\b(Bien,\\s|Oye,\\s|Quiero\\sdecir,\\s|Es\\sdecir,\\s|Ah,\\s|Eh,\\s|Oh,\\s|Ok,\\s|Okey,\\s|Ey,\\s|Oye,\\s|Vale,\\s|Bueno,\\s|Está\\sbien,\\s|Esta\\sbien,\\s|Venga(\\sya)?,\\s|De\\sacuerdo,\\s|Ya\\ssabes,\\s)w",
-        "replace": "W",
-        "useREonlyToFind": false
-    },
-    {
-        "find": "\\b(Bien,\\s|Oye,\\s|Quiero\\sdecir,\\s|Es\\sdecir,\\s|Ah,\\s|Eh,\\s|Oh,\\s|Ok,\\s|Okey,\\s|Ey,\\s|Oye,\\s|Vale,\\s|Bueno,\\s|Está\\sbien,\\s|Esta\\sbien,\\s|Venga(\\sya)?,\\s|De\\sacuerdo,\\s|Ya\\ssabes,\\s)x",
-        "replace": "X",
-        "useREonlyToFind": false
-    },
-    {
-        "find": "\\b(Bien,\\s|Oye,\\s|Quiero\\sdecir,\\s|Es\\sdecir,\\s|Ah,\\s|Eh,\\s|Oh,\\s|Ok,\\s|Okey,\\s|Ey,\\s|Oye,\\s|Vale,\\s|Bueno,\\s|Está\\sbien,\\s|Esta\\sbien,\\s|Venga(\\sya)?,\\s|De\\sacuerdo,\\s|Ya\\ssabes,\\s)y",
-        "replace": "Y",
-        "useREonlyToFind": false
-    },
-    {
-        "find": "\\b(Bien,\\s|Oye,\\s|Quiero\\sdecir,\\s|Es\\sdecir,\\s|Ah,\\s|Eh,\\s|Oh,\\s|Ok,\\s|Okey,\\s|Ey,\\s|Oye,\\s|Vale,\\s|Bueno,\\s|Está\\sbien,\\s|Esta\\sbien,\\s|Venga(\\sya)?,\\s|De\\sacuerdo,\\s|Ya\\ssabes,\\s)z",
-        "replace": "Z",
-        "useREonlyToFind": false
-    },
-    {
-        "find": "\\b(Bien,\\s|Oye,\\s|Quiero\\sdecir,\\s|Es\\sdecir,\\s|Ah,\\s|Eh,\\s|Oh,\\s|Ok,\\s|Okey,\\s|Ey,\\s|Oye,\\s|Vale,\\s|Bueno,\\s|Está\\sbien,\\s|Esta\\sbien,\\s|Venga(\\sya)?,\\s|De\\sacuerdo,\\s|Ya\\ssabes,\\s)á",
-        "replace": "Á",
-        "useREonlyToFind": false
-    },
-    {
-        "find": "\\b(Bien,\\s|Oye,\\s|Quiero\\sdecir,\\s|Es\\sdecir,\\s|Ah,\\s|Eh,\\s|Oh,\\s|Ok,\\s|Okey,\\s|Ey,\\s|Oye,\\s|Vale,\\s|Bueno,\\s|Está\\sbien,\\s|Esta\\sbien,\\s|Venga(\\sya)?,\\s|De\\sacuerdo,\\s|Ya\\ssabes,\\s)é",
-        "replace": "É",
-        "useREonlyToFind": false
-    },
-    {
-        "find": "\\b(Bien,\\s|Oye,\\s|Quiero\\sdecir,\\s|Es\\sdecir,\\s|Ah,\\s|Eh,\\s|Oh,\\s|Ok,\\s|Okey,\\s|Ey,\\s|Oye,\\s|Vale,\\s|Bueno,\\s|Está\\sbien,\\s|Esta\\sbien,\\s|Venga(\\sya)?,\\s|De\\sacuerdo,\\s|Ya\\ssabes,\\s)í",
-        "replace": "Í",
-        "useREonlyToFind": false
-    },
-    {
-        "find": "\\b(Bien,\\s|Oye,\\s|Quiero\\sdecir,\\s|Es\\sdecir,\\s|Ah,\\s|Eh,\\s|Oh,\\s|Ok,\\s|Okey,\\s|Ey,\\s|Oye,\\s|Vale,\\s|Bueno,\\s|Está\\sbien,\\s|Esta\\sbien,\\s|Venga(\\sya)?,\\s|De\\sacuerdo,\\s|Ya\\ssabes,\\s)ó",
-        "replace": "Ó",
-        "useREonlyToFind": false
-    },
-    {
-        "find": "\\b(Bien,\\s|Oye,\\s|Quiero\\sdecir,\\s|Es\\sdecir,\\s|Ah,\\s|Eh,\\s|Oh,\\s|Ok,\\s|Okey,\\s|Ey,\\s|Oye,\\s|Vale,\\s|Bueno,\\s|Está\\sbien,\\s|Esta\\sbien,\\s|Venga(\\sya)?,\\s|De\\sacuerdo,\\s|Ya\\ssabes,\\s)ú",
-        "replace": "Ú",
-        "useREonlyToFind": false
-    },
-    {
-        "find": "\\b(Bien,\\s|Oye,\\s|Quiero\\sdecir,\\s|Es\\sdecir,\\s|Ah,\\s|Eh,\\s|Oh,\\s|Ok,\\s|Okey,\\s|Ey,\\s|Oye,\\s|Vale,\\s|Bueno,\\s|Está\\sbien,\\s|Esta\\sbien,\\s|Venga(\\sya)?,\\s|De\\sacuerdo,\\s|Ya\\ssabes,\\s)ñ",
-        "replace": "Ñ",
-        "useREonlyToFind": false
-    },
-    {
-        "find": "\\b(Bien\\.\\s|Oye\\.\\s|Quiero\\sdecir\\.\\s|Es\\sdecir\\.\\s|Ah\\.\\s|Eh\\.\\s|Oh\\.\\s|Ok\\.\\s|Okey\\.\\s|Ey\\.\\s|Oye\\.\\s|Vale\\.\\s|Bueno\\.\\s|Está\\sbien\\.\\s|Esta\\sbien\\.\\s|Venga(\\sya)?\\.\\s|De\\sacuerdo\\.\\s|Ya\\ssabes\\.\\s)[A-ZÁ-Ú]",
-        "replace": "",
-        "useREonlyToFind": true
-    },
-    {
-        "find": "\\b(Bien,\\s|Oye,\\s|Quiero\\sdecir,\\s|Es\\sdecir,\\s|Ah,\\s|Eh,\\s|Oh,\\s|Ok,\\s|Okey,\\s|Ey,\\s|Ok,\\s|Okey,\\s|Ey,\\s|Oye,\\s|Vale,\\s|Bueno,\\s|Está\\sbien,\\s|Esta\\sbien,\\s|Venga(\\sya)?,\\s|De\\sacuerdo,\\s|Ya\\ssabes,\\s)[A-ZÁ-Ú]",
-        "replace": "",
-        "useREonlyToFind": true
-    },
-    {
-        "find": "\\b[H|h](ab[e|é]dl)\\b",
-        "replace": "áyanl",
-        "useREonlyToFind": true
-    },
-    {
-        "find": "\\b[E|e](st[a|á]dl)\\b",
-        "replace": "stenl",
-        "useREonlyToFind": true
-    },
-    {
-        "find": "\\b[S|s]([e|é]dl)\\b",
-        "replace": "éanl",
-        "useREonlyToFind": true
-    },
-    {
-        "find": "\\b[T|t](en[e|é]dl)\\b",
-        "replace": "énganl",
-        "useREonlyToFind": true
-    },
-    {
-        "find": "\\b[H|h](ac[e|é]dl)\\b",
-        "replace": "ánganl",
-        "useREonlyToFind": true
-    },
-    {
-        "find": "\\b[D|d](ec[i|í]dl)\\b",
-        "replace": "íganl",
-        "useREonlyToFind": true
-    },
-    {
-        "find": "\\b[S|s](ab[e|é]dl)\\b",
-        "replace": "abedl",
-        "useREonlyToFind": true
-    },
-    {
-        "find": "\\b[D|d]([a|á]dl)\\b",
-        "replace": "ómenl",
-        "useREonlyToFind": true
-    },
-    {
-        "find": "\\b[V|v]([e|é]dl)\\b",
-        "replace": "éanl",
-        "useREonlyToFind": true
-    },
-    {
-        "find": "\\b[V|v](en[i|í]dl)\\b",
-        "replace": "énganl",
-        "useREonlyToFind": true
-    },
-    {
-        "find": "\\b[P|p](ens[a|á]dl)\\b",
-        "replace": "iénsenl",
-        "useREonlyToFind": true
-    },
-    {
-        "find": "\\b[M|m](ir[a|á]dl)\\b",
-        "replace": "írenl",
-        "useREonlyToFind": true
-    },
-    {
-        "find": "\\b[Q|q](uer[e|é]dl)\\b",
-        "replace": "uiéranl",
-        "useREonlyToFind": true
-    },
-    {
-        "find": "\\b[D|d]([a|á]dl)\\b",
-        "replace": "enl",
-        "useREonlyToFind": true
-    },
-    {
-        "find": "\\b[T|t](om[a|á]dl)\\b",
-        "replace": "ómenl",
-        "useREonlyToFind": true
-    },
-    {
-        "find": "[^\n\\.][«'\\s]\\b(E)nero\\b",
-        "replace": "e",
-        "useREonlyToFind": true
-    },
-    {
-        "find": "[^\n\\.][«'\\s]\\b(F)ebrero\\b",
-        "replace": "f",
-        "useREonlyToFind": true
-    },
-    {
-        "find": "[^\n\\.][«'\\s]\\b(M)arzo\\b",
-        "replace": "m",
-        "useREonlyToFind": true
-    },
-    {
-        "find": "[^\n\\.][«'\\s]\\b(A)bril\\b",
-        "replace": "a",
-        "useREonlyToFind": true
-    },
-    {
-        "find": "[^\n\\.][«'\\s]\\b(M)ayo\\b",
-        "replace": "m",
-        "useREonlyToFind": true
-    },
-    {
-        "find": "[^\n\\.][«'\\s]\\b(J)unio\\b",
-        "replace": "j",
-        "useREonlyToFind": true
-    },
-    {
-        "find": "[^\n\\.][«'\\s]\\b(J)ulio\\b",
-        "replace": "j",
-        "useREonlyToFind": true
-    },
-    {
-        "find": "[^\n\\.][«'\\s]\\b(A)gosto\\b",
-        "replace": "a",
-        "useREonlyToFind": true
-    },
-    {
-        "find": "[^\n\\.][«'\\s]\\b(S)eptiembre\\b",
-        "replace": "s",
-        "useREonlyToFind": true
-    },
-    {
-        "find": "[^\n\\.][«'\\s]\\b(O)ctubre\\b",
-        "replace": "o",
-        "useREonlyToFind": true
-    },
-    {
-        "find": "[^\n\\.][«'\\s]\\b(N)oviembre\\b",
-        "replace": "n",
-        "useREonlyToFind": true
-    },
-    {
-        "find": "[^\n\\.][«'\\s]\\b(D)iciembre\\b",
-        "replace": "d",
-        "useREonlyToFind": true
-    },
-    {
-        "find": "[^\n\\.][«'\\s]\\b(L)unes\\b",
-        "replace": "l",
-        "useREonlyToFind": true
-    },
-    {
-        "find": "[^\n\\.][«'\\s]\\b(M)artes\\b",
-        "replace": "m",
-        "useREonlyToFind": true
-    },
-    {
-        "find": "[^\n\\.][«'\\s]\\b(Mi[eé])rcoles\\b",
-        "replace": "mié",
-        "useREonlyToFind": true
-    },
-    {
-        "find": "[^\n\\.][«'\\s]\\b(J)ueves\\b",
-        "replace": "j",
-        "useREonlyToFind": true
-    },
-    {
-        "find": "[^\n\\.][«'\\s]\\b(V)iernes\\b",
-        "replace": "v",
-        "useREonlyToFind": true
-    },
-    {
-        "find": "[^\n\\.][«'\\s]\\b(S[aá])bado\\b",
-        "replace": "sá",
-        "useREonlyToFind": true
-    },
-    {
-        "find": "[^\n\\.][«'\\s]\\b(D)omingo\\b",
-        "replace": "d",
-        "useREonlyToFind": true
-    },
-    {
-        "find": "\\b[Aa](ú)n\\sasí\\b",
-        "replace": "u",
-        "useREonlyToFind": true
-    },
-    {
-        "find": "\\b[Aa](ú)n\\scuando\\b",
-        "replace": "u",
-        "useREonlyToFind": true
-    },
-    {
-        "find": "\\b[Aa](ú)n\\slos\\b",
-        "replace": "u",
-        "useREonlyToFind": true
-    },
-    {
-        "find": "\\b[Aa](ú)n\\slas\\b",
-        "replace": "u",
-        "useREonlyToFind": true
-    },
-    {
-        "find": "\\b[Aa](ú)n\\snegarte\\b",
-        "replace": "u",
-        "useREonlyToFind": true
-    },
-    {
-        "find": "\\b[Aa](ú)n\\snegarse\\b",
-        "replace": "u",
-        "useREonlyToFind": true
-    },
-    {
-        "find": "\\b[Nn]i\\sa(ú)n\\b",
-        "replace": "u",
-        "useREonlyToFind": true
-    },
-    {
-        "find": "(_)\\s",
-        "replace": "-",
-        "useREonlyToFind": true
-    },
-    {
-        "find": "(_)\\w",
-        "replace": "- ",
-        "useREonlyToFind": true
-    },
-                                    {
-        "find": "(cion)\b",
-        "replace": "ción",
-        "useREonlyToFind": true
-    },
-    {
-        "find": "(sion)\b",
-        "replace": "sión",
-        "useREonlyToFind": true
-    }
+        {
+            "find": "\\b[H|h](ab[e|é]is)\\b",
+            "replace": "an",
+            "useREonlyToFind": true
+        },
+        {
+            "find": "\\b[H|h](ub[i|í]steis)\\b",
+            "replace": "ubieron",
+            "useREonlyToFind": true
+        },
+        {
+            "find": "\\b[H|h](ab[i|í]ais)\\b",
+            "replace": "abían",
+            "useREonlyToFind": true
+        },
+        {
+            "find": "\\b[H|h](ay[a|á]is)\\b",
+            "replace": "ayan",
+            "useREonlyToFind": true
+        },
+        {
+            "find": "\\b[H|h](ab[e|é]d)\\b",
+            "replace": "ayan",
+            "useREonlyToFind": true
+        },
+        {
+            "find": "\\b[H|h](ab[e|é]dse)\\b",
+            "replace": "áyanse",
+            "useREonlyToFind": true
+        },
+        {
+            "find": "\\b[E|e](st[a|á]is)\\b",
+            "replace": "stán",
+            "useREonlyToFind": true
+        },
+        {
+            "find": "\\b[E|e](stuv[i|í]steis)\\b",
+            "replace": "stuvieron",
+            "useREonlyToFind": true
+        },
+        {
+            "find": "\\b[E|e](st[a|á]bais)\\b",
+            "replace": "staban",
+            "useREonlyToFind": true
+        },
+        {
+            "find": "\\b[E|e](st[e|é]is)\\b",
+            "replace": "stén",
+            "useREonlyToFind": true
+        },
+        {
+            "find": "\\b[E|e](st[a|á]d)\\b",
+            "replace": "stén",
+            "useREonlyToFind": true
+        },
+        {
+            "find": "\\b[E|e](st[a|á]os)\\b",
+            "replace": "stense",
+            "useREonlyToFind": true
+        },
+        {
+            "find": "\\b[S|s]([o|ó]is)\\b",
+            "replace": "on",
+            "useREonlyToFind": true
+        },
+        {
+            "find": "\\b[F|f](uis[i|í]steis)\\b",
+            "replace": "ueron",
+            "useREonlyToFind": true
+        },
+        {
+            "find": "\\b[E|é](rais)\\b",
+            "replace": "ran",
+            "useREonlyToFind": true
+        },
+        {
+            "find": "\\b[S|s]([e|é]as)\\b",
+            "replace": "ean",
+            "useREonlyToFind": true
+        },
+        {
+            "find": "\\b[S|s](e[a|á]is)\\b",
+            "replace": "ean",
+            "useREonlyToFind": true
+        },
+        {
+            "find": "\\b[T|t](en[e|é]is)\\b",
+            "replace": "ienen",
+            "useREonlyToFind": true
+        },
+        {
+            "find": "\\b[T|t](uv[i|í]steis)\\b",
+            "replace": "uvieron",
+            "useREonlyToFind": true
+        },
+        {
+            "find": "\\b[T|t](en[i|í]ais)\\b",
+            "replace": "enían",
+            "useREonlyToFind": true
+        },
+        {
+            "find": "\\b[T|t](eng[a|á]is)\\b",
+            "replace": "engan",
+            "useREonlyToFind": true
+        },
+        {
+            "find": "\\b[T|t](en[e|é]d)\\b",
+            "replace": "engan",
+            "useREonlyToFind": true
+        },
+        {
+            "find": "\\b[T|t](en[e|é]os)\\b",
+            "replace": "énganse",
+            "useREonlyToFind": true
+        },
+        {
+            "find": "\\b[H|h](ac[e|é]is)\\b",
+            "replace": "acen",
+            "useREonlyToFind": true
+        },
+        {
+            "find": "\\b[H|h](ic[i|í]steis)\\b",
+            "replace": "icieron",
+            "useREonlyToFind": true
+        },
+        {
+            "find": "\\b[H|h](ac[i|í]ais)\\b",
+            "replace": "acían",
+            "useREonlyToFind": true
+        },
+        {
+            "find": "\\b[H|h](ag[a|á]is)\\b",
+            "replace": "agan",
+            "useREonlyToFind": true
+        },
+        {
+            "find": "\\b[H|h](ac[e|é]d)\\b",
+            "replace": "agan",
+            "useREonlyToFind": true
+        },
+        {
+            "find": "\\b[H|h](ac[e|é]os)\\b",
+            "replace": "áganse",
+            "useREonlyToFind": true
+        },
+        {
+            "find": "\\b[D|d](ec[i|í]s)\\b",
+            "replace": "icen",
+            "useREonlyToFind": true
+        },
+        {
+            "find": "\\b[D|d](ij[i|í]steis)\\b",
+            "replace": "ijeron",
+            "useREonlyToFind": true
+        },
+        {
+            "find": "\\b[D|d](ec[i|í]ais)\\b",
+            "replace": "ecían",
+            "useREonlyToFind": true
+        },
+        {
+            "find": "\\b[D|d](ig[a|á]is)\\b",
+            "replace": "igan",
+            "useREonlyToFind": true
+        },
+        {
+            "find": "\\b[D|d](ec[i|í]d)\\b",
+            "replace": "igan",
+            "useREonlyToFind": true
+        },
+        {
+            "find": "\\b[D|d](ec[i|í]os)\\b",
+            "replace": "íganse",
+            "useREonlyToFind": true
+        },
+        {
+            "find": "\\b[V|v]([a|á]is)\\b",
+            "replace": "an",
+            "useREonlyToFind": true
+        },
+        {
+            "find": "\\b[F|f](u[i|í]steis)\\b",
+            "replace": "ueron",
+            "useREonlyToFind": true
+        },
+        {
+            "find": "\\b[I|í](bais)\\b",
+            "replace": "ban",
+            "useREonlyToFind": true
+        },
+        {
+            "find": "\\b[V|v](ay[a|á]is)\\b",
+            "replace": "ayan",
+            "useREonlyToFind": true
+        },
+        {
+            "find": "\\b[I|i](dos)\\b",
+            "replace": "áyanse",
+            "useREonlyToFind": true
+        },
+        {
+            "find": "\\b[S|s](ab[e|é]is)\\b",
+            "replace": "aben",
+            "useREonlyToFind": true
+        },
+        {
+            "find": "\\b[S|s](up[i|í]steis)\\b",
+            "replace": "upieron",
+            "useREonlyToFind": true
+        },
+        {
+            "find": "\\b[S|s](ab[i|í]ais)\\b",
+            "replace": "abían",
+            "useREonlyToFind": true
+        },
+        {
+            "find": "\\b[S|s](ep[a|á]is)\\b",
+            "replace": "epan",
+            "useREonlyToFind": true
+        },
+        {
+            "find": "\\b[S|s](ab[e|é]d)\\b",
+            "replace": "epan",
+            "useREonlyToFind": true
+        },
+        {
+            "find": "\\b[S|s](ab[e|é]os)\\b",
+            "replace": "épanse",
+            "useREonlyToFind": true
+        },
+        {
+            "find": "\\b[D|d]([a|á]is)\\b",
+            "replace": "an",
+            "useREonlyToFind": true
+        },
+        {
+            "find": "\\b[D|d]([i|í]steis)\\b",
+            "replace": "ieron",
+            "useREonlyToFind": true
+        },
+        {
+            "find": "\\b[D|d]([a|á]bais)\\b",
+            "replace": "aban",
+            "useREonlyToFind": true
+        },
+        {
+            "find": "\\b[D|d]([e|é]is)\\b",
+            "replace": "en",
+            "useREonlyToFind": true
+        },
+        {
+            "find": "\\b[D|d]([a|á]d)\\b",
+            "replace": "en",
+            "useREonlyToFind": true
+        },
+        {
+            "find": "\\b[D|d]([a|á]os)\\b",
+            "replace": "ómense",
+            "useREonlyToFind": true
+        },
+        {
+            "find": "\\b[V|v]([e|é]is)\\b",
+            "replace": "en",
+            "useREonlyToFind": true
+        },
+        {
+            "find": "\\b[V|v]([i|í]steis)\\b",
+            "replace": "ieron",
+            "useREonlyToFind": true
+        },
+        {
+            "find": "\\b[V|v](e[i|í]ais)\\b",
+            "replace": "eían",
+            "useREonlyToFind": true
+        },
+        {
+            "find": "\\b[V|v](e[a|á]is)\\b",
+            "replace": "ean",
+            "useREonlyToFind": true
+        },
+        {
+            "find": "\\b[V|v]([e|é]d)\\b",
+            "replace": "ean",
+            "useREonlyToFind": true
+        },
+        {
+            "find": "\\b[V|v]([e|é]os)\\b",
+            "replace": "éanse",
+            "useREonlyToFind": true
+        },
+        {
+            "find": "\\b[V|v](en[i|í]s)\\b",
+            "replace": "ienen",
+            "useREonlyToFind": true
+        },
+        {
+            "find": "\\b[V|v](in[i|í]steis)\\b",
+            "replace": "inieron",
+            "useREonlyToFind": true
+        },
+        {
+            "find": "\\b[V|v](en[i|í]ais)\\b",
+            "replace": "enían",
+            "useREonlyToFind": true
+        },
+        {
+            "find": "\\b[V|v](eng[a|á]is)\\b",
+            "replace": "engan",
+            "useREonlyToFind": true
+        },
+        {
+            "find": "\\b[V|v](en[i|í]d)\\b",
+            "replace": "engan",
+            "useREonlyToFind": true
+        },
+        {
+            "find": "\\b[V|v](en[i|í]os)\\b",
+            "replace": "énganse",
+            "useREonlyToFind": true
+        },
+        {
+            "find": "\\b[P|p](ens[a|á]is)\\b",
+            "replace": "iensan",
+            "useREonlyToFind": true
+        },
+        {
+            "find": "\\b[P|p](ens[a|á]steis)\\b",
+            "replace": "ensaron",
+            "useREonlyToFind": true
+        },
+        {
+            "find": "\\b[P|p](ens[a|á]bais)\\b",
+            "replace": "ensaban",
+            "useREonlyToFind": true
+        },
+        {
+            "find": "\\b[P|p](ens[e|é]is)\\b",
+            "replace": "iensen",
+            "useREonlyToFind": true
+        },
+        {
+            "find": "\\b[P|p](ens[a|á]d)\\b",
+            "replace": "iensen",
+            "useREonlyToFind": true
+        },
+        {
+            "find": "\\b[P|p](ens[a|á]os)\\b",
+            "replace": "iénsense",
+            "useREonlyToFind": true
+        },
+        {
+            "find": "\\b[M|m](ir[a|á]is)\\b",
+            "replace": "iran",
+            "useREonlyToFind": true
+        },
+        {
+            "find": "\\b[M|m](ir[a|á]steis)\\b",
+            "replace": "iraron",
+            "useREonlyToFind": true
+        },
+        {
+            "find": "\\b[M|m](ir[a|á]bais)\\b",
+            "replace": "iraban",
+            "useREonlyToFind": true
+        },
+        {
+            "find": "\\b[M|m](ir[e|é]is)\\b",
+            "replace": "iren",
+            "useREonlyToFind": true
+        },
+        {
+            "find": "\\b[M|m](ir[a|á]d)\\b",
+            "replace": "iren",
+            "useREonlyToFind": true
+        },
+        {
+            "find": "\\b[M|m](ir[a|á]os)\\b",
+            "replace": "írense",
+            "useREonlyToFind": true
+        },
+        {
+            "find": "\\b[Q|q](uer[e|é]is)\\b",
+            "replace": "uieren",
+            "useREonlyToFind": true
+        },
+        {
+            "find": "\\b[Q|q](uis[i|í]steis)\\b",
+            "replace": "uisieron",
+            "useREonlyToFind": true
+        },
+        {
+            "find": "\\b[Q|q](uer[i|í]ais)\\b",
+            "replace": "uerían",
+            "useREonlyToFind": true
+        },
+        {
+            "find": "\\b[Q|q](uer[a|á]is)\\b",
+            "replace": "uieran",
+            "useREonlyToFind": true
+        },
+        {
+            "find": "\\b[Q|q](uer[e|é]d)\\b",
+            "replace": "uieran",
+            "useREonlyToFind": true
+        },
+        {
+            "find": "\\b[Q|q](uer[e|é]os)\\b",
+            "replace": "uiéranse",
+            "useREonlyToFind": true
+        },
+        {
+            "find": "\\b[D|d]([a|á]is)\\b",
+            "replace": "an",
+            "useREonlyToFind": true
+        },
+        {
+            "find": "\\b[D|d]([i|í]steis)\\b",
+            "replace": "ieron",
+            "useREonlyToFind": true
+        },
+        {
+            "find": "\\b[D|d]([a|á]bais)\\b",
+            "replace": "aban",
+            "useREonlyToFind": true
+        },
+        {
+            "find": "\\b[D|d]([e|é]is)\\b",
+            "replace": "en",
+            "useREonlyToFind": true
+        },
+        {
+            "find": "\\b[D|d]([a|á]d)\\b",
+            "replace": "en",
+            "useREonlyToFind": true
+        },
+        {
+            "find": "\\b[D|d]([a|á]os)\\b",
+            "replace": "ense",
+            "useREonlyToFind": true
+        },
+        {
+            "find": "\\b[T|t](om[a|á]is)\\b",
+            "replace": "oman",
+            "useREonlyToFind": true
+        },
+        {
+            "find": "\\b[T|t](om[a|á]steis)\\b",
+            "replace": "omaron",
+            "useREonlyToFind": true
+        },
+        {
+            "find": "\\b[T|t](om[a|á]bais)\\b",
+            "replace": "omaban",
+            "useREonlyToFind": true
+        },
+        {
+            "find": "\\b[T|t](om[e|é]is)\\b",
+            "replace": "omen",
+            "useREonlyToFind": true
+        },
+        {
+            "find": "\\b[T|t](om[a|á]d)\\b",
+            "replace": "omen",
+            "useREonlyToFind": true
+        },
+        {
+            "find": "\\b[T|t](om[a|á]os)\\b",
+            "replace": "ómense",
+            "useREonlyToFind": true
+        },
+        {
+            "find": "\\b(Bien,\\s|Oye,\\s|Quiero\\sdecir,\\s|Es\\sdecir,\\s|Ah,\\s|Eh,\\s|Oh,\\s|Ok,\\s|Okey,\\s|Ey,\\s|Oye,\\s|Vale,\\s|Bueno,\\s|Está\\sbien,\\s|Esta\\sbien,\\s|Venga(\\sya)?,\\s|De\\sacuerdo,\\s|Ya\\ssabes,\\s)a",
+            "replace": "A",
+            "useREonlyToFind": false
+        },
+        {
+            "find": "\\b(Bien,\\s|Oye,\\s|Quiero\\sdecir,\\s|Es\\sdecir,\\s|Ah,\\s|Eh,\\s|Oh,\\s|Ok,\\s|Okey,\\s|Ey,\\s|Oye,\\s|Vale,\\s|Bueno,\\s|Está\\sbien,\\s|Esta\\sbien,\\s|Venga(\\sya)?,\\s|De\\sacuerdo,\\s|Ya\\ssabes,\\s)b",
+            "replace": "B",
+            "useREonlyToFind": false
+        },
+        {
+            "find": "\\b(Bien,\\s|Oye,\\s|Quiero\\sdecir,\\s|Es\\sdecir,\\s|Ah,\\s|Eh,\\s|Oh,\\s|Ok,\\s|Okey,\\s|Ey,\\s|Oye,\\s|Vale,\\s|Bueno,\\s|Está\\sbien,\\s|Esta\\sbien,\\s|Venga(\\sya)?,\\s|De\\sacuerdo,\\s|Ya\\ssabes,\\s)c",
+            "replace": "C",
+            "useREonlyToFind": false
+        },
+        {
+            "find": "\\b(Bien,\\s|Oye,\\s|Quiero\\sdecir,\\s|Es\\sdecir,\\s|Ah,\\s|Eh,\\s|Oh,\\s|Ok,\\s|Okey,\\s|Ey,\\s|Oye,\\s|Vale,\\s|Bueno,\\s|Está\\sbien,\\s|Esta\\sbien,\\s|Venga(\\sya)?,\\s|De\\sacuerdo,\\s|Ya\\ssabes,\\s)d",
+            "replace": "D",
+            "useREonlyToFind": false
+        },
+        {
+            "find": "\\b(Bien,\\s|Oye,\\s|Quiero\\sdecir,\\s|Es\\sdecir,\\s|Ah,\\s|Eh,\\s|Oh,\\s|Ok,\\s|Okey,\\s|Ey,\\s|Oye,\\s|Vale,\\s|Bueno,\\s|Está\\sbien,\\s|Esta\\sbien,\\s|Venga(\\sya)?,\\s|De\\sacuerdo,\\s|Ya\\ssabes,\\s)e",
+            "replace": "E",
+            "useREonlyToFind": false
+        },
+        {
+            "find": "\\b(Bien,\\s|Oye,\\s|Quiero\\sdecir,\\s|Es\\sdecir,\\s|Ah,\\s|Eh,\\s|Oh,\\s|Ok,\\s|Okey,\\s|Ey,\\s|Oye,\\s|Vale,\\s|Bueno,\\s|Está\\sbien,\\s|Esta\\sbien,\\s|Venga(\\sya)?,\\s|De\\sacuerdo,\\s|Ya\\ssabes,\\s)f",
+            "replace": "F",
+            "useREonlyToFind": false
+        },
+        {
+            "find": "\\b(Bien,\\s|Oye,\\s|Quiero\\sdecir,\\s|Es\\sdecir,\\s|Ah,\\s|Eh,\\s|Oh,\\s|Ok,\\s|Okey,\\s|Ey,\\s|Oye,\\s|Vale,\\s|Bueno,\\s|Está\\sbien,\\s|Esta\\sbien,\\s|Venga(\\sya)?,\\s|De\\sacuerdo,\\s|Ya\\ssabes,\\s)g",
+            "replace": "G",
+            "useREonlyToFind": false
+        },
+        {
+            "find": "\\b(Bien,\\s|Oye,\\s|Quiero\\sdecir,\\s|Es\\sdecir,\\s|Ah,\\s|Eh,\\s|Oh,\\s|Ok,\\s|Okey,\\s|Ey,\\s|Oye,\\s|Vale,\\s|Bueno,\\s|Está\\sbien,\\s|Esta\\sbien,\\s|Venga(\\sya)?,\\s|De\\sacuerdo,\\s|Ya\\ssabes,\\s)h",
+            "replace": "H",
+            "useREonlyToFind": false
+        },
+        {
+            "find": "\\b(Bien,\\s|Oye,\\s|Quiero\\sdecir,\\s|Es\\sdecir,\\s|Ah,\\s|Eh,\\s|Oh,\\s|Ok,\\s|Okey,\\s|Ey,\\s|Oye,\\s|Vale,\\s|Bueno,\\s|Está\\sbien,\\s|Esta\\sbien,\\s|Venga(\\sya)?,\\s|De\\sacuerdo,\\s|Ya\\ssabes,\\s)i",
+            "replace": "I",
+            "useREonlyToFind": false
+        },
+        {
+            "find": "\\b(Bien,\\s|Oye,\\s|Quiero\\sdecir,\\s|Es\\sdecir,\\s|Ah,\\s|Eh,\\s|Oh,\\s|Ok,\\s|Okey,\\s|Ey,\\s|Oye,\\s|Vale,\\s|Bueno,\\s|Está\\sbien,\\s|Esta\\sbien,\\s|Venga(\\sya)?,\\s|De\\sacuerdo,\\s|Ya\\ssabes,\\s)j",
+            "replace": "J",
+            "useREonlyToFind": false
+        },
+        {
+            "find": "\\b(Bien,\\s|Oye,\\s|Quiero\\sdecir,\\s|Es\\sdecir,\\s|Ah,\\s|Eh,\\s|Oh,\\s|Ok,\\s|Okey,\\s|Ey,\\s|Oye,\\s|Vale,\\s|Bueno,\\s|Está\\sbien,\\s|Esta\\sbien,\\s|Venga(\\sya)?,\\s|De\\sacuerdo,\\s|Ya\\ssabes,\\s)k",
+            "replace": "K",
+            "useREonlyToFind": false
+        },
+        {
+            "find": "\\b(Bien,\\s|Oye,\\s|Quiero\\sdecir,\\s|Es\\sdecir,\\s|Ah,\\s|Eh,\\s|Oh,\\s|Ok,\\s|Okey,\\s|Ey,\\s|Oye,\\s|Vale,\\s|Bueno,\\s|Está\\sbien,\\s|Esta\\sbien,\\s|Venga(\\sya)?,\\s|De\\sacuerdo,\\s|Ya\\ssabes,\\s)l",
+            "replace": "L",
+            "useREonlyToFind": false
+        },
+        {
+            "find": "\\b(Bien,\\s|Oye,\\s|Quiero\\sdecir,\\s|Es\\sdecir,\\s|Ah,\\s|Eh,\\s|Oh,\\s|Ok,\\s|Okey,\\s|Ey,\\s|Oye,\\s|Vale,\\s|Bueno,\\s|Está\\sbien,\\s|Esta\\sbien,\\s|Venga(\\sya)?,\\s|De\\sacuerdo,\\s|Ya\\ssabes,\\s)m",
+            "replace": "M",
+            "useREonlyToFind": false
+        },
+        {
+            "find": "\\b(Bien,\\s|Oye,\\s|Quiero\\sdecir,\\s|Es\\sdecir,\\s|Ah,\\s|Eh,\\s|Oh,\\s|Ok,\\s|Okey,\\s|Ey,\\s|Oye,\\s|Vale,\\s|Bueno,\\s|Está\\sbien,\\s|Esta\\sbien,\\s|Venga(\\sya)?,\\s|De\\sacuerdo,\\s|Ya\\ssabes,\\s)n",
+            "replace": "N",
+            "useREonlyToFind": false
+        },
+        {
+            "find": "\\b(Bien,\\s|Oye,\\s|Quiero\\sdecir,\\s|Es\\sdecir,\\s|Ah,\\s|Eh,\\s|Oh,\\s|Ok,\\s|Okey,\\s|Ey,\\s|Oye,\\s|Vale,\\s|Bueno,\\s|Está\\sbien,\\s|Esta\\sbien,\\s|Venga(\\sya)?,\\s|De\\sacuerdo,\\s|Ya\\ssabes,\\s)o",
+            "replace": "O",
+            "useREonlyToFind": false
+        },
+        {
+            "find": "\\b(Bien,\\s|Oye,\\s|Quiero\\sdecir,\\s|Es\\sdecir,\\s|Ah,\\s|Eh,\\s|Oh,\\s|Ok,\\s|Okey,\\s|Ey,\\s|Oye,\\s|Vale,\\s|Bueno,\\s|Está\\sbien,\\s|Esta\\sbien,\\s|Venga(\\sya)?,\\s|De\\sacuerdo,\\s|Ya\\ssabes,\\s)p",
+            "replace": "P",
+            "useREonlyToFind": false
+        },
+        {
+            "find": "\\b(Bien,\\s|Oye,\\s|Quiero\\sdecir,\\s|Es\\sdecir,\\s|Ah,\\s|Eh,\\s|Oh,\\s|Ok,\\s|Okey,\\s|Ey,\\s|Oye,\\s|Vale,\\s|Bueno,\\s|Está\\sbien,\\s|Esta\\sbien,\\s|Venga(\\sya)?,\\s|De\\sacuerdo,\\s|Ya\\ssabes,\\s)q",
+            "replace": "Q",
+            "useREonlyToFind": false
+        },
+        {
+            "find": "\\b(Bien,\\s|Oye,\\s|Quiero\\sdecir,\\s|Es\\sdecir,\\s|Ah,\\s|Eh,\\s|Oh,\\s|Ok,\\s|Okey,\\s|Ey,\\s|Oye,\\s|Vale,\\s|Bueno,\\s|Está\\sbien,\\s|Esta\\sbien,\\s|Venga(\\sya)?,\\s|De\\sacuerdo,\\s|Ya\\ssabes,\\s)r",
+            "replace": "R",
+            "useREonlyToFind": false
+        },
+        {
+            "find": "\\b(Bien,\\s|Oye,\\s|Quiero\\sdecir,\\s|Es\\sdecir,\\s|Ah,\\s|Eh,\\s|Oh,\\s|Ok,\\s|Okey,\\s|Ey,\\s|Oye,\\s|Vale,\\s|Bueno,\\s|Está\\sbien,\\s|Esta\\sbien,\\s|Venga(\\sya)?,\\s|De\\sacuerdo,\\s|Ya\\ssabes,\\s)s",
+            "replace": "S",
+            "useREonlyToFind": false
+        },
+        {
+            "find": "\\b(Bien,\\s|Oye,\\s|Quiero\\sdecir,\\s|Es\\sdecir,\\s|Ah,\\s|Eh,\\s|Oh,\\s|Ok,\\s|Okey,\\s|Ey,\\s|Oye,\\s|Vale,\\s|Bueno,\\s|Está\\sbien,\\s|Esta\\sbien,\\s|Venga(\\sya)?,\\s|De\\sacuerdo,\\s|Ya\\ssabes,\\s)t",
+            "replace": "T",
+            "useREonlyToFind": false
+        },
+        {
+            "find": "\\b(Bien,\\s|Oye,\\s|Quiero\\sdecir,\\s|Es\\sdecir,\\s|Ah,\\s|Eh,\\s|Oh,\\s|Ok,\\s|Okey,\\s|Ey,\\s|Oye,\\s|Vale,\\s|Bueno,\\s|Está\\sbien,\\s|Esta\\sbien,\\s|Venga(\\sya)?,\\s|De\\sacuerdo,\\s|Ya\\ssabes,\\s)u",
+            "replace": "U",
+            "useREonlyToFind": false
+        },
+        {
+            "find": "\\b(Bien,\\s|Oye,\\s|Quiero\\sdecir,\\s|Es\\sdecir,\\s|Ah,\\s|Eh,\\s|Oh,\\s|Ok,\\s|Okey,\\s|Ey,\\s|Oye,\\s|Vale,\\s|Bueno,\\s|Está\\sbien,\\s|Esta\\sbien,\\s|Venga(\\sya)?,\\s|De\\sacuerdo,\\s|Ya\\ssabes,\\s)v",
+            "replace": "V",
+            "useREonlyToFind": false
+        },
+        {
+            "find": "\\b(Bien,\\s|Oye,\\s|Quiero\\sdecir,\\s|Es\\sdecir,\\s|Ah,\\s|Eh,\\s|Oh,\\s|Ok,\\s|Okey,\\s|Ey,\\s|Oye,\\s|Vale,\\s|Bueno,\\s|Está\\sbien,\\s|Esta\\sbien,\\s|Venga(\\sya)?,\\s|De\\sacuerdo,\\s|Ya\\ssabes,\\s)w",
+            "replace": "W",
+            "useREonlyToFind": false
+        },
+        {
+            "find": "\\b(Bien,\\s|Oye,\\s|Quiero\\sdecir,\\s|Es\\sdecir,\\s|Ah,\\s|Eh,\\s|Oh,\\s|Ok,\\s|Okey,\\s|Ey,\\s|Oye,\\s|Vale,\\s|Bueno,\\s|Está\\sbien,\\s|Esta\\sbien,\\s|Venga(\\sya)?,\\s|De\\sacuerdo,\\s|Ya\\ssabes,\\s)x",
+            "replace": "X",
+            "useREonlyToFind": false
+        },
+        {
+            "find": "\\b(Bien,\\s|Oye,\\s|Quiero\\sdecir,\\s|Es\\sdecir,\\s|Ah,\\s|Eh,\\s|Oh,\\s|Ok,\\s|Okey,\\s|Ey,\\s|Oye,\\s|Vale,\\s|Bueno,\\s|Está\\sbien,\\s|Esta\\sbien,\\s|Venga(\\sya)?,\\s|De\\sacuerdo,\\s|Ya\\ssabes,\\s)y",
+            "replace": "Y",
+            "useREonlyToFind": false
+        },
+        {
+            "find": "\\b(Bien,\\s|Oye,\\s|Quiero\\sdecir,\\s|Es\\sdecir,\\s|Ah,\\s|Eh,\\s|Oh,\\s|Ok,\\s|Okey,\\s|Ey,\\s|Oye,\\s|Vale,\\s|Bueno,\\s|Está\\sbien,\\s|Esta\\sbien,\\s|Venga(\\sya)?,\\s|De\\sacuerdo,\\s|Ya\\ssabes,\\s)z",
+            "replace": "Z",
+            "useREonlyToFind": false
+        },
+        {
+            "find": "\\b(Bien,\\s|Oye,\\s|Quiero\\sdecir,\\s|Es\\sdecir,\\s|Ah,\\s|Eh,\\s|Oh,\\s|Ok,\\s|Okey,\\s|Ey,\\s|Oye,\\s|Vale,\\s|Bueno,\\s|Está\\sbien,\\s|Esta\\sbien,\\s|Venga(\\sya)?,\\s|De\\sacuerdo,\\s|Ya\\ssabes,\\s)á",
+            "replace": "Á",
+            "useREonlyToFind": false
+        },
+        {
+            "find": "\\b(Bien,\\s|Oye,\\s|Quiero\\sdecir,\\s|Es\\sdecir,\\s|Ah,\\s|Eh,\\s|Oh,\\s|Ok,\\s|Okey,\\s|Ey,\\s|Oye,\\s|Vale,\\s|Bueno,\\s|Está\\sbien,\\s|Esta\\sbien,\\s|Venga(\\sya)?,\\s|De\\sacuerdo,\\s|Ya\\ssabes,\\s)é",
+            "replace": "É",
+            "useREonlyToFind": false
+        },
+        {
+            "find": "\\b(Bien,\\s|Oye,\\s|Quiero\\sdecir,\\s|Es\\sdecir,\\s|Ah,\\s|Eh,\\s|Oh,\\s|Ok,\\s|Okey,\\s|Ey,\\s|Oye,\\s|Vale,\\s|Bueno,\\s|Está\\sbien,\\s|Esta\\sbien,\\s|Venga(\\sya)?,\\s|De\\sacuerdo,\\s|Ya\\ssabes,\\s)í",
+            "replace": "Í",
+            "useREonlyToFind": false
+        },
+        {
+            "find": "\\b(Bien,\\s|Oye,\\s|Quiero\\sdecir,\\s|Es\\sdecir,\\s|Ah,\\s|Eh,\\s|Oh,\\s|Ok,\\s|Okey,\\s|Ey,\\s|Oye,\\s|Vale,\\s|Bueno,\\s|Está\\sbien,\\s|Esta\\sbien,\\s|Venga(\\sya)?,\\s|De\\sacuerdo,\\s|Ya\\ssabes,\\s)ó",
+            "replace": "Ó",
+            "useREonlyToFind": false
+        },
+        {
+            "find": "\\b(Bien,\\s|Oye,\\s|Quiero\\sdecir,\\s|Es\\sdecir,\\s|Ah,\\s|Eh,\\s|Oh,\\s|Ok,\\s|Okey,\\s|Ey,\\s|Oye,\\s|Vale,\\s|Bueno,\\s|Está\\sbien,\\s|Esta\\sbien,\\s|Venga(\\sya)?,\\s|De\\sacuerdo,\\s|Ya\\ssabes,\\s)ú",
+            "replace": "Ú",
+            "useREonlyToFind": false
+        },
+        {
+            "find": "\\b(Bien,\\s|Oye,\\s|Quiero\\sdecir,\\s|Es\\sdecir,\\s|Ah,\\s|Eh,\\s|Oh,\\s|Ok,\\s|Okey,\\s|Ey,\\s|Oye,\\s|Vale,\\s|Bueno,\\s|Está\\sbien,\\s|Esta\\sbien,\\s|Venga(\\sya)?,\\s|De\\sacuerdo,\\s|Ya\\ssabes,\\s)ñ",
+            "replace": "Ñ",
+            "useREonlyToFind": false
+        },
+        {
+            "find": "\\b(Bien\\.\\s|Oye\\.\\s|Quiero\\sdecir\\.\\s|Es\\sdecir\\.\\s|Ah\\.\\s|Eh\\.\\s|Oh\\.\\s|Ok\\.\\s|Okey\\.\\s|Ey\\.\\s|Oye\\.\\s|Vale\\.\\s|Bueno\\.\\s|Está\\sbien\\.\\s|Esta\\sbien\\.\\s|Venga(\\sya)?\\.\\s|De\\sacuerdo\\.\\s|Ya\\ssabes\\.\\s)[A-ZÁ-Ú]",
+            "replace": "",
+            "useREonlyToFind": true
+        },
+        {
+            "find": "\\b(Bien,\\s|Oye,\\s|Quiero\\sdecir,\\s|Es\\sdecir,\\s|Ah,\\s|Eh,\\s|Oh,\\s|Ok,\\s|Okey,\\s|Ey,\\s|Ok,\\s|Okey,\\s|Ey,\\s|Oye,\\s|Vale,\\s|Bueno,\\s|Está\\sbien,\\s|Esta\\sbien,\\s|Venga(\\sya)?,\\s|De\\sacuerdo,\\s|Ya\\ssabes,\\s)[A-ZÁ-Ú]",
+            "replace": "",
+            "useREonlyToFind": true
+        },
+        {
+            "find": "\\b[H|h](ab[e|é]dl)\\b",
+            "replace": "áyanl",
+            "useREonlyToFind": true
+        },
+        {
+            "find": "\\b[E|e](st[a|á]dl)\\b",
+            "replace": "stenl",
+            "useREonlyToFind": true
+        },
+        {
+            "find": "\\b[S|s]([e|é]dl)\\b",
+            "replace": "éanl",
+            "useREonlyToFind": true
+        },
+        {
+            "find": "\\b[T|t](en[e|é]dl)\\b",
+            "replace": "énganl",
+            "useREonlyToFind": true
+        },
+        {
+            "find": "\\b[H|h](ac[e|é]dl)\\b",
+            "replace": "ánganl",
+            "useREonlyToFind": true
+        },
+        {
+            "find": "\\b[D|d](ec[i|í]dl)\\b",
+            "replace": "íganl",
+            "useREonlyToFind": true
+        },
+        {
+            "find": "\\b[S|s](ab[e|é]dl)\\b",
+            "replace": "abedl",
+            "useREonlyToFind": true
+        },
+        {
+            "find": "\\b[D|d]([a|á]dl)\\b",
+            "replace": "ómenl",
+            "useREonlyToFind": true
+        },
+        {
+            "find": "\\b[V|v]([e|é]dl)\\b",
+            "replace": "éanl",
+            "useREonlyToFind": true
+        },
+        {
+            "find": "\\b[V|v](en[i|í]dl)\\b",
+            "replace": "énganl",
+            "useREonlyToFind": true
+        },
+        {
+            "find": "\\b[P|p](ens[a|á]dl)\\b",
+            "replace": "iénsenl",
+            "useREonlyToFind": true
+        },
+        {
+            "find": "\\b[M|m](ir[a|á]dl)\\b",
+            "replace": "írenl",
+            "useREonlyToFind": true
+        },
+        {
+            "find": "\\b[Q|q](uer[e|é]dl)\\b",
+            "replace": "uiéranl",
+            "useREonlyToFind": true
+        },
+        {
+            "find": "\\b[D|d]([a|á]dl)\\b",
+            "replace": "enl",
+            "useREonlyToFind": true
+        },
+        {
+            "find": "\\b[T|t](om[a|á]dl)\\b",
+            "replace": "ómenl",
+            "useREonlyToFind": true
+        },
+        {
+            "find": "[^\n\\.][«'\\s]\\b(E)nero\\b",
+            "replace": "e",
+            "useREonlyToFind": true
+        },
+        {
+            "find": "[^\n\\.][«'\\s]\\b(F)ebrero\\b",
+            "replace": "f",
+            "useREonlyToFind": true
+        },
+        {
+            "find": "[^\n\\.][«'\\s]\\b(M)arzo\\b",
+            "replace": "m",
+            "useREonlyToFind": true
+        },
+        {
+            "find": "[^\n\\.][«'\\s]\\b(A)bril\\b",
+            "replace": "a",
+            "useREonlyToFind": true
+        },
+        {
+            "find": "[^\n\\.][«'\\s]\\b(M)ayo\\b",
+            "replace": "m",
+            "useREonlyToFind": true
+        },
+        {
+            "find": "[^\n\\.][«'\\s]\\b(J)unio\\b",
+            "replace": "j",
+            "useREonlyToFind": true
+        },
+        {
+            "find": "[^\n\\.][«'\\s]\\b(J)ulio\\b",
+            "replace": "j",
+            "useREonlyToFind": true
+        },
+        {
+            "find": "[^\n\\.][«'\\s]\\b(A)gosto\\b",
+            "replace": "a",
+            "useREonlyToFind": true
+        },
+        {
+            "find": "[^\n\\.][«'\\s]\\b(S)eptiembre\\b",
+            "replace": "s",
+            "useREonlyToFind": true
+        },
+        {
+            "find": "[^\n\\.][«'\\s]\\b(O)ctubre\\b",
+            "replace": "o",
+            "useREonlyToFind": true
+        },
+        {
+            "find": "[^\n\\.][«'\\s]\\b(N)oviembre\\b",
+            "replace": "n",
+            "useREonlyToFind": true
+        },
+        {
+            "find": "[^\n\\.][«'\\s]\\b(D)iciembre\\b",
+            "replace": "d",
+            "useREonlyToFind": true
+        },
+        {
+            "find": "[^\n\\.][«'\\s]\\b(L)unes\\b",
+            "replace": "l",
+            "useREonlyToFind": true
+        },
+        {
+            "find": "[^\n\\.][«'\\s]\\b(M)artes\\b",
+            "replace": "m",
+            "useREonlyToFind": true
+        },
+        {
+            "find": "[^\n\\.][«'\\s]\\b(Mi[eé])rcoles\\b",
+            "replace": "mié",
+            "useREonlyToFind": true
+        },
+        {
+            "find": "[^\n\\.][«'\\s]\\b(J)ueves\\b",
+            "replace": "j",
+            "useREonlyToFind": true
+        },
+        {
+            "find": "[^\n\\.][«'\\s]\\b(V)iernes\\b",
+            "replace": "v",
+            "useREonlyToFind": true
+        },
+        {
+            "find": "[^\n\\.][«'\\s]\\b(S[aá])bado\\b",
+            "replace": "sá",
+            "useREonlyToFind": true
+        },
+        {
+            "find": "[^\n\\.][«'\\s]\\b(D)omingo\\b",
+            "replace": "d",
+            "useREonlyToFind": true
+        },
+        {
+            "find": "\\b[Aa](ú)n\\sasí\\b",
+            "replace": "u",
+            "useREonlyToFind": true
+        },
+        {
+            "find": "\\b[Aa](ú)n\\scuando\\b",
+            "replace": "u",
+            "useREonlyToFind": true
+        },
+        {
+            "find": "\\b[Aa](ú)n\\slos\\b",
+            "replace": "u",
+            "useREonlyToFind": true
+        },
+        {
+            "find": "\\b[Aa](ú)n\\slas\\b",
+            "replace": "u",
+            "useREonlyToFind": true
+        },
+        {
+            "find": "\\b[Aa](ú)n\\snegarte\\b",
+            "replace": "u",
+            "useREonlyToFind": true
+        },
+        {
+            "find": "\\b[Aa](ú)n\\snegarse\\b",
+            "replace": "u",
+            "useREonlyToFind": true
+        },
+        {
+            "find": "\\b[Nn]i\\sa(ú)n\\b",
+            "replace": "u",
+            "useREonlyToFind": true
+        },
+        {
+            "find": "(_)\\s",
+            "replace": "-",
+            "useREonlyToFind": true
+        },
+        {
+            "find": "(_)\\w",
+            "replace": "- ",
+            "useREonlyToFind": true
+        },
+        {
+            "find": "(cion)\\b",
+            "replace": "ción",
+            "useREonlyToFind": true
+        },
+        {
+            "find": "(sion)\\b",
+            "replace": "sión",
+            "useREonlyToFind": true
+        }
     ],
     "string": [
         {

@@ -2,6 +2,12 @@
 require('functions.php');
 require('ocr.php');
 
+$_POST['ocr'] = 'true';
+$_POST['srtContent'] = file_get_contents('srt/original/twd_ocr_test.srt');
+$_POST['srtContent'] = mb_convert_encoding($_POST['srtContent'], 'utf-8', "windows-1252");
+// print_r($_POST['srtContent']);
+// die();
+
 $validUrlPatternSub = '#^https://www.tusubtitulo.com/[^/]+/[0-9]+/[0-9]+(/[0-9]+)?$#';
 
 if(isset($_POST['sub_url']) && preg_match($validUrlPatternSub, $_POST['sub_url'])) {
@@ -217,7 +223,7 @@ file_put_contents("json/data.json",json_encode($dataArray,JSON_PRETTY_PRINT));
 
 
 // Elegir método de optimización (0 para mostrar el subtítulo original)
-$method = 1;
+$method = 4;
 
 // MOSTRAR EN PANTALLA: printEnhancedSubtitle($subtitle,$totalSequences);
 // DESCARGAR SRT: downloadEnhancedSubtitle($subtitle,$totalSequences,$filename);
@@ -239,6 +245,8 @@ switch($method) {
         downloadEnhancedSubtitle(runMethod3($subtitle,$totalSegmentsOverCps,$cps,$maxVariation,$minDuration),$totalSequences,$filename);
         break;
     case 4:   
+        printEnhancedSubtitle(runMethod1($subtitle,$totalSegmentsOverCps,$cps,$maxVariation,$minDuration),$totalSequences,$filename);
+        die();
         break;
 }
 

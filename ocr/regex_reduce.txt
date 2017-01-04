@@ -1,0 +1,173 @@
+/\b[H|h](ab[e|é]is)\b/ -> an
+/\b[H|h](ub[i|í]steis)\b/ -> ubieron
+/\b[H|h](ab[i|í]ais)\b/ -> abían
+/\b[H|h](ay[a|á]is)\b/ -> ayan
+/\b[H|h](ab[e|é]d)\b/ -> ayan
+/\b[H|h](ab[e|é]dse)\b/ -> áyanse
+/\b[E|e](st[a|á]is)\b/ -> stán
+/\b[E|e](stuv[i|í]steis)\b/ -> stuvieron
+/\b[E|e](st[a|á]bais)\b/ -> staban
+/\b[E|e](st[e|é]is)\b/ -> stén
+/\b[E|e](st[a|á]d)\b/ -> stén
+/\b[E|e](st[a|á]os)\b/ -> stense
+/\b[S|s]([o|ó]is)\b/ -> on
+/\b[F|f](uis[i|í]steis)\b/ -> ueron
+/\b[E|é](rais)\b/ -> ran
+/\b[S|s]([e|é]as)\b/ -> ean
+/\b[S|s](e[a|á]is)\b/ -> ean
+/\b[T|t](en[e|é]is)\b/ -> ienen
+/\b[T|t](uv[i|í]steis)\b/ -> uvieron
+/\b[T|t](en[i|í]ais)\b/ -> enían
+/\b[T|t](eng[a|á]is)\b/ -> engan
+/\b[T|t](en[e|é]d)\b/ -> engan
+/\b[T|t](en[e|é]os)\b/ -> énganse
+/\b[H|h](ac[e|é]is)\b/ -> acen
+/\b[H|h](ic[i|í]steis)\b/ -> icieron
+/\b[H|h](ac[i|í]ais)\b/ -> acían
+/\b[H|h](ag[a|á]is)\b/ -> agan
+/\b[H|h](ac[e|é]d)\b/ -> agan
+/\b[H|h](ac[e|é]os)\b/ -> áganse
+/\b[D|d](ec[i|í]s)\b/ -> icen
+/\b[D|d](ij[i|í]steis)\b/ -> ijeron
+/\b[D|d](ec[i|í]ais)\b/ -> ecían
+/\b[D|d](ig[a|á]is)\b/ -> igan
+/\b[D|d](ec[i|í]d)\b/ -> igan
+/\b[D|d](ec[i|í]os)\b/ -> íganse
+/\b[V|v]([a|á]is)\b/ -> an
+/\b[F|f](u[i|í]steis)\b/ -> ueron
+/\b[I|í](bais)\b/ -> ban
+/\b[V|v](ay[a|á]is)\b/ -> ayan
+/\b[I|i](dos)\b/ -> áyanse
+/\b[S|s](ab[e|é]is)\b/ -> aben
+/\b[S|s](up[i|í]steis)\b/ -> upieron
+/\b[S|s](ab[i|í]ais)\b/ -> abían
+/\b[S|s](ep[a|á]is)\b/ -> epan
+/\b[S|s](ab[e|é]d)\b/ -> epan
+/\b[S|s](ab[e|é]os)\b/ -> épanse
+/\b[D|d]([a|á]is)\b/ -> an
+/\b[D|d]([i|í]steis)\b/ -> ieron
+/\b[D|d]([a|á]bais)\b/ -> aban
+/\b[D|d]([e|é]is)\b/ -> en
+/\b[D|d]([a|á]d)\b/ -> en
+/\b[D|d]([a|á]os)\b/ -> ómense
+/\b[V|v]([e|é]is)\b/ -> en
+/\b[V|v]([i|í]steis)\b/ -> ieron
+/\b[V|v](e[i|í]ais)\b/ -> eían
+/\b[V|v](e[a|á]is)\b/ -> ean
+/\b[V|v]([e|é]d)\b/ -> ean
+/\b[V|v]([e|é]os)\b/ -> éanse
+/\b[V|v](en[i|í]s)\b/ -> ienen
+/\b[V|v](in[i|í]steis)\b/ -> inieron
+/\b[V|v](en[i|í]ais)\b/ -> enían
+/\b[V|v](eng[a|á]is)\b/ -> engan
+/\b[V|v](en[i|í]d)\b/ -> engan
+/\b[V|v](en[i|í]os)\b/ -> énganse
+/\b[P|p](ens[a|á]is)\b/ -> iensan
+/\b[P|p](ens[a|á]steis)\b/ -> ensaron
+/\b[P|p](ens[a|á]bais)\b/ -> ensaban
+/\b[P|p](ens[e|é]is)\b/ -> iensen
+/\b[P|p](ens[a|á]d)\b/ -> iensen
+/\b[P|p](ens[a|á]os)\b/ -> iénsense
+/\b[M|m](ir[a|á]is)\b/ -> iran
+/\b[M|m](ir[a|á]steis)\b/ -> iraron
+/\b[M|m](ir[a|á]bais)\b/ -> iraban
+/\b[M|m](ir[e|é]is)\b/ -> iren
+/\b[M|m](ir[a|á]d)\b/ -> iren
+/\b[M|m](ir[a|á]os)\b/ -> írense
+/\b[Q|q](uer[e|é]is)\b/ -> uieren
+/\b[Q|q](uis[i|í]steis)\b/ -> uisieron
+/\b[Q|q](uer[i|í]ais)\b/ -> uerían
+/\b[Q|q](uer[a|á]is)\b/ -> uieran
+/\b[Q|q](uer[e|é]d)\b/ -> uieran
+/\b[Q|q](uer[e|é]os)\b/ -> uiéranse
+/\b[D|d]([a|á]is)\b/ -> an
+/\b[D|d]([i|í]steis)\b/ -> ieron
+/\b[D|d]([a|á]bais)\b/ -> aban
+/\b[D|d]([e|é]is)\b/ -> en
+/\b[D|d]([a|á]d)\b/ -> en
+/\b[D|d]([a|á]os)\b/ -> ense
+/\b[T|t](om[a|á]is)\b/ -> oman
+/\b[T|t](om[a|á]steis)\b/ -> omaron
+/\b[T|t](om[a|á]bais)\b/ -> omaban
+/\b[T|t](om[e|é]is)\b/ -> omen
+/\b[T|t](om[a|á]d)\b/ -> omen
+/\b[T|t](om[a|á]os)\b/ -> ómense
+/\b(Bien,\s|Oye,\s|Quiero\sdecir,\s|Es\sdecir,\s|Ah,\s|Eh,\s|Oh,\s|Ok,\s|Okey,\s|Ey,\s|Oye,\s|Vale,\s|Bueno,\s|Está\sbien,\s|Esta\sbien,\s|Venga(\sya)?,\s|De\sacuerdo,\s|Ya\ssabes,\s)a/ -> A
+/\b(Bien,\s|Oye,\s|Quiero\sdecir,\s|Es\sdecir,\s|Ah,\s|Eh,\s|Oh,\s|Ok,\s|Okey,\s|Ey,\s|Oye,\s|Vale,\s|Bueno,\s|Está\sbien,\s|Esta\sbien,\s|Venga(\sya)?,\s|De\sacuerdo,\s|Ya\ssabes,\s)b/ -> B
+/\b(Bien,\s|Oye,\s|Quiero\sdecir,\s|Es\sdecir,\s|Ah,\s|Eh,\s|Oh,\s|Ok,\s|Okey,\s|Ey,\s|Oye,\s|Vale,\s|Bueno,\s|Está\sbien,\s|Esta\sbien,\s|Venga(\sya)?,\s|De\sacuerdo,\s|Ya\ssabes,\s)c/ -> C
+/\b(Bien,\s|Oye,\s|Quiero\sdecir,\s|Es\sdecir,\s|Ah,\s|Eh,\s|Oh,\s|Ok,\s|Okey,\s|Ey,\s|Oye,\s|Vale,\s|Bueno,\s|Está\sbien,\s|Esta\sbien,\s|Venga(\sya)?,\s|De\sacuerdo,\s|Ya\ssabes,\s)d/ -> D
+/\b(Bien,\s|Oye,\s|Quiero\sdecir,\s|Es\sdecir,\s|Ah,\s|Eh,\s|Oh,\s|Ok,\s|Okey,\s|Ey,\s|Oye,\s|Vale,\s|Bueno,\s|Está\sbien,\s|Esta\sbien,\s|Venga(\sya)?,\s|De\sacuerdo,\s|Ya\ssabes,\s)e/ -> E
+/\b(Bien,\s|Oye,\s|Quiero\sdecir,\s|Es\sdecir,\s|Ah,\s|Eh,\s|Oh,\s|Ok,\s|Okey,\s|Ey,\s|Oye,\s|Vale,\s|Bueno,\s|Está\sbien,\s|Esta\sbien,\s|Venga(\sya)?,\s|De\sacuerdo,\s|Ya\ssabes,\s)f/ -> F
+/\b(Bien,\s|Oye,\s|Quiero\sdecir,\s|Es\sdecir,\s|Ah,\s|Eh,\s|Oh,\s|Ok,\s|Okey,\s|Ey,\s|Oye,\s|Vale,\s|Bueno,\s|Está\sbien,\s|Esta\sbien,\s|Venga(\sya)?,\s|De\sacuerdo,\s|Ya\ssabes,\s)g/ -> G
+/\b(Bien,\s|Oye,\s|Quiero\sdecir,\s|Es\sdecir,\s|Ah,\s|Eh,\s|Oh,\s|Ok,\s|Okey,\s|Ey,\s|Oye,\s|Vale,\s|Bueno,\s|Está\sbien,\s|Esta\sbien,\s|Venga(\sya)?,\s|De\sacuerdo,\s|Ya\ssabes,\s)h/ -> H
+/\b(Bien,\s|Oye,\s|Quiero\sdecir,\s|Es\sdecir,\s|Ah,\s|Eh,\s|Oh,\s|Ok,\s|Okey,\s|Ey,\s|Oye,\s|Vale,\s|Bueno,\s|Está\sbien,\s|Esta\sbien,\s|Venga(\sya)?,\s|De\sacuerdo,\s|Ya\ssabes,\s)i/ -> I
+/\b(Bien,\s|Oye,\s|Quiero\sdecir,\s|Es\sdecir,\s|Ah,\s|Eh,\s|Oh,\s|Ok,\s|Okey,\s|Ey,\s|Oye,\s|Vale,\s|Bueno,\s|Está\sbien,\s|Esta\sbien,\s|Venga(\sya)?,\s|De\sacuerdo,\s|Ya\ssabes,\s)j/ -> J
+/\b(Bien,\s|Oye,\s|Quiero\sdecir,\s|Es\sdecir,\s|Ah,\s|Eh,\s|Oh,\s|Ok,\s|Okey,\s|Ey,\s|Oye,\s|Vale,\s|Bueno,\s|Está\sbien,\s|Esta\sbien,\s|Venga(\sya)?,\s|De\sacuerdo,\s|Ya\ssabes,\s)k/ -> K
+/\b(Bien,\s|Oye,\s|Quiero\sdecir,\s|Es\sdecir,\s|Ah,\s|Eh,\s|Oh,\s|Ok,\s|Okey,\s|Ey,\s|Oye,\s|Vale,\s|Bueno,\s|Está\sbien,\s|Esta\sbien,\s|Venga(\sya)?,\s|De\sacuerdo,\s|Ya\ssabes,\s)l/ -> L
+/\b(Bien,\s|Oye,\s|Quiero\sdecir,\s|Es\sdecir,\s|Ah,\s|Eh,\s|Oh,\s|Ok,\s|Okey,\s|Ey,\s|Oye,\s|Vale,\s|Bueno,\s|Está\sbien,\s|Esta\sbien,\s|Venga(\sya)?,\s|De\sacuerdo,\s|Ya\ssabes,\s)m/ -> M
+/\b(Bien,\s|Oye,\s|Quiero\sdecir,\s|Es\sdecir,\s|Ah,\s|Eh,\s|Oh,\s|Ok,\s|Okey,\s|Ey,\s|Oye,\s|Vale,\s|Bueno,\s|Está\sbien,\s|Esta\sbien,\s|Venga(\sya)?,\s|De\sacuerdo,\s|Ya\ssabes,\s)n/ -> N
+/\b(Bien,\s|Oye,\s|Quiero\sdecir,\s|Es\sdecir,\s|Ah,\s|Eh,\s|Oh,\s|Ok,\s|Okey,\s|Ey,\s|Oye,\s|Vale,\s|Bueno,\s|Está\sbien,\s|Esta\sbien,\s|Venga(\sya)?,\s|De\sacuerdo,\s|Ya\ssabes,\s)o/ -> O
+/\b(Bien,\s|Oye,\s|Quiero\sdecir,\s|Es\sdecir,\s|Ah,\s|Eh,\s|Oh,\s|Ok,\s|Okey,\s|Ey,\s|Oye,\s|Vale,\s|Bueno,\s|Está\sbien,\s|Esta\sbien,\s|Venga(\sya)?,\s|De\sacuerdo,\s|Ya\ssabes,\s)p/ -> P
+/\b(Bien,\s|Oye,\s|Quiero\sdecir,\s|Es\sdecir,\s|Ah,\s|Eh,\s|Oh,\s|Ok,\s|Okey,\s|Ey,\s|Oye,\s|Vale,\s|Bueno,\s|Está\sbien,\s|Esta\sbien,\s|Venga(\sya)?,\s|De\sacuerdo,\s|Ya\ssabes,\s)q/ -> Q
+/\b(Bien,\s|Oye,\s|Quiero\sdecir,\s|Es\sdecir,\s|Ah,\s|Eh,\s|Oh,\s|Ok,\s|Okey,\s|Ey,\s|Oye,\s|Vale,\s|Bueno,\s|Está\sbien,\s|Esta\sbien,\s|Venga(\sya)?,\s|De\sacuerdo,\s|Ya\ssabes,\s)r/ -> R
+/\b(Bien,\s|Oye,\s|Quiero\sdecir,\s|Es\sdecir,\s|Ah,\s|Eh,\s|Oh,\s|Ok,\s|Okey,\s|Ey,\s|Oye,\s|Vale,\s|Bueno,\s|Está\sbien,\s|Esta\sbien,\s|Venga(\sya)?,\s|De\sacuerdo,\s|Ya\ssabes,\s)s/ -> S
+/\b(Bien,\s|Oye,\s|Quiero\sdecir,\s|Es\sdecir,\s|Ah,\s|Eh,\s|Oh,\s|Ok,\s|Okey,\s|Ey,\s|Oye,\s|Vale,\s|Bueno,\s|Está\sbien,\s|Esta\sbien,\s|Venga(\sya)?,\s|De\sacuerdo,\s|Ya\ssabes,\s)t/ -> T
+/\b(Bien,\s|Oye,\s|Quiero\sdecir,\s|Es\sdecir,\s|Ah,\s|Eh,\s|Oh,\s|Ok,\s|Okey,\s|Ey,\s|Oye,\s|Vale,\s|Bueno,\s|Está\sbien,\s|Esta\sbien,\s|Venga(\sya)?,\s|De\sacuerdo,\s|Ya\ssabes,\s)u/ -> U
+/\b(Bien,\s|Oye,\s|Quiero\sdecir,\s|Es\sdecir,\s|Ah,\s|Eh,\s|Oh,\s|Ok,\s|Okey,\s|Ey,\s|Oye,\s|Vale,\s|Bueno,\s|Está\sbien,\s|Esta\sbien,\s|Venga(\sya)?,\s|De\sacuerdo,\s|Ya\ssabes,\s)v/ -> V
+/\b(Bien,\s|Oye,\s|Quiero\sdecir,\s|Es\sdecir,\s|Ah,\s|Eh,\s|Oh,\s|Ok,\s|Okey,\s|Ey,\s|Oye,\s|Vale,\s|Bueno,\s|Está\sbien,\s|Esta\sbien,\s|Venga(\sya)?,\s|De\sacuerdo,\s|Ya\ssabes,\s)w/ -> W
+/\b(Bien,\s|Oye,\s|Quiero\sdecir,\s|Es\sdecir,\s|Ah,\s|Eh,\s|Oh,\s|Ok,\s|Okey,\s|Ey,\s|Oye,\s|Vale,\s|Bueno,\s|Está\sbien,\s|Esta\sbien,\s|Venga(\sya)?,\s|De\sacuerdo,\s|Ya\ssabes,\s)x/ -> X
+/\b(Bien,\s|Oye,\s|Quiero\sdecir,\s|Es\sdecir,\s|Ah,\s|Eh,\s|Oh,\s|Ok,\s|Okey,\s|Ey,\s|Oye,\s|Vale,\s|Bueno,\s|Está\sbien,\s|Esta\sbien,\s|Venga(\sya)?,\s|De\sacuerdo,\s|Ya\ssabes,\s)y/ -> Y
+/\b(Bien,\s|Oye,\s|Quiero\sdecir,\s|Es\sdecir,\s|Ah,\s|Eh,\s|Oh,\s|Ok,\s|Okey,\s|Ey,\s|Oye,\s|Vale,\s|Bueno,\s|Está\sbien,\s|Esta\sbien,\s|Venga(\sya)?,\s|De\sacuerdo,\s|Ya\ssabes,\s)z/ -> Z
+/\b(Bien,\s|Oye,\s|Quiero\sdecir,\s|Es\sdecir,\s|Ah,\s|Eh,\s|Oh,\s|Ok,\s|Okey,\s|Ey,\s|Oye,\s|Vale,\s|Bueno,\s|Está\sbien,\s|Esta\sbien,\s|Venga(\sya)?,\s|De\sacuerdo,\s|Ya\ssabes,\s)á/ -> Á
+/\b(Bien,\s|Oye,\s|Quiero\sdecir,\s|Es\sdecir,\s|Ah,\s|Eh,\s|Oh,\s|Ok,\s|Okey,\s|Ey,\s|Oye,\s|Vale,\s|Bueno,\s|Está\sbien,\s|Esta\sbien,\s|Venga(\sya)?,\s|De\sacuerdo,\s|Ya\ssabes,\s)é/ -> É
+/\b(Bien,\s|Oye,\s|Quiero\sdecir,\s|Es\sdecir,\s|Ah,\s|Eh,\s|Oh,\s|Ok,\s|Okey,\s|Ey,\s|Oye,\s|Vale,\s|Bueno,\s|Está\sbien,\s|Esta\sbien,\s|Venga(\sya)?,\s|De\sacuerdo,\s|Ya\ssabes,\s)í/ -> Í
+/\b(Bien,\s|Oye,\s|Quiero\sdecir,\s|Es\sdecir,\s|Ah,\s|Eh,\s|Oh,\s|Ok,\s|Okey,\s|Ey,\s|Oye,\s|Vale,\s|Bueno,\s|Está\sbien,\s|Esta\sbien,\s|Venga(\sya)?,\s|De\sacuerdo,\s|Ya\ssabes,\s)ó/ -> Ó
+/\b(Bien,\s|Oye,\s|Quiero\sdecir,\s|Es\sdecir,\s|Ah,\s|Eh,\s|Oh,\s|Ok,\s|Okey,\s|Ey,\s|Oye,\s|Vale,\s|Bueno,\s|Está\sbien,\s|Esta\sbien,\s|Venga(\sya)?,\s|De\sacuerdo,\s|Ya\ssabes,\s)ú/ -> Ú
+/\b(Bien,\s|Oye,\s|Quiero\sdecir,\s|Es\sdecir,\s|Ah,\s|Eh,\s|Oh,\s|Ok,\s|Okey,\s|Ey,\s|Oye,\s|Vale,\s|Bueno,\s|Está\sbien,\s|Esta\sbien,\s|Venga(\sya)?,\s|De\sacuerdo,\s|Ya\ssabes,\s)ñ/ -> Ñ
+/\b(Bien\.\s|Oye\.\s|Quiero\sdecir\.\s|Es\sdecir\.\s|Ah\.\s|Eh\.\s|Oh\.\s|Ok\.\s|Okey\.\s|Ey\.\s|Oye\.\s|Vale\.\s|Bueno\.\s|Está\sbien\.\s|Esta\sbien\.\s|Venga(\sya)?\.\s|De\sacuerdo\.\s|Ya\ssabes\.\s)[A-ZÁ-Ú]/ -> ''
+/\b(Bien,\s|Oye,\s|Quiero\sdecir,\s|Es\sdecir,\s|Ah,\s|Eh,\s|Oh,\s|Ok,\s|Okey,\s|Ey,\s|Ok,\s|Okey,\s|Ey,\s|Oye,\s|Vale,\s|Bueno,\s|Está\sbien,\s|Esta\sbien,\s|Venga(\sya)?,\s|De\sacuerdo,\s|Ya\ssabes,\s)[A-ZÁ-Ú]/ -> ''
+/\b[H|h](ab[e|é]dl)\b/ -> áyanl
+/\b[E|e](st[a|á]dl)\b/ -> stenl
+/\b[S|s]([e|é]dl)\b/ -> éanl
+/\b[T|t](en[e|é]dl)\b/ -> énganl
+/\b[H|h](ac[e|é]dl)\b/ -> ánganl
+/\b[D|d](ec[i|í]dl)\b/ -> íganl
+/\b[S|s](ab[e|é]dl)\b/ -> abedl
+/\b[D|d]([a|á]dl)\b/ -> ómenl
+/\b[V|v]([e|é]dl)\b/ -> éanl
+/\b[V|v](en[i|í]dl)\b/ -> énganl
+/\b[P|p](ens[a|á]dl)\b/ -> iénsenl
+/\b[M|m](ir[a|á]dl)\b/ -> írenl
+/\b[Q|q](uer[e|é]dl)\b/ -> uiéranl
+/\b[D|d]([a|á]dl)\b/ -> enl
+/\b[T|t](om[a|á]dl)\b/ -> ómenl
+/[^ \.][«'\s]\b(E)nero\b/ -> e
+/[^ \.][«'\s]\b(F)ebrero\b/ -> f
+/[^ \.][«'\s]\b(M)arzo\b/ -> m
+/[^ \.][«'\s]\b(A)bril\b/ -> a
+/[^ \.][«'\s]\b(M)ayo\b/ -> m
+/[^ \.][«'\s]\b(J)unio\b/ -> j
+/[^ \.][«'\s]\b(J)ulio\b/ -> j
+/[^ \.][«'\s]\b(A)gosto\b/ -> a
+/[^ \.][«'\s]\b(S)eptiembre\b/ -> s
+/[^ \.][«'\s]\b(O)ctubre\b/ -> o
+/[^ \.][«'\s]\b(N)oviembre\b/ -> n
+/[^ \.][«'\s]\b(D)iciembre\b/ -> d
+/[^ \.][«'\s]\b(L)unes\b/ -> l
+/[^ \.][«'\s]\b(M)artes\b/ -> m
+/[^ \.][«'\s]\b(Mi[eé])rcoles\b/ -> mié
+/[^ \.][«'\s]\b(J)ueves\b/ -> j
+/[^ \.][«'\s]\b(V)iernes\b/ -> v
+/[^ \.][«'\s]\b(S[aá])bado\b/ -> sá
+/[^ \.][«'\s]\b(D)omingo\b/ -> d
+/\b[Aa](ú)n\sasí\b/ -> u
+/\b[Aa](ú)n\scuando\b/ -> u
+/\b[Aa](ú)n\slos\b/ -> u
+/\b[Aa](ú)n\slas\b/ -> u
+/\b[Aa](ú)n\snegarte\b/ -> u
+/\b[Aa](ú)n\snegarse\b/ -> u
+/\b[Nn]i\sa(ú)n\b/ -> u
+/(_)\s/ -> -
+/(_)\w/ -> - 
+/(cion)\b/ -> ción
+/(sion)\b/ -> sión
