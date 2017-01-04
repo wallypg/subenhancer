@@ -62,6 +62,7 @@ $subtitle = new stdClass();
 $totalSegmentsOverCps = array();
 
 // Segmento -> conjunto de 3 lineas {secuencia, tiempo, texto}
+$ocrCorrections = array();
 
 foreach(preg_split("/\n\s*\n/s", $subtitleContent) as $segmentKey => $segment){
     $segmentObject = new stdClass();
@@ -93,12 +94,25 @@ foreach(preg_split("/\n\s*\n/s", $subtitleContent) as $segmentKey => $segment){
     $segmentObject->totalCharacters = 0;
     for($i=2; $i<count($segmentArray)-1; $i++) {
         $textLine = 'textLine'.($i-1);
-        if(isset($_POST['ocr']) && $_POST['ocr'] == 'true') $segmentObject->$textLine = ocrCheck($segmentArray[$i]);
-        else $segmentObject->$textLine = $segmentArray[$i];
+
+        if(isset($_POST['ocr']) && $_POST['ocr'] == 'true') {
+            $ocrCheckArray = ocrCheck($segmentArray[$i]);
+            // print_r($ocrCheckArray);
+            // die();
+            if(!empty($ocrCheckArray)) {
+                if(!isset($ocrCorrections[$segmentObject->sequence])) $ocrCorrections[$segmentObject->sequence] = array();
+                
+                $segmentObject->$textLine = $ocrCheckArray['ocredLine'];
+                array_push($ocrCorrections[$segmentObject->sequence], array('found'=>$ocrCheckArray['found'],'replaced'=>$ocrCheckArray['replaced']));
+                // $ocrCorrections[$segmentObject->sequence][$ocrCheckArray['found']] = $ocrCheckArray['replaced'];
+            } else {
+                $segmentObject->$textLine = $segmentArray[$i];
+            }
+
+        } else $segmentObject->$textLine = $segmentArray[$i];
 
         $segmentObject->totalCharacters += mb_strlen($segmentArray[$i]);
     }
-
     
     if(isset($segmentObject->sequenceDuration) && isset($segmentObject->totalCharacters)) {
         $segmentObject->cps = calculateCps($segmentObject->sequenceDuration, $segmentObject->totalCharacters);
@@ -106,6 +120,7 @@ foreach(preg_split("/\n\s*\n/s", $subtitleContent) as $segmentKey => $segment){
     }
     if($segmentObject->totalCharacters>0) $subtitle->$segmentKey = $segmentObject;
 }
+
 
 $totalSequences = count((array)$subtitle);
 $originalLinesOverCps = count($totalSegmentsOverCps);
