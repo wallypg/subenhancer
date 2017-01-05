@@ -121,7 +121,7 @@ foreach(preg_split("/\n\s*\n/s", $subtitleContent) as $segmentKey => $segment){
     if($segmentObject->totalCharacters>0) $subtitle->$segmentKey = $segmentObject;
 }
 
-
+print_r($ocrCorrections);die();
 $totalSequences = count((array)$subtitle);
 $originalLinesOverCps = count($totalSegmentsOverCps);
 /* PROPIEDADES DE CADA SEGMENTO DEL SUBTÍTULO */
