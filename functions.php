@@ -328,13 +328,50 @@ function getSubtitleFromUrl($url) {
 
     $curlResult = curl_exec($ch);
     if(!$curlResult){
-        // ERROR VIEW
-        $error = 'Error: "' . curl_error($ch) . '" - Code: ' . curl_errno($ch);
-        die();
+        // ERROR
+        $error['tuSubtitleCurl'] = 'Error: "' . curl_error($ch) . '" - Code: ' . curl_errno($ch);
+        die(json_encode($error));  
     }
 
     $curlResult = mb_convert_encoding($curlResult, 'utf-8', "windows-1252");
     return $curlResult;
+}
+
+function getSrtSubtitle($url) {
+    require ('user_agent.php');
+    $userAgent = random_user_agent();
+
+    $ch = curl_init();
+    curl_setopt($ch, CURLOPT_URL, $url);
+    curl_setopt($ch, CURLOPT_USERAGENT, $userAgent);
+    curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+    curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 30);
+    curl_setopt($ch, CURLOPT_AUTOREFERER, true); 
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1); //orig
+    curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
+    curl_setopt($ch, CURLOPT_ENCODING ,"windows-1252"); //orig
+
+    $curlResult = curl_exec($ch);
+
+    $curlResult = curl_exec($ch);
+    if(!$curlResult){
+        // ERROR
+        $error['srtSubtitleCurl'] = 'Error: "' . curl_error($ch) . '" - Code: ' . curl_errno($ch);
+        die(json_encode($error));  
+    }
+    $curlResult = mb_convert_encoding($curlResult, 'utf-8', "windows-1252");
+    return $curlResult;
+}
+
+function getInternalSubtitle($filename) {
+    $file = 'srt/original/'.((preg_match('/\.srt$/',$filename)) ? $filename : $filename.'.srt');
+    if(file_exists(utf8_decode($file))) {
+        $content = file_get_contents(utf8_decode($file));
+        return mb_convert_encoding($content, 'utf-8', "windows-1252");
+    } else {
+        $error['missingFile'] = 'No existe el archivo en el servidor';
+        die(json_encode($error));  
+    }
 }
 
 // Recibe el subtítulo, un segmento, los cps, la variación máxima permitida y los milisegundos a mover el subtítulo hacia atrás.

@@ -569,3 +569,8 @@ panel-body*/
 .table>tbody>tr>td {
   border-top: 1px solid #afafaf;
 }
+
+.optimize-button {
+  padding-right: 4px;
+  padding-left: 4px;
+}

@@ -53,19 +53,20 @@ $(document).ready(function(){
   });
 
   $('#enhance').submit(function(event) {
-    event.preventDefault();
 
-    if(!$('#input-sub-file').val() && !isValidSubUrl($('#sub_url').val())) {
-      $.alert({
-          animation: 'top',
-          title: '<i class="fa fa-exclamation-triangle" aria-hidden="true"></i>&nbsp;&nbsp;NADA QUE OPTIMIZAR',
-          type: 'red',
-          content: 'Ingresar una URL válida o un archivo para&nbsp;optimizar.',
-          backgroundDismiss: true
-      });
-      return false;
-    }
-    if($('#input-sub-file').val() && isValidSubUrl($('#sub_url').val())) {
+    // if(!$('#input-sub-file').val() && !isValidSubUrl($('#sub_url').val())) {
+    //   $.alert({
+    //       animation: 'top',
+    //       title: '<i class="fa fa-exclamation-triangle" aria-hidden="true"></i>&nbsp;&nbsp;NADA QUE OPTIMIZAR',
+    //       type: 'red',
+    //       content: 'Ingresar una URL válida o un archivo para&nbsp;optimizar.',
+    //       backgroundDismiss: true
+    //   });
+    //   return false;
+    // }
+
+    if($('#input-sub-file').val() && $('#sub_url').val() != '') {
+      //  && isValidSubUrl($('#sub_url').val())
       $.alert({
           animation: 'top',
           title: '<i class="fa fa-exclamation-triangle" aria-hidden="true"></i>&nbsp;&nbsp;ELEGIR SOLO UNA OPCIÓN',
@@ -76,87 +77,99 @@ $(document).ready(function(){
       return false;
     }
 
-    var  srtContent;
-    var file = document.getElementById("input-sub-file").files[0];
-    if (file) {
-        NProgress.start();
-        var reader = new FileReader();
-        reader.readAsText(file, "windows-1252");
-        reader.onload = function (evt) {
-            // document.getElementById("fileContents").innerHTML = evt.target.result;
-            $.ajax({
-              method: "POST",
-              url: "enhance.php",
-              data: {
-                sub_url: $('[name="sub_url"]').val(),
-                ocr: $('[name="ocr"]').is(':checked'),
-                tv_show: $('[name="tv_show"]').val(),
-                season: $('[name="season"]').val(),
-                episode_number: $('[name="episode_number"]').val(),
-                episode_title: $('[name="episode_title"]').val(),
-                other: $('[name="other"]').val(),
-                quality: $('[name="quality"]').val(),
-                format: $('[name="format"]').val(),
-                codec: $('[name="codec"]').val(),
-                rip_group: $('[name="rip_group"]').val(),
-                editor: $('[name="editor"]').val(),
-                translation: $('[name="translation"]').val(),
-                srtContent: evt.target.result
-              }
-            }).done(function(data){
-              var data = $.parseJSON(data);
-              NProgress.done();
-              $('#efficiency').html(data.efficiencyMessage);
-              $('#enhancement').html(data.enhancementMessage);
-              $('#pre-wrap').html(data.threadMessage);
-              $('#ocr-table-container').html(data.ocrCorrections);
-              $('#myModal').modal('show');
-              $('#finalFileName').val(data.filename);
-              $('#finalFileName').attr('data-temp-name', data.tempFilename);
-              // window.location = 'download.php?file='+data.tempFilename+'&name='+data.filename;
-            });
-        }
-        reader.onerror = function (evt) {
-            console.log("error reading file");
-            // document.getElementById("fileContents").innerHTML = "error reading file";
-        }
-    } else {
-      NProgress.start();
-      $.ajax({
-        method: "POST",
-        url: "enhance.php",
-        data: {
-          sub_url: $('[name="sub_url"]').val(),
-          ocr: $('[name="ocr"]').is(':checked'),
-          tv_show: $('[name="tv_show"]').val(),
-          season: $('[name="season"]').val(),
-          episode_number: $('[name="episode_number"]').val(),
-          episode_title: $('[name="episode_title"]').val(),
-          other: $('[name="other"]').val(),
-          quality: $('[name="quality"]').val(),
-          format: $('[name="format"]').val(),
-          codec: $('[name="codec"]').val(),
-          rip_group: $('[name="rip_group"]').val(),
-          editor: $('[name="editor"]').val(),
-          translation: $('[name="translation"]').val()
-        }
-      }).done(function(data){
-        var data = $.parseJSON(data);
-        NProgress.done();
-        $('#efficiency').html(data.efficiencyMessage);
-        $('#enhancement').html(data.enhancementMessage);
-        $('#pre-wrap').html(data.threadMessage);
-        $('#ocr-table-container').html(data.ocrCorrections);
-        $('#myModal').modal('show');
-        $('#finalFileName').val(data.filename);
-        $('#finalFileName').attr('data-temp-name', data.tempFilename);
-        // window.location = 'download.php?file='+data.tempFilename+'&name='+data.filename;
-      });
-    }
+    if(!dbg) {
+      event.preventDefault();
+      // console.log('a');
+      // return true;
+    // }
 
-    $('.download-btn').on('click',function(){
-      window.location = 'download.php?file='+$('#finalFileName').attr('data-temp-name')+'&name='+$('#finalFileName').val();
-    });
+      var  srtContent;
+      var file = document.getElementById("input-sub-file").files[0];
+      if (file) {
+          NProgress.start();
+          var reader = new FileReader();
+          reader.readAsText(file, "windows-1252");
+          reader.onload = function (evt) {
+              // document.getElementById("fileContents").innerHTML = evt.target.result;
+              $.ajax({
+                method: "POST",
+                url: "enhance.php",
+                data: {
+                  sub_url: $('[name="sub_url"]').val(),
+                  ocr: $('[name="ocr"]').is(':checked'),
+                  tv_show: $('[name="tv_show"]').val(),
+                  season: $('[name="season"]').val(),
+                  episode_number: $('[name="episode_number"]').val(),
+                  episode_title: $('[name="episode_title"]').val(),
+                  other: $('[name="other"]').val(),
+                  quality: $('[name="quality"]').val(),
+                  format: $('[name="format"]').val(),
+                  codec: $('[name="codec"]').val(),
+                  rip_group: $('[name="rip_group"]').val(),
+                  editor: $('[name="editor"]').val(),
+                  translation: $('[name="translation"]').val(),
+                  srtContent: evt.target.result
+                }
+              }).done(function(data){
+                var data = $.parseJSON(data);
+                NProgress.done();
+                if(data.hasOwnProperty('alreadyEnhanced')) alreadyEnhanced();
+                if(data.hasOwnProperty('error')) console.log(data);
+                else {
+                  $('#efficiency').html(data.efficiencyMessage);
+                  $('#enhancement').html(data.enhancementMessage);
+                  $('#pre-wrap').html(data.threadMessage);
+                  $('#ocr-table-container').html(data.ocrCorrections);
+                  $('#myModal').modal('show');
+                  $('#finalFileName').val(data.filename);
+                  $('#finalFileName').attr('data-temp-name', data.tempFilename);
+                  // window.location = 'download.php?file='+data.tempFilename+'&name='+data.filename;
+                }
+              });
+          }
+          reader.onerror = function (evt) {
+              console.log("error reading file");
+              // document.getElementById("fileContents").innerHTML = "error reading file";
+          }
+      } else {
+        NProgress.start();
+        $.ajax({
+          method: "POST",
+          url: "enhance.php",
+          data: {
+            sub_url: $('[name="sub_url"]').val(),
+            ocr: $('[name="ocr"]').is(':checked'),
+            tv_show: $('[name="tv_show"]').val(),
+            season: $('[name="season"]').val(),
+            episode_number: $('[name="episode_number"]').val(),
+            episode_title: $('[name="episode_title"]').val(),
+            other: $('[name="other"]').val(),
+            quality: $('[name="quality"]').val(),
+            format: $('[name="format"]').val(),
+            codec: $('[name="codec"]').val(),
+            rip_group: $('[name="rip_group"]').val(),
+            editor: $('[name="editor"]').val(),
+            translation: $('[name="translation"]').val()
+          }
+        }).done(function(data){
+          var data = $.parseJSON(data);
+          NProgress.done();
+          $('#efficiency').html(data.efficiencyMessage);
+          $('#enhancement').html(data.enhancementMessage);
+          $('#pre-wrap').html(data.threadMessage);
+          $('#ocr-table-container').html(data.ocrCorrections);
+          $('#myModal').modal('show');
+          $('#finalFileName').val(data.filename);
+          $('#finalFileName').attr('data-temp-name', data.tempFilename);
+          // window.location = 'download.php?file='+data.tempFilename+'&name='+data.filename;
+        });
+      }
+
+      $('.download-btn').on('click',function(){
+        window.location = 'download.php?file='+$('#finalFileName').attr('data-temp-name')+'&name='+$('#finalFileName').val();
+      });
+
+    }
 
   });
 
@@ -255,4 +268,14 @@ function isValidDataUrl2(str) {
 function isValidSubUrl(str) {
   var pattern = new RegExp('^https://www.tusubtitulo.com/[^/]+/[0-9]+/[0-9]+(/[0-9]+)?$','i');
   return pattern.test(str);
+}
+
+function alreadyEnhanced(){
+  $.alert({
+      animation: 'top',
+      title: '<i class="fa fa-exclamation-triangle" aria-hidden="true"></i>&nbsp;&nbsp;SUBTÍTULO YA OPTIMIZADO',
+      type: 'red',
+      content: 'Optimizar un subtítulo ya optimizado daría como resultado tiempos poco confiables.',
+      backgroundDismiss: true
+  });
 }

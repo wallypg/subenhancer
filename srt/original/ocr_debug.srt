@@ -1,0 +1,7 @@
+Oye, mira como funciona el debug de OCR con un archivo
+Vais a agregar un archivo al servidor en la carpeta "/srt/original"
+con todas vuestras líneas a analizar.
+Después de eso, ya sabéis, ingresar a la url con los parámetros correspondientes.
+Cualquier duda leer la documentación en "documentation.txt" ¿de acuerdo?
+Está bien, creo que ya son bastantes líneas para el ejemplo.
+No ha sido fácil hacer todo esto pero vale la pena, ¿vale?

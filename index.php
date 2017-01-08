@@ -21,6 +21,7 @@ if (file_exists('json/data.json'))
   <script src="js/jquery-confirm.js"></script>
   <script src="js/bootstrap.min.js"></script>
   <!-- <script src="js/dropzone.js"></script> -->
+  <?php echo "<script>var dbg = ".(isset($_GET['dbg']) ? "1" : "0")."</script>\n"; ?>
   <script src="js/script.js"></script>
   
   <link href="https://fonts.googleapis.com/css?family=Bitter:400,400i,700|Catamaran:300,400,500,600,700|Open+Sans:300,300i,400,400i,600,600i,700,700i|Rokkitt:400,700" rel="stylesheet">
@@ -50,9 +51,9 @@ if (file_exists('json/data.json'))
                   <div class="col-xs-12 col-sm-6 col-md-6">
                     <div class="form-group">
                       <label class="control-label" for="sub_url">Archivo del subtítulo</label>
-                      <form action="" class="dropzone">
+                      <!-- <form action="" class="dropzone"> -->
                       <input id="input-sub-file" name="uploaded_file" type="file" class="file" data-show-preview="false" data-show-remove="true" data-show-upload="false" multiple>
-                      </form>
+                      <!-- </form> -->
                     </div>
                   </div>
                 </div>
@@ -257,9 +258,12 @@ if (file_exists('json/data.json'))
                     </div>
                   </div>
                   <div class="col-xs-3 version">
-                    v161231.2
+                    v170108.1
+                    <!-- v161231.2 -->
                   </div>
                 </div>
+                
+                <?php if(isset($_GET['dbg'])) echo "<input type=\"hidden\" name=\"dbg\" >\n"; ?>
                 <!-- <div class="row">
                   <div class="col-xs-4"></div>
                   <div class="col-xs-4">

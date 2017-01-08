@@ -1,0 +1,22 @@
+MODO DEBUG
+> index
+	Parámetros: dbg (Ej: http://[...]/subenhancer/?dbg)
+	Funcionamiento:
+		Ingreso a la URL con el parámetro "dbg" e ingreso un archivo de subtítulo para optimizar (ya sea por archivo o URL).
+		En vez de hacer la optimización a través de AJAX se dirige a enhance.php y muestra el resultado en pantalla (así como cualquier otra variable que se haya agregado para mostrarse en pantalla durante el proceso).
+> ocr
+	Parámetros: dbg&filename= (Ej: http://[...]/subenhancer/ocr.php?dbg&filename)
+				dbg&string= (Ej: http://[...]/subenhancer/ocr.php?dbg&string=Vale, habeis optimizado una linea por debug, ¿verdad?)
+	Funcionamiento:
+		Muestra la frase analizada, el resultado, y el array retornado (con resaltado de cambios) por la función de OCR.
+		Tiene dos modos de uso:
+		1) Por archivo: Busca un archivo con extensión "srt" en la carpeta "srt/original". No es necesario que tenga el formato de subtítulo srt con líneas de secuencia y de tiempo´, puede ser una lista de sentencias (analiza línea por línea).
+		2) Por línea: Permite ver la respuesta del OCR ante una línea específica.
+
+
+FUNCIONES "OCULTAS" DEL SUBENHANCER:
+	- Ingresando una URL de tu "tusubtitulo" de cualquier episodio de serie, llenará los campos de "serie", "temporada", "episodio" y "nombre del episodio". Si adicionalmente había un link ´de descarga del subtítulo proveniente de la misma página buscara el grupo de dicho ripeo.
+	- Mediante el campo de URL del subtítulo, puede optimizar subtítulos de la web que estén disponibles como ".srt" poniendo dicha URL, subtítulos subidos a la carpeta ".../srt/original/" ingresandoi solo el nombre del archivo, o subtítulos de "tusubtítulo" ingresando el link de descarga (más información sobre que link funciona predionando el ícono de información en el rótulo del campo).
+	- Los datos ingresados en el formulario formaran el nombre del archivo en el siguiente orden: 
+	"Serie.SXXEXX.Nombre.del.Capítulo.Otro.Calidad.Formato.Codec-Grupo.srt"
+	- Dichos datos se guardan de forma automática para no tener que volver a ingresarlos manualmente.

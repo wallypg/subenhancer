@@ -1,27 +1,19 @@
 <?php
 require('functions.php');
 require('ocr.php');
-// die('alalal');
 
-// Modo "debug"
-// if(isset($_GET['debug']) && $_GET['debug'] == 'true') {
-//     //  && isset($_GET['sub']) && isset($_GET['ocr'])
-//     // ?debug=true&sub=sub_test&ocr=true
-//     $_POST['ocr'] = ($_GET['ocr'] == 'true') ? 'true' : 'false';
-//     $path = (file_exists())
-//     $_POST['srtContent'] = file_get_contents('srt/original/super_sub_test_0_times.srt');//dbg
-// }
+// MÉTODO DE OPTIMIZACIÓN
+$method = 1;
+// MODO "DEBUG"
+if(isset($_POST['dbg'])) $method = 4;  
 
-// $_POST['ocr'] = 'true';//dbg
-// $_POST['srtContent'] = file_get_contents('srt/original/test_fail_backstorm.srt');//dbg
-// $_POST['srtContent'] = mb_convert_encoding($_POST['srtContent'], 'utf-8', "windows-1252");//dbg
+$error = array('error'=>true);
 
-// print_r($_POST['srtContent']);die();
-
-$validUrlPatternSub = '#^https://www.tusubtitulo.com/[^/]+/[0-9]+/[0-9]+(/[0-9]+)?$#';
-
-if(isset($_POST['sub_url']) && preg_match($validUrlPatternSub, $_POST['sub_url'])) {
-    $subtitleContent = getSubtitleFromUrl($_POST['sub_url']);
+if(isset($_POST['sub_url']) && !empty($_POST['sub_url'])) {
+    $validUrlPatternSub = '#^https://www.tusubtitulo.com/[^/]+/[0-9]+/[0-9]+(/[0-9]+)?$#';
+    if(preg_match($validUrlPatternSub, $_POST['sub_url'])) $subtitleContent = getSubtitleFromUrl($_POST['sub_url']);
+    elseif(preg_match('/^https?:\/\/.+\.srt$/', $_POST['sub_url'])) $subtitleContent = getSrtSubtitle($_POST['sub_url']);
+    else $subtitleContent = getInternalSubtitle($_POST['sub_url']);
 } elseif(isset($_FILES["uploaded_file"]) && !empty( $_FILES["uploaded_file"]["name"])) {
 
     /************************************************************/
@@ -30,31 +22,35 @@ if(isset($_POST['sub_url']) && preg_match($validUrlPatternSub, $_POST['sub_url']
     $uploadOk = 1;
     // Chequeo tamaño del archivo
     if ($_FILES["uploaded_file"]["size"] > 300000) {
-        $error = "Sorry, your file is too large.<br />";
-        // $uploadOk = 0;
+        $errorMessage = "Peso de archivoo demasiado grande.";
+        $uploadOk = 0;
     }
 
     // Chequeo el formato del archivo
     $fileType = pathinfo($_FILES['uploaded_file']['name'],PATHINFO_EXTENSION);
     if($fileType != "srt" ) {
-        $error = "Sorry, only SRT files are allowed.<br />";
+        $errorMessage = "Solo están permitidos archivos de extensión '.SRT'.";
         $uploadOk = 0;
     }
 
     // Chequeo si $uploadOk está 0 por alguno de los errores
-    if ($uploadOk == 0) 
-        // ERROR VIEW
-        die();
+    if ($uploadOk == 0) {
+        // ERROR
+        $error['fileUpload'] = $errorMessage;
+        die(json_encode($error));
+    }
 
     $fileContent = file_get_contents($_FILES['uploaded_file']['tmp_name']);
     $subtitleContent = utf8_encode ( $fileContent );
     // $fileContent = mb_convert_encoding($fileContent, 'HTML-ENTITIES', "UTF-8");
 } elseif(isset($_POST['srtContent'])) {
-  $subtitleContent = $_POST['srtContent'];
+    $error['streamSize'] = strlen ($_POST['srtContent']);
+    if($error['streamSize'] > 500000) die(json_encode($error));
+    $subtitleContent = $_POST['srtContent'];
 } else {
-    // ERROR VIEW
-    $error = 'Error en el archivo o URL';
-    die();
+    // ERROR
+    $error['subtitleSource'] = 'Error en el archivo o URL';
+    die(json_encode($error));
 }
 
 
@@ -131,7 +127,32 @@ foreach(preg_split("/\n\s*\n/s", $subtitleContent) as $segmentKey => $segment){
     if($segmentObject->totalCharacters>0) $subtitle->$segmentKey = $segmentObject;
 }
 
-// print_r($ocrCorrections);die();
+
+// CHEQUEO INTEGRIDAD DEL OBJETO
+$objectCorruption = 0;
+
+if(empty((array)$subtitle)) {
+    $error['emptyObject'] = 'El parseo del subtítulo devolvió un objeto vacío.';
+    $objectCorruption = 1;
+} else {
+    for($objectCorruption = 0, $i = 0; $objectCorruption == 0 && $i < count((array)$subtitle); $i++ ) {
+        if(!isset($subtitle->$i)) {
+            $error['missingSegment'] = 'No se encuentra la secuencia '.($i+1);
+            $objectCorruption = 1;
+        } else {
+            $elementCount = count((array)$subtitle->$i);
+            if ( $elementCount < 18 || $elementCount >20 ) {
+                $error['missingProperties'] = 'Propiedades faltantes en la secuencia '.($i+1);
+                $objectCorruption = 1;
+            }
+        }
+    }
+}
+// ERROR
+if($objectCorruption) die(json_encode($error));    
+    
+
+// OCR FEEDBACK
 $ocrTable = '<table class="table table-striped ocr-table">';
 foreach ($ocrCorrections as $sequenceKey => $sequenceValue) {
     $ocrTable .= '<tr><td colspan="2">'.$sequenceKey.'</td></tr>';
@@ -166,9 +187,11 @@ $originalLinesOverCps = count($totalSegmentsOverCps);
 // [sequenceDurationOriginal]
 
 $lastLine = $totalSequences-1;
-if(md5($subtitle->$lastLine->textLine1) == '4bab2f9ce44d40cf4f268094f76bac69') 
-    // ERROR VIEW
-    die('Subtítulo ya optimizado');
+if(md5($subtitle->$lastLine->textLine1) == '4bab2f9ce44d40cf4f268094f76bac69') {
+    // ERROR
+    $error['alreadyEnhanced'] = 'Subtítulo ya optimizado';
+    die(json_encode($error));
+}
 
 
 
@@ -261,7 +284,7 @@ file_put_contents("json/data.json",json_encode($dataArray,JSON_PRETTY_PRINT));
 
 
 // Elegir método de optimización (0 para mostrar el subtítulo original)
-$method = 1;
+// ^^^^ DECLARADO ARRIBA ^^^^
 
 // MOSTRAR EN PANTALLA: printEnhancedSubtitle($subtitle,$totalSequences);
 // DESCARGAR SRT: downloadEnhancedSubtitle($subtitle,$totalSequences,$filename);
