@@ -7,7 +7,6 @@ Tareas pendientes:
 - campo de posicion de tiempo donde ubicar créditos
 - créditos
 - crear la descripción para la subida subdivx (avisar si supera el límite caracteres)
-- pantalla para errores
 - tratar líneas de menos de 1 segundo
 - login
 - generar descarga de un subtitulo para cada versión (misma sincro, distintos nombres de archivos)
@@ -21,10 +20,20 @@ Tareas pendientes:
 - batch enhancer?
 - full wiki-adictos style. mostrar cada línea del subtitulo en campos editables y permitir que se vayan tomando (abriendo un socket para no tener que refrescar la pag, donde un usuario toma una secuencia se deshabilita para el resto)... acá volverían todas las ideas para la plataforma que nunca llegamos a implementar... 
 - funcion que equilibre lineas (separarlas despues de unirlas)	
-
+- Pantalla para errores
+- Manejo de errores
 
 OCR:
 1- Strings de reduce completo con "preserve case" y cambios resaltados en modal. (más de un cambio por linea)
 2- Regex de reduce
 3- Asiateam
 4- Ocr sobre unión de lineas y separado de líneas de forma equilibrada teniendo en cuenta cantidad máxima de caracteres por línea y unidades de sentido.
+
+- Lineas duplicadas
+- Aviso para ciertos OCR y pantalla con input para elegir acción (dejarlo como está o cambiarlo)
+- Unión de lineas cortas
+- Linea de diálogo en la misma línea:
+		- ¿Un viaje? Las vacaciones
+		terminan mañana. - Espera.
+
+- LINEAS ORIGINALES QUE SUPERAN LOS 25CPS.

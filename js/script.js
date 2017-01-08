@@ -32,7 +32,6 @@ $(document).ready(function(){
     var completeString = $(this).val();
     tempString = completeString.substr(12);
     // C:\fakepath\
-    // The Great Indoors 1x08 - Office Romance.srt
     var xPosition = tempString.search(/\s[0-9]{1,2}x[0-9]{2}\s/i);
     var tvShow = tempString.slice(0,xPosition);
     var lastHalf = tempString.slice(tvShow.length+1);
@@ -54,7 +53,7 @@ $(document).ready(function(){
   });
 
   $('#enhance').submit(function(event) {
-    NProgress.start();
+    event.preventDefault();
 
     if(!$('#input-sub-file').val() && !isValidSubUrl($('#sub_url').val())) {
       $.alert({
@@ -77,10 +76,10 @@ $(document).ready(function(){
       return false;
     }
 
-    event.preventDefault();
     var  srtContent;
     var file = document.getElementById("input-sub-file").files[0];
     if (file) {
+        NProgress.start();
         var reader = new FileReader();
         reader.readAsText(file, "windows-1252");
         reader.onload = function (evt) {
@@ -107,10 +106,10 @@ $(document).ready(function(){
             }).done(function(data){
               var data = $.parseJSON(data);
               NProgress.done();
-              
               $('#efficiency').html(data.efficiencyMessage);
               $('#enhancement').html(data.enhancementMessage);
               $('#pre-wrap').html(data.threadMessage);
+              $('#ocr-table-container').html(data.ocrCorrections);
               $('#myModal').modal('show');
               $('#finalFileName').val(data.filename);
               $('#finalFileName').attr('data-temp-name', data.tempFilename);
@@ -121,40 +120,44 @@ $(document).ready(function(){
             console.log("error reading file");
             // document.getElementById("fileContents").innerHTML = "error reading file";
         }
+    } else {
+      NProgress.start();
+      $.ajax({
+        method: "POST",
+        url: "enhance.php",
+        data: {
+          sub_url: $('[name="sub_url"]').val(),
+          ocr: $('[name="ocr"]').is(':checked'),
+          tv_show: $('[name="tv_show"]').val(),
+          season: $('[name="season"]').val(),
+          episode_number: $('[name="episode_number"]').val(),
+          episode_title: $('[name="episode_title"]').val(),
+          other: $('[name="other"]').val(),
+          quality: $('[name="quality"]').val(),
+          format: $('[name="format"]').val(),
+          codec: $('[name="codec"]').val(),
+          rip_group: $('[name="rip_group"]').val(),
+          editor: $('[name="editor"]').val(),
+          translation: $('[name="translation"]').val()
+        }
+      }).done(function(data){
+        var data = $.parseJSON(data);
+        NProgress.done();
+        $('#efficiency').html(data.efficiencyMessage);
+        $('#enhancement').html(data.enhancementMessage);
+        $('#pre-wrap').html(data.threadMessage);
+        $('#ocr-table-container').html(data.ocrCorrections);
+        $('#myModal').modal('show');
+        $('#finalFileName').val(data.filename);
+        $('#finalFileName').attr('data-temp-name', data.tempFilename);
+        // window.location = 'download.php?file='+data.tempFilename+'&name='+data.filename;
+      });
     }
 
     $('.download-btn').on('click',function(){
       window.location = 'download.php?file='+$('#finalFileName').attr('data-temp-name')+'&name='+$('#finalFileName').val();
     });
 
-    // var fileSelect = document.getElementById('input-sub-file');
-    // var uploadButton = document.getElementById('optimize-button');
-
-    // uploadButton.innerHTML = 'Uploading...';
-    // var files = fileSelect.files;
-    // var formData = new FormData();
-
-    // for (var i = 0; i < files.length; i++) {
-    //   var file = files[i];
-    //   // if (!file.type.match('text/plain')) {
-    //   //   console.log('c');
-    //   //   continue;
-    //   // }
-    //   formData.append('srt[]', file, file.name);
-    // }
-    
-    // var xhr = new XMLHttpRequest();
-    // xhr.open('POST', 'enhance.php', true);
-
-    // xhr.onload = function () {
-    //   if (xhr.status === 200) {
-    //     uploadButton.innerHTML = 'Upload';
-    //   } else {
-    //     alert('An error occurred!');
-    //   }
-    // };
-
-    // xhr.send(formData);
   });
 
   $('i.fa-info-circle.sub-url').on('click',function(){
@@ -245,7 +248,7 @@ function isValidDataUrl(str) {
 }
 
 function isValidDataUrl2(str) {
-  var pattern = new RegExp('^^https://www.tusubtitulo.com/episodes/[0-9]+/[^/]+(/)?$','i');
+  var pattern = new RegExp('^https://www.tusubtitulo.com/episodes/[0-9]+/[^/]+(/)?$','i');
   return pattern.test(str);
 }
 

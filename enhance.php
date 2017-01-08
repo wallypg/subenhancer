@@ -1,12 +1,22 @@
 <?php
 require('functions.php');
 require('ocr.php');
+// die('alalal');
 
-$_POST['ocr'] = 'true';
-$_POST['srtContent'] = file_get_contents('srt/original/twd_ocr_test.srt');
-$_POST['srtContent'] = mb_convert_encoding($_POST['srtContent'], 'utf-8', "windows-1252");
-// print_r($_POST['srtContent']);
-// die();
+// Modo "debug"
+// if(isset($_GET['debug']) && $_GET['debug'] == 'true') {
+//     //  && isset($_GET['sub']) && isset($_GET['ocr'])
+//     // ?debug=true&sub=sub_test&ocr=true
+//     $_POST['ocr'] = ($_GET['ocr'] == 'true') ? 'true' : 'false';
+//     $path = (file_exists())
+//     $_POST['srtContent'] = file_get_contents('srt/original/super_sub_test_0_times.srt');//dbg
+// }
+
+// $_POST['ocr'] = 'true';//dbg
+// $_POST['srtContent'] = file_get_contents('srt/original/test_fail_backstorm.srt');//dbg
+// $_POST['srtContent'] = mb_convert_encoding($_POST['srtContent'], 'utf-8', "windows-1252");//dbg
+
+// print_r($_POST['srtContent']);die();
 
 $validUrlPatternSub = '#^https://www.tusubtitulo.com/[^/]+/[0-9]+/[0-9]+(/[0-9]+)?$#';
 
@@ -21,7 +31,7 @@ if(isset($_POST['sub_url']) && preg_match($validUrlPatternSub, $_POST['sub_url']
     // Chequeo tamaño del archivo
     if ($_FILES["uploaded_file"]["size"] > 300000) {
         $error = "Sorry, your file is too large.<br />";
-        $uploadOk = 0;
+        // $uploadOk = 0;
     }
 
     // Chequeo el formato del archivo
@@ -121,7 +131,19 @@ foreach(preg_split("/\n\s*\n/s", $subtitleContent) as $segmentKey => $segment){
     if($segmentObject->totalCharacters>0) $subtitle->$segmentKey = $segmentObject;
 }
 
-print_r($ocrCorrections);die();
+// print_r($ocrCorrections);die();
+$ocrTable = '<table class="table table-striped ocr-table">';
+foreach ($ocrCorrections as $sequenceKey => $sequenceValue) {
+    $ocrTable .= '<tr><td colspan="2">'.$sequenceKey.'</td></tr>';
+    foreach($sequenceValue as $ocrCorrectedLine) {
+        $ocrTable .= '<tr>
+                        <td>'.$ocrCorrectedLine['found'].'</td>
+                        <td>'.$ocrCorrectedLine['replaced'].'</td>
+                      </tr>';
+    }
+}
+$ocrTable .= '</table>';
+
 $totalSequences = count((array)$subtitle);
 $originalLinesOverCps = count($totalSegmentsOverCps);
 /* PROPIEDADES DE CADA SEGMENTO DEL SUBTÍTULO */
@@ -212,6 +234,7 @@ if(isset($_POST['translation']) && !empty($_POST['translation'])) {
     if(!in_array($_POST['translation'], $dataArray['translation'])) array_push($dataArray['translation'], $_POST['translation']);
 } else $_POST['translation'] = '';
 
+if($filename == '') $filename .= 'enhancedSubtitle';
 $filename .= '.srt';
 
 $filename = preg_replace('/\s+/', '.', $filename);
@@ -238,7 +261,7 @@ file_put_contents("json/data.json",json_encode($dataArray,JSON_PRETTY_PRINT));
 
 
 // Elegir método de optimización (0 para mostrar el subtítulo original)
-$method = 4;
+$method = 1;
 
 // MOSTRAR EN PANTALLA: printEnhancedSubtitle($subtitle,$totalSequences);
 // DESCARGAR SRT: downloadEnhancedSubtitle($subtitle,$totalSequences,$filename);
@@ -279,7 +302,8 @@ if(isset($_POST['editor']) && !empty($_POST['editor'])) {
     $threadMessage .= 'Corrección [B][COLOR="#800080"]'.$_POST['editor'].'[/COLOR][/B]';
 }
 $threadMessage .= '[/SIZE][/CENTER]';
-$efficiencyMessage = round($enhancedLines*100/$originalLinesOverCps,1).'% de eficiencia en la optimización.';
+
+$efficiencyMessage = ($originalLinesOverCps) ? round($enhancedLines*100/$originalLinesOverCps,1).'% de eficiencia en la optimización.' : '¡No había líneas que optimizar!';
 $enhancementMessage = $enhancedLines.' líneas mejoradas de '.$originalLinesOverCps.' que superaban los 25 CPS.';
 
 // header('Location: index.php')
@@ -288,7 +312,8 @@ $data = array(
         'tempFilename' => $tempFilename,
         'threadMessage' => $threadMessage,
         'efficiencyMessage' => $efficiencyMessage,
-        'enhancementMessage' => $enhancementMessage
+        'enhancementMessage' => $enhancementMessage,
+        'ocrCorrections' => $ocrTable
         );
 echo json_encode($data);
 die();

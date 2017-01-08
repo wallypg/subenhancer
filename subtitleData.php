@@ -20,15 +20,15 @@ if(isset($_POST['info_url']) && (preg_match($validUrlPatternInfo, $_POST['info_u
 // ));
 // $curlResult = curl_exec($curlResource);
 require ('user_agent.php');
-$user_agent = random_user_agent();
+$userAgent = random_user_agent();
 
 $ch=curl_init();
 $proxyServer = rand(1,7);
-$url = 'https://'.$proxyServer.'.hidemyass.com/includes/process.php?action=update&u='.urlencode($_POST['info_url']);
-// https://3.hidemyass.com/includes/process.php?action=update&u=https://www.tusubtitulo.com/episodes/53173/homeland-6x01-fair-game
+// $url = 'https://'.$proxyServer.'.hidemyass.com/includes/process.php?action=update&u='.urlencode($_POST['info_url']); //option 1
+$url = 'https://ssl-proxy.my-addr.org/myaddrproxy.php/'.$_POST['info_url'];
 
 curl_setopt($ch, CURLOPT_URL, $url);
-curl_setopt($ch, CURLOPT_USERAGENT, $user_agent);
+curl_setopt($ch, CURLOPT_USERAGENT, $userAgent);
 curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
 curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 30);
 curl_setopt($ch, CURLOPT_AUTOREFERER, true); 

@@ -33,7 +33,7 @@ if (file_exists('json/data.json'))
     <div class="container-fluid">
         <img src="images/adictito.png" alt="" class="adictito">
         <div class="row centered-form">
-        <div class="col-md-12">
+        <div class="col-md-12 main-body">
           <div class="panel">
             <div class="panel-heading">
               <h3 class="panel-title text-center"><span>SubEnhancer</span> <small>by SubAdictos.Net</small></h3>
@@ -43,7 +43,7 @@ if (file_exists('json/data.json'))
                   <div class="col-xs-12 col-sm-6 col-md-6">
                     <div class="form-group">
                       <label for="sub_url">URL del subtítulo&nbsp;&nbsp;<i class="fa fa-info-circle sub-url" aria-hidden="true"></i></label>
-                      <input disabled type="text" name="sub_url" id="sub_url" class="form-control input-sm" placeholder="Ej: https://www.tusubtitulo.com/updated/5/20739/0">
+                      <input type="text" name="sub_url" id="sub_url" class="form-control input-sm" placeholder="Ej: https://www.tusubtitulo.com/updated/5/20739/0">
                     </div>
                   </div>
                   <label class="loose-text hidden-xs">o</label>
@@ -199,7 +199,7 @@ if (file_exists('json/data.json'))
                     <div class="form-group">
                         <label for="ocr" class="ocr-label">OCR</label>
                         <div class="ocr">
-                          <input type="checkbox" name="ocr" id="ocr" value="true" class="form-control ocr-checkbox" disabled>
+                          <input type="checkbox" name="ocr" id="ocr" value="true" class="form-control ocr-checkbox" >
                         </div>
                     </div>
                   </div>
@@ -291,6 +291,51 @@ if (file_exists('json/data.json'))
             <label>Nombre del archivo:</label>
             <input type="text" id="finalFileName" class="form-control" />
           </p>
+          <!-- <div class="panel-group">
+            <div class="panel panel-default">
+              <div class="panel-heading">
+                <h4 class="panel-title">
+                  <a class="pull-left" data-toggle="collapse" href="#collapse1">Correcciones de OCR</a>
+                  <div class="clearfix"></div>
+                </h4>
+                
+              </div>
+              <div id="collapse1" class="panel-collapse collapse">
+                <div class="panel-body">Panel Body</div>
+                <div class="panel-footer">Panel Footer</div>
+              </div>
+            </div>
+          </div> -->
+
+    <div class="list-group panel panel-no-border">
+        <a href="#category-0" class="list-group-item active-toggle collapsed ocr-corrections" data-toggle="collapse" aria-expanded="false">Correcciones de OCR <span class="pull-right"><i class="fa fa-caret-down" aria-hidden="true"></i></span></a>
+        <div class="collapse" id="category-0" aria-expanded="false" style="height: 0px;">
+            <div id="ocr-table-container">
+              
+            </div>
+            <!-- <li class="sub-item list-group-item">Agua mineral</li>
+            <li class="sub-item list-group-item">Gaseosa</li>
+            <li class="sub-item list-group-item">Leche</li>
+            <li class="sub-item list-group-item">Vodka</li> -->
+        </div>
+        <!-- <a href="#category-1" class="list-group-item active-toggle collapsed" data-toggle="collapse" data-parent="#MainMenu" aria-expanded="false">Frutas/Verduras&nbsp;<i class="fa fa-fw fa-caret-down"></i></a>
+        <div class="collapse" id="category-1" aria-expanded="false" style="height: 0px;">
+            <a href="product.php?id=6" class="sub-item list-group-item">Manzana</a>
+            <a href="product.php?id=5" class="sub-item list-group-item">Tomate</a>
+        </div>
+        <a href="#category-2" class="list-group-item active-toggle collapsed" data-toggle="collapse" data-parent="#MainMenu" aria-expanded="false">Alimentos&nbsp;<i class="fa fa-fw fa-caret-down"></i></a>
+        <div class="collapse" id="category-2" aria-expanded="false" style="height: 0px;">
+            <a href="product.php?id=8" class="sub-item list-group-item">Arroz</a>
+            <a href="product.php?id=54" class="sub-item list-group-item">Galletitas</a>
+            <a href="product.php?id=55" class="sub-item list-group-item">Galletitas</a>
+            <a href="product.php?id=7" class="sub-item list-group-item">Hamburguesas</a>
+            <a href="product.php?id=1" class="sub-item list-group-item">Pan Lactal de Salvado</a>
+            <a href="product.php?id=48" class="sub-item list-group-item">Pepitos</a>
+            <a href="product.php?id=61" class="sub-item list-group-item">Serenito</a>
+        </div> -->
+    </div>
+
+
           <p><pre id="pre-wrap" class="highlight"></pre></p>
         </div>
         <div class="modal-footer">

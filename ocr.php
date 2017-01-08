@@ -1,60 +1,46 @@
 <?php 
-// function ocrCheck($string) {
-// 	$allOcr = json_decode(file_get_contents('json/ocr_v2.json'));
-// 	foreach($allOcr->regex as $ocr){
-// 		// find, replace, useREonlyToFind
-// 	}
-// 	foreach($allOcr->string as $ocr){
-// 		// find, replace, preserveCase, caseSensitive, wholeWord
-// 		$pattern = ($ocr->wholeWord) ? '/((?<=\s)|\b|^)'.preg_quote($ocr->find).'($|\b)/i' : '/'.preg_quote($ocr->find).'/i';
-// 		if($ocr->preserveCase) {
-// 			$matches = array();
-// 			if (preg_match($pattern, $string, $matches)) {
-// 				$ocr->replace = (startsWithUpper($matches[0])) ? ucfirst($ocr->replace) : lcfirst($ocr->replace) ;
-// 			}
-// 		}
-// 		$string = preg_replace($pattern, $ocr->replace, $string);
-// 	}
-// 	return $string;
-// }
-
-// function startsWithUpper($str) {
-// 	echo $str;
-// 	$alphanumericChr = false;
-// 	for($i = 0; $i < strlen($str) && !$alphanumericChr; $i++) {
-// 		$chr = mb_substr ($str, $i, 1, "windows-1252");	
-// 		$alphanumericChr = ctype_alpha($chr);
-// 	}
-    
-//     return mb_strtolower($chr, "windows-1252") != $chr;
-// }
-
+// $string = '¡¡¡Yo soy el ganador!!!';
+// $string = 'Viendo que nos ayudaron, no lo discutí. ¿Es por eso que me quería aquí...';
+// $string = 'Bien, oye, ¿no quieres ir';
+// echo $string.'<br><br>';
+// print_r(ocrCheck($string)); 
+// echo ocrCheck($string)['ocredLine'];
+// echo ocrCheck($string);
 
 function ocrCheck($string) {
 	$allOcr = json_decode(file_get_contents('json/ocr_v2.json'));
 	$returnArray = array();
 	$matches = array();
-	foreach($allOcr->regex as $ocr){
-		// print_r($ocr);
-		// find, replace, useREonlyToFind
-
-		// echo "<br>Find: ".$ocr->find." - Replace: ".$ocr->replace."<br>";
-		
-		// $pattern = "/".$ocr->find."/";
-		// echo $ocr->replace.'<br>';
-		// $string = preg_replace($pattern, $ocr->replace, $string);
-	}
+	
 	$originalString = $string;
+	foreach($allOcr->regex as $ocr){
+		// find, replace, useREonlyToFind
+		$pattern = '/'.$ocr->find.'/u';
+		// if($ocr->global) echo 'a';
+		// $pregMatch = ($ocr->global) ? preg_match_all($pattern, $string, $matches) : preg_match($pattern, $string, $matches);
+		if(preg_match($pattern, $string, $matches)) {
+			$returnArray['found'] = (isset($returnArray['found'])) ? highlightChange($originalString, $matches[0], $returnArray['found']) : highlightChange($originalString, $matches[0]);
+			$returnArray['ocredLine'] = preg_replace($pattern, $ocr->replace, $string);
+			$returnArray['replaced'] = (isset($returnArray['replaced'])) ? highlightChange($returnArray['ocredLine'], $ocr->replace, $returnArray['replaced']) : highlightChange($returnArray['ocredLine'], $ocr->replace);
+			$string = $returnArray['ocredLine'];
+		}
+	}
+
 	foreach($allOcr->string as $ocr){
 		// find, replace, preserveCase, caseSensitive, wholeWord
-		$pattern = ($ocr->wholeWord) ? '/((?<=\s)|\b|^)'.preg_quote($ocr->find).'($|\b|(?=\s))/i' : '/'.preg_quote($ocr->find).'/i';
+		// ((?<=\s|\W)|^) <----> ($|(?=\s|\W))
+		// (?:(?<=[\W^¿])(?=[\wá-úÁ-ÚñÑ])|(?<=[\wá-úÁ-ÚñÑ])(?=\W|$)) <----> (?:(?<=\W|^)(?=\w)|(?<=\w)(?=\W|$))
+		// (?<=^|\.|\s|,|¿|\?|\¡|\$|\·|\&|\@|\\|\#|\~|\+|\*|\-|\_|\:|\;|\=|\{|\}|\[|\]|\/|\(|\)|\||\%|\<|\>) <-----> (?=^|\.|\s|,|¿|\?|\¡|\$|\·|\&|\@|\\|\#|\~|\+|\*|\-|\_|\:|\;|\=|\{|\}|\[|\]|\/|\(|\)|\||\%|\<|\>)
+		$pattern = ($ocr->wholeWord) ? '/((?<=\W|\s|^)|\b)'.preg_quote($ocr->find).'((?=\W|\s|$)|\b)/u' : '/'.preg_quote($ocr->find).'/u';
+		if(!$ocr->caseSensitive) $pattern .= 'i';
         if(preg_match($pattern, $string, $matches)) {
-        	// echo $originalString.'<br>';
+			// ¿$string vs $originalString?
 			$returnArray['found'] = (isset($returnArray['found'])) ? highlightChange($originalString, $matches[0], $returnArray['found']) : highlightChange($originalString, $matches[0]);
 
-			// if($ocr->preserveCase) {
-   //              $ocr->replace = (startsWithUpper($matches[0])) ? ucfirst($ocr->replace) : lcfirst($ocr->replace) ;
-			// }
+			if($ocr->preserveCase) {
+                // $ocr->replace = (startsWithUpper($matches[0])) ? ucfirst($ocr->replace) : lcfirst($ocr->replace) ;
+                $ocr->replace = (startsWithUpper($matches[0])) ? firstLetterCase($ocr->replace,'u') : firstLetterCase($ocr->replace,'l');
+			}
 
 			$returnArray['ocredLine'] = preg_replace($pattern, $ocr->replace, $string);
 			$returnArray['replaced'] = (isset($returnArray['replaced'])) ? highlightChange($returnArray['ocredLine'], $ocr->replace, $returnArray['replaced']) : highlightChange($returnArray['ocredLine'], $ocr->replace);
@@ -62,7 +48,9 @@ function ocrCheck($string) {
 
 		}
 	}
-	// die();
+
+	// if(isset($returnArray['found']) && !strpos('</span>', $returnArray['found'])) $returnArray['found'] = highlightFirstLetter($returnArray['found']);
+	// if(isset($returnArray['replaced']) && !strpos('</span>', $returnArray['replaced'])) $returnArray['replaced'] = highlightFirstLetter($returnArray['replaced']);
 	return $returnArray;
 }
 
@@ -76,81 +64,83 @@ function startsWithUpper($str) {
     return mb_strtolower($chr, "windows-1252") != $chr;
 }
 
+function firstLetterCase ($str,$case) {
+	$alphaChr = false;
+	for($i = 0; $i < strlen($str) && !$alphaChr; $i++) {
+		$chr = mb_substr ($str, $i, 1, "windows-1252");	
+		$alphaChr = ctype_alpha($chr);
+	}
+	// $caseIndex = (0) ? 0 : $i-1;
+	$str[$i-1] = ($case == 'u') ? ucfirst($str[$i-1]) : lcfirst($str[$i-1]);
+	return $str;
+}
 
 
 
 function highlightChange($line, $finding, $alreadyHighlighted = NULL) {
-	$openTag = '<span class="highlight">';
+	$openTag = '<span class="ocr-highlight">';
 	$closeTag = '</span>';
 
-	$highlightedLine = str_replace($finding, $openTag.$finding.$closeTag, $line);
+	// echo($line);
+	// echo "   ->   ";
+	// echo($alreadyHighlighted);
+	// echo "   ->   ";
+	// echo($finding);
+	// echo "   ->   ";
+	
+	$highlightedLine = (!is_null($alreadyHighlighted)) ? str_ireplace($finding, $openTag.$finding.$closeTag, $line) : str_replace($finding, $openTag.$finding.$closeTag, $line);
+	// $highlightedLine = str_replace($finding, $openTag.$finding.$closeTag, $line);
 	if(!is_null($alreadyHighlighted)) {
 		$originalOpenTagPosition = mb_strpos ($alreadyHighlighted, $openTag);
 		$originalCloseTagPosition = mb_strpos (str_replace($openTag, '', $alreadyHighlighted), $closeTag, $originalOpenTagPosition);
-		// echo $alreadyHighlighted;
-		// die();
-		// echo $alreadyHighlighted."\n";
-		// echo str_replace($openTag, '', $alreadyHighlighted)."\n";
-		// echo $originalCloseTagPosition."\n";
 		$newOpenTagPosition = mb_strpos ($highlightedLine, $openTag);
 		$newCloseTagPosition = mb_strpos (str_replace($openTag, '', $highlightedLine), $closeTag, $newOpenTagPosition);
+		// echo $newOpenTagPosition.'<br/>';
+		// echo $newCloseTagPosition.'<br/>';
 		
-		// echo $alreadyHighlighted."\n";
-		// echo mb_strpos (str_replace($openTag, '', $alreadyHighlighted), $closeTag, $originalOpenTagPosition)."\n";
-
-
-		// echo mb_strpos (str_replace($openTag, '', $highlightedLine), $closeTag, $newOpenTagPosition)."\n";
-
-		// die();
-		// echo '$newCloseTagPosition '.$newCloseTagPosition."\n";
-		// echo '$originalCloseTagPosition '.$originalCloseTagPosition."\n";
-
-		// echo $line;
-		// echo $originalOpenTagPosition.'<br>'.$originalCloseTagPosition.'<br>'.$newOpenTagPosition.'<br>'.$newCloseTagPosition;
-
 		// EQUALS??
 		// CASE SENSITIVITY
 		// MB REPLACE
 
-
-		echo $line."\n";
-		if($newOpenTagPosition > $originalOpenTagPosition && $newOpenTagPosition < $originalCloseTagPosition) {
+		if($newOpenTagPosition >= $originalOpenTagPosition && $newOpenTagPosition <= $originalCloseTagPosition) {
 			// $line = substr_replace($line, $closeTag, $originalCloseTagPosition, 0);
-			$line = ($newCloseTagPosition > $originalCloseTagPosition) ? substr_replace($line, $closeTag, $newCloseTagPosition, 0) : substr_replace($line, $closeTag, $originalCloseTagPosition, 0);
+			// die();
+			$line = ($newCloseTagPosition >= $originalCloseTagPosition) ? substr_replace($line, $closeTag, $newCloseTagPosition+1, 0) : substr_replace($line, $closeTag, $originalCloseTagPosition+1, 0);
 			$line = substr_replace($line, $openTag, $originalOpenTagPosition, 0);
-		} else if($newOpenTagPosition > $originalCloseTagPosition) {
+		} else if($newOpenTagPosition >= $originalCloseTagPosition) {
+			// +1?
 			$line = substr_replace($line, $closeTag, $newCloseTagPosition, 0);
 			$line = substr_replace($line, $openTag, $originalOpenTagPosition, 0);
-		} else if($newOpenTagPosition < $originalOpenTagPosition) {
-
-			echo '$newCloseTagPosition: '.$newCloseTagPosition."\n";
-			echo '$originalCloseTagPosition: '.$originalCloseTagPosition."\n";
-			// echo '$newOpenTagPosition: '.$newOpenTagPosition."\n";
-			// echo '$originalOpenTagPosition: '.$originalOpenTagPosition."\n";
-			$line = ($newCloseTagPosition > $originalCloseTagPosition) ? mb_substr_replace($line, $closeTag, $newCloseTagPosition, 0) : mb_substr_replace($line, $closeTag, $originalCloseTagPosition, 0);
-			// echo '-----';
-			// echo $line."\n";
-			// echo $closeTag."\n";
-			
-			// echo $originalCloseTagPosition."\n";
-			// echo mb_substr_replace($line, $closeTag, $originalCloseTagPosition, 0);
-			if($newCloseTagPosition > $originalCloseTagPosition) {
-			// 	$line = mb_substr($line, 0, $newCloseTagPosition) . $closeTag . mb_substr($line, 0);
-				
-			} else {
-				
-			// 	$line = mb_substr($line, 0, $originalCloseTagPosition) . $closeTag . mb_substr($line, 0);
-			}
-			// echo $line."\n";
+		} else if($newOpenTagPosition <= $originalOpenTagPosition) {
+			// +1?
+			$line = ($newCloseTagPosition >= $originalCloseTagPosition) ? mb_substr_replace($line, $closeTag, $newCloseTagPosition, 0) : mb_substr_replace($line, $closeTag, $originalCloseTagPosition, 0);
 			$line = substr_replace($line, $openTag, $newOpenTagPosition, 0);
-			// die();
-		} else {
-
 		}
 		$highlightedLine = $line;
 	}
+
+	// echo($highlightedLine);
+	// echo "\n";
 	return $highlightedLine;
 }
+
+// function highlightFirstLetter($str) {
+// 	$openTag = '<span class="ocr-highlight">';
+// 	$closeTag = '</span>';
+
+// 	$alphaChr = false;
+// 	for($i = 0; $i < strlen($str) && !$alphaChr; $i++) {
+// 		$chr = mb_substr ($str, $i, 1, "windows-1252");	
+// 		$alphaChr = ctype_alpha($chr);
+// 	}
+// 	echo $alphaChr;
+
+// 	$str[$i-1] = $openTag.$str[$i-1].$closeTag;
+// 	return $str;
+
+	
+// 	return $highlightedLine;
+// }
 
 function mb_substr_replace($string, $replacement, $start, $length=NULL) {
     if (is_array($string)) {

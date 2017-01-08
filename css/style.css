@@ -37,7 +37,7 @@ body.modal-open {
 :-ms-input-placeholder {  
    font-style: italic; 
 }
-.panel{
+.main-body .panel{
   border:none!important;
   border-radius:7px;
   border-top-left-radius: 15px;
@@ -47,23 +47,23 @@ body.modal-open {
   background: #24242a!important;
 }
 
-.panel-heading{
+.main-body .panel-heading{
   background-color:#444853!important;
   color: #cfd4e2!important;
   border-top-left-radius: 7px;
   border-top-right-radius: 7px;
 }
 
-.panel-title{
+.main-body .panel-title{
   margin-top:4px;
   font-size:25px;
 
 }
-.panel-title>span{
+.main-body .panel-title>span{
   color:#29a1d2!important;
 }
 
-.panel-body{
+.main-body .panel-body{
   /*background-color: #24242a;*/
 }
 
@@ -509,4 +509,63 @@ i.fa-info-circle:hover {
 .nostripes > span > span, .nostripes > span:after {
   -webkit-animation: none;
   background-image: none;
+}
+
+/*myModal
+panel-group
+panel
+panel-heading
+panel-title
+panel-collapse
+panel-body*/
+#myModal .panel {
+  border-color: #24242a;
+}
+
+#myModal .panel-heading {
+  background-color: #24242a;
+  color: #29a1d2;
+}
+.panel-no-border {
+  border: none;
+  border-radius: 4px;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+}
+#myModal .ocr-corrections {
+  text-align: left;
+  border-color: #29a1d2;
+  border-radius: 4px;
+  background-color: #24242a;
+  color: #29a1d2;
+}
+
+#myModal .sub-item.list-group-item {
+
+}
+
+.ocr-highlight {
+  background-color: #ffff00;
+}
+
+#ocr-table-container {
+  min-height:200px;
+  max-height:200px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  padding: 10px;
+  font-size: 14px;
+  color: #24242a;
+}
+
+.ocr-table {
+  margin:0 auto;
+}
+
+.table-striped > tbody > tr:nth-child(2n+1) > td, .table-striped > tbody > tr:nth-child(2n+1) > th {
+   background-color: #e6e4e4;
+}
+
+.table>tbody>tr>td {
+  border-top: 1px solid #afafaf;
 }

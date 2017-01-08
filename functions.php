@@ -303,14 +303,28 @@ function fillEmptySpaceAfter ($subtitle,$segment,$cps) {
 
 // Recibe la url de un subtítulo y devuelve el subtítulo en un string.
 function getSubtitleFromUrl($url) {
+    require ('user_agent.php');
+    $url = str_replace('https://www.tusubtitulo.com', '', $url);
     // $refererUrl = 'https://www.tusubtitulo.com/serie/star-wars-rebels/3/8/2235/';
     // $curlUrl = 'https://www.tusubtitulo.com/updated/5/52632/0';
+    // http://www.tusubtitulo.com.https.w1.wbprx.com/original/53312/0
+    // https://www.tusubtitulo.com/original/53312/0
+    $serversArray = array('w1','s11','s93','s71');
+    $server = $serversArray[mt_rand(0, count($serversArray) - 1)];
+    $userAgent = random_user_agent();
+    $proxyUrl = 'http://www.tusubtitulo.com.https.'.$server.'.wbprx.com'.$url;
+
 
     $ch=curl_init();
-    curl_setopt($ch, CURLOPT_URL, $url);
-    curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
-    curl_setopt($ch, CURLOPT_ENCODING ,"windows-1252");
-    curl_setopt($ch, CURLOPT_REFERER, 'Referer:https://www.tusubtitulo.com/');
+    curl_setopt($ch, CURLOPT_URL, $proxyUrl); //orig
+    curl_setopt($ch, CURLOPT_USERAGENT, $userAgent);
+    curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+    curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 30);
+    curl_setopt($ch, CURLOPT_AUTOREFERER, true); 
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1); //orig
+    curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
+    curl_setopt($ch, CURLOPT_ENCODING ,"windows-1252"); //orig
+    curl_setopt($ch, CURLOPT_REFERER, 'http://www.tusubtitulo.com.https.'.$server.'.wbprx.com/'); //orig
 
     $curlResult = curl_exec($ch);
     if(!$curlResult){
