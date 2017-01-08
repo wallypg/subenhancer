@@ -54,16 +54,16 @@ $(document).ready(function(){
 
   $('#enhance').submit(function(event) {
 
-    // if(!$('#input-sub-file').val() && !isValidSubUrl($('#sub_url').val())) {
-    //   $.alert({
-    //       animation: 'top',
-    //       title: '<i class="fa fa-exclamation-triangle" aria-hidden="true"></i>&nbsp;&nbsp;NADA QUE OPTIMIZAR',
-    //       type: 'red',
-    //       content: 'Ingresar una URL válida o un archivo para&nbsp;optimizar.',
-    //       backgroundDismiss: true
-    //   });
-    //   return false;
-    // }
+    if(!$('#input-sub-file').val() && $('#sub_url').val() == '' ) {
+      $.alert({
+          animation: 'top',
+          title: '<i class="fa fa-exclamation-triangle" aria-hidden="true"></i>&nbsp;&nbsp;NADA QUE OPTIMIZAR',
+          type: 'red',
+          content: 'Ingresar una URL válida o un archivo para&nbsp;optimizar.',
+          backgroundDismiss: true
+      });
+      return false;
+    }
 
     if($('#input-sub-file').val() && $('#sub_url').val() != '') {
       //  && isValidSubUrl($('#sub_url').val())
@@ -79,9 +79,6 @@ $(document).ready(function(){
 
     if(!dbg) {
       event.preventDefault();
-      // console.log('a');
-      // return true;
-    // }
 
       var  srtContent;
       var file = document.getElementById("input-sub-file").files[0];
@@ -154,14 +151,18 @@ $(document).ready(function(){
         }).done(function(data){
           var data = $.parseJSON(data);
           NProgress.done();
-          $('#efficiency').html(data.efficiencyMessage);
-          $('#enhancement').html(data.enhancementMessage);
-          $('#pre-wrap').html(data.threadMessage);
-          $('#ocr-table-container').html(data.ocrCorrections);
-          $('#myModal').modal('show');
-          $('#finalFileName').val(data.filename);
-          $('#finalFileName').attr('data-temp-name', data.tempFilename);
-          // window.location = 'download.php?file='+data.tempFilename+'&name='+data.filename;
+          if(data.hasOwnProperty('alreadyEnhanced')) alreadyEnhanced();
+          if(data.hasOwnProperty('error')) console.log(data);
+          else {
+            $('#efficiency').html(data.efficiencyMessage);
+            $('#enhancement').html(data.enhancementMessage);
+            $('#pre-wrap').html(data.threadMessage);
+            $('#ocr-table-container').html(data.ocrCorrections);
+            $('#myModal').modal('show');
+            $('#finalFileName').val(data.filename);
+            $('#finalFileName').attr('data-temp-name', data.tempFilename);
+            // window.location = 'download.php?file='+data.tempFilename+'&name='+data.filename;
+          }
         });
       }
 

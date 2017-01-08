@@ -303,6 +303,7 @@ function fillEmptySpaceAfter ($subtitle,$segment,$cps) {
 
 // Recibe la url de un subtítulo y devuelve el subtítulo en un string.
 function getSubtitleFromUrl($url) {
+    $error = array('error'=>true);
     require ('user_agent.php');
     $url = str_replace('https://www.tusubtitulo.com', '', $url);
     // $refererUrl = 'https://www.tusubtitulo.com/serie/star-wars-rebels/3/8/2235/';
@@ -338,6 +339,7 @@ function getSubtitleFromUrl($url) {
 }
 
 function getSrtSubtitle($url) {
+    $error = array('error'=>true);
     require ('user_agent.php');
     $userAgent = random_user_agent();
 
@@ -364,8 +366,10 @@ function getSrtSubtitle($url) {
 }
 
 function getInternalSubtitle($filename) {
+    $error = array('error'=>true);
     $file = 'srt/original/'.((preg_match('/\.srt$/',$filename)) ? $filename : $filename.'.srt');
     if(file_exists(utf8_decode($file))) {
+    die('asd');
         $content = file_get_contents(utf8_decode($file));
         return mb_convert_encoding($content, 'utf-8', "windows-1252");
     } else {
