@@ -19,8 +19,8 @@ if(isset($_POST['info_url']) && (preg_match($validUrlPatternInfo, $_POST['info_u
 //   CURLOPT_URL => $infoUrl
 // ));
 // $curlResult = curl_exec($curlResource);
-require ('user_agent.php');
-$userAgent = random_user_agent();
+require ('modules/ua.php');
+$userAgent = randomUserAgent();
 
 $ch=curl_init();
 $proxyServer = rand(1,7);

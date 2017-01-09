@@ -1,11 +1,13 @@
 <?php
-require('functions.php');
-require('ocr.php');
+require('modules/core.php');
+require('modules/ioSub.php');
+require('modules/ocr.php');
 
 // MÉTODO DE OPTIMIZACIÓN
 $method = 1;
+
 // MODO "DEBUG"
-if(isset($_POST['dbg'])) $method = 4;  
+require('modules/debug.php');
 
 $error = array('error'=>true);
 

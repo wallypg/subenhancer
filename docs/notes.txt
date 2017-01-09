@@ -1,9 +1,9 @@
 Tareas pendientes:
+- Revisar enhance
 - Modificar Reduce para que no reduzca mas de 900 ms.
 - Evaluar si decidir el metodo de optimizacion segun la cantidad de lineas de mas de 25 CPS (3 o 4)
 - Creditos... Evaluar si poner solo al final o hacer full creditos en el lugar donde encontremos un pattern.
 - Idea, subir los subs terminados a una base para no subirlos mas a los adjuntos ni a subdivx. Y que se puedan descargar con un link. Eso va a terminar en nuestro propio subdivx, je... Sigo pensando, es una gran idea, sería "mejorar y subir" en un solo paso, para aquellos subs que no los mejoremos viendo el video... Y te devolveria como resultado un codigo para copiar en subadictos con el tag Serie Descarga y todo eso... De esa forma podriamos subir todos nuestros subtitulos mejorados en un solo paso, pero abririamos el juego del subEnhancer a los que publican las series... Para tenerlo en cuenta.
-- curl en servidor
 - campo de posicion de tiempo donde ubicar créditos
 - créditos
 - crear la descripción para la subida subdivx (avisar si supera el límite caracteres)
@@ -13,27 +13,19 @@ Tareas pendientes:
 - htaccess
 - drag and drop del archivo de subtítulo.
 - convertir xml a srt
-- admin (abm) para los datos del form
-- pasar ocr (checkbox en el form para elgir cuales pasar)
+- checkbox para elegir ocr
 - admin (abm) expresiones regulares de ocr's [memoria de traducción]
 - unidades de sentido
 - batch enhancer?
 - full wiki-adictos style. mostrar cada línea del subtitulo en campos editables y permitir que se vayan tomando (abriendo un socket para no tener que refrescar la pag, donde un usuario toma una secuencia se deshabilita para el resto)... acá volverían todas las ideas para la plataforma que nunca llegamos a implementar... 
-- funcion que equilibre lineas (separarlas despues de unirlas)	
-- Pantalla para errores
-- Manejo de errores
-
-OCR:
-1- Strings de reduce completo con "preserve case" y cambios resaltados en modal. (más de un cambio por linea)
-2- Regex de reduce
-3- Asiateam
-4- Ocr sobre unión de lineas y separado de líneas de forma equilibrada teniendo en cuenta cantidad máxima de caracteres por línea y unidades de sentido.
-
+- Ocr sobre unión de lineas y separado de líneas de forma equilibrada teniendo en cuenta cantidad máxima de caracteres por línea y unidades de sentido. (función que equilibre lineas después de separarlas y volverlas a unir).
+- json OCR: reuce, reduce@, reduce@@, unidades de sentido
+- Mejorar modal OCR
+- Admin de OCR
 - Lineas duplicadas
-- Aviso para ciertos OCR y pantalla con input para elegir acción (dejarlo como está o cambiarlo)
 - Unión de lineas cortas
 - Linea de diálogo en la misma línea:
 		- ¿Un viaje? Las vacaciones
 		terminan mañana. - Espera.
-
-- LINEAS ORIGINALES QUE SUPERAN LOS 25CPS.
+- Lineas originales que superaban los 25 cps (antes de pasar OCR)
+- Preguntar acción para ciertos OCR (dejarlo como está o cambiarlo -campo input- )

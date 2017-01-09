@@ -1,4 +1,5 @@
 <?php 
+require 'modules/debug.php';
 if (file_exists('json/data.json'))
   $dataArray = json_decode(file_get_contents('json/data.json'), true);
 ?>

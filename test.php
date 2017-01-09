@@ -1,6 +1,6 @@
 <?php 
-require ('user_agent.php');
-$userAgent = random_user_agent();
+require ('modules/ua.php');
+$userAgent = randomUserAgent();
 
 $ch = curl_init();
 curl_setopt($ch, CURLOPT_URL, $url);

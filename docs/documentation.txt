@@ -1,13 +1,13 @@
 MODO DEBUG
-> index
+> Optimización
 	Parámetros: dbg (Ej: http://[...]/subenhancer/?dbg)
 	Funcionamiento:
 		Ingreso a la URL con el parámetro "dbg" e ingreso un archivo de subtítulo para optimizar (ya sea por archivo o URL).
 		En vez de hacer la optimización a través de AJAX se dirige a enhance.php y muestra el resultado en pantalla (así como cualquier otra variable que se haya agregado para mostrarse en pantalla durante el proceso).
-> ocr
+> OCR
 	Parámetros:
-		dbg&filename= (Ej: http://[...]/subenhancer/ocr.php?dbg&filename=ocr_debug)
-		dbg&string= (Ej: http://[...]/subenhancer/ocr.php?dbg&string=Vale, habeis optimizado una linea por debug, ¿verdad?)
+		dbg&filename= (Ej: http://[...]/subenhancer/?dbg&filename=ocr_debug)
+		dbg&string= (Ej: http://[...]/subenhancer/?dbg&string=Vale, habeis optimizado una linea por debug, ¿verdad?)
 	Funcionamiento:
 		Muestra la frase analizada, el resultado, y el array retornado (con resaltado de cambios) por la función de OCR.
 		Tiene dos modos de uso:
