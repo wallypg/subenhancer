@@ -44,7 +44,7 @@ function printEnhancedSubtitle ($subtitle,$totalSequences) {
         if(isset($segment->textLine3)) echo $segment->textLine3.'<br />';//ss
         echo '<br />';//ss
     }
-    echo ($totalSequences+1)."<br />99:99:50,000 --> 99:99:59,999<br />Enhanced with Love in SubAdictos.net<br />";
+    echo ($totalSequences+1)."<br />04:08:15,016 --> 04:08:23,420<br />Enhanced with Love in SubAdictos.net<br />";
 }
 
 // Muestra el subtítulo optimizado en pantalla
@@ -59,7 +59,7 @@ function downloadEnhancedSubtitle ($subtitle,$totalSequences,$filename) {
         $sequenceString .= "\r\n";//sf
         $subtitleString .= $sequenceString;//sf
     }
-    $subtitleString .= ($totalSequences+1)."\r\n99:99:90,000 --> 99:99:99,999\r\nEnhanced with Love in SubAdictos.net\r\n";
+    $subtitleString .= ($totalSequences+1)."\r\n04:08:15,016 --> 04:08:23,420\r\nEnhanced with Love in SubAdictos.net\r\n";
 
 
     /* Descarga del subtitítulo optimizado */
@@ -81,7 +81,7 @@ function saveEnhancedSubtitle ($subtitle,$totalSequences,$filename) {
         $sequenceString .= "\r\n";//sf
         $subtitleString .= $sequenceString;//sf
     }
-    $subtitleString .= ($totalSequences+1)."\r\n99:99:90,000 --> 99:99:99,999\r\nEnhanced with Love in SubAdictos.net\r\n";
+    $subtitleString .= ($totalSequences+1)."\r\n04:08:15,016 --> 04:08:23,420\r\nEnhanced with Love in SubAdictos.net\r\n";
 
     // header("Content-Type: text/plain;charset=windows-1252");//sf
     // header('Content-Disposition: attachment; filename="'.$filename.'"');//sf
@@ -333,7 +333,7 @@ function getSubtitleFromUrl($url) {
         $error['tuSubtitleCurl'] = 'Error: "' . curl_error($ch) . '" - Code: ' . curl_errno($ch);
         die(json_encode($error));  
     }
-
+    if(strpos($curlResult,"1\n") != 1) $curlResult = "1\n".$curlResult;
     $curlResult = mb_convert_encoding($curlResult, 'utf-8', "windows-1252");
     return $curlResult;
 }
@@ -354,8 +354,6 @@ function getSrtSubtitle($url) {
     curl_setopt($ch, CURLOPT_ENCODING ,"windows-1252"); //orig
 
     $curlResult = curl_exec($ch);
-
-    $curlResult = curl_exec($ch);
     if(!$curlResult){
         // ERROR
         $error['srtSubtitleCurl'] = 'Error: "' . curl_error($ch) . '" - Code: ' . curl_errno($ch);
@@ -369,7 +367,6 @@ function getInternalSubtitle($filename) {
     $error = array('error'=>true);
     $file = 'srt/original/'.((preg_match('/\.srt$/',$filename)) ? $filename : $filename.'.srt');
     if(file_exists(utf8_decode($file))) {
-    die('asd');
         $content = file_get_contents(utf8_decode($file));
         return mb_convert_encoding($content, 'utf-8', "windows-1252");
     } else {

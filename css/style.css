@@ -135,6 +135,10 @@ input, .input-sm, .form-control.file-caption.kv-fileinput-caption{
 .small-size-input{
   text-align: center!important;
 }  
+.reset-col, .optimize-col {
+  padding-top: 3px!important;
+}
+
 @media screen and (max-width: 600px){
   .reset-col{
     padding-left:0px!important;
@@ -150,9 +154,12 @@ input, .input-sm, .form-control.file-caption.kv-fileinput-caption{
     padding-left:0px!important;
   }
 }
-@media screen and (max-width: 520px){
+@media screen and (max-width: 580px){
   .hidden-xxs{
     display:none!important;
+  }
+  .show-xxs {
+    display:inline-block!important; 
   }
 }
 
@@ -259,7 +266,7 @@ i.fa-info-circle:hover {
   /*max-width:;*/
 }
 .edit-fields {
-  padding-top:10px;
+  /*padding-top:10px;*/
   overflow: hidden;
 }
 .edit-fields i {
@@ -308,7 +315,7 @@ i.fa-info-circle:hover {
 .version {
   text-align: right;
   color: #838588;
-  padding-top: 7px
+  padding-top: 8px
 }
 
 #myModal {

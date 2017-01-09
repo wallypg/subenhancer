@@ -135,7 +135,7 @@ if(empty((array)$subtitle)) {
     $error['emptyObject'] = 'El parseo del subtítulo devolvió un objeto vacío.';
     $objectCorruption = 1;
 } else {
-    for($objectCorruption = 0, $i = 0; $objectCorruption == 0 && $i < count((array)$subtitle); $i++ ) {
+    for($objectCorruption = 0, $i = 1; $objectCorruption == 0 && $i < count((array)$subtitle); $i++ ) {
         if(!isset($subtitle->$i)) {
             $error['missingSegment'] = 'No se encuentra la secuencia '.($i+1);
             $objectCorruption = 1;
@@ -574,18 +574,20 @@ function backwardMovement ($subtitle,$arrayOfSegments,$cps,$maxVariation,$minDur
     foreach ($arrayOfSegments as $thisSegment) {
         // $previousSegment no es necesariamente el anterior a $thisSegment
         $previousSegment = $thisSegment - $level;
-        if($subtitle->$previousSegment->cps < $cps) {
-            if(checkCpsIncreaseGain($subtitle->$previousSegment,$cps,$minDuration) > checkMissingTime($subtitle->$thisSegment,$cps))  {
-                $reduceTime = checkMissingTime($subtitle->$thisSegment,$cps);
+        if(property_exists($subtitle,$previousSegment)) {
+            if($subtitle->$previousSegment->cps < $cps) {
+                if(checkCpsIncreaseGain($subtitle->$previousSegment,$cps,$minDuration) > checkMissingTime($subtitle->$thisSegment,$cps))  {
+                    $reduceTime = checkMissingTime($subtitle->$thisSegment,$cps);
+                } else {
+                    $reduceTime = checkCpsIncreaseGain($subtitle->$previousSegment,$cps,$minDuration);
+                }
+                reduceDuration ($subtitle,$thisSegment-$level,$reduceTime);
+                if($level >= 2) moveLineBackward($subtitle,$thisSegment-$level+1,$reduceTime,$maxVariation,$cps);
+                if($level == 3) moveLineBackward($subtitle,$thisSegment-1,$reduceTime,$maxVariation,$cps);
+                fillEmptySpaceBefore($subtitle,$thisSegment,$cps);
             } else {
-                $reduceTime = checkCpsIncreaseGain($subtitle->$previousSegment,$cps,$minDuration);
+                // Linea anterior nivel [-$level] supera o iguala los $cps
             }
-            reduceDuration ($subtitle,$thisSegment-$level,$reduceTime);
-            if($level >= 2) moveLineBackward($subtitle,$thisSegment-$level+1,$reduceTime,$maxVariation,$cps);
-            if($level == 3) moveLineBackward($subtitle,$thisSegment-1,$reduceTime,$maxVariation,$cps);
-            fillEmptySpaceBefore($subtitle,$thisSegment,$cps);
-        } else {
-            // Linea anterior nivel [-$level] supera o iguala los $cps
         }
     }
     return $subtitle;
@@ -595,19 +597,21 @@ function forwardMovement ($subtitle,$arrayOfSegments,$cps,$maxVariation,$minDura
     foreach ($arrayOfSegments as $thisSegment) {
         // $nextSegment no es necesariamente el siguiente a $thisSegment
         $nextSegment = $thisSegment + $level;
-        if($subtitle->$nextSegment->cps < $cps) {
-            if(checkCpsIncreaseGain($subtitle->$nextSegment,$cps,$minDuration) > checkMissingTime($subtitle->$thisSegment,$cps)) {
-                $reduceTime=checkMissingTime($subtitle->$thisSegment,$cps);
+        if(property_exists($subtitle,$nextSegment)) {
+            if($subtitle->$nextSegment->cps < $cps) {
+                if(checkCpsIncreaseGain($subtitle->$nextSegment,$cps,$minDuration) > checkMissingTime($subtitle->$thisSegment,$cps)) {
+                    $reduceTime=checkMissingTime($subtitle->$thisSegment,$cps);
+                } else {
+                    $reduceTime=checkCpsIncreaseGain($subtitle->$nextSegment,$cps,$minDuration);
+                }
+                reduceDuration ($subtitle,$nextSegment,$reduceTime);
+                if($level == 3) moveLineForward($subtitle,$thisSegment+3,$reduceTime,$maxVariation,$cps);
+                if($level >= 2) moveLineForward($subtitle,$thisSegment+2,$reduceTime,$maxVariation,$cps);
+                moveLineForward($subtitle,$thisSegment+1,$reduceTime,$maxVariation,$cps);
+                fillEmptySpaceAfter($subtitle,$thisSegment,$cps);        
             } else {
-                $reduceTime=checkCpsIncreaseGain($subtitle->$nextSegment,$cps,$minDuration);
+                // Linea siguiente nivel [$level] supera o iguala los $cps
             }
-            reduceDuration ($subtitle,$nextSegment,$reduceTime);
-            if($level == 3) moveLineForward($subtitle,$thisSegment+3,$reduceTime,$maxVariation,$cps);
-            if($level >= 2) moveLineForward($subtitle,$thisSegment+2,$reduceTime,$maxVariation,$cps);
-            moveLineForward($subtitle,$thisSegment+1,$reduceTime,$maxVariation,$cps);
-            fillEmptySpaceAfter($subtitle,$thisSegment,$cps);        
-        } else {
-            // Linea siguiente nivel [$level] supera o iguala los $cps
         }
     }
     return $subtitle;

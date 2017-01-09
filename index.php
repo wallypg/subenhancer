@@ -245,7 +245,11 @@ if (file_exists('json/data.json'))
 
                 <div class="row">
                   <div class="col-xs-3 edit-fields">
-                    <i class="fa fa-pencil fa-2" aria-hidden="true"></i>&nbsp;&nbsp;<a href="editor.php">Editar<span class="hidden-xxs">&nbsp;datos</span><span class="hidden-xs">&nbsp;guardados</span></a>
+                    <i class="fa fa-pencil fa-2" aria-hidden="true"></i>&nbsp;&nbsp;<a href="editor.php"><span class="hidden-xxs">Editar&nbsp;datos</span><span class="hidden-xs">&nbsp;guardados</span><span class="hidden show-xxs">Datos</span></a>
+                    <br>
+                    <i class="fa fa-comment fa-2" aria-hidden="true"></i>&nbsp;&nbsp;<a href="bug.php"><span class="hidden-xxs">Editor </span>OCR</a>
+                    <br>
+                    <i class="fa fa-bug fa-2" aria-hidden="true"></i>&nbsp;&nbsp;<a href="bug.php"><span class="hidden-xxs">Reportar&nbsp;bug</span><span class="hidden show-xxs">Bug</span></a>
                   </div>
                   <div class="col-xs-3 reset-col">
                     <div class="form-group align-center">
