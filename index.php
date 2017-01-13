@@ -1,381 +1,329 @@
-<?php 
-require 'modules/debug.php';
-if (file_exists('json/data.json'))
-  $dataArray = json_decode(file_get_contents('json/data.json'), true);
-?>
-<!DOCTYPE html>
-<html lang="es">
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+<?php
 
-  <title>SubEnhancer</title>
-  
-  <link rel="stylesheet" href="css/bootstrap.min.css">
-  <link rel="stylesheet" href="css/fileinput.min.css">
-  <link rel="stylesheet" href="css/jquery-confirm.css">
-  <!-- <link rel="stylesheet" href="css/bootstrap-theme.min.css"> -->
+// FIX IN PRODUCTION
+// $ips[] = '';
+// $ips[] = '';
+// if(!in_array($_SERVER['REMOTE_ADDR'], $ips)){
+// die('En mantenimiento :)');
+// }
 
-  <script src="js/jquery-3.1.1.min.js"></script>
-  <script src="js/fileinput.min.js"></script>
-  <script src="js/jquery-confirm.js"></script>
-  <script src="js/bootstrap.min.js"></script>
-  <!-- <script src="js/dropzone.js"></script> -->
-  <?php echo "<script>var dbg = ".(isset($_GET['dbg']) ? "1" : "0")."</script>\n"; ?>
-  <script src="js/script.js"></script>
-  
-  <link href="https://fonts.googleapis.com/css?family=Bitter:400,400i,700|Catamaran:300,400,500,600,700|Open+Sans:300,300i,400,400i,600,600i,700,700i|Rokkitt:400,700" rel="stylesheet">
-  <link rel="stylesheet" href="css/font-awesome.min.css">
-  <link rel="stylesheet" href="css/style.css">
-  <link rel='stylesheet' href='css/nprogress.css'/>
-</head>
-<body>
-  <form action="enhance.php" method="POST" enctype="multipart/form-data" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" id="enhance">
-    <div class="container-fluid">
-        <img src="images/adictito.png" alt="" class="adictito">
-        <div class="row centered-form">
-        <div class="col-md-12 main-body">
-          <div class="panel">
-            <div class="panel-heading">
-              <h3 class="panel-title text-center"><span>SubEnhancer</span> <small>by SubAdictos.Net</small></h3>
-            </div>
-            <div class="panel-body">
-                <div class="row">
-                  <div class="col-xs-12 col-sm-6 col-md-6">
-                    <div class="form-group">
-                      <label for="sub_url">URL del subtítulo&nbsp;&nbsp;<i class="fa fa-info-circle sub-url" aria-hidden="true"></i></label>
-                      <input type="text" name="sub_url" id="sub_url" class="form-control input-sm" placeholder="Ej: https://www.tusubtitulo.com/updated/5/20739/0">
-                    </div>
-                  </div>
-                  <label class="loose-text hidden-xs">o</label>
-                  <div class="col-xs-12 col-sm-6 col-md-6">
-                    <div class="form-group">
-                      <label class="control-label" for="sub_url">Archivo del subtítulo</label>
-                      <!-- <form action="" class="dropzone"> -->
-                      <input id="input-sub-file" name="uploaded_file" type="file" class="file" data-show-preview="false" data-show-remove="true" data-show-upload="false" multiple>
-                      <!-- </form> -->
-                    </div>
-                  </div>
-                </div>
-
-                <hr class="divider">
-
-                <div class="row">
-                  <div class="col-xs-12 col-sm-12 col-md-12">
-                    <div class="form-group">
-                      <label for="info_url">URL de la página del subtítulo (opcional)&nbsp;&nbsp;<i class="fa fa-info-circle info-url" aria-hidden="true"></i></label>
-                      <input type="text" name="info_url" id="info_url" class="form-control input-sm" placeholder="Ej: https://www.tusubtitulo.com/serie/community/3/4/367/">
-                    </div>
-                  </div>
-                  <!--  -->                  
-
-                  <div class="col-xs-6 col-sm-8 col-md-8">
-                    <div class="form-group">
-                      <label for="tv_show">Serie</label>
-                      <div class="input-group">
-                        <input type="text" name="tv_show" id="tv_show" class="form-control input-sm">
-                        <div class="input-group-btn">
-                          <button type="button" class="btn dropdown-toggle more-options" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-caret-down" aria-hidden="true"></i></button>
-                          <ul class="dropdown-menu dropdown-menu-right" data-list="tv_show">
-                            <?php foreach($dataArray['tv_show'] as $show) { ?>
-                              <li class="dropdown-item"><?=$show?></li>
-                            <?php } ?>
-                          </ul>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                  <!--  -->
-                  <div class="col-xs-3 col-sm-2 col-md-2">
-                    <div class="form-group small-size-input">
-                      <label class="align-center" for="season">Temporada</label>
-                      <input type="number" name="season" id="season" class="form-control input-sm" min="1">
-                    </div>
-                  </div>
-                  <div class="col-xs-3 col-sm-2 col-md-2">
-                    <div class="form-group small-size-input">
-                      <label for="episode_number">Episodio</label>
-                      <input type="number" name="episode_number" id="episode_number" class="form-control input-sm" min="1">
-                    </div>
-                  </div>
-                  <!--  -->
-                  <div class="col-xs-12 col-sm-12 col-md-12">
-                    <div class="form-group">
-                      <label for="episode_title">Nombre del episodio</label>
-                      <input type="text" name="episode_title" id="episode_title" class="form-control input-sm">
-                    </div>
-                  </div>
-                </div>
-
-                <hr class="divider">
-
-                <div class="row">
-                  <div class="col-xs-4 col-sm-4 col-md-4">
-                    <div class="form-group">
-                        <label for="other">Otro</label>
-                        <div class="input-group">  
-                          <input type="text" name="other" id="other" class="form-control input-sm">
-                          <div class="input-group-btn">
-                            <button type="button" class="btn dropdown-toggle more-options" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-caret-down" aria-hidden="true"></i></button>
-                            <ul class="dropdown-menu dropdown-menu-right" data-list="other">
-                              <?php foreach($dataArray['other'] as $other) { ?>
-                                <li class="dropdown-item"><?=$other?></li>
-                              <?php } ?>
-                            </ul>
-                          </div>
-                        </div>
-                    </div>
-                  </div>
-
-                  <div class="col-xs-4 col-sm-4 col-md-4">
-                    <div class="form-group">
-                        <label for="quality">Calidad</label>
-                        <div class="input-group">  
-                          <input type="text" name="quality" id="quality" class="form-control input-sm">
-                          <div class="input-group-btn">
-                            <button type="button" class="btn dropdown-toggle more-options" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-caret-down" aria-hidden="true"></i></button>
-                            <ul class="dropdown-menu dropdown-menu-right" data-list="quality">
-                              <?php foreach($dataArray['quality'] as $quality) { ?>
-                                <li class="dropdown-item"><?=$quality?></li>
-                              <?php } ?>
-                            </ul>
-                          </div>
-                        </div>
-                    </div>
-                  </div>
-                  
-                  <div class="col-xs-4 col-sm-4 col-md-4">
-                    <div class="form-group">
-                      <label for="format">Formato</label>
-                      <div class="input-group">
-                        <input type="text" name="format" id="format" class="form-control input-sm">
-                        <div class="input-group-btn">
-                          <button type="button" class="btn dropdown-toggle more-options" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-caret-down" aria-hidden="true"></i></button>
-                          <ul class="dropdown-menu dropdown-menu-right" data-list="format">
-                            <?php foreach($dataArray['format'] as $format) { ?>
-                              <li class="dropdown-item"><?=$format?></li>
-                            <?php } ?>
-                          </ul>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                
-                  <div class="col-xs-4 col-sm-4 col-md-4">
-                    <div class="form-group">
-                      <label for="codec">Codec</label>
-                        <div class="input-group"> 
-                          <input type="text" name="codec" id="codec" class="form-control input-sm">
-                          <div class="input-group-btn">
-                            <button type="button" class="btn dropdown-toggle more-options" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-caret-down" aria-hidden="true"></i></button>
-                            <ul class="dropdown-menu dropdown-menu-right" data-list="codec">
-                              <?php foreach($dataArray['codec'] as $codec) { ?>
-                                <li class="dropdown-item"><?=$codec?></li>
-                              <?php } ?>
-                            </ul>
-                          </div>
-                        </div>
-                    </div>
-                  </div>
-
-                  <div class="col-xs-4 col-sm-4 col-md-4">
-                    <div class="form-group">
-                        <label for="rip_group">Grupo</label>
-                        <div class="input-group">
-                          <input type="text" name="rip_group" id="rip_group" class="form-control input-sm">
-                          <div class="input-group-btn">
-                            <button type="button" class="btn dropdown-toggle more-options" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-caret-down" aria-hidden="true"></i></button>
-                            <ul class="dropdown-menu dropdown-menu-right" data-list="rip_group">
-                              <?php foreach($dataArray['rip_group'] as $group) { ?>
-                                <li class="dropdown-item"><?=$group?></li>
-                              <?php } ?>
-                            </ul>
-                          </div>
-                        </div>
-                    </div>
-                  </div>
-
-                  <div class="col-xs-4 col-sm-4 col-md-4">
-                    <div class="form-group">
-                        <label for="ocr" class="ocr-label">OCR</label>
-                        <div class="ocr">
-                          <input type="checkbox" name="ocr" id="ocr" value="true" class="form-control ocr-checkbox" >
-                        </div>
-                    </div>
-                  </div>
-                  
-                  <!--  -->
-                  <div class="col-xs-12 col-sm-12 col-md-12">
-                    <div class="form-group">
-                        <label for="editor">Correctores</label>
-                        <div class="input-group">  
-                          <input type="text" name="editor" id="editor" class="form-control input-sm">
-                          <div class="input-group-btn">
-                            <button type="button" class="btn dropdown-toggle more-options" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-caret-down" aria-hidden="true"></i></button>
-                            <ul class="dropdown-menu dropdown-menu-right" data-list="editor">
-                              <?php foreach($dataArray['editor'] as $editor) { ?>
-                                <li class="dropdown-item"><?=$editor?></li>
-                              <?php } ?>
-                            </ul>
-                          </div>
-                        </div>
-                    </div>
-                  </div>
-                  <!--  -->
-                  <div class="col-xs-12 col-sm-12 col-md-12">
-                    <div class="form-group">
-                      <label for="translation">Traducción original</label>
-                      <div class="input-group">
-                        <input type="text" name="translation" id="translation" class="form-control input-sm">
-                        <div class="input-group-btn">
-                          <button type="button" class="btn dropdown-toggle more-options" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-caret-down" aria-hidden="true"></i></button>
-                          <ul class="dropdown-menu dropdown-menu-right" data-list="translation">
-                            <?php foreach($dataArray['translation'] as $translation) { ?>
-                              <li class="dropdown-item"><?=$translation?></li>
-                            <?php } ?>
-                          </ul>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <hr class="divider">
-
-                <div class="row">
-                  <div class="col-xs-3 edit-fields">
-                    <i class="fa fa-pencil fa-2" aria-hidden="true"></i>&nbsp;&nbsp;<a href="editor.php"><span class="hidden-xxs">Editar&nbsp;datos</span><span class="hidden-xs">&nbsp;guardados</span><span class="hidden show-xxs">Datos</span></a>
-                    <br>
-                    <i class="fa fa-comment fa-2" aria-hidden="true"></i>&nbsp;&nbsp;<a href="bug.php"><span class="hidden-xxs">Editor </span>OCR</a>
-                    <br>
-                    <i class="fa fa-bug fa-2" aria-hidden="true"></i>&nbsp;&nbsp;<a href="bug.php"><span class="hidden-xxs">Reportar&nbsp;bug</span><span class="hidden show-xxs">Bug</span></a>
-                  </div>
-                  <div class="col-xs-3 reset-col">
-                    <div class="form-group align-center">
-                      <input type="reset" id="reset-button" value="LIMPIAR" class="btn btn-info reset-button">
-                    </div>
-                  </div>
-                  <div class="col-xs-3 optimize-col">
-                    <div class="form-group align-center">
-                      <input type="submit" id="optimize-button" value="OPTIMIZAR" class="btn btn-info optimize-button">
-                    </div>
-                  </div>
-                  <div class="col-xs-3 version">
-                    v170108.1
-                    <!-- v161231.2 -->
-                  </div>
-                </div>
-                
-                <?php if(isset($_GET['dbg'])) echo "<input type=\"hidden\" name=\"dbg\" >\n"; ?>
-                <!-- <div class="row">
-                  <div class="col-xs-4"></div>
-                  <div class="col-xs-4">
-                    <div class="form-group align-center">
-                      <input type="reset" id="reset-button" value="LIMPIAR CAMPOS" class="btn btn-info optimize-button">
-                    </div>
-                  </div>
-                  <div class="col-xs-4 version"></div>
-                </div> -->
-              
-            </div>
-          </div>
-        </div>
-      </div>
-  <!-- Modal -->
-  <div id="myModal" class="modal fade" role="dialog">
-    <div class="modal-dialog">
-
-      <!-- Modal content-->
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h4 class="modal-title">¡Subtítulo optimizado!</h4>
-        </div>
-        <div class="modal-body">
-          <div id="efficiency"></div>
-          <div id="enhancement"></div>
-          <p>
-            <label>Nombre del archivo:</label>
-            <input type="text" id="finalFileName" class="form-control" />
-          </p>
-          <!-- <div class="panel-group">
-            <div class="panel panel-default">
-              <div class="panel-heading">
-                <h4 class="panel-title">
-                  <a class="pull-left" data-toggle="collapse" href="#collapse1">Correcciones de OCR</a>
-                  <div class="clearfix"></div>
-                </h4>
-                
-              </div>
-              <div id="collapse1" class="panel-collapse collapse">
-                <div class="panel-body">Panel Body</div>
-                <div class="panel-footer">Panel Footer</div>
-              </div>
-            </div>
-          </div> -->
-
-    <div class="list-group panel panel-no-border">
-        <a href="#category-0" class="list-group-item active-toggle collapsed ocr-corrections" data-toggle="collapse" aria-expanded="false">Correcciones de OCR <span class="pull-right"><i class="fa fa-caret-down" aria-hidden="true"></i></span></a>
-        <div class="collapse" id="category-0" aria-expanded="false" style="height: 0px;">
-            <div id="ocr-table-container">
-              
-            </div>
-            <!-- <li class="sub-item list-group-item">Agua mineral</li>
-            <li class="sub-item list-group-item">Gaseosa</li>
-            <li class="sub-item list-group-item">Leche</li>
-            <li class="sub-item list-group-item">Vodka</li> -->
-        </div>
-        <!-- <a href="#category-1" class="list-group-item active-toggle collapsed" data-toggle="collapse" data-parent="#MainMenu" aria-expanded="false">Frutas/Verduras&nbsp;<i class="fa fa-fw fa-caret-down"></i></a>
-        <div class="collapse" id="category-1" aria-expanded="false" style="height: 0px;">
-            <a href="product.php?id=6" class="sub-item list-group-item">Manzana</a>
-            <a href="product.php?id=5" class="sub-item list-group-item">Tomate</a>
-        </div>
-        <a href="#category-2" class="list-group-item active-toggle collapsed" data-toggle="collapse" data-parent="#MainMenu" aria-expanded="false">Alimentos&nbsp;<i class="fa fa-fw fa-caret-down"></i></a>
-        <div class="collapse" id="category-2" aria-expanded="false" style="height: 0px;">
-            <a href="product.php?id=8" class="sub-item list-group-item">Arroz</a>
-            <a href="product.php?id=54" class="sub-item list-group-item">Galletitas</a>
-            <a href="product.php?id=55" class="sub-item list-group-item">Galletitas</a>
-            <a href="product.php?id=7" class="sub-item list-group-item">Hamburguesas</a>
-            <a href="product.php?id=1" class="sub-item list-group-item">Pan Lactal de Salvado</a>
-            <a href="product.php?id=48" class="sub-item list-group-item">Pepitos</a>
-            <a href="product.php?id=61" class="sub-item list-group-item">Serenito</a>
-        </div> -->
-    </div>
+// ERRORS
+// ini_set('display_errors', 1);
+// ini_set('display_startup_errors', 1);
+// error_reporting(E_ALL);
 
 
-          <p><pre id="pre-wrap" class="highlight"></pre></p>
-        </div>
-        <div class="modal-footer">
-          <div class="pull-left">
-            <button type="button" class="btn btn-default download-btn pull-left" data-dismiss="modal"><i class="fa fa-arrow-circle-down" aria-hidden="true"></i>&nbsp;Descargar</button>
-          </div>
-          <div>
-            <button class="btn copy-btn" data-clipboard-target="#pre-wrap" data-toggle="tooltip" data-placement="left" title="¡Copiado!"><i class="fa fa-clipboard" aria-hidden="true"></i>&nbsp;Copiar</button>
-          </div>
-          <div>
-            <button type="button" class="btn btn-default close-btn" data-dismiss="modal">Cerrar</button>
-          </div>
-        </div>
-      </div>
+/**
+ * CodeIgniter
+ *
+ * An open source application development framework for PHP
+ *
+ * This content is released under the MIT License (MIT)
+ *
+ * Copyright (c) 2014 - 2017, British Columbia Institute of Technology
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in
+ * all copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+ * THE SOFTWARE.
+ *
+ * @package	CodeIgniter
+ * @author	EllisLab Dev Team
+ * @copyright	Copyright (c) 2008 - 2014, EllisLab, Inc. (https://ellislab.com/)
+ * @copyright	Copyright (c) 2014 - 2017, British Columbia Institute of Technology (http://bcit.ca/)
+ * @license	http://opensource.org/licenses/MIT	MIT License
+ * @link	https://codeigniter.com
+ * @since	Version 1.0.0
+ * @filesource
+ */
 
-    </div>
-  </div>
-    </div>
-  </form>
+/*
+ *---------------------------------------------------------------
+ * APPLICATION ENVIRONMENT
+ *---------------------------------------------------------------
+ *
+ * You can load different configurations depending on your
+ * current environment. Setting the environment also influences
+ * things like logging and error reporting.
+ *
+ * This can be set to anything, but default usage is:
+ *
+ *     development
+ *     testing
+ *     production
+ *
+ * NOTE: If you change these, also change the error_reporting() code below
+ */
+	define('ENVIRONMENT', isset($_SERVER['CI_ENV']) ? $_SERVER['CI_ENV'] : 'development');
 
-  <div id="loading-info-overlay">
-    <div>
-      <div class="loading-animation">
-        <div class="meter animate">
-          <span style="width: 100%"><span></span></span>
-        </div>
-      </div>
-    </div>
-  </div>
+/*
+ *---------------------------------------------------------------
+ * ERROR REPORTING
+ *---------------------------------------------------------------
+ *
+ * Different environments will require different levels of error reporting.
+ * By default development will show errors but testing and live will hide them.
+ */
+switch (ENVIRONMENT)
+{
+	case 'development':
+		error_reporting(-1);
+		ini_set('display_errors', 1);
+	break;
 
-  <script src="js/clipboard.min.js"></script>
-  <script src='js/nprogress.js'></script>
-</body>
-</html>
+	case 'testing':
+	case 'production':
+		ini_set('display_errors', 0);
+		if (version_compare(PHP_VERSION, '5.3', '>='))
+		{
+			error_reporting(E_ALL & ~E_NOTICE & ~E_DEPRECATED & ~E_STRICT & ~E_USER_NOTICE & ~E_USER_DEPRECATED);
+		}
+		else
+		{
+			error_reporting(E_ALL & ~E_NOTICE & ~E_STRICT & ~E_USER_NOTICE);
+		}
+	break;
+
+	default:
+		header('HTTP/1.1 503 Service Unavailable.', TRUE, 503);
+		echo 'The application environment is not set correctly.';
+		exit(1); // EXIT_ERROR
+}
+
+/*
+ *---------------------------------------------------------------
+ * SYSTEM DIRECTORY NAME
+ *---------------------------------------------------------------
+ *
+ * This variable must contain the name of your "system" directory.
+ * Set the path if it is not in the same directory as this file.
+ */
+	$system_path = 'system';
+
+/*
+ *---------------------------------------------------------------
+ * APPLICATION DIRECTORY NAME
+ *---------------------------------------------------------------
+ *
+ * If you want this front controller to use a different "application"
+ * directory than the default one you can set its name here. The directory
+ * can also be renamed or relocated anywhere on your server. If you do,
+ * use an absolute (full) server path.
+ * For more info please see the user guide:
+ *
+ * https://codeigniter.com/user_guide/general/managing_apps.html
+ *
+ * NO TRAILING SLASH!
+ */
+	$application_folder = 'application';
+
+/*
+ *---------------------------------------------------------------
+ * VIEW DIRECTORY NAME
+ *---------------------------------------------------------------
+ *
+ * If you want to move the view directory out of the application
+ * directory, set the path to it here. The directory can be renamed
+ * and relocated anywhere on your server. If blank, it will default
+ * to the standard location inside your application directory.
+ * If you do move this, use an absolute (full) server path.
+ *
+ * NO TRAILING SLASH!
+ */
+	$view_folder = '';
+
+
+/*
+ * --------------------------------------------------------------------
+ * DEFAULT CONTROLLER
+ * --------------------------------------------------------------------
+ *
+ * Normally you will set your default controller in the routes.php file.
+ * You can, however, force a custom routing by hard-coding a
+ * specific controller class/function here. For most applications, you
+ * WILL NOT set your routing here, but it's an option for those
+ * special instances where you might want to override the standard
+ * routing in a specific front controller that shares a common CI installation.
+ *
+ * IMPORTANT: If you set the routing here, NO OTHER controller will be
+ * callable. In essence, this preference limits your application to ONE
+ * specific controller. Leave the function name blank if you need
+ * to call functions dynamically via the URI.
+ *
+ * Un-comment the $routing array below to use this feature
+ */
+	// The directory name, relative to the "controllers" directory.  Leave blank
+	// if your controller is not in a sub-directory within the "controllers" one
+	// $routing['directory'] = '';
+
+	// The controller class file name.  Example:  mycontroller
+	// $routing['controller'] = '';
+
+	// The controller function you wish to be called.
+	// $routing['function']	= '';
+
+
+/*
+ * -------------------------------------------------------------------
+ *  CUSTOM CONFIG VALUES
+ * -------------------------------------------------------------------
+ *
+ * The $assign_to_config array below will be passed dynamically to the
+ * config class when initialized. This allows you to set custom config
+ * items or override any default config values found in the config.php file.
+ * This can be handy as it permits you to share one application between
+ * multiple front controller files, with each file containing different
+ * config values.
+ *
+ * Un-comment the $assign_to_config array below to use this feature
+ */
+	// $assign_to_config['name_of_config_item'] = 'value of config item';
+
+
+
+// --------------------------------------------------------------------
+// END OF USER CONFIGURABLE SETTINGS.  DO NOT EDIT BELOW THIS LINE
+// --------------------------------------------------------------------
+
+/*
+ * ---------------------------------------------------------------
+ *  Resolve the system path for increased reliability
+ * ---------------------------------------------------------------
+ */
+
+	// Set the current directory correctly for CLI requests
+	if (defined('STDIN'))
+	{
+		chdir(dirname(__FILE__));
+	}
+
+	if (($_temp = realpath($system_path)) !== FALSE)
+	{
+		$system_path = $_temp.DIRECTORY_SEPARATOR;
+	}
+	else
+	{
+		// Ensure there's a trailing slash
+		$system_path = strtr(
+			rtrim($system_path, '/\\'),
+			'/\\',
+			DIRECTORY_SEPARATOR.DIRECTORY_SEPARATOR
+		).DIRECTORY_SEPARATOR;
+	}
+
+	// Is the system path correct?
+	if ( ! is_dir($system_path))
+	{
+		header('HTTP/1.1 503 Service Unavailable.', TRUE, 503);
+		echo 'Your system folder path does not appear to be set correctly. Please open the following file and correct this: '.pathinfo(__FILE__, PATHINFO_BASENAME);
+		exit(3); // EXIT_CONFIG
+	}
+
+/*
+ * -------------------------------------------------------------------
+ *  Now that we know the path, set the main path constants
+ * -------------------------------------------------------------------
+ */
+	// The name of THIS file
+	define('SELF', pathinfo(__FILE__, PATHINFO_BASENAME));
+
+	// Path to the system directory
+	define('BASEPATH', $system_path);
+
+	// Path to the front controller (this file) directory
+	define('FCPATH', dirname(__FILE__).DIRECTORY_SEPARATOR);
+
+	// Name of the "system" directory
+	define('SYSDIR', basename(BASEPATH));
+
+	// The path to the "application" directory
+	if (is_dir($application_folder))
+	{
+		if (($_temp = realpath($application_folder)) !== FALSE)
+		{
+			$application_folder = $_temp;
+		}
+		else
+		{
+			$application_folder = strtr(
+				rtrim($application_folder, '/\\'),
+				'/\\',
+				DIRECTORY_SEPARATOR.DIRECTORY_SEPARATOR
+			);
+		}
+	}
+	elseif (is_dir(BASEPATH.$application_folder.DIRECTORY_SEPARATOR))
+	{
+		$application_folder = BASEPATH.strtr(
+			trim($application_folder, '/\\'),
+			'/\\',
+			DIRECTORY_SEPARATOR.DIRECTORY_SEPARATOR
+		);
+	}
+	else
+	{
+		header('HTTP/1.1 503 Service Unavailable.', TRUE, 503);
+		echo 'Your application folder path does not appear to be set correctly. Please open the following file and correct this: '.SELF;
+		exit(3); // EXIT_CONFIG
+	}
+
+	define('APPPATH', $application_folder.DIRECTORY_SEPARATOR);
+
+	// The path to the "views" directory
+	if ( ! isset($view_folder[0]) && is_dir(APPPATH.'views'.DIRECTORY_SEPARATOR))
+	{
+		$view_folder = APPPATH.'views';
+	}
+	elseif (is_dir($view_folder))
+	{
+		if (($_temp = realpath($view_folder)) !== FALSE)
+		{
+			$view_folder = $_temp;
+		}
+		else
+		{
+			$view_folder = strtr(
+				rtrim($view_folder, '/\\'),
+				'/\\',
+				DIRECTORY_SEPARATOR.DIRECTORY_SEPARATOR
+			);
+		}
+	}
+	elseif (is_dir(APPPATH.$view_folder.DIRECTORY_SEPARATOR))
+	{
+		$view_folder = APPPATH.strtr(
+			trim($view_folder, '/\\'),
+			'/\\',
+			DIRECTORY_SEPARATOR.DIRECTORY_SEPARATOR
+		);
+	}
+	else
+	{
+		header('HTTP/1.1 503 Service Unavailable.', TRUE, 503);
+		echo 'Your view folder path does not appear to be set correctly. Please open the following file and correct this: '.SELF;
+		exit(3); // EXIT_CONFIG
+	}
+
+	define('VIEWPATH', $view_folder.DIRECTORY_SEPARATOR);
+
+/*
+ * --------------------------------------------------------------------
+ * LOAD THE BOOTSTRAP FILE
+ * --------------------------------------------------------------------
+ *
+ * And away we go...
+ */
+require_once BASEPATH.'core/CodeIgniter.php';

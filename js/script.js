@@ -90,7 +90,7 @@ $(document).ready(function(){
               // document.getElementById("fileContents").innerHTML = evt.target.result;
               $.ajax({
                 method: "POST",
-                url: "enhance.php",
+                url: baseUrl+"subenhancer/enhance",
                 data: {
                   sub_url: $('[name="sub_url"]').val(),
                   ocr: $('[name="ocr"]').is(':checked'),
@@ -132,7 +132,7 @@ $(document).ready(function(){
         NProgress.start();
         $.ajax({
           method: "POST",
-          url: "enhance.php",
+          url: baseUrl+"subenhancer/enhance",
           data: {
             sub_url: $('[name="sub_url"]').val(),
             ocr: $('[name="ocr"]').is(':checked'),
@@ -232,7 +232,8 @@ function showLoading() {
 };
 
 function ajaxRequestInfo(info_url,sub_url){
-  $.post("subtitleData.php", { info_url : info_url, sub_url : sub_url }).done(function(data){
+  $.post(baseUrl+"subenhancer/subtitleData", { info_url : info_url, sub_url : sub_url }).done(function(data){
+    console.log(data);
       try {
         JSON.parse(data);
       } catch (event) {
