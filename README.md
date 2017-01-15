@@ -1,2 +1,1 @@
-# subsero
-## Subtitles... *Enhancement. Recollection. Orchestration.*
+# SubtitleHUB
