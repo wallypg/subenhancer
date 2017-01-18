@@ -12,11 +12,12 @@ function runMethod1 ($subtitle,$totalSegmentsOverCps,$cps,$maxVariation,$minDura
     $totalSegmentsOverCps = checkLinesOverCps($subtitle,$totalSegmentsOverCps,$cps);
     foreach ($totalSegmentsOverCps as $segmentOverCps) fillEmptySpaceAfter($subtitle,$segmentOverCps,$cps);
     $totalSegmentsOverCps = checkLinesOverCps($subtitle,$totalSegmentsOverCps,$cps);
-
+    
     for($level = 1; $level <= 3; $level++) {
         backwardMovement ($subtitle,$totalSegmentsOverCps,$cps,$maxVariation,$minDuration,$level);
         $totalSegmentsOverCps = checkLinesOverCps($subtitle,$totalSegmentsOverCps,$cps);
     }
+    return $subtitle;
 
     for($level = 1; $level <= 3; $level++) {
         forwardMovement ($subtitle,$totalSegmentsOverCps,$cps,$maxVariation,$minDuration,$level);
