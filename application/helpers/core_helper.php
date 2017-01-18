@@ -12,8 +12,8 @@ function backwardMovement ($subtitle,$arrayOfSegments,$cps,$maxVariation,$minDur
         // $previousSegment no es necesariamente el anterior a $thisSegment
         $previousSegment = $thisSegment - $level;
         if(property_exists($subtitle,$previousSegment)) {
+            
             $adjustCps = true;
-
             if($level >= 2) {
                 $freeSpace = checkAvailableTimeAfter($subtitle,$previousSegment);
                 $missingTime = checkMissingTime ($subtitle->$thisSegment,$cps);
@@ -23,10 +23,12 @@ function backwardMovement ($subtitle,$arrayOfSegments,$cps,$maxVariation,$minDur
                     // Hay tiempo suficiente entre -1 y -2 para que 0 alcance $cps
                     // Corro -1 el tiempo necesario y lleno el espacio antes de 0
                     moveLineBackward($subtitle,$previousSegment+1,$missingTime,$maxVariation,$cps);
+                    if($level == 3) moveLineBackward($subtitle,$previousSegment+2,$missingTime,$maxVariation,$cps);
                 } else {
                     if($freeSpace > 1) {
                         // No alcanza pero ayuda (correr -1 y llenar espacio antes de 0)
                         moveLineBackward($subtitle,$previousSegment+1,$freeSpace,$maxVariation,$cps);
+                        if($level == 3) moveLineBackward($subtitle,$previousSegment+2,$freeSpace,$maxVariation,$cps);
                     }
                     // else: No hay tiempo entre medio
                 }
@@ -60,6 +62,32 @@ function forwardMovement ($subtitle,$arrayOfSegments,$cps,$maxVariation,$minDura
         // $nextSegment no es necesariamente el siguiente a $thisSegment
         $nextSegment = $thisSegment + $level;
         if(property_exists($subtitle,$nextSegment)) {
+
+            // HACER MISMO ARREGLO PARA forwardMovement
+            // $adjustCps = true;
+            // if($level >= 2) {
+            //     $freeSpace = checkAvailableTimeAfter($subtitle,$previousSegment);
+            //     $missingTime = checkMissingTime ($subtitle->$thisSegment,$cps);
+
+            //     if($freeSpace >= $missingTime) {
+            //         $adjustCps = false;
+            //         // Hay tiempo suficiente entre -1 y -2 para que 0 alcance $cps
+            //         // Corro -1 el tiempo necesario y lleno el espacio antes de 0
+            //         moveLineBackward($subtitle,$previousSegment+1,$missingTime,$maxVariation,$cps);
+            //         if($level == 3) moveLineBackward($subtitle,$previousSegment+2,$missingTime,$maxVariation,$cps);
+            //     } else {
+            //         if($freeSpace > 1) {
+            //             // No alcanza pero ayuda (correr -1 y llenar espacio antes de 0)
+            //             moveLineBackward($subtitle,$previousSegment+1,$freeSpace,$maxVariation,$cps);
+            //             if($level == 3) moveLineBackward($subtitle,$previousSegment+2,$freeSpace,$maxVariation,$cps);
+            //         }
+            //         // else: No hay tiempo entre medio
+            //     }
+            //     fillEmptySpaceBefore($subtitle,$thisSegment,$cps);
+            // }
+
+
+
             if($subtitle->$nextSegment->cps < $cps) {
                 if(checkCpsIncreaseGain($subtitle->$nextSegment,$cps,$minDuration) > checkMissingTime($subtitle->$thisSegment,$cps)) {
                     $reduceTime=checkMissingTime($subtitle->$thisSegment,$cps);
@@ -74,6 +102,8 @@ function forwardMovement ($subtitle,$arrayOfSegments,$cps,$maxVariation,$minDura
             } else {
                 // Linea siguiente nivel [$level] supera o iguala los $cps
             }
+
+
         }
     }
     return $subtitle;
