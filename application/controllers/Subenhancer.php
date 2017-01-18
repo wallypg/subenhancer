@@ -320,11 +320,12 @@ class Subenhancer extends CI_Controller {
 		// CHEQUEO INTEGRIDAD DEL OBJETO
 		$objectCorruption = 0;
 
-		if(empty((array)$subtitle)) {
+		$arrayCastedSubtitle = (array)$subtitle;
+		if(empty($arrayCastedSubtitle)) {
 		    $error['emptyObject'] = 'El parseo del subtítulo devolvió un objeto vacío.';
 		    $objectCorruption = 1;
 		} else {
-		    for($objectCorruption = 0, $i = 0; $objectCorruption == 0 && $i < count((array)$subtitle); $i++ ) {
+		    for($objectCorruption = 0, $i = 0; $objectCorruption == 0 && $i < count($arrayCastedSubtitle); $i++ ) {
 		        if(!isset($subtitle->$i)) {
 		            $error['missingSegment'] = 'No se encuentra la secuencia '.($i+1);
 		            $objectCorruption = 1;
@@ -354,7 +355,7 @@ class Subenhancer extends CI_Controller {
 		}
 		$ocrTable .= '</table>';
 
-		$totalSequences = count((array)$subtitle);
+		$totalSequences = count($arrayCastedSubtitle);
 		$originalLinesOverCps = count($totalSegmentsOverCps);
 		/* PROPIEDADES DE CADA SEGMENTO DEL SUBTÍTULO */
 		// [sequence]

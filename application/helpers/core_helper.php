@@ -63,28 +63,27 @@ function forwardMovement ($subtitle,$arrayOfSegments,$cps,$maxVariation,$minDura
         $nextSegment = $thisSegment + $level;
         if(property_exists($subtitle,$nextSegment)) {
 
-            // HACER MISMO ARREGLO PARA forwardMovement
-            // $adjustCps = true;
-            // if($level >= 2) {
-            //     $freeSpace = checkAvailableTimeAfter($subtitle,$previousSegment);
-            //     $missingTime = checkMissingTime ($subtitle->$thisSegment,$cps);
+            $adjustCps = true;
+            if($level >= 2) {
+                $freeSpace = checkAvailableTimeBefore($subtitle,$nextSegment);
+                $missingTime = checkMissingTime ($subtitle->$thisSegment,$cps);
 
-            //     if($freeSpace >= $missingTime) {
-            //         $adjustCps = false;
-            //         // Hay tiempo suficiente entre -1 y -2 para que 0 alcance $cps
-            //         // Corro -1 el tiempo necesario y lleno el espacio antes de 0
-            //         moveLineBackward($subtitle,$previousSegment+1,$missingTime,$maxVariation,$cps);
-            //         if($level == 3) moveLineBackward($subtitle,$previousSegment+2,$missingTime,$maxVariation,$cps);
-            //     } else {
-            //         if($freeSpace > 1) {
-            //             // No alcanza pero ayuda (correr -1 y llenar espacio antes de 0)
-            //             moveLineBackward($subtitle,$previousSegment+1,$freeSpace,$maxVariation,$cps);
-            //             if($level == 3) moveLineBackward($subtitle,$previousSegment+2,$freeSpace,$maxVariation,$cps);
-            //         }
-            //         // else: No hay tiempo entre medio
-            //     }
-            //     fillEmptySpaceBefore($subtitle,$thisSegment,$cps);
-            // }
+                if($freeSpace >= $missingTime) {
+                    $adjustCps = false;
+                    // Hay tiempo suficiente entre -1 y -2 para que 0 alcance $cps
+                    // Corro -1 el tiempo necesario y lleno el espacio antes de 0
+                    moveLineForward($subtitle,$nextSegment-1,$missingTime,$maxVariation,$cps);
+                    if($level == 3) moveLineForward($subtitle,$nextSegment-2,$missingTime,$maxVariation,$cps);
+                } else {
+                    if($freeSpace > 1) {
+                        // No alcanza pero ayuda (correr -1 y llenar espacio antes de 0)
+                        moveLineForward($subtitle,$nextSegment-1,$freeSpace,$maxVariation,$cps);
+                        if($level == 3) moveLineForward($subtitle,$nextSegment-2,$freeSpace,$maxVariation,$cps);
+                    }
+                    // else: No hay tiempo entre medio
+                }
+                fillEmptySpaceAfter($subtitle,$thisSegment,$cps);
+            }
 
 
 

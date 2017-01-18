@@ -14,7 +14,8 @@
         "Shooter",
         "Aftermath",
         "Suits",
-        "ocr_debug.sr"
+        "ocr_debug.sr",
+        "suits_06x06.sr"
     ],
     "codec": [
         "XviD",
@@ -96,6 +97,10 @@
         "enhancedSubtitle.srt",
         "enhancedSubtitle.srt",
         "enhancedSubtitle.srt",
-        "enhancedSubtitle.srt"
+        "enhancedSubtitle.srt",
+        "suits_06x06.sr.srt",
+        "suits_06x06.sr.srt",
+        "suits_06x06.sr.srt",
+        "suits_06x06.sr.srt"
     ]
 }
