@@ -230,6 +230,7 @@ function checkAllUnderMinDuration ($subtitle,$minDuration) {
 // IMPORTANTE: Llamar a esta funcion solo cuando la línea supera los X cps
 // Recibe el subtítulo, un segmento y los cps. Reduce los cps de dicha línea hasta alcanzar el límite. No devuelve nada.
 function setToLimitCps ($subtitle,$segment,$cps) {
+    // Limitar a minDuration -TODO-
     $subtitle->$segment->sequenceDuration = checkNeededTime($subtitle->$segment,$cps);
     $subtitle->$segment->endTimeInMilliseconds = $subtitle->$segment->startTimeInMilliseconds + $subtitle->$segment->sequenceDuration;
     updateSequenceCps($subtitle,$segment);
@@ -255,6 +256,7 @@ function checkCpsIncreaseGain ($segment,$cps,$minDuration) {
 
 // Recibe el subtítulo, un segmento y una cantidad de milisegundos. Reduce la duración de dicha línea en esa cantidad de milisegundos.
 function reduceDuration ($subtitle,$segment,$milliseconds) {
+    // Limitar a minDuration -TODO-
     $subtitle->$segment->sequenceDuration -= $milliseconds;
     $subtitle->$segment->endTimeInMilliseconds = $subtitle->$segment->startTimeInMilliseconds + $subtitle->$segment->sequenceDuration;
     updateSequenceCps($subtitle,$segment);
