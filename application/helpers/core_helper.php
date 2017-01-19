@@ -230,10 +230,12 @@ function checkAllUnderMinDuration ($subtitle,$minDuration) {
 // IMPORTANTE: Llamar a esta funcion solo cuando la línea supera los X cps
 // Recibe el subtítulo, un segmento y los cps. Reduce los cps de dicha línea hasta alcanzar el límite. No devuelve nada.
 function setToLimitCps ($subtitle,$segment,$cps) {
-    // Limitar a minDuration -TODO-
-    $subtitle->$segment->sequenceDuration = checkNeededTime($subtitle->$segment,$cps);
-    $subtitle->$segment->endTimeInMilliseconds = $subtitle->$segment->startTimeInMilliseconds + $subtitle->$segment->sequenceDuration;
-    updateSequenceCps($subtitle,$segment);
+    // Limitar a $minDuration?
+    // if(checkNeededTime($subtitle->$segment,$cps) >= $minDuration) {
+        $subtitle->$segment->sequenceDuration = checkNeededTime($subtitle->$segment,$cps);
+        $subtitle->$segment->endTimeInMilliseconds = $subtitle->$segment->startTimeInMilliseconds + $subtitle->$segment->sequenceDuration;
+        updateSequenceCps($subtitle,$segment);        
+    // }
 }
 
 // IMPORTANTE: Llamar a esta funcion solo cuando la línea tiene menos de $cps
@@ -241,23 +243,18 @@ function setToLimitCps ($subtitle,$segment,$cps) {
 function checkCpsIncreaseGain ($segment,$cps,$minDuration) {
     $idealSequenceDuration = checkNeededTime($segment,$cps);
     if ($idealSequenceDuration > $minDuration)
-        $requiredSequenceDuration = $segment->sequenceDuration - $idealSequenceDuration;
+        $spareMilliseconds = $segment->sequenceDuration - $idealSequenceDuration;
     else
-        $requiredSequenceDuration = $segment->sequenceDuration - $minDuration;
+        $spareMilliseconds = $segment->sequenceDuration - $minDuration;
         
-    return $requiredSequenceDuration;
-    
-    /*
-    if ($requiredSequenceDuration > $minDuration)
-    else
-        return $minDuration;
-    */
+    return $spareMilliseconds;
 }
 
 // Recibe el subtítulo, un segmento y una cantidad de milisegundos. Reduce la duración de dicha línea en esa cantidad de milisegundos.
 function reduceDuration ($subtitle,$segment,$milliseconds) {
-    // Limitar a minDuration -TODO-
+    // Limitar a $minDuration?
     $subtitle->$segment->sequenceDuration -= $milliseconds;
+    // if($subtitle->$segment->sequenceDuration < $minDuration) $subtitle->$segment->sequenceDuration = $minDuration;
     $subtitle->$segment->endTimeInMilliseconds = $subtitle->$segment->startTimeInMilliseconds + $subtitle->$segment->sequenceDuration;
     updateSequenceCps($subtitle,$segment);
 }
@@ -342,7 +339,7 @@ function fillEmptySpaceAfter ($subtitle,$segment,$cps) {
         }
     } else {
         // Última línea
-        $subtitle->$segment->endTimeInMilliseconds -= $missingTime;
+        $subtitle->$segment->endTimeInMilliseconds += $missingTime;
     }
     // Update sequence duration
     updateSequenceData($subtitle,$segment);

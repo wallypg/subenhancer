@@ -21,9 +21,6 @@ function runMethod1 ($subtitle,$totalSegmentsOverCps,$cps,$maxVariation,$minDura
         forwardMovement ($subtitle,$totalSegmentsOverCps,$cps,$maxVariation,$minDuration,$level);
         $totalSegmentsOverCps = checkLinesOverCps($subtitle,$totalSegmentsOverCps,$cps);
     }
-    // 
-    return $subtitle;
-    // 
 
     $cps=18;
     $totalSegmentsOverCps = checkAllLinesCps($subtitle,$cps);
