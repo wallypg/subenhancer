@@ -167,7 +167,7 @@ $(document).ready(function(){
       }
 
       $('.download-btn').on('click',function(){
-        window.location = 'download.php?file='+$('#finalFileName').attr('data-temp-name')+'&name='+$('#finalFileName').val();
+        window.location = baseUrl+'subenhancer/download?file='+$('#finalFileName').attr('data-temp-name')+'&name='+$('#finalFileName').val();
       });
 
     }

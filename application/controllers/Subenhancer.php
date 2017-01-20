@@ -42,6 +42,27 @@ class Subenhancer extends CI_Controller {
 
 
 
+	public function download() {
+		$getArray = $this->input->get();
+		if(isset($getArray['file']) && isset($getArray['name'])) {
+			$filename = $getArray['name'];
+			$path = 'srt/enhanced/'.$getArray['file'].'.srt';
+			if($filename != '' && file_exists($path)) {
+				$fileContent = file_get_contents($path);
+				unlink($path);
+				header("Content-Type: text/plain;charset=windows-1252");
+				header('Content-Disposition: attachment; filename="'.$filename.'"');
+				header("Content-Length: " . strlen($fileContent));
+				echo $fileContent;
+				die();
+			}
+		}
+		header('Location:'.base_url());
+		die();
+	}
+
+
+
 	// AJAX request para guardar cambios en el editor de JSON
 	public function save() {
 
