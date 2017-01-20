@@ -1,0 +1,2 @@
+Ejecutar el comando:
+git log --pretty=format:'%ad-%h' --date=short > version.log

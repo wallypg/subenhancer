@@ -29,6 +29,14 @@ class Subenhancer extends CI_Controller {
   			$data['dataArray'] = json_decode(file_get_contents('json/data.json'), true);
 		}
 
+		if(file_exists('version.log')) {
+			$f = fopen('version.log', 'r');
+			$line = fgets($f);
+			$versionArray = explode('-', $line);
+			$data['version'] = 'v'.substr($versionArray[0],-2).$versionArray[1].$versionArray[2].'-'.$versionArray[3];
+			fclose($f);
+		}
+
 		$this->folder->view('index',$data);
 	}
 

@@ -275,8 +275,7 @@
                     </div>
                   </div>
                   <div class="col-xs-3 version">
-                    v170108.1
-                    <!-- v161231.2 -->
+                    <?=isset($version) ? $version : 'v0c0' ?>
                   </div>
                 </div>
                 
