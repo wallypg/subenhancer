@@ -7,7 +7,7 @@ $(document).ready(function(){
   });
 
   $('.copy-btn').mouseleave(function(){
-    $(this).tooltip('destroy')
+    $(this).tooltip('destroy');
   });
 
   $('#info_url').on('input',function(e){
@@ -46,10 +46,10 @@ $(document).ready(function(){
     if(spanishPosition>0) var title = tempString.slice(0,tempString.search(/\s\(Español/));
     else var title = tempString.slice(0,tempString.search(/\.srt/));
     
-    if($('#tv_show').val() == '') $('#tv_show').val(tvShow);
-    if($('#season').val() == '') $('#season').val(season);
-    if($('#episode_number').val() == '') $('#episode_number').val(episode);
-    if($('#episode_title').val() == '') $('#episode_title').val(title);
+    $('#tv_show').val(tvShow);
+    $('#season').val(season);
+    $('#episode_number').val(episode);
+    $('#episode_title').val(title);
   });
 
   $('#enhance').submit(function(event) {
