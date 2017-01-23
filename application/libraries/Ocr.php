@@ -2,26 +2,30 @@
 
 class Ocr {
 
-  public function ocrCheck($string)
+  public function ocrCheck($string,$dbg=false)
   {
-    $allOcr = json_decode(file_get_contents('json/ocr_v2.json'));
+    $allOcr = json_decode(file_get_contents('json/ocr_v3.json'));
     $returnArray = array();
     $matches = array();
     
     $originalString = $string;
     foreach($allOcr->regex as $ocr){
-        // find, replace, useREonlyToFind
-        $pattern = '/'.$ocr->find.'/u';
-        // $pregMatch = ($ocr->global) ? preg_match_all($pattern, $string, $matches) : preg_match($pattern, $string, $matches);
-        if(preg_match($pattern, $string, $matches)) {
-            $returnArray['found'] = (isset($returnArray['found'])) ? $this->highlightChange($originalString, $matches[0], $returnArray['found']) : $this->highlightChange($originalString, $matches[0]);
-            $returnArray['ocredLine'] = preg_replace($pattern, $ocr->replace, $string);
-            $returnArray['replaced'] = (isset($returnArray['replaced'])) ? $this->highlightChange($returnArray['ocredLine'], $ocr->replace, $returnArray['replaced']) : $this->highlightChange($returnArray['ocredLine'], $ocr->replace);
-            $string = $returnArray['ocredLine'];
+        if(!in_array('disabled',$ocr->tags)) {
+          // find, replace, useREonlyToFind
+          $pattern = '/'.$ocr->find.'/u';
+          // $pregMatch = ($ocr->global) ? preg_match_all($pattern, $string, $matches) : preg_match($pattern, $string, $matches);
+          if(preg_match($pattern, $string, $matches)) {
+              $returnArray['found'] = (isset($returnArray['found'])) ? $this->highlightChange($originalString, $matches[0], $returnArray['found']) : $this->highlightChange($originalString, $matches[0]);
+              $returnArray['ocredLine'] = preg_replace($pattern, $ocr->replace, $string);
+              $returnArray['replaced'] = (isset($returnArray['replaced'])) ? $this->highlightChange($returnArray['ocredLine'], $ocr->replace, $returnArray['replaced']) : $this->highlightChange($returnArray['ocredLine'], $ocr->replace);
+              if($dbg) $returnArray['regex'] = $pattern;
+              $string = $returnArray['ocredLine'];
+          }          
         }
     }
 
     foreach($allOcr->string as $ocr){
+      if(!in_array('disabled',$ocr->tags)) {
         // find, replace, preserveCase, caseSensitive, wholeWord
         // ((?<=\s|\W)|^) <----> ($|(?=\s|\W))
         // (?:(?<=[\W^¿])(?=[\wá-úÁ-ÚñÑ])|(?<=[\wá-úÁ-ÚñÑ])(?=\W|$)) <----> (?:(?<=\W|^)(?=\w)|(?<=\w)(?=\W|$))
@@ -42,6 +46,7 @@ class Ocr {
             $string = $returnArray['ocredLine'];
 
         }
+      }
     }
 
     // if(isset($returnArray['found']) && !strpos('</span>', $returnArray['found'])) $returnArray['found'] = highlightFirstLetter($returnArray['found']);

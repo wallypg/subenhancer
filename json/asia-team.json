@@ -1,0 +1,21 @@
+{
+	"regex": [
+		{
+			"find": "",
+            "replace": "",
+            "tags": [
+            ]
+		}
+	],
+	"string": [
+		{
+            "find": "",
+            "replace": "",
+            "preserveCase": false,
+            "caseSensitive": true,
+            "wholeWord": true,
+            "tags": [
+            ]
+        }
+	]
+}
