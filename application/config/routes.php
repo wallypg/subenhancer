@@ -49,8 +49,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | Examples:	my-controller/index	-> my_controller/index
 |		my-controller/my-method	-> my_controller/my_method
 */
-$route['default_controller'] = 'subenhancer';
+$route['default_controller'] = 'subtitlehub';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
 
-// $route['subenhancer/editor'] = 'editor';
+$route['login'] = 'subtitlehub/index';
+$route['auth'] = 'subtitlehub/auth';
+$route['logout'] = 'subtitlehub/logout';

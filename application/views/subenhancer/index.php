@@ -8,22 +8,13 @@
 
   <title>SubEnhancer</title>
   
-  <!-- <link rel="stylesheet" href="css/bootstrap.min.css"> -->
   <?=add_style('bootstrap.min')?>
-  <!-- <link rel="stylesheet" href="css/fileinput.min.css"> -->
   <?=add_style('fileinput.min')?>
-  <!-- <link rel="stylesheet" href="css/jquery-confirm.css"> -->
   <?=add_style('jquery-confirm')?>
 
-  <!-- <link rel="stylesheet" href="css/bootstrap-theme.min.css"> -->
-
-  <!-- <script src="js/jquery-3.1.1.min.js"></script> -->
   <?=add_jscript('jquery-3.1.1.min')?>
-  <!-- <script src="js/fileinput.min.js"></script> -->
   <?=add_jscript('fileinput.min')?>
-  <!-- <script src="js/jquery-confirm.js"></script> -->
   <?=add_jscript('jquery-confirm')?>
-  <!-- <script src="js/bootstrap.min.js"></script> -->
   <?=add_jscript('bootstrap.min')?>
 
   <!-- <script src="js/dropzone.js"></script> -->
@@ -31,7 +22,6 @@
   <script>var baseUrl = '<?=base_url()?>';</script>
 
   <?=add_jscript('script')?>
-  <!-- <script src="js/script.js"></script> -->
   
   <link href="https://fonts.googleapis.com/css?family=Bitter:400,400i,700|Catamaran:300,400,500,600,700|Open+Sans:300,300i,400,400i,600,600i,700,700i|Rokkitt:400,700" rel="stylesheet">
 
@@ -375,6 +365,14 @@
   </div>
     </div>
   </form>
+  <div class="logout">
+    <a href="<?=base_url()?>logout">
+      <span class="fa-stack">
+        <i class="fa fa-circle fa-stack-1x"></i>
+        <i class="fa fa-times-circle fa-stack-1x"></i>
+      </span>
+    </a>
+  </div>
 
   <div id="loading-info-overlay">
     <div>

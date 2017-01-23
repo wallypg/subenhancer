@@ -3,16 +3,17 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Subenhancer extends CI_Controller {
 
-
-
 	function __construct(){
 		parent::__construct();
+		$this->load->library('session');
+		if(!isset($_SESSION['isLoggedIn']) || !$_SESSION['isLoggedIn']) redirect(base_url());
 
 		$this->load->library('folder');
 		$this->folder->setFolder('subenhancer');
+
+
 	}
 
-	
 
 	public function index() {	
 
@@ -41,13 +42,11 @@ class Subenhancer extends CI_Controller {
 	}
 
 
-
 	public function editor () {
 		$data = array();
 		if (file_exists('json/data.json')) $data['json'] = file_get_contents('json/data.json');
 		$this->folder->view('editor',$data);	
 	}
-
 
 
 	public function download() {
@@ -68,7 +67,6 @@ class Subenhancer extends CI_Controller {
 		header('Location:'.base_url());
 		die();
 	}
-
 
 
 	// AJAX request para guardar cambios en el editor de JSON
@@ -98,7 +96,6 @@ class Subenhancer extends CI_Controller {
 		}
 
 	}
-
 
 
 	// AJAX request para datos del subtítulo
@@ -200,8 +197,6 @@ class Subenhancer extends CI_Controller {
 			echo json_encode($data);
 		}
 	}
-
-
 
 
 	/***************************************************/

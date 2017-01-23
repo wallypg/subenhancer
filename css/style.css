@@ -581,3 +581,26 @@ panel-body*/
   padding-right: 4px;
   padding-left: 4px;
 }
+
+.logout {
+  position: fixed;
+  right: 0px;
+  top: 0px;
+  padding-top: 4px;
+  padding-right: 4px;
+  z-index: 9999;
+}
+
+.logout a {
+  display: block;
+}
+
+.logout i.fa-circle {
+  font-size: 18px;
+  color: #ffffff;
+}
+
+.logout i.fa-times-circle {
+  font-size: 23px;
+  color: #b71c1c;
+}
