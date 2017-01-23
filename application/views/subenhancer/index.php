@@ -152,7 +152,7 @@
                     <div class="form-group">
                       <label for="format">Formato</label>
                       <div class="input-group">
-                        <input type="text" name="format" id="format" class="form-control input-sm">
+                        <input type="text" name="format" id="format" class="form-control input-sm" value="HDTV">
                         <div class="input-group-btn">
                           <button type="button" class="btn dropdown-toggle more-options" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-caret-down" aria-hidden="true"></i></button>
                           <ul class="dropdown-menu dropdown-menu-right" data-list="format">
@@ -169,7 +169,7 @@
                     <div class="form-group">
                       <label for="codec">Codec</label>
                         <div class="input-group"> 
-                          <input type="text" name="codec" id="codec" class="form-control input-sm">
+                          <input type="text" name="codec" id="codec" class="form-control input-sm" value="x264">
                           <div class="input-group-btn">
                             <button type="button" class="btn dropdown-toggle more-options" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-caret-down" aria-hidden="true"></i></button>
                             <ul class="dropdown-menu dropdown-menu-right" data-list="codec">

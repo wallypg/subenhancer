@@ -32,19 +32,58 @@ $(document).ready(function(){
     var completeString = $(this).val();
     tempString = completeString.substr(12);
     // C:\fakepath\
+    // Ransom 1x03 - The Box
+    // 2.Broke.Girls.S06E01E02.And.the.Two.Openings.HDTV.x264-LOL
+    // 2.Broke.Girls.S06E01.And.the.Two.Openings.HDTV.x264-LOL
+    // Blackish - 02x24 - Good-ish Times-Español
+    // Poner como default si no viene nada HDTV y x264
+    var pattern = 0;
     var xPosition = tempString.search(/\s[0-9]{1,2}x[0-9]{2}\s/i);
-    var tvShow = tempString.slice(0,xPosition);
-    var lastHalf = tempString.slice(tvShow.length+1);
-    var episodeSeasonEndPosition = lastHalf.search(/\s-/i);
-    var episodeSeason = lastHalf.slice(0,episodeSeasonEndPosition);
-    var season = episodeSeason.slice(0,episodeSeason.indexOf('x'));
-    var episode = episodeSeason.slice(episodeSeason.indexOf('x')+1);
-    if(episode[0]=='0') episode = episode.slice(1);
-    
-    tempString = lastHalf.slice(episodeSeasonEndPosition+3);
-    var spanishPosition = tempString.search(/\s\(Español/);
-    if(spanishPosition>0) var title = tempString.slice(0,tempString.search(/\s\(Español/));
-    else var title = tempString.slice(0,tempString.search(/\.srt/));
+    if(xPosition > -1) pattern = 1;
+    else {
+      var xPosition = tempString.search(/\.S\d{2}[E\d]{3,6}\./);
+      if(xPosition > -1) pattern = 2;
+      // console.log(xPosition);
+    }
+
+    var tvShow = '';
+    var season = '';
+    var episode = '';
+    var title = '';
+
+    if(pattern == 1) {
+      tvShow = tempString.slice(0,xPosition);
+      console.log(tvShow.substr(tvShow.length - 1));
+      if(tvShow.substr(tvShow.length - 1) == '-') tvShow = tvShow.slice(0,-1);
+      var lastHalf = tempString.slice(tvShow.length+1);
+      var episodeSeasonEndPosition = lastHalf.search(/\s-/i);
+      var episodeSeason = lastHalf.slice(0,episodeSeasonEndPosition);
+      season = parseInt(episodeSeason.slice(0,episodeSeason.indexOf('x')));
+      episode = parseInt(episodeSeason.slice(episodeSeason.indexOf('x')+1));
+      // if(episode[0]=='0') episode = episode.slice(1);
+      
+      tempString = lastHalf.slice(episodeSeasonEndPosition+3);
+      var spanishPosition = tempString.search(/\s\(Español/);
+      if(spanishPosition>0) title = tempString.slice(0,tempString.search(/\s\(Español/));
+      else var title = tempString.slice(0,tempString.search(/\.srt/));      
+
+      if(title.substr(title.length - 8) == '-Español') title = title.slice(0,-8);
+
+    } else if(pattern == 2) {
+      tvShow = (tempString.slice(0,xPosition)).replace(/\./ig,' ');
+      var lastHalf = tempString.slice(tvShow.length+1);
+      console.log(lastHalf);
+      var nextDotPosition = lastHalf.indexOf('.');
+      if(nextDotPosition == 6) {
+        // SxxExx
+        season = parseInt(lastHalf.slice(1,3));
+        episode = parseInt(lastHalf.slice(4,6));
+        lastHalf = lastHalf.slice(7);
+      }
+      var videoInfoPosition = lastHalf.search(/HDTV|DVDRip|WEB-DL|720p|1080p|PROPER|INTERNAL|LIMITED|REPACK/);
+      title = lastHalf.slice(0,videoInfoPosition).replace(/\./ig,' ');
+    }
+
     
     $('#tv_show').val(tvShow);
     $('#season').val(season);
