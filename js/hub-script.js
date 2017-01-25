@@ -1,7 +1,7 @@
 $(document).ready(function(){
 
 	$('form').validate({
-    onKeyup : true,
+    onChange : true,
     eachValidField : function() {
       $(this).closest('div').removeClass('error');
       $(this).parent().next('div').find('span').hide();

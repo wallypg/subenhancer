@@ -161,8 +161,8 @@
     });
 
     function ajaxRequest(updatedJson){
-      $.post("<?=base_url()?>subenhancer/save", { updatedJson : updatedJson }).done(function(data){
-          
+      $.post("<?=base_url()?>subenhancer/save/<?=$jsonFile?>", { updatedJson : updatedJson }).done(function(data){
+          console.log(data);
           try {
             JSON.parse(data);
           } catch (event) {
