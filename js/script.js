@@ -1,5 +1,31 @@
 $(document).ready(function(){
   // $('#myModal').modal('show');
+
+  // $(".nano").nanoScroller();
+  // $(".scroll").niceScroll({
+  //               cursorcolor: "#4285b0",
+  //               cursoropacitymin: 0.3,
+  //               background: "#cedbec",
+  //               cursorborder: "0",
+  //               autohidemode: false,
+  //               cursorminheight: 30
+  //   });
+    
+  //   //Activa el nicescroll cuando esta oculto
+    
+  //   $(".scroll").getNiceScroll().resize();
+  //   $("html").mouseover(function() {
+  //       $(".scroll").getNiceScroll().resize();
+  //   });
+
+
+
+
+
+
+  // $(document).ready(function(){
+  //   $('.combobox').combobox();
+  // });
   
   var clipboard = new Clipboard('.copy-btn');
   clipboard.on('success', function(event) {
@@ -43,7 +69,6 @@ $(document).ready(function(){
     else {
       var xPosition = tempString.search(/\.S\d{2}[E\d]{3,6}\./);
       if(xPosition > -1) pattern = 2;
-      // console.log(xPosition);
     }
 
     var tvShow = '';
@@ -53,7 +78,6 @@ $(document).ready(function(){
 
     if(pattern == 1) {
       tvShow = tempString.slice(0,xPosition);
-      console.log(tvShow.substr(tvShow.length - 1));
       if(tvShow.substr(tvShow.length - 1) == '-') tvShow = tvShow.slice(0,-1);
       var lastHalf = tempString.slice(tvShow.length+1);
       var episodeSeasonEndPosition = lastHalf.search(/\s-/i);
@@ -72,7 +96,6 @@ $(document).ready(function(){
     } else if(pattern == 2) {
       tvShow = (tempString.slice(0,xPosition)).replace(/\./ig,' ');
       var lastHalf = tempString.slice(tvShow.length+1);
-      console.log(lastHalf);
       var nextDotPosition = lastHalf.indexOf('.');
       if(nextDotPosition == 6) {
         // SxxExx
@@ -232,7 +255,8 @@ $(document).ready(function(){
   });
 
   $('li.dropdown-item').on('click',function(){
-    $('#'+$(this).parent().attr('data-list')).val($(this).html());
+    console.log($(this).parent().parent().attr('data-list'));
+    $('#'+$(this).parent().parent().attr('data-list')).val($(this).html());
   });
 
 

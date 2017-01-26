@@ -31,10 +31,22 @@
   <?=add_style('style')?>
   <!-- <link rel='stylesheet' href='css/nprogress.css'/> -->
   <?=add_style('nprogress')?>
+
+  <?=add_style('perfect-scrollbar')?>
+  <?=add_style('jquery-ui.min')?>
+  <?=add_style('auto-complete')?>
 </head>
 <body>
   <form action="subenhancer/enhance" method="POST" enctype="multipart/form-data" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" id="enhance">
     <div class="container-fluid">
+        <div class="logout">
+          <a href="<?=base_url()?>logout" title="Cerrar sesión">
+            <span class="fa-stack">
+              <i class="fa fa-circle fa-stack-1x"></i>
+              <i class="fa fa-times-circle fa-stack-1x"></i>
+            </span>
+          </a>
+        </div>
         <img src="<?=img_url('adictito.png')?>" alt="" class="adictito">
         <div class="row centered-form">
         <div class="col-md-12 main-body">
@@ -79,11 +91,14 @@
                         <input type="text" name="tv_show" id="tv_show" class="form-control input-sm">
                         <div class="input-group-btn">
                           <button type="button" class="btn dropdown-toggle more-options" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-caret-down" aria-hidden="true"></i></button>
-                          <ul class="dropdown-menu dropdown-menu-right" data-list="tv_show">
-                            <?php foreach($dataArray['tv_show'] as $show) { ?>
-                              <li class="dropdown-item"><?=$show?></li>
-                            <?php } ?>
-                          </ul>
+                          <ul class="dropdown-menu dropdown-menu-right container-scrollable" data-list="tv_show">
+                            <div class="content-scrollable">
+                              
+                              <?php foreach($dataArray['tv_show'] as $show) { ?>
+                                <li class="dropdown-item"><?=$show?></li>
+                              <?php } ?>
+                            </div>
+                          </ul>                          
                         </div>
                       </div>
                     </div>
@@ -93,13 +108,14 @@
                   <div class="col-xs-3 col-sm-2 col-md-2">
                     <div class="form-group small-size-input">
                       <label class="align-center" for="season">Temporada</label>
-                      <input type="number" name="season" id="season" class="form-control input-sm" min="1">
+                      <input name="season" id="season" class="form-control input-sm spinner" min="1">
+                      <!-- <input name="season" id="season" class="form-control input-sm spinner" min="1"> -->
                     </div>
                   </div>
                   <div class="col-xs-3 col-sm-2 col-md-2">
                     <div class="form-group small-size-input">
                       <label for="episode_number">Episodio</label>
-                      <input type="number" name="episode_number" id="episode_number" class="form-control input-sm" min="1">
+                      <input name="episode_number" id="episode_number" class="form-control input-sm spinner" min="1">
                     </div>
                   </div>
                   <!--  -->
@@ -121,10 +137,12 @@
                           <input type="text" name="other" id="other" class="form-control input-sm">
                           <div class="input-group-btn">
                             <button type="button" class="btn dropdown-toggle more-options" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-caret-down" aria-hidden="true"></i></button>
-                            <ul class="dropdown-menu dropdown-menu-right" data-list="other">
-                              <?php foreach($dataArray['other'] as $other) { ?>
-                                <li class="dropdown-item"><?=$other?></li>
-                              <?php } ?>
+                            <ul class="dropdown-menu dropdown-menu-right container-scrollable" data-list="other">
+                              <div class="content-scrollable">
+                                <?php foreach($dataArray['other'] as $other) { ?>
+                                  <li class="dropdown-item"><?=$other?></li>
+                                <?php } ?>
+                              </div>
                             </ul>
                           </div>
                         </div>
@@ -138,10 +156,12 @@
                           <input type="text" name="quality" id="quality" class="form-control input-sm">
                           <div class="input-group-btn">
                             <button type="button" class="btn dropdown-toggle more-options" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-caret-down" aria-hidden="true"></i></button>
-                            <ul class="dropdown-menu dropdown-menu-right" data-list="quality">
-                              <?php foreach($dataArray['quality'] as $quality) { ?>
-                                <li class="dropdown-item"><?=$quality?></li>
-                              <?php } ?>
+                            <ul class="dropdown-menu dropdown-menu-right container-scrollable" data-list="quality">
+                              <div class="content-scrollable">
+                                <?php foreach($dataArray['quality'] as $quality) { ?>
+                                  <li class="dropdown-item"><?=$quality?></li>
+                                <?php } ?>
+                              </div>
                             </ul>
                           </div>
                         </div>
@@ -155,10 +175,12 @@
                         <input type="text" name="format" id="format" class="form-control input-sm" value="HDTV">
                         <div class="input-group-btn">
                           <button type="button" class="btn dropdown-toggle more-options" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-caret-down" aria-hidden="true"></i></button>
-                          <ul class="dropdown-menu dropdown-menu-right" data-list="format">
-                            <?php foreach($dataArray['format'] as $format) { ?>
-                              <li class="dropdown-item"><?=$format?></li>
-                            <?php } ?>
+                          <ul class="dropdown-menu dropdown-menu-right container-scrollable" data-list="format">
+                            <div class="content-scrollable">
+                              <?php foreach($dataArray['format'] as $format) { ?>
+                                <li class="dropdown-item"><?=$format?></li>
+                              <?php } ?>
+                            </div>
                           </ul>
                         </div>
                       </div>
@@ -172,10 +194,12 @@
                           <input type="text" name="codec" id="codec" class="form-control input-sm" value="x264">
                           <div class="input-group-btn">
                             <button type="button" class="btn dropdown-toggle more-options" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-caret-down" aria-hidden="true"></i></button>
-                            <ul class="dropdown-menu dropdown-menu-right" data-list="codec">
-                              <?php foreach($dataArray['codec'] as $codec) { ?>
-                                <li class="dropdown-item"><?=$codec?></li>
-                              <?php } ?>
+                            <ul class="dropdown-menu dropdown-menu-right container-scrollable" data-list="codec">
+                              <div class="content-scrollable">
+                                <?php foreach($dataArray['codec'] as $codec) { ?>
+                                  <li class="dropdown-item"><?=$codec?></li>
+                                <?php } ?>
+                              </div>
                             </ul>
                           </div>
                         </div>
@@ -189,10 +213,12 @@
                           <input type="text" name="rip_group" id="rip_group" class="form-control input-sm">
                           <div class="input-group-btn">
                             <button type="button" class="btn dropdown-toggle more-options" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-caret-down" aria-hidden="true"></i></button>
-                            <ul class="dropdown-menu dropdown-menu-right" data-list="rip_group">
-                              <?php foreach($dataArray['rip_group'] as $group) { ?>
-                                <li class="dropdown-item"><?=$group?></li>
-                              <?php } ?>
+                            <ul class="dropdown-menu dropdown-menu-right container-scrollable" data-list="rip_group">
+                              <div class="content-scrollable">
+                                <?php foreach($dataArray['rip_group'] as $group) { ?>
+                                  <li class="dropdown-item"><?=$group?></li>
+                                <?php } ?>
+                              </div>
                             </ul>
                           </div>
                         </div>
@@ -216,10 +242,12 @@
                           <input type="text" name="editor" id="editor" class="form-control input-sm">
                           <div class="input-group-btn">
                             <button type="button" class="btn dropdown-toggle more-options" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-caret-down" aria-hidden="true"></i></button>
-                            <ul class="dropdown-menu dropdown-menu-right" data-list="editor">
-                              <?php foreach($dataArray['editor'] as $editor) { ?>
-                                <li class="dropdown-item"><?=$editor?></li>
-                              <?php } ?>
+                            <ul class="dropdown-menu dropdown-menu-right container-scrollable" data-list="editor">
+                              <div class="content-scrollable">
+                                <?php foreach($dataArray['editor'] as $editor) { ?>
+                                  <li class="dropdown-item"><?=$editor?></li>
+                                <?php } ?>
+                              </div>
                             </ul>
                           </div>
                         </div>
@@ -233,11 +261,13 @@
                         <input type="text" name="translation" id="translation" class="form-control input-sm">
                         <div class="input-group-btn">
                           <button type="button" class="btn dropdown-toggle more-options" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-caret-down" aria-hidden="true"></i></button>
-                          <ul class="dropdown-menu dropdown-menu-right" data-list="translation">
-                            <?php foreach($dataArray['translation'] as $translation) { ?>
-                              <li class="dropdown-item"><?=$translation?></li>
-                            <?php } ?>
-                          </ul>
+                          <div class="content-scrollable">
+                            <ul class="dropdown-menu dropdown-menu-right container-scrollable" data-list="translation">
+                              <?php foreach($dataArray['translation'] as $translation) { ?>
+                                <li class="dropdown-item"><?=$translation?></li>
+                              <?php } ?>
+                            </ul>
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -268,6 +298,7 @@
                     <?=isset($version) ? $version : 'v0c0' ?>
                   </div>
                 </div>
+
                 
                 <?php if(isset($dbg)) echo "<input type=\"hidden\" name=\"dbg\" >\n"; ?>
                 <!-- <div class="row">
@@ -353,7 +384,7 @@
             <button type="button" class="btn btn-default download-btn pull-left" data-dismiss="modal"><i class="fa fa-arrow-circle-down" aria-hidden="true"></i>&nbsp;Descargar</button>
           </div>
           <div>
-            <button class="btn copy-btn" data-clipboard-target="#pre-wrap" data-toggle="tooltip" data-placement="left" title="¡Copiado!"><i class="fa fa-clipboard" aria-hidden="true"></i>&nbsp;Copiar</button>
+            <button type="button" class="btn copy-btn" data-clipboard-target="#pre-wrap" data-toggle="tooltip" data-placement="left" title="¡Copiado!"><i class="fa fa-clipboard" aria-hidden="true"></i>&nbsp;Copiar</button>
           </div>
           <div>
             <button type="button" class="btn btn-default close-btn" data-dismiss="modal">Cerrar</button>
@@ -365,14 +396,9 @@
   </div>
     </div>
   </form>
-  <div class="logout">
-    <a href="<?=base_url()?>logout">
-      <span class="fa-stack">
-        <i class="fa fa-circle fa-stack-1x"></i>
-        <i class="fa fa-times-circle fa-stack-1x"></i>
-      </span>
-    </a>
-  </div>
+
+
+  
 
   <div id="loading-info-overlay">
     <div>
@@ -388,5 +414,21 @@
   <?=add_jscript('clipboard.min')?>
   <!-- <script src='js/nprogress.js'></script> -->
   <?=add_jscript('nprogress')?>
+  
+  <?=add_jscript('perfect-scrollbar.jquery')?>
+  <?=add_jscript('jquery-ui.min')?>
+  <?=add_jscript('auto-complete.min')?>
+  
+  <script>
+    $('.container-scrollable').perfectScrollbar();
+  
+    $( function() {
+      var spinner = $( ".spinner" ).spinner();
+    });
+  </script>
+
+
+  <!-- <?=add_style('bootstrap-combobox')?> -->
+  <!-- <?=add_jscript('bootstrap-combobox')?> -->
 </body>
 </html>

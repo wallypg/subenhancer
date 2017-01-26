@@ -121,7 +121,7 @@ input, .input-sm, .form-control.file-caption.kv-fileinput-caption{
 }
 
 .small-size-input input{
-  padding-left: 25px!important;
+  /*padding-left: 25px!important;*/
 }
 
 .fix-episode-input{
@@ -583,9 +583,9 @@ panel-body*/
 }
 
 .logout {
-  position: fixed;
+  position: absolute;
   right: 0px;
-  top: 0px;
+  /*top: 0px;*/
   padding-top: 4px;
   padding-right: 4px;
   z-index: 9999;
@@ -603,4 +603,42 @@ panel-body*/
 .logout i.fa-times-circle {
   font-size: 23px;
   color: #b71c1c;
+}
+
+.container-scrollable {
+    height: auto;
+    overflow-x: hidden;
+    max-height: 200px;
+}
+
+.container-scrollable[data-list="tv_show"] {
+    max-height: 400px;
+}
+
+.container-scrollable[data-list="rip_group"] {
+    max-height: 240px;
+}
+
+.input-group-btn>.dropdown-menu {
+  padding-top: 0px;
+  padding-bottom: 0px;
+}
+
+.spinner {
+    margin: 0!important;
+    padding: 0!important;
+    padding-right: 15px!important;
+}
+
+.ui-spinner {
+  border:none!important;
+}
+
+.ui-widget-content {
+  background-color: #24242a!important;
+}
+
+.ui-button {
+  border: 1px solid #9099ab!important; 
+  background: #9099ab!important; 
 }
