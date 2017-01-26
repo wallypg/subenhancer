@@ -21,14 +21,14 @@
   <?php echo "<script>var dbg = ".(isset($dbg) ? "1" : "0")."</script>\n"; ?>
   <script>var baseUrl = '<?=base_url()?>';</script>
 
-  <?=add_jscript('script')?>
+  <?=add_jscript('script',true)?>
   
   <link href="https://fonts.googleapis.com/css?family=Bitter:400,400i,700|Catamaran:300,400,500,600,700|Open+Sans:300,300i,400,400i,600,600i,700,700i|Rokkitt:400,700" rel="stylesheet">
 
   <!-- <link rel="stylesheet" href="css/font-awesome.min.css"> -->
   <?=add_style('font-awesome.min')?>
   <!-- <link rel="stylesheet" href="css/style.css"> -->
-  <?=add_style('style')?>
+  <?=add_style('style',true)?>
   <!-- <link rel='stylesheet' href='css/nprogress.css'/> -->
   <?=add_style('nprogress')?>
 

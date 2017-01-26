@@ -83,17 +83,20 @@
    * @return  string
    */
 
-  function add_style($stylesheet, $attributes = '')
-  {
-       if (is_array($attributes))
-       {
-         $attributes = parse_tag_attributes($attributes);
-       }
-       $obj =& get_instance();
+  function add_style($stylesheet, $forceRefresh = false, $attributes = '')
+  { 
+     $refreshParameter = ($forceRefresh) ? '?r='.rand(1,100) : '';
+
+     if (is_array($attributes))
+     {
+       $attributes = parse_tag_attributes($attributes);
+     }
+     $obj =& get_instance();
+
      $base = _is_secure() ? $obj->config->item('base_url') : $obj->config->item('base_url');
      $style_folder = $obj->config->item('stylesheet_path');
 
-       return '<link rel="stylesheet" type="text/css" href="'.$base.$style_folder.$stylesheet.'.css"'.$attributes.' />'."\r\n";
+       return '<link rel="stylesheet" type="text/css" href="'.$base.$style_folder.$stylesheet.'.css'.$refreshParameter.'"'.$attributes.' />'."\r\n";
   }
 
   function style_url($stylesheet = '') {
@@ -125,8 +128,10 @@
     * @return string
     */
 
-    function add_jscript($javascript, $attributes = '')
-    {
+    function add_jscript($javascript, $forceRefresh = false, $attributes = '')
+    {    
+         $refreshParameter = ($forceRefresh) ? '?r='.rand(1,100) : '';
+
          if (is_array($attributes))
          {
            $attributes = parse_tag_attributes($attributes);
@@ -135,7 +140,7 @@
        $base = _is_secure() ? $obj->config->item('base_url') : $obj->config->item('base_url');
        $jscript_folder = $obj->config->item('javascript_path');
 
-         return '<script type="text/javascript" src="'.$base.$jscript_folder.$javascript.'.js"'.$attributes.'></script>'."\r\n";
+         return '<script type="text/javascript" src="'.$base.$jscript_folder.$javascript.'.js'.$refreshParameter.'"'.$attributes.'></script>'."\r\n";
     }
 
     function jscript_url($javascript = '') {
