@@ -1,1 +1,1 @@
-Próximamente... :)
+Editor de OCR próximamente... :)

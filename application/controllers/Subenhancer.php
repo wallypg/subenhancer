@@ -605,4 +605,12 @@ class Subenhancer extends CI_Controller {
 		die();		
 
 	}
+
+	public function bug() {
+		$this->folder->view('bugs');
+	}
+
+	public function ocrEditor() {
+		$this->folder->view('ocrEditor');
+	}
 }
