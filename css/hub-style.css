@@ -122,9 +122,9 @@ input[type="submit"]{
 
 /* config.css */
 
-:root {
+/*:root {
   --baseColor: #606468;
-}
+}*/
 
 /* helpers/align.css */
 body {
@@ -139,16 +139,16 @@ body {
 
 /* helpers/grid.css */
 
-:root {
+/*:root {*/
   /*--gridMaxWidth: 20rem;*/
   /*--gridWidth: 90%;*/
-}
+/*}*/
 
 .grid {
   margin-left: auto;
   margin-right: auto;
-  max-width: var(--gridMaxWidth);
-  width: var(--gridWidth);
+  /*max-width: var(--gridMaxWidth);
+  width: var(--gridWidth);*/
 }
 
 /* helpers/hidden.css */
@@ -166,9 +166,9 @@ body {
 
 /* helpers/icon.css */
 
-:root {
-  --iconFill: var(--baseColor);
-}
+/*:root {
+  --iconFill: #606468;
+}*/
 
 .icons {
   display: none;
@@ -176,7 +176,7 @@ body {
 
 .icon {
   display: inline-block;
-  fill: var(--iconFill);
+  fill: #606468;
   font-size: 1rem;
   height: 1em;
   vertical-align: middle;
@@ -185,17 +185,17 @@ body {
 
 /* layout/base.css */
 
-:root {
+/*:root {
   --htmlFontSize: 100%;
 
   --bodyBackgroundColor: #2c3338;
-  --bodyColor: var(--baseColor);
+  --bodyColor: #606468;
   --bodyFontFamily: 'Open Sans';
   --bodyFontFamilyFallback: sans-serif;
   --bodyFontSize: 0.875rem;
   --bodyFontWeight: 400;
   --bodyLineHeight: 1.5;
-}
+}*/
 
 *,
 *::before,
@@ -205,29 +205,29 @@ body {
 
 html {
   box-sizing: border-box;
-  font-size: var(--htmlFontSize);
+  font-size: 100%;
   height: 100%;
 }
 
 body {
-  background-color: var(--bodyBackgroundColor);
-  color: var(--bodyColor);
-  font-family: var(--bodyFontFamily), var(--bodyFontFamilyFallback);
-  font-size: var(--bodyFontSize);
-  font-weight: var(--bodyFontWeight);
-  line-height: var(--bodyLineHeight);
+  background-color: #2c3338;
+  color: #606468;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 0.875rem;
+  font-weight: 400;
+  line-height: 1.5;
   margin: 0;
   min-height: 100%;
 }
 
 /* modules/anchor.css */
 
-:root {
+/*:root {
   --anchorColor: #eee;
-}
+}*/
 
 a {
-  color: var(--anchorColor);
+  color: #eee;
   outline: 0;
   text-decoration: none;
 }
@@ -239,9 +239,9 @@ a:hover {
 
 /* modules/form.css */
 
-:root {
+/*:root {
   --formFieldMargin: 0.875rem;
-}
+}*/
 
 input {
   background-image: none;
@@ -263,7 +263,7 @@ input[type='submit'] {
 }
 
 .form {
-  margin: calc(var(--formFieldMargin) * -1);
+  margin: calc(0.875rem * -1);
 }
 
 .form input[type='password'],
@@ -274,7 +274,7 @@ input[type='submit'] {
 
 .form__field {
   display: flex;
-  margin: var(--formFieldMargin);
+  margin: 0.875rem;
 }
 
 .form__input {
@@ -283,7 +283,7 @@ input[type='submit'] {
 
 /* modules/login.css */
 
-:root {
+/*:root {
   --loginBorderRadus: 0.25rem;
   --loginColor: #eee;
 
@@ -295,22 +295,24 @@ input[type='submit'] {
   --loginSubmitBackgroundColor: #ea4c88;
   --loginSubmitColor: #eee;
   --loginSubmitHoverBackgroundColor: #d44179;
-}
+
+  color: var(--loginColor);
+}*/
 
 .login {
-  color: var(--loginColor);
+  color: #eee;
 }
 
 .login label,
 .login input[type='text'],
 .login input[type='password'],
 .login input[type='submit'] {
-  border-radius: var(--loginBorderRadus);
+  border-radius: 0.25rem;
   padding: 1rem;
 }
 
 .login label {
-  background-color: var(--loginLabelBackgroundColor);
+  background-color: #363b41;
   border-bottom-right-radius: 0;
   border-top-right-radius: 0;
   padding-left: 1.25rem;
@@ -319,7 +321,7 @@ input[type='submit'] {
 
 .login input[type='password'],
 .login input[type='text'] {
-  background-color: var(--loginInputBackgroundColor);
+  background-color: #3b4148;
   border-bottom-left-radius: 0;
   border-top-left-radius: 0;
 }
@@ -328,7 +330,7 @@ input[type='submit'] {
 .login input[type='password']:hover,
 .login input[type='text']:focus,
 .login input[type='text']:hover {
-  background-color: var(--loginInputHoverBackgroundColor);
+  background-color: #434a52;
 }
 
 .login input[type='submit']:focus,
@@ -338,14 +340,16 @@ input[type='submit'] {
 
 /* modules/text.css */
 
-:root {
+/*:root {
   --paragraphMarginBottom: 1.5rem;
   --paragraphMarginTop: 1.5rem;
-}
+
+  var(--paragraphMarginTop);
+}*/
 
 p {
-  margin-bottom: var(--paragraphMarginBottom);
-  margin-top: var(--paragraphMarginTop);
+  margin-bottom: 1.5rem;
+  margin-top: 1.5rem;
 }
 
 .text--center {
