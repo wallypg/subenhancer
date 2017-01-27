@@ -34,7 +34,7 @@
 
   <?=add_style('perfect-scrollbar')?>
   <?=add_style('jquery-ui.min')?>
-  <?=add_style('auto-complete')?>
+  
 </head>
 <body>
   <form action="subenhancer/enhance" method="POST" enctype="multipart/form-data" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" id="enhance">
@@ -261,13 +261,13 @@
                         <input type="text" name="translation" id="translation" class="form-control input-sm">
                         <div class="input-group-btn">
                           <button type="button" class="btn dropdown-toggle more-options" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-caret-down" aria-hidden="true"></i></button>
-                          <div class="content-scrollable">
-                            <ul class="dropdown-menu dropdown-menu-right container-scrollable" data-list="translation">
+                          <ul class="dropdown-menu dropdown-menu-right container-scrollable" data-list="translation">
+                            <div class="content-scrollable">
                               <?php foreach($dataArray['translation'] as $translation) { ?>
                                 <li class="dropdown-item"><?=$translation?></li>
                               <?php } ?>
-                            </ul>
-                          </div>
+                            </div>
+                          </ul>
                         </div>
                       </div>
                     </div>
@@ -417,7 +417,7 @@
   
   <?=add_jscript('perfect-scrollbar.jquery')?>
   <?=add_jscript('jquery-ui.min')?>
-  <?=add_jscript('auto-complete.min')?>
+  
   
   <script>
     $('.container-scrollable').perfectScrollbar();

@@ -56,7 +56,10 @@ $(document).ready(function(){
 
   $('#input-sub-file').on('change',function(e){
     var completeString = $(this).val();
-    tempString = completeString.substr(12);
+    
+    if(completeString.substr(0,12) == 'C:\\fakepath\\') tempString = completeString.substr(12);
+    else tempString = completeString;
+
     // C:\fakepath\
     // Ransom 1x03 - The Box
     // 2.Broke.Girls.S06E01E02.And.the.Two.Openings.HDTV.x264-LOL
