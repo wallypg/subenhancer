@@ -121,7 +121,7 @@
                   <!--  -->
                   <div class="col-xs-12 col-sm-12 col-md-12">
                     <div class="form-group">
-                      <label for="episode_title">Nombre del episodio</label>
+                      <label for="episode_title">Nombre del episodio&nbsp;&nbsp;<i class="fa fa-info-circle title-info" aria-hidden="true"></i></label>
                       <input type="text" name="episode_title" id="episode_title" class="form-control input-sm">
                     </div>
                   </div>
@@ -275,7 +275,7 @@
                 </div>
 
                 <hr class="divider">
-
+                
                 <div class="row">
                   <div class="col-xs-3 edit-fields">
                     <i class="fa fa-pencil fa-2" aria-hidden="true"></i>&nbsp;&nbsp;<a href="<?php echo base_url() ?>subenhancer/editor"><span class="hidden-xxs">Editar&nbsp;datos</span><span class="hidden-xs">&nbsp;guardados</span><span class="hidden show-xxs">Datos</span></a>

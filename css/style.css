@@ -20,7 +20,9 @@ body.modal-open {
 .centered-form{
   margin-top: 15px;
 }
-
+.btn-file {
+  height: 34px;
+}
 .centered-form .panel{
   /*background: rgba(255, 255, 255, 0.8);*/
   /*box-shadow: rgba(0, 0, 0, 0.3) 20px 20px 20px;*/
@@ -70,13 +72,13 @@ body.modal-open {
 input, .input-sm, .form-control.file-caption.kv-fileinput-caption{
   background-color: #444954!important;
   color: #cfd4e2!important;
-  height: 35px!important;
+  height: 34px!important;
   border-color:#444954!important;
   font-size:15px!important;
 }
 
 .ocr-checkbox {
-  width:35px!important;
+  width:34px!important;
   margin: 0px!important;
   display: inline-block!important;
 }
@@ -290,7 +292,7 @@ i.fa-info-circle:hover {
   font-size: 22px;
   padding-top: 3px;
   padding-bottom: 0px;
-  height:35px;
+  height:34px;
 }
 
 .dropdown-menu,.dropdown-item {
@@ -641,4 +643,35 @@ panel-body*/
 .ui-button {
   border: 1px solid #9099ab!important; 
   background: #9099ab!important; 
+}
+
+
+@-webkit-keyframes blinker {
+  /*from {opacity: 1.0;}*/
+  from {color: #29a1d2;}
+  /*to {opacity: 0.0;}*/
+  to {color: #f44336;}
+}
+.flashing{
+  text-decoration: blink;
+
+  animation-name: blinker;
+  -moz-animation-name: blinker;
+  -webkit-animation-name: blinker;
+
+  animation-duration: 0.6s;
+  -moz-animation-duration: 0.6s;
+  -webkit-animation-duration: 0.6s;
+
+  animation-iteration-count:16;
+  -moz-animation-iteration-count:16;
+  -webkit-animation-iteration-count:16;
+
+  animation-timing-function:ease-in-out;
+  -moz-animation-timing-function:ease-in-out;
+  -webkit-animation-timing-function:ease-in-out;
+
+  animation-direction: alternate;
+  -moz-animation-direction: alternate;
+  -webkit-animation-direction: alternate;
 }

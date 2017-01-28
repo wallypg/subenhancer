@@ -57,15 +57,18 @@ $(document).ready(function(){
   $('#input-sub-file').on('change',function(e){
     var completeString = $(this).val();
     
+    // C:\fakepath\
     if(completeString.substr(0,12) == 'C:\\fakepath\\') tempString = completeString.substr(12);
     else tempString = completeString;
 
-    // C:\fakepath\
-    // Ransom 1x03 - The Box
-    // 2.Broke.Girls.S06E01E02.And.the.Two.Openings.HDTV.x264-LOL
-    // 2.Broke.Girls.S06E01.And.the.Two.Openings.HDTV.x264-LOL
-    // Blackish - 02x24 - Good-ish Times-Español
+    // Patterns:
+    // 1) Blackish - 02x24 - Good-ish Times-Español
+    //    Ransom 1x03 - The Box
+    // 2) 2.Broke.Girls.S06E01.And.the.Two.Openings.HDTV.x264-LOL
+    //    2.Broke.Girls.S06E01E02.And.the.Two.Openings.HDTV.x264-LOL
+
     // Poner como default si no viene nada HDTV y x264
+
     var pattern = 0;
     var xPosition = tempString.search(/\s[0-9]{1,2}x[0-9]{2}\s/i);
     if(xPosition > -1) pattern = 1;
@@ -92,13 +95,14 @@ $(document).ready(function(){
       tempString = lastHalf.slice(episodeSeasonEndPosition+3);
       var spanishPosition = tempString.search(/\s\(Español/);
       if(spanishPosition>0) title = tempString.slice(0,tempString.search(/\s\(Español/));
-      else var title = tempString.slice(0,tempString.search(/\.srt/));      
+      else var title = tempString.slice(0,tempString.search(/\.srt/));
 
       if(title.substr(title.length - 8) == '-Español') title = title.slice(0,-8);
 
     } else if(pattern == 2) {
       tvShow = (tempString.slice(0,xPosition)).replace(/\./ig,' ');
       var lastHalf = tempString.slice(tvShow.length+1);
+      // console.log(lastHalf);
       var nextDotPosition = lastHalf.indexOf('.');
       if(nextDotPosition == 6) {
         // SxxExx
@@ -107,14 +111,43 @@ $(document).ready(function(){
         lastHalf = lastHalf.slice(7);
       }
       var videoInfoPosition = lastHalf.search(/HDTV|DVDRip|WEB-DL|720p|1080p|PROPER|INTERNAL|LIMITED|REPACK/);
+      var videoInfo = lastHalf.slice(videoInfoPosition,-4);
+      var ripGroup = videoInfo.slice(videoInfo.lastIndexOf('-')+1);
+      
+      var moreInfo = videoInfo.slice(0,videoInfo.lastIndexOf('-'));
+
+      // HDTV|DVDRip|WEB-DL|WEBRip
+      if(moreInfo.search(/HDTV/i) >= 0) $('#format').val('HDTV');
+      if(moreInfo.search(/DVDRip/i) >= 0) $('#format').val('DVDRip');
+      if(moreInfo.search(/WEB-DL/i) >= 0) $('#format').val('WEB-DL');
+      if(moreInfo.search(/WEBRip/i) >= 0) $('#format').val('WEBRip');
+
+      // 720p|1080p
+      if(moreInfo.search(/720p/i) >= 0) $('#quality').val('720p');
+      if(moreInfo.search(/1080p/i) >= 0) $('#quality').val('1080p');
+
+      // PROPER|INTERNAL|LIMITED|REPACK
+      if(moreInfo.search(/INTERNAL/i) >= 0) $('#other').val('INTERNAL');
+      if(moreInfo.search(/LIMITED/i) >= 0) $('#other').val('LIMITED');
+      if(moreInfo.search(/PROPER/i) >= 0) $('#other').val('PROPER');
+      if(moreInfo.search(/REPACK/i) >= 0) $('#other').val('REPACK');
+      
+      // x264|x265|XviD
+      if(moreInfo.search(/x264/i) >= 0) $('#codec').val('x264');
+      if(moreInfo.search(/x265/i) >= 0) $('#codec').val('x265');
+      if(moreInfo.search(/XviD/i) >= 0) $('#codec').val('XviD');
+
       title = lastHalf.slice(0,videoInfoPosition).replace(/\./ig,' ');
     }
 
     
     $('#tv_show').val(tvShow);
+    $('#rip_group').val(ripGroup);
     $('#season').val(season);
     $('#episode_number').val(episode);
     $('#episode_title').val(title);
+    if(title.search(/^S\d{2}E/i) == 0) $('.title-info').addClass('flashing');
+    else $('.title-info').removeClass('flashing');
   });
 
   $('#enhance').submit(function(event) {
@@ -253,6 +286,15 @@ $(document).ready(function(){
           animation: 'top',
           title: '¿Para qué sirve?',
           content: 'Sólo se usa para completar de forma automática algunos de los campos.',
+          backgroundDismiss: true
+      });
+  });
+
+  $('i.fa-info-circle.title-info').on('click',function(){
+    $.alert({
+          animation: 'top',
+          title: 'Episodio múltiple',
+          content: 'Para nombres de episodios que no sigan el formato estándar, como por ejemplo los episodios múltiples del tipo "S06E22E23", ingresar el formato de título deseado en este campo y dejar vacíos los campos de temporada y&nbsp;episodio.',
           backgroundDismiss: true
       });
   });
