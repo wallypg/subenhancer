@@ -6,7 +6,8 @@ class Subenhancer extends CI_Controller {
 	function __construct(){
 		parent::__construct();
 		$this->load->library('session');
-		if(!isset($_SESSION['isLoggedIn']) || !$_SESSION['isLoggedIn']) redirect(base_url());
+
+		if(!isset($_SESSION['isLoggedIn']) || !$_SESSION['isLoggedIn']) redirect(base_url().'?goto='.urlencode($this->uri->uri_string));
 
 		$this->load->library('folder');
 		$this->folder->setFolder('subenhancer');
@@ -15,7 +16,7 @@ class Subenhancer extends CI_Controller {
 	}
 
 
-	public function index() {	
+	public function index() {
 
     	$data = array();
 

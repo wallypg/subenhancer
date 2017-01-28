@@ -11,9 +11,17 @@ class Subtitlehub extends CI_Controller {
 	}
 
 
-	public function index() {
-		if(isset($_SESSION['isLoggedIn']) && $_SESSION['isLoggedIn']) redirect(base_url().'subenhancer');
-		else $this->load->view('login');
+	public function index($goto='subenhancer') {
+		
+		if( isset($_GET['goto']) ) {
+			$goto = urldecode($_GET['goto']);
+		}
+
+		if(isset($_SESSION['isLoggedIn']) && $_SESSION['isLoggedIn']) redirect(base_url().$goto);
+		else {
+			$data['goto'] = $goto;
+			$this->load->view('login',$data);
+		}
 	}
 
 
