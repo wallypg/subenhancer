@@ -507,7 +507,10 @@ function saveEnhancedSubtitle ($subtitle,$totalSequences,$filename) {
 // Recibe la url de un subtítulo de "tusubtitulo" y devuelve el subtítulo en un string.
 function getSubtitleFromUrl($url) {
     $error = array('error'=>true);
-    require ('modules/ua.php');
+
+    $CI =& get_instance();
+    $CI->load->library("ua");
+
     $url = str_replace('https://www.tusubtitulo.com', '', $url);
     // $refererUrl = 'https://www.tusubtitulo.com/serie/star-wars-rebels/3/8/2235/';
     // $curlUrl = 'https://www.tusubtitulo.com/updated/5/52632/0';
@@ -515,7 +518,7 @@ function getSubtitleFromUrl($url) {
     // https://www.tusubtitulo.com/original/53312/0
     $serversArray = array('w1','s11','s93','s71');
     $server = $serversArray[mt_rand(0, count($serversArray) - 1)];
-    $userAgent = randomUserAgent();
+    $userAgent = $CI->ua->randomUserAgent();
     $proxyUrl = 'http://www.tusubtitulo.com.https.'.$server.'.wbprx.com'.$url;
 
 
@@ -544,8 +547,9 @@ function getSubtitleFromUrl($url) {
 // Recibe la url de un subtítulo srt y lo devuelve como un string.
 function getSrtSubtitle($url) {
     $error = array('error'=>true);
-    require ('modules/ua.php');
-    $userAgent = randomUserAgent();
+    $CI =& get_instance();
+    $CI->load->library("ua");
+    $userAgent = $CI->ua->randomUserAgent();
 
     $ch = curl_init();
     curl_setopt($ch, CURLOPT_URL, $url);
