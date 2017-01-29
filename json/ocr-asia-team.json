@@ -1,0 +1,259 @@
+{
+    "regex": [
+        {
+            "find": ",\\s*$",
+            "replace": "...",
+            "tags": []
+        },
+        {
+            "find": "^\\.\\.\\.\\s?",
+            "replace": "",
+            "tags": []
+        },
+        {
+            "find": "(?<=\\d)\\.(?=\\d{2}\b)",
+            "replace": ",",
+            "tags": []
+        },
+        {
+            "find": "(?<=\\d),(?=\\d{3})",
+            "replace": ".",
+            "tags": []
+        },
+        {
+            "find": "(?<=\\d)\\.(?=\\d\\b)",
+            "replace": ",",
+            "tags": []
+        },
+        {
+            "find": "(?<=\\d)\\s:",
+            "replace": ":",
+            "tags": []
+        },
+        {
+            "find": ",,+",
+            "replace": "...",
+            "tags": []
+        },
+        {
+            "find": "--+",
+            "replace": "...",
+            "tags": []
+        },
+        {
+            "find": "\\.\\.(?=[^(\\s\\n\\.\\?\\!)])",
+            "replace": ".. ",
+            "tags": []
+        },
+        {
+            "find": "0(?=\\s*$)",
+            "replace": "0...",
+            "tags": []
+        },
+        {
+            "find": "1(?=\\s*$)",
+            "replace": "1...",
+            "tags": []
+        },
+        {
+            "find": "2(?=\\s*$)",
+            "replace": "2...",
+            "tags": []
+        },
+        {
+            "find": "3(?=\\s*$)",
+            "replace": "3...",
+            "tags": []
+        },
+        {
+            "find": "4(?=\\s*$)",
+            "replace": "4...",
+            "tags": []
+        },
+        {
+            "find": "5(?=\\s*$)",
+            "replace": "5...",
+            "tags": []
+        },
+        {
+            "find": "6(?=\\s*$)",
+            "replace": "6...",
+            "tags": []
+        },
+        {
+            "find": "7(?=\\s*$)",
+            "replace": "7...",
+            "tags": []
+        },
+        {
+            "find": "8(?=\\s*$)",
+            "replace": "8...",
+            "tags": []
+        },
+        {
+            "find": "9(?=\\s*$)",
+            "replace": "9...",
+            "tags": []
+        },
+        {
+            "find": "a(?=\\s*$)",
+            "replace": "a...",
+            "tags": []
+        },
+        {
+            "find": "b(?=\\s*$)",
+            "replace": "b...",
+            "tags": []
+        },
+        {
+            "find": "c(?=\\s*$)",
+            "replace": "c...",
+            "tags": []
+        },
+        {
+            "find": "d(?=\\s*$)",
+            "replace": "d...",
+            "tags": []
+        },
+        {
+            "find": "e(?=\\s*$)",
+            "replace": "e...",
+            "tags": []
+        },
+        {
+            "find": "f(?=\\s*$)",
+            "replace": "f...",
+            "tags": []
+        },
+        {
+            "find": "g(?=\\s*$)",
+            "replace": "g...",
+            "tags": []
+        },
+        {
+            "find": "h(?=\\s*$)",
+            "replace": "h...",
+            "tags": []
+        },
+        {
+            "find": "i(?=\\s*$)",
+            "replace": "i...",
+            "tags": []
+        },
+        {
+            "find": "j(?=\\s*$)",
+            "replace": "j...",
+            "tags": []
+        },
+        {
+            "find": "k(?=\\s*$)",
+            "replace": "k...",
+            "tags": []
+        },
+        {
+            "find": "l(?=\\s*$)",
+            "replace": "l...",
+            "tags": []
+        },
+        {
+            "find": "m(?=\\s*$)",
+            "replace": "m...",
+            "tags": []
+        },
+        {
+            "find": "n(?=\\s*$)",
+            "replace": "n...",
+            "tags": []
+        },
+        {
+            "find": "o(?=\\s*$)",
+            "replace": "o...",
+            "tags": []
+        },
+        {
+            "find": "p(?=\\s*$)",
+            "replace": "p...",
+            "tags": []
+        },
+        {
+            "find": "q(?=\\s*$)",
+            "replace": "q...",
+            "tags": []
+        },
+        {
+            "find": "r(?=\\s*$)",
+            "replace": "r...",
+            "tags": []
+        },
+        {
+            "find": "s(?=\\s*$)",
+            "replace": "s...",
+            "tags": []
+        },
+        {
+            "find": "t(?=\\s*$)",
+            "replace": "t...",
+            "tags": []
+        },
+        {
+            "find": "u(?=\\s*$)",
+            "replace": "u...",
+            "tags": []
+        },
+        {
+            "find": "v(?=\\s*$)",
+            "replace": "v...",
+            "tags": []
+        },
+        {
+            "find": "w(?=\\s*$)",
+            "replace": "w...",
+            "tags": []
+        },
+        {
+            "find": "x(?=\\s*$)",
+            "replace": "x...",
+            "tags": []
+        },
+        {
+            "find": "y(?=\\s*$)",
+            "replace": "y...",
+            "tags": []
+        },
+        {
+            "find": "z(?=\\s*$)",
+            "replace": "z...",
+            "tags": []
+        },
+        {
+            "find": "á(?=\\s*$)",
+            "replace": "á...",
+            "tags": []
+        },
+        {
+            "find": "é(?=\\s*$)",
+            "replace": "é...",
+            "tags": []
+        },
+        {
+            "find": "í(?=\\s*$)",
+            "replace": "í...",
+            "tags": []
+        },
+        {
+            "find": "ó(?=\\s*$)",
+            "replace": "ó...",
+            "tags": []
+        },
+        {
+            "find": "ú(?=\\s*$)",
+            "replace": "ú...",
+            "tags": []
+        },
+        {
+            "find": "-\\s*\\.\\.\\.\\s*",
+            "replace": "- ",
+            "tags": []
+        }
+    ]
+}

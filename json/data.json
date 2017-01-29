@@ -6,24 +6,35 @@
         "Andromeda",
         "Blackish",
         "Blackish ",
+        "Blue Bloods",
+        "Bones",
+        "Bridget.Jones.Baby",
         "Chicago Fire",
         "Chicago Med",
         "Chicago PD",
+        "Children Of Dune",
         "Code Black",
+        "Conviction",
         "Criminal Minds",
         "CSI- Cyber",
         "Deep Water",
         "Elementary",
+        "FARSCAPE",
         "Father Brown",
+        "Incorporated",
         "Last Man Standing",
         "Last Man Standing ",
         "Law &amp; Order",
         "Law and Order- SVU",
+        "Lethal Weapon",
         "Madam Secretary",
+        "Marley's Ghosts",
         "Modern Family",
+        "NCIS New Orleans",
         "Shooter",
         "Still The King",
         "Suits",
+        "Supernatural",
         "The Last Man on Earth",
         "The Odd Couple ",
         "X Company"
@@ -35,7 +46,8 @@
     "format": [
         "DVDRip",
         "HDTV",
-        "WEB-DL"
+        "WEB-DL",
+        "WEBRip"
     ],
     "quality": [
         "720p",
@@ -76,6 +88,9 @@
     ],
     "translation": [
         "porsh",
-        "TuSubtitulo"
+        "TuSubtitulo",
+        "Tusubtitulo.com",
+        "Vicki09",
+        "Wendy"
     ]
 }

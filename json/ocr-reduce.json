@@ -1250,115 +1250,115 @@
             ]
         },
         {
-            "find": "[^\\n\\.][«'\\s]\\b(E)nero\\b",
+            "find": "(?<=[^\\n\\.][«'\\s]\\b)E(?=nero\\b)",
             "replace": "e",
             "tags": [
             ]
         },
         {
-            "find": "[^\\n\\.][«'\\s]\\b(F)ebrero\\b",
+            "find": "(?<=[^\\n\\.][«'\\s]\\b)F(?=ebrero\\b)",
             "replace": "f",
             "tags": [
             ]
         },
         {
-            "find": "[^\\n\\.][«'\\s]\\b(M)arzo\\b",
+            "find": "(?<=[^\\n\\.][«'\\s]\\b)M(?=arzo\\b)",
             "replace": "m",
             "tags": [
             ]
         },
         {
-            "find": "[^\\n\\.][«'\\s]\\b(A)bril\\b",
+            "find": "(?<=[^\\n\\.][«'\\s]\\b)A(?=bril\\b)",
             "replace": "a",
             "tags": [
             ]
         },
         {
-            "find": "[^\\n\\.][«'\\s]\\b(M)ayo\\b",
+            "find": "(?<=[^\\n\\.][«'\\s]\\b)M(?=ayo\\b)",
             "replace": "m",
             "tags": [
             ]
         },
         {
-            "find": "[^\\n\\.][«'\\s]\\b(J)unio\\b",
+            "find": "(?<=[^\\n\\.][«'\\s]\\b)J(?=unio\\b)",
             "replace": "j",
             "tags": [
             ]
         },
         {
-            "find": "[^\\n\\.][«'\\s]\\b(J)ulio\\b",
+            "find": "(?<=[^\\n\\.][«'\\s]\\b)J(?=ulio\\b)",
             "replace": "j",
             "tags": [
             ]
         },
         {
-            "find": "[^\\n\\.][«'\\s]\\b(A)gosto\\b",
+            "find": "(?<=[^\\n\\.][«'\\s]\\b)A(?=gosto\\b)",
             "replace": "a",
             "tags": [
             ]
         },
         {
-            "find": "[^\\n\\.][«'\\s]\\b(S)eptiembre\\b",
+            "find": "(?<=[^\\n\\.][«'\\s]\\b)S(?=eptiembre\\b)",
             "replace": "s",
             "tags": [
             ]
         },
         {
-            "find": "[^\\n\\.][«'\\s]\\b(O)ctubre\\b",
+            "find": "(?<=[^\\n\\.][«'\\s]\\b)O(?=ctubre\\b)",
             "replace": "o",
             "tags": [
             ]
         },
         {
-            "find": "[^\\n\\.][«'\\s]\\b(N)oviembre\\b",
+            "find": "(?<=[^\\n\\.][«'\\s]\\b)N(?=oviembre\\b)",
             "replace": "n",
             "tags": [
             ]
         },
         {
-            "find": "[^\\n\\.][«'\\s]\\b(D)iciembre\\b",
+            "find": "(?<=[^\\n\\.][«'\\s]\\b)D(?=iciembre\\b)",
             "replace": "d",
             "tags": [
             ]
         },
         {
-            "find": "[^\\n\\.][«'\\s]\\b(L)unes\\b",
+            "find": "(?<=[^\\n\\.][«'\\s]\\b)L(?=unes\\b)",
             "replace": "l",
             "tags": [
             ]
         },
         {
-            "find": "[^\\n\\.][«'\\s]\\b(M)artes\\b",
+            "find": "(?<=[^\\n\\.][«'\\s]\\b)M(?=artes\\b)",
             "replace": "m",
             "tags": [
             ]
         },
         {
-            "find": "[^\\n\\.][«'\\s]\\b(Mi[eé])rcoles\\b",
+            "find": "(?<=[^\\n\\.][«'\\s]\\b)Mi[eé](?=rcoles\\b)",
             "replace": "mié",
             "tags": [
             ]
         },
         {
-            "find": "[^\\n\\.][«'\\s]\\b(J)ueves\\b",
+            "find": "(?<=[^\\n\\.][«'\\s]\\b)J(?=ueves\\b)",
             "replace": "j",
             "tags": [
             ]
         },
         {
-            "find": "[^\\n\\.][«'\\s]\\b(V)iernes\\b",
+            "find": "(?<=[^\\n\\.][«'\\s]\\b)V(iernes\\b)",
             "replace": "v",
             "tags": [
             ]
         },
         {
-            "find": "[^\\n\\.][«'\\s]\\b(S[aá])bado\\b",
+            "find": "(?<=[^\\n\\.][«'\\s]\\b)S[aá](?=bado\\b)",
             "replace": "sá",
             "tags": [
             ]
         },
         {
-            "find": "[^\\n\\.][«'\\s]\\b(D)omingo\\b",
+            "find": "(?<=[^\\n\\.][«'\\s]\\b)D(?=omingo\\b)",
             "replace": "d",
             "tags": [
             ]

@@ -1,0 +1,374 @@
+{
+    "regex": [
+        {
+            "find": "\\sa\\s*\\n(?=.{1,39}$)",
+            "replace": "\\na\\s",
+            "tags": []
+        },
+        {
+            "find": "\\sante\\s*\\n(?=.{1,36}$)",
+            "replace": "\\nante\\s",
+            "tags": []
+        },
+        {
+            "find": "\\sbajo\\s*\\n(?=.{1,36}$)",
+            "replace": "\\nbajo\\s",
+            "tags": []
+        },
+        {
+            "find": "\\scon\\s*\\n(?=.{1,37}$)",
+            "replace": "\\ncon\\s",
+            "tags": []
+        },
+        {
+            "find": "\\sde\\s*\\n(?=.{1,38}$)",
+            "replace": "\\nde\\s",
+            "tags": []
+        },
+        {
+            "find": "\\sdesde\\s*\\n(?=.{1,35}$)",
+            "replace": "\\ndesde\\s",
+            "tags": []
+        },
+        {
+            "find": "\\sdurante\\s*\\n(?=.{1,33}$)",
+            "replace": "\\ndurante\\s",
+            "tags": []
+        },
+        {
+            "find": "\\sen\\s*\\n(?=.{1,38}$)",
+            "replace": "\\nen\\s",
+            "tags": []
+        },
+        {
+            "find": "\\sentre\\s*\\n(?=.{1,35}$)",
+            "replace": "\\nentre\\s",
+            "tags": []
+        },
+        {
+            "find": "\\sexcepto\\s*\\n(?=.{1,33}$)",
+            "replace": "\\nexcepto\\s",
+            "tags": []
+        },
+        {
+            "find": "\\shacia\\s*\\n(?=.{1,35}$)",
+            "replace": "\\nhacia\\s",
+            "tags": []
+        },
+        {
+            "find": "\\shasta\\s*\\n(?=.{1,35}$)",
+            "replace": "\\nhasta\\s",
+            "tags": []
+        },
+        {
+            "find": "\\smediante\\s*\\n(?=.{1,32}$)",
+            "replace": "\\nmediante\\s",
+            "tags": []
+        },
+        {
+            "find": "\\spara\\s*\\n(?=.{1,36}$)",
+            "replace": "\\npara\\s",
+            "tags": []
+        },
+        {
+            "find": "\\spor\\s*\\n(?=.{1,37}$)",
+            "replace": "\\npor\\s",
+            "tags": []
+        },
+        {
+            "find": "\\ssegún\\s*\\n(?=.{1,35}$)",
+            "replace": "\\nsegún\\s",
+            "tags": []
+        },
+        {
+            "find": "\\ssin\\s*\\n(?=.{1,37}$)",
+            "replace": "\\nsin\\s",
+            "tags": []
+        },
+        {
+            "find": "\\ssobre\\s*\\n(?=.{1,35}$)",
+            "replace": "\\nsobre\\s",
+            "tags": []
+        },
+        {
+            "find": "\\stras\\s*\\n(?=.{1,36}$)",
+            "replace": "\\ntras\\s",
+            "tags": []
+        },
+        {
+            "find": "\\so\\s*\\n(?=.{1,39}$)",
+            "replace": "\\no\\s",
+            "tags": []
+        },
+        {
+            "find": "\\spero\\s*\\n(?=.{1,36}$)",
+            "replace": "\\npero\\s",
+            "tags": []
+        },
+        {
+            "find": "\\sporque\\s*\\n(?=.{1,34}$)",
+            "replace": "\\nporque\\s",
+            "tags": []
+        },
+        {
+            "find": "\\sy\\s*\\n(?=.{1,39}$)",
+            "replace": "\\ny\\s",
+            "tags": []
+        },
+        {
+            "find": "\\sque\\s*\\n(?=.{1,37}$)",
+            "replace": "\\nque\\s",
+            "tags": []
+        },
+        {
+            "find": "\\scuando\\s*\\n(?=.{1,34}$)",
+            "replace": "\\ncuando\\s",
+            "tags": []
+        },
+        {
+            "find": "\\ssuficientemente\\s*\\n(?=.{1,25}$)",
+            "replace": "\\nsuficientemente\\s",
+            "tags": []
+        },
+        {
+            "find": "\\stan\\s*\\n(?=.{1,37}$)",
+            "replace": "\\ntan\\s",
+            "tags": []
+        },
+        {
+            "find": "\\stanto\\s*\\n(?=.{1,35}$)",
+            "replace": "\\ntanto\\s",
+            "tags": []
+        },
+        {
+            "find": "\\smucho\\s*\\n(?=.{1,35}$)",
+            "replace": "\\nmucho\\s",
+            "tags": []
+        },
+        {
+            "find": "\\smucha\\s*\\n(?=.{1,35}$)",
+            "replace": "\\nmucha\\s",
+            "tags": []
+        },
+        {
+            "find": "\\smuchos\\s*\\n(?=.{1,34}$)",
+            "replace": "\\nmuchos\\s",
+            "tags": []
+        },
+        {
+            "find": "\\smuchas\\s*\\n(?=.{1,34}$)",
+            "replace": "\\nmuchas\\s",
+            "tags": []
+        },
+        {
+            "find": "\\sal\\s*\\n(?=.{1,38}$)",
+            "replace": "\\nal\\s",
+            "tags": []
+        },
+        {
+            "find": "\\sya\\s*\\n(?=.{1,38}$)",
+            "replace": "\\nya\\s",
+            "tags": []
+        },
+        {
+            "find": "\\sel\\s*\\n(?=.{1,38}$)",
+            "replace": "\\nel\\s",
+            "tags": []
+        },
+        {
+            "find": "\\sla\\s*\\n(?=.{1,38}$)",
+            "replace": "\\nla\\s",
+            "tags": []
+        },
+        {
+            "find": "\\slo\\s*\\n(?=.{1,38}$)",
+            "replace": "\\nlo\\s",
+            "tags": []
+        },
+        {
+            "find": "\\slas\\s*\\n(?=.{1,37}$)",
+            "replace": "\\nlas\\s",
+            "tags": []
+        },
+        {
+            "find": "\\slos\\s*\\n(?=.{1,37}$)",
+            "replace": "\\nlos\\s",
+            "tags": []
+        },
+        {
+            "find": "\\sun\\s*\\n(?=.{1,38}$)",
+            "replace": "\\nun\\s",
+            "tags": []
+        },
+        {
+            "find": "\\suna\\s*\\n(?=.{1,37}$)",
+            "replace": "\\nuna\\s",
+            "tags": []
+        },
+        {
+            "find": "\\sunas\\s*\\n(?=.{1,36}$)",
+            "replace": "\\nunas\\s",
+            "tags": []
+        },
+        {
+            "find": "\\snos\\s*\\n(?=.{1,37}$)",
+            "replace": "\\nnos\\s",
+            "tags": []
+        },
+        {
+            "find": "\\sles\\s*\\n(?=.{1,37}$)",
+            "replace": "\\nles\\s",
+            "tags": []
+        },
+        {
+            "find": "\\sme\\s*\\n(?=.{1,38}$)",
+            "replace": "\\nme\\s",
+            "tags": []
+        },
+        {
+            "find": "\\ste\\s*\\n(?=.{1,38}$)",
+            "replace": "\\nte\\s",
+            "tags": []
+        },
+        {
+            "find": "\\sse\\s*\\n(?=.{1,38}$)",
+            "replace": "\\nse\\s",
+            "tags": []
+        },
+        {
+            "find": "\\sdel\\s*\\n(?=.{1,37}$)",
+            "replace": "\\ndel\\s",
+            "tags": []
+        },
+        {
+            "find": "\\smi\\s*\\n(?=.{1,38}$)",
+            "replace": "\\nmi\\s",
+            "tags": []
+        },
+        {
+            "find": "\\smis\\s*\\n(?=.{1,37}$)",
+            "replace": "\\nmis\\s",
+            "tags": []
+        },
+        {
+            "find": "\\ssus\\s*\\n(?=.{1,37}$)",
+            "replace": "\\nsus\\s",
+            "tags": []
+        },
+        {
+            "find": "\\ssu\\s*\\n(?=.{1,38}$)",
+            "replace": "\\nsu\\s",
+            "tags": []
+        },
+        {
+            "find": "\\stu\\s*\\n(?=.{1,38}$)",
+            "replace": "\\ntu\\s",
+            "tags": []
+        },
+        {
+            "find": "\\stus\\s*\\n(?=.{1,37}$)",
+            "replace": "\\ntus\\s",
+            "tags": []
+        },
+        {
+            "find": "\\sesa\\s*\\n(?=.{1,37}$)",
+            "replace": "\\nesa\\s",
+            "tags": []
+        },
+        {
+            "find": "\\sese\\s*\\n(?=.{1,37}$)",
+            "replace": "\\nese\\s",
+            "tags": []
+        },
+        {
+            "find": "\\sesas\\s*\\n(?=.{1,36}$)",
+            "replace": "\\nesas\\s",
+            "tags": []
+        },
+        {
+            "find": "\\sesos\\s*\\n(?=.{1,36}$)",
+            "replace": "\\nesos\\s",
+            "tags": []
+        },
+        {
+            "find": "\\siba\\s*\\n(?=.{1,37}$)",
+            "replace": "\\niba\\s",
+            "tags": []
+        },
+        {
+            "find": "\\sni\\s*\\n(?=.{1,38}$)",
+            "replace": "\\nni\\s",
+            "tags": []
+        },
+        {
+            "find": "\\sno\\s*\\n(?=.{1,38}$)",
+            "replace": "\\nno\\s",
+            "tags": []
+        },
+        {
+            "find": "\\ses\\s*\\n(?=.{1,38}$)",
+            "replace": "\\nes\\s",
+            "tags": []
+        },
+        {
+            "find": "\\sestán\\s*\\n(?=.{1,35}$)",
+            "replace": "\\nestán\\s",
+            "tags": []
+        },
+        {
+            "find": "\\ssea\\s*\\n(?=.{1,37}$)",
+            "replace": "\\nsea\\s",
+            "tags": []
+        },
+        {
+            "find": "\\sserá\\s*\\n(?=.{1,36}$)",
+            "replace": "\\nserá\\s",
+            "tags": []
+        },
+        {
+            "find": "\\shas\\s*\\n(?=.{1,37}$)",
+            "replace": "\\nhas\\s",
+            "tags": []
+        },
+        {
+            "find": "\\sho\\s*\\n(?=.{1,38}$)",
+            "replace": "\\nho\\s",
+            "tags": []
+        },
+        {
+            "find": "\\shan\\s*\\n(?=.{1,37}$)",
+            "replace": "\\nhan\\s",
+            "tags": []
+        },
+        {
+            "find": "\\she\\s*\\n(?=.{1,38}$)",
+            "replace": "\\nhe\\s",
+            "tags": []
+        },
+        {
+            "find": "\\shemos\\s*\\n(?=.{1,35}$)",
+            "replace": "\\nhemos\\s",
+            "tags": []
+        },
+        {
+            "find": "\\shabías\\s*\\n(?=.{1,34}$)",
+            "replace": "\\nhabías\\s",
+            "tags": []
+        },
+        {
+            "find": "\\shabía\\s*\\n(?=.{1,35}$)",
+            "replace": "\\nhabía\\s",
+            "tags": []
+        },
+        {
+            "find": "\\shabían\\s*\\n(?=.{1,34}$)",
+            "replace": "\\nhabían\\s",
+            "tags": []
+        },
+        {
+            "find": "\\shabíamos\\s*\\n(?=.{1,32}$)",
+            "replace": "\\nhabíamos\\s",
+            "tags": []
+        }
+    ]
+}
