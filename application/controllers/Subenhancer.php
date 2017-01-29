@@ -282,6 +282,15 @@ class Subenhancer extends CI_Controller {
 		$maxVariation = 700;
 		$minDuration = 900;
 
+
+		// OCRs: ocr-asia-team, ocr-reduce, ocr-reduce-at
+		// Unión líneas cortas
+		// Líneas duplicadas
+		// Unidades de sentido
+		// Puntos suspensivos
+		// Mantener nombre de archivo
+		// Capítulo final de temporada / película? (Créditos)
+
 		/************************************************************/
 		/** Parseo del string a un objeto **/
 		/************************************************************/

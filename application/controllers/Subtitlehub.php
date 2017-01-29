@@ -53,5 +53,10 @@ class Subtitlehub extends CI_Controller {
 		session_destroy();
 		redirect(base_url());
 	}
+
+	public function test() {
+		
+
+	}
 }
 ?>

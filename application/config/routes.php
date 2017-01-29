@@ -56,6 +56,7 @@ $route['translate_uri_dashes'] = FALSE;
 $route['login'] = 'subtitlehub/index';
 $route['auth'] = 'subtitlehub/auth';
 $route['logout'] = 'subtitlehub/logout';
+$route['test'] = 'subtitlehub/test';
 
 $route['editor'] = 'subenhancer/editor';
 $route['editor/log'] = 'subenhancer/editor/log';

@@ -4,54 +4,122 @@ class Ocr {
 
   public function ocrCheck($string,$dbg=false)
   {
-    $allOcr = json_decode(file_get_contents('json/ocr_v3.json'));
+    $originalString = $string;
     $returnArray = array();
     $matches = array();
+    $arrayFindings = array();
     
-    $originalString = $string;
-    foreach($allOcr->regex as $ocr){
-        if(!in_array('disabled',$ocr->tags)) {
-          // find, replace, useREonlyToFind
-          $pattern = '/'.$ocr->find.'/u';
-          // $pregMatch = ($ocr->global) ? preg_match_all($pattern, $string, $matches) : preg_match($pattern, $string, $matches);
-          if(preg_match($pattern, $string, $matches)) {
-              $returnArray['found'] = (isset($returnArray['found'])) ? $this->highlightChange($originalString, $matches[0], $returnArray['found']) : $this->highlightChange($originalString, $matches[0]);
+
+    $openTag = '<span class="ocr-highlight">';
+    $closeTag = '</span>';
+    $lookAhead = '(?!'.preg_quote($closeTag).')';
+    $lookBehind = '(?<!'.preg_quote($openTag).')';
+
+    $allOcr = json_decode(file_get_contents('json/ocr-reduce.json'));
+
+    if(isset($allOcr->regex)) {
+      foreach($allOcr->regex as $ocr){
+          if(!in_array('disabled',$ocr->tags)) {
+            // find, replace, useREonlyToFind
+            $pattern = '/'.$ocr->find.'/u';
+            
+            if(preg_match_all($pattern, $string, $matches)) {
+              if(!isset($returnArray['regex'])) $returnArray['regex'] = array();
+
+              $regexPattern = '#'.$lookBehind.$ocr->find.$lookAhead.'#u';
+
+              foreach($matches[0] as $match) {
+                $returnArray['found'] = (isset($returnArray['found']))
+                                        ?
+                                        preg_replace($regexPattern, $openTag.$match.$closeTag, $returnArray['found'], 1)
+                                        :
+                                        preg_replace($regexPattern, $openTag.$match.$closeTag, $string, 1);
+              }
+
               $returnArray['ocredLine'] = preg_replace($pattern, $ocr->replace, $string);
-              $returnArray['replaced'] = (isset($returnArray['replaced'])) ? $this->highlightChange($returnArray['ocredLine'], $ocr->replace, $returnArray['replaced']) : $this->highlightChange($returnArray['ocredLine'], $ocr->replace);
-              if($dbg) $returnArray['regex'] = $pattern;
+              
+              foreach($matches[0] as $match) {
+                $returnArray['replaced'] = (isset($returnArray['replaced']))
+                                        ?
+                                        preg_replace($regexPattern, $openTag.$ocr->replace.$closeTag, $returnArray['replaced'], 1)
+                                        :
+                                        preg_replace($regexPattern, $openTag.$ocr->replace.$closeTag, $string, 1);
+              }
+
+              // $returnArray['found'] = (isset($returnArray['found'])) ? $this->highlightChange($originalString, $matches[0], $returnArray['found']) : $this->highlightChange($originalString, $matches[0]);//h-l
+              
+              // $returnArray['replaced'] = (isset($returnArray['replaced'])) ? $this->highlightChange($returnArray['ocredLine'], $ocr->replace, $returnArray['replaced']) : $this->highlightChange($returnArray['ocredLine'], $ocr->replace);//h-l
+
+              if($dbg) array_push($returnArray['regex'], $pattern);
               $string = $returnArray['ocredLine'];
-          }          
-        }
+            }          
+          }
+      }      
     }
 
-    foreach($allOcr->string as $ocr){
-      if(!in_array('disabled',$ocr->tags)) {
-        // find, replace, preserveCase, caseSensitive, wholeWord
-        // ((?<=\s|\W)|^) <----> ($|(?=\s|\W))
-        // (?:(?<=[\W^¿])(?=[\wá-úÁ-ÚñÑ])|(?<=[\wá-úÁ-ÚñÑ])(?=\W|$)) <----> (?:(?<=\W|^)(?=\w)|(?<=\w)(?=\W|$))
-        // (?<=^|\.|\s|,|¿|\?|\¡|\$|\·|\&|\@|\\|\#|\~|\+|\*|\-|\_|\:|\;|\=|\{|\}|\[|\]|\/|\(|\)|\||\%|\<|\>) <-----> (?=^|\.|\s|,|¿|\?|\¡|\$|\·|\&|\@|\\|\#|\~|\+|\*|\-|\_|\:|\;|\=|\{|\}|\[|\]|\/|\(|\)|\||\%|\<|\>)
-        $pattern = ($ocr->wholeWord) ? '/((?<=\W|\s|^)|\b)'.preg_quote($ocr->find).'((?=\W|\s|$)|\b)/u' : '/'.preg_quote($ocr->find).'/u';
-        if(!$ocr->caseSensitive) $pattern .= 'i';
-        if(preg_match($pattern, $string, $matches)) {
+
+    if(isset($allOcr->string)) {
+      foreach($allOcr->string as $ocr){
+        if(!in_array('disabled',$ocr->tags)) {
+          // find, replace, preserveCase, caseSensitive, wholeWord
+          
+          // ((?<=\s|\W)|^) <----> ($|(?=\s|\W))
+          // (?:(?<=[\W^¿])(?=[\wá-úÁ-ÚñÑ])|(?<=[\wá-úÁ-ÚñÑ])(?=\W|$)) <----> (?:(?<=\W|^)(?=\w)|(?<=\w)(?=\W|$))
+          // (?<=^|\.|\s|,|¿|\?|\¡|\$|\·|\&|\@|\\|\#|\~|\+|\*|\-|\_|\:|\;|\=|\{|\}|\[|\]|\/|\(|\)|\||\%|\<|\>) <-----> (?=^|\.|\s|,|¿|\?|\¡|\$|\·|\&|\@|\\|\#|\~|\+|\*|\-|\_|\:|\;|\=|\{|\}|\[|\]|\/|\(|\)|\||\%|\<|\>)
+
+          $pattern = ($ocr->wholeWord) ? '/((?<=\W|\s|^)|\b)'.preg_quote($ocr->find).'((?=\W|\s|$)|\b)/u' : '/'.preg_quote($ocr->find).'/u';
+          if(!$ocr->caseSensitive) $pattern .= 'i';
+          if(preg_match($pattern, $string, $matches)) {
             // ¿$string vs $originalString?
-            $returnArray['found'] = (isset($returnArray['found'])) ? $this->highlightChange($originalString, $matches[0], $returnArray['found']) : $this->highlightChange($originalString, $matches[0]);
+            // $regexPattern = '#'.$lookBehind.$ocr->find.$lookAhead.'#u';
 
-            if($ocr->preserveCase) {
-                // $ocr->replace = (startsWithUpper($matches[0])) ? ucfirst($ocr->replace) : lcfirst($ocr->replace) ;
-                $ocr->replace = ($this->startsWithUpper($matches[0])) ? $this->firstLetterCase($ocr->replace,'u') : $this->firstLetterCase($ocr->replace,'l');
-            }
+            $returnArray['found'] = (isset($returnArray['found']))
+                                    ?
+                                    preg_replace($pattern, $openTag.$matches[0].$closeTag, $returnArray['found'])
+                                    :
+                                    preg_replace($pattern, $openTag.$matches[0].$closeTag, $string);
 
-            $returnArray['ocredLine'] = preg_replace($pattern, $ocr->replace, $string);
-            $returnArray['replaced'] = (isset($returnArray['replaced'])) ? $this->highlightChange($returnArray['ocredLine'], $ocr->replace, $returnArray['replaced']) : $this->highlightChange($returnArray['ocredLine'], $ocr->replace);
-            $string = $returnArray['ocredLine'];
+              // $returnArray['found'] = (isset($returnArray['found'])) ? $this->highlightChange($originalString, $matches[0], $returnArray['found']) : $this->highlightChange($originalString, $matches[0]);//h-l
 
+              if($ocr->preserveCase) {
+                  // $ocr->replace = (startsWithUpper($matches[0])) ? ucfirst($ocr->replace) : lcfirst($ocr->replace) ;
+                  $ocr->replace = ($this->startsWithUpper($matches[0])) ? $this->firstLetterCase($ocr->replace,'u') : $this->firstLetterCase($ocr->replace,'l');
+              }
+
+              $returnArray['ocredLine'] = preg_replace($pattern, $ocr->replace, $string);
+
+              $returnArray['replaced'] = (isset($returnArray['replaced']))
+                                    ?
+                                    preg_replace($pattern, $openTag.$ocr->replace.$closeTag, $returnArray['replaced'])
+                                    :
+                                    preg_replace($pattern, $openTag.$ocr->replace.$closeTag, $string);
+
+              // $returnArray['replaced'] = (isset($returnArray['replaced'])) ? $this->highlightChange($returnArray['ocredLine'], $ocr->replace, $returnArray['replaced']) : $this->highlightChange($returnArray['ocredLine'], $ocr->replace);//h-l
+              $string = $returnArray['ocredLine'];
+
+          }
         }
       }
     }
 
+
+    return $returnArray;
+
+    // NUEVO RESALTADO (LIBRERÍA DiffString -> https://github.com/sdelamorena/php-string-diff)
+    // if(isset($returnArray['ocredLine'])) {
+    //   $this->_CI =& get_instance();
+    //   $this->_CI->load->library("diffstring");
+      
+    //   $diffsArray = $this->_CI->diffstring->compare($originalString,$returnArray['ocredLine']);
+    //   $returnArray['found'] = $this->highlightDiff($originalString, $diffsArray['stop']);
+    //   $returnArray['replaced'] = $this->highlightDiff($returnArray['ocredLine'], $diffsArray['start']);
+    // }
+
     // if(isset($returnArray['found']) && !strpos('</span>', $returnArray['found'])) $returnArray['found'] = highlightFirstLetter($returnArray['found']);
     // if(isset($returnArray['replaced']) && !strpos('</span>', $returnArray['replaced'])) $returnArray['replaced'] = highlightFirstLetter($returnArray['replaced']);
-    return $returnArray;
+
+
+
   }
 
   public function startsWithUpper($str) {
@@ -144,6 +212,27 @@ class Ocr {
       if ($length === NULL) $length = mb_strlen($string);
       array_splice($smatches[0], $start, $length, $rmatches[0]);
       return join($smatches[0]);
+  }
+
+  public function highlightDiff($string, $diffs) {
+    $openTag = '<span class="ocr-highlight">';
+    $closeTag = '</span>';
+
+    $diffArray = explode(' ', $diffs);
+
+    foreach ($diffArray as $key => $diff) {
+      $continue = 1;
+      for($i = 1; $i < count($diffArray) && $continue; $i++) {
+        if(isset($diffArray[$i]) && strpos($string, $diff.' '.$diffArray[$i]) !== False) {
+          $diff = $diff.' '.$diffArray[$i];
+          unset($diffArray[$i]);
+        } else $continue = 0;
+      }
+      $string = str_replace(trim($diff), $openTag.trim($diff).$closeTag, $string);
+    }
+
+    $string = str_replace($closeTag.' '.$openTag, ' ', $string);
+    return $string;
   }
 }
 
