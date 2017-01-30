@@ -1,0 +1,1297 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<tt xmlns:tt="http://www.w3.org/ns/ttml" xmlns:ttm="http://www.w3.org/ns/ttml#metadata" xmlns:ttp="http://www.w3.org/ns/ttml#parameter" xmlns:tts="http://www.w3.org/ns/ttml#styling" ttp:tickRate="10000000" ttp:timeBase="media" xmlns="http://www.w3.org/ns/ttml">
+<head>
+<ttp:profile use="http://netflix.com/ttml/profile/dfxp-ls-sdh"/>
+<styling>
+<style tts:color="white" tts:fontSize="100%" tts:fontWeight="normal" xml:id="s1"/>
+<style tts:color="white" tts:fontSize="100%" tts:fontStyle="italic" tts:fontWeight="normal" xml:id="s1_1"/>
+</styling>
+<layout>
+<region tts:displayAlign="after" tts:extent="80.00% 80.00%" tts:origin="10.00% 10.00%" tts:textAlign="center" xml:id="bottomCenter"/>
+<region tts:displayAlign="before" tts:extent="80.00% 80.00%" tts:origin="10.00% 10.00%" tts:textAlign="center" xml:id="topCenter"/>
+</layout>
+</head>
+<body>
+<div xml:space="preserve">
+<p begin="93012920t" end="141811670t" region="topCenter" style="s1" xml:id="subtitle0">UN DOCUMENTAL DE NETFLIX</p>
+<p begin="163913750t" end="221050829t" region="bottomCenter" style="s1" xml:id="subtitle1">Human Rights Watch investiga la violación<br/>de derechos humanos en todo el mundo.</p>
+<p begin="221891669t" end="251501249t" region="bottomCenter" style="s1" xml:id="subtitle2">En tiempos de crisis inmediatas,<br/>envía investigadores</p>
+<p begin="252332079t" end="278608330t" region="bottomCenter" style="s1" xml:id="subtitle3">especialmente preparados<br/>para situaciones de emergencia.</p>
+<p begin="279449170t" end="330330000t" region="topCenter" style="s1" xml:id="subtitle4">Este es el E-TEAM.</p>
+<p begin="392892500t" end="417497080t" region="topCenter" style="s1" xml:id="subtitle5">SIRIA, 2013</p>
+<p begin="549719170t" end="585585000t" region="bottomCenter" style="s1" xml:id="subtitle6">¿Podemos hacerle<br/>unas preguntas sobre lo que ocurrió?</p>
+<p begin="617697080t" end="646475830t" region="bottomCenter" style="s1" xml:id="subtitle7">Esto es de un avión.</p>
+<p begin="676505830t" end="704453750t" region="bottomCenter" style="s1" xml:id="subtitle8">Una bomba de racimo.</p>
+<p begin="705284580t" end="738237500t" region="bottomCenter" style="s1" xml:id="subtitle9">Esto es lo que entró en mi cuerpo.</p>
+<p begin="739068330t" end="775354580t" region="bottomCenter" style="s1" xml:id="subtitle10">¿Sabe él cuántas personas murieron<br/>en estos ataques, en total?</p>
+<p begin="776195420t" end="820399580t" region="bottomCenter" style="s1" xml:id="subtitle11">En total, resultaron heridos<br/>más de 200 niños y adultos.</p>
+<p begin="821240420t" end="853772919t" region="bottomCenter" style="s1" xml:id="subtitle12">Perdí a dos miembros de mi familia.</p>
+<p begin="861690829t" end="900069169t" region="bottomCenter" style="s1" xml:id="subtitle13">A mi hija menor y otra niña.</p>
+<p begin="900899999t" end="936765829t" region="bottomCenter" style="s1" xml:id="subtitle14">Pero el número de heridos es enorme.<br/>Lanzaron seis misiles desde el avión.</p>
+<p begin="937606669t" end="963462499t" region="bottomCenter" style="s1" xml:id="subtitle15">Lanzaron seis bombas de racimo.</p>
+<p begin="964293329t" end="997246249t" region="bottomCenter" style="s1" xml:id="subtitle16">Cree que hay más de 200 personas heridas.</p>
+<p begin="998077079t" end="1034783749t" region="bottomCenter" style="s1" xml:id="subtitle17">Porque están heridas<br/>casi todas las personas de esta zona.</p>
+<p begin="1035614579t" end="1055224169t" region="bottomCenter" style="s1" xml:id="subtitle18">¡Dios mío!</p>
+<p begin="1056054999t" end="1076075000t" region="bottomCenter" style="s1" xml:id="subtitle19">¡Que Dios nos ampare!</p>
+<p begin="1097766670t" end="1124042920t" region="bottomCenter" style="s1" xml:id="subtitle20">¿Adónde iremos?<br/>Deberíamos bajar.</p>
+<p begin="1135714580t" end="1169498330t" region="bottomCenter" style="s1" xml:id="subtitle21">Dios mío, está disparando.</p>
+<p begin="1170339170t" end="1195364170t" region="bottomCenter" style="s1" xml:id="subtitle22">Esto es interminable.</p>
+<p begin="1196195000t" end="1242070830t" region="bottomCenter" style="s1" xml:id="subtitle23">Fue lo que sufrimos el otro día.</p>
+<p begin="1242911670t" end="1254583330t" region="bottomCenter" style="s1" xml:id="subtitle24">Exactamente lo mismo.</p>
+<p begin="1255424170t" end="1279608330t" region="bottomCenter" style="s1" xml:id="subtitle25">Dios, por favor, maldice al régimen.</p>
+<p begin="1280449170t" end="1314643330t" region="bottomCenter" style="s1" xml:id="subtitle26">¿Qué hicimos?<br/>¿Por qué nos merecemos esto?</p>
+<p begin="1315484170t" end="1343842500t" region="bottomCenter" style="s1" xml:id="subtitle27">¿Qué delito cometimos?</p>
+<p begin="1371370000t" end="1396395000t" region="bottomCenter" style="s1" xml:id="subtitle28">Ya se fueron, por ahora.</p>
+<p begin="1409738330t" end="1439357920t" region="bottomCenter" style="s1" xml:id="subtitle29">Hicieron lo que vinieron a hacer.</p>
+<p begin="1440188750t" end="1473972500t" region="bottomCenter" style="s1" xml:id="subtitle30">Ahora se va,<br/>porque ya disparó,</p>
+<p begin="1474803330t" end="1497746250t" region="bottomCenter" style="s1" xml:id="subtitle31">pero en ocasiones regresa.</p>
+<p begin="1498577080t" end="1539868330t" region="bottomCenter" style="s1" xml:id="subtitle32">Atacan cuatro o cinco veces.<br/>Ya sucedió antes.</p>
+<p begin="1540709170t" end="1551129580t" region="bottomCenter" style="s1" xml:id="subtitle33">Está bien.</p>
+<p begin="1559057500t" end="1588667080t" region="bottomCenter" style="s1" xml:id="subtitle34">¿Continuamos un rato más?</p>
+<p begin="1637055420t" end="1649147500t" region="bottomCenter" style="s1" xml:id="subtitle35">Ustedes primero.</p>
+<p begin="1868536669t" end="1880208329t" region="bottomCenter" style="s1" xml:id="subtitle36">ZONAS ATACADAS<br/>CON ARMAS QUÍMICAS</p>
+<p begin="1914412499t" end="1940688749t" region="bottomCenter" style="s1" xml:id="subtitle37">sin mediar necesidad militar</p>
+<p begin="2082500419t" end="2095423329t" region="topCenter" style="s1" xml:id="subtitle38">PRIMERA CONVENCIÓN DE GINEBRA<br/>(HERIDOS Y ENFERMOS)</p>
+<p begin="2138806669t" end="2150898750t" region="bottomCenter" style="s1" xml:id="subtitle39">Artículo 7: Crímenes de lesa humanidad</p>
+<p begin="2197195000t" end="2208456250t" region="topCenter" style="s1" xml:id="subtitle40">Deportación o traslado ilegal</p>
+<p begin="2451198750t" end="2498746250t" region="topCenter" style="s1" xml:id="subtitle41">DOS AÑOS ANTES</p>
+<p begin="2723140420t" end="2744822080t" region="bottomCenter" style="s1" xml:id="subtitle42">-¿Sabes que es la canción de nuestra boda?<br/>-Sí.</p>
+<p begin="2787785000t" end="2799466670t" region="bottomCenter" style="s1" xml:id="subtitle43">Tengo que practicar.</p>
+<p begin="2847845000t" end="2861188330t" region="bottomCenter" style="s1" xml:id="subtitle44">Matemática y ¿qué más?</p>
+<p begin="2862029170t" end="2884551670t" region="bottomCenter" style="s1" xml:id="subtitle45">Francés. Ya sé francés y...</p>
+<p begin="2905402500t" end="2915412500t" region="topCenter" style="s1" xml:id="subtitle46">¿Qué tal si estudias?</p>
+<p begin="2916243330t" end="2926673750t" region="topCenter" style="s1" xml:id="subtitle47">DANYA<br/>HIJO DE ANNA</p>
+<p begin="2927504580t" end="2954201250t" region="topCenter" style="s1" xml:id="subtitle48">-Lo sé. Estudié una hora entera.<br/>-Siempre sabes todo.</p>
+<p begin="2955032080t" end="2974641670t" region="bottomCenter" style="s1" xml:id="subtitle49">-Sí.<br/>-Vamos, por favor.</p>
+<p begin="2975472500t" end="3006333330t" region="bottomCenter" style="s1" xml:id="subtitle50">-Haré la tarea de francés.<br/>-Sí. Me parece bien.</p>
+<p begin="3050547500t" end="3083500420t" region="bottomCenter" style="s1" xml:id="subtitle51">¿También debemos enviarlo<br/>a la División Infantil y de Armas?</p>
+<p begin="3084331250t" end="3099346250t" region="bottomCenter" style="s1" xml:id="subtitle52">Sí.</p>
+<p begin="3225722500t" end="3247414170t" region="bottomCenter" style="s1" xml:id="subtitle53"><span style="s1_1">Aquí están las imágenes y los sonidos</span></p>
+<p begin="3248245000t" end="3300797500t" region="bottomCenter" style="s1" xml:id="subtitle54"><span style="s1_1">que el presidente sirio Bashar al-Assad</span><br/><span style="s1_1">no quiere que el mundo vea.</span></p>
+<p begin="3301628330t" end="3324150830t" region="topCenter" style="s1" xml:id="subtitle55"><span style="s1_1">Decenas de miles de manifestantes</span><br/><span style="s1_1">repitiendo eslóganes de libertad.</span></p>
+<p begin="3324991670t" end="3335001670t" region="topCenter" style="s1" xml:id="subtitle56">¡LIBERTAD!</p>
+<p begin="3337914580t" end="3375872499t" region="bottomCenter" style="s1" xml:id="subtitle57"><span style="s1_1">Desde hace cuatro décadas,</span><br/><span style="s1_1">Bashar al-Assad y su familia</span></p>
+<p begin="3376703329t" end="3405902499t" region="bottomCenter" style="s1" xml:id="subtitle58"><span style="s1_1">gobiernan la nación siria</span><br/><span style="s1_1">con puño de acero.</span></p>
+<p begin="3406733329t" end="3431758329t" region="bottomCenter" style="s1" xml:id="subtitle59"><span style="s1_1">Ahora el Presidente enfrenta quizá</span></p>
+<p begin="3432599169t" end="3460537079t" region="bottomCenter" style="s1" xml:id="subtitle60"><span style="s1_1">una amenaza inaudita a su régimen.</span></p>
+<p begin="3490987499t" end="3507674169t" region="bottomCenter" style="s1" xml:id="subtitle61"><span style="s1_1">Todo ocurre muy deprisa.</span></p>
+<p begin="3508504999t" end="3542709169t" region="bottomCenter" style="s1" xml:id="subtitle62"><span style="s1_1">En Siria,</span><br/><span style="s1_1">matan a gente que sale a protestar.</span></p>
+<p begin="3543539999t" end="3566062499t" region="bottomCenter" style="s1" xml:id="subtitle63">Y eso sin mencionar</p>
+<p begin="3566893329t" end="3591507919t" region="bottomCenter" style="s1" xml:id="subtitle64">a los miles de detenidos y torturados.</p>
+<p begin="3592338749t" end="3616112499t" region="bottomCenter" style="s1" xml:id="subtitle65">Y todo eso debe acabarse.</p>
+<p begin="3616943329t" end="3653229579t" region="bottomCenter" style="s1" xml:id="subtitle66">No podemos esperar<br/>otros cinco meses, ni otro año más.</p>
+<p begin="3654070419t" end="3677844169t" region="bottomCenter" style="s1" xml:id="subtitle67">Debemos intentar hacer algo ya mismo.</p>
+<p begin="3678674999t" end="3711627919t" region="bottomCenter" style="s1" xml:id="subtitle68">Así que: "Apoyamos<br/>la observación y los informes continuos</p>
+<p begin="3712458749t" end="3736652919t" region="bottomCenter" style="s1" xml:id="subtitle69">de la situación<br/>de los derechos humanos en Siria".</p>
+<p begin="3749996249t" end="3773349579t" region="bottomCenter" style="s1" xml:id="subtitle70">La frontera con Siria está cerrada,</p>
+<p begin="3774190419t" end="3837163329t" region="bottomCenter" style="s1" xml:id="subtitle71">así que nuestro plan es<br/>entrar de forma furtiva.</p>
+<p begin="3847593749t" end="3861357499t" region="bottomCenter" style="s1" xml:id="subtitle72">¿Pasaportes? ¿Boletos?</p>
+<p begin="3862188329t" end="3874700829t" region="bottomCenter" style="s1" xml:id="subtitle73">Sí.</p>
+<p begin="3882628749t" end="3893889999t" region="bottomCenter" style="s1" xml:id="subtitle74">Aquí está.</p>
+<p begin="3938934999t" end="3953119169t" region="bottomCenter" style="s1" xml:id="subtitle75">¿Cómo te sientes con eso puesto?</p>
+<p begin="3953949999t" end="3983979999t" region="bottomCenter" style="s1" xml:id="subtitle76">Es fabuloso,<br/>porque siento que--</p>
+<p begin="3984810829t" end="4013179169t" region="bottomCenter" style="s1" xml:id="subtitle77">Sí, lo siento<br/>como una capa de invisibilidad.</p>
+<p begin="4014009999t" end="4039034999t" region="bottomCenter" style="s1" xml:id="subtitle78">Porque al pasar por los controles,</p>
+<p begin="4039865829t" end="4072398329t" region="bottomCenter" style="s1" xml:id="subtitle79">nadie me diría: "Descúbrase la cara".</p>
+<p begin="4073239169t" end="4096592499t" region="bottomCenter" style="s1" xml:id="subtitle80">Aunque, obviamente,<br/>como activista de derechos humanos,</p>
+<p begin="4097423329t" end="4132878749t" region="bottomCenter" style="s1" xml:id="subtitle81">me parece un escándalo<br/>que las mujeres tengan que usar esto,</p>
+<p begin="4133709579t" end="4159154999t" region="bottomCenter" style="s1" xml:id="subtitle82">por presión<br/>de la sociedad o sus familias.</p>
+<p begin="4159985829t" end="4207953749t" region="bottomCenter" style="s1" xml:id="subtitle83">Pero a mí puede salvarme la vida,<br/>en muchas situaciones,</p>
+<p begin="4208784579t" end="4250075829t" region="bottomCenter" style="s1" xml:id="subtitle84">y permitirme hacer mi trabajo,<br/>así que...</p>
+<p begin="4250916669t" end="4273439169t" region="bottomCenter" style="s1" xml:id="subtitle85">¿Quieres un regalo de Siria?</p>
+<p begin="4274269999t" end="4316392080t" region="bottomCenter" style="s1" xml:id="subtitle86">¿Como casquillos?</p>
+<p begin="4325991670t" end="4349345000t" region="bottomCenter" style="s1" xml:id="subtitle87">Me gustaría tener restos de granadas.</p>
+<p begin="4350175830t" end="4398143750t" region="bottomCenter" style="s1" xml:id="subtitle88">Te llamaré todas las noches<br/>alrededor de las 9:00 de aquí. ¿Sí?</p>
+<p begin="4398974580t" end="4416912500t" region="bottomCenter" style="s1" xml:id="subtitle89">-Adiós.<br/>-Adiós.</p>
+<p begin="4446522080t" end="4456952500t" region="bottomCenter" style="s1" xml:id="subtitle90">Adiós, gente.</p>
+<p begin="4457783330t" end="4487402920t" region="bottomCenter" style="s1" xml:id="subtitle91">¡Que te diviertas<br/>en casa de tu papá, Danya!</p>
+<p begin="4588333750t" end="4636712080t" region="bottomCenter" style="s1" xml:id="subtitle92">SIRIA</p>
+<p begin="4637552920t" end="4650896250t" region="bottomCenter" style="s1" xml:id="subtitle93">E-TEAM<br/>ENCUBIERTO EN SIRIA</p>
+<p begin="4651727080t" end="4679675000t" region="topCenter" style="s1" xml:id="subtitle94">Investiga denuncias<br/>de matanzas generalizadas</p>
+<p begin="4680505830t" end="4709705000t" region="topCenter" style="s1" xml:id="subtitle95">de manifestantes y civiles.</p>
+<p begin="4718884170t" end="4764760000t" region="topCenter" style="s1" xml:id="subtitle96">KILIS, TURQUÍA<br/>A 5 KM DE LA FRONTERA CON SIRIA</p>
+<p begin="4765590830t" end="4786031250t" region="bottomCenter" style="s1" xml:id="subtitle97">Siempre sentimos esto</p>
+<p begin="4786862080t" end="4800625830t" region="bottomCenter" style="s1" xml:id="subtitle98">la primera vez que vamos a un sitio.</p>
+<p begin="4801466670t" end="4830245420t" region="bottomCenter" style="s1" xml:id="subtitle99">Soy consciente<br/>de que podrían salir mal muchas cosas,</p>
+<p begin="4831076250t" end="4863608750t" region="bottomCenter" style="s1" xml:id="subtitle100">pero sería una estupidez<br/>ponerse nerviosos</p>
+<p begin="4864439580t" end="4904069170t" region="bottomCenter" style="s1" xml:id="subtitle101">porque nos volveríamos locos.</p>
+<p begin="4904900000t" end="4929094170t" region="bottomCenter" style="s1" xml:id="subtitle102">Fresas. Mira esas fresas.</p>
+<p begin="4946611670t" end="4965380420t" region="bottomCenter" style="s1" xml:id="subtitle103">Se ven deliciosas.</p>
+<p begin="4983308330t" end="4993738750t" region="bottomCenter" style="s1" xml:id="subtitle104">Desde hace un par de años,</p>
+<p begin="4994569580t" end="5020015000t" region="bottomCenter" style="s1" xml:id="subtitle105">nuestras medidas de seguridad son<br/>mucho más sofisticadas.</p>
+<p begin="5020845830t" end="5050875830t" region="bottomCenter" style="s1" xml:id="subtitle106">El problema es que eso lo vuelve<br/>todo mucho más complicado.</p>
+<p begin="5057972920t" end="5087582500t" region="bottomCenter" style="s1" xml:id="subtitle107">Pero las medidas de seguridad<br/>son necesarias.</p>
+<p begin="5088413330t" end="5120535420t" region="bottomCenter" style="s1" xml:id="subtitle108">Todos comprendemos eso.</p>
+<p begin="5121366250t" end="5164329170t" region="bottomCenter" style="s1" xml:id="subtitle109">Claro. Además, Ole es noruego,<br/>así que respeta las normas.</p>
+<p begin="5178923750t" end="5201446250t" region="bottomCenter" style="s1" xml:id="subtitle110">¿Por qué no estacionamos aquí?</p>
+<p begin="5213538330t" end="5253167920t" region="bottomCenter" style="s1" xml:id="subtitle111">-No sé si puedes estacionar así como así.<br/>-Acabo de hacerlo.</p>
+<p begin="5266931670t" end="5280275000t" region="bottomCenter" style="s1" xml:id="subtitle112"><span style="s1_1">Mahmoud, qué placer volver a vernos.</span></p>
+<p begin="5281105830t" end="5296541250t" region="bottomCenter" style="s1" xml:id="subtitle113">-¿Cómo está tu familia?<br/>-Bien, gracias.</p>
+<p begin="5297372080t" end="5309884580t" region="bottomCenter" style="s1" xml:id="subtitle114">-¿Todos bien?<br/>-Sí.</p>
+<p begin="5310725420t" end="5321986670t" region="bottomCenter" style="s1" xml:id="subtitle115">Me alegro.</p>
+<p begin="5336160830t" end="5352847500t" region="bottomCenter" style="s1" xml:id="subtitle116">El plan es--<br/>Repasemos el último paso.</p>
+<p begin="5353678330t" end="5403317920t" region="bottomCenter" style="s1" xml:id="subtitle117">El miércoles por la mañana<br/>iremos en auto hasta la frontera.</p>
+<p begin="5404148750t" end="5445440000t" region="bottomCenter" style="s1" xml:id="subtitle118">¿Sí? ¿Y luego cruzamos?<br/>¿Cruzamos la frontera a pie?</p>
+<p begin="5446270830t" end="5472547080t" region="bottomCenter" style="s1" xml:id="subtitle119">Por supuesto, tenemos que pasar la valla.<br/>Hay una valla.</p>
+<p begin="5473387920t" end="5497161670t" region="topCenter" style="s1" xml:id="subtitle120">Pero debemos tener cuidado.</p>
+<p begin="5497992500t" end="5508002500t" region="topCenter" style="s1" xml:id="subtitle121">Mahmoud<br/>Activista de derechos humanos sirio</p>
+<p begin="5508833330t" end="5546791250t" region="bottomCenter" style="s1" xml:id="subtitle122">Si no,<br/>el policía militar nos...</p>
+<p begin="5547622080t" end="5560134580t" region="bottomCenter" style="s1" xml:id="subtitle123">Detendrá.</p>
+<p begin="5560975420t" end="5570985420t" region="bottomCenter" style="s1" xml:id="subtitle124">Sí, por supuesto.</p>
+<p begin="5571816250t" end="5605600000t" region="bottomCenter" style="s1" xml:id="subtitle125">¿Tú vendrás con nosotros?</p>
+<p begin="5606430830t" end="5629373750t" region="bottomCenter" style="s1" xml:id="subtitle126">Pero no le digan a mi madre.</p>
+<p begin="5630204580t" end="5660655000t" region="bottomCenter" style="s1" xml:id="subtitle127">Está bien, no le diremos a tu madre.</p>
+<p begin="5661485830t" end="5675249580t" region="bottomCenter" style="s1" xml:id="subtitle128">A la mía, tampoco.</p>
+<p begin="5706530830t" end="5724468750t" region="bottomCenter" style="s1" xml:id="subtitle129">Entramos en la parte de atrás.</p>
+<p begin="5747822080t" end="5783697920t" region="bottomCenter" style="s1" xml:id="subtitle130">Ole y yo cabemos aquí.<br/>Me sentaré en su regazo. No hay problema.</p>
+<p begin="5803717920t" end="5818312500t" region="bottomCenter" style="s1" xml:id="subtitle131">¡Tenemos que ir rápido!</p>
+<p begin="5819143330t" end="5829153330t" region="bottomCenter" style="s1" xml:id="subtitle132">Calma.</p>
+<p begin="5829994170t" end="5847511670t" region="bottomCenter" style="s1" xml:id="subtitle133">¿Qué tendremos que hacer?</p>
+<p begin="5848342500t" end="5887551670t" region="bottomCenter" style="s1" xml:id="subtitle134">Vamos a saltar del auto y salir corriendo<br/>apenas lleguemos a la frontera.</p>
+<p begin="5888382500t" end="5901725830t" region="bottomCenter" style="s1" xml:id="subtitle135">¿Estamos listos?</p>
+<p begin="6227471250t" end="6244157920t" region="bottomCenter" style="s1" xml:id="subtitle136">Hay un problema con el...</p>
+<p begin="6264588330t" end="6300043750t" region="bottomCenter" style="s1" xml:id="subtitle137">¿Qué hacemos si hay algún guardia<br/>en el puesto de control?</p>
+<p begin="6300874580t" end="6330494170t" region="bottomCenter" style="s1" xml:id="subtitle138">¿Qué hacemos<br/>si alguien empieza a gritarnos?</p>
+<p begin="6331325000t" end="6345509170t" region="bottomCenter" style="s1" xml:id="subtitle139">Tienen que seguirlo a él.</p>
+<p begin="6346340000t" end="6356350000t" region="bottomCenter" style="s1" xml:id="subtitle140">Está bien.</p>
+<p begin="6437260830t" end="6456870420t" region="bottomCenter" style="s1" xml:id="subtitle141">De acuerdo, ¡bajen rápido!</p>
+<p begin="6760083329t" end="6780944169t" region="bottomCenter" style="s1" xml:id="subtitle142">Estamos en Siria.</p>
+<p begin="6781774999t" end="6803877079t" region="bottomCenter" style="s1" xml:id="subtitle143">Bienvenidos a Siria.</p>
+<p begin="6904817919t" end="6937760829t" region="bottomCenter" style="s1" xml:id="subtitle144">-Hola, ¿qué tal?<br/>-¿Cómo están?</p>
+<p begin="6938601669t" end="6956529579t" region="bottomCenter" style="s1" xml:id="subtitle145">Creo que nadie nos vio.</p>
+<p begin="6957370419t" end="6985308329t" region="bottomCenter" style="s1" xml:id="subtitle146">Llegamos a Siria.<br/>Al parecer, estamos a salvo.</p>
+<p begin="7204697499t" end="7216379169t" region="bottomCenter" style="s1" xml:id="subtitle147">-Claro.<br/>-¿Este está bien?</p>
+<p begin="7239312079t" end="7263506249t" region="bottomCenter" style="s1" xml:id="subtitle148">¿Me enseñas a ponérmelo?</p>
+<p begin="7288110829t" end="7306469169t" region="bottomCenter" style="s1" xml:id="subtitle149">Ahora es Lawrence...</p>
+<p begin="7307299999t" end="7324817499t" region="bottomCenter" style="s1" xml:id="subtitle150"><span style="s1_1">Lawrence de Arabia.</span></p>
+<p begin="7325648329t" end="7357349999t" region="bottomCenter" style="s1" xml:id="subtitle151">¿También me darán un Kalashnikov?</p>
+<p begin="7370282919t" end="7384877499t" region="bottomCenter" style="s1" xml:id="subtitle152">Todo tuyo. Elige el que quieras.</p>
+<p begin="7385708329t" end="7410322919t" region="bottomCenter" style="s1" xml:id="subtitle153">-Está bien.<br/>-Para tomar fotos.</p>
+<p begin="7429091669t" end="7443265829t" region="bottomCenter" style="s1" xml:id="subtitle154">¡Es corta!</p>
+<p begin="7444106669t" end="7471634169t" region="bottomCenter" style="s1" xml:id="subtitle155">¿Esta es su <span style="s1_1">abaya?</span></p>
+<p begin="7488310829t" end="7525017499t" region="bottomCenter" style="s1" xml:id="subtitle156">No parece una verdadera siria.</p>
+<p begin="7525848329t" end="7540863329t" region="bottomCenter" style="s1" xml:id="subtitle157">Ponte el...</p>
+<p begin="7587579999t" end="7635958329t" region="bottomCenter" style="s1" xml:id="subtitle158">Si supiera lo bien que le queda,<br/>usaría eso siempre.</p>
+<p begin="7643886249t" end="7681844169t" region="bottomCenter" style="s1" xml:id="subtitle159">Cuando te sientas,<br/>si se te ve la pierna...</p>
+<p begin="7682674999t" end="7727719999t" region="bottomCenter" style="s1" xml:id="subtitle160">-Tomas la-- Te mostraré.<br/>-La bufanda. Sí.</p>
+<p begin="7728550829t" end="7745237499t" region="bottomCenter" style="s1" xml:id="subtitle161">Y te la pones en--</p>
+<p begin="7746068329t" end="7756919169t" region="bottomCenter" style="s1" xml:id="subtitle162">Sí, pero es--</p>
+<p begin="7757749999t" end="7782774999t" region="bottomCenter" style="s1" xml:id="subtitle163">Dentro de la casa,<br/>la gente sabrá que no somos sirios</p>
+<p begin="7783605829t" end="7798620829t" region="bottomCenter" style="s1" xml:id="subtitle164">porque no hablamos el idioma.</p>
+<p begin="7799461669t" end="7839912079t" region="bottomCenter" style="s1" xml:id="subtitle165">De todos modos,<br/>si le ven la pierna, se distraerán.</p>
+<p begin="7840752919t" end="7859932079t" region="bottomCenter" style="s1" xml:id="subtitle166">¡Olvidarán su testimonio!</p>
+<p begin="7867859999t" end="7892054169t" region="bottomCenter" style="s1" xml:id="subtitle167">Sensual.</p>
+<p begin="7892884999t" end="7923335419t" region="bottomCenter" style="s1" xml:id="subtitle168">¡No deben mirarla!</p>
+<p begin="7924166249t" end="7942514579t" region="bottomCenter" style="s1" xml:id="subtitle169">¿Aceptable?</p>
+<p begin="7952524579t" end="7986728749t" region="bottomCenter" style="s1" xml:id="subtitle170">Así no se abre para nada, ¿cierto?</p>
+<p begin="8236558329t" end="8272434169t" region="bottomCenter" style="s1" xml:id="subtitle171">Los tanques del gobierno aparecieron<br/>de este lado. Rodearon todo el lugar.</p>
+<p begin="8273264999t" end="8289110829t" region="bottomCenter" style="s1" xml:id="subtitle172">Había civiles.</p>
+<p begin="8289951669t" end="8319981669t" region="bottomCenter" style="s1" xml:id="subtitle173">Los mataron adentro<br/>y luego quemaron sus cuerpos.</p>
+<p begin="8360852499t" end="8380452079t" region="bottomCenter" style="s1" xml:id="subtitle174">Los mataron aquí.</p>
+<p begin="8381292919t" end="8397138749t" region="bottomCenter" style="s1" xml:id="subtitle175">¿Los pusieron así?</p>
+<p begin="8397969579t" end="8413404999t" region="bottomCenter" style="s1" xml:id="subtitle176">-Los hicieron arrodillar así.<br/>-Sí.</p>
+<p begin="8414235829t" end="8433424999t" region="bottomCenter" style="s1" xml:id="subtitle177">Luego los mataron así.</p>
+<p begin="8496818329t" end="8524345829t" region="bottomCenter" style="s1" xml:id="subtitle178"><span style="s1_1">No hay nada mejor</span><br/><span style="s1_1">que estar en el lugar de los hechos,</span></p>
+<p begin="8525186669t" end="8551873329t" region="bottomCenter" style="s1" xml:id="subtitle179"><span style="s1_1">por el nivel de investigación</span><br/><span style="s1_1">que puedes realizar.</span></p>
+<p begin="8552714169t" end="8568139579t" region="bottomCenter" style="s1" xml:id="subtitle180">¿Cuántos eran? ¿Era un grupo grande?</p>
+<p begin="8587749169t" end="8626948330t" region="bottomCenter" style="s1" xml:id="subtitle181"><span style="s1_1">Casi nunca usamos una sola entrevista</span><br/><span style="s1_1">para denunciar un caso.</span></p>
+<p begin="8637378750t" end="8671582920t" region="bottomCenter" style="s1" xml:id="subtitle182"><span style="s1_1">Porque hay personas que exageran.</span><br/><span style="s1_1">Hay personas que no dicen la verdad.</span></p>
+<p begin="8672413750t" end="8714125420t" region="bottomCenter" style="s1" xml:id="subtitle183"><span style="s1_1">Así que entrevistamos a varias personas</span><br/><span style="s1_1">sobre los mismos crímenes.</span></p>
+<p begin="8714956250t" end="8742904170t" region="bottomCenter" style="s1" xml:id="subtitle184">¿Recuerda en qué fecha atacaron Sarmin?</p>
+<p begin="8773765000t" end="8810882080t" region="bottomCenter" style="s1" xml:id="subtitle185"><span style="s1_1">La guerra es siempre un infierno.</span><br/><span style="s1_1">La guerra siempre es mala.</span></p>
+<p begin="8811722920t" end="8855516670t" region="bottomCenter" style="s1" xml:id="subtitle186"><span style="s1_1">Nuestra tarea no es hacer</span><br/><span style="s1_1">esta aseveración reveladora.</span></p>
+<p begin="8874695830t" end="8915156250t" region="bottomCenter" style="s1" xml:id="subtitle187"><span style="s1_1">Nuestra tarea es explicar</span><br/><span style="s1_1">qué ocurrió en esta aldea en particular.</span></p>
+<p begin="8915987080t" end="8949360420t" region="bottomCenter" style="s1" xml:id="subtitle188"><span style="s1_1">Y por qué creemos</span><br/><span style="s1_1">que se violó el derecho internacional.</span></p>
+<p begin="9306797500t" end="9330991670t" region="bottomCenter" style="s1" xml:id="subtitle189">¿Quieren entrar?</p>
+<p begin="9374365000t" end="9412322920t" region="bottomCenter" style="s1" xml:id="subtitle190">¡Vengaremos su muerte!</p>
+<p begin="9478639170t" end="9507417920t" region="bottomCenter" style="s1" xml:id="subtitle191">¡Vengaremos su muerte!</p>
+<p begin="9613353750t" end="9623784170t" region="bottomCenter" style="s1" xml:id="subtitle192">¿Mahmoud?</p>
+<p begin="9624615000t" end="9638799170t" region="bottomCenter" style="s1" xml:id="subtitle193">Así que lo mataron...</p>
+<p begin="9639630000t" end="9676747080t" region="bottomCenter" style="s1" xml:id="subtitle194">pero después de matarlo,<br/>quemaron su cuerpo.</p>
+<p begin="9677587920t" end="9737647920t" region="bottomCenter" style="s1" xml:id="subtitle195">Al ejército le encanta hacer eso.</p>
+<p begin="9738478750t" end="9798959170t" region="bottomCenter" style="s1" xml:id="subtitle196">Si te atrapan con vida,</p>
+<p begin="9799790000t" end="9842332500t" region="bottomCenter" style="s1" xml:id="subtitle197">te torturan y te matan lentamente.</p>
+<p begin="9949519580t" end="9980390420t" region="bottomCenter" style="s1" xml:id="subtitle198">Matanzas ilícitas de civiles</p>
+<p begin="10165575420t" end="10203112920t" region="bottomCenter" style="s1" xml:id="subtitle199">No llevaré ningún...</p>
+<p begin="10203943750t" end="10214784580t" region="bottomCenter" style="s1" xml:id="subtitle200">¿No?</p>
+<p begin="10215625420t" end="10241060830t" region="bottomCenter" style="s1" xml:id="subtitle201">No creo que esté embarazada.</p>
+<p begin="10241901670t" end="10259419170t" region="bottomCenter" style="s1" xml:id="subtitle202">¿Cuándo deberías...?</p>
+<p begin="10260250000t" end="10281941670t" region="bottomCenter" style="s1" xml:id="subtitle203">Mañana.</p>
+<p begin="10282772500t" end="10329899580t" region="bottomCenter" style="s1" xml:id="subtitle204">Pero, con mis ciclos,<br/>podría ser la semana próxima.</p>
+<p begin="10459619170t" end="10480470000t" region="bottomCenter" style="s1" xml:id="subtitle205"><span style="s1_1">Primero dile que mi nombre es Anna,</span><br/><span style="s1_1">por favor.</span></p>
+<p begin="10481300830t" end="10507997500t" region="bottomCenter" style="s1" xml:id="subtitle206">Que soy de un organismo internacional.</p>
+<p begin="10508828330t" end="10523012500t" region="bottomCenter" style="s1" xml:id="subtitle207">Que no somos periodistas.</p>
+<p begin="10523843330t" end="10566385830t" region="bottomCenter" style="s1" xml:id="subtitle208">Que no solo intentamos hacer denuncias,<br/>sino lograr cambios.</p>
+<p begin="10567226670t" end="10598087500t" region="bottomCenter" style="s1" xml:id="subtitle209">Y que lamentamos profundamente<br/>lo que sucedió.</p>
+<p begin="10598918330t" end="10619779170t" region="bottomCenter" style="s1" xml:id="subtitle210">Que además comprendemos</p>
+<p begin="10620610000t" end="10653973330t" region="bottomCenter" style="s1" xml:id="subtitle211">que le resulte muy difícil<br/>volver a contar su historia,</p>
+<p begin="10654814170t" end="10668157500t" region="bottomCenter" style="s1" xml:id="subtitle212">pero estamos muy agradecidos.</p>
+<p begin="10668988330t" end="10699859170t" region="bottomCenter" style="s1" xml:id="subtitle213">Y que pensamos<br/>que es fundamental que el mundo sepa</p>
+<p begin="10700690000t" end="10723212500t" region="bottomCenter" style="s1" xml:id="subtitle214">lo que ocurre aquí.<br/>Y que por eso vinimos.</p>
+<p begin="10724043330t" end="10779098330t" region="bottomCenter" style="s1" xml:id="subtitle215">Lamentan profundamente lo que sucedió.</p>
+<p begin="10779939170t" end="10817476670t" region="bottomCenter" style="s1" xml:id="subtitle216">Pero necesitan hacerle<br/>algunas preguntas</p>
+<p begin="10818307500t" end="10842912080t" region="bottomCenter" style="s1" xml:id="subtitle217">para documentar los hechos.</p>
+<p begin="10843752920t" end="10863352500t" region="bottomCenter" style="s1" xml:id="subtitle218">Dios así lo quiera. Será una bendición.</p>
+<p begin="10864183330t" end="10874193330t" region="bottomCenter" style="s1" xml:id="subtitle219">Yo...</p>
+<p begin="10875034170t" end="10896715830t" region="bottomCenter" style="s1" xml:id="subtitle220">Yo tenía tres hijos.</p>
+<p begin="10897556670t" end="10924663750t" region="bottomCenter" style="s1" xml:id="subtitle221">El mayor estaba durmiendo justo ahí.</p>
+<p begin="10925494580t" end="10952611670t" region="bottomCenter" style="s1" xml:id="subtitle222">Alrededor de las 6:30 a.m.,<br/>llegaron los hombres de Assad.</p>
+<p begin="10953442500t" end="10988477500t" region="bottomCenter" style="s1" xml:id="subtitle223">-¿Tenían puestos uniformes militares?<br/>-Sí.</p>
+<p begin="10989308330t" end="11017256250t" region="bottomCenter" style="s1" xml:id="subtitle224">Mi hijo dijo: "Aquí no hay nada, señor".</p>
+<p begin="11018087080t" end="11032271250t" region="bottomCenter" style="s1" xml:id="subtitle225">El oficial le contestó: "¡Cállate!".</p>
+<p begin="11033102080t" end="11081490420t" region="bottomCenter" style="s1" xml:id="subtitle226">Y los soldados empezaron<br/>a pegarle con los rifles.</p>
+<p begin="11082321250t" end="11113182080t" region="bottomCenter" style="s1" xml:id="subtitle227">Lo golpearon, y él cayó al suelo.</p>
+<p begin="11114022920t" end="11127366250t" region="bottomCenter" style="s1" xml:id="subtitle228">Luego lo llevaron afuera.</p>
+<p begin="11128197080t" end="11144883750t" region="bottomCenter" style="s1" xml:id="subtitle229">Cuando salí,</p>
+<p begin="11145714580t" end="11166985830t" region="bottomCenter" style="s1" xml:id="subtitle230">encontré a todos mis hijos en el suelo.</p>
+<p begin="11167826670t" end="11183252080t" region="bottomCenter" style="s1" xml:id="subtitle231">Habían fusilado a dos.</p>
+<p begin="11184092920t" end="11208697500t" region="bottomCenter" style="s1" xml:id="subtitle232">Bilal tenía un tiro justo aquí</p>
+<p begin="11209528330t" end="11225384170t" region="bottomCenter" style="s1" xml:id="subtitle233">y todo el cuerpo quemado.</p>
+<p begin="11226215000t" end="11252491250t" region="bottomCenter" style="s1" xml:id="subtitle234">A Yousef también lo fusilaron<br/>y quemaron su cuerpo.</p>
+<p begin="11253322080t" end="11289608330t" region="bottomCenter" style="s1" xml:id="subtitle235">¿Alguien de la familia era<br/>combatiente o activista?</p>
+<p begin="11290449170t" end="11308377080t" region="bottomCenter" style="s1" xml:id="subtitle236">¿Por qué atacaron a su familia?</p>
+<p begin="11319638330t" end="11360519170t" region="bottomCenter" style="s1" xml:id="subtitle237">¿Hay alguna razón específica<br/>por la que vinieron por sus hijos?</p>
+<p begin="11361350000t" end="11371360000t" region="bottomCenter" style="s1" xml:id="subtitle238">No sé.</p>
+<p begin="11372190830t" end="11389708330t" region="bottomCenter" style="s1" xml:id="subtitle239">¿Sus hijos tenían armas?</p>
+<p begin="11399718330t" end="11437676250t" region="bottomCenter" style="s1" xml:id="subtitle240">No, no tenían armas.</p>
+<p begin="11438507080t" end="11452270830t" region="bottomCenter" style="s1" xml:id="subtitle241">¿Es suficiente para ti?</p>
+<p begin="11467706250t" end="11514833330t" region="bottomCenter" style="s1" xml:id="subtitle242">No dijimos nada hasta ahora.<br/>Pero ya es suficiente.</p>
+<p begin="11576985420t" end="11606174580t" region="bottomCenter" style="s1" xml:id="subtitle243">¿Qué sentido tiene escribir?</p>
+<p begin="11614102500t" end="11636625000t" region="bottomCenter" style="s1" xml:id="subtitle244">¿Qué sentido tiene hablar?</p>
+<p begin="11661229580t" end="11699187500t" region="bottomCenter" style="s1" xml:id="subtitle245">Se lo juro, si pudiéramos guardarlas,</p>
+<p begin="11700018330t" end="11721710000t" region="bottomCenter" style="s1" xml:id="subtitle246">nuestras lágrimas llenarían bidones.</p>
+<p begin="11722540830t" end="11764252500t" region="bottomCenter" style="s1" xml:id="subtitle247">Nuestras lágrimas llenarían bidones<br/>y formarían un río.</p>
+<p begin="11765083330t" end="11787195420t" region="bottomCenter" style="s1" xml:id="subtitle248">Se lo juro,<br/>por nuestra gente que está muriendo,</p>
+<p begin="11788026250t" end="11820558750t" region="bottomCenter" style="s1" xml:id="subtitle249">por nuestras mujeres,<br/>por nuestros niños, por nuestros hijos.</p>
+<p begin="11821389580t" end="11835994170t" region="bottomCenter" style="s1" xml:id="subtitle250">¡Las cosas que nos están haciendo!</p>
+<p begin="11836825000t" end="11852670830t" region="bottomCenter" style="s1" xml:id="subtitle251">Nuestras lágrimas forman un río.</p>
+<p begin="11853511670t" end="11883121250t" region="bottomCenter" style="s1" xml:id="subtitle252">O yo, pueden irse.</p>
+<p begin="11883952080t" end="11913151250t" region="bottomCenter" style="s1" xml:id="subtitle253">-No pueden resucitar a los muertos.<br/>-Claro.</p>
+<p begin="12018256250t" end="12035353330t" region="bottomCenter" style="s1" xml:id="subtitle254">Esta es la fosa común.</p>
+<p begin="12684341670t" end="12725632920t" region="bottomCenter" style="s1" xml:id="subtitle255">LIBERTAD</p>
+<p begin="12941678750t" end="12962119170t" region="bottomCenter" style="s1" xml:id="subtitle256"><span style="s1_1">En fin, ¿qué sucede en Siria?</span></p>
+<p begin="12962950000t" end="12992149170t" region="bottomCenter" style="s1" xml:id="subtitle257"><span style="s1_1">Lo que vemos...</span></p>
+<p begin="12992980000t" end="13010497500t" region="bottomCenter" style="s1" xml:id="subtitle258"><span style="s1_1">es que esto no tiene fin.</span></p>
+<p begin="13011328330t" end="13058875830t" region="bottomCenter" style="s1" xml:id="subtitle259"><span style="s1_1">Assad dijo hoy que la intervención militar</span><br/><span style="s1_1">es lo único que podría derrocarlo.</span></p>
+<p begin="13059716670t" end="13099756670t" region="bottomCenter" style="s1" xml:id="subtitle260"><span style="s1_1">Me parece una declaración muy tentadora.</span></p>
+<p begin="13100587500t" end="13136453330t" region="bottomCenter" style="s1" xml:id="subtitle261"><span style="s1_1">La cuestión es</span><br/><span style="s1_1">quién osará intentarlo.</span></p>
+<p begin="13137294170t" end="13161898750t" region="bottomCenter" style="s1" xml:id="subtitle262">Sí. De acuerdo, cuídense, por favor.</p>
+<p begin="13162729580t" end="13179836670t" region="bottomCenter" style="s1" xml:id="subtitle263"><span style="s1_1">-Está bien.</span><br/>-Adiós.</p>
+<p begin="13273680420t" end="13284100830t" region="bottomCenter" style="s1" xml:id="subtitle264">Noticias/Medio Oriente</p>
+<p begin="13284941670t" end="13300787500t" region="bottomCenter" style="s1" xml:id="subtitle265">HRW: Ataques ilegítimos<br/>a civiles por parte de fuerzas sirias</p>
+<p begin="13373360000t" end="13384621250t" region="bottomCenter" style="s1" xml:id="subtitle266">Está bien.</p>
+<p begin="13441758330t" end="13474711249t" region="bottomCenter" style="s1" xml:id="subtitle267"><span style="s1_1">Assad, por desgracia,</span><br/><span style="s1_1">seguirá en el poder bastante tiempo más.</span></p>
+<p begin="13475542079t" end="13502659169t" region="bottomCenter" style="s1" xml:id="subtitle268"><span style="s1_1">Es fuerte y cuenta con mucho apoyo.</span></p>
+<p begin="13503489999t" end="13534350829t" region="bottomCenter" style="s1" xml:id="subtitle269"><span style="s1_1">Creo que esto no cambiará pronto.</span></p>
+<p begin="13535191669t" end="13563129579t" region="bottomCenter" style="s1" xml:id="subtitle270"><span style="s1_1">Mi predicción es</span><br/><span style="s1_1">que la violencia no desaparecerá pronto.</span></p>
+<p begin="13614430829t" end="13626112499t" region="bottomCenter" style="s1" xml:id="subtitle271"><span style="s1_1">Hoy parece no haber esperanza.</span></p>
+<p begin="13626943329t" end="13679085419t" region="bottomCenter" style="s1" xml:id="subtitle272"><span style="s1_1">Pero si esos personajes comparecerán</span><br/><span style="s1_1">ante un tribunal algún día...</span></p>
+<p begin="13679916249t" end="13727043329t" region="bottomCenter" style="s1" xml:id="subtitle273"><span style="s1_1">Podría pasar.</span><br/><span style="s1_1">Nunca se sabe cómo resultarán las cosas.</span></p>
+<p begin="13743729999t" end="13781267499t" region="bottomCenter" style="s1" xml:id="subtitle274"><span style="s1_1">¿Cómo sigues regresando y hablando con--?</span></p>
+<p begin="13782098329t" end="13810877079t" region="bottomCenter" style="s1" xml:id="subtitle275"><span style="s1_1">Escuchando esas historias horribles</span><br/><span style="s1_1">y escribiendo tus informes</span></p>
+<p begin="13811717919t" end="13836322499t" region="bottomCenter" style="s1" xml:id="subtitle276"><span style="s1_1">salvo que tengas esperanza de que,</span><br/><span style="s1_1">en algún momento,</span></p>
+<p begin="13837153329t" end="13868024169t" region="bottomCenter" style="s1" xml:id="subtitle277"><span style="s1_1">se responsabilizará a alguien.</span></p>
+<p begin="13868854999t" end="13904720829t" region="bottomCenter" style="s1" xml:id="subtitle278">Aunque no lo veamos<br/>como una posibilidad realista ahora,</p>
+<p begin="13905561669t" end="13929745829t" region="bottomCenter" style="s1" xml:id="subtitle279">tuve antes esa sensación.</p>
+<p begin="13984390419t" end="14005241249t" region="topCenter" style="s1" xml:id="subtitle280"><span style="s1_1">En tanto miles de albaneses</span></p>
+<p begin="14006072079t" end="14028184169t" region="topCenter" style="s1" xml:id="subtitle281">huyen de Kosovo<br/>hacia países vecinos,</p>
+<p begin="14029014999t" end="14047783749t" region="bottomCenter" style="s1" xml:id="subtitle282"><span style="s1_1">muchos narran historias</span><br/><span style="s1_1">de desalojos forzados</span></p>
+<p begin="14048614579t" end="14072388329t" region="bottomCenter" style="s1" xml:id="subtitle283"><span style="s1_1">y posibles violaciones</span><br/><span style="s1_1">de derechos humanos.</span></p>
+<p begin="14073229169t" end="14089905829t" region="bottomCenter" style="s1" xml:id="subtitle284"><span style="s1_1">Para debatir</span><br/><span style="s1_1">algunas de las atrocidades</span></p>
+<p begin="14090746669t" end="14110766669t" region="bottomCenter" style="s1" xml:id="subtitle285"><span style="s1_1">que aseveran haber sufrido los refugiados,</span></p>
+<p begin="14111597499t" end="14128284169t" region="bottomCenter" style="s1" xml:id="subtitle286">Fred Abrahams,<br/>de Human Rights Watch,</p>
+<p begin="14129114999t" end="14139955829t" region="bottomCenter" style="s1" xml:id="subtitle287">está aquí en Nueva York.</p>
+<p begin="14140796669t" end="14152057919t" region="bottomCenter" style="s1" xml:id="subtitle288">-Buenos días.<br/>-Buenos días.</p>
+<p begin="14152888749t" end="14181247079t" region="bottomCenter" style="s1" xml:id="subtitle289">¿Qué puede confirmar,<br/>según sus observadores?</p>
+<p begin="14182087919t" end="14197513329t" region="bottomCenter" style="s1" xml:id="subtitle290">Tenemos investigadores en el lugar</p>
+<p begin="14198354169t" end="14211697499t" region="bottomCenter" style="s1" xml:id="subtitle291">que escuchan historias terribles.</p>
+<p begin="14212528329t" end="14222538329t" region="topCenter" style="s1" xml:id="subtitle292">FRED ABRAHAMS<br/>INVESTIGADOR, HUMAN RIGHTS WATCH</p>
+<p begin="14223379169t" end="14240896669t" region="topCenter" style="s1" xml:id="subtitle293">Esto tiene un solo nombre:<br/>limpieza étnica.</p>
+<p begin="14241727499t" end="14275931669t" region="topCenter" style="s1" xml:id="subtitle294"><span style="s1_1">La policía del gobierno serbio fue</span><br/><span style="s1_1">casa por casa obligándolos a salir</span></p>
+<p begin="14276762499t" end="14286772499t" region="topCenter" style="s1" xml:id="subtitle295"><span style="s1_1">a punta de pistola.</span></p>
+<p begin="14287603329t" end="14297613329t" region="topCenter" style="s1" xml:id="subtitle296">ESTA MAÑANA<br/>BLACE, MACEDONIA</p>
+<p begin="14298454169t" end="14315130829t" region="bottomCenter" style="s1" xml:id="subtitle297"><span style="s1_1">Denuncias de matanzas--</span></p>
+<p begin="14315971669t" end="14346412079t" region="bottomCenter" style="s1" xml:id="subtitle298"><span style="s1_1">Estamos intentando confirmar esto.</span><br/><span style="s1_1">Confirmamos algunos casos.</span></p>
+<p begin="14347252919t" end="14357262919t" region="bottomCenter" style="s1" xml:id="subtitle299"><span style="s1_1">Y sobre muchos otros,</span></p>
+<p begin="14358093749t" end="14384369999t" region="bottomCenter" style="s1" xml:id="subtitle300"><span style="s1_1">aún nos falta completar la información.</span></p>
+<p begin="14419825419t" end="14451937499t" region="bottomCenter" style="s1" xml:id="subtitle301"><span style="s1_1">En septiembre de 1998,</span></p>
+<p begin="14452768329t" end="14488644169t" region="bottomCenter" style="s1" xml:id="subtitle302"><span style="s1_1">la situación se estaba descontrolando,</span><br/><span style="s1_1">y queríamos ayudar.</span></p>
+<p begin="14495310829t" end="14527843329t" region="bottomCenter" style="s1" xml:id="subtitle303"><span style="s1_1">Fui a Kosovo, una noche salí</span></p>
+<p begin="14528684169t" end="14545360829t" region="bottomCenter" style="s1" xml:id="subtitle304"><span style="s1_1">y mi amigo me dijo:</span></p>
+<p begin="14546201669t" end="14588323749t" region="bottomCenter" style="s1" xml:id="subtitle305"><span style="s1_1">"Pasó algo en la aldea de Gornje Obrinje.</span></p>
+<p begin="14589154579t" end="14635871249t" region="bottomCenter" style="s1" xml:id="subtitle306"><span style="s1_1">No sé exactamente qué.</span><br/><span style="s1_1">Pero es grave. Tienes que ir a ver".</span></p>
+<p begin="14657973329t" end="14690095419t" region="bottomCenter" style="s1" xml:id="subtitle307"><span style="s1_1">Recuerdo que pensé:</span><br/><span style="s1_1">"Se lo diré a los periodistas".</span></p>
+<p begin="14690926249t" end="14725540829t" region="topCenter" style="s1" xml:id="subtitle308"><span style="s1_1">Porque estaban todos ahí.</span><br/><span style="s1_1">Los medios más importantes.</span></p>
+<p begin="14726381669t" end="14768924169t" region="bottomCenter" style="s1" xml:id="subtitle309"><span style="s1_1">Pero él insistió:</span><br/><span style="s1_1">"No, deberías ir tú en persona".</span></p>
+<p begin="14814799999t" end="14841076249t" region="bottomCenter" style="s1" xml:id="subtitle310"><span style="s1_1">Así que subimos al auto,</span><br/><span style="s1_1">fuimos a Gornje Obrinje...</span></p>
+<p begin="14849004169t" end="14883618749t" region="bottomCenter" style="s1" xml:id="subtitle311"><span style="s1_1">y veíamos aldeas aún en llamas.</span></p>
+<p begin="14916982079t" end="14941596669t" region="bottomCenter" style="s1" xml:id="subtitle312"><span style="s1_1">Veíamos salir a refugiados.</span></p>
+<p begin="14966621669t" end="14988303329t" region="bottomCenter" style="s1" xml:id="subtitle313"><span style="s1_1">Era algo muy reciente.</span></p>
+<p begin="15002487499t" end="15040024999t" region="bottomCenter" style="s1" xml:id="subtitle314"><span style="s1_1">Llegamos a la aldea, y había...</span></p>
+<p begin="15040855829t" end="15074639579t" region="bottomCenter" style="s1" xml:id="subtitle315"><span style="s1_1">Había diez cuerpos en un barranco.</span></p>
+<p begin="15075480419t" end="15106341249t" region="bottomCenter" style="s1" xml:id="subtitle316"><span style="s1_1">Había como cinco mujeres y cuatro niños.</span></p>
+<p begin="15178082919t" end="15226461249t" region="bottomCenter" style="s1" xml:id="subtitle317"><span style="s1_1">Nos pusimos a trabajar de inmediato.</span><br/><span style="s1_1">Tomamos fotos y todos los nombres.</span></p>
+<p begin="15227292079t" end="15245229999t" region="bottomCenter" style="s1" xml:id="subtitle318">¿Cuántos cuerpos cree haber visto?</p>
+<p begin="15246060829t" end="15261075829t" region="bottomCenter" style="s1" xml:id="subtitle319">¿Vio cuando les disparaban?</p>
+<p begin="15261916669t" end="15306120829t" region="bottomCenter" style="s1" xml:id="subtitle320">¿Reconoció a alguno<br/>de los policías o militares?</p>
+<p begin="15315299999t" end="15341155829t" region="bottomCenter" style="s1" xml:id="subtitle321"><span style="s1_1">En el pasado, en derechos humanos</span></p>
+<p begin="15341996669t" end="15359924579t" region="bottomCenter" style="s1" xml:id="subtitle322">se recolectaba toda esta información</p>
+<p begin="15360765419t" end="15392877499t" region="bottomCenter" style="s1" xml:id="subtitle323">en un viaje de dos,<br/>tres o cuatro semanas,</p>
+<p begin="15393708329t" end="15419984579t" region="bottomCenter" style="s1" xml:id="subtitle324">se la traía a Nueva York<br/>y se redactaba un informe.</p>
+<p begin="15420825419t" end="15479213749t" region="bottomCenter" style="s1" xml:id="subtitle325"><span style="s1_1">Pero teníamos</span><br/><span style="s1_1">la primicia de una gran matanza,</span></p>
+<p begin="15480044579t" end="15515499999t" region="bottomCenter" style="s1" xml:id="subtitle326"><span style="s1_1">y dije: "Hay que escribir</span><br/><span style="s1_1">sobre esto ahora".</span></p>
+<p begin="15516330829t" end="15526340829t" region="topCenter" style="s1" xml:id="subtitle327">Fuerzas serbias masacran<br/>tres aldeas kosovares</p>
+<p begin="15527181669t" end="15561375829t" region="topCenter" style="s1" xml:id="subtitle328"><span style="s1_1">Así que redactamos un comunicado</span><br/><span style="s1_1">y lo publicamos de inmediato.</span></p>
+<p begin="15575139579t" end="15604338749t" region="bottomCenter" style="s1" xml:id="subtitle329"><span style="s1_1">Hubo un artículo para</span> The New York Times,<br/><span style="s1_1">salió en primera plana.</span></p>
+<p begin="15605169579t" end="15635199579t" region="bottomCenter" style="s1" xml:id="subtitle330"><span style="s1_1">La foto de una de las mujeres</span><br/><span style="s1_1">en el barranco</span></p>
+<p begin="15636040419t" end="15672737079t" region="bottomCenter" style="s1" xml:id="subtitle331"><span style="s1_1">salió en primera plana, arriba,</span><br/><span style="s1_1">en</span> The New York Times.</p>
+<p begin="15681495829t" end="15715279579t" region="bottomCenter" style="s1" xml:id="subtitle332"><span style="s1_1">Richard Holbrooke,</span><br/><span style="s1_1">que era el mediador principal</span></p>
+<p begin="15716120419t" end="15736550829t" region="bottomCenter" style="s1" xml:id="subtitle333"><span style="s1_1">de Estados Unidos en ese momento,</span></p>
+<p begin="15737391669t" end="15773677919t" region="bottomCenter" style="s1" xml:id="subtitle334">escribió que se lanzó<br/>ese ejemplar del periódico</p>
+<p begin="15774508749t" end="15799954169t" region="bottomCenter" style="s1" xml:id="subtitle335">sobre la mesa de la Sala de Situaciones<br/>de la Casa Blanca</p>
+<p begin="15800784999t" end="15828732919t" region="bottomCenter" style="s1" xml:id="subtitle336"><span style="s1_1">y cambió el tenor del debate,</span></p>
+<p begin="15829563749t" end="15866270419t" region="bottomCenter" style="s1" xml:id="subtitle337"><span style="s1_1">porque había habido una masacre,</span><br/><span style="s1_1">y estaba documentada.</span></p>
+<p begin="15867101249t" end="15913817919t" region="bottomCenter" style="s1" xml:id="subtitle338">Él dice que impuso<br/>la necesidad moral de reaccionar.</p>
+<p begin="15914648749t" end="15945929999t" region="bottomCenter" style="s1" xml:id="subtitle339">En mi opinión, impuso<br/>la obligación política de reaccionar.</p>
+<p begin="15946760829t" end="15976790829t" region="bottomCenter" style="s1" xml:id="subtitle340"><span style="s1_1">¿Qué hace Estados Unidos</span><br/><span style="s1_1">ante esta violencia?</span></p>
+<p begin="15977631669t" end="15989723749t" region="bottomCenter" style="s1" xml:id="subtitle341"><span style="s1_1">Sea como fuere,</span></p>
+<p begin="15990554579t" end="16030184169t" region="bottomCenter" style="s1" xml:id="subtitle342"><span style="s1_1">aumentó la tensión internacional.</span></p>
+<p begin="16031014999t" end="16059793749t" region="bottomCenter" style="s1" xml:id="subtitle343">Esta noche quiero hablarles<br/>de la tragedia de Kosovo</p>
+<p begin="16060624579t" end="16102756669t" region="bottomCenter" style="s1" xml:id="subtitle344">y por qué nos urge colaborar<br/>con nuestros aliados para ponerle fin.</p>
+<p begin="16103587499t" end="16141124999t" region="bottomCenter" style="s1" xml:id="subtitle345"><span style="s1_1">En ese momento,</span><br/><span style="s1_1">mis colegas de Nueva York y yo</span></p>
+<p begin="16141955829t" end="16161144999t" region="bottomCenter" style="s1" xml:id="subtitle346">entendimos que,<br/>de algún modo, había servido,</p>
+<p begin="16161975829t" end="16194097919t" region="bottomCenter" style="s1" xml:id="subtitle347">había resultado ser<br/>una intervención eficaz de nuestra parte.</p>
+<p begin="16277931669t" end="16317971669t" region="topCenter" style="s1" xml:id="subtitle348">AEROPUERTO DE GINEBRA, SUIZA</p>
+<p begin="16391374999t" end="16419733329t" region="topCenter" style="s1" xml:id="subtitle349">Supongo que cada uno podría...</p>
+<p begin="16420574169t" end="16453937499t" region="topCenter" style="s1" xml:id="subtitle350">-Pasa dos bolsos.<br/>-Los chalecos... Son dos chalecos.</p>
+<p begin="16481044579t" end="16518171669t" region="bottomCenter" style="s1" xml:id="subtitle351">Él es el investigador<br/>de emergencias más lento del mundo.</p>
+<p begin="16519002499t" end="16554457919t" region="bottomCenter" style="s1" xml:id="subtitle352">Miles de veces casi pierdo un vuelo</p>
+<p begin="16555288749t" end="16594497919t" region="bottomCenter" style="s1" xml:id="subtitle353">porque Fred se queda comprando comida<br/>o haciéndose un masaje o...</p>
+<p begin="16635789169t" end="16657470829t" region="bottomCenter" style="s1" xml:id="subtitle354">Él tiene su propio ritmo.</p>
+<p begin="16658311669t" end="16668321669t" region="bottomCenter" style="s1" xml:id="subtitle355">Qué bien.</p>
+<p begin="16707941249t" end="16742145419t" region="bottomCenter" style="s1" xml:id="subtitle356">Un desayuno de $50.</p>
+<p begin="16861424579t" end="16903967079t" region="bottomCenter" style="s1" xml:id="subtitle357">LIBIA, 2011</p>
+<p begin="16916479579t" end="16941094169t" region="bottomCenter" style="s1" xml:id="subtitle358">Estalló una guerra civil en Libia.</p>
+<p begin="16981134169t" end="17013666669t" region="bottomCenter" style="s1" xml:id="subtitle359">Muammar Gaddafi,<br/>el dictador del país desde hace 42 años,</p>
+<p begin="17014497499t" end="17044947919t" region="bottomCenter" style="s1" xml:id="subtitle360">está perdiendo poder.</p>
+<p begin="17045778749t" end="17062044999t" region="bottomCenter" style="s1" xml:id="subtitle361">E-TEAM EN LIBIA</p>
+<p begin="17062875829t" end="17102915829t" region="topCenter" style="s1" xml:id="subtitle362">Investiga el asesinato en masa<br/>de prisioneros</p>
+<p begin="17103756669t" end="17125027919t" region="topCenter" style="s1" xml:id="subtitle363">a manos de fuerzas de Gaddafi.</p>
+<p begin="17180913750t" end="17229292080t" region="topCenter" style="s1" xml:id="subtitle364">TRÍPOLI, CAPITAL DE LIBIA,<br/>ACTUALMENTE BAJO CONTROL DE LOS REBELDES</p>
+<p begin="17313966670t" end="17354417080t" region="bottomCenter" style="s1" xml:id="subtitle365">"Matadero humano<br/>descubierto en Trípoli".</p>
+<p begin="17355257920t" end="17373185830t" region="bottomCenter" style="s1" xml:id="subtitle366">Cielos.</p>
+<p begin="17531263750t" end="17562965420t" region="bottomCenter" style="s1" xml:id="subtitle367">Aquí estaban<br/>todos los cuerpos chamuscados.</p>
+<p begin="17563796250t" end="17591323750t" region="bottomCenter" style="s1" xml:id="subtitle368">Pero hay balas entre ellos. ¿Ven?</p>
+<p begin="17604256670t" end="17620102500t" region="bottomCenter" style="s1" xml:id="subtitle369">Quizá hayan arrojado granadas.</p>
+<p begin="17620933330t" end="17650132500t" region="bottomCenter" style="s1" xml:id="subtitle370">Pero eso no es de granadas.</p>
+<p begin="17687249580t" end="17715197500t" region="bottomCenter" style="s1" xml:id="subtitle371">¿A él lo metieron en este cuarto?</p>
+<p begin="17716028330t" end="17736048330t" region="bottomCenter" style="s1" xml:id="subtitle372">¿Lo retuvieron en ese cuarto?</p>
+<p begin="17736889170t" end="17750232500t" region="bottomCenter" style="s1" xml:id="subtitle373">Sí, ahí adentro.</p>
+<p begin="17751063330t" end="17781513750t" region="bottomCenter" style="s1" xml:id="subtitle374">-¿Podemos hacer una entrevista en privado?<br/>-Sí, bien.</p>
+<p begin="17782344580t" end="17802785000t" region="bottomCenter" style="s1" xml:id="subtitle375">Tomémonos un momento.</p>
+<p begin="17814466670t" end="17828640830t" region="bottomCenter" style="s1" xml:id="subtitle376">¿Puede explicarnos cómo lo capturaron?</p>
+<p begin="17829481670t" end="17869521670t" region="bottomCenter" style="s1" xml:id="subtitle377">Los oficiales de Gaddafi arrestaban<br/>gente al azar.</p>
+<p begin="17870352500t" end="17893705830t" region="bottomCenter" style="s1" xml:id="subtitle378">Nos detuvieron y nos trajeron aquí.</p>
+<p begin="17902885000t" end="17939591670t" region="bottomCenter" style="s1" xml:id="subtitle379">Entonces llegaron soldados</p>
+<p begin="17940422500t" end="17986718750t" region="bottomCenter" style="s1" xml:id="subtitle380">y abrieron fuego contra nosotros.</p>
+<p begin="17993395420t" end="18038020000t" region="bottomCenter" style="s1" xml:id="subtitle381">Quedé bajo una pila<br/>de cuerpos ensangrentados, así sobreviví.</p>
+<p begin="18038850830t" end="18078890830t" region="bottomCenter" style="s1" xml:id="subtitle382">Fue un crimen muy grave<br/>el que se cometió contra todos ellos.</p>
+<p begin="18092244170t" end="18119351250t" region="bottomCenter" style="s1" xml:id="subtitle383">Le agradezco que me diera su testimonio.</p>
+<p begin="18149801670t" end="18173155000t" region="bottomCenter" style="s1" xml:id="subtitle384"><span style="s1_1">Por curiosidad,</span><br/><span style="s1_1">¿cómo verifican la veracidad</span></p>
+<p begin="18173985830t" end="18187339170t" region="bottomCenter" style="s1" xml:id="subtitle385"><span style="s1_1">de las historias que escuchan?</span></p>
+<p begin="18188170000t" end="18216948750t" region="bottomCenter" style="s1" xml:id="subtitle386">Escuchamos muchas cosas<br/>que resultaron no ser ciertas</p>
+<p begin="18217779580t" end="18236548330t" region="bottomCenter" style="s1" xml:id="subtitle387">de ambas partes de este conflicto.</p>
+<p begin="18237389170t" end="18273255000t" region="bottomCenter" style="s1" xml:id="subtitle388">Esta es la labor de Human Rights Watch.</p>
+<p begin="18274085830t" end="18316217920t" region="bottomCenter" style="s1" xml:id="subtitle389">Tomamos testimonios muy detallados,<br/>buscamos otros testigos</p>
+<p begin="18317048750t" end="18355006670t" region="bottomCenter" style="s1" xml:id="subtitle390">y luego corroboramos<br/>las fechas y las cifras.</p>
+<p begin="18355837500t" end="18389621250t" region="bottomCenter" style="s1" xml:id="subtitle391">El hombre con quien hablé recibió<br/>un disparo en la pierna</p>
+<p begin="18390452080t" end="18412564170t" region="bottomCenter" style="s1" xml:id="subtitle392">al intentar trepar ese muro.</p>
+<p begin="18413395000t" end="18430912500t" region="bottomCenter" style="s1" xml:id="subtitle393">Por esto me gusta--</p>
+<p begin="18431743330t" end="18455106670t" region="bottomCenter" style="s1" xml:id="subtitle394">¿Hay marcas de balas<br/>en aquel muro?</p>
+<p begin="18455937500t" end="18480962500t" region="bottomCenter" style="s1" xml:id="subtitle395">Sí, y se ven las marcas de balas adentro.</p>
+<p begin="18481793330t" end="18501402920t" region="bottomCenter" style="s1" xml:id="subtitle396">Te mostraré.</p>
+<p begin="18502233750t" end="18528510000t" region="bottomCenter" style="s1" xml:id="subtitle397">Porque es un muro muy alto<br/>como para treparse.</p>
+<p begin="18529340830t" end="18574806250t" region="bottomCenter" style="s1" xml:id="subtitle398">Sí, pero si te estuvieran disparando,<br/>lo treparías muy rápido.</p>
+<p begin="18575637080t" end="18589400830t" region="bottomCenter" style="s1" xml:id="subtitle399">Te lo aseguro.</p>
+<p begin="18604415830t" end="18620682080t" region="topCenter" style="s1" xml:id="subtitle400">Human Rights Watch dice poder demostrar</p>
+<p begin="18621522920t" end="18639871250t" region="topCenter" style="s1" xml:id="subtitle401">LA REVOLUCIÓN LIBIA<br/>DENUNCIAN ABUSOS DE AMBAS PARTES</p>
+<p begin="18640702080t" end="18666147500t" region="topCenter" style="s1" xml:id="subtitle402">que fuerzas del gobierno perpetraron<br/>matanzas arbitrarias</p>
+<p begin="18666978330t" end="18679490830t" region="topCenter" style="s1" xml:id="subtitle403">durante la caída de Trípoli.</p>
+<p begin="18686998330t" end="18722453750t" region="bottomCenter" style="s1" xml:id="subtitle404"><span style="s1_1">Con gran pesar, hoy vimos</span><br/><span style="s1_1">momentos de violencia homicida</span></p>
+<p begin="18723284580t" end="18759160420t" region="bottomCenter" style="s1" xml:id="subtitle405"><span style="s1_1">mientras las fuerzas de Gaddafi huían</span><br/><span style="s1_1">y castigaban a sus prisioneros.</span></p>
+<p begin="18817128330t" end="18868429580t" region="bottomCenter" style="s1" xml:id="subtitle406"><span style="s1_1">Tras regresar a Kosovo y ver la masacre,</span><br/><span style="s1_1">las aldeas incendiadas,</span></p>
+<p begin="18869270420t" end="18898049170t" region="bottomCenter" style="s1" xml:id="subtitle407"><span style="s1_1">fue realmente cuando nació</span><br/><span style="s1_1">el programa de emergencia.</span></p>
+<p begin="18924325420t" end="18946007080t" region="bottomCenter" style="s1" xml:id="subtitle408"><span style="s1_1">Con nuestro enfoque de emergencia,</span></p>
+<p begin="18946847920t" end="19002733750t" region="bottomCenter" style="s1" xml:id="subtitle409"><span style="s1_1">pusimos la lucha por los derechos humanos</span><br/><span style="s1_1">mucho más a tono con la realidad.</span></p>
+<p begin="19003564580t" end="19039440420t" region="bottomCenter" style="s1" xml:id="subtitle410"><span style="s1_1">Creo que nos parecemos más a detectives</span></p>
+<p begin="19040271250t" end="19069470420t" region="bottomCenter" style="s1" xml:id="subtitle411"><span style="s1_1">que investigan crímenes internacionales.</span></p>
+<p begin="19070301250t" end="19085736670t" region="bottomCenter" style="s1" xml:id="subtitle412"><span style="s1_1">Hurgamos mucho más profundo.</span></p>
+<p begin="19162473330t" end="19176657500t" region="bottomCenter" style="s1" xml:id="subtitle413">Dos y cuarto.</p>
+<p begin="19177488330t" end="19202102920t" region="bottomCenter" style="s1" xml:id="subtitle414">La electricidad volverá a las 4:00 a.m.<br/>En serio.</p>
+<p begin="19202933750t" end="19214615420t" region="topCenter" style="s1" xml:id="subtitle415">¿Necesitamos cargar?<br/>¿Cuánto tienes?</p>
+<p begin="19215446250t" end="19226707500t" region="topCenter" style="s1" xml:id="subtitle416">SIDNEY KWIRAM<br/>INVESTIGADORA DE HUMAN RIGHTS WATCH</p>
+<p begin="19227538330t" end="19238389170t" region="topCenter" style="s1" xml:id="subtitle417">Sí, está en 32.</p>
+<p begin="19246307080t" end="19264665420t" region="bottomCenter" style="s1" xml:id="subtitle418">-Este es uno de los hombres de afuera.<br/>-Dios.</p>
+<p begin="19280511250t" end="19298859580t" region="bottomCenter" style="s1" xml:id="subtitle419">Retrocede.</p>
+<p begin="19334315000t" end="19353914580t" region="bottomCenter" style="s1" xml:id="subtitle420"><span style="s1_1">Perdieron la vida 45 personas,</span><br/><span style="s1_1">como mínimo.</span></p>
+<p begin="19354755420t" end="19375606250t" region="bottomCenter" style="s1" xml:id="subtitle421"><span style="s1_1">Intentamos reconstruir los hechos.</span></p>
+<p begin="19376437080t" end="19395626250t" region="bottomCenter" style="s1" xml:id="subtitle422">Es crucial para ellos,</p>
+<p begin="19396457080t" end="19445255830t" region="bottomCenter" style="s1" xml:id="subtitle423">es crucial para todo proceso judicial,<br/>llegado el caso,</p>
+<p begin="19446096670t" end="19466947500t" region="bottomCenter" style="s1" xml:id="subtitle424">es crucial para la historia<br/>que la contemos bien.</p>
+<p begin="19467778330t" end="19498649170t" region="bottomCenter" style="s1" xml:id="subtitle425">No quiero meter la pata.</p>
+<p begin="19524084580t" end="19558288750t" region="bottomCenter" style="s1" xml:id="subtitle426">Bien. Si se comen<br/>toda esta pasta, desgraciados,</p>
+<p begin="19559119580t" end="19577477920t" region="bottomCenter" style="s1" xml:id="subtitle427">estaré sorprendido.</p>
+<p begin="19584144580t" end="19595405830t" region="bottomCenter" style="s1" xml:id="subtitle428"><span style="s1_1">Bon appétit.</span></p>
+<p begin="19615015420t" end="19638368750t" region="bottomCenter" style="s1" xml:id="subtitle429">¿En qué nos concentramos? Como Fred--</p>
+<p begin="19639199580t" end="19652552920t" region="bottomCenter" style="s1" xml:id="subtitle430">-Aquí tengo un temario.<br/>-Bien.</p>
+<p begin="19653383750t" end="19665475830t" region="bottomCenter" style="s1" xml:id="subtitle431">La historia son las ejecuciones.</p>
+<p begin="19666316670t" end="19693844170t" region="bottomCenter" style="s1" xml:id="subtitle432">-Nos falta documentar más.<br/>-Sí. Bien.</p>
+<p begin="19694675000t" end="19738048330t" region="bottomCenter" style="s1" xml:id="subtitle433">Mañana a las 10:30, veremos<br/>a un sobreviviente que aceptó ir al lugar.</p>
+<p begin="19791852080t" end="19830230420t" region="bottomCenter" style="s1" xml:id="subtitle434">¿Dónde encontraron<br/>a los que fueron ejecutados?</p>
+<p begin="19831061250t" end="19851081250t" region="bottomCenter" style="s1" xml:id="subtitle435">¿Aquí hallaron<br/>los cuerpos de los prisioneros?</p>
+<p begin="19892792920t" end="19922822920t" region="bottomCenter" style="s1" xml:id="subtitle436">¿Él entró a esta sala y vio los cuerpos?</p>
+<p begin="19923653750t" end="19938668750t" region="bottomCenter" style="s1" xml:id="subtitle437">Sí, aquí.</p>
+<p begin="19939499580t" end="19965775830t" region="bottomCenter" style="s1" xml:id="subtitle438">Hay uniformes militares<br/>en todas las salas.</p>
+<p begin="19966616670t" end="20001231250t" region="bottomCenter" style="s1" xml:id="subtitle439">Quiero ver si hallamos<br/>algún tipo de identificación.</p>
+<p begin="20033763750t" end="20068798750t" region="bottomCenter" style="s1" xml:id="subtitle440">Chicos, encontré lo que buscábamos.</p>
+<p begin="20144704580t" end="20170570420t" region="bottomCenter" style="s1" xml:id="subtitle441">Ellos son los oficiales.</p>
+<p begin="20171401250t" end="20189339170t" region="bottomCenter" style="s1" xml:id="subtitle442">Y sus nombres.</p>
+<p begin="20190170000t" end="20200180000t" region="bottomCenter" style="s1" xml:id="subtitle443">Bien.</p>
+<p begin="20213523330t" end="20224784580t" region="bottomCenter" style="s1" xml:id="subtitle444">¡Bingo!</p>
+<p begin="20241891670t" end="20272752500t" region="bottomCenter" style="s1" xml:id="subtitle445">Esto es genial. Es oro puro, carajo.</p>
+<p begin="20286936670t" end="20302782500t" region="bottomCenter" style="s1" xml:id="subtitle446"><span style="s1_1">Fred y yo hicimos lo mismo en Kosovo.</span></p>
+<p begin="20303613330t" end="20342822500t" region="bottomCenter" style="s1" xml:id="subtitle447"><span style="s1_1">Y acabó siendo uno de los grandes casos</span><br/><span style="s1_1">del tribunal yugoslavo.</span></p>
+<p begin="20343653330t" end="20385785420t" region="bottomCenter" style="s1" xml:id="subtitle448"><span style="s1_1">Puede parecer una pérdida de tiempo,</span><br/><span style="s1_1">una tontería,</span></p>
+<p begin="20386616250t" end="20422071670t" region="bottomCenter" style="s1" xml:id="subtitle449"><span style="s1_1">pero así se atrapa a esta gente.</span></p>
+<p begin="20653963330t" end="20706515830t" region="topCenter" style="s1" xml:id="subtitle450">Anna y Ole se preparan para dar a conocer<br/>las pruebas que reunieron en Siria.</p>
+<p begin="20707356670t" end="20725705000t" region="topCenter" style="s1" xml:id="subtitle451">Sí, somos Anna y Ole.</p>
+<p begin="20726535830t" end="20776175420t" region="topCenter" style="s1" xml:id="subtitle452"><span style="s1_1">Están en línea París, Londres, Berlín</span></p>
+<p begin="20777006250t" end="20792852080t" region="topCenter" style="s1" xml:id="subtitle453">CONVERSACIÓN CON ALTOS FUNCIONARIOS<br/>DE HUMAN RIGHTS WATCH</p>
+<p begin="20793692920t" end="20814964170t" region="bottomCenter" style="s1" xml:id="subtitle454"><span style="s1_1">y unos amigos de Nueva York.</span></p>
+<p begin="20815795000t" end="20829979170t" region="bottomCenter" style="s1" xml:id="subtitle455"><span style="s1_1">Desde el principio, Anna y Ole,</span></p>
+<p begin="20830810000t" end="20867516670t" region="bottomCenter" style="s1" xml:id="subtitle456"><span style="s1_1">¿pueden contarnos</span><br/><span style="s1_1">cómo piensan presentarlo a la prensa?</span></p>
+<p begin="20868347500t" end="20897957080t" region="bottomCenter" style="s1" xml:id="subtitle457">Pensamos decirle a la prensa</p>
+<p begin="20898797920t" end="20920900000t" region="bottomCenter" style="s1" xml:id="subtitle458">que Human Rights Watch documentó</p>
+<p begin="20921730830t" end="20937586670t" region="bottomCenter" style="s1" xml:id="subtitle459">los crímenes del gobierno sirio</p>
+<p begin="20938417500t" end="20962191250t" region="bottomCenter" style="s1" xml:id="subtitle460">desde el inicio<br/>de las protestas antigubernamentales.</p>
+<p begin="20963022080t" end="20983462500t" region="bottomCenter" style="s1" xml:id="subtitle461">Concluimos que son<br/>crímenes de lesa humanidad.</p>
+<p begin="20984293330t" end="21009738750t" region="bottomCenter" style="s1" xml:id="subtitle462"><span style="s1_1">¿Dónde harán la conferencia de prensa?</span></p>
+<p begin="21010569580t" end="21040599580t" region="bottomCenter" style="s1" xml:id="subtitle463">En Moscú,<br/>porque Rusia es el país que aún:</p>
+<p begin="21041440420t" end="21060209170t" region="bottomCenter" style="s1" xml:id="subtitle464">A: veta la acción<br/>del Consejo de Seguridad,</p>
+<p begin="21061040000t" end="21102751670t" region="bottomCenter" style="s1" xml:id="subtitle465">y B: sigue brindando<br/>apoyo militar activo al gobierno sirio.</p>
+<p begin="21103582500t" end="21119848750t" region="bottomCenter" style="s1" xml:id="subtitle466"><span style="s1_1">Está bien, fabuloso.</span></p>
+<p begin="21120679580t" end="21171980830t" region="bottomCenter" style="s1" xml:id="subtitle467"><span style="s1_1">Anna y Ole, les propongo que se sumen</span><br/><span style="s1_1">a la reunión de Comunicaciones el martes.</span></p>
+<p begin="21172821670t" end="21208687500t" region="bottomCenter" style="s1" xml:id="subtitle468">Seguramente seré yo solo.<br/>Anya estará camino a Rusia.</p>
+<p begin="21209518330t" end="21220369170t" region="bottomCenter" style="s1" xml:id="subtitle469"><span style="s1_1">-Bien.</span><br/>-De acuerdo.</p>
+<p begin="21221200000t" end="21237045830t" region="bottomCenter" style="s1" xml:id="subtitle470"><span style="s1_1">Fantástico. Gracias.</span></p>
+<p begin="21237886670t" end="21263742500t" region="topCenter" style="s1" xml:id="subtitle471">Incluso esta noche,<br/>se sigue derramando sangre en Siria,</p>
+<p begin="21264573330t" end="21274583330t" region="topCenter" style="s1" xml:id="subtitle472">LEVANTAMIENTO EN SIRIA</p>
+<p begin="21275424170t" end="21322971670t" region="topCenter" style="s1" xml:id="subtitle473">y Rusia obstruye una posible resolución<br/>de la ONU contra la masacre.</p>
+<p begin="21323802500t" end="21340899580t" region="topCenter" style="s1" xml:id="subtitle474">Esta mañana se informó</p>
+<p begin="21341740420t" end="21380939580t" region="topCenter" style="s1" xml:id="subtitle475">que Rusia entregó a Siria<br/>misiles antibuque de avanzada.</p>
+<p begin="21388867500t" end="21424322920t" region="bottomCenter" style="s1" xml:id="subtitle476"><span style="s1_1">Gracias al apoyo del régimen de Assad</span><br/><span style="s1_1">por parte del líder ruso Vladimir Putin,</span></p>
+<p begin="21425153750t" end="21452260830t" region="bottomCenter" style="s1" xml:id="subtitle477"><span style="s1_1">el número de muertos en Siria</span><br/><span style="s1_1">continúa creciendo.</span></p>
+<p begin="21453101670t" end="21492721250t" region="bottomCenter" style="s1" xml:id="subtitle478">MOSCÚ - CENTRO</p>
+<p begin="21603251670t" end="21616595000t" region="bottomCenter" style="s1" xml:id="subtitle479">Rusia es un blanco central.</p>
+<p begin="21617425830t" end="21643702080t" region="bottomCenter" style="s1" xml:id="subtitle480">Por eso decidimos hacer<br/>esta conferencia de prensa en Moscú.</p>
+<p begin="21644542920t" end="21674152500t" region="bottomCenter" style="s1" xml:id="subtitle481">Porque Rusia es uno de los pocos estados</p>
+<p begin="21674983330t" end="21707515830t" region="bottomCenter" style="s1" xml:id="subtitle482">que todavía apoya al gobierno sirio.</p>
+<p begin="21708356670t" end="21738797080t" region="bottomCenter" style="s1" xml:id="subtitle483">Y no les caerá nada bien.</p>
+<p begin="21770498750t" end="21803862080t" region="bottomCenter" style="s1" xml:id="subtitle484">Vengo a la conferencia de prensa<br/>de Human Rights Watch.</p>
+<p begin="21814712920t" end="21848907080t" region="bottomCenter" style="s1" xml:id="subtitle485">¿Me trae un café, por favor?</p>
+<p begin="21877685830t" end="21909807920t" region="bottomCenter" style="s1" xml:id="subtitle486">No queremos competir<br/>con la conferencia de prensa de Putin.</p>
+<p begin="21910638750t" end="21924822920t" region="bottomCenter" style="s1" xml:id="subtitle487">Ahora tenemos competencia.</p>
+<p begin="21925653750t" end="21946504580t" region="bottomCenter" style="s1" xml:id="subtitle488">Sí, hay competencia...</p>
+<p begin="21947345420t" end="21965273330t" region="bottomCenter" style="s1" xml:id="subtitle489">pero veremos quién gana.</p>
+<p begin="21966114170t" end="21979037080t" region="topCenter" style="s1" xml:id="subtitle490">Aquí falta un espejo.</p>
+<p begin="21979877920t" end="21999897920t" region="topCenter" style="s1" xml:id="subtitle491">-Ya sé.<br/>-Es una cosa que falta.</p>
+<p begin="22000728750t" end="22035343330t" region="topCenter" style="s1" xml:id="subtitle492">El mundo está hecho para los hombres.</p>
+<p begin="22047025000t" end="22057455420t" region="bottomCenter" style="s1" xml:id="subtitle493">¿Por qué?</p>
+<p begin="22058286250t" end="22082890830t" region="bottomCenter" style="s1" xml:id="subtitle494">Porque no hay un espejo en la habitación</p>
+<p begin="22083731670t" end="22110007920t" region="bottomCenter" style="s1" xml:id="subtitle495">donde debes prepararte<br/>para la conferencia de prensa.</p>
+<p begin="22128356250t" end="22163391250t" region="bottomCenter" style="s1" xml:id="subtitle496">Desde el inicio de las protestas en Siria,</p>
+<p begin="22164222080t" end="22208436250t" region="bottomCenter" style="s1" xml:id="subtitle497">Human Rights Watch está allí<br/>observando el conflicto.</p>
+<p begin="22209267080t" end="22261819580t" region="bottomCenter" style="s1" xml:id="subtitle498">Documentamos la matanza, las torturas,<br/>los arrestos ilegales y las ejecuciones</p>
+<p begin="22262660420t" end="22321469170t" region="bottomCenter" style="s1" xml:id="subtitle499">de manifestantes por parte del gobierno.</p>
+<p begin="22322300000t" end="22366924580t" region="bottomCenter" style="s1" xml:id="subtitle500">Desde hoy, tenemos pruebas contundentes</p>
+<p begin="22367765420t" end="22413641250t" region="bottomCenter" style="s1" xml:id="subtitle501">de que estos crímenes constituyen<br/>crímenes de lesa humanidad.</p>
+<p begin="22438666250t" end="22507485000t" region="bottomCenter" style="s1" xml:id="subtitle502">Soy del Sindicato de Escritores de Rusia,<br/>pero nací en Irak.</p>
+<p begin="22521248750t" end="22575883330t" region="bottomCenter" style="s1" xml:id="subtitle503">La supuesta "democracia"<br/>que Estados Unidos impuso en Irak</p>
+<p begin="22576724170t" end="22614672080t" region="bottomCenter" style="s1" xml:id="subtitle504">es la misma que desea para Siria.</p>
+<p begin="22622600000t" end="22654301670t" region="bottomCenter" style="s1" xml:id="subtitle505">Dos millones de muertos,<br/>siete millones de refugiados...</p>
+<p begin="22655132500t" end="22683911250t" region="bottomCenter" style="s1" xml:id="subtitle506">esa es la buena democracia que lograron.</p>
+<p begin="22684742080t" end="22701849170t" region="bottomCenter" style="s1" xml:id="subtitle507">Se trata de una conspiración,</p>
+<p begin="22702680000t" end="22731038330t" region="bottomCenter" style="s1" xml:id="subtitle508">y creo que su labor es<br/>parte de dicha conspiración.</p>
+<p begin="22740217500t" end="22788185420t" region="bottomCenter" style="s1" xml:id="subtitle509">Su informe es<br/>totalmente sesgado y tendencioso.</p>
+<p begin="22789016250t" end="22815292500t" region="bottomCenter" style="s1" xml:id="subtitle510">Ahora responda mi pregunta.</p>
+<p begin="22816123330t" end="22863260420t" region="bottomCenter" style="s1" xml:id="subtitle511">¿Quién les dio derecho a ignorar<br/>la opinión del gobierno legítimo?</p>
+<p begin="22864091250t" end="22887034170t" region="bottomCenter" style="s1" xml:id="subtitle512">Le contestaré de manera sencilla.</p>
+<p begin="22887865000t" end="22914972080t" region="bottomCenter" style="s1" xml:id="subtitle513">Si verdaderamente nuestro informe carece<br/>de fundamento,</p>
+<p begin="22915812920t" end="22985462500t" region="bottomCenter" style="s1" xml:id="subtitle514">el gobierno sirio tiene que demostrarlo<br/>permitiendo observadores internacionales.</p>
+<p begin="22986293330t" end="23013410420t" region="bottomCenter" style="s1" xml:id="subtitle515">¡Los observadores infringen<br/>la soberanía del país!</p>
+<p begin="23014241250t" end="23040097080t" region="bottomCenter" style="s1" xml:id="subtitle516">¿Los observadores infringen<br/>la soberanía del país?</p>
+<p begin="23040937920t" end="23068045000t" region="bottomCenter" style="s1" xml:id="subtitle517">Entonces me temo<br/>que no compartimos la visión del mundo.</p>
+<p begin="23155212080t" end="23168975830t" region="bottomCenter" style="s1" xml:id="subtitle518">Quiero darles las gracias.</p>
+<p begin="23169816670t" end="23197344170t" region="bottomCenter" style="s1" xml:id="subtitle519">De nada.</p>
+<p begin="23198175000t" end="23253650420t" region="bottomCenter" style="s1" xml:id="subtitle520">Nos alegra poder decir la verdad<br/>de vez en cuando,</p>
+<p begin="23254481250t" end="23285762500t" region="bottomCenter" style="s1" xml:id="subtitle521">aunque no todos deseen escucharla.</p>
+<p begin="23286593330t" end="23309536250t" region="bottomCenter" style="s1" xml:id="subtitle522">Los felicito.</p>
+<p begin="23310367080t" end="23371678330t" region="bottomCenter" style="s1" xml:id="subtitle523">Los sirios vivimos<br/>una situación delicada en Rusia.</p>
+<p begin="23382529170t" end="23413390000t" region="bottomCenter" style="s1" xml:id="subtitle524">Llevamos mucho tiempo aquí.</p>
+<p begin="23414220830t" end="23470527080t" region="bottomCenter" style="s1" xml:id="subtitle525">Nos casamos con rusas,<br/>tenemos hijos y nietos aquí.</p>
+<p begin="23471367920t" end="23515992500t" region="bottomCenter" style="s1" xml:id="subtitle526">Pero comprendemos perfectamente<br/>la problemática de Siria.</p>
+<p begin="23516823330t" end="23553109580t" region="bottomCenter" style="s1" xml:id="subtitle527">Nuestros hijos visitan y aman Siria.</p>
+<p begin="23553950420t" end="23585231670t" region="bottomCenter" style="s1" xml:id="subtitle528">Pero el régimen allí es sangriento,<br/>es realmente criminal.</p>
+<p begin="23586062500t" end="23606913330t" region="bottomCenter" style="s1" xml:id="subtitle529">Dios quiera que acabe pronto.</p>
+<p begin="23607754170t" end="23638615000t" region="bottomCenter" style="s1" xml:id="subtitle530">Exacto. Gracias.</p>
+<p begin="23648625000t" end="23668645000t" region="bottomCenter" style="s1" xml:id="subtitle531">Gracias a usted.</p>
+<p begin="23726202500t" end="23746222500t" region="bottomCenter" style="s1" xml:id="subtitle532">¿Cómo fue tu infancia aquí?</p>
+<p begin="23747053330t" end="23768324580t" region="bottomCenter" style="s1" xml:id="subtitle533">Fui a una escuela soviética,</p>
+<p begin="23769165420t" end="23806282500t" region="bottomCenter" style="s1" xml:id="subtitle534">justo cuando surgía la Perestroika.</p>
+<p begin="23807113330t" end="23842989170t" region="bottomCenter" style="s1" xml:id="subtitle535">La televisión y los periódicos comenzaban<br/>a mostrar cosas,</p>
+<p begin="23843820000t" end="23869675830t" region="bottomCenter" style="s1" xml:id="subtitle536">y todos estábamos<br/>muy involucrados en política.</p>
+<p begin="23870516670t" end="23922228330t" region="bottomCenter" style="s1" xml:id="subtitle537">Éramos muy conscientes<br/>de lo que sucedía a nuestro alrededor.</p>
+<p begin="23923069170t" end="23957263330t" region="bottomCenter" style="s1" xml:id="subtitle538">Recuerdo cuando yo tenía...</p>
+<p begin="23968114170t" end="23997303330t" region="bottomCenter" style="s1" xml:id="subtitle539">Era más pequeña que Danya ahora.<br/>Tendría unos 10 años.</p>
+<p begin="23998144170t" end="24046102080t" region="bottomCenter" style="s1" xml:id="subtitle540">Decidí convencer a toda mi clase</p>
+<p begin="24046942920t" end="24090316250t" region="bottomCenter" style="s1" xml:id="subtitle541">de abandonar<br/>la institución de Jóvenes Pioneros.</p>
+<p begin="24091147080t" end="24111587500t" region="bottomCenter" style="s1" xml:id="subtitle542">Porque pensaba:<br/>"Usamos estas bufandas rojas.</p>
+<p begin="24112418330t" end="24159135000t" region="bottomCenter" style="s1" xml:id="subtitle543">No creemos en esto.<br/>No lo apoyamos de ningún modo.</p>
+<p begin="24159965830t" end="24178324170t" region="bottomCenter" style="s1" xml:id="subtitle544">¿Por qué esta formalidad?".</p>
+<p begin="24179155000t" end="24221697500t" region="bottomCenter" style="s1" xml:id="subtitle545">Fue un escándalo terrible.<br/>Casi me echan de la escuela.</p>
+<p begin="24268414170t" end="24307202920t" region="bottomCenter" style="s1" xml:id="subtitle546">Para este informe en particular,<br/>hablamos con más de 60...</p>
+<p begin="24308033750t" end="24336812500t" region="bottomCenter" style="s1" xml:id="subtitle547">Para ser precisa,<br/>con 63 desertores militares.</p>
+<p begin="24393949580t" end="24404800420t" region="bottomCenter" style="s1" xml:id="subtitle548">Hola.</p>
+<p begin="24411056670t" end="24426071670t" region="bottomCenter" style="s1" xml:id="subtitle549">Estoy cansada.</p>
+<p begin="24456101670t" end="24476121670t" region="bottomCenter" style="s1" xml:id="subtitle550">¿Quieres sopa?</p>
+<p begin="24487793330t" end="24530756250t" region="bottomCenter" style="s1" xml:id="subtitle551">Tengo un jugo muy rico.</p>
+<p begin="24531587080t" end="24565791250t" region="bottomCenter" style="s1" xml:id="subtitle552">Aquí tienes jugo de tomate.</p>
+<p begin="24579555000t" end="24626271670t" region="bottomCenter" style="s1" xml:id="subtitle553">Así que tú serás la estrella de cine.<br/>Y nosotros seremos los extras, ¿no?</p>
+<p begin="24637943330t" end="24656712080t" region="bottomCenter" style="s1" xml:id="subtitle554">¿Te molesta?</p>
+<p begin="24657552920t" end="24722617920t" region="bottomCenter" style="s1" xml:id="subtitle555">¡No! Estoy seguro<br/>de que no quedaré en la versión final.</p>
+<p begin="24733458750t" end="24768493750t" region="bottomCenter" style="s1" xml:id="subtitle556">Ahora sería<br/>el momento perfecto para mencionar</p>
+<p begin="24776832080t" end="24819374580t" region="bottomCenter" style="s1" xml:id="subtitle557">que mamá y yo dejamos de fumar<br/>¡después de 55 años!</p>
+<p begin="24820215420t" end="24834810000t" region="bottomCenter" style="s1" xml:id="subtitle558">¿Cuándo fue esto?</p>
+<p begin="24835640830t" end="24854830000t" region="bottomCenter" style="s1" xml:id="subtitle559">Después de un ataque cardíaco.</p>
+<p begin="24867762920t" end="24899044170t" region="bottomCenter" style="s1" xml:id="subtitle560">Y yo lo dejé después de mamá.</p>
+<p begin="24899875000t" end="24930735830t" region="bottomCenter" style="s1" xml:id="subtitle561">Anna, ya lo dejarás<br/>cuando llegue el momento.</p>
+<p begin="24931576670t" end="24958263330t" region="bottomCenter" style="s1" xml:id="subtitle562">Cuando llegue el momento, dejaré.</p>
+<p begin="24969524580t" end="25017492500t" region="bottomCenter" style="s1" xml:id="subtitle563">Quizá deje el cigarrillo<br/>si te da otro nieto o nieta.</p>
+<p begin="25018323330t" end="25066711670t" region="bottomCenter" style="s1" xml:id="subtitle564">Sí, lo dejaré<br/>cuando te dé otro nieto.</p>
+<p begin="25082137080t" end="25133858750t" region="bottomCenter" style="s1" xml:id="subtitle565">¡Lo dejarás<br/>y me usarás de niñera otra vez!</p>
+<p begin="25134689580t" end="25160135000t" region="bottomCenter" style="s1" xml:id="subtitle566">Por favor,<br/>¡como si alguien pudiera confiar en ti!</p>
+<p begin="25160965830t" end="25187662500t" region="bottomCenter" style="s1" xml:id="subtitle567">¿Por qué no? ¡Soy confiable!</p>
+<p begin="25188493330t" end="25213938750t" region="bottomCenter" style="s1" xml:id="subtitle568">Aunque quizá... quizá tengas razón.</p>
+<p begin="25240635420t" end="25259404170t" region="bottomCenter" style="s1" xml:id="subtitle569">Son ellos.</p>
+<p begin="25274419170t" end="25290265000t" region="bottomCenter" style="s1" xml:id="subtitle570">¿Es para ella?</p>
+<p begin="25291095830t" end="25311956670t" region="bottomCenter" style="s1" xml:id="subtitle571">¡Siempre tiene que trabajar!</p>
+<p begin="25323628330t" end="25343648330t" region="bottomCenter" style="s1" xml:id="subtitle572">Sí. Me parece bien.</p>
+<p begin="25378272920t" end="25424148750t" region="bottomCenter" style="s1" xml:id="subtitle573">La llaman por teléfono, y se acabó.</p>
+<p begin="25436661250t" end="25457932500t" region="bottomCenter" style="s1" xml:id="subtitle574">¿Viniste aquí para hablar por teléfono?</p>
+<p begin="25458763330t" end="25503808330t" region="bottomCenter" style="s1" xml:id="subtitle575">Unos minutos más<br/>antes de la entrevista.</p>
+<p begin="25520495000t" end="25538012500t" region="bottomCenter" style="s1" xml:id="subtitle576">¿Qué hacemos nosotros?<br/>¿Seguimos esperando?</p>
+<p begin="25538843330t" end="25560955420t" region="bottomCenter" style="s1" xml:id="subtitle577">Vamos a la sala.</p>
+<p begin="25583057500t" end="25609333750t" region="bottomCenter" style="s1" xml:id="subtitle578">Bien, vamos a la sala.</p>
+<p begin="25737381670t" end="25761155420t" region="bottomCenter" style="s1" xml:id="subtitle579">Antes que nada,<br/>debo decir que confirmaron información</p>
+<p begin="25761986250t" end="25776580830t" region="bottomCenter" style="s1" xml:id="subtitle580">que Human Rights Watch... Disculpe.</p>
+<p begin="25777421670t" end="25801605830t" region="bottomCenter" style="s1" xml:id="subtitle581">...pasó meses recabando,</p>
+<p begin="25802446670t" end="25835389580t" region="bottomCenter" style="s1" xml:id="subtitle582">hablando con centenares<br/>de víctimas y testigos</p>
+<p begin="25836230420t" end="25847071250t" region="bottomCenter" style="s1" xml:id="subtitle583">en países vecinos.</p>
+<p begin="25847902080t" end="25910464580t" region="bottomCenter" style="s1" xml:id="subtitle584">Principalmente abuso generalizado,<br/>matanza, tortura, detención arbitraria,</p>
+<p begin="25911305420t" end="25936740830t" region="bottomCenter" style="s1" xml:id="subtitle585">privación de asistencia médica.</p>
+<p begin="25937581670t" end="25977201250t" region="bottomCenter" style="s1" xml:id="subtitle586">Pudimos corroborar<br/>la información mediante estas entrevistas.</p>
+<p begin="26062286250t" end="26084388330t" region="bottomCenter" style="s1" xml:id="subtitle587"><span style="s1_1">Human Rights Watch publicó un informe</span></p>
+<p begin="26085229170t" end="26121925830t" region="bottomCenter" style="s1" xml:id="subtitle588"><span style="s1_1">que denuncia la represalia</span><br/><span style="s1_1">del gobierno sirio contra la oposición.</span></p>
+<p begin="26122766670t" end="26159052920t" region="bottomCenter" style="s1" xml:id="subtitle589"><span style="s1_1">Según el informe, los abusos constituyen</span><br/><span style="s1_1">crímenes de lesa humanidad.</span></p>
+<p begin="26159883750t" end="26222446250t" region="topCenter" style="s1" xml:id="subtitle590"><span style="s1_1">Se exige que el Consejo de la ONU remita</span><br/><span style="s1_1">a Siria a la Corte Penal Internacional.</span></p>
+<p begin="26223277080t" end="26246640420t" region="topCenter" style="s1" xml:id="subtitle591">El informe de Human Rights Watch<br/>es trascendente.</p>
+<p begin="26247471250t" end="26259983750t" region="topCenter" style="s1" xml:id="subtitle592">Identifica a quienes empuñan<br/>las armas.</p>
+<p begin="26260814580t" end="26270824580t" region="topCenter" style="s1" xml:id="subtitle593">LEVANTAMIENTO EN SIRIA<br/>JIM CLANCY - CNN</p>
+<p begin="26271665420t" end="26295018750t" region="topCenter" style="s1" xml:id="subtitle594">HRW HABRÍA IDENTIFICADO A LOS COMANDANTES<br/>QUE DIERON LA ORDEN DE "DISPARAR A MATAR"</p>
+<p begin="26295849580t" end="26322125830t" region="topCenter" style="s1" xml:id="subtitle595">El informe cuestiona directamente<br/>las afirmaciones repetidas</p>
+<p begin="26322966670t" end="26364668330t" region="topCenter" style="s1" xml:id="subtitle596">por el presidente sirio Bashar al-Assad<br/>en una entrevista la semana pasada.</p>
+<p begin="26365509170t" end="26391365000t" region="topCenter" style="s1" xml:id="subtitle597">¿Usted dio la orden de reprimir?</p>
+<p begin="26392195830t" end="26402205830t" region="topCenter" style="s1" xml:id="subtitle598">BASHAR AL-ASSAD - PRESIDENTE DE SIRIA</p>
+<p begin="26403046670t" end="26423897500t" region="topCenter" style="s1" xml:id="subtitle599">No existió orden de matar o ser brutal.</p>
+<p begin="26424728330t" end="26467270830t" region="topCenter" style="s1" xml:id="subtitle600">Fueron casa por casa,<br/>arrestaron a niños.</p>
+<p begin="26468111670t" end="26480624170t" region="topCenter" style="s1" xml:id="subtitle601">-¿Dónde?<br/>-Vi las imágenes.</p>
+<p begin="26481455000t" end="26513987500t" region="topCenter" style="s1" xml:id="subtitle602">Sí, pero ¿cómo verificó esas imágenes?</p>
+<p begin="26514818330t" end="26526920420t" region="topCenter" style="s1" xml:id="subtitle603">Sí, así que es...</p>
+<p begin="26527751250t" end="26538181670t" region="topCenter" style="s1" xml:id="subtitle604">Por eso decimos que se trata</p>
+<p begin="26539012500t" end="26562365830t" region="topCenter" style="s1" xml:id="subtitle605">de acusaciones falsas<br/>y distorsión de la realidad.</p>
+<p begin="26571965420t" end="26624517920t" region="bottomCenter" style="s1" xml:id="subtitle606">Mire, hablamos con cientos<br/>de testigos oculares de ambas partes.</p>
+<p begin="26625348750t" end="26677480830t" region="bottomCenter" style="s1" xml:id="subtitle607">Por eso podemos decir lo que ocurre<br/>de forma objetiva y veraz.</p>
+<p begin="26678321670t" end="26717110420t" region="bottomCenter" style="s1" xml:id="subtitle608">Pudimos responder<br/>la pregunta quizá más importante:</p>
+<p begin="26717941250t" end="26732535830t" region="bottomCenter" style="s1" xml:id="subtitle609">¿Quién está detrás de estos crímenes?</p>
+<p begin="26733376670t" end="26744637920t" region="bottomCenter" style="s1" xml:id="subtitle610">¿Quién ordenó estos crímenes?</p>
+<p begin="26745468750t" end="26773416670t" region="bottomCenter" style="s1" xml:id="subtitle611">-Muchísimas gracias por escuchar.<br/>-Gracias a usted.</p>
+<p begin="26774247500t" end="26792185420t" region="bottomCenter" style="s1" xml:id="subtitle612">-Buenas noches.<br/>-Y a usted.</p>
+<p begin="27034507499t" end="27075378329t" region="topCenter" style="s1" xml:id="subtitle613">AFUERAS DE GINEBRA, SUIZA</p>
+<p begin="27140863749t" end="27194247079t" region="topCenter" style="s1" xml:id="subtitle614"><span style="s1_1">Me crié en una granja</span><br/><span style="s1_1">y siempre deseé volver a tener una granja,</span></p>
+<p begin="27195087919t" end="27237209999t" region="bottomCenter" style="s1" xml:id="subtitle615"><span style="s1_1">plantar árboles,</span><br/><span style="s1_1">tener un huerto y cuidar animales.</span></p>
+<p begin="27256399169t" end="27310613329t" region="bottomCenter" style="s1" xml:id="subtitle616"><span style="s1_1">Es una vida totalmente distinta</span><br/><span style="s1_1">a la que vivo cuando viajo,</span></p>
+<p begin="27311454169t" end="27342314999t" region="bottomCenter" style="s1" xml:id="subtitle617"><span style="s1_1">a las atrocidades que vemos.</span></p>
+<p begin="27403205829t" end="27427820419t" region="bottomCenter" style="s1" xml:id="subtitle618"><span style="s1_1">¿Cómo acabamos siendo</span><br/><span style="s1_1">activistas de derechos humanos?</span></p>
+<p begin="27428651249t" end="27463686249t" region="bottomCenter" style="s1" xml:id="subtitle619"><span style="s1_1">No es que tuve una revelación</span></p>
+<p begin="27464517079t" end="27492885419t" region="bottomCenter" style="s1" xml:id="subtitle620"><span style="s1_1">ni fue algo</span><br/><span style="s1_1">que quería hacer desde pequeño.</span></p>
+<p begin="27493716249t" end="27515818329t" region="bottomCenter" style="s1" xml:id="subtitle621"><span style="s1_1">Solo es algo que hago.</span></p>
+<p begin="27553776249t" end="27581303749t" region="bottomCenter" style="s1" xml:id="subtitle622">Se trata de luchar contra gente mala,</p>
+<p begin="27582134579t" end="27626769169t" region="bottomCenter" style="s1" xml:id="subtitle623">y eso, en sí, ya es emocionante.</p>
+<p begin="27627599999t" end="27681403749t" region="bottomCenter" style="s1" xml:id="subtitle624">Es lindo estar del bando de los buenos<br/>y luchar contra los malos.</p>
+<p begin="27682234579t" end="27732704999t" region="bottomCenter" style="s1" xml:id="subtitle625">Joder a gente mala produce<br/>cierto grado de satisfacción.</p>
+<p begin="27733535829t" end="27755647919t" region="bottomCenter" style="s1" xml:id="subtitle626">Es Gaddafi.</p>
+<p begin="27756478749t" end="27772324579t" region="bottomCenter" style="s1" xml:id="subtitle627">¡Gaddafi!</p>
+<p begin="27773165419t" end="27789842079t" region="bottomCenter" style="s1" xml:id="subtitle628">Gaddafi.</p>
+<p begin="27823625829t" end="27869091249t" region="bottomCenter" style="s1" xml:id="subtitle629">¿Qué pasa si Gaddafi roba<br/>los juguetes de la gente...?</p>
+<p begin="27869922079t" end="27893695829t" region="bottomCenter" style="s1" xml:id="subtitle630">¿Qué pasa si Gaddafi roba qué?</p>
+<p begin="27903295419t" end="27949591669t" region="bottomCenter" style="s1" xml:id="subtitle631">Los juguetes de los niños,<br/>y alguien se los devuelve.</p>
+<p begin="27950422499t" end="27987959999t" region="bottomCenter" style="s1" xml:id="subtitle632">Entonces los niños estarán contentos<br/>de recuperar sus juguetes.</p>
+<p begin="27988790829t" end="28010482499t" region="bottomCenter" style="s1" xml:id="subtitle633">¿Gaddafi robó los juguetes?</p>
+<p begin="28027999999t" end="28046768749t" region="bottomCenter" style="s1" xml:id="subtitle634">De los niños de Libia...</p>
+<p begin="28047599579t" end="28069711669t" region="bottomCenter" style="s1" xml:id="subtitle635">¿De los niños de Libia? De acuerdo.</p>
+<p begin="28082634579t" end="28109331249t" region="bottomCenter" style="s1" xml:id="subtitle636">Es muy malo si roba juguetes.</p>
+<p begin="28308700419t" end="28336227919t" region="bottomCenter" style="s1" xml:id="subtitle637">LIBIA</p>
+<p begin="28346237919t" end="28390442079t" region="bottomCenter" style="s1" xml:id="subtitle638">La guerra civil libia acabó.</p>
+<p begin="28391282919t" end="28423815419t" region="bottomCenter" style="s1" xml:id="subtitle639">Los rebeldes vencieron a Gaddafi,<br/>y su régimen cayó.</p>
+<p begin="28424646249t" end="28468019579t" region="bottomCenter" style="s1" xml:id="subtitle640"><span style="s1_1">El anuncio llegó:</span><br/><span style="s1_1">liberación nacional, libertad.</span></p>
+<p begin="28468860419t" end="28490542079t" region="bottomCenter" style="s1" xml:id="subtitle641">En el caos que siguió a la guerra civil,</p>
+<p begin="28491382919t" end="28537258749t" region="bottomCenter" style="s1" xml:id="subtitle642">el E-TEAM regresa<br/>para investigar abusos de ambas partes.</p>
+<p begin="28543514999t" end="28574796249t" region="bottomCenter" style="s1" xml:id="subtitle643">Sí, al parecer, asesinaron a Gaddafi.</p>
+<p begin="28575627079t" end="28602744169t" region="topCenter" style="s1" xml:id="subtitle644">Asesinaron a Abu Bakr Yunis...</p>
+<p begin="28603574999t" end="28639440829t" region="topCenter" style="s1" xml:id="subtitle645">...así que capturaron<br/>a muchos líderes.</p>
+<p begin="28704095419t" end="28757058329t" region="bottomCenter" style="s1" xml:id="subtitle646">Fuimos víctimas, y ahora nuestros enemigos<br/>se convierten en víctimas.</p>
+<p begin="28757899169t" end="28780832079t" region="bottomCenter" style="s1" xml:id="subtitle647">Sí. Pero, sabes...</p>
+<p begin="28781672919t" end="28796687919t" region="bottomCenter" style="s1" xml:id="subtitle648">Esto fue lo que pasó en Irak.</p>
+<p begin="28797518749t" end="28807528749t" region="bottomCenter" style="s1" xml:id="subtitle649">Siempre, sí.</p>
+<p begin="28808359579t" end="28825466669t" region="bottomCenter" style="s1" xml:id="subtitle650">Si algunos ganan y otros pierden,</p>
+<p begin="28826297499t" end="28856747919t" region="bottomCenter" style="s1" xml:id="subtitle651">los que pierden empiezan<br/>a pelear otra vez.</p>
+<p begin="28857578749t" end="28891362499t" region="bottomCenter" style="s1" xml:id="subtitle652">Pero ustedes trabajan para todos.<br/>Una vez de este lado...</p>
+<p begin="28892193329t" end="28920561669t" region="bottomCenter" style="s1" xml:id="subtitle653">No queremos que estén enojados<br/>y digan: "Perdimos la guerra".</p>
+<p begin="28921392499t" end="28936407499t" region="bottomCenter" style="s1" xml:id="subtitle654">Todos tienen que ganar.</p>
+<p begin="28937238329t" end="28976867919t" region="bottomCenter" style="s1" xml:id="subtitle655">Sé que siempre hay problemas,<br/>pero sin duda esta Libia</p>
+<p begin="28977698749t" end="28995636669t" region="bottomCenter" style="s1" xml:id="subtitle656">será mejor que la Libia de antes.</p>
+<p begin="29060701669t" end="29086557499t" region="bottomCenter" style="s1" xml:id="subtitle657"><span style="s1_1">En Libia, con los rebeldes,</span></p>
+<p begin="29087388329t" end="29130351249t" region="bottomCenter" style="s1" xml:id="subtitle658"><span style="s1_1">tuvimos credibilidad desde el principio</span><br/><span style="s1_1">porque estuvimos ahí desde el primer día.</span></p>
+<p begin="29131182079t" end="29178319169t" region="bottomCenter" style="s1" xml:id="subtitle659"><span style="s1_1">Así que pudimos documentar</span><br/><span style="s1_1">los crímenes del gobierno de Gaddafi</span></p>
+<p begin="29179149999t" end="29202923749t" region="bottomCenter" style="s1" xml:id="subtitle660"><span style="s1_1">y también los abusos</span><br/><span style="s1_1">cometidos por los rebeldes</span></p>
+<p begin="29203754579t" end="29228369169t" region="bottomCenter" style="s1" xml:id="subtitle661"><span style="s1_1">y procuramos evitar que los cometieran.</span></p>
+<p begin="29229199999t" end="29259229999t" region="bottomCenter" style="s1" xml:id="subtitle662">Los rebeldes acaban de incendiar esta.</p>
+<p begin="29269239999t" end="29296347079t" region="bottomCenter" style="s1" xml:id="subtitle663">Pasamos por aquí<br/>hace menos de 10 minutos</p>
+<p begin="29297187919t" end="29347648329t" region="bottomCenter" style="s1" xml:id="subtitle664">y vimos que se iba de esta casa<br/>un vehículo rebelde.</p>
+<p begin="29348489169t" end="29372673329t" region="bottomCenter" style="s1" xml:id="subtitle665">Ahora volvemos, y está en llamas.</p>
+<p begin="29430651249t" end="29454424999t" region="bottomCenter" style="s1" xml:id="subtitle666">¿Ven que pusieron<br/>el combustible en el piso?</p>
+<p begin="29518238749t" end="29538679169t" region="bottomCenter" style="s1" xml:id="subtitle667">A ellos no les agrada nuestra presencia.</p>
+<p begin="29539509999t" end="29565365829t" region="bottomCenter" style="s1" xml:id="subtitle668">Están aquí.<br/>Debemos tener mucho cuidado</p>
+<p begin="29566206669t" end="29604154579t" region="bottomCenter" style="s1" xml:id="subtitle669">porque están armados<br/>y ya incendiaron cinco, seis casas.</p>
+<p begin="29604995419t" end="29633774169t" region="bottomCenter" style="s1" xml:id="subtitle670">Esta y otras del otro lado.</p>
+<p begin="29642112499t" end="29669639999t" region="topCenter" style="s1" xml:id="subtitle671">PUESTO REBELDE LIBIO</p>
+<p begin="29670470829t" end="29685485829t" region="bottomCenter" style="s1" xml:id="subtitle672">Quiero decir que está mal.</p>
+<p begin="29686326669t" end="29696336669t" region="bottomCenter" style="s1" xml:id="subtitle673">No.</p>
+<p begin="29697167499t" end="29724694999t" region="bottomCenter" style="s1" xml:id="subtitle674">Estamos de acuerdo.<br/>Los responsables deben ser castigados.</p>
+<p begin="29725525829t" end="29744714999t" region="bottomCenter" style="s1" xml:id="subtitle675">Pero deben ser castigados<br/>en un tribunal,</p>
+<p begin="29745545829t" end="29765565829t" region="bottomCenter" style="s1" xml:id="subtitle676">no con el incendio de sus casas.</p>
+<p begin="29766406669t" end="29792682919t" region="bottomCenter" style="s1" xml:id="subtitle677">La guerra acabó,<br/>y uno hace las paces con sus enemigos,</p>
+<p begin="29793513749t" end="29815615829t" region="bottomCenter" style="s1" xml:id="subtitle678">no con sus amigos.</p>
+<p begin="29932822919t" end="29942832919t" region="bottomCenter" style="s1" xml:id="subtitle679">Tema: Armas sin control</p>
+<p begin="29943663749t" end="29964934999t" region="bottomCenter" style="s1" xml:id="subtitle680">Nadim: Ya hablé con Sidney<br/>para reportarnos.</p>
+<p begin="29965765829t" end="29995385419t" region="bottomCenter" style="s1" xml:id="subtitle681">Tenemos datos sobre armas abandonadas<br/>por las fuerzas de Gaddafi.</p>
+<p begin="30035835829t" end="30057527499t" region="bottomCenter" style="s1" xml:id="subtitle682">Debería haber traído mi caña de pescar.</p>
+<p begin="30073373329t" end="30098398329t" region="bottomCenter" style="s1" xml:id="subtitle683">Hay mucho pique ahí afuera.</p>
+<p begin="30178478329t" end="30208097919t" region="bottomCenter" style="s1" xml:id="subtitle684">¿Saben dónde están<br/>los búnkeres de armas?</p>
+<p begin="30208928749t" end="30233533329t" region="bottomCenter" style="s1" xml:id="subtitle685">-Sígannos.<br/>-Está bien.</p>
+<p begin="30234374169t" end="30278578329t" region="bottomCenter" style="s1" xml:id="subtitle686">Aquí están.<br/>Son ametralladoras coreanas y belgas.</p>
+<p begin="30279419169t" end="30308197919t" region="bottomCenter" style="s1" xml:id="subtitle687">Tengo los documentos... Mira.</p>
+<p begin="30329048749t" end="30351991669t" region="bottomCenter" style="s1" xml:id="subtitle688">Estos son los documentos de expedición.</p>
+<p begin="30377016669t" end="30397036669t" region="bottomCenter" style="s1" xml:id="subtitle689">Esto me encanta.</p>
+<p begin="30397867499t" end="30421641249t" region="bottomCenter" style="s1" xml:id="subtitle690">"Lanzador menos mortal".</p>
+<p begin="30466265829t" end="30493793329t" region="bottomCenter" style="s1" xml:id="subtitle691">No dejaron ni una sola arma.</p>
+<p begin="30522992499t" end="30562201669t" region="bottomCenter" style="s1" xml:id="subtitle692">Peter es el especialista en armas.<br/>Le gustan las balas y las bombas.</p>
+<p begin="30580129579t" end="30601821249t" region="bottomCenter" style="s1" xml:id="subtitle693">A mí me interesa más la gente.</p>
+<p begin="30602652079t" end="30619338749t" region="bottomCenter" style="s1" xml:id="subtitle694">Concuerda con su personalidad.</p>
+<p begin="30620169579t" end="30649789169t" region="bottomCenter" style="s1" xml:id="subtitle695">Le gustan todas las armas...</p>
+<p begin="30650619999t" end="30687737079t" region="bottomCenter" style="s1" xml:id="subtitle696">yo tengo<br/>un conocimiento más superficial del tema,</p>
+<p begin="30688577919t" end="30726946249t" region="bottomCenter" style="s1" xml:id="subtitle697">pero Peter sabe mucho de balas y bombas,</p>
+<p begin="30727777079t" end="30744884169t" region="bottomCenter" style="s1" xml:id="subtitle698">identifica las más importantes</p>
+<p begin="30745714999t" end="30775744999t" region="bottomCenter" style="s1" xml:id="subtitle699">y consulta a expertos<br/>si hay algo muy técnico.</p>
+<p begin="30776575829t" end="30806605829t" region="bottomCenter" style="s1" xml:id="subtitle700">Pero entre los investigadores<br/>de derechos humanos,</p>
+<p begin="30807446669t" end="30843732919t" region="bottomCenter" style="s1" xml:id="subtitle701">no hay nadie que sepa más que él.</p>
+<p begin="30924643749t" end="30963012079t" region="bottomCenter" style="s1" xml:id="subtitle702">Y eso es lo que le encantaría tener<br/>en sus manos a al-Qaeda.</p>
+<p begin="30963852919t" end="30993882919t" region="bottomCenter" style="s1" xml:id="subtitle703">Son misiles tierra-aire guiados<br/>por infrarrojos.</p>
+<p begin="31006395419t" end="31046014999t" region="bottomCenter" style="s1" xml:id="subtitle704">Aquella arma es<br/>la pesadilla del Departamento de Estado,</p>
+<p begin="31046845829t" end="31090229169t" region="bottomCenter" style="s1" xml:id="subtitle705">y por ella recibo llamadas de agencias<br/>de inteligencia de todo el globo.</p>
+<p begin="31091059999t" end="31102321249t" region="bottomCenter" style="s1" xml:id="subtitle706">Aquella de ahí.</p>
+<p begin="31128597499t" end="31159047919t" region="bottomCenter" style="s1" xml:id="subtitle707">Estos pueden derribar aviones.<br/>Solo se usan para eso.</p>
+<p begin="31159878749t" end="31179898749t" region="bottomCenter" style="s1" xml:id="subtitle708">El centro de comando está recolectándolos</p>
+<p begin="31180729579t" end="31199087919t" region="bottomCenter" style="s1" xml:id="subtitle709">porque van a destruirlos.</p>
+<p begin="31244543329t" end="31274162919t" region="bottomCenter" style="s1" xml:id="subtitle710"><span style="s1_1">Es fundamental rastrear estas armas.</span></p>
+<p begin="31274993749t" end="31294593329t" region="bottomCenter" style="s1" xml:id="subtitle711"><span style="s1_1">Nos permite calcular</span></p>
+<p begin="31295434169t" end="31330469169t" region="bottomCenter" style="s1" xml:id="subtitle712"><span style="s1_1">cuántas de estas armas</span><br/><span style="s1_1">están dando vueltas.</span></p>
+<p begin="31331299999t" end="31371339999t" region="bottomCenter" style="s1" xml:id="subtitle713"><span style="s1_1">Realmente representan</span><br/><span style="s1_1">un grave peligro para la población civil</span></p>
+<p begin="31372170829t" end="31423061669t" region="bottomCenter" style="s1" xml:id="subtitle714"><span style="s1_1">porque es lo que usan los malos</span><br/><span style="s1_1">para armar autos bomba y bombas suicidas</span></p>
+<p begin="31423892499t" end="31456424999t" region="bottomCenter" style="s1" xml:id="subtitle715"><span style="s1_1">que causaron estragos</span><br/><span style="s1_1">en Irak y Afganistán.</span></p>
+<p begin="31469768329t" end="31494793329t" region="bottomCenter" style="s1" xml:id="subtitle716"><span style="s1_1">No queremos</span><br/><span style="s1_1">que aquí se repita esa situación.</span></p>
+<p begin="31510649169t" end="31564032499t" region="bottomCenter" style="s1" xml:id="subtitle717">Este cargamento es dos veces lo que la CIA<br/>le dio a los muyahidines afganos...</p>
+<p begin="31583221669t" end="31599898329t" region="bottomCenter" style="s1" xml:id="subtitle718">durante la guerra de Afganistán.</p>
+<p begin="31600739169t" end="31617005419t" region="bottomCenter" style="s1" xml:id="subtitle719">Solo este cargamento.</p>
+<p begin="31678316669t" end="31693331669t" region="bottomCenter" style="s1" xml:id="subtitle720">¿Están controladas?</p>
+<p begin="31963181249t" end="31973191249t" region="bottomCenter" style="s1" xml:id="subtitle721"><span style="s1_1">Es oficial.</span></p>
+<p begin="31974022079t" end="31994042079t" region="bottomCenter" style="s1" xml:id="subtitle722"><span style="s1_1">Siria se encuentra</span><br/><span style="s1_1">en estado de guerra civil.</span></p>
+<p begin="31994882919t" end="32007805829t" region="topCenter" style="s1" xml:id="subtitle723"><span style="s1_1">Recibimos informes esta noche</span></p>
+<p begin="32008646669t" end="32024492499t" region="topCenter" style="s1" xml:id="subtitle724"><span style="s1_1">de luchas en Damasco,</span><br/><span style="s1_1">la capital siria.</span></p>
+<p begin="32025323329t" end="32035753749t" region="topCenter" style="s1" xml:id="subtitle725">SIRIA, 2012</p>
+<p begin="32047014999t" end="32089557499t" region="bottomCenter" style="s1" xml:id="subtitle726"><span style="s1_1">El ejército sirio parece intensificar</span><br/><span style="s1_1">el uso de helicópteros de combate,</span></p>
+<p begin="32090388329t" end="32117084999t" region="bottomCenter" style="s1" xml:id="subtitle727"><span style="s1_1">tanto en zonas rebeldes como en Damasco.</span></p>
+<p begin="32117915829t" end="32129177079t" region="bottomCenter" style="s1" xml:id="subtitle728"><span style="s1_1">La Fuerza Aérea siria</span></p>
+<p begin="32130017919t" end="32166304169t" region="bottomCenter" style="s1" xml:id="subtitle729"><span style="s1_1">se embarcó en una lucha sin cuartel</span><br/><span style="s1_1">contra los rebeldes.</span></p>
+<p begin="32228866669t" end="32249717499t" region="bottomCenter" style="s1" xml:id="subtitle730">Tratamos de documentar los ataques aéreos</p>
+<p begin="32250548329t" end="32272660419t" region="bottomCenter" style="s1" xml:id="subtitle731">que tuvieron lugar<br/>en los últimos dos días.</p>
+<p begin="32273491249t" end="32287675419t" region="bottomCenter" style="s1" xml:id="subtitle732">El problema es que los aviones...</p>
+<p begin="32288506249t" end="32328125829t" region="bottomCenter" style="s1" xml:id="subtitle733">Los ataques aéreos ocurren<br/>en días soleados,</p>
+<p begin="32338976669t" end="32379016669t" region="bottomCenter" style="s1" xml:id="subtitle734">y hoy, hasta ahora, brilla el sol.</p>
+<p begin="32534582079t" end="32558776249t" region="bottomCenter" style="s1" xml:id="subtitle735">¿Estas todavía no explotaron?</p>
+<p begin="32559607079t" end="32571288749t" region="bottomCenter" style="s1" xml:id="subtitle736">Así es, todavía no explotaron.</p>
+<p begin="32572119579t" end="32618005419t" region="bottomCenter" style="s1" xml:id="subtitle737">Bien, explícales que son muy peligrosas.</p>
+<p begin="32618836249t" end="32632599999t" region="bottomCenter" style="s1" xml:id="subtitle738">Aguarden.</p>
+<p begin="32672639999t" end="32700167499t" region="bottomCenter" style="s1" xml:id="subtitle739">Sí, entonces...<br/>Tengan mucho cuidado.</p>
+<p begin="32731448749t" end="32777324579t" region="topCenter" style="s1" xml:id="subtitle740">REFUGIO EN LAS AFUERAS<br/>DE ALEPO, SIRIA</p>
+<p begin="32778165419t" end="32816113329t" region="bottomCenter" style="s1" xml:id="subtitle741">Al parecer, en el barrio donde estamos<br/>dispararon dos cohetes...</p>
+<p begin="32846984169t" end="32898695829t" region="bottomCenter" style="s1" xml:id="subtitle742">que cayeron<br/>a tan solo dos calles de aquí.</p>
+<p begin="32914551669t" end="32960007079t" region="bottomCenter" style="s1" xml:id="subtitle743">No estoy aterrada, pero...</p>
+<p begin="32969606669t" end="32996293329t" region="bottomCenter" style="s1" xml:id="subtitle744">Sabíamos en qué nos metíamos,</p>
+<p begin="33005052079t" end="33036333329t" region="bottomCenter" style="s1" xml:id="subtitle745">pero tenemos que ver qué pasa.</p>
+<p begin="33174391249t" end="33194831669t" region="bottomCenter" style="s1" xml:id="subtitle746">Se está rapando el pelo como militar.</p>
+<p begin="33278665419t" end="33289506249t" region="bottomCenter" style="s1" xml:id="subtitle747">Está bien.</p>
+<p begin="33290337079t" end="33313279999t" region="bottomCenter" style="s1" xml:id="subtitle748">-Feliz aniversario.<br/>-Para ti también.</p>
+<p begin="33314110829t" end="33327464169t" region="bottomCenter" style="s1" xml:id="subtitle749">¿Qué pasa?</p>
+<p begin="33328294999t" end="33345812499t" region="bottomCenter" style="s1" xml:id="subtitle750">Es nuestro aniversario de bodas.</p>
+<p begin="33346643329t" end="33359155829t" region="bottomCenter" style="s1" xml:id="subtitle751">-¿De quién?<br/>-De nosotros.</p>
+<p begin="33359996669t" end="33380016669t" region="bottomCenter" style="s1" xml:id="subtitle752">-¿De veras? ¿El 10 de agosto?<br/>-Sí.</p>
+<p begin="33397534169t" end="33415882499t" region="bottomCenter" style="s1" xml:id="subtitle753">Acabamos de acordarnos.</p>
+<p begin="33424641249t" end="33442579169t" region="bottomCenter" style="s1" xml:id="subtitle754">-¿Me queda bien?<br/>-Sí.</p>
+<p begin="33452999579t" end="33474270829t" region="bottomCenter" style="s1" xml:id="subtitle755">-Feliz aniversario.<br/>-Feliz aniversario.</p>
+<p begin="33475111669t" end="33488454999t" region="bottomCenter" style="s1" xml:id="subtitle756">En Siria, decimos <span style="s1_1">Na'aiman.</span></p>
+<p begin="33560196669t" end="33604821249t" region="bottomCenter" style="s1" xml:id="subtitle757">¿Estoy alucinando,<br/>o se oye un avión?</p>
+<p begin="33687403749t" end="33723269579t" region="bottomCenter" style="s1" xml:id="subtitle758">¿Por qué no vacías tu mochila?</p>
+<p begin="33815451669t" end="33835471669t" region="bottomCenter" style="s1" xml:id="subtitle759">¡Cierra la ventana!</p>
+<p begin="33836302499t" end="33882178329t" region="bottomCenter" style="s1" xml:id="subtitle760">Amir, ¡ven aquí!</p>
+<p begin="33902198329t" end="33951837919t" region="bottomCenter" style="s1" xml:id="subtitle761">Cálmense.</p>
+<p begin="33971437499t" end="33999385419t" region="bottomCenter" style="s1" xml:id="subtitle762">-¿Qué clase de avión es?<br/>-Uno militar.</p>
+<p begin="34009805829t" end="34041927919t" region="bottomCenter" style="s1" xml:id="subtitle763">Ya se fue.</p>
+<p begin="34051517499t" end="34083219169t" region="bottomCenter" style="s1" xml:id="subtitle764">Eso esperamos.</p>
+<p begin="34093229169t" end="34127012919t" region="bottomCenter" style="s1" xml:id="subtitle765">No me preocupo por mí,<br/>me preocupo por mis hijos.</p>
+<p begin="34127843749t" end="34144109999t" region="bottomCenter" style="s1" xml:id="subtitle766">Le preocupa su hijo.</p>
+<p begin="34144940829t" end="34165801669t" region="bottomCenter" style="s1" xml:id="subtitle767">Por supuesto, no, la comprendo.</p>
+<p begin="34166632499t" end="34217102919t" region="bottomCenter" style="s1" xml:id="subtitle768">Le aseguro que, si yo tuviera<br/>a mi hijo aquí, estaría más aterrada.</p>
+<p begin="34217933749t" end="34250466249t" region="bottomCenter" style="s1" xml:id="subtitle769">¿No les preocupa morir<br/>en este país que es tan ajeno a ustedes?</p>
+<p begin="34251297079t" end="34277993749t" region="bottomCenter" style="s1" xml:id="subtitle770">¿Tienen miedo de morir?</p>
+<p begin="34289254999t" end="34300095829t" region="bottomCenter" style="s1" xml:id="subtitle771">-De...<br/>-De...</p>
+<p begin="34300936669t" end="34326792499t" region="bottomCenter" style="s1" xml:id="subtitle772">-¿Tienen miedo de morir en...?<br/>-¿De morir?</p>
+<p begin="34327623329t" end="34349314999t" region="bottomCenter" style="s1" xml:id="subtitle773">¡Dios no lo permita!</p>
+<p begin="34357653329t" end="34379765420t" region="bottomCenter" style="s1" xml:id="subtitle774">¿Tienen miedo?</p>
+<p begin="34380596250t" end="34400616250t" region="bottomCenter" style="s1" xml:id="subtitle775">Yo estoy un poco nervioso, sí.</p>
+<p begin="34486121670t" end="34520315830t" region="bottomCenter" style="s1" xml:id="subtitle776">No, por supuesto, es...<br/>El riesgo existe.</p>
+<p begin="34521156670t" end="34541176670t" region="bottomCenter" style="s1" xml:id="subtitle777">-Es peligroso.<br/>-¿Hay una sola bomba por noche?</p>
+<p begin="34542007500t" end="34552848330t" region="bottomCenter" style="s1" xml:id="subtitle778">No, pero--</p>
+<p begin="34553689170t" end="34578714170t" region="bottomCenter" style="s1" xml:id="subtitle779">¿Hay algún tipo de búnkeres?</p>
+<p begin="34579545000t" end="34593729170t" region="bottomCenter" style="s1" xml:id="subtitle780">No, búnkeres no.</p>
+<p begin="34594560000t" end="34612077500t" region="bottomCenter" style="s1" xml:id="subtitle781">-En algunas casas, hay sótanos.<br/>-¿Sótanos?</p>
+<p begin="34612908330t" end="34641276670t" region="bottomCenter" style="s1" xml:id="subtitle782">El último día que estuvimos ahí,<br/>hubo un ataque aéreo,</p>
+<p begin="34642107500t" end="34682978330t" region="bottomCenter" style="s1" xml:id="subtitle783">y arrojaron una bomba<br/>a 50 metros de la casa donde dormíamos.</p>
+<p begin="34683819170t" end="34702998330t" region="bottomCenter" style="s1" xml:id="subtitle784">Y ¿alguien murió?</p>
+<p begin="34703839170t" end="34728443750t" region="bottomCenter" style="s1" xml:id="subtitle785">No, pero hubo unos niños heridos.</p>
+<p begin="34729274580t" end="34747632920t" region="bottomCenter" style="s1" xml:id="subtitle786">Estaban jugando en la calle.</p>
+<p begin="34748463750t" end="34766812080t" region="bottomCenter" style="s1" xml:id="subtitle787">¿En serio?</p>
+<p begin="34799344580t" end="34815200420t" region="bottomCenter" style="s1" xml:id="subtitle788">Entonces...</p>
+<p begin="34816031250t" end="34833969170t" region="bottomCenter" style="s1" xml:id="subtitle789">Yo no me atrevería a salir</p>
+<p begin="34834800000t" end="34868583750t" region="bottomCenter" style="s1" xml:id="subtitle790">donde hace una semana caen bombas.</p>
+<p begin="34890685830t" end="34925720830t" region="bottomCenter" style="s1" xml:id="subtitle791">No sé.<br/>No, la mayoría de la gente del lugar</p>
+<p begin="34926561670t" end="34952417500t" region="bottomCenter" style="s1" xml:id="subtitle792">seguramente tuvo la misma reacción,<br/>la primera vez,</p>
+<p begin="34953248330t" end="34985370420t" region="bottomCenter" style="s1" xml:id="subtitle793">pero después, es raro,<br/>porque la gente se acostumbra.</p>
+<p begin="34986201250t" end="35030415420t" region="bottomCenter" style="s1" xml:id="subtitle794">A la décima vez<br/>que oyen caer bombas,</p>
+<p begin="35031246250t" end="35049184170t" region="bottomCenter" style="s1" xml:id="subtitle795">ya se acostumbran.</p>
+<p begin="35050015000t" end="35078793750t" region="bottomCenter" style="s1" xml:id="subtitle796">Y así es que muchos mueren,</p>
+<p begin="35079624580t" end="35089634580t" region="bottomCenter" style="s1" xml:id="subtitle797">porque no...</p>
+<p begin="35090475420t" end="35127592500t" region="bottomCenter" style="s1" xml:id="subtitle798">Dejan de prestar atención,<br/>dejan de tener miedo.</p>
+<p begin="35128423330t" end="35156791670t" region="bottomCenter" style="s1" xml:id="subtitle799">Yo no podría acostumbrarme.</p>
+<p begin="35175970830t" end="35193077920t" region="bottomCenter" style="s1" xml:id="subtitle800">Uno se acostumbra a todo.</p>
+<p begin="35300265000t" end="35327372080t" region="bottomCenter" style="s1" xml:id="subtitle801">¿Nunca les dice que tiene miedo?</p>
+<p begin="35328212920t" end="35349484170t" region="bottomCenter" style="s1" xml:id="subtitle802">-¿Miedo de qué?<br/>-¿Miedo por ustedes?</p>
+<p begin="35350315000t" end="35364499170t" region="bottomCenter" style="s1" xml:id="subtitle803">Anoche lo dijo.</p>
+<p begin="35365330000t" end="35385770420t" region="bottomCenter" style="s1" xml:id="subtitle804">No, pero en general,<br/>¿nunca dice que tiene miedo?</p>
+<p begin="35386601250t" end="35422467080t" region="bottomCenter" style="s1" xml:id="subtitle805">No, realmente no creo que sienta miedo.</p>
+<p begin="35439984580t" end="35456671250t" region="bottomCenter" style="s1" xml:id="subtitle806">Tiene 12 años.</p>
+<p begin="35457502080t" end="35481275830t" region="bottomCenter" style="s1" xml:id="subtitle807">¿Recuerdas cómo eras a esa edad?</p>
+<p begin="35482116670t" end="35527992500t" region="bottomCenter" style="s1" xml:id="subtitle808">La idea de que tú o algún ser querido<br/>pueda morir es muy abstracta.</p>
+<p begin="35538422920t" end="35556350830t" region="bottomCenter" style="s1" xml:id="subtitle809">Y él no es el más...</p>
+<p begin="35557191670t" end="35608072500t" region="bottomCenter" style="s1" xml:id="subtitle810">Como viste,<br/>es muy seguro, muy confiado.</p>
+<p begin="35624759170t" end="35646440830t" region="bottomCenter" style="s1" xml:id="subtitle811">Supongo que si le preguntas directamente:</p>
+<p begin="35647281670t" end="35681475830t" region="bottomCenter" style="s1" xml:id="subtitle812">"¿Tienes miedo de que tu madre muera<br/>en una de esas situaciones?",</p>
+<p begin="35682316670t" end="35692326670t" region="bottomCenter" style="s1" xml:id="subtitle813">seguramente dirá que sí.</p>
+<p begin="35693157500t" end="35712757080t" region="bottomCenter" style="s1" xml:id="subtitle814">Pero francamente,</p>
+<p begin="35713597920t" end="35740284580t" region="bottomCenter" style="s1" xml:id="subtitle815">no creo que sea parte</p>
+<p begin="35754889170t" end="35783247500t" region="bottomCenter" style="s1" xml:id="subtitle816">de sus pesadillas cotidianas.</p>
+<p begin="36132766670t" end="36156540420t" region="topCenter" style="s1" xml:id="subtitle817">ALEPO, SIRIA</p>
+<p begin="36157371250t" end="36179893750t" region="topCenter" style="s1" xml:id="subtitle818">Por supuesto,<br/>aprendí inglés por las películas.</p>
+<p begin="36180724580t" end="36191155000t" region="topCenter" style="s1" xml:id="subtitle819">Bien.</p>
+<p begin="36191985830t" end="36216600420t" region="topCenter" style="s1" xml:id="subtitle820">Memoricé algunas obras de Shakespeare,</p>
+<p begin="36217431250t" end="36227441250t" region="topCenter" style="s1" xml:id="subtitle821">MOHAMMED<br/>INTÉRPRETE SIRIO</p>
+<p begin="36228272080t" end="36247881670t" region="topCenter" style="s1" xml:id="subtitle822">pero no son útiles<br/>para aprender inglés,</p>
+<p begin="36248712500t" end="36272065830t" region="bottomCenter" style="s1" xml:id="subtitle823">porque eso, en realidad, no es inglés.</p>
+<p begin="36272906670t" end="36287080830t" region="bottomCenter" style="s1" xml:id="subtitle824"><span style="s1_1">El rey Lear.</span></p>
+<p begin="36300844580t" end="36322536250t" region="bottomCenter" style="s1" xml:id="subtitle825"><span style="s1_1">El rey Lear</span> me encanta.</p>
+<p begin="36323367080t" end="36347981670t" region="bottomCenter" style="s1" xml:id="subtitle826">Es muy triste.</p>
+<p begin="36364658330t" end="36378011670t" region="bottomCenter" style="s1" xml:id="subtitle827">Mi esposa y yo somos maestros.</p>
+<p begin="36378842500t" end="36410544170t" region="bottomCenter" style="s1" xml:id="subtitle828">Yo enseño en esa escuela.<br/>Mi esposa enseña en esta escuela.</p>
+<p begin="36411375000t" end="36425969580t" region="bottomCenter" style="s1" xml:id="subtitle829">Pero ahora está embarazada.</p>
+<p begin="36426810420t" end="36455168750t" region="bottomCenter" style="s1" xml:id="subtitle830">Por eso contraté<br/>a una maestra para que la reemplace.</p>
+<p begin="36455999580t" end="36476019580t" region="bottomCenter" style="s1" xml:id="subtitle831">Durante el embarazo, la gente,</p>
+<p begin="36476860420t" end="36506890420t" region="bottomCenter" style="s1" xml:id="subtitle832">perdón, las mujeres tienen<br/>antojo de comer algo</p>
+<p begin="36507721250t" end="36536920420t" region="bottomCenter" style="s1" xml:id="subtitle833">o de tomar algo.</p>
+<p begin="36537751250t" end="36561104580t" region="bottomCenter" style="s1" xml:id="subtitle834">A mi esposa, en cambio, le gusta dormir.</p>
+<p begin="36581965420t" end="36612405830t" region="bottomCenter" style="s1" xml:id="subtitle835">Me suena conocido.</p>
+<p begin="36613246670t" end="36624087500t" region="bottomCenter" style="s1" xml:id="subtitle836">Sí, quizá.</p>
+<p begin="36624918330t" end="36643276670t" region="bottomCenter" style="s1" xml:id="subtitle837">¿Qué quieres decir?</p>
+<p begin="36657450830t" end="36676219580t" region="bottomCenter" style="s1" xml:id="subtitle838">-¿Le digo?<br/>-Sí, puedes decirle.</p>
+<p begin="36677060420t" end="36704167500t" region="bottomCenter" style="s1" xml:id="subtitle839">Bien, te contaré un secreto.</p>
+<p begin="36704998330t" end="36723356670t" region="bottomCenter" style="s1" xml:id="subtitle840">Anya también está embarazada.</p>
+<p begin="36724187500t" end="36757140420t" region="bottomCenter" style="s1" xml:id="subtitle841">-Sí. ¿Sabías? No.<br/>-No.</p>
+<p begin="36757971250t" end="36780493750t" region="bottomCenter" style="s1" xml:id="subtitle842">Así que todo lo que dices me suena<br/>muy conocido.</p>
+<p begin="36781324580t" end="36792585830t" region="bottomCenter" style="s1" xml:id="subtitle843">Te entiendo.</p>
+<p begin="36793426670t" end="36815528750t" region="bottomCenter" style="s1" xml:id="subtitle844">¿De cuánto está tu esposa?</p>
+<p begin="36816359580t" end="36838471670t" region="bottomCenter" style="s1" xml:id="subtitle845">De 47, 48 días.</p>
+<p begin="36839302500t" end="36866830000t" region="bottomCenter" style="s1" xml:id="subtitle846">No, dos meses y 17 días.</p>
+<p begin="36867660830t" end="36879342500t" region="bottomCenter" style="s1" xml:id="subtitle847">Dos meses y 17 días.</p>
+<p begin="36880173330t" end="36894777920t" region="bottomCenter" style="s1" xml:id="subtitle848">-Cuentas los días.<br/>-Sí.</p>
+<p begin="36911875000t" end="36944407500t" region="bottomCenter" style="s1" xml:id="subtitle849">-Claro. Es mi primer bebé.<br/>-Sí.</p>
+<p begin="37000293330t" end="37021985000t" region="bottomCenter" style="s1" xml:id="subtitle850">Acaban de bombardear Azaz.<br/>Hay 12 muertos y heridos.</p>
+<p begin="37022815830t" end="37039922920t" region="bottomCenter" style="s1" xml:id="subtitle851">-¿Bombardearon Azaz?<br/>-Sí.</p>
+<p begin="37040753750t" end="37061604580t" region="bottomCenter" style="s1" xml:id="subtitle852">¿Hay 12 muertos y heridos ahora?</p>
+<p begin="37062445420t" end="37072865830t" region="bottomCenter" style="s1" xml:id="subtitle853">Sí.</p>
+<p begin="37073706670t" end="37106239170t" region="bottomCenter" style="s1" xml:id="subtitle854">Hace media hora,<br/>poco más de media hora.</p>
+<p begin="37107070000t" end="37117500420t" region="bottomCenter" style="s1" xml:id="subtitle855">¿En qué parte de Azaz fue?</p>
+<p begin="37118331250t" end="37132095000t" region="bottomCenter" style="s1" xml:id="subtitle856">No sé.</p>
+<p begin="37132925830t" end="37151284170t" region="bottomCenter" style="s1" xml:id="subtitle857">Solo vimos el humo.</p>
+<p begin="37152115000t" end="37166709580t" region="bottomCenter" style="s1" xml:id="subtitle858">¿Qué pasó?</p>
+<p begin="37167550420t" end="37195908750t" region="bottomCenter" style="s1" xml:id="subtitle859">-Bombardearon Azaz hace solo media hora.<br/>-¿Qué?</p>
+<p begin="37196739580t" end="37212175000t" region="bottomCenter" style="s1" xml:id="subtitle860">¿Vamos ahí?</p>
+<p begin="37265978750t" end="37285167920t" region="bottomCenter" style="s1" xml:id="subtitle861">¡A Azaz!</p>
+<p begin="37296839580t" end="37317700420t" region="bottomCenter" style="s1" xml:id="subtitle862">¿Realmente es buena idea ir ahí?</p>
+<p begin="37329372080t" end="37366078750t" region="bottomCenter" style="s1" xml:id="subtitle863">Veamos qué sucedió.<br/>Quizá no haya pasado nada.</p>
+<p begin="37366909580t" end="37385678330t" region="bottomCenter" style="s1" xml:id="subtitle864">Eso espero.</p>
+<p begin="37510392920t" end="37526238750t" region="bottomCenter" style="s1" xml:id="subtitle865">Dios mío.</p>
+<p begin="37540422920t" end="37550432920t" region="bottomCenter" style="s1" xml:id="subtitle866">¡Socorro!</p>
+<p begin="37551263750t" end="37561273750t" region="bottomCenter" style="s1" xml:id="subtitle867">Cielos.</p>
+<p begin="37568781250t" end="37578791250t" region="bottomCenter" style="s1" xml:id="subtitle868">Ven aquí.</p>
+<p begin="37591724170t" end="37624667080t" region="bottomCenter" style="s1" xml:id="subtitle869">Vamos.</p>
+<p begin="37625507920t" end="37654697080t" region="bottomCenter" style="s1" xml:id="subtitle870">¿Cuántas casas había aquí?</p>
+<p begin="37655537920t" end="37673886250t" region="bottomCenter" style="s1" xml:id="subtitle871">Destruyeron 22 casas.</p>
+<p begin="37674717080t" end="37700162500t" region="bottomCenter" style="s1" xml:id="subtitle872">Hay 40 heridos y 20 muertos.</p>
+<p begin="37716849170t" end="37742284580t" region="bottomCenter" style="s1" xml:id="subtitle873">Dijo que aquí había una calle...</p>
+<p begin="37743125420t" end="37778991250t" region="bottomCenter" style="s1" xml:id="subtitle874">y que la bomba cayó<br/>sobre las casas de aquí.</p>
+<p begin="37779822080t" end="37820702920t" region="bottomCenter" style="s1" xml:id="subtitle875">Aquí, toda esta zona está habitada<br/>por civiles pobres.</p>
+<p begin="37821533750t" end="37845727920t" region="bottomCenter" style="s1" xml:id="subtitle876">¿Hay alguien en el hospital?</p>
+<p begin="37856989170t" end="37882845000t" region="bottomCenter" style="s1" xml:id="subtitle877">También atacaron el hospital.</p>
+<p begin="37996708750t" end="38024656670t" region="bottomCenter" style="s1" xml:id="subtitle878">No tenemos armas para detener aviones.<br/>¿Cómo detenemos esto?</p>
+<p begin="38025487500t" end="38044256250t" region="bottomCenter" style="s1" xml:id="subtitle879">Solo Dios puede protegernos.</p>
+<p begin="38067609580t" end="38089721670t" region="bottomCenter" style="s1" xml:id="subtitle880">¡Agáchense!</p>
+<p begin="38099731670t" end="38114326250t" region="bottomCenter" style="s1" xml:id="subtitle881">¡Apaguen esa luz!</p>
+<p begin="38115157080t" end="38138930830t" region="bottomCenter" style="s1" xml:id="subtitle882">Es un auto.</p>
+<p begin="38139771670t" end="38155617500t" region="bottomCenter" style="s1" xml:id="subtitle883">No es un avión.</p>
+<p begin="38156448330t" end="38174386250t" region="bottomCenter" style="s1" xml:id="subtitle884">Ya sé, pero oyen el sonido.</p>
+<p begin="38189401250t" end="38207339170t" region="bottomCenter" style="s1" xml:id="subtitle885">Deberíamos irnos.</p>
+<p begin="38208170000t" end="38232364170t" region="bottomCenter" style="s1" xml:id="subtitle886">Bien, ¿quieren irse?</p>
+<p begin="38233195000t" end="38250712500t" region="bottomCenter" style="s1" xml:id="subtitle887">¿Cómo detenemos a esos aviones?</p>
+<p begin="38251543330t" end="38268230000t" region="bottomCenter" style="s1" xml:id="subtitle888">Ahí no hay teléfono.<br/>Necesito el teléfono.</p>
+<p begin="38269060830t" end="38299090830t" region="bottomCenter" style="s1" xml:id="subtitle889">Le pedimos a Turquía,<br/>Arabia Saudita y Qatar.</p>
+<p begin="38299931670t" end="38317449170t" region="bottomCenter" style="s1" xml:id="subtitle890">No necesitamos dinero de ustedes.</p>
+<p begin="38318280000t" end="38340382080t" region="bottomCenter" style="s1" xml:id="subtitle891">Necesitamos armas<br/>para defendernos de esos aviones.</p>
+<p begin="38341222920t" end="38364996670t" region="bottomCenter" style="s1" xml:id="subtitle892">Por favor,<br/>díganle esto a todo el mundo.</p>
+<p begin="38389601250t" end="38407949580t" region="bottomCenter" style="s1" xml:id="subtitle893"><span style="s1_1">¿Me diría qué sucedió?</span></p>
+<p begin="38408790420t" end="38448410000t" region="bottomCenter" style="s1" xml:id="subtitle894">Díganos exactamente qué ocurrió.</p>
+<p begin="38449240830t" end="38475937500t" region="bottomCenter" style="s1" xml:id="subtitle895">Vimos un avión militar.</p>
+<p begin="38476768330t" end="38488450000t" region="bottomCenter" style="s1" xml:id="subtitle896">Militar.</p>
+<p begin="38489280830t" end="38525567080t" region="bottomCenter" style="s1" xml:id="subtitle897">Debería usarse contra otros países...</p>
+<p begin="38526407920t" end="38552684170t" region="bottomCenter" style="s1" xml:id="subtitle898">no para asesinar a nuestra familia.</p>
+<p begin="38553515000t" end="38584796250t" region="bottomCenter" style="s1" xml:id="subtitle899">Hoy asesinaron a muchos niños.</p>
+<p begin="38585627080t" end="38631092500t" region="bottomCenter" style="s1" xml:id="subtitle900">Bebés. Algunos de apenas meses.</p>
+<p begin="38639430830t" end="38665707080t" region="bottomCenter" style="s1" xml:id="subtitle901">Destruyeron todas estas casas.</p>
+<p begin="38666547920t" end="38691983330t" region="bottomCenter" style="s1" xml:id="subtitle902">¿Qué buscaban?<br/>¿Armas? ¡No hay ninguna!</p>
+<p begin="38704085420t" end="38769981250t" region="bottomCenter" style="s1" xml:id="subtitle903">Hoy perdí a mi hermano,<br/>mi hermana y mi madrastra.</p>
+<p begin="38778740000t" end="38817949170t" region="bottomCenter" style="s1" xml:id="subtitle904">¿Qué busca Assad el homicida?</p>
+<p begin="38818780000t" end="38870912080t" region="bottomCenter" style="s1" xml:id="subtitle905">¿Qué busca?</p>
+<p begin="38871752920t" end="38894685830t" region="bottomCenter" style="s1" xml:id="subtitle906">Ojalá podamos vengarnos.</p>
+<p begin="38895526670t" end="38922213330t" region="bottomCenter" style="s1" xml:id="subtitle907">Dios debería castigarlos.</p>
+<p begin="38941402500t" end="38958920000t" region="bottomCenter" style="s1" xml:id="subtitle908">Está bien.</p>
+<p begin="38959750830t" end="38985616670t" region="bottomCenter" style="s1" xml:id="subtitle909">Lamento muchísimo el...</p>
+<p begin="39074865830t" end="39102393330t" region="bottomCenter" style="s1" xml:id="subtitle910">Lo único que detendrá esto es<br/>una zona de exclusión aérea.</p>
+<p begin="39103234170t" end="39136177080t" region="bottomCenter" style="s1" xml:id="subtitle911">-Y aquí puede implementarse perfectamente.<br/>-Sí.</p>
+<p begin="39150781670t" end="39170801670t" region="bottomCenter" style="s1" xml:id="subtitle912">¿Qué opinas?</p>
+<p begin="39171632500t" end="39195826670t" region="bottomCenter" style="s1" xml:id="subtitle913">Esto es realmente...<br/>Es quizá el peor ataque.</p>
+<p begin="39196657500t" end="39209170000t" region="bottomCenter" style="s1" xml:id="subtitle914">Sí.</p>
+<p begin="39433143750t" end="39453584170t" region="bottomCenter" style="s1" xml:id="subtitle915">Hola, ¿me oyes? Está bien.</p>
+<p begin="39454415000t" end="39475265830t" region="bottomCenter" style="s1" xml:id="subtitle916">Estábamos preocupados<br/>porque no teníamos señal,</p>
+<p begin="39476106670t" end="39520310830t" region="bottomCenter" style="s1" xml:id="subtitle917">y no sabía si te había llegado<br/>la noticia del bombardeo de Azaz.</p>
+<p begin="39521151670t" end="39552432920t" region="bottomCenter" style="s1" xml:id="subtitle918">Pero debemos decidir<br/>cómo dar a conocer esta información,</p>
+<p begin="39553263750t" end="39572863330t" region="bottomCenter" style="s1" xml:id="subtitle919">porque es realmente impactante.</p>
+<p begin="39573704170t" end="39613744170t" region="bottomCenter" style="s1" xml:id="subtitle920">Hay destrucción masiva<br/>y un número enorme de bajas civiles.</p>
+<p begin="39614575000t" end="39648358750t" region="bottomCenter" style="s1" xml:id="subtitle921">Sin lugar a dudas,<br/>es el peor que vivió Siria hasta ahora.</p>
+<p begin="39649189580t" end="39689650000t" region="bottomCenter" style="s1" xml:id="subtitle922">Sinceramente, también es<br/>el peor que vi en mi vida.</p>
+<p begin="39709670000t" end="39735115420t" region="bottomCenter" style="s1" xml:id="subtitle923">En cuanto al número de muertos y heridos.</p>
+<p begin="39735946250t" end="39745956250t" region="bottomCenter" style="s1" xml:id="subtitle924">Recién hablé con Nueva York.</p>
+<p begin="39746787080t" end="39769730000t" region="bottomCenter" style="s1" xml:id="subtitle925">Lo que vamos a hacer es<br/>una notificación a la prensa,</p>
+<p begin="39770560830t" end="39821862080t" region="bottomCenter" style="s1" xml:id="subtitle926">una descripción breve<br/>de nuestros hallazgos sobre Azaz.</p>
+<p begin="39822702920t" end="39857317500t" region="bottomCenter" style="s1" xml:id="subtitle927">No creo que cambiemos ahora de postura<br/>en cuanto a la defensa,</p>
+<p begin="39858148330t" end="39870660830t" region="bottomCenter" style="s1" xml:id="subtitle928">pero este tipo de ataques</p>
+<p begin="39871501670t" end="39905285420t" region="bottomCenter" style="s1" xml:id="subtitle929">tal vez nos haga replantear<br/>nuestra postura</p>
+<p begin="39906116250t" end="39954494580t" region="bottomCenter" style="s1" xml:id="subtitle930">y evaluar si deberíamos proponer<br/>una zona de exclusión aérea.</p>
+<p begin="39955335420t" end="39984945000t" region="bottomCenter" style="s1" xml:id="subtitle931">Exacto, 13 miembros de su familia,</p>
+<p begin="39985775830t" end="40017477500t" region="bottomCenter" style="s1" xml:id="subtitle932">y dijo que 10 de ellos eran niños.</p>
+<p begin="40018308330t" end="40053343330t" region="bottomCenter" style="s1" xml:id="subtitle933">El mayor tenía 14 años,</p>
+<p begin="40054184170t" end="40103813750t" region="bottomCenter" style="s1" xml:id="subtitle934">y el menor era<br/>un recién nacido de 40 días.</p>
+<p begin="40115495420t" end="40125915830t" region="bottomCenter" style="s1" xml:id="subtitle935">Bien, cortó.</p>
+<p begin="40126756670t" end="40150940830t" region="bottomCenter" style="s1" xml:id="subtitle936">Debemos trabajar en esto.<br/>¿Por qué te demoraste tanto?</p>
+<p begin="40151781670t" end="40178057920t" region="bottomCenter" style="s1" xml:id="subtitle937">No sé, me hizo todo tipo de preguntas.</p>
+<p begin="40178888750t" end="40203493330t" region="bottomCenter" style="s1" xml:id="subtitle938">Debemos cargar videos,<br/>hay mucho por hacer.</p>
+<p begin="40204334170t" end="40216426250t" region="bottomCenter" style="s1" xml:id="subtitle939">Ya sé.</p>
+<p begin="40217257080t" end="40241030830t" region="bottomCenter" style="s1" xml:id="subtitle940">Necesito tus entrevistas con los tipos.</p>
+<p begin="40261891670t" end="40287747500t" region="bottomCenter" style="s1" xml:id="subtitle941"><span style="s1_1">El pueblo de Azaz sufrió hoy</span><br/><span style="s1_1">un intenso bombardeo.</span></p>
+<p begin="40288578330t" end="40298588330t" region="bottomCenter" style="s1" xml:id="subtitle942">EN VIVO - REYHANLI</p>
+<p begin="40299429170t" end="40309439170t" region="bottomCenter" style="s1" xml:id="subtitle943">Comenzó a las 3:00 p.m.</p>
+<p begin="40310270000t" end="40343222920t" region="topCenter" style="s1" xml:id="subtitle944"><span style="s1_1">Acabo de volver de Azaz,</span></p>
+<p begin="40344053750t" end="40371160830t" region="topCenter" style="s1" xml:id="subtitle945">y comprobamos<br/>que el gobierno sirio</p>
+<p begin="40372001670t" end="40400780420t" region="topCenter" style="s1" xml:id="subtitle946">realizó ataques indiscriminados</p>
+<p begin="40401611250t" end="40423302920t" region="topCenter" style="s1" xml:id="subtitle947"><span style="s1_1">y en ciertos casos,</span><br/><span style="s1_1">deliberadamente contra civiles.</span></p>
+<p begin="40424133750t" end="40445405000t" region="topCenter" style="s1" xml:id="subtitle948">FUERZA AÉREA SIRIA ACUSADA<br/>HRW DENUNCIA BLANCOS CIVILES</p>
+<p begin="40446235830t" end="40472512080t" region="bottomCenter" style="s1" xml:id="subtitle949"><span style="s1_1">A falta de más armamento antiaéreo,</span></p>
+<p begin="40473352920t" end="40498377920t" region="topCenter" style="s1" xml:id="subtitle950">la oposición acudió<br/>a países como Turquía y Estados Unidos</p>
+<p begin="40499208750t" end="40511300830t" region="topCenter" style="s1" xml:id="subtitle951">AYMAN MOHYELDIN<br/>NBC NEWS ESTAMBUL</p>
+<p begin="40512141670t" end="40527987500t" region="topCenter" style="s1" xml:id="subtitle952">para imponer<br/>la exclusión aérea en Siria,</p>
+<p begin="40528818330t" end="40554263750t" region="topCenter" style="s1" xml:id="subtitle953">pero el secretario de defensa de EE.UU.,<br/>Leon Panetta,</p>
+<p begin="40555094580t" end="40570109580t" region="bottomCenter" style="s1" xml:id="subtitle954">dice que eso es poco probable.</p>
+<p begin="40652281670t" end="40681891250t" region="topCenter" style="s1" xml:id="subtitle955">Human Rights Watch suele exhortar<br/>a la comunidad internacional</p>
+<p begin="40682722080t" end="40709418750t" region="topCenter" style="s1" xml:id="subtitle956">a tomar medidas concretas.</p>
+<p begin="40710249580t" end="40738617920t" region="topCenter" style="s1" xml:id="subtitle957">Pedir una zona de exclusión aérea en Siria<br/>podría presionar</p>
+<p begin="40739448750t" end="40784914170t" region="topCenter" style="s1" xml:id="subtitle958">a países como Estados Unidos<br/>a intervenir militarmente.</p>
+<p begin="40884593750t" end="40900860000t" region="topCenter" style="s1" xml:id="subtitle959"><span style="s1_1">Bien, pongámonos en marcha.</span></p>
+<p begin="40901690830t" end="40924213330t" region="topCenter" style="s1" xml:id="subtitle960"><span style="s1_1">Vamos a debatir</span><br/><span style="s1_1">el tema de la intervención armada.</span></p>
+<p begin="40925054170t" end="40938817920t" region="topCenter" style="s1" xml:id="subtitle961">LLAMADA CON ALTOS FUNCIONARIOS<br/>DE HUMAN RIGHTS WATCH</p>
+<p begin="40939648750t" end="40968847920t" region="topCenter" style="s1" xml:id="subtitle962">Una de las razones<br/>por las que decidimos</p>
+<p begin="40969678750t" end="41006385420t" region="bottomCenter" style="s1" xml:id="subtitle963">reabrir el análisis<br/>de la zona de exclusión aérea</p>
+<p begin="41007216250t" end="41046005000t" region="bottomCenter" style="s1" xml:id="subtitle964">fue que empezamos a ver<br/>los vuelos reales.</p>
+<p begin="41046835830t" end="41090219170t" region="bottomCenter" style="s1" xml:id="subtitle965">Predecimos que podrían salvarse<br/>miles de vidas civiles</p>
+<p begin="41091050000t" end="41113572500t" region="bottomCenter" style="s1" xml:id="subtitle966">si se impidieran los ataques aéreos.</p>
+<p begin="41114403330t" end="41140269170t" region="bottomCenter" style="s1" xml:id="subtitle967">La cuestión es, entonces,<br/>si hay medidas que los impidan</p>
+<p begin="41141100000t" end="41167376250t" region="bottomCenter" style="s1" xml:id="subtitle968">y si la zona de exclusión aérea es<br/>una de ellas.</p>
+<p begin="41168207080t" end="41196985830t" region="bottomCenter" style="s1" xml:id="subtitle969"><span style="s1_1">¿Me permites responder sucintamente</span><br/><span style="s1_1">algunos de esos puntos?</span></p>
+<p begin="41197826670t" end="41225354170t" region="bottomCenter" style="s1" xml:id="subtitle970"><span style="s1_1">Lo que describes no resolverá</span><br/><span style="s1_1">el problema</span></p>
+<p begin="41226185000t" end="41247456250t" region="bottomCenter" style="s1" xml:id="subtitle971"><span style="s1_1">de la matanza de civiles en el país,</span></p>
+<p begin="41248287080t" end="41295424170t" region="bottomCenter" style="s1" xml:id="subtitle972"><span style="s1_1">pues los ataques aéreos tienen</span><br/><span style="s1_1">un peso relativamente insignificante</span></p>
+<p begin="41296255000t" end="41315854580t" region="bottomCenter" style="s1" xml:id="subtitle973"><span style="s1_1">en la matanza actual de civiles.</span></p>
+<p begin="41316695420t" end="41355484170t" region="bottomCenter" style="s1" xml:id="subtitle974"><span style="s1_1">Y muchos creemos</span><br/><span style="s1_1">que una zona de exclusión aérea</span></p>
+<p begin="41356315000t" end="41398857500t" region="bottomCenter" style="s1" xml:id="subtitle975"><span style="s1_1">tendrá consecuencias indeseadas,</span><br/><span style="s1_1">incontrolables y de un impacto descomunal.</span></p>
+<p begin="41399688330t" end="41416795420t" region="bottomCenter" style="s1" xml:id="subtitle976"><span style="s1_1">Pero la cuestión en...</span></p>
+<p begin="41454332920t" end="41467255830t" region="bottomCenter" style="s1" xml:id="subtitle977"><span style="s1_1">No, no...</span></p>
+<p begin="41479357920t" end="41489367920t" region="bottomCenter" style="s1" xml:id="subtitle978">Dios mío.</p>
+<p begin="41490198750t" end="41510639170t" region="bottomCenter" style="s1" xml:id="subtitle979"><span style="s1_1">Anna cortó.</span></p>
+<p begin="41569447920t" end="41594052500t" region="bottomCenter" style="s1" xml:id="subtitle980">Si esto es lo correcto,</p>
+<p begin="41594883330t" end="41627415830t" region="bottomCenter" style="s1" xml:id="subtitle981">si esto reducirá el número de muertes<br/>y protegerá a los civiles,</p>
+<p begin="41628256670t" end="41665794170t" region="bottomCenter" style="s1" xml:id="subtitle982">y si creemos que al solicitarlo</p>
+<p begin="41666625000t" end="41689147500t" region="bottomCenter" style="s1" xml:id="subtitle983">podríamos llegar a influir en que ocurra,</p>
+<p begin="41689978330t" end="41709167500t" region="bottomCenter" style="s1" xml:id="subtitle984">entonces debemos recomendarlo.</p>
+<p begin="41709998330t" end="41733361670t" region="bottomCenter" style="s1" xml:id="subtitle985">-¿Mamá?<br/>-Buenas noches.</p>
+<p begin="41747125420t" end="41760889170t" region="bottomCenter" style="s1" xml:id="subtitle986">Bien, ¿una copa de vino?</p>
+<p begin="41761720000t" end="41782991250t" region="bottomCenter" style="s1" xml:id="subtitle987">Sí, la situación lo amerita.</p>
+<p begin="41845553750t" end="41870158330t" region="bottomCenter" style="s1" xml:id="subtitle988">-Bien, buenas noches.<br/>-Buenas noches.</p>
+<p begin="41904782920t" end="41948576670t" region="topCenter" style="s1" xml:id="subtitle989">EDIFICIO EMPIRE STATE, NUEVA YORK<br/>SEDE MUNDIAL DE HUMAN RIGHTS WATCH</p>
+<p begin="41958997080t" end="41969007080t" region="topCenter" style="s1" xml:id="subtitle990">Está bien.</p>
+<p begin="41979857920t" end="42006544580t" region="bottomCenter" style="s1" xml:id="subtitle991">Bien, estamos listos para empezar.</p>
+<p begin="42007385420t" end="42036574580t" region="bottomCenter" style="s1" xml:id="subtitle992">Hay un solo tema en el orden del día,</p>
+<p begin="42037415420t" end="42089547500t" region="bottomCenter" style="s1" xml:id="subtitle993">que es el informe sirio<br/>sobre ataques aéreos a civiles.</p>
+<p begin="42090378330t" end="42119577500t" region="bottomCenter" style="s1" xml:id="subtitle994">Ya se conversó mucho<br/>en el organismo</p>
+<p begin="42120408330t" end="42155032920t" region="bottomCenter" style="s1" xml:id="subtitle995">sobre qué tipo de recomendaciones<br/>se darían junto con este informe,</p>
+<p begin="42155863750t" end="42166704580t" region="bottomCenter" style="s1" xml:id="subtitle996">y seguramente se enteraron</p>
+<p begin="42167545420t" end="42196324170t" region="topCenter" style="s1" xml:id="subtitle997">de que tuvimos largas reuniones,<br/>debates por email y en persona</p>
+<p begin="42197155000t" end="42220928750t" region="topCenter" style="s1" xml:id="subtitle998">CARROLL BOGERT<br/>DIRECTORA ADJUNTA, HUMAN RIGHTS WATCH</p>
+<p begin="42221759580t" end="42244702500t" region="topCenter" style="s1" xml:id="subtitle999">sobre algún tipo de intervención,</p>
+<p begin="42245533330t" end="42257635420t" region="bottomCenter" style="s1" xml:id="subtitle1000">incluso armada,</p>
+<p begin="42258466250t" end="42299337080t" region="bottomCenter" style="s1" xml:id="subtitle1001">lo cual es una cuestión muy seria<br/>para un grupo de derechos humanos.</p>
+<p begin="42300177920t" end="42356894580t" region="bottomCenter" style="s1" xml:id="subtitle1002">En esta etapa,<br/>no estamos en posición de recomendar</p>
+<p begin="42357735420t" end="42393601250t" region="bottomCenter" style="s1" xml:id="subtitle1003">o sugerir una intervención armada.</p>
+<p begin="42394432080t" end="42417795420t" region="bottomCenter" style="s1" xml:id="subtitle1004">Llegamos a esa decisión tras el análisis</p>
+<p begin="42418626250t" end="42435312920t" region="bottomCenter" style="s1" xml:id="subtitle1005">y debate dentro del organismo</p>
+<p begin="42436143750t" end="42473260830t" region="bottomCenter" style="s1" xml:id="subtitle1006">y nos basamos en la cuestión<br/>de causar más mal que bien.</p>
+<p begin="42474101670t" end="42505793330t" region="bottomCenter" style="s1" xml:id="subtitle1007">De si dicha intervención causaría<br/>más bien que mal,</p>
+<p begin="42506634170t" end="42525813330t" region="bottomCenter" style="s1" xml:id="subtitle1008">lo cual no estamos<br/>en posición de determinar.</p>
+<p begin="42526654170t" end="42550007500t" region="bottomCenter" style="s1" xml:id="subtitle1009">Solo quería hablar</p>
+<p begin="42550838330t" end="42568776250t" region="bottomCenter" style="s1" xml:id="subtitle1010">de esa cuestión incómoda</p>
+<p begin="42569607080t" end="42587124580t" region="bottomCenter" style="s1" xml:id="subtitle1011">para poder hacerla a un lado.</p>
+<p begin="42587965420t" end="42631759170t" region="bottomCenter" style="s1" xml:id="subtitle1012">Bien, Anya, ¿quieres empezar<br/>por contarnos cuáles son sus hallazgos?</p>
+<p begin="42632590000t" end="42649276670t" region="bottomCenter" style="s1" xml:id="subtitle1013">Claro.</p>
+<p begin="42650107500t" end="42710998330t" region="bottomCenter" style="s1" xml:id="subtitle1014">Antes que nada, este informe se basa<br/>en varias misiones de campo que...</p>
+<p begin="42711839170t" end="42741028330t" region="bottomCenter" style="s1" xml:id="subtitle1015"><span style="s1_1">A veces trabajamos</span><br/><span style="s1_1">con temas que son simples</span></p>
+<p begin="42741869170t" end="42763971250t" region="topCenter" style="s1" xml:id="subtitle1016">y otros que no lo son.</p>
+<p begin="42764802080t" end="42776904170t" region="topCenter" style="s1" xml:id="subtitle1017">Este es complejo.</p>
+<p begin="42777735000t" end="42800257500t" region="bottomCenter" style="s1" xml:id="subtitle1018">En ciertos casos, vemos un patrón</p>
+<p begin="42801088330t" end="42847384580t" region="bottomCenter" style="s1" xml:id="subtitle1019">que, según creemos,<br/>sugiere el ataque intencional a civiles.</p>
+<p begin="42858235420t" end="42876583750t" region="bottomCenter" style="s1" xml:id="subtitle1020"><span style="s1_1">Nos carcome cada día,</span></p>
+<p begin="42877414580t" end="42915792920t" region="bottomCenter" style="s1" xml:id="subtitle1021"><span style="s1_1">y realmente debe carcomerlos</span><br/><span style="s1_1">a Anya y Ole.</span></p>
+<p begin="42916623750t" end="42937064170t" region="bottomCenter" style="s1" xml:id="subtitle1022">Yo jamás fui a Siria.</p>
+<p begin="42937895000t" end="42954992080t" region="bottomCenter" style="s1" xml:id="subtitle1023">No miré a esas personas a los ojos.</p>
+<p begin="42955832920t" end="42994621670t" region="bottomCenter" style="s1" xml:id="subtitle1024">Esas personas que comparten contigo<br/>la experiencia sagrada de su historia,</p>
+<p begin="42995452500t" end="43030487500t" region="bottomCenter" style="s1" xml:id="subtitle1025"><span style="s1_1">te cuentan sobre su hijo,</span><br/><span style="s1_1">te dicen quién era,</span></p>
+<p begin="43031318330t" end="43064691670t" region="bottomCenter" style="s1" xml:id="subtitle1026">o cómo murió su hija de cinco años.</p>
+<p begin="43065522500t" end="43090967920t" region="bottomCenter" style="s1" xml:id="subtitle1027">Te cuentan esas historias,<br/>luego te vas</p>
+<p begin="43091798750t" end="43117244170t" region="bottomCenter" style="s1" xml:id="subtitle1028">y te llevas esas historias contigo.</p>
+<p begin="43130167080t" end="43171458330t" region="bottomCenter" style="s1" xml:id="subtitle1029">Como oyen,<br/>todos los días mueren cientos de personas.</p>
+<p begin="43172299170t" end="43190647500t" region="bottomCenter" style="s1" xml:id="subtitle1030">¿Cómo--? ¿Qué podemos hacer?</p>
+<p begin="43191478330t" end="43208995830t" region="bottomCenter" style="s1" xml:id="subtitle1031">¿Cómo lo impedimos?</p>
+<p begin="43209836670t" end="43235692500t" region="bottomCenter" style="s1" xml:id="subtitle1032">¿Qué podemos decir para evitarlo?</p>
+<p begin="43273650420t" end="43328705420t" region="bottomCenter" style="s1" xml:id="subtitle1033"><span style="s1_1">Es muy difícil comparar esto</span><br/><span style="s1_1">con cualquier otra cosa que hice.</span></p>
+<p begin="43338295000t" end="43382509170t" region="bottomCenter" style="s1" xml:id="subtitle1034"><span style="s1_1">Al despertar cada mañana,</span><br/><span style="s1_1">juro jamás volver a poner un pie en Siria,</span></p>
+<p begin="43383340000t" end="43419205830t" region="bottomCenter" style="s1" xml:id="subtitle1035"><span style="s1_1">porque siento</span><br/><span style="s1_1">que es inútil a esta altura,</span></p>
+<p begin="43420046670t" end="43463420000t" region="bottomCenter" style="s1" xml:id="subtitle1036"><span style="s1_1">que hicimos todo lo posible</span><br/><span style="s1_1">y no pudimos cambiar mucho.</span></p>
+<p begin="43476763330t" end="43495952500t" region="bottomCenter" style="s1" xml:id="subtitle1037"><span style="s1_1">Es una gran frustración.</span></p>
+<p begin="43539325830t" end="43573530000t" region="bottomCenter" style="s1" xml:id="subtitle1038"><span style="s1_1">Algunas veces,</span><br/><span style="s1_1">creo que logramos algo,</span></p>
+<p begin="43574360830t" end="43584370830t" region="bottomCenter" style="s1" xml:id="subtitle1039"><span style="s1_1">pero fallamos.</span></p>
+<p begin="43585211670t" end="43615652080t" region="bottomCenter" style="s1" xml:id="subtitle1040"><span style="s1_1">Otras veces,</span><br/><span style="s1_1">creo que fallamos, pero logramos algo.</span></p>
+<p begin="43638595000t" end="43690316670t" region="bottomCenter" style="s1" xml:id="subtitle1041"><span style="s1_1">Nos enfrentamos</span><br/><span style="s1_1">a fuerzas increíblemente poderosas.</span></p>
+<p begin="43691147500t" end="43718254580t" region="bottomCenter" style="s1" xml:id="subtitle1042">Hablamos de impacto. ¿Qué es el impacto?</p>
+<p begin="43719095420t" end="43748705000t" region="bottomCenter" style="s1" xml:id="subtitle1043">Y a veces, sucede.</p>
+<p begin="43749535830t" end="43784570830t" region="bottomCenter" style="s1" xml:id="subtitle1044">Trabajamos en un caso,<br/>y liberan a alguien de prisión,</p>
+<p begin="43785411670t" end="43840046250t" region="bottomCenter" style="s1" xml:id="subtitle1045"><span style="s1_1">o Milosevic acaba en el tribunal kosovar,</span></p>
+<p begin="43840877080t" end="43868825000t" region="bottomCenter" style="s1" xml:id="subtitle1046"><span style="s1_1">y podemos lograr algo.</span></p>
+<p begin="43922628750t" end="43942648750t" region="topCenter" style="s1" xml:id="subtitle1047">PRESIDENTE DE YUGLOSLAVIA<br/>DURANTE LA GUERRA DE KOSOVO</p>
+<p begin="43950576670t" end="44002288330t" region="topCenter" style="s1" xml:id="subtitle1048">En 1999, Milosevic fue acusado<br/>de crímenes de guerra en Kosovo.</p>
+<p begin="44018975000t" end="44046082080t" region="topCenter" style="s1" xml:id="subtitle1049">TRIBUNAL DE CRÍMENES DE GUERRA<br/>DE YUGOSLAVIA, LA HAYA</p>
+<p begin="44046922920t" end="44085291250t" region="topCenter" style="s1" xml:id="subtitle1050">Este juicio se trata<br/>del ascenso del acusado al poder,</p>
+<p begin="44094470420t" end="44129085000t" region="bottomCenter" style="s1" xml:id="subtitle1051">un poder detentado sin responsabilidad,</p>
+<p begin="44137843750t" end="44179965830t" region="bottomCenter" style="s1" xml:id="subtitle1052">mesura o moral.</p>
+<p begin="44180806670t" end="44202077920t" region="bottomCenter" style="s1" xml:id="subtitle1053">Sí, que el testigo haga la declaración.</p>
+<p begin="44215421250t" end="44234190000t" region="bottomCenter" style="s1" xml:id="subtitle1054"><span style="s1_1">Colaboré con la fiscalía.</span></p>
+<p begin="44235020830t" end="44258384170t" region="bottomCenter" style="s1" xml:id="subtitle1055"><span style="s1_1">Querían un perito</span></p>
+<p begin="44259215000t" end="44306762500t" region="bottomCenter" style="s1" xml:id="subtitle1056"><span style="s1_1">que pudiera exponer</span><br/><span style="s1_1">el contexto del conflicto.</span></p>
+<p begin="44307593330t" end="44333459170t" region="bottomCenter" style="s1" xml:id="subtitle1057">Juro solemnemente decir la verdad,</p>
+<p begin="44334290000t" end="44357643330t" region="bottomCenter" style="s1" xml:id="subtitle1058">toda la verdad<br/>y nada más que la verdad.</p>
+<p begin="44358484170t" end="44372658330t" region="bottomCenter" style="s1" xml:id="subtitle1059">Sí, tome asiento, por favor.</p>
+<p begin="44373499170t" end="44396021670t" region="bottomCenter" style="s1" xml:id="subtitle1060"><span style="s1_1">Había tres jueces ataviados con togas,</span></p>
+<p begin="44396852500t" end="44444400000t" region="bottomCenter" style="s1" xml:id="subtitle1061"><span style="s1_1">y cada palabra que decías era traducida</span><br/><span style="s1_1">a tres o cuatro idiomas.</span></p>
+<p begin="44445230830t" end="44455240830t" region="bottomCenter" style="s1" xml:id="subtitle1062">Nombre completo, por favor.</p>
+<p begin="44456081670t" end="44476932500t" region="bottomCenter" style="s1" xml:id="subtitle1063">Frederick Chronag Abrahams.</p>
+<p begin="44477763330t" end="44520726250t" region="bottomCenter" style="s1" xml:id="subtitle1064"><span style="s1_1">Fue realmente horripilante.</span></p>
+<p begin="44531987500t" end="44552838330t" region="bottomCenter" style="s1" xml:id="subtitle1065"><span style="s1_1">Estaba petrificado de miedo.</span></p>
+<p begin="44553679170t" end="44595380830t" region="bottomCenter" style="s1" xml:id="subtitle1066"><span style="s1_1">Le hablaba al tipo</span><br/><span style="s1_1">que había rastreado durante 10 años.</span></p>
+<p begin="44596221670t" end="44617492920t" region="bottomCenter" style="s1" xml:id="subtitle1067"><span style="s1_1">Lo veía ahí sentado, sonriendo con vanidad</span></p>
+<p begin="44618323750t" end="44665450830t" region="bottomCenter" style="s1" xml:id="subtitle1068"><span style="s1_1">y destilando una arrogancia asquerosa.</span></p>
+<p begin="44679635000t" end="44713418750t" region="bottomCenter" style="s1" xml:id="subtitle1069">¿Desea que leamos en voz alta<br/>la acusación?</p>
+<p begin="44714249580t" end="44734269580t" region="bottomCenter" style="s1" xml:id="subtitle1070">Eso es problema suyo.</p>
+<p begin="44735110420t" end="44771396670t" region="bottomCenter" style="s1" xml:id="subtitle1071"><span style="s1_1">Fingía ser</span><br/><span style="s1_1">el héroe de la nación.</span></p>
+<p begin="44772227500t" end="44789324580t" region="bottomCenter" style="s1" xml:id="subtitle1072">Prueba 195.</p>
+<p begin="44804760000t" end="44835620830t" region="bottomCenter" style="s1" xml:id="subtitle1073">Esa es la fotografía del...</p>
+<p begin="44844800000t" end="44866491670t" region="bottomCenter" style="s1" xml:id="subtitle1074">Este es uno de los niños en el barranco.</p>
+<p begin="44867322500t" end="44910695830t" region="bottomCenter" style="s1" xml:id="subtitle1075">Tal vez sea un tanto difícil de entender,<br/>pero es un--</p>
+<p begin="44911536670t" end="44922377500t" region="bottomCenter" style="s1" xml:id="subtitle1076">Un niño.</p>
+<p begin="44923208330t" end="44942397500t" region="bottomCenter" style="s1" xml:id="subtitle1077">Y ¿usted o su colega fotografiaron<br/>a ese niño?</p>
+<p begin="44943228330t" end="44953238330t" region="bottomCenter" style="s1" xml:id="subtitle1078">Sí.</p>
+<p begin="44974509580t" end="45039995000t" region="bottomCenter" style="s1" xml:id="subtitle1079"><span style="s1_1">Usted dice que nunca olvidará</span><br/><span style="s1_1">su impresión de Gornje Obrinje.</span></p>
+<p begin="45040825830t" end="45077532500t" region="bottomCenter" style="s1" xml:id="subtitle1080"><span style="s1_1">Yo lo comprendo,</span><br/><span style="s1_1">pero le pregunto lo siguiente:</span></p>
+<p begin="45078363330t" end="45146771670t" region="bottomCenter" style="s1" xml:id="subtitle1081"><span style="s1_1">¿Comprende usted</span><br/><span style="s1_1">lo que es defenderse del terrorismo</span></p>
+<p begin="45147602500t" end="45188893750t" region="bottomCenter" style="s1" xml:id="subtitle1082"><span style="s1_1">o de ataques</span><br/><span style="s1_1">contra un estado independiente</span></p>
+<p begin="45189724580t" end="45233107920t" region="bottomCenter" style="s1" xml:id="subtitle1083"><span style="s1_1">que resuelve sus problemas</span><br/><span style="s1_1">sin poner en peligro a otros?</span></p>
+<p begin="45233938750t" end="45253958750t" region="bottomCenter" style="s1" xml:id="subtitle1084"><span style="s1_1">¿Es capaz de comprender eso?</span></p>
+<p begin="45267302080t" end="45296501250t" region="bottomCenter" style="s1" xml:id="subtitle1085">Permítame aclarar algo.</p>
+<p begin="45306090830t" end="45366991670t" region="bottomCenter" style="s1" xml:id="subtitle1086">La cuestión no es<br/>si puede o no enfrentar una insurgencia...</p>
+<p begin="45379504170t" end="45407862500t" region="bottomCenter" style="s1" xml:id="subtitle1087">sino cómo enfrenta esa insurgencia.</p>
+<p begin="45423708330t" end="45454989580t" region="bottomCenter" style="s1" xml:id="subtitle1088">Y tenemos pruebas abrumadoras...</p>
+<p begin="45470004580t" end="45509213750t" region="bottomCenter" style="s1" xml:id="subtitle1089">de que las fuerzas de la policía serbia<br/>y del ejército yugoslavo</p>
+<p begin="45510044580t" end="45552587080t" region="bottomCenter" style="s1" xml:id="subtitle1090">específica e intencionalmente atacaron<br/>a civiles.</p>
+<p begin="45567602080t" end="45593878330t" region="bottomCenter" style="s1" xml:id="subtitle1091"><span style="s1_1">Gracias a Dios,</span><br/><span style="s1_1">Milosevic se defendió a sí mismo.</span></p>
+<p begin="45605139580t" end="45641425830t" region="bottomCenter" style="s1" xml:id="subtitle1092"><span style="s1_1">Se embarcó en discursos políticos</span></p>
+<p begin="45642266670t" end="45664368750t" region="bottomCenter" style="s1" xml:id="subtitle1093"><span style="s1_1">en vez de intentar hacer añicos</span><br/><span style="s1_1">mi testimonio.</span></p>
+<p begin="45681055420t" end="45722346670t" region="bottomCenter" style="s1" xml:id="subtitle1094"><span style="s1_1">En cierto momento, me di cuenta.</span><br/><span style="s1_1">No me bombardeaba a preguntas.</span></p>
+<p begin="45734438750t" end="45755710000t" region="bottomCenter" style="s1" xml:id="subtitle1095"><span style="s1_1">Entonces me enardecí,</span></p>
+<p begin="45756540830t" end="45794919170t" region="bottomCenter" style="s1" xml:id="subtitle1096"><span style="s1_1">porque estaba seguro, convencido,</span><br/><span style="s1_1">tenía pruebas incuestionables</span></p>
+<p begin="45795750000t" end="45817852080t" region="bottomCenter" style="s1" xml:id="subtitle1097"><span style="s1_1">y debía hacerme oír.</span></p>
+<p begin="45818692920t" end="45862066250t" region="bottomCenter" style="s1" xml:id="subtitle1098"><span style="s1_1">¿Este artículo no demuestra</span><br/><span style="s1_1">que usted y su organismo</span></p>
+<p begin="45862897080t" end="45910865000t" region="bottomCenter" style="s1" xml:id="subtitle1099"><span style="s1_1">fueron los primeros</span><br/><span style="s1_1">en formular la acusación en mi contra</span></p>
+<p begin="45911695830t" end="45938812920t" region="bottomCenter" style="s1" xml:id="subtitle1100"><span style="s1_1">por motivos que son obvios?</span></p>
+<p begin="45966750830t" end="45989273330t" region="bottomCenter" style="s1" xml:id="subtitle1101"><span style="s1_1">¿Es así o no?</span></p>
+<p begin="45998452500t" end="46014298330t" region="bottomCenter" style="s1" xml:id="subtitle1102">Creo que no es así.</p>
+<p begin="46027651670t" end="46053087080t" region="bottomCenter" style="s1" xml:id="subtitle1103">Nuestro trabajo es documentar violaciones.</p>
+<p begin="46062686670t" end="46079363330t" region="bottomCenter" style="s1" xml:id="subtitle1104">Eso es lo que hacemos.</p>
+<p begin="46080204170t" end="46120654580t" region="bottomCenter" style="s1" xml:id="subtitle1105">No comenzamos con un resultado final,</p>
+<p begin="46121495420t" end="46153187080t" region="bottomCenter" style="s1" xml:id="subtitle1106">una conclusión o meta</p>
+<p begin="46154027920t" end="46204908750t" region="bottomCenter" style="s1" xml:id="subtitle1107">y luego buscamos los hechos<br/>que nos lleven a dicha conclusión.</p>
+<p begin="46214498330t" end="46273727500t" region="bottomCenter" style="s1" xml:id="subtitle1108">Comenzamos con una investigación de campo<br/>que nos lleva a una conclusión.</p>
+<p begin="46291665420t" end="46322105830t" region="bottomCenter" style="s1" xml:id="subtitle1109"><span style="s1_1">Por eso es clave</span><br/><span style="s1_1">hacer bien nuestro trabajo.</span></p>
+<p begin="46322946670t" end="46339212920t" region="bottomCenter" style="s1" xml:id="subtitle1110"><span style="s1_1">Para luego presentarlo, y que nos digan:</span></p>
+<p begin="46340043750t" end="46371325000t" region="bottomCenter" style="s1" xml:id="subtitle1111"><span style="s1_1">"Está bien, me convencieron.</span><br/><span style="s1_1">Es suficiente".</span></p>
+<p begin="46387170830t" end="46428882500t" region="bottomCenter" style="s1" xml:id="subtitle1112">Francamente, me sentí responsable,</p>
+<p begin="46429713330t" end="46463917500t" region="bottomCenter" style="s1" xml:id="subtitle1113">ante cada persona que me contó su historia</p>
+<p begin="46464748330t" end="46497701250t" region="bottomCenter" style="s1" xml:id="subtitle1114">y revivió esa experiencia espantosa,</p>
+<p begin="46498532080t" end="46544417920t" region="bottomCenter" style="s1" xml:id="subtitle1115">de darles ahí su momento en el tribunal.</p>
+<p begin="46545248750t" end="46579863330t" region="bottomCenter" style="s1" xml:id="subtitle1116">Era mi oportunidad de defenderlos.</p>
+<p begin="46589462920t" end="46599883330t" region="bottomCenter" style="s1" xml:id="subtitle1117">Así que...</p>
+<p begin="46678301670t" end="46703737080t" region="topCenter" style="s1" xml:id="subtitle1118">Hoy quizá pase a la historia<br/>como el día en que cambió todo</p>
+<p begin="46704577920t" end="46714587920t" region="topCenter" style="s1" xml:id="subtitle1119">AGOSTO DE 2013</p>
+<p begin="46715418750t" end="46738772080t" region="topCenter" style="s1" xml:id="subtitle1120">en una guerra<br/>que ya mató a más de 100.000 personas.</p>
+<p begin="46739612920t" end="46774647920t" region="topCenter" style="s1" xml:id="subtitle1121">En Siria, murieron cientos más,<br/>muchos de ellos niños,</p>
+<p begin="46775478750t" end="46809682920t" region="topCenter" style="s1" xml:id="subtitle1122">pero esta vez parece<br/>que se emplearon armas químicas letales.</p>
+<p begin="46851805000t" end="46874327500t" region="bottomCenter" style="s1" xml:id="subtitle1123"><span style="s1_1">Los rebeldes que luchaban</span><br/><span style="s1_1">contra el gobierno de Assad</span></p>
+<p begin="46875158330t" end="46914787920t" region="bottomCenter" style="s1" xml:id="subtitle1124"><span style="s1_1">dicen que tropas gubernamentales sirias</span><br/><span style="s1_1">lanzaron cohetes sobre esos inocentes,</span></p>
+<p begin="46915618750t" end="46946900000t" region="bottomCenter" style="s1" xml:id="subtitle1125"><span style="s1_1">cohetes que llevaban gas venenoso.</span></p>
+<p begin="46999032080t" end="47031564580t" region="topCenter" style="s1" xml:id="subtitle1126">OFICINA DE HUMAN RIGHTS WATCH, GINEBRA</p>
+<p begin="47109562500t" end="47122905830t" region="bottomCenter" style="s1" xml:id="subtitle1127">Eso es...</p>
+<p begin="47123746670t" end="47174627500t" region="bottomCenter" style="s1" xml:id="subtitle1128">Estás cara a cara<br/>con sucesos absolutamente increíbles,</p>
+<p begin="47175458330t" end="47190473330t" region="bottomCenter" style="s1" xml:id="subtitle1129">actos tan espeluznantes</p>
+<p begin="47191314170t" end="47240523330t" region="bottomCenter" style="s1" xml:id="subtitle1130">que no puedes imaginar qué pasó<br/>por la cabeza de quien los cometió.</p>
+<p begin="47241364170t" end="47295167920t" region="bottomCenter" style="s1" xml:id="subtitle1131">¿Qué lleva a alguien<br/>a cometer crímenes tan horrorosos?</p>
+<p begin="47295998750t" end="47317270000t" region="bottomCenter" style="s1" xml:id="subtitle1132">No tengo la respuesta.</p>
+<p begin="47345628330t" end="47356889580t" region="bottomCenter" style="s1" xml:id="subtitle1133">Esa es la...</p>
+<p begin="47381504170t" end="47400683330t" region="bottomCenter" style="s1" xml:id="subtitle1134">pregunta que suelo hacerme.</p>
+<p begin="47401524170t" end="47420703330t" region="bottomCenter" style="s1" xml:id="subtitle1135">¿Cómo alguien puede hacer esto?</p>
+<p begin="47481604170t" end="47504126670t" region="bottomCenter" style="s1" xml:id="subtitle1136">CBS News tiene<br/>información de que el Pentágono</p>
+<p begin="47504957500t" end="47527480000t" region="bottomCenter" style="s1" xml:id="subtitle1137">está llevando a cabo los preparativos</p>
+<p begin="47528310830t" end="47567099580t" region="bottomCenter" style="s1" xml:id="subtitle1138">para atacar con misiles de crucero<br/>a las fuerzas del gobierno sirio.</p>
+<p begin="47567940420t" end="47599632080t" region="bottomCenter" style="s1" xml:id="subtitle1139"><span style="s1_1">Estados Unidos advirtió a Siria hace meses</span></p>
+<p begin="47600472920t" end="47639261670t" region="bottomCenter" style="s1" xml:id="subtitle1140"><span style="s1_1">que el empleo de armas químicas</span><br/><span style="s1_1">podría provocar su reacción.</span></p>
+<p begin="47640092500t" end="47668450830t" region="topCenter" style="s1" xml:id="subtitle1141">Cuando los dictadores cometen atrocidades,</p>
+<p begin="47669291670t" end="47700152500t" region="topCenter" style="s1" xml:id="subtitle1142">necesitan que el mundo mire<br/>hacia otro lado</p>
+<p begin="47700983330t" end="47716839170t" region="topCenter" style="s1" xml:id="subtitle1143">hasta olvidar esas fotos horrorosas.</p>
+<p begin="47717670000t" end="47740192500t" region="topCenter" style="s1" xml:id="subtitle1144">ABC NEWS - CRISIS EN SIRIA - EN VIVO<br/>DISCURSO PRESIDENCIAL A LA NACIÓN</p>
+<p begin="47741023330t" end="47760212500t" region="topCenter" style="s1" xml:id="subtitle1145">Pero estas cosas ocurrieron.</p>
+<p begin="47761043330t" end="47778150420t" region="topCenter" style="s1" xml:id="subtitle1146">No se pueden negar los hechos.</p>
+<p begin="47778981250t" end="47793575830t" region="bottomCenter" style="s1" xml:id="subtitle1147">Esta noche tenemos una primicia:</p>
+<p begin="47794416670t" end="47838620830t" region="bottomCenter" style="s1" xml:id="subtitle1148">Vladimir Putin expresó<br/>su opinión en el <span style="s1_1">New York Times.</span></p>
+<p begin="47839461670t" end="47851133330t" region="topCenter" style="s1" xml:id="subtitle1149">VLADIMIR PUTIN<br/>PRESIDENTE DE RUSIA</p>
+<p begin="47851974170t" end="47866989170t" region="topCenter" style="s1" xml:id="subtitle1150"><span style="s1_1">En el artículo,</span><br/><span style="s1_1">Putin negó que Siria</span></p>
+<p begin="47867820000t" end="47895347500t" region="topCenter" style="s1" xml:id="subtitle1151"><span style="s1_1">haya ordenado el ataque con gas sarín</span><br/><span style="s1_1">del 21 de agosto pasado.</span></p>
+<p begin="47896178330t" end="47919952080t" region="topCenter" style="s1" xml:id="subtitle1152"><span style="s1_1">Escribió: "Todo indica que lo usó</span></p>
+<p begin="47920792920t" end="47936638750t" region="topCenter" style="s1" xml:id="subtitle1153"><span style="s1_1">no el ejército sirio,</span></p>
+<p begin="47937469580t" end="47952905000t" region="topCenter" style="s1" xml:id="subtitle1154"><span style="s1_1">sino las fuerzas de la oposición</span></p>
+<p begin="47953735830t" end="47990862920t" region="topCenter" style="s1" xml:id="subtitle1155"><span style="s1_1">para provocar la intervención</span><br/><span style="s1_1">de sus poderosos protectores extranjeros".</span></p>
+<p begin="47991693750t" end="48020472500t" region="bottomCenter" style="s1" xml:id="subtitle1156"><span style="s1_1">Putin luego criticó</span><br/><span style="s1_1">el accionar militar liderado por EE.UU.</span></p>
+<p begin="48021303330t" end="48043415420t" region="bottomCenter" style="s1" xml:id="subtitle1157"><span style="s1_1">en Irak, Afganistán y Libia.</span></p>
+<p begin="48044246250t" end="48070522500t" region="bottomCenter" style="s1" xml:id="subtitle1158">En ese artículo de opinión, Putin</p>
+<p begin="48071353330t" end="48095547500t" region="bottomCenter" style="s1" xml:id="subtitle1159">dice lo que le conviene decirle<br/>al pueblo estadounidense.</p>
+<p begin="48096378330t" end="48138090000t" region="bottomCenter" style="s1" xml:id="subtitle1160">Es profundamente flagrante y cínico<br/>sobre lo que hace,</p>
+<p begin="48138920830t" end="48160192080t" region="bottomCenter" style="s1" xml:id="subtitle1161">es propaganda pura.</p>
+<p begin="48161032920t" end="48196067920t" region="bottomCenter" style="s1" xml:id="subtitle1162">Es todo mentira,</p>
+<p begin="48196898750t" end="48220672500t" region="bottomCenter" style="s1" xml:id="subtitle1163">pero llama la atención.</p>
+<p begin="48221503330t" end="48253625420t" region="bottomCenter" style="s1" xml:id="subtitle1164">No todos los días publica una opinión<br/>el presidente ruso.</p>
+<p begin="48254456250t" end="48305337080t" region="bottomCenter" style="s1" xml:id="subtitle1165">Anya escribió hoy<br/>un breve artículo de opinión</p>
+<p begin="48306177920t" end="48342464170t" region="bottomCenter" style="s1" xml:id="subtitle1166">que cubre casi todo.</p>
+<p begin="48343295000t" end="48369571250t" region="bottomCenter" style="s1" xml:id="subtitle1167">Lo que Putin olvidó mencionar en su carta</p>
+<p begin="48370402080t" end="48381663330t" region="bottomCenter" style="s1" xml:id="subtitle1168">Sí.</p>
+<p begin="48391262920t" end="48406277920t" region="bottomCenter" style="s1" xml:id="subtitle1169">¿Lo desenmascaraste?</p>
+<p begin="48407108750t" end="48423795420t" region="bottomCenter" style="s1" xml:id="subtitle1170">Podría decirse que sí.</p>
+<p begin="48467589170t" end="48496367920t" region="bottomCenter" style="s1" xml:id="subtitle1171">GUERRAS JUSTAS E INJUSTAS</p>
+<p begin="48497198750t" end="48519300830t" region="topCenter" style="s1" xml:id="subtitle1172">Los ABC de criar hijos en París</p>
+<p begin="48520141670t" end="48549330830t" region="topCenter" style="s1" xml:id="subtitle1173">Sí, en esta también soy uno<br/>de los contactos con la prensa.</p>
+<p begin="48550171670t" end="48583955420t" region="bottomCenter" style="s1" xml:id="subtitle1174">Sí, aún no comencé<br/>mi licencia por maternidad.</p>
+<p begin="48584786250t" end="48601883330t" region="bottomCenter" style="s1" xml:id="subtitle1175">Es genial. No, me encanta seguir activa,</p>
+<p begin="48602724170t" end="48644425830t" region="bottomCenter" style="s1" xml:id="subtitle1176">porque si no, me...<br/>¿Qué podría hacer?</p>
+<p begin="48645266670t" end="48667789170t" region="bottomCenter" style="s1" xml:id="subtitle1177">¿Quedarme sentada a mirarme la barriga?</p>
+<p begin="48720341670t" end="48741192500t" region="bottomCenter" style="s1" xml:id="subtitle1178">Estaré listo en cinco minutos.</p>
+<p begin="48742023330t" end="48756627920t" region="bottomCenter" style="s1" xml:id="subtitle1179">De acuerdo.</p>
+<p begin="48780401670t" end="48821272500t" region="bottomCenter" style="s1" xml:id="subtitle1180">Human Rights Watch condujo<br/>una investigación independiente</p>
+<p begin="48822103330t" end="48846717920t" region="topCenter" style="s1" xml:id="subtitle1181">sobre el ataque con armas químicas<br/>del 21 de agosto.</p>
+<p begin="48847548750t" end="48857979170t" region="topCenter" style="s1" xml:id="subtitle1182">ENTREVISTA CON UN PERIODISTA DE LA BBC</p>
+<p begin="48858810000t" end="48883004170t" region="topCenter" style="s1" xml:id="subtitle1183">Tenemos contactos<br/>con el activista del lugar</p>
+<p begin="48883835000t" end="48920541670t" region="bottomCenter" style="s1" xml:id="subtitle1184">y logramos determinar<br/>que en el ataque</p>
+<p begin="48921372500t" end="48952233330t" region="bottomCenter" style="s1" xml:id="subtitle1185">se emplearon armas químicas.</p>
+<p begin="48953074170t" end="48979350420t" region="bottomCenter" style="s1" xml:id="subtitle1186">Muy probablemente, gas sarín.</p>
+<p begin="48980181250t" end="49016467500t" region="bottomCenter" style="s1" xml:id="subtitle1187">Y logramos identificar<br/>los cohetes específicos</p>
+<p begin="49017298330t" end="49031902920t" region="bottomCenter" style="s1" xml:id="subtitle1188">que se usaron en el ataque.</p>
+<p begin="49032733750t" end="49051502500t" region="bottomCenter" style="s1" xml:id="subtitle1189">Esa información indica firmemente</p>
+<p begin="49052333330t" end="49080701670t" region="bottomCenter" style="s1" xml:id="subtitle1190">que el gobierno sirio fue<br/>responsable del ataque.</p>
+<p begin="49081532500t" end="49129500420t" region="bottomCenter" style="s1" xml:id="subtitle1191"><span style="s1_1">¿En qué hechos se basan</span><br/><span style="s1_1">para alegar</span></p>
+<p begin="49130331250t" end="49168289170t" region="bottomCenter" style="s1" xml:id="subtitle1192"><span style="s1_1">que fue el gobierno de Assad</span><br/><span style="s1_1">quien usó el gas sarín?</span></p>
+<p begin="49169120000t" end="49192062920t" region="bottomCenter" style="s1" xml:id="subtitle1193">Porque intervinieron<br/>dos cohetes específicos</p>
+<p begin="49192893750t" end="49226257080t" region="bottomCenter" style="s1" xml:id="subtitle1194">y, según se sabe, solo el gobierno sirio<br/>posee dichos cohetes</p>
+<p begin="49227097920t" end="49254625420t" region="bottomCenter" style="s1" xml:id="subtitle1195">y sus lanzadores correspondientes.</p>
+<p begin="49255456250t" end="49292573330t" region="bottomCenter" style="s1" xml:id="subtitle1196">Además, la cantidad de gas sarín<br/>liberado en el ataque</p>
+<p begin="49293414170t" end="49329700420t" region="bottomCenter" style="s1" xml:id="subtitle1197">se calcula entre 500 y 1.000 litros.</p>
+<p begin="49330531250t" end="49363063750t" region="bottomCenter" style="s1" xml:id="subtitle1198">No hay razón para pensar<br/>que las fuerzas de la oposición</p>
+<p begin="49363894580t" end="49396847500t" region="bottomCenter" style="s1" xml:id="subtitle1199">tengan esos cohetes,<br/>sus lanzadores correspondientes</p>
+<p begin="49397678330t" end="49436467080t" region="bottomCenter" style="s1" xml:id="subtitle1200">o esa cantidad de gas sarín para ejecutar<br/>un ataque de semejante magnitud.</p>
+<p begin="49479430000t" end="49497367920t" region="bottomCenter" style="s1" xml:id="subtitle1201">Este es el cohete</p>
+<p begin="49498198750t" end="49526977500t" region="bottomCenter" style="s1" xml:id="subtitle1202">y tiene una carga explosiva en el frente.<br/>Al caer en la tierra,</p>
+<p begin="49527808330t" end="49576196670t" region="bottomCenter" style="s1" xml:id="subtitle1203">se vuela el frente de la ojiva<br/>y dispersa el gas sarín.</p>
+<p begin="49577027500t" end="49603724170t" region="bottomCenter" style="s1" xml:id="subtitle1204">¿Alguien los escucha?</p>
+<p begin="49604555000t" end="49640420830t" region="bottomCenter" style="s1" xml:id="subtitle1205">Sí. Este informe atrajo<br/>muchísima atención.</p>
+<p begin="49641261670t" end="49693393750t" region="bottomCenter" style="s1" xml:id="subtitle1206">Recibí mensajes de la comunidad<br/>de inteligencia estadounidense y francesa.</p>
+<p begin="49694224580t" end="49714244580t" region="bottomCenter" style="s1" xml:id="subtitle1207">Dicen que nuestro informe es<br/>mejor que los suyos,</p>
+<p begin="49715085420t" end="49760130420t" region="bottomCenter" style="s1" xml:id="subtitle1208">pues determinó<br/>varios hechos muy importantes.</p>
+<p begin="49769299580t" end="49793073330t" region="bottomCenter" style="s1" xml:id="subtitle1209">Cuando publicamos nuestro informe,</p>
+<p begin="49793914170t" end="49838538750t" region="bottomCenter" style="s1" xml:id="subtitle1210">los rusos y otros se dieron cuenta<br/>de que el juego había terminado,</p>
+<p begin="49839369580t" end="49874404580t" region="bottomCenter" style="s1" xml:id="subtitle1211">de que negar que el gobierno sirio<br/>era responsable del ataque</p>
+<p begin="49875245420t" end="49900680830t" region="bottomCenter" style="s1" xml:id="subtitle1212">iba a ser muy difícil.</p>
+<p begin="49901521670t" end="49944064170t" region="bottomCenter" style="s1" xml:id="subtitle1213">Informe de Human Rights Watch concluye<br/>que Assad ordenó ataques químicos</p>
+<p begin="49944895000t" end="49977427500t" region="topCenter" style="s1" xml:id="subtitle1214">Human Rights Watch:<br/>Gobierno de Assad tras ataque químico</p>
+<p begin="49978258330t" end="49999529580t" region="topCenter" style="s1" xml:id="subtitle1215">Esta semana,<br/>Human Rights Watch publicó un informe</p>
+<p begin="50000370420t" end="50037067080t" region="topCenter" style="s1" xml:id="subtitle1216">donde, conforme<br/>a su investigación independiente,</p>
+<p begin="50037907920t" end="50060010000t" region="topCenter" style="s1" xml:id="subtitle1217">sostiene que fueron<br/>las fuerzas gubernamentales sirias</p>
+<p begin="50060840830t" end="50074604580t" region="topCenter" style="s1" xml:id="subtitle1218">WILLIAM HAGUE - SECRETARIO<br/>DE ASUNTOS EXTERIORES DE GRAN BRETAÑA</p>
+<p begin="50075445420t" end="50095875830t" region="topCenter" style="s1" xml:id="subtitle1219">las responsables casi indudables<br/>de los ataques.</p>
+<p begin="50096716670t" end="50120900830t" region="bottomCenter" style="s1" xml:id="subtitle1220"><span style="s1_1">Este fin de semana,</span><br/><span style="s1_1">tras encendidos debates,</span></p>
+<p begin="50121741670t" end="50143423330t" region="bottomCenter" style="s1" xml:id="subtitle1221"><span style="s1_1">Estados Unidos y Rusia llegaron</span><br/><span style="s1_1">a un acuerdo.</span></p>
+<p begin="50144264170t" end="50168868750t" region="bottomCenter" style="s1" xml:id="subtitle1222"><span style="s1_1">Los 15 miembros</span><br/><span style="s1_1">del Consejo de Seguridad de la ONU</span></p>
+<p begin="50169699580t" end="50194314170t" region="topCenter" style="s1" xml:id="subtitle1223"><span style="s1_1">adoptaron por unanimidad una resolución</span></p>
+<p begin="50195145000t" end="50225175000t" region="topCenter" style="s1" xml:id="subtitle1224"><span style="s1_1">que exige la erradicación</span><br/><span style="s1_1">de las armas químicas sirias.</span></p>
+<p begin="50226005830t" end="50256035830t" region="topCenter" style="s1" xml:id="subtitle1225">Todo el mundo unido,<br/>con una sola voz por primera vez,</p>
+<p begin="50256876670t" end="50267297080t" region="topCenter" style="s1" xml:id="subtitle1226">ESTADOS UNIDOS</p>
+<p begin="50268137920t" end="50309429170t" region="topCenter" style="s1" xml:id="subtitle1227">impone obligaciones ineludibles<br/>al gobierno de Assad</p>
+<p begin="50310260000t" end="50327777500t" region="topCenter" style="s1" xml:id="subtitle1228">y pide que se deshaga de armas</p>
+<p begin="50328608330t" end="50372402080t" region="topCenter" style="s1" xml:id="subtitle1229">que causaron estragos<br/>como herramientas de terror.</p>
+<p begin="50399098750t" end="50432051670t" region="bottomCenter" style="s1" xml:id="subtitle1230"><span style="s1_1">No vamos a detener la guerra en Siria.</span></p>
+<p begin="50432882500t" end="50451230830t" region="bottomCenter" style="s1" xml:id="subtitle1231"><span style="s1_1">No vamos a detener ninguna guerra.</span></p>
+<p begin="50467086670t" end="50510460000t" region="bottomCenter" style="s1" xml:id="subtitle1232">Mi intención es hacer que la guerra</p>
+<p begin="50511290830t" end="50553833330t" region="bottomCenter" style="s1" xml:id="subtitle1233">sea un poco más tolerable<br/>para las personas atrapadas en ella.</p>
+<p begin="50563012500t" end="50615144580t" region="bottomCenter" style="s1" xml:id="subtitle1234"><span style="s1_1">Y tengo la absoluta certeza</span></p>
+<p begin="50615985420t" end="50645595000t" region="bottomCenter" style="s1" xml:id="subtitle1235"><span style="s1_1">de que el secreto propicia el abuso,</span></p>
+<p begin="50655184580t" end="50684804170t" region="bottomCenter" style="s1" xml:id="subtitle1236"><span style="s1_1">sobre todo de parte</span><br/><span style="s1_1">de quienes detentan el poder.</span></p>
+<p begin="50685635000t" end="50719839170t" region="bottomCenter" style="s1" xml:id="subtitle1237"><span style="s1_1">Ante la posibilidad</span><br/><span style="s1_1">de cometer abusos en secreto,</span></p>
+<p begin="50720670000t" end="50741520830t" region="bottomCenter" style="s1" xml:id="subtitle1238"><span style="s1_1">lo más probable es que los cometan.</span></p>
+<p begin="50752371670t" end="50812431670t" region="bottomCenter" style="s1" xml:id="subtitle1239">Para mí, nuestra labor consiste<br/>en poner freno a eso.</p>
+<p begin="50813262500t" end="50842872080t" region="bottomCenter" style="s1" xml:id="subtitle1240">Al menos, la gente sabe lo que sucede.</p>
+<p begin="50843712920t" end="50886665830t" region="bottomCenter" style="s1" xml:id="subtitle1241">Se enfrentan a la realidad<br/>de lo que ocurre en otro lugar</p>
+<p begin="50887506670t" end="50929208330t" region="bottomCenter" style="s1" xml:id="subtitle1242">y tienen que tomar<br/>la decisión moral de qué hacer.</p>
+<p begin="50937967080t" end="50967586670t" region="bottomCenter" style="s1" xml:id="subtitle1243"><span style="s1_1">Nos esforzamos mucho</span><br/><span style="s1_1">para recabar esta información,</span></p>
+<p begin="50968417500t" end="50994693750t" region="bottomCenter" style="s1" xml:id="subtitle1244"><span style="s1_1">procesarla, organizarla y hacerla pública.</span></p>
+<p begin="50995524580t" end="51008877920t" region="bottomCenter" style="s1" xml:id="subtitle1245"><span style="s1_1">Y creo que valió la pena.</span></p>
+<p begin="51019718750t" end="51064763750t" region="bottomCenter" style="s1" xml:id="subtitle1246"><span style="s1_1">El hecho de que no veremos, espero,</span><br/><span style="s1_1">otro ataque químico</span></p>
+<p begin="51065594580t" end="51078527500t" region="bottomCenter" style="s1" xml:id="subtitle1247"><span style="s1_1">es un logro notable.</span></p>
+<p begin="51079358330t" end="51091870830t" region="bottomCenter" style="s1" xml:id="subtitle1248">Assad: Siria se someterá<br/>a control de armas químicas</p>
+<p begin="51092711670t" end="51123992920t" region="bottomCenter" style="s1" xml:id="subtitle1249"><span style="s1_1">Pero eso no representa ningún alivio</span></p>
+<p begin="51124823750t" end="51150679580t" region="bottomCenter" style="s1" xml:id="subtitle1250"><span style="s1_1">para todas las personas</span><br/><span style="s1_1">que siguen siendo asesinadas</span></p>
+<p begin="51151520420t" end="51171950830t" region="bottomCenter" style="s1" xml:id="subtitle1251"><span style="s1_1">con armas convencionales.</span></p>
+<p begin="51172791670t" end="51221590420t" region="bottomCenter" style="s1" xml:id="subtitle1252"><span style="s1_1">Pasamos de la esperanza a la desesperación</span><br/><span style="s1_1">y viceversa.</span></p>
+<p begin="51229508330t" end="51253282080t" region="bottomCenter" style="s1" xml:id="subtitle1253"><span style="s1_1">Luego nos encontramos</span><br/><span style="s1_1">con alguien en el lugar,</span></p>
+<p begin="51254122920t" end="51285814580t" region="bottomCenter" style="s1" xml:id="subtitle1254"><span style="s1_1">un testigo, una víctima,</span><br/><span style="s1_1">un activista increíble,</span></p>
+<p begin="51286655420t" end="51317095830t" region="bottomCenter" style="s1" xml:id="subtitle1255"><span style="s1_1">y sentimos que,</span><br/><span style="s1_1">si ellos no bajaron los brazos,</span></p>
+<p begin="51317936670t" end="51345874580t" region="bottomCenter" style="s1" xml:id="subtitle1256"><span style="s1_1">¿cómo diablos vamos a bajarlos nosotros</span><br/><span style="s1_1">y abandonarlos?</span></p>
+<p begin="51491440000t" end="51516465000t" region="bottomCenter" style="s1" xml:id="subtitle1257">Hasta ahora vas muy bien.</p>
+<p begin="51530649170t" end="51540659170t" region="bottomCenter" style="s1" xml:id="subtitle1258">¿Sí?</p>
+<p begin="51619487920t" end="51633251670t" region="bottomCenter" style="s1" xml:id="subtitle1259">Hola.</p>
+<p begin="51634082500t" end="51647846250t" region="bottomCenter" style="s1" xml:id="subtitle1260">Hola.</p>
+<p begin="51654933330t" end="51664943330t" region="bottomCenter" style="s1" xml:id="subtitle1261">Bien, ¿vienes a saludar?</p>
+<p begin="51703321670t" end="51718747080t" region="bottomCenter" style="s1" xml:id="subtitle1262">Dios mío.</p>
+<p begin="51730849170t" end="51745023330t" region="bottomCenter" style="s1" xml:id="subtitle1263">Míralo.</p>
+<p begin="51851800000t" end="51876825000t" region="bottomCenter" style="s1" xml:id="subtitle1264">Muy bien.</p>
+<p begin="51891840000t" end="51911029170t" region="bottomCenter" style="s1" xml:id="subtitle1265"><span style="s1_1">Anna, ¿podemos acordar</span><br/><span style="s1_1">una entrevista para hoy?</span></p>
+<p begin="51911860000t" end="51941890000t" region="bottomCenter" style="s1" xml:id="subtitle1266">Es por las ejecuciones en Baida, ¿cierto?</p>
+<p begin="51942720830t" end="51955233330t" region="bottomCenter" style="s1" xml:id="subtitle1267">Es que...</p>
+<p begin="51966084170t" end="51980258330t" region="bottomCenter" style="s1" xml:id="subtitle1268">Está bien, entonces...</p>
+<p begin="51999447500t" end="52019467500t" region="bottomCenter" style="s1" xml:id="subtitle1269">¿A qué hora te gustaría hacerla?</p>
+<p begin="52020298330t" end="52049497500t" region="bottomCenter" style="s1" xml:id="subtitle1270"><span style="s1_1">Estaba pensando</span><br/><span style="s1_1">a las 6:30 hora de Londres...</span></p>
+<p begin="52786063330t" end="52803170420t" region="bottomCenter" style="s1" xml:id="subtitle1271">Gracias a todos los traductores,<br/>conductores y asesores</p>
+<p begin="52804001250t" end="52814011250t" region="bottomCenter" style="s1" xml:id="subtitle1272">que nos ayudaron en Libia y Siria.</p>
+<p begin="52814842080t" end="52824852080t" region="bottomCenter" style="s1" xml:id="subtitle1273">Gracias especialmente<br/>a todos los testigos</p>
+<p begin="52825692920t" end="52835702920t" region="bottomCenter" style="s1" xml:id="subtitle1274">que compartieron sus historias.</p>
+<p begin="52836533750t" end="52846543750t" region="bottomCenter" style="s1" xml:id="subtitle1275">Todos los que aparecen aquí accedieron</p>
+<p begin="52847374580t" end="52857384580t" region="bottomCenter" style="s1" xml:id="subtitle1276">a hacer públicas<br/>sus palabras e imágenes.</p>
+<p begin="52858225420t" end="52868235420t" region="bottomCenter" style="s1" xml:id="subtitle1277">Por otra parte, se consideró<br/>la seguridad de cada persona</p>
+<p begin="52869066250t" end="52879076250t" region="bottomCenter" style="s1" xml:id="subtitle1278">antes de incluirla en la película.</p>
+</div>
+</body>
+</tt>

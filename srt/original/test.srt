@@ -1,0 +1,17 @@
+No ha sido fácil hacer todo esto pero vale la pena, ¿vale?
+¿Cuantas veces habéis
+El Lunes de mm MM aas Mayo sdaf
+Vale. Te quedas con este. Estoy a tope.
+Sí. Creo que debes ir por ello.
+No. No, no, no.
+Está bien, Dwight, por
+El abuelo va a por ti,
+Vale. Lo siento.
+¿Que tienes para mi, Nadia?
+¡¡¡Yo soy el ganador!!!
+Oye, mira como funciona el debug de OCR con un archivo
+Vais a agregar un archivo al servidor en la carpeta "/srt/original"
+con todas vuestras líneas a analizar.
+Después de eso, ya sabéis, ingresar a la url con los parámetros correspondientes.
+Cualquier duda leer la documentación en "documentation.txt" ¿de acuerdo?
+Está bien, creo que ya son bastantes líneas para el ejemplo.
