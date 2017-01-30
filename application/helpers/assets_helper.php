@@ -85,7 +85,7 @@
 
   function add_style($stylesheet, $forceRefresh = false, $attributes = '')
   { 
-     $refreshParameter = ($forceRefresh) ? '?r='.rand(1,100) : '';
+     $refreshParameter = ($forceRefresh) ? '?r='.rand(1,1000) : '';
 
      if (is_array($attributes))
      {
@@ -130,7 +130,7 @@
 
     function add_jscript($javascript, $forceRefresh = false, $attributes = '')
     {    
-         $refreshParameter = ($forceRefresh) ? '?r='.rand(1,100) : '';
+         $refreshParameter = ($forceRefresh) ? '?r='.rand(1,1000) : '';
 
          if (is_array($attributes))
          {

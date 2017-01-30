@@ -29,8 +29,11 @@ class Debug {
               while (($line = fgets($handle)) !== false) {
                   $line = mb_convert_encoding($line, 'utf-8', "windows-1252");
                   if(!preg_match('/(\d{2}\:\d{2}\:\d{2}\,\d{3}\s-->\s\d{2}\:\d{2}\:\d{2}\,\d{3})|(^\s*\d+\s*$)|(^\s*$)/',$line)) {
-                      $ocrResult = $this->_CI->ocr->ocrCheck($line,true);
+                      $ocr = isset($getArray['ocr']) ? $getArray['ocr'] : 'abcd';
                       
+                      $line = str_replace('\n', "\n", $line);
+
+                      $ocrResult = $this->_CI->ocr->ocrCheck($line,$ocr,true);                      
                       echo '<div><strong>Frase:</strong><br>'.$line.'<br>';
                       if(isset($ocrResult['ocredLine'])) {
                         echo '<br><br><strong>Resultado:</strong><br>'.$ocrResult['ocredLine'];
@@ -51,9 +54,12 @@ class Debug {
     } elseif( isset($getArray['string']) && !empty($getArray['string']) ) {
 
       echo '<style>.ocr-highlight{background-color: #ffff00}</style>';
-      $string = $getArray['string'];
+      $string = str_replace('\n', "\n", $getArray['string']);
       echo '<strong>Frase:</strong><br>'.$string.'<br>';
-      $ocrResult = $this->_CI->ocr->ocrCheck($string,true);
+     
+      $ocr = isset($getArray['ocr']) ? $getArray['ocr'] : 'abcd';
+      $ocrResult = $this->_CI->ocr->ocrCheck($string,$ocr,true);
+
       if(isset($ocrResult['ocredLine'])) echo '<br><strong>Resultado:</strong><br>'.$ocrResult['ocredLine'];
       else echo '<strong>Sin optimización.</strong>';
       echo '<br><br><strong>Info:</strong><br>';

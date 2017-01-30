@@ -55,7 +55,9 @@ class Subtitlehub extends CI_Controller {
 	}
 
 	public function test() {
-		
+		$this->load->library('ocr');
+		$string = "Es una adolescente. Es\nen lo que sobresales.";
+		print_r($this->ocr->ocrCheck($string,'d',true));
 
 	}
 }

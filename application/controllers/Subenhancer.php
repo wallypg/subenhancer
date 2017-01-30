@@ -242,8 +242,8 @@ class Subenhancer extends CI_Controller {
 		    /************************************************************/
 		    $uploadOk = 1;
 		    // Chequeo tamaño del archivo
-		    if ($_FILES["uploaded_file"]["size"] > 300000) {
-		        $errorMessage = "Peso de archivoo demasiado grande.";
+		    if ($_FILES["uploaded_file"]["size"] > 300000 && !isset($postArray['dbg'])) {
+		        $errorMessage = "Peso de archivo demasiado grande.";
 		        $uploadOk = 0;
 		    }
 
@@ -299,16 +299,21 @@ class Subenhancer extends CI_Controller {
 
 		// Segmento -> conjunto de 3 lineas {secuencia, tiempo, texto}
 		$ocrCorrections = array();
+		$ocrCounter = 0;
 
 		foreach(preg_split("/\n\s*\n/s", $subtitleContent) as $segmentKey => $segment){
 		    $segmentObject = new stdClass();
+		    // ->sequence
 		    $segmentObject->sequence = $segmentKey+1;
+
 		    $segmentArray = array();
 		    foreach(preg_split("/((\r?\n)|(\r\n?))/", $segment) as $key => $line){
 		        // Guardo temporalmente cada línea del segmento en un array
 		        $segmentArray[$key] = $line;
 		        if(preg_match('/\d{2}:\d{2}:\d{2},\d{3} --> \d{2}:\d{2}:\d{2},\d{3}/',$line)) {
 		            sscanf($line, "%d:%d:%d,%d --> %d:%d:%d,%d",$startHour,$startMinute,$startSecond,$startMillisecond,$endHour,$endMinute,$endSecond,$endMillisecond);
+
+		            // ->[times]
 		            $segmentObject->startHour = $startHour;
 		            $segmentObject->startMinute = $startMinute;
 		            $segmentObject->startSecond = $startSecond;
@@ -327,27 +332,48 @@ class Subenhancer extends CI_Controller {
 		        }
 		    }
 
+
+			// $segmentArray contiene secuencia entera: [0]->Nº Sec, [1]->Tiempos, [2][3]...->Líneas
 		    $segmentObject->totalCharacters = 0;
-		    for($i=2; $i<count($segmentArray)-1; $i++) {
-		        $textLine = 'textLine'.($i-1);
+		    // for($i=2; $i<count($segmentArray)-1; $i++) {//dual
+		        // $textLine = 'textLine'.($i-1);//dual
+
+		    	$nl = 0;//oneliner
+		    	$textLine = '';//oneliner
+		    	for($i=2; $i<count($segmentArray)-1; $i++) //oneliner
+		    		if(!$textLine)//oneliner
+		    			$textLine = $segmentArray[$i];//oneliner
+		    		else//oneliner
+		    		{//oneliner
+		    			$nl++;//oneliner
+		    			$textLine .= "\n".$segmentArray[$i];//oneliner
+		    		}//oneliner
+
 
 		        if(isset($postArray['ocr']) && $postArray['ocr'] == 'true') {
-		            $ocrCheckArray = $this->ocr->ocrCheck($segmentArray[$i]);
-		            
+		            // $ocrCheckArray = $this->ocr->ocrCheck($segmentArray[$i],'d');//dual
+		            $ocrCheckArray = $this->ocr->ocrCheck($textLine,'dd');//oneliner
+
 		            if(!empty($ocrCheckArray)) {
+		            	$ocrCounter += $ocrCheckArray['ocrCounter'];
 		                if(!isset($ocrCorrections[$segmentObject->sequence])) $ocrCorrections[$segmentObject->sequence] = array();
 		                
-		                $segmentObject->$textLine = $ocrCheckArray['ocredLine'];
+		                // $segmentObject->$textLine = $ocrCheckArray['ocredLine'];//dual
+		                $segmentObject->textLine = $ocrCheckArray['ocredLine'];//oneliner
 		                array_push($ocrCorrections[$segmentObject->sequence], array('found'=>$ocrCheckArray['found'],'replaced'=>$ocrCheckArray['replaced']));
 		                // $ocrCorrections[$segmentObject->sequence][$ocrCheckArray['found']] = $ocrCheckArray['replaced'];
 		            } else {
-		                $segmentObject->$textLine = $segmentArray[$i];
+		                // $segmentObject->$textLine = $segmentArray[$i];//dual
+		                $segmentObject->textLine = $textLine;//oneliner
 		            }
 
-		        } else $segmentObject->$textLine = $segmentArray[$i];
+		        // } else $segmentObject->$textLine = $segmentArray[$i];//dual
+		        } else $segmentObject->textLine = $textLine;//oneliner
 
-		        $segmentObject->totalCharacters += mb_strlen($segmentArray[$i]);
-		    }
+		        // $segmentObject->totalCharacters += mb_strlen($segmentObject->$textLine);//dual
+		        $segmentObject->totalCharacters = mb_strlen($segmentObject->textLine)-$nl;//oneliner
+		    // }//dual
+
 		    
 		    if(isset($segmentObject->sequenceDuration) && isset($segmentObject->totalCharacters)) {
 		        $segmentObject->cps = calculateCps($segmentObject->sequenceDuration, $segmentObject->totalCharacters);
@@ -355,6 +381,14 @@ class Subenhancer extends CI_Controller {
 		    }
 		    if($segmentObject->totalCharacters>0) $subtitle->$segmentKey = $segmentObject;
 		}
+
+		/************************************************************/
+
+		// print_r($subtitle);
+		// die();
+		// argumentos a ocrCheck
+		// revisar md5
+		// revisar cantidad de caracteres con \n
 
 		// CHEQUEO INTEGRIDAD DEL OBJETO
 		$objectCorruption = 0;
@@ -381,6 +415,7 @@ class Subenhancer extends CI_Controller {
 		if($objectCorruption) die(json_encode($error));    
 		    
 
+
 		// OCR FEEDBACK
 		$ocrTable = '<table class="table table-striped ocr-table">';
 		foreach ($ocrCorrections as $sequenceKey => $sequenceValue) {
@@ -393,6 +428,8 @@ class Subenhancer extends CI_Controller {
 		    }
 		}
 		$ocrTable .= '</table>';
+
+		// echo '<br>'.$ocrCounter.'<br>';
 
 		$totalSequences = count($arrayCastedSubtitle);
 		$originalLinesOverCps = count($totalSegmentsOverCps);
@@ -415,12 +452,12 @@ class Subenhancer extends CI_Controller {
 		// [startTimeInMillisecondsOriginal]
 		// [sequenceDurationOriginal]
 
-		$lastLine = $totalSequences-1;
-		if(md5($subtitle->$lastLine->textLine1) == '4bab2f9ce44d40cf4f268094f76bac69') {
-		    // ERROR
-		    $error['alreadyEnhanced'] = 'Subtítulo ya optimizado';
-		    die(json_encode($error));
-		}
+		// $lastLine = $totalSequences-1;
+		// if(md5($subtitle->$lastLine->textLine1) == '4bab2f9ce44d40cf4f268094f76bac69') {
+		//     // ERROR
+		//     $error['alreadyEnhanced'] = 'Subtítulo ya optimizado';
+		//     die(json_encode($error));
+		// }
 
 
 
@@ -572,17 +609,11 @@ class Subenhancer extends CI_Controller {
 		$afterEnhancementLinesOverCps = count(checkAllLinesCps($subtitle,25));
 		$enhancedLines = $originalLinesOverCps-$afterEnhancementLinesOverCps;
 
-		$threadMessage = '[CENTER][IMG]http://imagenes.subadictos.net/novedad/SubsDisponibles.gif[/IMG]
-
-		[B][SIZE=4]Capítulo: [COLOR="#FF0000"]'.$postArray['episode_number'].'[/COLOR].[/SIZE][/B]
-		[SIZE=3]
-		Agradecimientos a:
-
-		Traducción: [B]'.$postArray['translation'].'[/B]';
+		$threadMessage = "[CENTER][IMG]http://imagenes.subadictos.net/novedad/SubsDisponibles.gif[/IMG]\n\n[B][SIZE=4]Capítulo: [COLOR=\"#FF0000\"]".$postArray['episode_number']."[/COLOR].[/SIZE][/B]\n\n[SIZE=3]Agradecimientos a:\nTraducción: [B]".$postArray['translation']."[/B]";
 		if(isset($postArray['editor']) && !empty($postArray['editor'])) {
-		    $threadMessage .= 'Corrección [B][COLOR="#800080"]'.$postArray['editor'].'[/COLOR][/B]';
+		    $threadMessage .= "\nCorrección: [B]".$postArray['editor']."[/B]";
 		}
-		$threadMessage .= '[/SIZE][/CENTER]';
+		$threadMessage .= "[/SIZE][/CENTER]";
 
 		$efficiencyMessage = ($originalLinesOverCps) ? round($enhancedLines*100/$originalLinesOverCps,1).'% de eficiencia en la optimización.' : '¡No había líneas que optimizar!';
 		$enhancementMessage = $enhancedLines.' líneas mejoradas de '.$originalLinesOverCps.' que superaban los 25 CPS.';

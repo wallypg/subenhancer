@@ -207,6 +207,7 @@ $(document).ready(function(){
                 }
               }).done(function(data){
                 var data = $.parseJSON(data);
+                console.log(data);
                 NProgress.done();
                 if(data.hasOwnProperty('alreadyEnhanced')) alreadyEnhanced();
                 if(data.hasOwnProperty('error')) console.log(data);
@@ -248,6 +249,7 @@ $(document).ready(function(){
           }
         }).done(function(data){
           var data = $.parseJSON(data);
+          console.log(data);
           NProgress.done();
           if(data.hasOwnProperty('alreadyEnhanced')) alreadyEnhanced();
           if(data.hasOwnProperty('error')) console.log(data);

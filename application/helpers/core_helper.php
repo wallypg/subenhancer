@@ -454,9 +454,10 @@ function printEnhancedSubtitle ($subtitle,$totalSequences) {
         echo '<br />';//ss
         echo formatMilliseconds($segment->startTimeInMilliseconds).' --> '.formatMilliseconds($segment->endTimeInMilliseconds);//ss
         echo '<br />';//ss
-        if(isset($segment->textLine1)) echo $segment->textLine1.'<br />';//ss
-        if(isset($segment->textLine2)) echo $segment->textLine2.'<br />';//ss
-        if(isset($segment->textLine3)) echo $segment->textLine3.'<br />';//ss
+        if(isset($segment->textLine)) echo nl2br($segment->textLine).'<br />';//oneliner
+        // if(isset($segment->textLine1)) echo $segment->textLine1.'<br />';//ss//dual
+        // if(isset($segment->textLine2)) echo $segment->textLine2.'<br />';//ss//dual
+        // if(isset($segment->textLine3)) echo $segment->textLine3.'<br />';//ss//dual
         echo '<br />';//ss
     }
     echo ($totalSequences+1)."<br />04:08:15,016 --> 04:08:23,420<br />Enhanced with Love in SubAdictos.net<br />";
