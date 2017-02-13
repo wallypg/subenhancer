@@ -219,6 +219,7 @@ class Subenhancer extends CI_Controller {
 
 		$this->load->helper('core');
 		$this->load->library('ocr');
+		$this->load->library('uds');
 
 		// MÉTODO DE OPTIMIZACIÓN
 		$method = 1;
@@ -242,7 +243,7 @@ class Subenhancer extends CI_Controller {
 		    /************************************************************/
 		    $uploadOk = 1;
 		    // Chequeo tamaño del archivo
-		    if ($_FILES["uploaded_file"]["size"] > 300000 && !isset($postArray['dbg'])) {
+		    if (($_FILES["uploaded_file"]["size"] > 300000 && !isset($postArray['dbg'])) || ($_FILES["uploaded_file"]["size"] > 800000 && isset($postArray['dbg'])))  {
 		        $errorMessage = "Peso de archivo demasiado grande.";
 		        $uploadOk = 0;
 		    }
@@ -276,6 +277,17 @@ class Subenhancer extends CI_Controller {
 
 
 		/************************************************************/
+		/** Chequeo si ya fue optimizado **/ 
+		/************************************************************/
+
+		if(strpos($subtitleContent, "Enhanced with Love in SubAdictos.net") !== false) {
+		    // ERROR
+		    $error['alreadyEnhanced'] = 'Subtítulo ya optimizado';
+		    die(json_encode($error));
+		}
+
+
+		/************************************************************/
 		/** Valores iniciales para la optimización **/ 
 		/************************************************************/
 		$cps = 25;
@@ -283,7 +295,22 @@ class Subenhancer extends CI_Controller {
 		$minDuration = 900;
 
 
+		/************************************************************/
+		/** Opciones **/ 
+		/************************************************************/
+
 		// OCRs: ocr-asia-team, ocr-reduce, ocr-reduce-at
+		$ocrString = '';
+		// if(isset($postArray['ocr'])) {
+		// 	foreach($postArray['ocr'] as $ocr) {
+		// 		if($ocr=='ocr-reduce') $ocrString .= 'a';
+		// 		if($ocr=='ocr-asia-team') $ocrString .= 'b';
+		// 		if($ocr=='ocr-reduce-at') $ocrString .= 'c';
+		// 		if($ocr=='ocr-unidades-sentido') $ocrString .= 'd';
+		// 	}
+		// }
+		// $ocrString = 'ddd';//testing
+
 		// Unión líneas cortas
 		// Líneas duplicadas
 		// Unidades de sentido
@@ -302,6 +329,7 @@ class Subenhancer extends CI_Controller {
 		$ocrCounter = 0;
 
 		foreach(preg_split("/\n\s*\n/s", $subtitleContent) as $segmentKey => $segment){
+
 		    $segmentObject = new stdClass();
 		    // ->sequence
 		    $segmentObject->sequence = $segmentKey+1;
@@ -333,26 +361,30 @@ class Subenhancer extends CI_Controller {
 		    }
 
 
+
 			// $segmentArray contiene secuencia entera: [0]->Nº Sec, [1]->Tiempos, [2][3]...->Líneas
 		    $segmentObject->totalCharacters = 0;
 		    // for($i=2; $i<count($segmentArray)-1; $i++) {//dual
 		        // $textLine = 'textLine'.($i-1);//dual
+			// print_r($segmentArray);
+			// echo "\n\n";
 
 		    	$nl = 0;//oneliner
 		    	$textLine = '';//oneliner
-		    	for($i=2; $i<count($segmentArray)-1; $i++) //oneliner
-		    		if(!$textLine)//oneliner
-		    			$textLine = $segmentArray[$i];//oneliner
-		    		else//oneliner
-		    		{//oneliner
-		    			$nl++;//oneliner
-		    			$textLine .= "\n".$segmentArray[$i];//oneliner
-		    		}//oneliner
+		    	for($i=2; $i<=count($segmentArray)-1; $i++) //oneliner
+		    		if(!empty($segmentArray[$i]))
+			    		if(!$textLine)//oneliner
+			    			$textLine = $segmentArray[$i];//oneliner
+			    		else//oneliner
+			    		{//oneliner
+			    			$nl++;//oneliner
+			    			$textLine .= "\n".$segmentArray[$i];//oneliner
+			    		}//oneliner
 
 
-		        if(isset($postArray['ocr']) && $postArray['ocr'] == 'true') {
-		            // $ocrCheckArray = $this->ocr->ocrCheck($segmentArray[$i],'d');//dual
-		            $ocrCheckArray = $this->ocr->ocrCheck($textLine,'dd');//oneliner
+		        if(!empty($ocrString)) {
+		            // $ocrCheckArray = $this->ocr->ocrCheck($segmentArray[$i],$ocrString);//dual
+		            $ocrCheckArray = $this->ocr->ocrCheck($textLine,$ocrString);//oneliner
 
 		            if(!empty($ocrCheckArray)) {
 		            	$ocrCounter += $ocrCheckArray['ocrCounter'];
@@ -370,11 +402,21 @@ class Subenhancer extends CI_Controller {
 		        // } else $segmentObject->$textLine = $segmentArray[$i];//dual
 		        } else $segmentObject->textLine = $textLine;//oneliner
 
+
+		        /**********/
+		        // UDS
+		        $uds = 1;
+		        if($uds) $segmentObject->textLine = $this->uds->fixUds($segmentObject->textLine);
+		        print_r($segmentObject->textLine);
+		        die();
+		        /**********/
+
 		        // $segmentObject->totalCharacters += mb_strlen($segmentObject->$textLine);//dual
 		        $segmentObject->totalCharacters = mb_strlen($segmentObject->textLine)-$nl;//oneliner
 		    // }//dual
 
-		    
+		    // print_r($segmentObject); die();
+
 		    if(isset($segmentObject->sequenceDuration) && isset($segmentObject->totalCharacters)) {
 		        $segmentObject->cps = calculateCps($segmentObject->sequenceDuration, $segmentObject->totalCharacters);
 		        if($segmentObject->cps > $cps) array_push($totalSegmentsOverCps, $segmentKey);
@@ -384,14 +426,17 @@ class Subenhancer extends CI_Controller {
 
 		/************************************************************/
 
-		// print_r($subtitle);
-		// die();
 		// argumentos a ocrCheck
 		// revisar md5
 		// revisar cantidad de caracteres con \n
 
-		// CHEQUEO INTEGRIDAD DEL OBJETO
+		// print_r($subtitle);s
+
+		/************************************************************/
+		/** Chequeo integridad del objeto **/
+		/************************************************************/
 		$objectCorruption = 0;
+
 
 		$arrayCastedSubtitle = (array)$subtitle;
 		if(empty($arrayCastedSubtitle)) {
@@ -399,12 +444,16 @@ class Subenhancer extends CI_Controller {
 		    $objectCorruption = 1;
 		} else {
 		    for($objectCorruption = 0, $i = 0; $objectCorruption == 0 && $i < count($arrayCastedSubtitle); $i++ ) {
+		    	// print_r($subtitle);
 		        if(!isset($subtitle->$i)) {
 		            $error['missingSegment'] = 'No se encuentra la secuencia '.($i+1);
 		            $objectCorruption = 1;
+		        } elseif($i+1 != $subtitle->$i->sequence) {
+		        	$error['sequenceDivergence'] = 'Desfasaje en la secuencia '.($i+1);
+		            $objectCorruption = 1;
 		        } else {
 		            $elementCount = count((array)$subtitle->$i);
-		            if ( $elementCount < 18 || $elementCount >20 ) {
+		            if ( $elementCount != 18 ) {
 		                $error['missingProperties'] = 'Propiedades faltantes en la secuencia '.($i+1);
 		                $objectCorruption = 1;
 		            }
@@ -433,6 +482,7 @@ class Subenhancer extends CI_Controller {
 
 		$totalSequences = count($arrayCastedSubtitle);
 		$originalLinesOverCps = count($totalSegmentsOverCps);
+
 		/* PROPIEDADES DE CADA SEGMENTO DEL SUBTÍTULO */
 		// [sequence]
 		// [startHour]
@@ -452,14 +502,6 @@ class Subenhancer extends CI_Controller {
 		// [startTimeInMillisecondsOriginal]
 		// [sequenceDurationOriginal]
 
-		// $lastLine = $totalSequences-1;
-		// if(md5($subtitle->$lastLine->textLine1) == '4bab2f9ce44d40cf4f268094f76bac69') {
-		//     // ERROR
-		//     $error['alreadyEnhanced'] = 'Subtítulo ya optimizado';
-		//     die(json_encode($error));
-		// }
-
-
 
 		/************************************************************/
 		/**     Guardado de datos en un JSON      **/
@@ -470,100 +512,105 @@ class Subenhancer extends CI_Controller {
 		else
 			$logArray = array();
 
-		if (file_exists('json/data.json'))
-		  $dataArray = json_decode(file_get_contents('json/data.json'), true);
-		 else
-		  $dataArray = array(
-		                        'tv_show' => array(),
-		                        'codec' => array(),
-		                        'format' => array(),
-		                        'quality' => array(),
-		                        'rip_group' => array(),
-		                        'other' => array(),
-		                        'editor' => array(),
-		                        'translation' => array(),
-		                        'enhanced' => array()
-		                    );
+	
+		if(isset($postArray['keepName'])) {
+			$filename = $postArray['keepName'];
+		} else {
 
-		$filename = '';
+			if (file_exists('json/data.json'))
+			  $dataArray = json_decode(file_get_contents('json/data.json'), true);
+			 else
+			  $dataArray = array(
+			                        'tv_show' => array(),
+			                        'codec' => array(),
+			                        'format' => array(),
+			                        'quality' => array(),
+			                        'rip_group' => array(),
+			                        'other' => array(),
+			                        'editor' => array(),
+			                        'translation' => array(),
+			                        'enhanced' => array()
+			                    );
 
-		if(isset($postArray['tv_show']) && !empty($postArray['tv_show'])) {
-		    $filename = trim($postArray['tv_show']);
-		    if(!in_array($postArray['tv_show'], $dataArray['tv_show'])) {
-		    	array_push($dataArray['tv_show'], $postArray['tv_show']);
-		    	sort($dataArray['tv_show'], SORT_STRING | SORT_FLAG_CASE | SORT_NATURAL);
-		    }
-		}
-		if(isset($postArray['season']) && is_numeric($postArray['season'])) {
-		    $filename .= '.S'.str_pad($postArray['season'], 2, "0", STR_PAD_LEFT);
-		}
-		if(isset($postArray['episode_number']) && !empty($postArray['episode_number']) && is_numeric($postArray['episode_number'])) {
-		    $filename .= 'E'.str_pad($postArray['episode_number'], 2, "0", STR_PAD_LEFT);
-		} else $postArray['episode_number'] = '';
-		if(isset($postArray['episode_title']) && !empty($postArray['episode_title'])) {
-		    $filename .= '.'.trim($postArray['episode_title']);
-		}
-		if(isset($postArray['other']) && !empty($postArray['other'])) {
-		    $filename .= '.'.trim($postArray['other']);
-		    if(!in_array($postArray['other'], $dataArray['other'])) {
-		    	array_push($dataArray['other'], $postArray['other']);
-		    	sort($dataArray['other'], SORT_STRING | SORT_FLAG_CASE | SORT_NATURAL);
-		    }
-		}
-		if(isset($postArray['quality']) && !empty($postArray['quality'])) {
-		    $filename .= '.'.trim($postArray['quality']);
-		    if(!in_array($postArray['quality'], $dataArray['quality'])) {
-		    	array_push($dataArray['quality'], $postArray['quality']);
-		    	sort($dataArray['quality'], SORT_STRING | SORT_FLAG_CASE | SORT_NATURAL);
-		    }
-		}
-		if(isset($postArray['format']) && !empty($postArray['format'])) {
-		    $filename .= '.'.trim($postArray['format']);
-		    if(!in_array($postArray['format'], $dataArray['format'])) {
-		    	array_push($dataArray['format'], $postArray['format']);
-		    	sort($dataArray['format'], SORT_STRING | SORT_FLAG_CASE | SORT_NATURAL);
-		    }
-		}
-		if(isset($postArray['codec']) && !empty($postArray['codec'])) {
-		    $filename .= '.'.trim($postArray['codec']);
-		    if(!in_array($postArray['codec'], $dataArray['codec'])) {
-		    	array_push($dataArray['codec'], $postArray['codec']);
-		    	sort($dataArray['codec'], SORT_STRING | SORT_FLAG_CASE | SORT_NATURAL);
-		    }
-		}
-		if(isset($postArray['rip_group']) && !empty($postArray['rip_group'])) {
-		    $filename .= '-'.trim($postArray['rip_group']);
-		    if(!in_array($postArray['rip_group'], $dataArray['rip_group'])) {
-		    	array_push($dataArray['rip_group'], $postArray['rip_group']);
-		    	sort($dataArray['rip_group'], SORT_STRING | SORT_FLAG_CASE | SORT_NATURAL);
-		    }
-		}
-		if(isset($postArray['editor']) && !empty($postArray['editor'])) {
-		    if(!in_array($postArray['editor'], $dataArray['editor'])) {
-		    	array_push($dataArray['editor'], $postArray['editor']);
-		    	sort($dataArray['editor'], SORT_STRING | SORT_FLAG_CASE | SORT_NATURAL);
-		    }
-		}
-		if(isset($postArray['translation']) && !empty($postArray['translation'])) {
-		    if(!in_array($postArray['translation'], $dataArray['translation'])) {
-		    	array_push($dataArray['translation'], $postArray['translation']);
-		    	sort($dataArray['translation'], SORT_STRING | SORT_FLAG_CASE | SORT_NATURAL);
-		    }
-		} else $postArray['translation'] = '';
+			$filename = '';
 
-		if($filename == '') $filename .= 'enhancedSubtitle';
-		$filename .= '.srt';
+			if(isset($postArray['tv_show']) && !empty($postArray['tv_show'])) {
+			    $filename = trim($postArray['tv_show']);
+			    if(!in_array($postArray['tv_show'], $dataArray['tv_show'])) {
+			    	array_push($dataArray['tv_show'], $postArray['tv_show']);
+			    	sort($dataArray['tv_show'], SORT_STRING | SORT_FLAG_CASE | SORT_NATURAL);
+			    }
+			}
+			if(isset($postArray['season']) && is_numeric($postArray['season'])) {
+			    $filename .= '.S'.str_pad($postArray['season'], 2, "0", STR_PAD_LEFT);
+			}
+			if(isset($postArray['episode_number']) && !empty($postArray['episode_number']) && is_numeric($postArray['episode_number'])) {
+			    $filename .= 'E'.str_pad($postArray['episode_number'], 2, "0", STR_PAD_LEFT);
+			} else $postArray['episode_number'] = '';
+			if(isset($postArray['episode_title']) && !empty($postArray['episode_title'])) {
+			    $filename .= '.'.trim($postArray['episode_title']);
+			}
+			if(isset($postArray['other']) && !empty($postArray['other'])) {
+			    $filename .= '.'.trim($postArray['other']);
+			    if(!in_array($postArray['other'], $dataArray['other'])) {
+			    	array_push($dataArray['other'], $postArray['other']);
+			    	sort($dataArray['other'], SORT_STRING | SORT_FLAG_CASE | SORT_NATURAL);
+			    }
+			}
+			if(isset($postArray['quality']) && !empty($postArray['quality'])) {
+			    $filename .= '.'.trim($postArray['quality']);
+			    if(!in_array($postArray['quality'], $dataArray['quality'])) {
+			    	array_push($dataArray['quality'], $postArray['quality']);
+			    	sort($dataArray['quality'], SORT_STRING | SORT_FLAG_CASE | SORT_NATURAL);
+			    }
+			}
+			if(isset($postArray['format']) && !empty($postArray['format'])) {
+			    $filename .= '.'.trim($postArray['format']);
+			    if(!in_array($postArray['format'], $dataArray['format'])) {
+			    	array_push($dataArray['format'], $postArray['format']);
+			    	sort($dataArray['format'], SORT_STRING | SORT_FLAG_CASE | SORT_NATURAL);
+			    }
+			}
+			if(isset($postArray['codec']) && !empty($postArray['codec'])) {
+			    $filename .= '.'.trim($postArray['codec']);
+			    if(!in_array($postArray['codec'], $dataArray['codec'])) {
+			    	array_push($dataArray['codec'], $postArray['codec']);
+			    	sort($dataArray['codec'], SORT_STRING | SORT_FLAG_CASE | SORT_NATURAL);
+			    }
+			}
+			if(isset($postArray['rip_group']) && !empty($postArray['rip_group'])) {
+			    $filename .= '-'.trim($postArray['rip_group']);
+			    if(!in_array($postArray['rip_group'], $dataArray['rip_group'])) {
+			    	array_push($dataArray['rip_group'], $postArray['rip_group']);
+			    	sort($dataArray['rip_group'], SORT_STRING | SORT_FLAG_CASE | SORT_NATURAL);
+			    }
+			}
+			if(isset($postArray['editor']) && !empty($postArray['editor'])) {
+			    if(!in_array($postArray['editor'], $dataArray['editor'])) {
+			    	array_push($dataArray['editor'], $postArray['editor']);
+			    	sort($dataArray['editor'], SORT_STRING | SORT_FLAG_CASE | SORT_NATURAL);
+			    }
+			}
+			if(isset($postArray['translation']) && !empty($postArray['translation'])) {
+			    if(!in_array($postArray['translation'], $dataArray['translation'])) {
+			    	array_push($dataArray['translation'], $postArray['translation']);
+			    	sort($dataArray['translation'], SORT_STRING | SORT_FLAG_CASE | SORT_NATURAL);
+			    }
+			} else $postArray['translation'] = '';
 
-		$filename = preg_replace('/\s+/', '.', $filename);
-		$notAllowed = array_merge(
-		                array_map('chr', range(0,31)),
-		                array("<", ">", ":", '"', "/", "\\", "|", "?", "*"));
-		$filename = str_replace($notAllowed, ".", $filename);
-		$filename = preg_replace('/\.+/', '.', $filename);
+			if($filename == '') $filename .= 'enhancedSubtitle';
+			$filename .= '.srt';
 
-		file_put_contents("json/data.json",json_encode($dataArray,JSON_PRETTY_PRINT));
+			$filename = preg_replace('/\s+/', '.', $filename);
+			$notAllowed = array_merge(
+			                array_map('chr', range(0,31)),
+			                array("<", ">", ":", '"', "/", "\\", "|", "?", "*"));
+			$filename = str_replace($notAllowed, ".", $filename);
+			$filename = preg_replace('/\.+/', '.', $filename);
 
+			file_put_contents("json/data.json",json_encode($dataArray,JSON_PRETTY_PRINT));
 
+		}
 
 		/**************************************************************/
 		/*

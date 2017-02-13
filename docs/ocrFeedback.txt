@@ -1,0 +1,51 @@
+ERRORES EN OCR
+¿No me queréis? -> - ¿No me querán?
+- ¿Porque tengo 4 años?	-> - ¿Por qué tengo 4 años?
+¿Queréis palitos de pollo?	-> ¿Querán palitos de pollo?
+solo porque pasarais	-> solo porque pasaran
+¿Herirnos?¿Cómo?¿Porque ese patán de Tom no sabe nada de arte?	->	¿Herirnos?¿Cómo?¿Por qué ese patán de Tom no sabe nada de arte?
+- Eso es.	->	- Es.
+Como el pasado diciembre, cuando, precipitadamente, compré -> Como el pasado diciembre, cuándo, precipitadamente, compré
+¿Esta persona tiene nombre? -> ¿Está persona tiene nombre?
+a inútil de, oh, de tantas formas. -> a inútil dé, oh, de tantas formas.
+¿Que tienes para mi, Nadia? -> ¿Qué tienes para mí, Nadia?
+¿Cuantas veces habéis -> ¿Cuantas veces han
+
+PROPUESTAS
+salir a por
+Venga, tío.
+os
+
+
+---------------------------
+
+dsps del ocr:
+unir lineas cortas
+repetidas
+
+Contador errores de ocr
+reconocer si subtitulo es vacio (ojeto subtitle)
+modo debug / agregar nombre sub interno / url wiki-adictos
+FAIL OCR con ocr_test
+advertencia errores, corregir ocr
+mover tiempos
+unir lineas
+
+cuándo,precipitadamente, compré
+Líneas duplicadas (cuántas veces permitidas)
+Espacio después del guion
+-DIFUNDE LA CULTURA-
+
+
+¿Que tienes para mi, Nadia?
+El Lunes de mm MM aas Mayo sdaf
+¿Cuantas veces habéis
+¡¡¡Yo soy el ganador!!!
+
+
+-----------------
+.<i>
+,</i>\n\n
+[a-zA-Z0-9%áéíóú]</i>\n\n
+
+2 match igual en la misma linea

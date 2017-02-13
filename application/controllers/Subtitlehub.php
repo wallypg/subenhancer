@@ -55,10 +55,29 @@ class Subtitlehub extends CI_Controller {
 	}
 
 	public function test() {
-		$this->load->library('ocr');
-		$string = "Es una adolescente. Es\nen lo que sobresales.";
-		print_r($this->ocr->ocrCheck($string,'d',true));
+		$text = "Resulta\nque lo puedes freír cualquier cosa.";
+		// $pattern = "/(?:.{1,10}\n)(?:a|ante|bajo|con|de|desde|durante|en|entre|excepto|hacia|hasta|mediante|para|por|según|sin|sobre|tras|o|pero|porque|y|que|cuando|suficientemente|tan|tanto|mucho|mucha|muchos|muchas|al|ya|el|la|lo|las|los|un|una|unas|nos|les|me|te|se|del|mi|mis|sus|su|tu|tus|esa|ese|esas|esos|iba|ni|no|es|están|sea|será|has|ho|han|he|hemos|habías|había|habían|habíamos)(?:\s(?:a|ante|bajo|con|de|desde|durante|en|entre|excepto|hacia|hasta|mediante|para|por|según|sin|sobre|tras|o|pero|porque|y|que|cuando|suficientemente|tan|tanto|mucho|mucha|muchos|muchas|al|ya|el|la|lo|las|los|un|una|unas|nos|les|me|te|se|del|mi|mis|sus|su|tu|tus|esa|ese|esas|esos|iba|ni|no|es|están|sea|será|has|ho|han|he|hemos|habías|había|habían|habíamos))?(?:\s.{2,15}?)(\s)(?:.{20,40})/";
+		$pattern = "/(.{1,10}\n(?:a|ante|bajo|con|de|desde|durante|en|entre|excepto|hacia|hasta|mediante|para|por|según|sin|sobre|tras|o|pero|porque|y|que|cuando|suficientemente|tan|tanto|mucho|mucha|muchos|muchas|al|ya|el|la|lo|las|los|un|una|unas|nos|les|me|te|se|del|mi|mis|sus|su|tu|tus|esa|ese|esas|esos|iba|ni|no|es|están|sea|será|has|ho|han|he|hemos|habías|había|habían|habíamos)(?:\s(?:a|ante|bajo|con|de|desde|durante|en|entre|excepto|hacia|hasta|mediante|para|por|según|sin|sobre|tras|o|pero|porque|y|que|cuando|suficientemente|tan|tanto|mucho|mucha|muchos|muchas|al|ya|el|la|lo|las|los|un|una|unas|nos|les|me|te|se|del|mi|mis|sus|su|tu|tus|esa|ese|esas|esos|iba|ni|no|es|están|sea|será|has|ho|han|he|hemos|habías|había|habían|habíamos))?\s.{2,15}?)(\s)(.{20,40})/";
+		// print_r(preg_match_all($pattern, $text, $matches));
+		preg_match_all($pattern, $text, $matches);
+		// print_r($matches);
+		// echo $text;
+		// echo "\n";
+		$text = preg_replace_callback(
+			$pattern,
+			function ($matches) {
+				return $matches[1]."\n".$matches[3];
+			},
+			$text
+		);
+		$text = preg_replace("/\n/", " ", $text, 1);
 
+		echo $text;
+
+
+		// $this->load->library('ocr');
+
+		// $this->ocr->ocrCheck()
 	}
 }
 ?>

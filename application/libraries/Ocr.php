@@ -26,6 +26,8 @@ class Ocr {
         if($letter == 'c') $ocr = 'ocr-reduce-at';
       // d -> ocr-unidades-sentido
         if($letter == 'd') $ocr = 'ocr-unidades-sentido';
+      // t -> test
+        if($letter == 't') $ocr = 'sense';
 
       $allOcr = json_decode(file_get_contents('json/'.$ocr.'.json'));
       

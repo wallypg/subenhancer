@@ -9,9 +9,9 @@ class Debug {
   }
 
   public function ocrDebugger($getArray){
-    if( isset($getArray['filename']) && !empty($getArray['filename']) ) {
+    if( isset($getArray['file']) && !empty($getArray['file']) ) {
 
-      $file = 'srt/original/'.$getArray['filename'].'.srt';
+      $file = 'srt/original/'.$getArray['file'].'.srt';
       if(file_exists(utf8_decode($file))) {
           $handle = fopen(utf8_decode($file), "r");
           if ($handle) {

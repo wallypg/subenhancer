@@ -469,9 +469,10 @@ function downloadEnhancedSubtitle ($subtitle,$totalSequences,$filename) {
     foreach ($subtitle as $thisSegmentKey => $segment) {
         $sequenceString = $segment->sequence."\r\n";//sf
         $sequenceString .= formatMilliseconds($segment->startTimeInMilliseconds).' --> '.formatMilliseconds($segment->endTimeInMilliseconds)."\r\n";//sf
-        if(isset($segment->textLine1)) $sequenceString .= utf8_decode($segment->textLine1)."\r\n";//sf
-        if(isset($segment->textLine2)) $sequenceString .= utf8_decode($segment->textLine2)."\r\n";//sf
-        if(isset($segment->textLine3)) $sequenceString .= utf8_decode($segment->textLine3)."\r\n";//sf
+        if(isset($segment->textLine)) $sequenceString .= utf8_decode($segment->textLine)."\r\n";//oneliner
+        // if(isset($segment->textLine1)) $sequenceString .= utf8_decode($segment->textLine1)."\r\n";//sf//dual
+        // if(isset($segment->textLine2)) $sequenceString .= utf8_decode($segment->textLine2)."\r\n";//sf//dual
+        // if(isset($segment->textLine3)) $sequenceString .= utf8_decode($segment->textLine3)."\r\n";//sf//dual
         $sequenceString .= "\r\n";//sf
         $subtitleString .= $sequenceString;//sf
     }
@@ -491,9 +492,10 @@ function saveEnhancedSubtitle ($subtitle,$totalSequences,$filename) {
     foreach ($subtitle as $thisSegmentKey => $segment) {
         $sequenceString = $segment->sequence."\r\n";//sf
         $sequenceString .= formatMilliseconds($segment->startTimeInMilliseconds).' --> '.formatMilliseconds($segment->endTimeInMilliseconds)."\r\n";//sf
-        if(isset($segment->textLine1)) $sequenceString .= utf8_decode($segment->textLine1)."\r\n";//sf
-        if(isset($segment->textLine2)) $sequenceString .= utf8_decode($segment->textLine2)."\r\n";//sf
-        if(isset($segment->textLine3)) $sequenceString .= utf8_decode($segment->textLine3)."\r\n";//sf
+        if(isset($segment->textLine)) $sequenceString .= utf8_decode($segment->textLine)."\r\n";//oneliner
+        // if(isset($segment->textLine1)) $sequenceString .= utf8_decode($segment->textLine1)."\r\n";//sf//dual
+        // if(isset($segment->textLine2)) $sequenceString .= utf8_decode($segment->textLine2)."\r\n";//sf//dual
+        // if(isset($segment->textLine3)) $sequenceString .= utf8_decode($segment->textLine3)."\r\n";//sf//dual
         $sequenceString .= "\r\n";//sf
         $subtitleString .= $sequenceString;//sf
     }

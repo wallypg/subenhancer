@@ -19,6 +19,16 @@ $(document).ready(function(){
   //   });
 
 
+  $('.options-submenu').on('click',function(){
+    if($('.options-content').hasClass('collapsed')) {
+      $('.options-content').slideDown().removeClass('collapsed');
+      $(this).find('.fa').removeClass('fa-chevron-right').addClass('fa-chevron-down');
+    } else {
+      $('.options-content').slideUp().addClass('collapsed');
+      $(this).find('.fa').removeClass('fa-chevron-down').addClass('fa-chevron-right');
+    }
+  });
+
 
 
 

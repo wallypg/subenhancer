@@ -275,7 +275,34 @@
                 </div>
 
                 <hr class="divider">
+
+                <div class="row options-row">
+                  <div class="col-md-12 options-submenu"><span>OPCIONES</span><span></span>
+                  <span><i class="fa fa-chevron-right"></i></span>
+                  </div>
+
+                  <div class="col-md-12" style="color:#fff;">
+                  <div class="options-content collapsed" style="display:none;">
+                    <div class="row">
+                      <div class="col-md-3">
+                        <label class="switch">
+                          <input type="checkbox">
+                          <div class="slider round"></div>
+                        </label>
+                      </div>
+                      <div class="col-md-3">
+                        
+                        
+                      </div>
+                      <div class="col-md-3"></div>
+                      <div class="col-md-3"></div>
+                    </div>   
+                  </div>
+                  </div>
+                </div>
                 
+                <hr class="divider">
+
                 <div class="row">
                   <div class="col-xs-3 edit-fields">
                     <i class="fa fa-pencil fa-2" aria-hidden="true"></i>&nbsp;&nbsp;<a href="<?php echo base_url() ?>subenhancer/editor"><span class="hidden-xxs">Editar&nbsp;datos</span><span class="hidden-xs">&nbsp;guardados</span><span class="hidden show-xxs">Datos</span></a>
