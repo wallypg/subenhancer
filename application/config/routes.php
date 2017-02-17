@@ -57,6 +57,8 @@ $route['login'] = 'subtitlehub/index';
 $route['auth'] = 'subtitlehub/auth';
 $route['logout'] = 'subtitlehub/logout';
 $route['test'] = 'subtitlehub/test';
+$route['subextractor'] = 'subtitlehub/subextractor';
+$route['uploadLog'] = 'subtitlehub/uploadLog';
 
 $route['editor'] = 'subenhancer/editor';
 $route['editor/log'] = 'subenhancer/editor/log';

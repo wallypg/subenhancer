@@ -9,6 +9,8 @@ class Subenhancer extends CI_Controller {
 
 		if(!isset($_SESSION['isLoggedIn']) || !$_SESSION['isLoggedIn']) redirect(base_url().'?goto='.urlencode($this->uri->uri_string));
 
+		if($_SESSION['user'] != 'subadictos') redirect(base_url().'subextractor');
+
 		$this->load->library('folder');
 		$this->folder->setFolder('subenhancer');
 

@@ -35,7 +35,7 @@ class Subtitlehub extends CI_Controller {
 		  			$users = json_decode(file_get_contents('json/users.json'));
 		  			foreach ($users as $user) {
 		  				if($user->username == $postArray['username'] && password_verify($postArray['password'],$user->hash)) {
-		  					$this->session->set_userdata( array('isLoggedIn'=>true) );
+		  					$this->session->set_userdata( array('isLoggedIn' => true, 'user' => $user->username) );
 		  					echo 'true';
 		  					die();
 		  				}
@@ -55,6 +55,8 @@ class Subtitlehub extends CI_Controller {
 	}
 
 	public function test() {
+		print_r(password_hash('oneMoreSub',PASSWORD_BCRYPT));
+		die();
 		$text = "Resulta\nque lo puedes freír cualquier cosa.";
 		// $pattern = "/(?:.{1,10}\n)(?:a|ante|bajo|con|de|desde|durante|en|entre|excepto|hacia|hasta|mediante|para|por|según|sin|sobre|tras|o|pero|porque|y|que|cuando|suficientemente|tan|tanto|mucho|mucha|muchos|muchas|al|ya|el|la|lo|las|los|un|una|unas|nos|les|me|te|se|del|mi|mis|sus|su|tu|tus|esa|ese|esas|esos|iba|ni|no|es|están|sea|será|has|ho|han|he|hemos|habías|había|habían|habíamos)(?:\s(?:a|ante|bajo|con|de|desde|durante|en|entre|excepto|hacia|hasta|mediante|para|por|según|sin|sobre|tras|o|pero|porque|y|que|cuando|suficientemente|tan|tanto|mucho|mucha|muchos|muchas|al|ya|el|la|lo|las|los|un|una|unas|nos|les|me|te|se|del|mi|mis|sus|su|tu|tus|esa|ese|esas|esos|iba|ni|no|es|están|sea|será|has|ho|han|he|hemos|habías|había|habían|habíamos))?(?:\s.{2,15}?)(\s)(?:.{20,40})/";
 		$pattern = "/(.{1,10}\n(?:a|ante|bajo|con|de|desde|durante|en|entre|excepto|hacia|hasta|mediante|para|por|según|sin|sobre|tras|o|pero|porque|y|que|cuando|suficientemente|tan|tanto|mucho|mucha|muchos|muchas|al|ya|el|la|lo|las|los|un|una|unas|nos|les|me|te|se|del|mi|mis|sus|su|tu|tus|esa|ese|esas|esos|iba|ni|no|es|están|sea|será|has|ho|han|he|hemos|habías|había|habían|habíamos)(?:\s(?:a|ante|bajo|con|de|desde|durante|en|entre|excepto|hacia|hasta|mediante|para|por|según|sin|sobre|tras|o|pero|porque|y|que|cuando|suficientemente|tan|tanto|mucho|mucha|muchos|muchas|al|ya|el|la|lo|las|los|un|una|unas|nos|les|me|te|se|del|mi|mis|sus|su|tu|tus|esa|ese|esas|esos|iba|ni|no|es|están|sea|será|has|ho|han|he|hemos|habías|había|habían|habíamos))?\s.{2,15}?)(\s)(.{20,40})/";
@@ -79,5 +81,10 @@ class Subtitlehub extends CI_Controller {
 
 		// $this->ocr->ocrCheck()
 	}
+
+	public function subextractor() {
+		$this->load->view('subextractor');
+	}
+
 }
 ?>
