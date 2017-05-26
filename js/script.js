@@ -1,4 +1,115 @@
 $(document).ready(function(){
+
+  document.onkeydown = checkKey;
+
+  
+
+  var substringMatcher = function(strs) {
+    return function findMatches(q, cb) {
+      // if(q=='') q = '/./';
+      // console.log(q);
+      var matches, substringRegex;
+
+      // an array that will be populated with substring matches
+      matches = [];
+
+      // regex used to determine if a string contains the substring `q`
+      substrRegex = new RegExp(q, 'i');
+
+      // iterate through the pool of strings and for any string that
+      // contains the substring `q`, add it to the `matches` array
+      $.each(strs, function(i, str) {
+        if (substrRegex.test(str)) {
+          matches.push(str);
+        }
+      });
+
+      cb(matches);
+    };
+  };
+
+  
+  $('#tvshow-suggest .typeahead').typeahead({
+    hint: true,
+    highlight: true,
+    limit: 10
+  },
+  {
+    name: 'tv_show_array',
+    source: substringMatcher(tv_show_array)
+  });
+
+  $('#codec-suggest .typeahead').typeahead({
+    hint: true,
+    highlight: true,
+    limit: 10
+  },
+  {
+    name: 'codec_array',
+    source: substringMatcher(codec_array)
+  });
+
+  $('#format-suggest .typeahead').typeahead({
+    hint: true,
+    highlight: true,
+    limit: 10
+  },
+  {
+    name: 'format_array',
+    source: substringMatcher(format_array)
+  });
+
+  $('#quality-suggest .typeahead').typeahead({
+    hint: true,
+    highlight: true,
+    limit: 10
+  },
+  {
+    name: 'quality_array',
+    source: substringMatcher(quality_array)
+  });
+
+  $('#ripgroup-suggest .typeahead').typeahead({
+    hint: true,
+    highlight: true,
+    limit: 10
+  },
+  {
+    name: 'rip_group_array',
+    source: substringMatcher(rip_group_array)
+  });
+
+  $('#other-suggest .typeahead').typeahead({
+    hint: true,
+    highlight: true,
+    limit: 10
+  },
+  {
+    name: 'other_array',
+    source: substringMatcher(other_array)
+  });
+
+  $('#task-suggest .typeahead').typeahead({
+    hint: true,
+    highlight: true,
+    limit: 10
+  },
+  {
+    name: 'task_array',
+    source: substringMatcher(task_array)
+  });
+
+  // $('#subtitler-suggest .typeahead').typeahead({
+  //   hint: true,
+  //   highlight: true,
+  //   limit: 10
+  // },
+  // {
+  //   name: 'subtitler_array',
+  //   source: substringMatcher(subtitler_array)
+  // });
+
+
   // $('#myModal').modal('show');
 
   // $(".nano").nanoScroller();
@@ -158,6 +269,10 @@ $(document).ready(function(){
     $('#episode_title').val(title);
     if(title.search(/^S\d{2}E/i) == 0) $('.title-info').addClass('flashing');
     else $('.title-info').removeClass('flashing');
+
+    $('input.typeahead.tt-input').each(function(){
+      $(this).typeahead('val', $(this).val());
+    });
   });
 
   $('#enhance').submit(function(event) {
@@ -211,8 +326,8 @@ $(document).ready(function(){
                   format: $('[name="format"]').val(),
                   codec: $('[name="codec"]').val(),
                   rip_group: $('[name="rip_group"]').val(),
-                  editor: $('[name="editor"]').val(),
-                  translation: $('[name="translation"]').val(),
+                  task: $('[name="task"]').val(),
+                  subtitler: $('[name="subtitler"]').val(),
                   srtContent: evt.target.result
                 }
               }).done(function(data){
@@ -254,8 +369,8 @@ $(document).ready(function(){
             format: $('[name="format"]').val(),
             codec: $('[name="codec"]').val(),
             rip_group: $('[name="rip_group"]').val(),
-            editor: $('[name="editor"]').val(),
-            translation: $('[name="translation"]').val()
+            task: $('[name="task"]').val(),
+            subtitler: $('[name="subtitler"]').val()
           }
         }).done(function(data){
           var data = $.parseJSON(data);
@@ -277,7 +392,7 @@ $(document).ready(function(){
       }
 
       $('.download-btn').on('click',function(){
-        window.location = baseUrl+'subenhancer/download?file='+$('#finalFileName').attr('data-temp-name')+'&name='+$('#finalFileName').val();
+        window.location = baseUrl+'subenhancer/download?file='+$('#finalFileName').attr('data-temp-name')+'&name='+encodeURIComponent($('#finalFileName').val());
       });
 
     }
@@ -302,6 +417,15 @@ $(document).ready(function(){
       });
   });
 
+  $('i.fa-info-circle.info-subtitler').on('click',function(){
+    $.alert({
+          animation: 'top',
+          title: 'Nuevos subtituladores',
+          content: 'Para agregar subtituladores que no se encuentren en la lista, escribir el nombre y oprimir "tab" para crear la&nbsp;etiqueta.',
+          backgroundDismiss: true
+      });
+  });
+
   $('i.fa-info-circle.title-info').on('click',function(){
     $.alert({
           animation: 'top',
@@ -311,8 +435,9 @@ $(document).ready(function(){
       });
   });
 
-  $('li.dropdown-item').on('click',function(){
-    console.log($(this).parent().parent().attr('data-list'));
+  $(document).on('click','li.dropdown-item',function(){
+    // console.log($(this).parent().parent().attr('data-list'));
+    // console.log($('#'+$(this).parent().parent().attr('data-list')));
     $('#'+$(this).parent().parent().attr('data-list')).val($(this).html());
   });
 
@@ -401,3 +526,120 @@ function alreadyEnhanced(){
       backgroundDismiss: true
   });
 }
+
+
+function checkKey(e) {
+    var active = $(':focus');
+    var dropdown = $(active).parent().next();
+    var ulScroll = dropdown.find('ul');
+    // console.log(dropdown);
+    // var divScroll = dropdown.find('div.content-scrollable');
+
+    e = e || window.event;
+
+    if (e.keyCode == '38') {
+        // up arrow
+        if($(active).hasClass('typeahead')){
+          console.log('a');
+           // $(active).parent().closest('.input-group-btn').addClass('open');            
+
+          if(dropdown.hasClass('open')) {
+            console.log('a1');
+            if(dropdown.find('li.dropdown-selection').prev('li').length) {
+              console.log('a2');
+              dropdown.find('li.dropdown-selection').removeClass('dropdown-selection').prev('li').addClass('dropdown-selection'); 
+              // ulScroll.scrollTop(dropdown.find('li.dropdown-selection').index() * dropdown.find('li.dropdown-selection').outerHeight());
+            }
+          }
+        } else if($('.input-group-btn.open').length) {
+          console.log('a3');
+          dropdown = $('.input-group-btn.open');
+          ulScroll = dropdown.find('ul');
+          if(dropdown.find('.dropdown-selection').length){
+            console.log('a4');
+            if(dropdown.find('li.dropdown-selection').prev('li').length) {
+              console.log('a5');
+              dropdown.find('li.dropdown-selection').removeClass('dropdown-selection').prev('li').addClass('dropdown-selection'); 
+              ulScroll.scrollTop(dropdown.find('li.dropdown-selection').index() * dropdown.find('li.dropdown-selection').outerHeight());
+            }
+          }
+        }
+    }
+    else if (e.keyCode == '40') {
+        // down arrow
+        if($(active).hasClass('typeahead') && $(active).val()==''){
+          console.log('b');
+           // $(active).parent().closest('.input-group-btn').addClass('open');            
+
+          if(dropdown.hasClass('open')) {
+            console.log('b1');
+            if(dropdown.find('li.dropdown-selection').next('li').length) {
+              console.log('b2');
+              dropdown.find('li.dropdown-selection').removeClass('dropdown-selection').next('li').addClass('dropdown-selection'); 
+              // ulScroll.scrollTop(dropdown.find('li.dropdown-selection').index() * dropdown.find('li.dropdown-selection').outerHeight());
+            }
+          } else {
+            console.log('b3');
+           // dropdown.addClass('open').find('button.dropdown-toggle').attr('aria-expanded','true');
+           dropdown.find('.btn.dropdown-toggle').dropdown('toggle');
+           dropdown.find('li:first').addClass('dropdown-selection');
+           console.log(ulScroll);
+           ulScroll.scrollTop(0);
+
+          }
+        } else if($('.input-group-btn.open').length) {
+          console.log('b4');
+          dropdown = $('.input-group-btn.open');
+          ulScroll = dropdown.find('ul');
+          if(dropdown.find('.dropdown-selection').length){
+            console.log('b5');
+            if(dropdown.find('li.dropdown-selection').next('li').length) {
+              console.log('b6');
+              dropdown.find('li.dropdown-selection').removeClass('dropdown-selection').next('li').addClass('dropdown-selection'); 
+              ulScroll.scrollTop(dropdown.find('li.dropdown-selection').index() * dropdown.find('li.dropdown-selection').outerHeight());
+            }
+          } else {
+            console.log('b7');
+            dropdown.find('li:first').addClass('dropdown-selection');
+            ulScroll.scrollTop(0);
+          }
+        }
+    }
+    else if (e.keyCode == '13') {
+        // enter
+        e.preventDefault();
+        // active.val($('.dropdown-selection').text());
+        // ABRIR DROPDOWN Y VICEVERSA (suggestions)
+        // HOVER BORRA dropdown-selection y viceversa
+        $('.input-group-btn.open').prev().find('.typeahead').typeahead('val', $('.dropdown-selection').text());
+        // disparar evento close dropdown
+        // $('.input-group-btn.open').removeClass('open').find('button.dropdown-toggle').attr('aria-expanded','false');
+        console.log(dropdown);
+        // console.log(dropdown.find('.btn.dropdown-toggle'));
+        $('.input-group-btn.open').find('.btn.dropdown-toggle').dropdown('toggle');
+
+    }
+    else if (e.keyCode == '27') {
+      // escape
+      // $('.input-group-btn.open').removeClass('open').find('button.dropdown-toggle').attr('aria-expanded','false');
+      dropdown.find('.btn.dropdown-toggle').dropdown('toggle');
+      // $('.input-group-btn.open').parent().hide();
+    }
+}
+
+
+$(document).ready(function(){
+  
+  $('html').on('hide.bs.dropdown', function() {
+    console.log($('input.typeahead.tt-input').val());
+    $('input.typeahead.tt-input').each(function(){
+      $(this).typeahead('val', $(this).val());
+    });
+    // typeahead('val', $(this).val());
+    // console.log($('input.typeahead.tt-input'));
+    // typeahead('val', $(this).val());
+    $('.dropdown-selection').removeClass('dropdown-selection');
+  });
+
+
+});

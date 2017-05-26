@@ -1,0 +1,2815 @@
+{
+    "regex": [
+        {
+            "find": "\\b(Escucha,\\s|Mira,\\s)a",
+            "replace": "A",
+            "tags": []
+        },
+        {
+            "find": "\\b(Escucha,\\s|Mira,\\s)b",
+            "replace": "B",
+            "tags": []
+        },
+        {
+            "find": "\\b(Escucha,\\s|Mira,\\s)c",
+            "replace": "C",
+            "tags": []
+        },
+        {
+            "find": "\\b(Escucha,\\s|Mira,\\s)d",
+            "replace": "D",
+            "tags": []
+        },
+        {
+            "find": "\\b(Escucha,\\s|Mira,\\s)e",
+            "replace": "E",
+            "tags": []
+        },
+        {
+            "find": "\\b(Escucha,\\s|Mira,\\s)f",
+            "replace": "F",
+            "tags": []
+        },
+        {
+            "find": "\\b(Escucha,\\s|Mira,\\s)g",
+            "replace": "G",
+            "tags": []
+        },
+        {
+            "find": "\\b(Escucha,\\s|Mira,\\s)h",
+            "replace": "H",
+            "tags": []
+        },
+        {
+            "find": "\\b(Escucha,\\s|Mira,\\s)i",
+            "replace": "I",
+            "tags": []
+        },
+        {
+            "find": "\\b(Escucha,\\s|Mira,\\s)j",
+            "replace": "J",
+            "tags": []
+        },
+        {
+            "find": "\\b(Escucha,\\s|Mira,\\s)k",
+            "replace": "K",
+            "tags": []
+        },
+        {
+            "find": "\\b(Escucha,\\s|Mira,\\s)l",
+            "replace": "L",
+            "tags": []
+        },
+        {
+            "find": "\\b(Escucha,\\s|Mira,\\s)m",
+            "replace": "M",
+            "tags": []
+        },
+        {
+            "find": "\\b(Escucha,\\s|Mira,\\s)n",
+            "replace": "N",
+            "tags": []
+        },
+        {
+            "find": "\\b(Escucha,\\s|Mira,\\s)o",
+            "replace": "O",
+            "tags": []
+        },
+        {
+            "find": "\\b(Escucha,\\s|Mira,\\s)p",
+            "replace": "P",
+            "tags": []
+        },
+        {
+            "find": "\\b(Escucha,\\s|Mira,\\s)q",
+            "replace": "Q",
+            "tags": []
+        },
+        {
+            "find": "\\b(Escucha,\\s|Mira,\\s)r",
+            "replace": "R",
+            "tags": []
+        },
+        {
+            "find": "\\b(Escucha,\\s|Mira,\\s)s",
+            "replace": "S",
+            "tags": []
+        },
+        {
+            "find": "\\b(Escucha,\\s|Mira,\\s)t",
+            "replace": "T",
+            "tags": []
+        },
+        {
+            "find": "\\b(Escucha,\\s|Mira,\\s)u",
+            "replace": "U",
+            "tags": []
+        },
+        {
+            "find": "\\b(Escucha,\\s|Mira,\\s)v",
+            "replace": "V",
+            "tags": []
+        },
+        {
+            "find": "\\b(Escucha,\\s|Mira,\\s)w",
+            "replace": "W",
+            "tags": []
+        },
+        {
+            "find": "\\b(Escucha,\\s|Mira,\\s)x",
+            "replace": "X",
+            "tags": []
+        },
+        {
+            "find": "\\b(Escucha,\\s|Mira,\\s)y",
+            "replace": "Y",
+            "tags": []
+        },
+        {
+            "find": "\\b(Escucha,\\s|Mira,\\s)z",
+            "replace": "Z",
+            "tags": []
+        },
+        {
+            "find": "\\b(Escucha,\\s|Mira,\\s)á",
+            "replace": "Á",
+            "tags": []
+        },
+        {
+            "find": "\\b(Escucha,\\s|Mira,\\s)é",
+            "replace": "É",
+            "tags": []
+        },
+        {
+            "find": "\\b(Escucha,\\s|Mira,\\s)í",
+            "replace": "Í",
+            "tags": []
+        },
+        {
+            "find": "\\b(Escucha,\\s|Mira,\\s)ó",
+            "replace": "Ó",
+            "tags": []
+        },
+        {
+            "find": "\\b(Escucha,\\s|Mira,\\s)ú",
+            "replace": "Ú",
+            "tags": []
+        },
+        {
+            "find": "\\b(Escucha,\\s|Mira,\\s)ñ",
+            "replace": "Ñ",
+            "tags": []
+        },
+        {
+            "find": "([a|á]seis)",
+            "replace": "asen",
+            "tags": []
+        },
+        {
+            "find": "([a|á]rais)",
+            "replace": "aran",
+            "tags": []
+        },
+        {
+            "find": "([a|á]reis)",
+            "replace": "aren",
+            "tags": []
+        },
+        {
+            "find": "([e|é]seis)",
+            "replace": "esen",
+            "tags": []
+        },
+        {
+            "find": "([e|é]rais)",
+            "replace": "eran",
+            "tags": []
+        },
+        {
+            "find": "([e|é]reis)",
+            "replace": "eren",
+            "tags": []
+        },
+        {
+            "find": "([a|á]bais)",
+            "replace": "aban",
+            "tags": []
+        },
+        {
+            "find": "([i|í]ais)",
+            "replace": "ían",
+            "tags": []
+        },
+        {
+            "find": "(r[e|é]is)",
+            "replace": "rán",
+            "tags": []
+        },
+        {
+            "find": "\\b(Escucha\\.\\s|Mira\\.\\s)[A-ZÁ-Ú]",
+            "replace": "",
+            "tags": []
+        },
+        {
+            "find": "\\b(Escucha,\\s|Mira,\\s)[A-ZÁ-Ú]",
+            "replace": "",
+            "tags": []
+        },
+        {
+            "find": "\\b(Bien,\\s|Oye,\\s|Quiero\\sdecir,\\s|Es\\sdecir,\\s|Ah,\\s|Eh,\\s|Oh,\\s|Ok,\\s|Okey,\\s|Ey,\\s|Oye,\\s|Vale,\\s|Bueno,\\s|Está\\sbien,\\s|Esta\\sbien,\\s|Venga(\\sya)?,\\s|De\\sacuerdo,\\s|Ya\\ssabes,\\s)¿",
+            "replace": "¿",
+            "tags": []
+        },
+        {
+            "find": "\\b(Bien,\\s|Oye,\\s|Quiero\\sdecir,\\s|Es\\sdecir,\\s|Ah,\\s|Eh,\\s|Oh,\\s|Ok,\\s|Okey,\\s|Ey,\\s|Oye,\\s|Vale,\\s|Bueno,\\s|Está\\sbien,\\s|Esta\\sbien,\\s|Venga(\\sya)?,\\s|De\\sacuerdo,\\s|Ya\\ssabes,\\s)¡",
+            "replace": "¡",
+            "tags": []
+        }
+    ],
+    "string": [
+        {
+            "find": "voy a beber",
+            "replace": "beberé",
+            "preserveCase": true,
+            "caseSensitive": false,
+            "wholeWord": true,
+            "tags": []
+        },
+        {
+            "find": "vas a beber",
+            "replace": "beberás",
+            "preserveCase": true,
+            "caseSensitive": false,
+            "wholeWord": true,
+            "tags": []
+        },
+        {
+            "find": "va a beber",
+            "replace": "beberá",
+            "preserveCase": true,
+            "caseSensitive": false,
+            "wholeWord": true,
+            "tags": []
+        },
+        {
+            "find": "vamos a beber",
+            "replace": "beberemos",
+            "preserveCase": true,
+            "caseSensitive": false,
+            "wholeWord": true,
+            "tags": []
+        },
+        {
+            "find": "vais a beber",
+            "replace": "beberán",
+            "preserveCase": true,
+            "caseSensitive": false,
+            "wholeWord": true,
+            "tags": []
+        },
+        {
+            "find": "van a beber",
+            "replace": "beberán",
+            "preserveCase": true,
+            "caseSensitive": false,
+            "wholeWord": true,
+            "tags": []
+        },
+        {
+            "find": "voy a abrir",
+            "replace": "abriré",
+            "preserveCase": true,
+            "caseSensitive": false,
+            "wholeWord": true,
+            "tags": []
+        },
+        {
+            "find": "vas a abrir",
+            "replace": "abrirás",
+            "preserveCase": true,
+            "caseSensitive": false,
+            "wholeWord": true,
+            "tags": []
+        },
+        {
+            "find": "va a abrir",
+            "replace": "abrirá",
+            "preserveCase": true,
+            "caseSensitive": false,
+            "wholeWord": true,
+            "tags": []
+        },
+        {
+            "find": "vamos a abrir",
+            "replace": "abriremos",
+            "preserveCase": true,
+            "caseSensitive": false,
+            "wholeWord": true,
+            "tags": []
+        },
+        {
+            "find": "vais a abrir",
+            "replace": "abrirán",
+            "preserveCase": true,
+            "caseSensitive": false,
+            "wholeWord": true,
+            "tags": []
+        },
+        {
+            "find": "van a abrir",
+            "replace": "abrirán",
+            "preserveCase": true,
+            "caseSensitive": false,
+            "wholeWord": true,
+            "tags": []
+        },
+        {
+            "find": "voy a comer",
+            "replace": "comeré",
+            "preserveCase": true,
+            "caseSensitive": false,
+            "wholeWord": true,
+            "tags": []
+        },
+        {
+            "find": "vas a comer",
+            "replace": "comerás",
+            "preserveCase": true,
+            "caseSensitive": false,
+            "wholeWord": true,
+            "tags": []
+        },
+        {
+            "find": "va a comer",
+            "replace": "comerá",
+            "preserveCase": true,
+            "caseSensitive": false,
+            "wholeWord": true,
+            "tags": []
+        },
+        {
+            "find": "vamos a comer",
+            "replace": "comeremos",
+            "preserveCase": true,
+            "caseSensitive": false,
+            "wholeWord": true,
+            "tags": []
+        },
+        {
+            "find": "vais a comer",
+            "replace": "comerán",
+            "preserveCase": true,
+            "caseSensitive": false,
+            "wholeWord": true,
+            "tags": []
+        },
+        {
+            "find": "van a comer",
+            "replace": "comerán",
+            "preserveCase": true,
+            "caseSensitive": false,
+            "wholeWord": true,
+            "tags": []
+        },
+        {
+            "find": "voy a caminar",
+            "replace": "caminaré",
+            "preserveCase": true,
+            "caseSensitive": false,
+            "wholeWord": true,
+            "tags": []
+        },
+        {
+            "find": "vas a caminar",
+            "replace": "caminarás",
+            "preserveCase": true,
+            "caseSensitive": false,
+            "wholeWord": true,
+            "tags": []
+        },
+        {
+            "find": "va a caminar",
+            "replace": "caminará",
+            "preserveCase": true,
+            "caseSensitive": false,
+            "wholeWord": true,
+            "tags": []
+        },
+        {
+            "find": "vamos a caminar",
+            "replace": "caminaremos",
+            "preserveCase": true,
+            "caseSensitive": false,
+            "wholeWord": true,
+            "tags": []
+        },
+        {
+            "find": "vais a caminar",
+            "replace": "caminarán",
+            "preserveCase": true,
+            "caseSensitive": false,
+            "wholeWord": true,
+            "tags": []
+        },
+        {
+            "find": "van a caminar",
+            "replace": "caminarán",
+            "preserveCase": true,
+            "caseSensitive": false,
+            "wholeWord": true,
+            "tags": []
+        },
+        {
+            "find": "voy a hacer",
+            "replace": "haré",
+            "preserveCase": true,
+            "caseSensitive": false,
+            "wholeWord": true,
+            "tags": []
+        },
+        {
+            "find": "vas a hacer",
+            "replace": "harás",
+            "preserveCase": true,
+            "caseSensitive": false,
+            "wholeWord": true,
+            "tags": []
+        },
+        {
+            "find": "va a hacer",
+            "replace": "hará",
+            "preserveCase": true,
+            "caseSensitive": false,
+            "wholeWord": true,
+            "tags": []
+        },
+        {
+            "find": "vamos a hacer",
+            "replace": "haremos",
+            "preserveCase": true,
+            "caseSensitive": false,
+            "wholeWord": true,
+            "tags": []
+        },
+        {
+            "find": "vais a hacer",
+            "replace": "haremos",
+            "preserveCase": true,
+            "caseSensitive": false,
+            "wholeWord": true,
+            "tags": []
+        },
+        {
+            "find": "van a hacer",
+            "replace": "harán",
+            "preserveCase": true,
+            "caseSensitive": false,
+            "wholeWord": true,
+            "tags": []
+        },
+        {
+            "find": "voy a ser",
+            "replace": "seré",
+            "preserveCase": true,
+            "caseSensitive": false,
+            "wholeWord": true,
+            "tags": []
+        },
+        {
+            "find": "vas a ser",
+            "replace": "serás",
+            "preserveCase": true,
+            "caseSensitive": false,
+            "wholeWord": true,
+            "tags": []
+        },
+        {
+            "find": "va a ser",
+            "replace": "será",
+            "preserveCase": true,
+            "caseSensitive": false,
+            "wholeWord": true,
+            "tags": []
+        },
+        {
+            "find": "vamos a ser",
+            "replace": "seremos",
+            "preserveCase": true,
+            "caseSensitive": false,
+            "wholeWord": true,
+            "tags": []
+        },
+        {
+            "find": "vais a ser",
+            "replace": "seremos",
+            "preserveCase": true,
+            "caseSensitive": false,
+            "wholeWord": true,
+            "tags": []
+        },
+        {
+            "find": "van a ser",
+            "replace": "serán",
+            "preserveCase": true,
+            "caseSensitive": false,
+            "wholeWord": true,
+            "tags": []
+        },
+        {
+            "find": "voy a tener",
+            "replace": "tendré",
+            "preserveCase": true,
+            "caseSensitive": false,
+            "wholeWord": true,
+            "tags": []
+        },
+        {
+            "find": "vas a tener",
+            "replace": "tendrás",
+            "preserveCase": true,
+            "caseSensitive": false,
+            "wholeWord": true,
+            "tags": []
+        },
+        {
+            "find": "va a tener",
+            "replace": "tendrá",
+            "preserveCase": true,
+            "caseSensitive": false,
+            "wholeWord": true,
+            "tags": []
+        },
+        {
+            "find": "vamos a tener",
+            "replace": "tendremos",
+            "preserveCase": true,
+            "caseSensitive": false,
+            "wholeWord": true,
+            "tags": []
+        },
+        {
+            "find": "vais a tener",
+            "replace": "tendremos",
+            "preserveCase": true,
+            "caseSensitive": false,
+            "wholeWord": true,
+            "tags": []
+        },
+        {
+            "find": "van a tener",
+            "replace": "tendrán",
+            "preserveCase": true,
+            "caseSensitive": false,
+            "wholeWord": true,
+            "tags": []
+        },
+        {
+            "find": "voy a ver",
+            "replace": "veré",
+            "preserveCase": true,
+            "caseSensitive": false,
+            "wholeWord": true,
+            "tags": []
+        },
+        {
+            "find": "vas a ver",
+            "replace": "verás",
+            "preserveCase": true,
+            "caseSensitive": false,
+            "wholeWord": true,
+            "tags": []
+        },
+        {
+            "find": "va a ver",
+            "replace": "verá",
+            "preserveCase": true,
+            "caseSensitive": false,
+            "wholeWord": true,
+            "tags": []
+        },
+        {
+            "find": "vamos a ver",
+            "replace": "veremos",
+            "preserveCase": true,
+            "caseSensitive": false,
+            "wholeWord": true,
+            "tags": []
+        },
+        {
+            "find": "vais a ver",
+            "replace": "verán",
+            "preserveCase": true,
+            "caseSensitive": false,
+            "wholeWord": true,
+            "tags": []
+        },
+        {
+            "find": "van a ver",
+            "replace": "verán",
+            "preserveCase": true,
+            "caseSensitive": false,
+            "wholeWord": true,
+            "tags": []
+        },
+        {
+            "find": "voy a hablar",
+            "replace": "hablaré",
+            "preserveCase": true,
+            "caseSensitive": false,
+            "wholeWord": true,
+            "tags": []
+        },
+        {
+            "find": "vas a hablar",
+            "replace": "hablarás",
+            "preserveCase": true,
+            "caseSensitive": false,
+            "wholeWord": true,
+            "tags": []
+        },
+        {
+            "find": "va a hablar",
+            "replace": "hablará",
+            "preserveCase": true,
+            "caseSensitive": false,
+            "wholeWord": true,
+            "tags": []
+        },
+        {
+            "find": "vamos a hablar",
+            "replace": "hablaremos",
+            "preserveCase": true,
+            "caseSensitive": false,
+            "wholeWord": true,
+            "tags": []
+        },
+        {
+            "find": "vais a hablar",
+            "replace": "hablarán",
+            "preserveCase": true,
+            "caseSensitive": false,
+            "wholeWord": true,
+            "tags": []
+        },
+        {
+            "find": "van a hablar",
+            "replace": "hablarán",
+            "preserveCase": true,
+            "caseSensitive": false,
+            "wholeWord": true,
+            "tags": []
+        },
+        {
+            "find": "voy a vivir",
+            "replace": "viviré",
+            "preserveCase": true,
+            "caseSensitive": false,
+            "wholeWord": true,
+            "tags": []
+        },
+        {
+            "find": "vas a vivir",
+            "replace": "vivirás",
+            "preserveCase": true,
+            "caseSensitive": false,
+            "wholeWord": true,
+            "tags": []
+        },
+        {
+            "find": "va a vivir",
+            "replace": "vivirá",
+            "preserveCase": true,
+            "caseSensitive": false,
+            "wholeWord": true,
+            "tags": []
+        },
+        {
+            "find": "vamos a vivir",
+            "replace": "viviremos",
+            "preserveCase": true,
+            "caseSensitive": false,
+            "wholeWord": true,
+            "tags": []
+        },
+        {
+            "find": "vais a vivir",
+            "replace": "vivirán",
+            "preserveCase": true,
+            "caseSensitive": false,
+            "wholeWord": true,
+            "tags": []
+        },
+        {
+            "find": "van a vivir",
+            "replace": "vivirán",
+            "preserveCase": true,
+            "caseSensitive": false,
+            "wholeWord": true,
+            "tags": []
+        },
+        {
+            "find": "voy a estar",
+            "replace": "estaré",
+            "preserveCase": true,
+            "caseSensitive": false,
+            "wholeWord": true,
+            "tags": []
+        },
+        {
+            "find": "vas a estar",
+            "replace": "estarás",
+            "preserveCase": true,
+            "caseSensitive": false,
+            "wholeWord": true,
+            "tags": []
+        },
+        {
+            "find": "va a estar",
+            "replace": "estará",
+            "preserveCase": true,
+            "caseSensitive": false,
+            "wholeWord": true,
+            "tags": []
+        },
+        {
+            "find": "vamos a estar",
+            "replace": "estaremos",
+            "preserveCase": true,
+            "caseSensitive": false,
+            "wholeWord": true,
+            "tags": []
+        },
+        {
+            "find": "vais a estar",
+            "replace": "estarán",
+            "preserveCase": true,
+            "caseSensitive": false,
+            "wholeWord": true,
+            "tags": []
+        },
+        {
+            "find": "van a estar",
+            "replace": "estarán",
+            "preserveCase": true,
+            "caseSensitive": false,
+            "wholeWord": true,
+            "tags": []
+        },
+        {
+            "find": "voy a poner",
+            "replace": "pondré",
+            "preserveCase": true,
+            "caseSensitive": false,
+            "wholeWord": true,
+            "tags": []
+        },
+        {
+            "find": "vas a poner",
+            "replace": "pondrás",
+            "preserveCase": true,
+            "caseSensitive": false,
+            "wholeWord": true,
+            "tags": []
+        },
+        {
+            "find": "va a poner",
+            "replace": "pondrá",
+            "preserveCase": true,
+            "caseSensitive": false,
+            "wholeWord": true,
+            "tags": []
+        },
+        {
+            "find": "vamos a poner",
+            "replace": "pondremos",
+            "preserveCase": true,
+            "caseSensitive": false,
+            "wholeWord": true,
+            "tags": []
+        },
+        {
+            "find": "vais a poner",
+            "replace": "pondrán",
+            "preserveCase": true,
+            "caseSensitive": false,
+            "wholeWord": true,
+            "tags": []
+        },
+        {
+            "find": "van a poner",
+            "replace": "pondrán",
+            "preserveCase": true,
+            "caseSensitive": false,
+            "wholeWord": true,
+            "tags": []
+        },
+        {
+            "find": "voy a tomar",
+            "replace": "tomaré",
+            "preserveCase": true,
+            "caseSensitive": false,
+            "wholeWord": true,
+            "tags": []
+        },
+        {
+            "find": "vas a tomar",
+            "replace": "tomarás",
+            "preserveCase": true,
+            "caseSensitive": false,
+            "wholeWord": true,
+            "tags": []
+        },
+        {
+            "find": "va a tomar",
+            "replace": "tomará",
+            "preserveCase": true,
+            "caseSensitive": false,
+            "wholeWord": true,
+            "tags": []
+        },
+        {
+            "find": "vamos a tomar",
+            "replace": "tomaremos",
+            "preserveCase": true,
+            "caseSensitive": false,
+            "wholeWord": true,
+            "tags": []
+        },
+        {
+            "find": "vais a tomar",
+            "replace": "tomarán",
+            "preserveCase": true,
+            "caseSensitive": false,
+            "wholeWord": true,
+            "tags": []
+        },
+        {
+            "find": "van a tomar",
+            "replace": "tomarán",
+            "preserveCase": true,
+            "caseSensitive": false,
+            "wholeWord": true,
+            "tags": []
+        },
+        {
+            "find": "voy a dar",
+            "replace": "daré",
+            "preserveCase": true,
+            "caseSensitive": false,
+            "wholeWord": true,
+            "tags": []
+        },
+        {
+            "find": "vas a dar",
+            "replace": "darás",
+            "preserveCase": true,
+            "caseSensitive": false,
+            "wholeWord": true,
+            "tags": []
+        },
+        {
+            "find": "va a dar",
+            "replace": "dará",
+            "preserveCase": true,
+            "caseSensitive": false,
+            "wholeWord": true,
+            "tags": []
+        },
+        {
+            "find": "vamos a dar",
+            "replace": "daremos",
+            "preserveCase": true,
+            "caseSensitive": false,
+            "wholeWord": true,
+            "tags": []
+        },
+        {
+            "find": "vais a dar",
+            "replace": "darán",
+            "preserveCase": true,
+            "caseSensitive": false,
+            "wholeWord": true,
+            "tags": []
+        },
+        {
+            "find": "van a dar",
+            "replace": "darán",
+            "preserveCase": true,
+            "caseSensitive": false,
+            "wholeWord": true,
+            "tags": []
+        },
+        {
+            "find": "voy a ir",
+            "replace": "iré",
+            "preserveCase": true,
+            "caseSensitive": false,
+            "wholeWord": true,
+            "tags": []
+        },
+        {
+            "find": "vas a ir",
+            "replace": "irás",
+            "preserveCase": true,
+            "caseSensitive": false,
+            "wholeWord": true,
+            "tags": []
+        },
+        {
+            "find": "va a ir",
+            "replace": "irá",
+            "preserveCase": true,
+            "caseSensitive": false,
+            "wholeWord": true,
+            "tags": []
+        },
+        {
+            "find": "vamos a ir",
+            "replace": "iremos",
+            "preserveCase": true,
+            "caseSensitive": false,
+            "wholeWord": true,
+            "tags": []
+        },
+        {
+            "find": "vais a ir",
+            "replace": "irán",
+            "preserveCase": true,
+            "caseSensitive": false,
+            "wholeWord": true,
+            "tags": []
+        },
+        {
+            "find": "van a ir",
+            "replace": "irán",
+            "preserveCase": true,
+            "caseSensitive": false,
+            "wholeWord": true,
+            "tags": []
+        },
+        {
+            "find": "voy a decir",
+            "replace": "diré",
+            "preserveCase": true,
+            "caseSensitive": false,
+            "wholeWord": true,
+            "tags": []
+        },
+        {
+            "find": "vas a decir",
+            "replace": "dirás",
+            "preserveCase": true,
+            "caseSensitive": false,
+            "wholeWord": true,
+            "tags": []
+        },
+        {
+            "find": "va a decir",
+            "replace": "dirá",
+            "preserveCase": true,
+            "caseSensitive": false,
+            "wholeWord": true,
+            "tags": []
+        },
+        {
+            "find": "vamos a decir",
+            "replace": "diremos",
+            "preserveCase": true,
+            "caseSensitive": false,
+            "wholeWord": true,
+            "tags": []
+        },
+        {
+            "find": "vais a decir",
+            "replace": "dirán",
+            "preserveCase": true,
+            "caseSensitive": false,
+            "wholeWord": true,
+            "tags": []
+        },
+        {
+            "find": "van a decir",
+            "replace": "dirán",
+            "preserveCase": true,
+            "caseSensitive": false,
+            "wholeWord": true,
+            "tags": []
+        },
+        {
+            "find": "voy a poder",
+            "replace": "podré",
+            "preserveCase": true,
+            "caseSensitive": false,
+            "wholeWord": true,
+            "tags": []
+        },
+        {
+            "find": "vas a poder",
+            "replace": "podrás",
+            "preserveCase": true,
+            "caseSensitive": false,
+            "wholeWord": true,
+            "tags": []
+        },
+        {
+            "find": "va a poder",
+            "replace": "podrá",
+            "preserveCase": true,
+            "caseSensitive": false,
+            "wholeWord": true,
+            "tags": []
+        },
+        {
+            "find": "vamos a poder",
+            "replace": "podremos",
+            "preserveCase": true,
+            "caseSensitive": false,
+            "wholeWord": true,
+            "tags": []
+        },
+        {
+            "find": "vais a poder",
+            "replace": "podrán",
+            "preserveCase": true,
+            "caseSensitive": false,
+            "wholeWord": true,
+            "tags": []
+        },
+        {
+            "find": "van a poder",
+            "replace": "podrán",
+            "preserveCase": true,
+            "caseSensitive": false,
+            "wholeWord": true,
+            "tags": []
+        },
+        {
+            "find": "voy a necesitar",
+            "replace": "necesitaré",
+            "preserveCase": true,
+            "caseSensitive": false,
+            "wholeWord": true,
+            "tags": []
+        },
+        {
+            "find": "vas a necesitar",
+            "replace": "necesitarás",
+            "preserveCase": true,
+            "caseSensitive": false,
+            "wholeWord": true,
+            "tags": []
+        },
+        {
+            "find": "va a necesitar",
+            "replace": "necesitará",
+            "preserveCase": true,
+            "caseSensitive": false,
+            "wholeWord": true,
+            "tags": []
+        },
+        {
+            "find": "vamos a necesitar",
+            "replace": "necesitaremos",
+            "preserveCase": true,
+            "caseSensitive": false,
+            "wholeWord": true,
+            "tags": []
+        },
+        {
+            "find": "vais a necesitar",
+            "replace": "necesitarán",
+            "preserveCase": true,
+            "caseSensitive": false,
+            "wholeWord": true,
+            "tags": []
+        },
+        {
+            "find": "van a necesitar",
+            "replace": "necesitarán",
+            "preserveCase": true,
+            "caseSensitive": false,
+            "wholeWord": true,
+            "tags": []
+        },
+        {
+            "find": "voy a querer",
+            "replace": "querré",
+            "preserveCase": true,
+            "caseSensitive": false,
+            "wholeWord": true,
+            "tags": []
+        },
+        {
+            "find": "vas a querer",
+            "replace": "querrás",
+            "preserveCase": true,
+            "caseSensitive": false,
+            "wholeWord": true,
+            "tags": []
+        },
+        {
+            "find": "va a querer",
+            "replace": "querrá",
+            "preserveCase": true,
+            "caseSensitive": false,
+            "wholeWord": true,
+            "tags": []
+        },
+        {
+            "find": "vamos a querer",
+            "replace": "querremos",
+            "preserveCase": true,
+            "caseSensitive": false,
+            "wholeWord": true,
+            "tags": []
+        },
+        {
+            "find": "vais a querer",
+            "replace": "querrán",
+            "preserveCase": true,
+            "caseSensitive": false,
+            "wholeWord": true,
+            "tags": []
+        },
+        {
+            "find": "van a querer",
+            "replace": "querrán",
+            "preserveCase": true,
+            "caseSensitive": false,
+            "wholeWord": true,
+            "tags": []
+        },
+        {
+            "find": "voy a agarrar",
+            "replace": "agarraré",
+            "preserveCase": true,
+            "caseSensitive": false,
+            "wholeWord": true,
+            "tags": []
+        },
+        {
+            "find": "vas a agarrar",
+            "replace": "agarrarás",
+            "preserveCase": true,
+            "caseSensitive": false,
+            "wholeWord": true,
+            "tags": []
+        },
+        {
+            "find": "va a agarrar",
+            "replace": "agarrará",
+            "preserveCase": true,
+            "caseSensitive": false,
+            "wholeWord": true,
+            "tags": []
+        },
+        {
+            "find": "vamos a agarrar",
+            "replace": "agarraremos",
+            "preserveCase": true,
+            "caseSensitive": false,
+            "wholeWord": true,
+            "tags": []
+        },
+        {
+            "find": "vais a agarrar",
+            "replace": "agarrarán",
+            "preserveCase": true,
+            "caseSensitive": false,
+            "wholeWord": true,
+            "tags": []
+        },
+        {
+            "find": "van a agarrar",
+            "replace": "agarrarán",
+            "preserveCase": true,
+            "caseSensitive": false,
+            "wholeWord": true,
+            "tags": []
+        },
+        {
+            "find": "voy a andar",
+            "replace": "andaré",
+            "preserveCase": true,
+            "caseSensitive": false,
+            "wholeWord": true,
+            "tags": []
+        },
+        {
+            "find": "vas a andar",
+            "replace": "andarás",
+            "preserveCase": true,
+            "caseSensitive": false,
+            "wholeWord": true,
+            "tags": []
+        },
+        {
+            "find": "va a andar",
+            "replace": "andará",
+            "preserveCase": true,
+            "caseSensitive": false,
+            "wholeWord": true,
+            "tags": []
+        },
+        {
+            "find": "vamos a andar",
+            "replace": "andaremos",
+            "preserveCase": true,
+            "caseSensitive": false,
+            "wholeWord": true,
+            "tags": []
+        },
+        {
+            "find": "vais a andar",
+            "replace": "andarán",
+            "preserveCase": true,
+            "caseSensitive": false,
+            "wholeWord": true,
+            "tags": []
+        },
+        {
+            "find": "van a andar",
+            "replace": "andarán",
+            "preserveCase": true,
+            "caseSensitive": false,
+            "wholeWord": true,
+            "tags": []
+        },
+        {
+            "find": "voy a buscar",
+            "replace": "buscaré",
+            "preserveCase": true,
+            "caseSensitive": false,
+            "wholeWord": true,
+            "tags": []
+        },
+        {
+            "find": "vas a buscar",
+            "replace": "buscarás",
+            "preserveCase": true,
+            "caseSensitive": false,
+            "wholeWord": true,
+            "tags": []
+        },
+        {
+            "find": "va a buscar",
+            "replace": "buscará",
+            "preserveCase": true,
+            "caseSensitive": false,
+            "wholeWord": true,
+            "tags": []
+        },
+        {
+            "find": "vamos a buscar",
+            "replace": "buscaremos",
+            "preserveCase": true,
+            "caseSensitive": false,
+            "wholeWord": true,
+            "tags": []
+        },
+        {
+            "find": "vais a buscar",
+            "replace": "buscarán",
+            "preserveCase": true,
+            "caseSensitive": false,
+            "wholeWord": true,
+            "tags": []
+        },
+        {
+            "find": "van a buscar",
+            "replace": "buscarán",
+            "preserveCase": true,
+            "caseSensitive": false,
+            "wholeWord": true,
+            "tags": []
+        },
+        {
+            "find": "voy a caer",
+            "replace": "caeré",
+            "preserveCase": true,
+            "caseSensitive": false,
+            "wholeWord": true,
+            "tags": []
+        },
+        {
+            "find": "vas a caer",
+            "replace": "caerás",
+            "preserveCase": true,
+            "caseSensitive": false,
+            "wholeWord": true,
+            "tags": []
+        },
+        {
+            "find": "va a caer",
+            "replace": "caerá",
+            "preserveCase": true,
+            "caseSensitive": false,
+            "wholeWord": true,
+            "tags": []
+        },
+        {
+            "find": "vamos a caer",
+            "replace": "caeremos",
+            "preserveCase": true,
+            "caseSensitive": false,
+            "wholeWord": true,
+            "tags": []
+        },
+        {
+            "find": "vais a caer",
+            "replace": "caerán",
+            "preserveCase": true,
+            "caseSensitive": false,
+            "wholeWord": true,
+            "tags": []
+        },
+        {
+            "find": "van a caer",
+            "replace": "caerán",
+            "preserveCase": true,
+            "caseSensitive": false,
+            "wholeWord": true,
+            "tags": []
+        },
+        {
+            "find": "voy a cerrar",
+            "replace": "cerraré",
+            "preserveCase": true,
+            "caseSensitive": false,
+            "wholeWord": true,
+            "tags": []
+        },
+        {
+            "find": "vas a cerrar",
+            "replace": "cerrarás",
+            "preserveCase": true,
+            "caseSensitive": false,
+            "wholeWord": true,
+            "tags": []
+        },
+        {
+            "find": "va a cerrar",
+            "replace": "cerrará",
+            "preserveCase": true,
+            "caseSensitive": false,
+            "wholeWord": true,
+            "tags": []
+        },
+        {
+            "find": "vamos a cerrar",
+            "replace": "cerraremos",
+            "preserveCase": true,
+            "caseSensitive": false,
+            "wholeWord": true,
+            "tags": []
+        },
+        {
+            "find": "vais a cerrar",
+            "replace": "cerrarán",
+            "preserveCase": true,
+            "caseSensitive": false,
+            "wholeWord": true,
+            "tags": []
+        },
+        {
+            "find": "van a cerrar",
+            "replace": "cerrarán",
+            "preserveCase": true,
+            "caseSensitive": false,
+            "wholeWord": true,
+            "tags": []
+        },
+        {
+            "find": "voy a comenzar",
+            "replace": "comenzaré",
+            "preserveCase": true,
+            "caseSensitive": false,
+            "wholeWord": true,
+            "tags": []
+        },
+        {
+            "find": "vas a comenzar",
+            "replace": "comenzarás",
+            "preserveCase": true,
+            "caseSensitive": false,
+            "wholeWord": true,
+            "tags": []
+        },
+        {
+            "find": "va a comenzar",
+            "replace": "comenzará",
+            "preserveCase": true,
+            "caseSensitive": false,
+            "wholeWord": true,
+            "tags": []
+        },
+        {
+            "find": "vamos a comenzar",
+            "replace": "comenzaremos",
+            "preserveCase": true,
+            "caseSensitive": false,
+            "wholeWord": true,
+            "tags": []
+        },
+        {
+            "find": "vais a comenzar",
+            "replace": "comenzarán",
+            "preserveCase": true,
+            "caseSensitive": false,
+            "wholeWord": true,
+            "tags": []
+        },
+        {
+            "find": "van a comenzar",
+            "replace": "comenzarán",
+            "preserveCase": true,
+            "caseSensitive": false,
+            "wholeWord": true,
+            "tags": []
+        },
+        {
+            "find": "voy a empezar",
+            "replace": "empezaré",
+            "preserveCase": true,
+            "caseSensitive": false,
+            "wholeWord": true,
+            "tags": []
+        },
+        {
+            "find": "vas a empezar",
+            "replace": "empezarás",
+            "preserveCase": true,
+            "caseSensitive": false,
+            "wholeWord": true,
+            "tags": []
+        },
+        {
+            "find": "va a empezar",
+            "replace": "empezará",
+            "preserveCase": true,
+            "caseSensitive": false,
+            "wholeWord": true,
+            "tags": []
+        },
+        {
+            "find": "vamos a empezar",
+            "replace": "empezaremos",
+            "preserveCase": true,
+            "caseSensitive": false,
+            "wholeWord": true,
+            "tags": []
+        },
+        {
+            "find": "vais a empezar",
+            "replace": "empezarán",
+            "preserveCase": true,
+            "caseSensitive": false,
+            "wholeWord": true,
+            "tags": []
+        },
+        {
+            "find": "van a empezar",
+            "replace": "empezarán",
+            "preserveCase": true,
+            "caseSensitive": false,
+            "wholeWord": true,
+            "tags": []
+        },
+        {
+            "find": "voy a comprar",
+            "replace": "compraré",
+            "preserveCase": true,
+            "caseSensitive": false,
+            "wholeWord": true,
+            "tags": []
+        },
+        {
+            "find": "vas a comprar",
+            "replace": "comprarás",
+            "preserveCase": true,
+            "caseSensitive": false,
+            "wholeWord": true,
+            "tags": []
+        },
+        {
+            "find": "va a comprar",
+            "replace": "comprará",
+            "preserveCase": true,
+            "caseSensitive": false,
+            "wholeWord": true,
+            "tags": []
+        },
+        {
+            "find": "vamos a comprar",
+            "replace": "compraremos",
+            "preserveCase": true,
+            "caseSensitive": false,
+            "wholeWord": true,
+            "tags": []
+        },
+        {
+            "find": "vais a comprar",
+            "replace": "comprarán",
+            "preserveCase": true,
+            "caseSensitive": false,
+            "wholeWord": true,
+            "tags": []
+        },
+        {
+            "find": "van a comprar",
+            "replace": "comprarán",
+            "preserveCase": true,
+            "caseSensitive": false,
+            "wholeWord": true,
+            "tags": []
+        },
+        {
+            "find": "voy a conducir",
+            "replace": "conduciré",
+            "preserveCase": true,
+            "caseSensitive": false,
+            "wholeWord": true,
+            "tags": []
+        },
+        {
+            "find": "vas a conducir",
+            "replace": "conducirás",
+            "preserveCase": true,
+            "caseSensitive": false,
+            "wholeWord": true,
+            "tags": []
+        },
+        {
+            "find": "va a conducir",
+            "replace": "conducirá",
+            "preserveCase": true,
+            "caseSensitive": false,
+            "wholeWord": true,
+            "tags": []
+        },
+        {
+            "find": "vamos a conducir",
+            "replace": "conduciremos",
+            "preserveCase": true,
+            "caseSensitive": false,
+            "wholeWord": true,
+            "tags": []
+        },
+        {
+            "find": "vais a conducir",
+            "replace": "conducirán",
+            "preserveCase": true,
+            "caseSensitive": false,
+            "wholeWord": true,
+            "tags": []
+        },
+        {
+            "find": "van a conducir",
+            "replace": "conducirán",
+            "preserveCase": true,
+            "caseSensitive": false,
+            "wholeWord": true,
+            "tags": []
+        },
+        {
+            "find": "voy a manejar",
+            "replace": "manejaré",
+            "preserveCase": true,
+            "caseSensitive": false,
+            "wholeWord": true,
+            "tags": []
+        },
+        {
+            "find": "vas a manejar",
+            "replace": "manejarás",
+            "preserveCase": true,
+            "caseSensitive": false,
+            "wholeWord": true,
+            "tags": []
+        },
+        {
+            "find": "va a manejar",
+            "replace": "manejará",
+            "preserveCase": true,
+            "caseSensitive": false,
+            "wholeWord": true,
+            "tags": []
+        },
+        {
+            "find": "vamos a manejar",
+            "replace": "manejaremos",
+            "preserveCase": true,
+            "caseSensitive": false,
+            "wholeWord": true,
+            "tags": []
+        },
+        {
+            "find": "vais a manejar",
+            "replace": "manejarán",
+            "preserveCase": true,
+            "caseSensitive": false,
+            "wholeWord": true,
+            "tags": []
+        },
+        {
+            "find": "van a manejar",
+            "replace": "manejarán",
+            "preserveCase": true,
+            "caseSensitive": false,
+            "wholeWord": true,
+            "tags": []
+        },
+        {
+            "find": "voy a conocer",
+            "replace": "conoceré",
+            "preserveCase": true,
+            "caseSensitive": false,
+            "wholeWord": true,
+            "tags": []
+        },
+        {
+            "find": "vas a conocer",
+            "replace": "conocerás",
+            "preserveCase": true,
+            "caseSensitive": false,
+            "wholeWord": true,
+            "tags": []
+        },
+        {
+            "find": "va a conocer",
+            "replace": "conocerá",
+            "preserveCase": true,
+            "caseSensitive": false,
+            "wholeWord": true,
+            "tags": []
+        },
+        {
+            "find": "vamos a conocer",
+            "replace": "conoceremos",
+            "preserveCase": true,
+            "caseSensitive": false,
+            "wholeWord": true,
+            "tags": []
+        },
+        {
+            "find": "vais a conocer",
+            "replace": "conocerán",
+            "preserveCase": true,
+            "caseSensitive": false,
+            "wholeWord": true,
+            "tags": []
+        },
+        {
+            "find": "van a conocer",
+            "replace": "conocerán",
+            "preserveCase": true,
+            "caseSensitive": false,
+            "wholeWord": true,
+            "tags": []
+        },
+        {
+            "find": "voy a llegar",
+            "replace": "llegaré",
+            "preserveCase": true,
+            "caseSensitive": false,
+            "wholeWord": true,
+            "tags": []
+        },
+        {
+            "find": "vas a llegar",
+            "replace": "llegarás",
+            "preserveCase": true,
+            "caseSensitive": false,
+            "wholeWord": true,
+            "tags": []
+        },
+        {
+            "find": "va a llegar",
+            "replace": "llegará",
+            "preserveCase": true,
+            "caseSensitive": false,
+            "wholeWord": true,
+            "tags": []
+        },
+        {
+            "find": "vamos a llegar",
+            "replace": "llegaremos",
+            "preserveCase": true,
+            "caseSensitive": false,
+            "wholeWord": true,
+            "tags": []
+        },
+        {
+            "find": "vais a llegar",
+            "replace": "llegarán",
+            "preserveCase": true,
+            "caseSensitive": false,
+            "wholeWord": true,
+            "tags": []
+        },
+        {
+            "find": "van a llegar",
+            "replace": "llegarán",
+            "preserveCase": true,
+            "caseSensitive": false,
+            "wholeWord": true,
+            "tags": []
+        },
+        {
+            "find": "voy a saber",
+            "replace": "sabré",
+            "preserveCase": true,
+            "caseSensitive": false,
+            "wholeWord": true,
+            "tags": []
+        },
+        {
+            "find": "vas a saber",
+            "replace": "sabrás",
+            "preserveCase": true,
+            "caseSensitive": false,
+            "wholeWord": true,
+            "tags": []
+        },
+        {
+            "find": "va a saber",
+            "replace": "sabrá",
+            "preserveCase": true,
+            "caseSensitive": false,
+            "wholeWord": true,
+            "tags": []
+        },
+        {
+            "find": "vamos a saber",
+            "replace": "sabremos",
+            "preserveCase": true,
+            "caseSensitive": false,
+            "wholeWord": true,
+            "tags": []
+        },
+        {
+            "find": "vais a saber",
+            "replace": "sabrán",
+            "preserveCase": true,
+            "caseSensitive": false,
+            "wholeWord": true,
+            "tags": []
+        },
+        {
+            "find": "van a saber",
+            "replace": "sabrán",
+            "preserveCase": true,
+            "caseSensitive": false,
+            "wholeWord": true,
+            "tags": []
+        },
+        {
+            "find": "voy a perder",
+            "replace": "perderé",
+            "preserveCase": true,
+            "caseSensitive": false,
+            "wholeWord": true,
+            "tags": []
+        },
+        {
+            "find": "vas a perder",
+            "replace": "perderás",
+            "preserveCase": true,
+            "caseSensitive": false,
+            "wholeWord": true,
+            "tags": []
+        },
+        {
+            "find": "va a perder",
+            "replace": "perderá",
+            "preserveCase": true,
+            "caseSensitive": false,
+            "wholeWord": true,
+            "tags": []
+        },
+        {
+            "find": "vamos a perder",
+            "replace": "perderemos",
+            "preserveCase": true,
+            "caseSensitive": false,
+            "wholeWord": true,
+            "tags": []
+        },
+        {
+            "find": "vais a perder",
+            "replace": "perderán",
+            "preserveCase": true,
+            "caseSensitive": false,
+            "wholeWord": true,
+            "tags": []
+        },
+        {
+            "find": "van a perder",
+            "replace": "perderán",
+            "preserveCase": true,
+            "caseSensitive": false,
+            "wholeWord": true,
+            "tags": []
+        },
+        {
+            "find": "voy a jugar",
+            "replace": "jugaré",
+            "preserveCase": true,
+            "caseSensitive": false,
+            "wholeWord": true,
+            "tags": []
+        },
+        {
+            "find": "vas a jugar",
+            "replace": "jugarás",
+            "preserveCase": true,
+            "caseSensitive": false,
+            "wholeWord": true,
+            "tags": []
+        },
+        {
+            "find": "va a jugar",
+            "replace": "jugará",
+            "preserveCase": true,
+            "caseSensitive": false,
+            "wholeWord": true,
+            "tags": []
+        },
+        {
+            "find": "vamos a jugar",
+            "replace": "jugaremos",
+            "preserveCase": true,
+            "caseSensitive": false,
+            "wholeWord": true,
+            "tags": []
+        },
+        {
+            "find": "vais a jugar",
+            "replace": "jugarán",
+            "preserveCase": true,
+            "caseSensitive": false,
+            "wholeWord": true,
+            "tags": []
+        },
+        {
+            "find": "van a jugar",
+            "replace": "jugarán",
+            "preserveCase": true,
+            "caseSensitive": false,
+            "wholeWord": true,
+            "tags": []
+        },
+        {
+            "find": "voy a salir",
+            "replace": "saldré",
+            "preserveCase": true,
+            "caseSensitive": false,
+            "wholeWord": true,
+            "tags": []
+        },
+        {
+            "find": "vas a salir",
+            "replace": "saldrás",
+            "preserveCase": true,
+            "caseSensitive": false,
+            "wholeWord": true,
+            "tags": []
+        },
+        {
+            "find": "va a salir",
+            "replace": "saldrá",
+            "preserveCase": true,
+            "caseSensitive": false,
+            "wholeWord": true,
+            "tags": []
+        },
+        {
+            "find": "vamos a salir",
+            "replace": "saldremos",
+            "preserveCase": true,
+            "caseSensitive": false,
+            "wholeWord": true,
+            "tags": []
+        },
+        {
+            "find": "vais a salir",
+            "replace": "saldrán",
+            "preserveCase": true,
+            "caseSensitive": false,
+            "wholeWord": true,
+            "tags": []
+        },
+        {
+            "find": "van a salir",
+            "replace": "saldrán",
+            "preserveCase": true,
+            "caseSensitive": false,
+            "wholeWord": true,
+            "tags": []
+        },
+        {
+            "find": "voy a saltar",
+            "replace": "saltaré",
+            "preserveCase": true,
+            "caseSensitive": false,
+            "wholeWord": true,
+            "tags": []
+        },
+        {
+            "find": "vas a saltar",
+            "replace": "saltarás",
+            "preserveCase": true,
+            "caseSensitive": false,
+            "wholeWord": true,
+            "tags": []
+        },
+        {
+            "find": "va a saltar",
+            "replace": "saltará",
+            "preserveCase": true,
+            "caseSensitive": false,
+            "wholeWord": true,
+            "tags": []
+        },
+        {
+            "find": "vamos a saltar",
+            "replace": "saltaremos",
+            "preserveCase": true,
+            "caseSensitive": false,
+            "wholeWord": true,
+            "tags": []
+        },
+        {
+            "find": "vais a saltar",
+            "replace": "saltarán",
+            "preserveCase": true,
+            "caseSensitive": false,
+            "wholeWord": true,
+            "tags": []
+        },
+        {
+            "find": "van a saltar",
+            "replace": "saltarán",
+            "preserveCase": true,
+            "caseSensitive": false,
+            "wholeWord": true,
+            "tags": []
+        },
+        {
+            "find": "voy a trabajar",
+            "replace": "trabajaré",
+            "preserveCase": true,
+            "caseSensitive": false,
+            "wholeWord": true,
+            "tags": []
+        },
+        {
+            "find": "vas a trabajar",
+            "replace": "trabajarás",
+            "preserveCase": true,
+            "caseSensitive": false,
+            "wholeWord": true,
+            "tags": []
+        },
+        {
+            "find": "va a trabajar",
+            "replace": "trabajará",
+            "preserveCase": true,
+            "caseSensitive": false,
+            "wholeWord": true,
+            "tags": []
+        },
+        {
+            "find": "vamos a trabajar",
+            "replace": "trabajaremos",
+            "preserveCase": true,
+            "caseSensitive": false,
+            "wholeWord": true,
+            "tags": []
+        },
+        {
+            "find": "vais a trabajar",
+            "replace": "trabajarán",
+            "preserveCase": true,
+            "caseSensitive": false,
+            "wholeWord": true,
+            "tags": []
+        },
+        {
+            "find": "van a trabajar",
+            "replace": "trabajarán",
+            "preserveCase": true,
+            "caseSensitive": false,
+            "wholeWord": true,
+            "tags": []
+        },
+        {
+            "find": "voy a traer",
+            "replace": "traeré",
+            "preserveCase": true,
+            "caseSensitive": false,
+            "wholeWord": true,
+            "tags": []
+        },
+        {
+            "find": "vas a traer",
+            "replace": "traerás",
+            "preserveCase": true,
+            "caseSensitive": false,
+            "wholeWord": true,
+            "tags": []
+        },
+        {
+            "find": "va a traer",
+            "replace": "traerá",
+            "preserveCase": true,
+            "caseSensitive": false,
+            "wholeWord": true,
+            "tags": []
+        },
+        {
+            "find": "vamos a traer",
+            "replace": "traeremos",
+            "preserveCase": true,
+            "caseSensitive": false,
+            "wholeWord": true,
+            "tags": []
+        },
+        {
+            "find": "vais a traer",
+            "replace": "traerán",
+            "preserveCase": true,
+            "caseSensitive": false,
+            "wholeWord": true,
+            "tags": []
+        },
+        {
+            "find": "van a traer",
+            "replace": "traerán",
+            "preserveCase": true,
+            "caseSensitive": false,
+            "wholeWord": true,
+            "tags": []
+        },
+        {
+            "find": "voy a tocar",
+            "replace": "tocaré",
+            "preserveCase": true,
+            "caseSensitive": false,
+            "wholeWord": true,
+            "tags": []
+        },
+        {
+            "find": "vas a tocar",
+            "replace": "tocarás",
+            "preserveCase": true,
+            "caseSensitive": false,
+            "wholeWord": true,
+            "tags": []
+        },
+        {
+            "find": "va a tocar",
+            "replace": "tocará",
+            "preserveCase": true,
+            "caseSensitive": false,
+            "wholeWord": true,
+            "tags": []
+        },
+        {
+            "find": "vamos a tocar",
+            "replace": "tocaremos",
+            "preserveCase": true,
+            "caseSensitive": false,
+            "wholeWord": true,
+            "tags": []
+        },
+        {
+            "find": "vais a tocar",
+            "replace": "tocarán",
+            "preserveCase": true,
+            "caseSensitive": false,
+            "wholeWord": true,
+            "tags": []
+        },
+        {
+            "find": "van a tocar",
+            "replace": "tocarán",
+            "preserveCase": true,
+            "caseSensitive": false,
+            "wholeWord": true,
+            "tags": []
+        },
+        {
+            "find": "voy a pagar",
+            "replace": "pagaré",
+            "preserveCase": true,
+            "caseSensitive": false,
+            "wholeWord": true,
+            "tags": []
+        },
+        {
+            "find": "vas a pagar",
+            "replace": "pagarás",
+            "preserveCase": true,
+            "caseSensitive": false,
+            "wholeWord": true,
+            "tags": []
+        },
+        {
+            "find": "va a pagar",
+            "replace": "pagará",
+            "preserveCase": true,
+            "caseSensitive": false,
+            "wholeWord": true,
+            "tags": []
+        },
+        {
+            "find": "vamos a pagar",
+            "replace": "pagaremos",
+            "preserveCase": true,
+            "caseSensitive": false,
+            "wholeWord": true,
+            "tags": []
+        },
+        {
+            "find": "vais a pagar",
+            "replace": "pagarán",
+            "preserveCase": true,
+            "caseSensitive": false,
+            "wholeWord": true,
+            "tags": []
+        },
+        {
+            "find": "van a pagar",
+            "replace": "pagarán",
+            "preserveCase": true,
+            "caseSensitive": false,
+            "wholeWord": true,
+            "tags": []
+        },
+        {
+            "find": "-DIFUNDE LA PALABRA-",
+            "replace": "(TITULOS)",
+            "preserveCase": true,
+            "caseSensitive": false,
+            "wholeWord": true,
+            "tags": []
+        },
+        {
+            "find": "¿porque",
+            "replace": "¿por qué",
+            "preserveCase": true,
+            "caseSensitive": false,
+            "wholeWord": true,
+            "tags": []
+        },
+        {
+            "find": "Polla",
+            "replace": "Verga",
+            "preserveCase": true,
+            "caseSensitive": false,
+            "wholeWord": true,
+            "tags": []
+        },
+        {
+            "find": "por lo menos",
+            "replace": "al menos",
+            "preserveCase": true,
+            "caseSensitive": false,
+            "wholeWord": true,
+            "tags": []
+        },
+        {
+            "find": "como mínimo",
+            "replace": "al menos",
+            "preserveCase": true,
+            "caseSensitive": false,
+            "wholeWord": true,
+            "tags": []
+        },
+        {
+            "find": "Mola",
+            "replace": "Está bueno",
+            "preserveCase": true,
+            "caseSensitive": false,
+            "wholeWord": true,
+            "tags": []
+        },
+        {
+            "find": "pijo",
+            "replace": "burgués",
+            "preserveCase": true,
+            "caseSensitive": false,
+            "wholeWord": true,
+            "tags": []
+        },
+        {
+            "find": "a punto de",
+            "replace": "por",
+            "preserveCase": true,
+            "caseSensitive": false,
+            "wholeWord": true,
+            "tags": []
+        },
+        {
+            "find": "Eso significa",
+            "replace": "Significa",
+            "preserveCase": true,
+            "caseSensitive": false,
+            "wholeWord": true,
+            "tags": []
+        },
+        {
+            "find": "Tan pronto como",
+            "replace": "Ni bien",
+            "preserveCase": true,
+            "caseSensitive": false,
+            "wholeWord": true,
+            "tags": []
+        },
+        {
+            "find": "Quién soy yo",
+            "replace": "Quien soy",
+            "preserveCase": true,
+            "caseSensitive": false,
+            "wholeWord": true,
+            "tags": []
+        },
+        {
+            "find": "acojonante",
+            "replace": "impresionante",
+            "preserveCase": true,
+            "caseSensitive": false,
+            "wholeWord": true,
+            "tags": []
+        },
+        {
+            "find": "guapa",
+            "replace": "linda",
+            "preserveCase": true,
+            "caseSensitive": false,
+            "wholeWord": true,
+            "tags": []
+        },
+        {
+            "find": "carro",
+            "replace": "coche",
+            "preserveCase": true,
+            "caseSensitive": false,
+            "wholeWord": true,
+            "tags": []
+        },
+        {
+            "find": "pavos",
+            "replace": "dólares",
+            "preserveCase": true,
+            "caseSensitive": false,
+            "wholeWord": true,
+            "tags": []
+        },
+        {
+            "find": "Lo que sea que",
+            "replace": "Lo que",
+            "preserveCase": true,
+            "caseSensitive": false,
+            "wholeWord": true,
+            "tags": []
+        },
+        {
+            "find": "Que es lo que",
+            "replace": "Que",
+            "preserveCase": true,
+            "caseSensitive": false,
+            "wholeWord": true,
+            "tags": []
+        },
+        {
+            "find": "Qué es lo que",
+            "replace": "Qué",
+            "preserveCase": true,
+            "caseSensitive": false,
+            "wholeWord": true,
+            "tags": []
+        },
+        {
+            "find": "ir allí",
+            "replace": "ir",
+            "preserveCase": true,
+            "caseSensitive": false,
+            "wholeWord": true,
+            "tags": []
+        },
+        {
+            "find": "de todos modos",
+            "replace": "como sea",
+            "preserveCase": true,
+            "caseSensitive": false,
+            "wholeWord": true,
+            "tags": []
+        },
+        {
+            "find": "estoy de camino",
+            "replace": "estoy en camino",
+            "preserveCase": true,
+            "caseSensitive": false,
+            "wholeWord": true,
+            "tags": []
+        },
+        {
+            "find": "se dio cuenta",
+            "replace": "notó",
+            "preserveCase": true,
+            "caseSensitive": false,
+            "wholeWord": true,
+            "tags": []
+        },
+        {
+            "find": "me di cuenta",
+            "replace": "noté",
+            "preserveCase": true,
+            "caseSensitive": false,
+            "wholeWord": true,
+            "tags": []
+        },
+        {
+            "find": "te diste cuenta",
+            "replace": "notaste",
+            "preserveCase": true,
+            "caseSensitive": false,
+            "wholeWord": true,
+            "tags": []
+        },
+        {
+            "find": "se dieron cuenta",
+            "replace": "notaron",
+            "preserveCase": true,
+            "caseSensitive": false,
+            "wholeWord": true,
+            "tags": []
+        },
+        {
+            "find": "os disteis cuenta",
+            "replace": "notaron",
+            "preserveCase": true,
+            "caseSensitive": false,
+            "wholeWord": true,
+            "tags": []
+        },
+        {
+            "find": "eso es",
+            "replace": "es",
+            "preserveCase": true,
+            "caseSensitive": false,
+            "wholeWord": true,
+            "tags": []
+        },
+        {
+            "find": "él es",
+            "replace": "es",
+            "preserveCase": true,
+            "caseSensitive": false,
+            "wholeWord": true,
+            "tags": []
+        },
+        {
+            "find": "ella es",
+            "replace": "es",
+            "preserveCase": true,
+            "caseSensitive": false,
+            "wholeWord": true,
+            "tags": []
+        },
+        {
+            "find": "jodidamente",
+            "replace": "demasiado",
+            "preserveCase": true,
+            "caseSensitive": false,
+            "wholeWord": true,
+            "tags": []
+        },
+        {
+            "find": "zorra",
+            "replace": "perra",
+            "preserveCase": true,
+            "caseSensitive": false,
+            "wholeWord": true,
+            "tags": []
+        },
+        {
+            "find": "joder",
+            "replace": "mierda",
+            "preserveCase": true,
+            "caseSensitive": false,
+            "wholeWord": true,
+            "tags": []
+        },
+        {
+            "find": "cabrón",
+            "replace": "maldito",
+            "preserveCase": true,
+            "caseSensitive": false,
+            "wholeWord": true,
+            "tags": []
+        },
+        {
+            "find": "cabrona",
+            "replace": "maldita",
+            "preserveCase": true,
+            "caseSensitive": false,
+            "wholeWord": true,
+            "tags": []
+        },
+        {
+            "find": "cabrones",
+            "replace": "malditos",
+            "preserveCase": true,
+            "caseSensitive": false,
+            "wholeWord": true,
+            "tags": []
+        },
+        {
+            "find": "cabronas",
+            "replace": "malditas",
+            "preserveCase": true,
+            "caseSensitive": false,
+            "wholeWord": true,
+            "tags": []
+        },
+        {
+            "find": "crío",
+            "replace": "niño",
+            "preserveCase": true,
+            "caseSensitive": false,
+            "wholeWord": true,
+            "tags": []
+        },
+        {
+            "find": "cría",
+            "replace": "niña",
+            "preserveCase": true,
+            "caseSensitive": false,
+            "wholeWord": true,
+            "tags": []
+        },
+        {
+            "find": "críos",
+            "replace": "niños",
+            "preserveCase": true,
+            "caseSensitive": false,
+            "wholeWord": true,
+            "tags": []
+        },
+        {
+            "find": "crías",
+            "replace": "niñas",
+            "preserveCase": true,
+            "caseSensitive": false,
+            "wholeWord": true,
+            "tags": []
+        },
+        {
+            "find": "cojones",
+            "replace": "demonios",
+            "preserveCase": true,
+            "caseSensitive": false,
+            "wholeWord": true,
+            "tags": []
+        },
+        {
+            "find": "ella es",
+            "replace": "es",
+            "preserveCase": true,
+            "caseSensitive": false,
+            "wholeWord": true,
+            "tags": []
+        },
+        {
+            "find": "jodidamente",
+            "replace": "demasiado",
+            "preserveCase": true,
+            "caseSensitive": false,
+            "wholeWord": true,
+            "tags": []
+        },
+        {
+            "find": "zorra",
+            "replace": "perra",
+            "preserveCase": true,
+            "caseSensitive": false,
+            "wholeWord": true,
+            "tags": []
+        },
+        {
+            "find": "joder",
+            "replace": "mierda",
+            "preserveCase": true,
+            "caseSensitive": false,
+            "wholeWord": true,
+            "tags": []
+        },
+        {
+            "find": "cojones",
+            "replace": "demonios",
+            "preserveCase": true,
+            "caseSensitive": false,
+            "wholeWord": true,
+            "tags": []
+        },
+        {
+            "find": "De cualquier forma",
+            "replace": "como sea",
+            "preserveCase": true,
+            "caseSensitive": false,
+            "wholeWord": true,
+            "tags": []
+        },
+        {
+            "find": "De cualquier manera",
+            "replace": "como sea",
+            "preserveCase": true,
+            "caseSensitive": false,
+            "wholeWord": true,
+            "tags": []
+        },
+        {
+            "find": "simplemente",
+            "replace": "sólo",
+            "preserveCase": true,
+            "caseSensitive": false,
+            "wholeWord": true,
+            "tags": []
+        },
+        {
+            "find": "lo pillo",
+            "replace": "entiendo",
+            "preserveCase": true,
+            "caseSensitive": false,
+            "wholeWord": true,
+            "tags": []
+        },
+        {
+            "find": "lo pillas",
+            "replace": "entiendes",
+            "preserveCase": true,
+            "caseSensitive": false,
+            "wholeWord": true,
+            "tags": []
+        },
+        {
+            "find": "lo pilláis",
+            "replace": "entienden",
+            "preserveCase": true,
+            "caseSensitive": false,
+            "wholeWord": true,
+            "tags": []
+        },
+        {
+            "find": "lo pillasteis",
+            "replace": "entendieron",
+            "preserveCase": true,
+            "caseSensitive": false,
+            "wholeWord": true,
+            "tags": []
+        },
+        {
+            "find": "lo pillan",
+            "replace": "entienden",
+            "preserveCase": true,
+            "caseSensitive": false,
+            "wholeWord": true,
+            "tags": []
+        },
+        {
+            "find": "has pillado",
+            "replace": "entendiste",
+            "preserveCase": true,
+            "caseSensitive": false,
+            "wholeWord": true,
+            "tags": []
+        },
+        {
+            "find": "habéis pillado",
+            "replace": "entendieron",
+            "preserveCase": true,
+            "caseSensitive": false,
+            "wholeWord": true,
+            "tags": []
+        },
+        {
+            "find": "pillar",
+            "replace": "atrapar",
+            "preserveCase": true,
+            "caseSensitive": false,
+            "wholeWord": true,
+            "tags": []
+        },
+        {
+            "find": "pillarlo",
+            "replace": "atraparlo",
+            "preserveCase": true,
+            "caseSensitive": false,
+            "wholeWord": true,
+            "tags": []
+        },
+        {
+            "find": "pillarla",
+            "replace": "atraparla",
+            "preserveCase": true,
+            "caseSensitive": false,
+            "wholeWord": true,
+            "tags": []
+        },
+        {
+            "find": "me pillaste",
+            "replace": "me atraparon",
+            "preserveCase": true,
+            "caseSensitive": false,
+            "wholeWord": true,
+            "tags": []
+        },
+        {
+            "find": "me pilló",
+            "replace": "me atrapó",
+            "preserveCase": true,
+            "caseSensitive": false,
+            "wholeWord": true,
+            "tags": []
+        },
+        {
+            "find": "me pillaron",
+            "replace": "me atraparon",
+            "preserveCase": true,
+            "caseSensitive": false,
+            "wholeWord": true,
+            "tags": []
+        },
+        {
+            "find": "me pillásteis",
+            "replace": "me pillaron",
+            "preserveCase": true,
+            "caseSensitive": false,
+            "wholeWord": true,
+            "tags": []
+        },
+        {
+            "find": "te pillé",
+            "replace": "te atrapé",
+            "preserveCase": true,
+            "caseSensitive": false,
+            "wholeWord": true,
+            "tags": []
+        },
+        {
+            "find": "te pilló",
+            "replace": "te atrapó",
+            "preserveCase": true,
+            "caseSensitive": false,
+            "wholeWord": true,
+            "tags": []
+        },
+        {
+            "find": "te pillamos",
+            "replace": "te atrapamos",
+            "preserveCase": true,
+            "caseSensitive": false,
+            "wholeWord": true,
+            "tags": []
+        },
+        {
+            "find": "te pillaron",
+            "replace": "te pillaron",
+            "preserveCase": true,
+            "caseSensitive": false,
+            "wholeWord": true,
+            "tags": []
+        },
+        {
+            "find": "os pillé",
+            "replace": "los atrapé",
+            "preserveCase": true,
+            "caseSensitive": false,
+            "wholeWord": true,
+            "tags": []
+        },
+        {
+            "find": "os pillamos",
+            "replace": "los atrapamos",
+            "preserveCase": true,
+            "caseSensitive": false,
+            "wholeWord": true,
+            "tags": []
+        },
+        {
+            "find": "os pilló",
+            "replace": "los atrapó",
+            "preserveCase": true,
+            "caseSensitive": false,
+            "wholeWord": true,
+            "tags": []
+        },
+        {
+            "find": "os pillaron",
+            "replace": "los pillaron",
+            "preserveCase": true,
+            "caseSensitive": false,
+            "wholeWord": true,
+            "tags": []
+        },
+        {
+            "find": "tengo que",
+            "replace": "debo",
+            "preserveCase": true,
+            "caseSensitive": false,
+            "wholeWord": true,
+            "tags": []
+        },
+        {
+            "find": "tienes que",
+            "replace": "debes",
+            "preserveCase": true,
+            "caseSensitive": false,
+            "wholeWord": true,
+            "tags": []
+        },
+        {
+            "find": "tiene que",
+            "replace": "debe",
+            "preserveCase": true,
+            "caseSensitive": false,
+            "wholeWord": true,
+            "tags": []
+        },
+        {
+            "find": "tenemos que",
+            "replace": "debemos",
+            "preserveCase": true,
+            "caseSensitive": false,
+            "wholeWord": true,
+            "tags": []
+        },
+        {
+            "find": "tienen que",
+            "replace": "deben",
+            "preserveCase": true,
+            "caseSensitive": false,
+            "wholeWord": true,
+            "tags": []
+        },
+        {
+            "find": "¿Aun",
+            "replace": "¿Aún",
+            "preserveCase": false,
+            "caseSensitive": true,
+            "wholeWord": true,
+            "tags": []
+        },
+        {
+            "find": "¿porque",
+            "replace": "¿por qué",
+            "preserveCase": false,
+            "caseSensitive": true,
+            "wholeWord": true,
+            "tags": []
+        },
+        {
+            "find": "¿porqué",
+            "replace": "¿por qué",
+            "preserveCase": false,
+            "caseSensitive": true,
+            "wholeWord": true,
+            "tags": []
+        },
+        {
+            "find": "Vale.",
+            "replace": "Bien.",
+            "preserveCase": false,
+            "caseSensitive": true,
+            "wholeWord": true,
+            "tags": []
+        },
+        {
+            "find": ", tío",
+            "replace": ", amigo",
+            "preserveCase": false,
+            "caseSensitive": true,
+            "wholeWord": false,
+            "tags": []
+        },
+        {
+            "find": "Tío,",
+            "replace": "Amigo,",
+            "preserveCase": false,
+            "caseSensitive": false,
+            "wholeWord": false,
+            "tags": []
+        },
+        {
+            "find": "tío",
+            "replace": "tipo",
+            "preserveCase": false,
+            "caseSensitive": true,
+            "wholeWord": false,
+            "tags": []
+        }
+    ]
+}

@@ -1,0 +1,378 @@
+{
+    "string": [
+        {
+            "find": "-DIFUNDE LA PALABRA-",
+            "replace": "(TITULOS)",
+            "preserveCase": true,
+            "caseSensitive": false,
+            "wholeWord": true,
+            "tags": []
+        },
+        {
+            "find": "a ti misma",
+            "replace": "a ti misma",
+            "preserveCase": false,
+            "caseSensitive": false,
+            "wholeWord": false,
+            "tags": [
+                "alert"
+            ]
+        },
+        {
+            "find": "a ella",
+            "replace": "a ella",
+            "preserveCase": false,
+            "caseSensitive": false,
+            "wholeWord": false,
+            "tags": [
+                "alert"
+            ]
+        },
+        {
+            "find": "a él",
+            "replace": "a él",
+            "preserveCase": false,
+            "caseSensitive": false,
+            "wholeWord": false,
+            "tags": [
+                "alert"
+            ]
+        },
+        {
+            "find": "coñ",
+            "replace": "coñ",
+            "preserveCase": false,
+            "caseSensitive": false,
+            "wholeWord": false,
+            "tags": [
+                "alert"
+            ]
+        },
+        {
+            "find": "os",
+            "replace": "os",
+            "preserveCase": false,
+            "caseSensitive": false,
+            "wholeWord": false,
+            "tags": [
+                "alert"
+            ]
+        },
+        {
+            "find": "coger",
+            "replace": "coger",
+            "preserveCase": false,
+            "caseSensitive": false,
+            "wholeWord": false,
+            "tags": [
+                "alert"
+            ]
+        },
+        {
+            "find": "cogido",
+            "replace": "cogido",
+            "preserveCase": false,
+            "caseSensitive": false,
+            "wholeWord": false,
+            "tags": [
+                "alert"
+            ]
+        },
+        {
+            "find": "coge",
+            "replace": "coge",
+            "preserveCase": false,
+            "caseSensitive": false,
+            "wholeWord": false,
+            "tags": [
+                "alert"
+            ]
+        },
+        {
+            "find": "vale",
+            "replace": "vale",
+            "preserveCase": false,
+            "caseSensitive": false,
+            "wholeWord": false,
+            "tags": [
+                "alert"
+            ]
+        },
+        {
+            "find": "follar",
+            "replace": "follar",
+            "preserveCase": false,
+            "caseSensitive": false,
+            "wholeWord": false,
+            "tags": [
+                "alert"
+            ]
+        },
+        {
+            "find": "polla",
+            "replace": "polla",
+            "preserveCase": false,
+            "caseSensitive": false,
+            "wholeWord": false,
+            "tags": [
+                "alert"
+            ]
+        },
+        {
+            "find": "chulo",
+            "replace": "chulo",
+            "preserveCase": false,
+            "caseSensitive": false,
+            "wholeWord": false,
+            "tags": [
+                "alert"
+            ]
+        },
+        {
+            "find": "ya sabes,",
+            "replace": "ya sabes,",
+            "preserveCase": false,
+            "caseSensitive": false,
+            "wholeWord": false,
+            "tags": [
+                "alert"
+            ]
+        },
+        {
+            "find": "así que,",
+            "replace": "así que,",
+            "preserveCase": false,
+            "caseSensitive": false,
+            "wholeWord": false,
+            "tags": [
+                "alert"
+            ]
+        },
+        {
+            "find": "¿saben qué?",
+            "replace": "¿saben qué?",
+            "preserveCase": false,
+            "caseSensitive": false,
+            "wholeWord": false,
+            "tags": [
+                "alert"
+            ]
+        },
+        {
+            "find": "¡oh!",
+            "replace": "¡oh!",
+            "preserveCase": false,
+            "caseSensitive": false,
+            "wholeWord": false,
+            "tags": [
+                "alert"
+            ]
+        },
+        {
+            "find": "¡ah!",
+            "replace": "¡ah!",
+            "preserveCase": false,
+            "caseSensitive": false,
+            "wholeWord": false,
+            "tags": [
+                "alert"
+            ]
+        },
+        {
+            "find": "eh,",
+            "replace": "eh,",
+            "preserveCase": false,
+            "caseSensitive": false,
+            "wholeWord": false,
+            "tags": [
+                "alert"
+            ]
+        },
+        {
+            "find": "¡eh!",
+            "replace": "¡eh!",
+            "preserveCase": false,
+            "caseSensitive": false,
+            "wholeWord": false,
+            "tags": [
+                "alert"
+            ]
+        },
+        {
+            "find": "uh,",
+            "replace": "uh,",
+            "preserveCase": false,
+            "caseSensitive": false,
+            "wholeWord": false,
+            "tags": [
+                "alert"
+            ]
+        },
+        {
+            "find": "¡uh!",
+            "replace": "¡uh!",
+            "preserveCase": false,
+            "caseSensitive": false,
+            "wholeWord": false,
+            "tags": [
+                "alert"
+            ]
+        },
+        {
+            "find": "Ow",
+            "replace": "Ow",
+            "preserveCase": false,
+            "caseSensitive": false,
+            "wholeWord": false,
+            "tags": [
+                "alert"
+            ]
+        },
+        {
+            "find": "Um",
+            "replace": "Um",
+            "preserveCase": false,
+            "caseSensitive": false,
+            "wholeWord": false,
+            "tags": [
+                "alert"
+            ]
+        },
+        {
+            "find": "Whoa",
+            "replace": "Whoa",
+            "preserveCase": false,
+            "caseSensitive": false,
+            "wholeWord": false,
+            "tags": [
+                "alert"
+            ]
+        },
+        {
+            "find": "mm",
+            "replace": "mm",
+            "preserveCase": false,
+            "caseSensitive": false,
+            "wholeWord": false,
+            "tags": [
+                "disabled",
+                "alert"
+            ]
+        },
+        {
+            "find": "¿porque",
+            "replace": "¿por qué",
+            "preserveCase": true,
+            "caseSensitive": false,
+            "wholeWord": true,
+            "tags": [
+                "alert"
+            ]
+        }
+    ],
+    "regex": [
+        {
+            "find": "\\b(sla,|eis,|áis|dme,|aos,|ois,|ís,|dlo,|dla,|slo,|íos,)",
+            "replace": "",
+            "tags": [
+            ]
+        },
+        {
+            "find": "([,\\.]\\s.{2})\\1[\\.,\\s\\?\\!]",
+            "replace": "",
+            "tags": [
+                "disabled",
+                "check"
+            ]
+        },
+        {
+            "find": "(?i)([,\\.]\\s(.{3,}))\\1[\\.,\\s\\?\\!]",
+            "replace": "",
+            "tags": [
+                "disabled",
+                "check"
+            ]
+        },
+        {
+            "find": "(?i)\\b(daos|[\\wá-úñ]{2,15}aos)\\b",
+            "replace": "",
+            "tags": [
+                "disabled",
+                "check"
+            ]
+        },
+        {
+            "find": "(?i)\\b(([ru][en]|o)íos|(\\w{2}[^dvpc]|[pdlmr][euo][cd])íos|([^abcdt]\\w{3}|[tadc][ureibñtovsñ]\\w[lutrpnmd]|atav)íos|([^s]\\w{2}|\\w\\w[^m])[^fn\\s][^f]íos|\\w{3}(\\w[^af]|[br]a)[\\wñ]íos|[^m]\\w{3}[^v][^f]\\wíos|\\w{6}[^f]\\wíos|[^h]\\w{8}íos|[^h]\\w{9}íos|\\w{11}íos)\\b",
+            "replace": "",
+            "tags": [
+                "disabled",
+                "check"
+            ]
+        },
+        {
+            "find": "(?i)([á-ú]|\\B)dl[oa]\\b",
+            "replace": "",
+            "tags": [
+                "disabled",
+                "check"
+            ]
+        },
+        {
+            "find": "(?i)\\Bosl[ao]\\b",
+            "replace": "",
+            "tags": [
+                "disabled",
+                "check"
+            ]
+        },
+        {
+            "find": "(?i)(\\B|[á-ú])dme\\b",
+            "replace": "",
+            "tags": [
+                "disabled",
+                "check"
+            ]
+        },
+        {
+            "find": "(?i)(\\B|\\b)([^nah]|un)ís\\b",
+            "replace": "",
+            "tags": [
+                "disabled",
+                "check"
+            ]
+        },
+        {
+            "find": "(?i)\\Bois\\b",
+            "replace": "",
+            "tags": [
+                "disabled",
+                "check"
+            ]
+        },
+        {
+            "find": "(?i)[eéaá]is\\b",
+            "replace": "",
+            "tags": [
+                "disabled",
+                "check"
+            ]
+        },
+        {
+            "find": "([a-z]): «([a-z])",
+            "replace": "",
+            "tags": [
+                "disabled",
+                "check"
+            ]
+        },
+        {
+            "find": "([A-Z]): ([a-z])",
+            "replace": "",
+            "tags": [
+                "disabled",
+                "check"
+            ]
+        }
+
+    ]
+}

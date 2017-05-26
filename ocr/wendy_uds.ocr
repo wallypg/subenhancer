@@ -1,0 +1,100 @@
+<!----------------------------------------------->
+<!--     Subtitle Workshop OCR Script file     -->
+<!--       Copyright © 2001-2004 URUSoft       -->
+<!--           http://www.urusoft.net          -->
+<!--                                           -->
+<!--    ¡Específico para lenguaje español!     -->
+<!----------------------------------------------->
+
+<SWOCR WordChars="0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ_ñÑáéíóúÁÉÍÓÚäëïöü">
+
+
+<ERROR UseREOnlyToFind="False" Find="\sa(\r)." ReplaceBy=" a ">
+<ERROR UseREOnlyToFind="False" Find="\sante(\r)." ReplaceBy=" ante ">
+<ERROR UseREOnlyToFind="False" Find="\sbajo(\r)." ReplaceBy=" bajo ">
+<ERROR UseREOnlyToFind="False" Find="\scon(\r)." ReplaceBy=" con ">
+<ERROR UseREOnlyToFind="False" Find="\sde(\r)." ReplaceBy=" de ">
+<ERROR UseREOnlyToFind="False" Find="\sdesde(\r)." ReplaceBy=" desde ">
+<ERROR UseREOnlyToFind="False" Find="\sdurante(\r)." ReplaceBy=" durante ">
+<ERROR UseREOnlyToFind="False" Find="\sen(\r)." ReplaceBy=" en ">
+<ERROR UseREOnlyToFind="False" Find="\sentre(\r)." ReplaceBy=" entre ">
+<ERROR UseREOnlyToFind="False" Find="\sexcepto(\r)." ReplaceBy=" excepto ">
+<ERROR UseREOnlyToFind="False" Find="\shacia(\r)." ReplaceBy=" hacia ">
+<ERROR UseREOnlyToFind="False" Find="\shasta(\r)." ReplaceBy=" hasta ">
+<ERROR UseREOnlyToFind="False" Find="\smediante(\r)." ReplaceBy=" mediante ">
+<ERROR UseREOnlyToFind="False" Find="\spara(\r)." ReplaceBy=" para ">
+<ERROR UseREOnlyToFind="False" Find="\spor(\r)." ReplaceBy=" por ">
+<ERROR UseREOnlyToFind="False" Find="\ssegún(\r)." ReplaceBy=" según ">
+<ERROR UseREOnlyToFind="False" Find="\ssin(\r)." ReplaceBy=" sin ">
+<ERROR UseREOnlyToFind="False" Find="\ssobre(\r)." ReplaceBy=" sobre ">
+<ERROR UseREOnlyToFind="False" Find="\stras(\r)." ReplaceBy=" tras ">
+
+<ERROR UseREOnlyToFind="False" Find="\so(\r)." ReplaceBy=" o ">
+<ERROR UseREOnlyToFind="False" Find="\spero(\r)." ReplaceBy=" pero ">
+<ERROR UseREOnlyToFind="False" Find="\sporque(\r)." ReplaceBy=" porque ">
+<ERROR UseREOnlyToFind="False" Find="\sy(\r)." ReplaceBy=" y ">
+<ERROR UseREOnlyToFind="False" Find="\sque(\r)." ReplaceBy=" que ">
+<ERROR UseREOnlyToFind="False" Find="\scuando(\r)." ReplaceBy=" cuando ">
+<ERROR UseREOnlyToFind="False" Find="\ssi(\r)." ReplaceBy=" si ">
+
+<ERROR UseREOnlyToFind="False" Find="\ssuficientemente(\r)." ReplaceBy=" suficientemente ">
+<ERROR UseREOnlyToFind="False" Find="\stan(\r)." ReplaceBy=" tan ">
+<ERROR UseREOnlyToFind="False" Find="\stanto(\r)." ReplaceBy=" tanto ">
+<ERROR UseREOnlyToFind="False" Find="\smucho(\r)." ReplaceBy=" mucho ">
+<ERROR UseREOnlyToFind="False" Find="\smucha(\r)." ReplaceBy=" mucha ">
+<ERROR UseREOnlyToFind="False" Find="\smuchos(\r)." ReplaceBy=" muchos ">
+<ERROR UseREOnlyToFind="False" Find="\smuchas(\r)." ReplaceBy=" muchas ">
+
+<ERROR UseREOnlyToFind="False" Find="\sal(\r)." ReplaceBy=" al ">
+
+<ERROR UseREOnlyToFind="False" Find="\sya(\r)." ReplaceBy=" ya ">
+
+<ERROR UseREOnlyToFind="False" Find="\sel(\r)." ReplaceBy=" el ">
+<ERROR UseREOnlyToFind="False" Find="\sla(\r)." ReplaceBy=" la ">
+<ERROR UseREOnlyToFind="False" Find="\slo(\r)." ReplaceBy=" lo ">
+<ERROR UseREOnlyToFind="False" Find="\slas(\r)." ReplaceBy=" las ">
+<ERROR UseREOnlyToFind="False" Find="\slos(\r)." ReplaceBy=" los ">
+<ERROR UseREOnlyToFind="False" Find="\sun(\r)." ReplaceBy=" un ">
+<ERROR UseREOnlyToFind="False" Find="\suna(\r)." ReplaceBy=" una ">
+<ERROR UseREOnlyToFind="False" Find="\sunas(\r)." ReplaceBy=" unas ">
+
+<ERROR UseREOnlyToFind="False" Find="\snos(\r)." ReplaceBy=" nos ">
+<ERROR UseREOnlyToFind="False" Find="\sles(\r)." ReplaceBy=" les ">
+<ERROR UseREOnlyToFind="False" Find="\sme(\r)." ReplaceBy=" me ">
+<ERROR UseREOnlyToFind="False" Find="\ste(\r)." ReplaceBy=" te ">
+<ERROR UseREOnlyToFind="False" Find="\sse(\r)." ReplaceBy=" se ">
+
+<ERROR UseREOnlyToFind="False" Find="\sdel(\r)." ReplaceBy=" del ">
+<ERROR UseREOnlyToFind="False" Find="\smi(\r)." ReplaceBy=" mi ">
+<ERROR UseREOnlyToFind="False" Find="\smis(\r)." ReplaceBy=" mis ">
+<ERROR UseREOnlyToFind="False" Find="\ssus(\r)." ReplaceBy=" sus ">
+<ERROR UseREOnlyToFind="False" Find="\ssu(\r)." ReplaceBy=" su ">
+<ERROR UseREOnlyToFind="False" Find="\stu(\r)." ReplaceBy=" tu ">
+<ERROR UseREOnlyToFind="False" Find="\stus(\r)." ReplaceBy=" tus ">
+
+<ERROR UseREOnlyToFind="False" Find="\sesa(\r)." ReplaceBy=" esa ">
+<ERROR UseREOnlyToFind="False" Find="\sese(\r)." ReplaceBy=" ese ">
+<ERROR UseREOnlyToFind="False" Find="\sesas(\r)." ReplaceBy=" esas ">
+<ERROR UseREOnlyToFind="False" Find="\sesos(\r)." ReplaceBy=" esos ">
+
+<ERROR UseREOnlyToFind="False" Find="\siba(\r)." ReplaceBy=" iba ">
+
+<ERROR UseREOnlyToFind="False" Find="\sni(\r)." ReplaceBy=" ni ">
+<ERROR UseREOnlyToFind="False" Find="\sno(\r)." ReplaceBy=" no ">
+
+<ERROR UseREOnlyToFind="False" Find="\ses(\r)." ReplaceBy=" es ">
+<ERROR UseREOnlyToFind="False" Find="\sestán(\r)." ReplaceBy=" están ">
+<ERROR UseREOnlyToFind="False" Find="\ssea(\r)." ReplaceBy=" sea ">
+<ERROR UseREOnlyToFind="False" Find="\sserá(\r)." ReplaceBy=" será ">
+
+<ERROR UseREOnlyToFind="False" Find="\shas(\r)." ReplaceBy=" has ">
+<ERROR UseREOnlyToFind="False" Find="\sha(\r)." ReplaceBy=" ha ">
+<ERROR UseREOnlyToFind="False" Find="\shan(\r)." ReplaceBy=" han ">
+<ERROR UseREOnlyToFind="False" Find="\she(\r)." ReplaceBy=" he ">
+<ERROR UseREOnlyToFind="False" Find="\shemos(\r)." ReplaceBy=" hemos ">
+<ERROR UseREOnlyToFind="False" Find="\shabías(\r)." ReplaceBy=" habías ">
+<ERROR UseREOnlyToFind="False" Find="\shabía(\r)." ReplaceBy=" había ">
+<ERROR UseREOnlyToFind="False" Find="\shabían(\r)." ReplaceBy=" habían ">
+<ERROR UseREOnlyToFind="False" Find="\shabíamos(\r)." ReplaceBy=" habíamos ">
+
+</SWOCR>
