@@ -91,6 +91,11 @@
       top: 78px;
       right: 8px;
     }
+    .blue.darken-3 {
+      position:fixed;
+      top: 148px;
+      right: 8px;
+    }
     @media screen and (min-width:992px) {
       .jc-bs3-row .col-md-offset-4 {
         margin-left: 25%!important;
@@ -116,6 +121,10 @@
   <a href="<?=base_url()?>subenhancer" class="btn-floating btn-large waves-effect waves-light red darken-4 tooltipped" data-position="left" data-delay="50" data-tooltip="Volver al SubEnhancer"><i class="material-icons">exit_to_app</i></a>
   
   <a href="javascript:void(0)" id="floating-save" class="btn-floating btn-large waves-effect waves-light green accent-4 tooltipped" data-position="left" data-delay="50" data-tooltip="Guardar"><i class="fa fa-floppy-o" aria-hidden="true"></i></a>
+
+  <?php if(isset($log)){ ?>
+  <a href="javascript:void(0)" id="floating-down" class="btn-floating btn-large waves-effect waves-light blue darken-3 tooltipped" data-position="left" data-delay="50" data-tooltip="Ir al final"><i class="fa fa-chevron-down" aria-hidden="true"></i></a>
+  <?php } ?>
   <script>
     var editor = new MediumEditor('.editable',{
       spellcheck: false,
@@ -144,7 +153,9 @@
         ajaxRequest($('pre#sub-data').html());
       });
 
-
+      $('#floating-down').on('click',function(){
+        $("html, body").animate({ scrollTop: $(document).height() }, 600);
+      });
 
     });
 

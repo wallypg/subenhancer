@@ -9,7 +9,7 @@ class Subenhancer extends CI_Controller {
 
 		if(!isset($_SESSION['isLoggedIn']) || !$_SESSION['isLoggedIn']) redirect(base_url().'?goto='.urlencode($this->uri->uri_string));
 
-		if($_SESSION['user'] != 'subadictos') redirect(base_url().'subextractor');
+		if($_SESSION['user'] != 'subadictos') redirect(base_url());
 
 		$this->load->library('folder');
 		$this->folder->setFolder('subenhancer');
@@ -49,6 +49,7 @@ class Subenhancer extends CI_Controller {
 		$data = array();
 		if (file_exists('json/'.$jsonFile.'.json')) $data['json'] = file_get_contents('json/'.$jsonFile.'.json');
 		$data['jsonFile'] = $jsonFile;
+		if ($jsonFile == 'log') $data['log'] = true;
 		$this->folder->view('editor',$data);	
 	}
 
@@ -84,7 +85,7 @@ class Subenhancer extends CI_Controller {
 				$jsonString = json_decode($json);
 				
 				if($jsonFile == 'data') {
-					$categories = array('tv_show', 'codec', 'format', 'quality', 'rip_group', 'other', 'editor', 'translation');
+					$categories = array('tv_show', 'codec', 'format', 'quality', 'rip_group', 'other', 'task', 'subtitler');
 					$countCategories = count((array)$jsonString);
 					$propertiesExists = true;
 
@@ -218,6 +219,8 @@ class Subenhancer extends CI_Controller {
 	/***************************************************/ 
 
 	public function enhance() {
+		// print_r($_POST);
+		// die();
 
 		$this->load->helper('core');
 		$this->load->library('ocr');
@@ -293,7 +296,7 @@ class Subenhancer extends CI_Controller {
 		/** Valores iniciales para la optimización **/ 
 		/************************************************************/
 		$cps = 25;
-		$maxVariation = 700;
+		$maxVariation = 800;
 		$minDuration = 900;
 
 
@@ -407,10 +410,10 @@ class Subenhancer extends CI_Controller {
 
 		        /**********/
 		        // UDS
-		        $uds = 1;
-		        if($uds) $segmentObject->textLine = $this->uds->fixUds($segmentObject->textLine);
-		        print_r($segmentObject->textLine);
-		        die();
+		        // $uds = 1;
+		        // if($uds) $segmentObject->textLine = $this->uds->fixUds($segmentObject->textLine);
+		        // print_r($segmentObject->textLine);
+		        // die();
 		        /**********/
 
 		        // $segmentObject->totalCharacters += mb_strlen($segmentObject->$textLine);//dual
@@ -529,8 +532,8 @@ class Subenhancer extends CI_Controller {
 			                        'quality' => array(),
 			                        'rip_group' => array(),
 			                        'other' => array(),
-			                        'editor' => array(),
-			                        'translation' => array(),
+			                        'task' => array(),
+			                        'subtitler' => array(),
 			                        'enhanced' => array()
 			                    );
 
@@ -587,18 +590,18 @@ class Subenhancer extends CI_Controller {
 			    	sort($dataArray['rip_group'], SORT_STRING | SORT_FLAG_CASE | SORT_NATURAL);
 			    }
 			}
-			if(isset($postArray['editor']) && !empty($postArray['editor'])) {
-			    if(!in_array($postArray['editor'], $dataArray['editor'])) {
-			    	array_push($dataArray['editor'], $postArray['editor']);
-			    	sort($dataArray['editor'], SORT_STRING | SORT_FLAG_CASE | SORT_NATURAL);
+			if(isset($postArray['task']) && !empty($postArray['task'])) {
+			    if(!in_array($postArray['task'], $dataArray['task'])) {
+			    	array_push($dataArray['task'], $postArray['task']);
+			    	sort($dataArray['task'], SORT_STRING | SORT_FLAG_CASE | SORT_NATURAL);
 			    }
 			}
-			if(isset($postArray['translation']) && !empty($postArray['translation'])) {
-			    if(!in_array($postArray['translation'], $dataArray['translation'])) {
-			    	array_push($dataArray['translation'], $postArray['translation']);
-			    	sort($dataArray['translation'], SORT_STRING | SORT_FLAG_CASE | SORT_NATURAL);
+			if(isset($postArray['subtitler']) && !empty($postArray['subtitler'])) {
+			    if(!in_array($postArray['subtitler'], $dataArray['subtitler'])) {
+			    	array_push($dataArray['subtitler'], $postArray['subtitler']);
+			    	sort($dataArray['subtitler'], SORT_STRING | SORT_FLAG_CASE | SORT_NATURAL);
 			    }
-			} else $postArray['translation'] = '';
+			} else $postArray['subtitler'] = '';
 
 			if($filename == '') $filename .= 'enhancedSubtitle';
 			$filename .= '.srt';
@@ -658,7 +661,11 @@ class Subenhancer extends CI_Controller {
 		$afterEnhancementLinesOverCps = count(checkAllLinesCps($subtitle,25));
 		$enhancedLines = $originalLinesOverCps-$afterEnhancementLinesOverCps;
 
-		$threadMessage = "[CENTER][IMG]http://imagenes.subadictos.net/novedad/SubsDisponibles.gif[/IMG]\n\n[B][SIZE=4]Capítulo: [COLOR=\"#FF0000\"]".$postArray['episode_number']."[/COLOR].[/SIZE][/B]\n\n[SIZE=3]Agradecimientos a:\nTraducción: [B]".$postArray['translation']."[/B]";
+		$threadMessage = "[CENTER][IMG]http://imagenes.subadictos.net/novedad/SubsDisponibles.gif[/IMG]\n\n[B][SIZE=4]Capítulo: [COLOR=\"#FF0000\"]".$postArray['episode_number']."[/COLOR].[/SIZE][/B]\n\n[SIZE=3]Agradecimientos a:\nTraducción: [B][/B]";
+		// $threadMessage = "[CENTER][IMG]http://imagenes.subadictos.net/novedad/SubsDisponibles.gif[/IMG]\n\n[B][SIZE=4]Capítulo: [COLOR=\"#FF0000\"]".$postArray['episode_number']."[/COLOR].[/SIZE][/B]\n\n[SIZE=3]Agradecimientos a:\nTraducción: [B]".$postArray['translation']."[/B]";
+		// revisar
+
+		// revisar
 		if(isset($postArray['editor']) && !empty($postArray['editor'])) {
 		    $threadMessage .= "\nCorrección: [B]".$postArray['editor']."[/B]";
 		}
@@ -685,7 +692,7 @@ class Subenhancer extends CI_Controller {
 		$logThis->filename = $filename;
 		$logThis->tempFilename = $tempFilename;
 		$logThis->enhanced = $enhancedLines . ' of ' . $originalLinesOverCps;
-		$logThis->efficiency = round($enhancedLines*100/$originalLinesOverCps,1) . '%';
+		$logThis->efficiency = ($originalLinesOverCps) ? round($enhancedLines*100/$originalLinesOverCps,1) . '%' : '0%';
 		array_push($logArray, $logThis);
 		file_put_contents("json/log.json",json_encode($logArray,JSON_PRETTY_PRINT));
 

@@ -3,6 +3,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Subtitlehub extends CI_Controller {
 
+	public $userData;
 
 	function __construct(){
 		parent::__construct();
@@ -10,24 +11,26 @@ class Subtitlehub extends CI_Controller {
 		$this->load->helper('url');
 	}
 
-
 	public function index($goto='subenhancer') {
 		
 		if( isset($_GET['goto']) ) {
 			$goto = urldecode($_GET['goto']);
 		}
 
-		if(isset($_SESSION['isLoggedIn']) && $_SESSION['isLoggedIn']) redirect(base_url().$goto);
-		else {
+		if($this->session->userdata('isLoggedIn')) {
+			if($this->session->userdata('user') == 'subextractor') $goto = 'subextractor';
+			elseif($this->session->userdata('user') != 'subadictos') $goto = 'subshuffle';
+			redirect(base_url().$goto);
+		} else {
 			$data['goto'] = $goto;
 			$this->load->view('login',$data);
 		}
 	}
 
-
 	public function auth() {
 		
 		if($this->input->is_ajax_request()) {
+			$return = 'false';
 			$postArray = $this->input->post();
 
 			if( isset($postArray['username']) && isset($postArray['password']) ) {
@@ -40,11 +43,20 @@ class Subtitlehub extends CI_Controller {
 		  					die();
 		  				}
 		  			}
+		  			if(!$this->session->userdata('isLoggedIn')) {
+		  				$this->load->model('wikiadictos');
+		  				// $this->load->database('wikiadictos', 'TRUE');
+
+		  				if($_SESSION['userId'] = $this->wikiadictos->findUser($postArray['username'], md5($postArray['password']))) {
+		  					$this->session->set_userdata( array('isLoggedIn' => true, 'user' => $postArray['username']) );
+		  					$this->wikiadictos->updateLoginInfo($this->session->userdata('userId'));
+		  					$return = 'true';
+		  				}		  				
+		  			}
 				}				
 			}
+			echo $return;
 		}
-		echo 'false';
-		
 	}
 
 
@@ -83,8 +95,27 @@ class Subtitlehub extends CI_Controller {
 	}
 
 	public function subextractor() {
+		$allowedUsers = array('subadictos', 'subextractor');
+		if(!$this->session->userdata('isLoggedIn')) redirect(base_url().'?goto='.urlencode($this->uri->uri_string));
+		elseif(!in_array($this->session->userdata('user'), $allowedUsers)) redirect(base_url('subshuffle'));
 		$this->load->view('subextractor');
 	}
 
+	public function subshuffle() {
+		
+		
+
+		// $this->load->model('wikiadictos');
+		// $this->load->database('wikiadictos', 'TRUE');
+		// print_r($this->wikiadictos->getRandomSequence());
+		// var_dump($this->session->userdata('userId'));
+
+		// print_r($this->wikiadictos->getRandomSequence());
+		
+	}
+
+	// private function _checkUser() {
+
+	// }
 }
 ?>

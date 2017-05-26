@@ -91,7 +91,7 @@
 
               $.alert({
                 animation: 'top',
-                title: '<i class="fa fa-download" aria-hidden="true"></i>&nbsp;&nbsp;¡SUBTÍTULO DESCARGADO!',
+                title: '<i class="fa fa-check" aria-hidden="true"></i>&nbsp;&nbsp;¡DESCARGADO!',
                 type: 'green',
                 content: 'Archivo <em>.log</em> convertido a <em>.srt</em> exitosamente.',
                 backgroundDismiss: true
@@ -116,7 +116,7 @@
           <div class="col-md-12 col-centered">
            <form action="<?php echo site_url('/dropzone/upload'); ?>" class="dropzone" id="log-dropzone"></form>
            <div id="submit-div">
-            <a href="javascript:void(0)" id="floating-submit" class="btn-floating btn-large waves-effect waves-light green accent-4 tooltipped" data-position="bottom" data-delay="50" data-tooltip="Convertir"><i class="fa fa-check" aria-hidden="true"></i></a>             
+            <a href="javascript:void(0)" id="floating-submit" class="btn-floating btn-large waves-effect waves-light green accent-4 tooltipped" data-position="bottom" data-delay="50" data-tooltip="Convertir"><i class="fa fa-download" aria-hidden="true"></i></a>             
            </div>
 
           </div>

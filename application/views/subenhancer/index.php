@@ -16,10 +16,21 @@
   <?=add_jscript('fileinput.min')?>
   <?=add_jscript('jquery-confirm')?>
   <?=add_jscript('bootstrap.min')?>
+  <?=add_jscript('typeahead.bundle.min')?>
 
   <!-- <script src="js/dropzone.js"></script> -->
   <?php echo "<script>var dbg = ".(isset($dbg) ? "1" : "0")."</script>\n"; ?>
-  <script>var baseUrl = '<?=base_url()?>';</script>
+  <script>
+    var baseUrl = '<?=base_url()?>';
+    var tv_show_array = <?php echo json_encode($dataArray['tv_show'] );?>;
+    var codec_array = <?php echo json_encode($dataArray['codec'] );?>;
+    var format_array = <?php echo json_encode($dataArray['format'] );?>;
+    var quality_array = <?php echo json_encode($dataArray['quality'] );?>;
+    var rip_group_array = <?php echo json_encode($dataArray['rip_group'] );?>;
+    var other_array = <?php echo json_encode($dataArray['other'] );?>;
+    var task_array = <?php echo json_encode($dataArray['task'] );?>;
+    var subtitler_array = <?php echo json_encode($dataArray['subtitler'] );?>;
+  </script>
 
   <?=add_jscript('script',true)?>
   
@@ -34,6 +45,8 @@
 
   <?=add_style('perfect-scrollbar')?>
   <?=add_style('jquery-ui.min')?>
+  <?=add_style('magicsuggest-min')?>
+  <?=add_style('material-design-icons')?>
   
 </head>
 <body>
@@ -87,10 +100,10 @@
                   <div class="col-xs-6 col-sm-8 col-md-8">
                     <div class="form-group">
                       <label for="tv_show">Serie</label>
-                      <div class="input-group">
-                        <input type="text" name="tv_show" id="tv_show" class="form-control input-sm">
+                      <div class="input-group" id="tvshow-suggest">
+                        <input type="text" name="tv_show" id="tv_show" class="form-control input-sm typeahead">
                         <div class="input-group-btn">
-                          <button type="button" class="btn dropdown-toggle more-options" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-caret-down" aria-hidden="true"></i></button>
+                          <button type="button" class="btn dropdown-toggle more-options" data-toggle="dropdown" tabindex="-1" aria-haspopup="true" aria-expanded="false"><i class="fa fa-caret-down" aria-hidden="true"></i></button>
                           <ul class="dropdown-menu dropdown-menu-right container-scrollable" data-list="tv_show">
                             <div class="content-scrollable">
                               
@@ -125,6 +138,14 @@
                       <input type="text" name="episode_title" id="episode_title" class="form-control input-sm">
                     </div>
                   </div>
+
+                  <!-- UNCOMMENT -->
+                  <!-- <div class="col-xs-12 col-sm-6 col-md-6">
+                    <div class="form-group">
+                      <label for="episode_title_spa">Nombre del episodio traducido (para los créditos)</label>
+                      <input type="text" name="episode_title_spa" id="episode_title_spa" class="form-control input-sm">
+                    </div>
+                  </div> -->
                 </div>
 
                 <hr class="divider">
@@ -133,10 +154,10 @@
                   <div class="col-xs-4 col-sm-4 col-md-4">
                     <div class="form-group">
                         <label for="other">Otro</label>
-                        <div class="input-group">  
-                          <input type="text" name="other" id="other" class="form-control input-sm">
+                        <div class="input-group" id="other-suggest">  
+                          <input type="text" name="other" id="other" class="form-control input-sm typeahead">
                           <div class="input-group-btn">
-                            <button type="button" class="btn dropdown-toggle more-options" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-caret-down" aria-hidden="true"></i></button>
+                            <button type="button" class="btn dropdown-toggle more-options" data-toggle="dropdown" tabindex="-1" aria-haspopup="true" aria-expanded="false"><i class="fa fa-caret-down" aria-hidden="true"></i></button>
                             <ul class="dropdown-menu dropdown-menu-right container-scrollable" data-list="other">
                               <div class="content-scrollable">
                                 <?php foreach($dataArray['other'] as $other) { ?>
@@ -152,10 +173,10 @@
                   <div class="col-xs-4 col-sm-4 col-md-4">
                     <div class="form-group">
                         <label for="quality">Calidad</label>
-                        <div class="input-group">  
-                          <input type="text" name="quality" id="quality" class="form-control input-sm">
+                        <div class="input-group" id="quality-suggest">  
+                          <input type="text" name="quality" id="quality" class="form-control input-sm typeahead">
                           <div class="input-group-btn">
-                            <button type="button" class="btn dropdown-toggle more-options" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-caret-down" aria-hidden="true"></i></button>
+                            <button type="button" class="btn dropdown-toggle more-options" data-toggle="dropdown" tabindex="-1" aria-haspopup="true" aria-expanded="false"><i class="fa fa-caret-down" aria-hidden="true"></i></button>
                             <ul class="dropdown-menu dropdown-menu-right container-scrollable" data-list="quality">
                               <div class="content-scrollable">
                                 <?php foreach($dataArray['quality'] as $quality) { ?>
@@ -171,10 +192,10 @@
                   <div class="col-xs-4 col-sm-4 col-md-4">
                     <div class="form-group">
                       <label for="format">Formato</label>
-                      <div class="input-group">
-                        <input type="text" name="format" id="format" class="form-control input-sm" value="HDTV">
+                      <div class="input-group" id="format-suggest">
+                        <input type="text" name="format" id="format" class="form-control input-sm typeahead" value="HDTV">
                         <div class="input-group-btn">
-                          <button type="button" class="btn dropdown-toggle more-options" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-caret-down" aria-hidden="true"></i></button>
+                          <button type="button" class="btn dropdown-toggle more-options" data-toggle="dropdown" tabindex="-1" aria-haspopup="true" aria-expanded="false"><i class="fa fa-caret-down" aria-hidden="true"></i></button>
                           <ul class="dropdown-menu dropdown-menu-right container-scrollable" data-list="format">
                             <div class="content-scrollable">
                               <?php foreach($dataArray['format'] as $format) { ?>
@@ -190,10 +211,10 @@
                   <div class="col-xs-4 col-sm-4 col-md-4">
                     <div class="form-group">
                       <label for="codec">Codec</label>
-                        <div class="input-group"> 
-                          <input type="text" name="codec" id="codec" class="form-control input-sm" value="x264">
+                        <div class="input-group" id="codec-suggest"> 
+                          <input type="text" name="codec" id="codec" class="form-control input-sm typeahead" value="x264">
                           <div class="input-group-btn">
-                            <button type="button" class="btn dropdown-toggle more-options" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-caret-down" aria-hidden="true"></i></button>
+                            <button type="button" class="btn dropdown-toggle more-options" data-toggle="dropdown" tabindex="-1" aria-haspopup="true" aria-expanded="false"><i class="fa fa-caret-down" aria-hidden="true"></i></button>
                             <ul class="dropdown-menu dropdown-menu-right container-scrollable" data-list="codec">
                               <div class="content-scrollable">
                                 <?php foreach($dataArray['codec'] as $codec) { ?>
@@ -209,10 +230,10 @@
                   <div class="col-xs-4 col-sm-4 col-md-4">
                     <div class="form-group">
                         <label for="rip_group">Grupo</label>
-                        <div class="input-group">
-                          <input type="text" name="rip_group" id="rip_group" class="form-control input-sm">
+                        <div class="input-group" id="ripgroup-suggest">
+                          <input type="text" name="rip_group" id="rip_group" class="form-control input-sm typeahead">
                           <div class="input-group-btn">
-                            <button type="button" class="btn dropdown-toggle more-options" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-caret-down" aria-hidden="true"></i></button>
+                            <button type="button" class="btn dropdown-toggle more-options" data-toggle="dropdown" tabindex="-1" aria-haspopup="true" aria-expanded="false"><i class="fa fa-caret-down" aria-hidden="true"></i></button>
                             <ul class="dropdown-menu dropdown-menu-right container-scrollable" data-list="rip_group">
                               <div class="content-scrollable">
                                 <?php foreach($dataArray['rip_group'] as $group) { ?>
@@ -225,42 +246,42 @@
                     </div>
                   </div>
 
-                  <div class="col-xs-4 col-sm-4 col-md-4">
+                  <!-- <div class="col-xs-4 col-sm-4 col-md-4">
                     <div class="form-group">
                         <label for="ocr" class="ocr-label">OCR</label>
                         <div class="ocr">
                           <input type="checkbox" name="ocr" id="ocr" value="true" class="form-control ocr-checkbox" >
                         </div>
                     </div>
-                  </div>
+                  </div> -->
                   
                   <!--  -->
-                  <div class="col-xs-12 col-sm-12 col-md-12">
+                  <!-- <div class="col-xs-12 col-sm-12 col-md-12">
                     <div class="form-group">
                         <label for="editor">Correctores</label>
-                        <div class="input-group">  
-                          <input type="text" name="editor" id="editor" class="form-control input-sm">
+                        <div class="input-group" id="editor-suggest">  
+                          <input type="text" name="editor" id="editor" class="form-control input-sm typeahead">
                           <div class="input-group-btn">
-                            <button type="button" class="btn dropdown-toggle more-options" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-caret-down" aria-hidden="true"></i></button>
+                            <button type="button" class="btn dropdown-toggle more-options" data-toggle="dropdown" tabindex="-1" aria-haspopup="true" aria-expanded="false"><i class="fa fa-caret-down" aria-hidden="true"></i></button>
                             <ul class="dropdown-menu dropdown-menu-right container-scrollable" data-list="editor">
                               <div class="content-scrollable">
-                                <?php foreach($dataArray['editor'] as $editor) { ?>
-                                  <li class="dropdown-item"><?=$editor?></li>
+                                <?php foreach($dataArray['task'] as $task) { ?>
+                                  <li class="dropdown-item"><?=$task?></li>
                                 <?php } ?>
                               </div>
                             </ul>
                           </div>
                         </div>
                     </div>
-                  </div>
+                  </div> -->
                   <!--  -->
-                  <div class="col-xs-12 col-sm-12 col-md-12">
+                  <!-- <div class="col-xs-12 col-sm-12 col-md-12">
                     <div class="form-group">
                       <label for="translation">Traducción original</label>
-                      <div class="input-group">
-                        <input type="text" name="translation" id="translation" class="form-control input-sm">
+                      <div class="input-group" id="translation-suggest">
+                        <input type="text" name="translation" id="translation" class="form-control input-sm typeahead">
                         <div class="input-group-btn">
-                          <button type="button" class="btn dropdown-toggle more-options" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-caret-down" aria-hidden="true"></i></button>
+                          <button type="button" class="btn dropdown-toggle more-options" data-toggle="dropdown" tabindex="-1" aria-haspopup="true" aria-expanded="false"><i class="fa fa-caret-down" aria-hidden="true"></i></button>
                           <ul class="dropdown-menu dropdown-menu-right container-scrollable" data-list="translation">
                             <div class="content-scrollable">
                               <?php foreach($dataArray['translation'] as $translation) { ?>
@@ -271,35 +292,222 @@
                         </div>
                       </div>
                     </div>
+                  </div> -->
+
+                  
+
+                  <!-- UNCOMMENT -->
+                  <!-- <div class="col-md-12 task-row">
+                  <div class="row">
+
+                  <div class="col-xs-4 col-sm-4 col-md-4">
+                    <div class="form-group">
+                      <label for="task">Créditos</label>
+                      <div class="input-group" id="task-suggest">
+                        <input type="text" name="task" id="task" class="form-control input-sm typeahead">
+                        <div class="input-group-btn">
+                          <button type="button" class="btn dropdown-toggle more-options" data-toggle="dropdown" tabindex="-1" aria-haspopup="true" aria-expanded="false"><i class="fa fa-caret-down" aria-hidden="true"></i></button>
+                          <ul class="dropdown-menu dropdown-menu-right container-scrollable" data-list="task">
+                            <div class="content-scrollable">
+                              <?php foreach($dataArray['task'] as $task) { ?>
+                                <li class="dropdown-item"><?=$task?></li>
+                              <?php } ?>
+                            </div>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
                   </div>
+
+                  <div class="col-xs-8 col-sm-8 col-md-8">
+                    <div class="row">
+                      <div class="col-xs-12 col-sm-12 col-md-12">
+                        <label class="label-style">Subtitulador&nbsp;&nbsp;<i class="fa fa-info-circle info-subtitler" aria-hidden="true"></i></label>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-xs-10 col-sm-10 col-md-10">
+                        <div id="magicsuggest"></div>
+                      </div>
+                      <div class="col-xs-2 col-sm-2 col-md-2 remove-padding-left">
+                        <button class="fab primary mdi-plus" type="button">
+                          <div class="ripples black"><span class="ripple"></span></div>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+
+                  </div>
+                  </div> -->
                 </div>
 
+                
+                <!-- UNCOMMENT -->
+                <!-- 
                 <hr class="divider">
-
                 <div class="row options-row">
-                  <div class="col-md-12 options-submenu"><span>OPCIONES</span><span></span>
+                  <div class="col-md-12 options-submenu"><span>OPCIONES&nbsp;&nbsp;<em>(Experimental)</em></span><span></span>
                   <span><i class="fa fa-chevron-right"></i></span>
                   </div>
 
                   <div class="col-md-12" style="color:#fff;">
-                  <div class="options-content collapsed" style="display:none;">
-                    <div class="row">
-                      <div class="col-md-3">
-                        <label class="switch">
-                          <input type="checkbox">
-                          <div class="slider round"></div>
-                        </label>
-                      </div>
-                      <div class="col-md-3">
-                        
-                        
-                      </div>
-                      <div class="col-md-3"></div>
-                      <div class="col-md-3"></div>
-                    </div>   
+                    <div class="options-content collapsed" style="display:none;">
+                      <div class="row">
+                        <div class="col-md-12 ocr-disclaimer">
+                        <div class="well">
+                          CLÁUSULA DE AUSENCIA DE GARANTÍA Y LIMITACIÓN DE RESPONSABILIDADES.
+                          <br>
+                          Opciones en etapa de prueba, use bajo su propio riesgo y por favor reporte cualquier error para ayudarnos a mejorar la herramienta. ¡Muchas gracias!
+                          <br>
+                          * Para una optimización más eficiente, no activar todos los OCRs, ni OCRs que se solapen en cuanto a su funcionalidad.
+                        </div>
+                        </div>
+
+                        <div class="col-sm-6">
+                          <div class="row">
+                            <div class="col-md-12">
+                              <label class="switch">
+                                <input type="checkbox">
+                                <div class="slider round"></div>
+                              </label>
+                              <label class="switch">
+                                <input type="checkbox">
+                                <div class="slider round revision"></div>
+                              </label>
+                              <label class="switch-label">
+                                Reduce
+                              </label>
+                            </div>
+
+                            <div class="col-md-12">
+                              <label class="switch">
+                                <input type="checkbox">
+                                <div class="slider round"></div>
+                              </label>
+                              <label class="switch">
+                                <input type="checkbox">
+                                <div class="slider round revision"></div>
+                              </label>
+                              <label class="switch-label">
+                                Reduce@
+                              </label>
+                            </div>
+
+                            <div class="col-md-12">
+                              <label class="switch">
+                                <input type="checkbox">
+                                <div class="slider round"></div>
+                              </label>
+                              <label class="switch">
+                                <input type="checkbox">
+                                <div class="slider round revision"></div>
+                              </label>
+                              <label class="switch-label">
+                                Reduce@@
+                              </label>
+                            </div>
+
+                            <div class="col-md-12">
+                              <label class="switch">
+                                <input type="checkbox">
+                                <div class="slider round"></div>
+                              </label>
+                              <label class="switch">
+                                <input type="checkbox">
+                                <div class="slider round revision"></div>
+                              </label>
+                              <label class="switch-label">
+                                Reduce v2
+                              </label>
+                            </div>
+
+                            <div class="col-md-12">
+                              <label class="switch">
+                                <input type="checkbox">
+                                <div class="slider round"></div>
+                              </label>
+                              <label class="switch">
+                                <input type="checkbox">
+                                <div class="slider round revision"></div>
+                              </label>
+                              <label class="switch-label">
+                                Reduce#
+                              </label>
+                            </div>
+
+                            <div class="col-md-12">
+                              <label class="switch">
+                                <input type="checkbox">
+                                <div class="slider round"></div>
+                              </label>
+                              <label class="switch">
+                                <input type="checkbox">
+                                <div class="slider round revision"></div>
+                              </label>
+                              <label class="switch-label">
+                                Reduce##
+                              </label>
+                            </div>
+
+                            <div class="col-md-12">
+                              <label class="switch">
+                                <input type="checkbox">
+                                <div class="slider round"></div>
+                              </label>
+                              <label class="switch">
+                                <input type="checkbox">
+                                <div class="slider round revision"></div>
+                              </label>
+                              <label class="switch-label">
+                                Asia-team
+                              </label>
+                            </div>
+
+                            <div class="col-md-12">
+                              <label class="switch">
+                                <input type="checkbox">
+                                <div class="slider round"></div>
+                              </label>
+                              <label class="switch">
+                                <input type="checkbox">
+                                <div class="slider round revision"></div>
+                              </label>
+                              <label class="switch-label">
+                                Unidades de sentido
+                              </label>
+                            </div>
+                            
+                          </div>
+                        </div>
+                        <div class="col-sm-6">
+                          <div class="row">
+                            <div class="col-md-12">
+                              <label class="switch">
+                                <input type="checkbox">
+                                <div class="slider round"></div>
+                              </label>
+                              <label class="switch-label">
+                                Activar todos los OCR
+                              </label>
+                            </div>
+
+                            <div class="col-md-12">
+                              <label class="switch">
+                                <input type="checkbox">
+                                <div class="slider round revision"></div>
+                              </label>
+                              <label class="switch-label">
+                                Modo "revisión"
+                              </label>
+                            </div>
+
+                          </div>
+                        </div>
+
+                      </div>   
+                    </div>
                   </div>
-                  </div>
-                </div>
+                </div> -->
                 
                 <hr class="divider">
 
@@ -444,18 +652,160 @@
   
   <?=add_jscript('perfect-scrollbar.jquery')?>
   <?=add_jscript('jquery-ui.min')?>
-  
-  
+
+  <?=add_jscript('jquery-1.11.0.min')?>
+  <script type="text/javascript">
+    var jQueryL = $.noConflict(true);
+  </script>
+  <?=add_jscript('magicsuggest')?>
+
   <script>
     $('.container-scrollable').perfectScrollbar();
   
     $( function() {
       var spinner = $( ".spinner" ).spinner();
     });
+
+    var $ripples = $('.ripples');
+    $ripples.on('click.Ripples', function(e) {
+        var $this = $(this);
+        var $offset = $this.parent().offset();
+        var $circle = $this.find('.ripple');
+
+        var x = e.pageX - $offset.left;
+        var y = e.pageY - $offset.top;
+        $circle.css({
+            top: y + 'px',
+            left: x + 'px'
+        });
+        $this.addClass('is-active');
+    });
+
+    $ripples.on('animationend webkitAnimationEnd mozAnimationEnd oanimationend MSAnimationEnd', function(e) {
+        $(this).removeClass('is-active');
+    });
+
+    jQueryL(function() {
+      jQueryL('#magicsuggest').magicSuggest({
+        data: subtitler_array,
+        maxSelection: 5,
+        name: 'subtitlers'
+      });
+    });
+
+    $(document).ready(function(){
+      $('#magicsuggest').addClass('dropup');
+
+      $('button.fab.mdi-plus').on('click',function(){
+
+        var rowCount = $('.extra-row').length;
+
+        if(rowCount<2){
+
+            // var foundId = false;
+            var rowId = 0;
+            for(var j=1; j<3 || !rowId; j++) {
+
+            //   console.log('here');
+              if($('.extra-row-'+j).length == 0) {
+            //     console.log('there');
+            //     foundId = true;
+                rowId = j;
+              }
+            }
+
+            var tasks = '';
+            for(var i=0; i<task_array.length; i++) {
+              tasks += '<li class="dropdown-item">'+task_array[i]+'</li>';
+            }
+
+
+        
+            var row = '<div class="row extra-row extra-row-'+rowId+'">\
+            <div class="col-xs-4 col-sm-4 col-md-4">\
+              <div class="form-group">\
+                <div class="input-group" id="task-suggest'+rowId+'">\
+                  <input type="text" name="task'+rowId+'" id="task'+rowId+'" class="form-control input-sm typeahead">\
+                  <div class="input-group-btn">\
+                    <button type="button" class="btn dropdown-toggle more-options" data-toggle="dropdown" tabindex="-1" aria-haspopup="true" aria-expanded="false"><i class="fa fa-caret-down" aria-hidden="true"></i></button>\
+                    <ul class="dropdown-menu dropdown-menu-right container-scrollable" data-list="task'+rowId+'">\
+                      <div class="content-scrollable">'+tasks+'</div>\
+                    </ul>\
+                  </div>\
+                </div>\
+              </div>\
+            </div>\
+            <div class="col-xs-8 col-sm-8 col-md-8">\
+              <div class="row">\
+                <div class="col-xs-10 col-sm-10 col-md-10">\
+                  <div id="magicsuggest'+rowId+'"></div>\
+                </div>\
+                <div class="col-xs-2 col-sm-2 col-md-2 remove-padding-left">\
+                  <button class="fab primary mdi-minus" type="button">\
+                    <div class="ripples black"><span class="ripple"></span></div>\
+                  </button>\
+                </div>\
+              </div>\
+            </div>\
+            </div>';
+
+            $('.task-row').append(row);
+
+            jQueryL(function() {
+              jQueryL('#magicsuggest'+rowId).magicSuggest({
+                data: subtitler_array,
+                maxSelection: 5,
+                name: 'subtitlers'+rowId
+              });
+            });
+
+            $('#magicsuggest'+rowId).addClass('dropup');
+
+            var substringMatcher = function(strs) {
+              return function findMatches(q, cb) {
+                // if(q=='') q = '/./';
+                // console.log(q);
+                var matches, substringRegex;
+
+                // an array that will be populated with substring matches
+                matches = [];
+
+                // regex used to determine if a string contains the substring `q`
+                substrRegex = new RegExp(q, 'i');
+
+                // iterate through the pool of strings and for any string that
+                // contains the substring `q`, add it to the `matches` array
+                $.each(strs, function(i, str) {
+                  if (substrRegex.test(str)) {
+                    matches.push(str);
+                  }
+                });
+
+                cb(matches);
+              };
+            };
+
+            $('#task-suggest'+rowId+' .typeahead').typeahead({
+              hint: true,
+              highlight: true,
+              limit: 10
+            },
+            {
+              name: 'task_array'+rowId,
+              source: substringMatcher(task_array)
+            });
+          
+        }
+
+      });
+
+      $(document).on('click','button.fab.mdi-minus',function(){
+        $(this).closest('.extra-row').remove();
+      });
+    });
+
+
   </script>
-
-
-  <!-- <?=add_style('bootstrap-combobox')?> -->
-  <!-- <?=add_jscript('bootstrap-combobox')?> -->
+  
 </body>
 </html>

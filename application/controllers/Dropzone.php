@@ -15,7 +15,10 @@ class Dropzone extends CI_Controller {
 
             $fileContent = file_get_contents($_FILES["file"]["tmp_name"]);
 
+            // console.log(++seqcount+"\n"+a.getAttribute("begin").replace(".",",")+" --> "+a.getAttribute("end").replace(".",",")+"\n"+h+"\n\n")
+
             $pattern = '/\d{1,4}\n\d{2}:\d{2}:\d{2},\d{3}\s-->\s\d{2}:\d{2}:\d{2},\d{3}\n.+\n(?:.+\n)?(?:.+\n)?(?:.+\n)?(?:.+\n)?(?:.+\n)?/';
+            $patternFP = '/\d{2}:\d{2}:\d{2},\d{3}\s-->\s\d{2}:\d{2}:\d{2},\d{3}\n.+\n(?:.+\n)?(?:.+\n)?(?:.+\n)?(?:.+\n)?(?:.+\n)?/';
 
             if(preg_match_all($pattern, $fileContent, $matches)){
 
@@ -23,7 +26,6 @@ class Dropzone extends CI_Controller {
                 foreach($matches[0] as $match) {
                     $formattedSubtitle .= $match . "\n";
                 }
-                    
 
                 $fileName = uniqid('subextract-');
                 $targetPath = getcwd() . '/uploads/';
@@ -32,10 +34,19 @@ class Dropzone extends CI_Controller {
                 echo $fileName;
                 // $tempFile = $_FILES['file']['tmp_name'];
                 // move_uploaded_file($tempFile, $targetFile);
+            } else if(preg_match_all($patternFP, $fileContent, $matches)){
 
+                $formattedSubtitle = '';
+                foreach($matches[0] as $key => $match) {
+                    $formattedSubtitle .= ($key+1)."\n".$match . "\n";
+                }
 
+                $fileName = uniqid('subextract-');
+                $targetPath = getcwd() . '/uploads/';
+                $targetFile = $targetPath . $fileName . '.srt';
+                file_put_contents($targetFile, $formattedSubtitle);
+                echo $fileName;
             }
-
         }
     }
 
