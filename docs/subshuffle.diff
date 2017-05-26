@@ -1,0 +1,58 @@
+flangs->state (63.10 a 63.29)
+flangs->totalseq (354 a 355)
+flangs->totalVersion0 (330 a 331)
+
+
+INSERT INTO `subs` (`entryID`, `subID`, `sequence`, `authorID`, `version`, `original`, `locked`, `in_date`, `start_time`, `start_time_fraction`, `end_time`, `end_time_fraction`, `text`, `lang_id`, `edited_seq`, `last`, `estart_time`, `estart_time_fraction`, `eend_time`, `eend_time_fraction`, `fversion`, `tested`)
+(194922, 167, 328, 61, 1, 0, 0, '2017-05-10 18:18:32', '00:13:30', 050, '00:13:32', 285, 'a quedarme con los\nparientes de mi hermana.', 4, 328, 1, '00:13:30', 050, '00:13:32', 285, 0, 0)
++(194923, 167, 342, 69, 0, 0, 0, '2017-05-10 20:12:57', '00:14:05', 058, '00:14:06', 258, 'Gracias, Dre.', 4, 342, 1, '00:14:05', 058, '00:14:06', 258, 0, 0)
+
+INSERT INTO `translating` (`entryID`, `subID`, `fversion`, `lang_id`, `tokened`, `userID`, `tokentime`, `sequence`, `seqcount`)
+-(93581, 167, 0, 4, 0, 0, '2017-02-25 21:19:46', 342, 0)
+
+
+
+
+------------------------------------------------------
+
+
+INSERT INTO `translating` (`entryID`, `subID`, `fversion`, `lang_id`, `tokened`, `userID`, `tokentime`, `sequence`, `seqcount`) VALUES
+ (93580, 167, 0, 4, 0, 0, '2017-02-25 21:19:46', 341, 0),
+ (93582, 167, 0, 4, 0, 0, '2017-02-25 21:19:46', 343, 0),
+ (93583, 167, 0, 4, 0, 0, '2017-02-25 21:19:46', 344, 0),
+-(93584, 167, 0, 4, 0, 0, '2017-02-25 21:19:46', 345, 0),
++(93584, 167, 0, 4, 1, 69, '2017-05-20 02:48:14', 345, 0),
+ (93585, 167, 0, 4, 0, 0, '2017-02-25 21:19:46', 346, 0),
+ (93586, 167, 0, 4, 0, 0, '2017-02-25 21:19:46', 347, 0),
+ (93587, 167, 0, 4, 0, 0, '2017-02-25 21:19:46', 348, 0),
+
+
+
+
+
+
+INSERT INTO `flangs` (`entryID`, `subID`, `fversion`, `lang_id`, `state`, `testing`, `original`, `totalseq`, `totalVersion0`, `cyrillic`, `merged`) VALUES
+
+@@ -4952,7 +4952,7 @@
+ (389, 163, 0, 4, 100.00, 0, 0, 510, 477, 0, 0),
+ (392, 166, 0, 1, 100.00, 0, 1, 523, 523, 0, 0),
+ (393, 167, 0, 1, 100.00, 0, 1, 523, 523, 0, 0),
++(394, 167, 0, 4, 63.48, 0, 0, 356, 332, 0, 0),
+-(394, 167, 0, 4, 63.29, 0, 0, 355, 331, 0, 0),
+ (395, 168, 0, 1, 100.00, 0, 1, 635, 635, 0, 0),
+ (397, 165, 0, 4, 100.00, 0, 0, 486, 464, 0, 0),
+ (398, 168, 0, 4, 100.00, 0, 0, 675, 635, 0, 0),
+
+
+INSERT INTO `subs` (`entryID`, `subID`, `sequence`, `authorID`, `version`, `original`, `locked`, `in_date`, `start_time`, `start_time_fraction`, `end_time`, `end_time_fraction`, `text`, `lang_id`, `edited_seq`, `last`, `estart_time`, `estart_time_fraction`, `eend_time`, `eend_time_fraction`, `fversion`, `tested`) VALUES
++(195600, 167, 345, 69, 0, 0, 0, '2017-05-19 19:49:18', '00:14:13', 333, '00:14:15', 234, '¿Qué hay para cenar?', 4, 345, 1, '00:14:13', 333, '00:14:15', 234, 0, 0);
+ 
+
+INSERT INTO `translating` (`entryID`, `subID`, `fversion`, `lang_id`, `tokened`, `userID`, `tokentime`, `sequence`, `seqcount`) VALUES
+-(93584, 167, 0, 4, 1, 69, '2017-05-20 02:48:14', 345, 0),
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+Users
+/translate_ajaxselect.php?id=167&fversion=0&langto=4&langfrom=1&seq=345
+
