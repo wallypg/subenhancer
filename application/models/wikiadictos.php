@@ -104,6 +104,22 @@ class Wikiadictos extends CI_Model
 	// 	return new stdClass();
 	// }
 
+	// public function getRandomSequence() {
+	// 	// Puede traer líneas de subtítulos cerrados
+	// 	$this->db->select("count(*)");
+	// 	$this->db->join("translating t","s.subID = t.subID AND s.fversion = t.fversion AND s.sequence = t.sequence");
+	// 	// $this->db->order_by('entryID','RANDOM');
+	// 	// $this->db->limit(1);
+	// 	$this->db->where('tokened', 0);
+	// 	$query = $this->db->get('subs s');
+	// 	print_r($this->db->last_query());
+	// 	if($query->num_rows() > 0)
+	// 	{
+	// 		return $query->row();
+	// 	}
+	// 	return [];
+	// }
+
 	public function getRandomSequence() {
 		// Puede traer líneas de subtítulos cerrados
 		$this->db->select("
@@ -122,7 +138,7 @@ class Wikiadictos extends CI_Model
 		$this->db->limit(1);
 		$this->db->where('tokened', 0);
 		$query = $this->db->get('subs s');
-
+		print_r($this->db->last_query());
 		if($query->num_rows() > 0)
 		{
 			return $query->row();
@@ -184,7 +200,7 @@ class Wikiadictos extends CI_Model
 		$this->db->order_by('s.sequence','ASC');
 		$this->db->limit(30);
 		$this->db->where('tokened', 0);
-		if(!is_null($loadMore)) $this->db->where('entryID >',$loadMore);
+		if(!is_null($loadMore)) $this->db->where('s.entryID >',$loadMore);
 		$this->db->where('s.subID', $subId);
 		$query = $this->db->get('subs s');
 

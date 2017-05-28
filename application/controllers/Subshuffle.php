@@ -28,7 +28,10 @@ class Subshuffle extends CI_Controller {
 
 	public function index() {
 		// print_r($this->db->last_query());
-		$this->folder->view('index');
+		$subtitles = $this->wikiadictos->getSubtitles();
+		if(empty($subtitles)) $subtitles = $this->defaultMessages;
+		$data['subtitles'] = $subtitles;
+		$this->folder->view('index',$data);
 
 		// if($randomSequence = $this->wikiadictos->getRandomSequence()){
 		// 	$tokenized = $this->wikiadictos->tokenizeSequence(
@@ -53,7 +56,8 @@ class Subshuffle extends CI_Controller {
 	}
 
 	public function test() {
-		$this->folder->view('test');
+		print_r($this->wikiadictos->getRandomSequence());
+		// $this->folder->view('test');
 	}
 
 	public function log() {

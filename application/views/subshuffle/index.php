@@ -55,88 +55,27 @@
 									<a class="mp-back" href="#">Atrás</a>
 									<div class="nano-container custom-scrollbar">
 										<div class="nano">
-											<ul id="subtitles-container" class="nano-content load-loader">
-												
-												
-											</ul>									
+											<ul id="subtitles-container" class="nano-content">
+
+												<?php foreach ($subtitles as $key => $subtitle) { ?>
+													<li class="icon icon-arrow-left list-item">
+														<a class="subtitle-item" sub-id="<?=$subtitle->subId;?>"><?=$subtitle->title;?></a>
+														<div class="mp-level">
+															<h2 class="subtitle-title"><?=$subtitle->title;?></h2>
+															<a class="mp-back" href="#">Atrás</a>
+															<div class="nano-container custom-scrollbar">
+																<div class="nano">
+																	<ul id="sub-<?=$subtitle->subId;?>-container" sub-id="<?=$subtitle->subId;?>" class="nano-content load-loader"></ul>
+																</div>
+															</div>
+														</div>
+													</li>
+												<?php } ?>
+
+											</ul>
 										</div>
 									</div>
-
-
-										<!-- <li class="icon icon-arrow-left">
-											<a href="#">Blacklist</a>
-											<div class="mp-level">
-												<h2>Blacklist</h2>
-												<a class="mp-back" href="#">Atrás</a>
-												<ul>
-													<li><a href="#">Linea 23</a></li>
-													<li><a href="#">Linea 44</a></li>
-													<li><a href="#">Linea 132</a></li>
-													<li><a href="#">Linea 312</a></li>
-												</ul>
-											</div>
-										</li> -->
-
-										<!-- <li class="icon icon-arrow-left">
-											<a href="#">Law and Order</a>
-											<div class="mp-level">
-												<h2>Law and Order</h2>
-												<a class="mp-back" href="#">Atrás</a>
-												<ul>
-													<li><a href="#">Linea 23</a></li>
-													<li><a href="#">Linea 44</a></li>
-													<li><a href="#">Linea 132</a></li>
-													<li><a href="#">Linea 312</a></li>
-												</ul>
-											</div>
-										</li> -->
-										<!-- <li class="icon icon-arrow-left">
-											<a href="#">Better Call Saul</a>
-											<div class="mp-level">
-												<h2>Better Call Saul</h2>
-												<a class="mp-back" href="#">Atrás</a>
-												<div class="nano-container">
-													
-													<div class="nano">						
-													<ul class="nano-content">
-														<li><a href="#">Linea 23</a></li>
-														<li><a href="#">Linea 44</a></li>
-														<li><a href="#">Linea 132</a></li>
-														<li><a href="#">Linea 312</a></li>
-														<li><a href="#">Linea 23</a></li>
-														<li><a href="#">Linea 44</a></li>
-														<li><a href="#">Linea 132</a></li>
-														<li><a href="#">Linea 312</a></li>
-														<li><a href="#">Linea 23</a></li>
-														<li><a href="#">Linea 44</a></li>
-														<li><a href="#">Linea 132</a></li>
-														<li><a href="#">Linea 312</a></li>
-														<li><a href="#">Linea 23</a></li>
-														<li><a href="#">Linea 44</a></li>
-														<li><a href="#">Linea 132</a></li>
-														<li><a href="#">Linea 312</a></li>
-														<li><a href="#">Linea 23</a></li>
-														<li><a href="#">Linea 44</a></li>
-														<li><a href="#">Linea 132</a></li>
-														<li><a href="#">Linea 312</a></li>
-														<li><a href="#">Linea 23</a></li>
-														<li><a href="#">Linea 44</a></li>
-														<li><a href="#">Linea 132</a></li>
-														<li><a href="#">Linea 312</a></li>
-														<li><a href="#">Linea 23</a></li>
-														<li><a href="#">Linea 44</a></li>
-														<li><a href="#">Linea 132</a></li>
-														<li><a href="#">Linea 312</a></li>
-													</ul>
-													</div>
-
-												</div>
-											</div>
-										</li> -->
-
-
-									<!-- </ul> -->
-								</div>
+								</div> 
 							</li>
 
 							<li class="icon icon-arrow-left">
@@ -341,6 +280,9 @@
 					</a>
 				</li>
 			{{/items}}
+			<li class="load-more">
+				<a class="more-sequences">VER MÁS<br /><i class="fa fa-chevron-down"></i></a>
+			</li>
 		</script>
 
 		<script type="template/mustache" id="loader-template">
@@ -434,7 +376,7 @@
 		
 		<?=add_jscript('jquery.nanoscroller.min')?>
 		<?=add_jscript('mustache.min')?>
-		<?=add_jscript('subshuffle', false)?>
+		<?=add_jscript('subshuffle', true)?>
 		<?=add_jscript('modernizr.custom')?>
 
 		<script>

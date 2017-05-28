@@ -141,254 +141,6 @@ if ( typeof define === 'function' && define.amd ) {
   }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  // function thirdLevel() {
-  //   this.el = document.getElementById( 'subtitles' );
-  //   // this.trigger = trigger;
-  //   // support 3d transforms
-  //   this.options = this.defaults;
-  //   this.support = Modernizr.csstransforms3d;
-  //   if( this.support ) {
-  //     this._init();
-  //   }
-  // }
-
-  // thirdLevel.prototype = {
-  //   defaults : {
-  //     // overlap: there will be a gap between open levels
-  //     // cover: the open levels will be on top of any previous open level
-  //     type : 'overlap', // overlap || cover
-  //     // space between each overlaped level
-  //     levelSpacing : 40,
-  //     // classname for the element (if any) that when clicked closes the current level
-  //     backClass : 'mp-back'
-  //   },
-  //   _init : function() {
-  //     // if menu is open or not
-  //     // this.open = false;
-  //     // // level depth
-  //     // this.level = 0;
-  //     // // the moving wrapper
-  //     // this.wrapper = document.getElementById( 'mp-pusher' );
-  //     // // the mp-level elements
-  //     // this.levels = Array.prototype.slice.call( this.el.querySelectorAll( 'div.mp-level' ) );
-  //     // // save the depth of each of these mp-level elements
-  //     // var self = this;
-  //     // this.levels.forEach( function( el, i ) { el.setAttribute( 'data-level', getLevelDepth( el, self.el.id, 'mp-level' ) ); } );
-  //     // // the menu items
-  //     // this.menuItems = Array.prototype.slice.call( this.el.querySelectorAll( 'li' ) );
-  //     // // if type == "cover" these will serve as hooks to move back to the previous level
-  //     // this.levelBack = Array.prototype.slice.call( this.el.querySelectorAll( '.' + this.options.backClass ) );
-  //     // // event type (if mobile use touch events)
-  //     // this.eventtype = mobilecheck() ? 'touchstart' : 'click';
-  //     // // add the class mp-overlap or mp-cover to the main element depending on options.type
-  //     // classie.add( this.el, 'mp-' + this.options.type );
-  //     // initialize / bind the necessary events
-  //     this._initEvents();
-  //   },
-  //   _initEvents : function() {
-  //     var self = this;
-
-  //     // the menu should close if clicking somewhere on the body
-  //     var bodyClickFn = function( el ) {
-  //       self._resetMenu();
-  //       el.removeEventListener( self.eventtype, bodyClickFn );
-  //     };
-
-  //     // open (or close) the menu
-  //     // this.trigger.addEventListener( this.eventtype, function( ev ) {
-  //     //   ev.stopPropagation();
-  //     //   ev.preventDefault();
-  //     //   if( self.open ) {
-  //     //     self._resetMenu();
-  //     //   }
-  //     //   else {
-  //     //     self._openMenu();
-  //     //     // the menu should close if clicking somewhere on the body (excluding clicks on the menu)
-  //     //     document.addEventListener( self.eventtype, function( ev ) {
-  //     //       if( self.open && !hasParent( ev.target, self.el.id ) ) {
-  //     //         bodyClickFn( this );
-  //     //       }
-  //     //     } );
-  //     //   }
-  //     // } );
-
-  //     // opening a sub level menu
-  //     this.menuItems.forEach( function( el, i ) {
-  //       // check if it has a sub level
-  //       var subLevel = el.querySelector( 'div.mp-level' );
-  //       if( subLevel ) {
-  //         el.querySelector( 'a' ).addEventListener( self.eventtype, function( ev ) {
-  //           ev.preventDefault();
-  //           var level = closest( el, 'mp-level' ).getAttribute( 'data-level' );
-  //           if( self.level <= level ) {
-  //             ev.stopPropagation();
-  //             classie.add( closest( el, 'mp-level' ), 'mp-level-overlay' );
-  //             self._openMenu( subLevel );
-  //           }
-  //         } );
-  //       }
-  //     } );
-
-  //     // closing the sub levels :
-  //     // by clicking on the visible part of the level element
-  //     this.levels.forEach( function( el, i ) {
-  //       el.addEventListener( self.eventtype, function( ev ) {
-  //         ev.stopPropagation();
-  //         var level = el.getAttribute( 'data-level' );
-  //         if( self.level > level ) {
-  //           self.level = level;
-  //           self._closeMenu();
-  //         }
-  //       } );
-  //     } );
-
-  //     // by clicking on a specific element
-  //     this.levelBack.forEach( function( el, i ) {
-  //       el.addEventListener( self.eventtype, function( ev ) {
-  //         ev.preventDefault();
-  //         var level = closest( el, 'mp-level' ).getAttribute( 'data-level' );
-  //         if( self.level <= level ) {
-  //           ev.stopPropagation();
-  //           self.level = closest( el, 'mp-level' ).getAttribute( 'data-level' ) - 1;
-  //           self.level === 0 ? self._resetMenu() : self._closeMenu();
-  //         }
-  //       } );
-  //     } );  
-  //   },
-  //   _openMenu : function( subLevel ) {
-  //     // increment level depth
-  //     ++this.level;
-
-  //     // move the main wrapper
-  //     var levelFactor = ( this.level - 1 ) * this.options.levelSpacing,
-  //       translateVal = this.options.type === 'overlap' ? this.el.offsetWidth + levelFactor : this.el.offsetWidth;
-      
-  //     this._setTransform( 'translate3d(' + translateVal + 'px,0,0)' );
-
-  //     if( subLevel ) {
-  //       // reset transform for sublevel
-  //       this._setTransform( '', subLevel );
-  //       // need to reset the translate value for the level menus that have the same level depth and are not open
-  //       for( var i = 0, len = this.levels.length; i < len; ++i ) {
-  //         var levelEl = this.levels[i];
-  //         if( levelEl != subLevel && !classie.has( levelEl, 'mp-level-open' ) ) {
-  //           this._setTransform( 'translate3d(-100%,0,0) translate3d(' + -1*levelFactor + 'px,0,0)', levelEl );
-  //         }
-  //       }
-  //     }
-  //     // add class mp-pushed to main wrapper if opening the first time
-  //     if( this.level === 1 ) {
-  //       classie.add( this.wrapper, 'mp-pushed' );
-  //       this.open = true;
-  //     }
-  //     // add class mp-level-open to the opening level element
-  //     classie.add( subLevel || this.levels[0], 'mp-level-open' );
-  //   },
-  //   // close the menu
-  //   _resetMenu : function() {
-  //     this._setTransform('translate3d(0,0,0)');
-  //     this.level = 0;
-  //     // remove class mp-pushed from main wrapper
-  //     classie.remove( this.wrapper, 'mp-pushed' );
-  //     this._toggleLevels();
-  //     this.open = false;
-  //   },
-  //   // close sub menus
-  //   _closeMenu : function() {
-  //     var translateVal = this.options.type === 'overlap' ? this.el.offsetWidth + ( this.level - 1 ) * this.options.levelSpacing : this.el.offsetWidth;
-  //     this._setTransform( 'translate3d(' + translateVal + 'px,0,0)' );
-  //     this._toggleLevels();
-  //   },
-  //   // translate the el
-  //   _setTransform : function( val, el ) {
-  //     el = el || this.wrapper;
-  //     el.style.WebkitTransform = val;
-  //     el.style.MozTransform = val;
-  //     el.style.transform = val;
-  //   },
-  //   // removes classes mp-level-open from closing levels
-  //   _toggleLevels : function() {
-  //     for( var i = 0, len = this.levels.length; i < len; ++i ) {
-  //       var levelEl = this.levels[i];
-  //       if( levelEl.getAttribute( 'data-level' ) >= this.level + 1 ) {
-  //         classie.remove( levelEl, 'mp-level-open' );
-  //         classie.remove( levelEl, 'mp-level-overlay' );
-  //       }
-  //       else if( Number( levelEl.getAttribute( 'data-level' ) ) == this.level ) {
-  //         classie.remove( levelEl, 'mp-level-overlay' );
-  //       }
-  //     }
-  //   }
-  // }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
   mlPushMenu.prototype = {
     defaults : {
       // overlap: there will be a gap between open levels
@@ -560,8 +312,7 @@ if ( typeof define === 'function' && define.amd ) {
 
   // add to global namespace
   window.mlPushMenu = mlPushMenu;
-  // window.thirdLevel = thirdLevel;
-  // window.getLevelDepth = getLevelDepth;
+  window.mobilecheck = mobilecheck;
 
 } )( window );
 
@@ -576,43 +327,41 @@ if ( typeof define === 'function' && define.amd ) {
 // ************************************************************ //
 
 var subshuffle = function(){
-  var lists = ['my-translations','subtitles','subtitle-sequences'];
-   var template = new Array();
-  template['empty'] = '<li class="empty-list"><a>{{{message}}}</a></li>';
-  template['loader'] = $("#loader-template").html();
+  // Templates
+  var empty = '<li class="empty-list"><a>{{{message}}}</a></li>';
+  var loader = $("#loader-template").html();
+  var eventtype = mobilecheck() ? 'touchstart' : 'click';
+  var template = new Array();
+  template['my-translations'] = $("#my-translations-template").html();
+  template['subtitle-sequences'] = $("#subtitle-sequences-template").html();
   
   // Init
   loadLoaders();
-  lists.forEach(function(list){
-    $("#"+list).on('click touchstart',function(){
-      getData(list);
-    });
-    template[list] = $("#"+list+"-template").html();
+  $("#my-translations").on(eventtype,function(){
+    getTranslationsData();
   });
-
+  $(".subtitle-item").on(eventtype, function(){
+    var subId = $(this).attr('sub-id');
+    getSubtitleSequencesData(subId);
+  });
 
   // Methods
   function rebindEvents() {
-    lists.forEach(function(list){
-      $("#"+list+"-more").on('click touchstart',function(){
-        var loadFrom = $(this).parent().prev('.list-item').attr('seq-id');
-        getData(list, loadFrom);
-      });
+    $("#my-translations-more").on(eventtype,function(){
+      var loadFrom = $(this).parent().prev('.list-item').attr('seq-id');
+      getTranslationsData(loadFrom);
     });
 
-    $(".subtitle-item").on('click touchstart', function(){
-      var subId = $(this).attr('sub-id');
-      getSubtitleData(subId);
-      // ***
+    $(".more-sequences").on(eventtype,function(){
+      var subId = $(this).closest("ul").attr("sub-id");
+      var loadFrom = $(this).parent().prev('.list-item').attr('seq-id');
+      getSubtitleSequencesData(subId, loadFrom);
     });
-
-    // new thirdLevel();
   }
 
   function loadLoaders() {
     $(".load-loader").each(function(){
-      // console.log(template['loader']);
-      $(this).html(Mustache.render(template['loader']));
+      $(this).html(Mustache.render(loader));
     });
   }
     
@@ -622,43 +371,47 @@ var subshuffle = function(){
     })
   }
 
-  function getData(list, loadMore) {
+  function getTranslationsData(loadMore) {
     loadMore = loadMore || "";
-    $.get( 'subshuffle/'+camelize(list)+"/"+loadMore, function( data ) {
+    $.get( "subshuffle/myTranslations/"+loadMore, function( data ) {
       if(loadMore)
-        more(list, JSON.parse(data));
+        more("my-translations", JSON.parse(data));
       else
-        render(list, JSON.parse(data));
+        render("my-translations", JSON.parse(data));
+      rebindEvents();
+    });    
+  }
+
+  function getSubtitleSequencesData(subId, loadMore) {
+    loadMore = loadMore || "";
+    $.get( 'subshuffle/subtitleSequences/'+subId+'/'+loadMore, function( data ) {
+      if(loadMore)
+        more("subtitle-sequences", JSON.parse(data),"sub-"+subId);
+      else
+        render("subtitle-sequences", JSON.parse(data),"sub-"+subId);
       rebindEvents();
     });
   }
 
-  function getSubtitleData(subId) {
-    $.get( 'subshuffle/subtitleSequences/'+subId, function( data ) {
-      // console.log(data);
-      render("subtitle-sequences", JSON.parse(data));
-      rebindEvents();
-    });
-  }
+  function render(list, items, container) {
+      container = container || list;
 
-  function render(list, items) {
       if(items.empty == null) {
-        // console.log($("#" + list + "-container"));
-        // console.log(Mustache.render(template[list], {items : items}));
-        $("#" + list + "-container").html(Mustache.render(template[list], {items : items}));   
-
+        $("#" + container + "-container").html(Mustache.render(template[list], {items : items}));   
         // $(".nano").nanoScroller();
       } else {
-        $("#" + list + "-container").html(Mustache.render(template['empty'], {message : items.empty}));           
+        $("#" + container + "-container").html(Mustache.render(empty, {message : items.empty}));           
       }
   }
 
-  function more(list, items) {
-    $("#" + list + "-container li:last-child").remove();
+  function more(list, items, container) {
+    container = container || list;
+    console.log(list, items, container);
+    $("#" + container + "-container li:last-child").remove();
     if(items.noMore == null) {
-      $("#" + list + "-container").append(Mustache.render(template[list], {items : items}));   
+      $("#" + container + "-container").append(Mustache.render(template[list], {items : items}));   
     } else {
-      $("#" + list + "-container").append(Mustache.render(template['empty'], {message : items.noMore}));           
+      $("#" + container + "-container").append(Mustache.render(empty, {message : items.noMore}));           
     }
   }
 

@@ -464,6 +464,14 @@ html, body, .demo-container, .scroller {
 	font-size: 1.7em;
 }
 
+.mp-menu h2.subtitle-title {
+	font-family: 'Lato', cursive!important;
+	/*white-space: nowrap;	*/
+	overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
 .mp-menu.mp-overlap h2::before {
 	position: absolute;
 	top: 0;
@@ -502,6 +510,7 @@ html, body, .demo-container, .scroller {
 	display: block;
 	z-index: 9999;
 	text-decoration: none;
+	/*padding: 0.7em 2.8em 0.9em 1.8em;*/
 	padding: 0.7em 1.6em 0.9em 1.8em;
 	outline: none;
 	box-shadow: inset 0 -1px rgba(0,0,0,0.2);
@@ -575,6 +584,9 @@ html, body, .demo-container, .scroller {
     overflow: hidden;
 }
 
+.mp-menu ul li.list-item > a.subtitle-item {
+    padding: 0.7em 2.8em 0.9em 1.8em;
+}
 
 .mp-menu ul li.empty-list a:hover, .mp-menu ul li.empty-list a:active,
 .mp-level > ul > li.empty-list:first-child > a:hover {
@@ -654,7 +666,7 @@ li.scroll-offset-block {
 }
 
 .nano-container{
-	position: relative!important;
+	/*position: relative!important;*/
 	height: calc(100% - 112px)!important;
 	overflow-y: auto;
 	/*height: 600px!important;*/
