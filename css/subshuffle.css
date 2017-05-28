@@ -1071,6 +1071,12 @@ li.scroll-offset-block {
   box-shadow: 0px 2px 3px 0px rgba(19, 19, 19, 0.73);
 }
 
+.btn.disabled, .btn[disabled] {
+  transform: translate(0px, 5px);
+  -webkit-transform: translate(0px, 5px);
+  box-shadow: 0px 2px 3px 0px rgba(19, 19, 19, 0.73);
+}
+
 @media screen and (max-width: 360px) {
 	.btn {
 	    padding: 10px!important;
@@ -1342,7 +1348,7 @@ kbd {
   border-width: 0;
   border-color: transparent;
   line-height: 1.4;
-  /*width: 100%;*/
+  max-width: 100%;
   width: 43ch;
   color: transparent;
   -webkit-transition: all 0.28s ease;
@@ -1610,8 +1616,7 @@ kbd {
     stroke-dashoffset: -600;
   }
 }*/
-.loader{
-  
+.loader{  
   /*height: 100px;*/
   width: 100%;
   text-align: center;
@@ -1619,6 +1624,11 @@ kbd {
   margin: 2em auto;
   display: inline-block;
   vertical-align: top;
+}
+
+.more-loader .loader {
+  margin: 0 auto;
+  padding: 0;
 }
 
 svg path,

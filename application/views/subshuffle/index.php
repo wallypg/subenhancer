@@ -5,6 +5,7 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
 		<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
 		<title>Subshuffle</title>
+		<link rel="shortcut icon" href="<?=img_url('subshuffle-favicon-green.ico?adas')?>" type="image/x-icon">
 		<?=add_style('bootstrap.min')?>
 		<!-- <?=add_style('materialize.min')?> -->
 		<!-- <?=add_style('nanoscroller')?> -->
@@ -210,7 +211,8 @@
 										<div class="row">
 											<div class="col-md-12 footer">
 												<span>
-													Made with <i class="fa fa-heart pulse"></i> by&nbsp;&nbsp;<a href="http://www.subadictos.net/" target="_blank">SubAdictos.Net</a>
+													Made with <i class="fa fa-heart pulse"></i> by&nbsp;&nbsp;<a href="http://www.subadictos.net/" target="_blank">SubAdictos.Net</a><br />
+													Powered By <a href="http://wiki-adictos.subadictos.net/" target="_blank">Wiki-Adictos</a>
 												</span>
 											</div>
 										</div>
@@ -243,7 +245,7 @@
 
 		<script type="template/mustache" id="my-translations-template">
 			{{#items}}
-				<li class="list-item" seq-id="{{entryID}}">
+				<li class="list-item final-item" seq-id="{{entryID}}">
 					<a href="#">
 						<strong>#{{sequence}}</strong> - {{title}}
 					</a>
@@ -274,7 +276,7 @@
 
 		<script type="template/mustache" id="subtitle-sequences-template">
 			{{#items}}
-				<li class="list-item" seq-id="{{entryID}}">
+				<li class="list-item final-item" seq-id="{{entryID}}">
 					<a href="#">
 						<strong>#{{sequence}}</strong> - {{text}}
 					</a>
@@ -381,7 +383,7 @@
 
 		<script>
 			// $(".nano").nanoScroller();
-			new mlPushMenu( document.getElementById( 'mp-menu' ), document.getElementById( 'trigger' ) );
+			var menu = new mlPushMenu( document.getElementById( 'mp-menu' ), document.getElementById( 'trigger' ) );
 
 			(function() {
 				document.getElementById("to-textarea").focus();
@@ -389,6 +391,7 @@
 
 	  $(document).ready(function () {
 
+	  	if (window.matchMedia('(max-width: 540px)').matches) document.getElementById("to-textarea").setAttribute("rows", "4");
 	  //         var trigger = $('.hamburger'),
 	  //           isClosed = false;
 

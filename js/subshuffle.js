@@ -231,6 +231,7 @@ if ( typeof define === 'function' && define.amd ) {
         } );
       } );
 
+      
       // by clicking on a specific element
       this.levelBack.forEach( function( el, i ) {
         el.addEventListener( self.eventtype, function( ev ) {
@@ -244,6 +245,7 @@ if ( typeof define === 'function' && define.amd ) {
         } );
       } );  
     },
+    
     _openMenu : function( subLevel ) {
       // increment level depth
       ++this.level;
@@ -327,10 +329,13 @@ if ( typeof define === 'function' && define.amd ) {
 // ************************************************************ //
 
 var subshuffle = function(){
+  var title;
+  var toTranslate;
+  var eventtype = mobilecheck() ? 'touchstart' : 'click';
+  
   // Templates
   var empty = '<li class="empty-list"><a>{{{message}}}</a></li>';
   var loader = $("#loader-template").html();
-  var eventtype = mobilecheck() ? 'touchstart' : 'click';
   var template = new Array();
   template['my-translations'] = $("#my-translations-template").html();
   template['subtitle-sequences'] = $("#subtitle-sequences-template").html();
@@ -348,6 +353,8 @@ var subshuffle = function(){
   // Methods
   function rebindEvents() {
     $("#my-translations-more").on(eventtype,function(){
+      $(this).parent().addClass('more-loader');
+      $(this).html(Mustache.render(loader));
       var loadFrom = $(this).parent().prev('.list-item').attr('seq-id');
       getTranslationsData(loadFrom);
     });
@@ -356,6 +363,13 @@ var subshuffle = function(){
       var subId = $(this).closest("ul").attr("sub-id");
       var loadFrom = $(this).parent().prev('.list-item').attr('seq-id');
       getSubtitleSequencesData(subId, loadFrom);
+    });
+
+    $(".final-item>a").on(eventtype, function(){
+      // menu._externalClose();
+      menu._resetMenu();
+      // $(".hamburger").click();
+      // menu = new mlPushMenu( document.getElementById( 'mp-menu' ), document.getElementById( 'trigger' ) );
     });
   }
 
@@ -406,7 +420,6 @@ var subshuffle = function(){
 
   function more(list, items, container) {
     container = container || list;
-    console.log(list, items, container);
     $("#" + container + "-container li:last-child").remove();
     if(items.noMore == null) {
       $("#" + container + "-container").append(Mustache.render(template[list], {items : items}));   
