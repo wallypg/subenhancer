@@ -523,6 +523,11 @@ html, body, .demo-container, .scroller {
 	line-height: 4.2;
 }
 
+.mp-menu ul#subtitles-container > li::before {
+	left: 8px;
+	line-height: 3.2;
+}
+
 .mp-menu ul li:hover:before {
 	color:#1ED760;
 }

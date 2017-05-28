@@ -75,6 +75,12 @@ class Subshuffle extends CI_Controller {
 		if(empty($subtitles)) $subtitles = $this->defaultMessages;
 		echo json_encode($subtitles);
 	}
+
+	public function subtitleSequences($subId, $loadMore = null) {
+		$subtitleSequences = $this->wikiadictos->getSubtitleSequences($subId, $loadMore);
+		if(empty($subtitleSequences)) $subtitleSequences = $this->defaultMessages;
+		echo json_encode($subtitleSequences);
+	}
 	
 }
 ?>

@@ -39,36 +39,8 @@
 									<a class="mp-back" href="#">Atrás</a>
 									<div class="nano-container custom-scrollbar">
 										<div class="nano">
-											<ul id="my-translations-container" class="nano-content">
-												<div class="loader">
-												  <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-												     width="24px" height="30px" viewBox="0 0 24 30" style="enable-background:new 0 0 50 50;" xml:space="preserve">
-												    <rect x="0" y="13" width="4" height="5" fill="#333">
-												      <animate attributeName="height" attributeType="XML"
-												        values="5;21;5" 
-												        begin="0s" dur="0.6s" repeatCount="indefinite" />
-												      <animate attributeName="y" attributeType="XML"
-												        values="13; 5; 13"
-												        begin="0s" dur="0.6s" repeatCount="indefinite" />
-												    </rect>
-												    <rect x="10" y="13" width="4" height="5" fill="#333">
-												      <animate attributeName="height" attributeType="XML"
-												        values="5;21;5" 
-												        begin="0.15s" dur="0.6s" repeatCount="indefinite" />
-												      <animate attributeName="y" attributeType="XML"
-												        values="13; 5; 13"
-												        begin="0.15s" dur="0.6s" repeatCount="indefinite" />
-												    </rect>
-												    <rect x="20" y="13" width="4" height="5" fill="#333">
-												      <animate attributeName="height" attributeType="XML"
-												        values="5;21;5" 
-												        begin="0.3s" dur="0.6s" repeatCount="indefinite" />
-												      <animate attributeName="y" attributeType="XML"
-												        values="13; 5; 13"
-												        begin="0.3s" dur="0.6s" repeatCount="indefinite" />
-												    </rect>
-												  </svg>
-												</div>
+											<ul id="my-translations-container" class="nano-content load-loader">
+												
 											</ul>
 										</div>
 									</div>
@@ -83,36 +55,9 @@
 									<a class="mp-back" href="#">Atrás</a>
 									<div class="nano-container custom-scrollbar">
 										<div class="nano">
-											<ul id="subtitles-container">
-												<div class="loader">
-												  <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-												     width="24px" height="30px" viewBox="0 0 24 30" style="enable-background:new 0 0 50 50;" xml:space="preserve">
-												    <rect x="0" y="13" width="4" height="5" fill="#333">
-												      <animate attributeName="height" attributeType="XML"
-												        values="5;21;5" 
-												        begin="0s" dur="0.6s" repeatCount="indefinite" />
-												      <animate attributeName="y" attributeType="XML"
-												        values="13; 5; 13"
-												        begin="0s" dur="0.6s" repeatCount="indefinite" />
-												    </rect>
-												    <rect x="10" y="13" width="4" height="5" fill="#333">
-												      <animate attributeName="height" attributeType="XML"
-												        values="5;21;5" 
-												        begin="0.15s" dur="0.6s" repeatCount="indefinite" />
-												      <animate attributeName="y" attributeType="XML"
-												        values="13; 5; 13"
-												        begin="0.15s" dur="0.6s" repeatCount="indefinite" />
-												    </rect>
-												    <rect x="20" y="13" width="4" height="5" fill="#333">
-												      <animate attributeName="height" attributeType="XML"
-												        values="5;21;5" 
-												        begin="0.3s" dur="0.6s" repeatCount="indefinite" />
-												      <animate attributeName="y" attributeType="XML"
-												        values="13; 5; 13"
-												        begin="0.3s" dur="0.6s" repeatCount="indefinite" />
-												    </rect>
-												  </svg>
-												</div>
+											<ul id="subtitles-container" class="nano-content load-loader">
+												
+												
 											</ul>									
 										</div>
 									</div>
@@ -347,10 +292,149 @@
 
 			</div><!-- /pusher -->
 		</div><!-- /container -->
+
+
+
+
+
+
+
+
+		<!-- MustacheTemplates >>>> -->
+
+		<script type="template/mustache" id="my-translations-template">
+			{{#items}}
+				<li class="list-item" seq-id="{{entryID}}">
+					<a href="#">
+						<strong>#{{sequence}}</strong> - {{title}}
+					</a>
+				</li>
+			{{/items}}
+			<li class="load-more">
+				<a id="my-translations-more">VER MÁS<br /><i class="fa fa-chevron-down"></i></a>
+			</li>
+		</script>
+
+		<script type="template/mustache" id="subtitles-template">
+			{{#items}}
+				<li class="icon icon-arrow-left list-item">
+					<a class="subtitle-item" sub-id="{{subId}}">{{title}}</a>
+					<div class="mp-level">
+						<h2 class="subtitle-title">{{title}}</h2>
+						<a class="mp-back" href="#">Atrás</a>
+						<div class="nano-container custom-scrollbar">
+							<div class="nano">
+								<ul id="subtitle-sequences-container" class="nano-content load-loader"></ul>
+							</div>
+						</div>
+					</div>
+				</li>
+			{{/items}}
+
+		</script>
+
+		<script type="template/mustache" id="subtitle-sequences-template">
+			{{#items}}
+				<li class="list-item" seq-id="{{entryID}}">
+					<a href="#">
+						<strong>#{{sequence}}</strong> - {{text}}
+					</a>
+				</li>
+			{{/items}}
+		</script>
+
+		<script type="template/mustache" id="loader-template">
+			<div class="loader">
+			  <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+			     width="24px" height="30px" viewBox="0 0 24 30" style="enable-background:new 0 0 50 50;" xml:space="preserve">
+			    <rect x="0" y="13" width="4" height="5" fill="#333">
+			      <animate attributeName="height" attributeType="XML"
+			        values="5;21;5" 
+			        begin="0s" dur="0.6s" repeatCount="indefinite" />
+			      <animate attributeName="y" attributeType="XML"
+			        values="13; 5; 13"
+			        begin="0s" dur="0.6s" repeatCount="indefinite" />
+			    </rect>
+			    <rect x="10" y="13" width="4" height="5" fill="#333">
+			      <animate attributeName="height" attributeType="XML"
+			        values="5;21;5" 
+			        begin="0.15s" dur="0.6s" repeatCount="indefinite" />
+			      <animate attributeName="y" attributeType="XML"
+			        values="13; 5; 13"
+			        begin="0.15s" dur="0.6s" repeatCount="indefinite" />
+			    </rect>
+			    <rect x="20" y="13" width="4" height="5" fill="#333">
+			      <animate attributeName="height" attributeType="XML"
+			        values="5;21;5" 
+			        begin="0.3s" dur="0.6s" repeatCount="indefinite" />
+			      <animate attributeName="y" attributeType="XML"
+			        values="13; 5; 13"
+			        begin="0.3s" dur="0.6s" repeatCount="indefinite" />
+			    </rect>
+			  </svg>
+			</div>
+		</script>
+
+		<script type="template/mustache" id="jconfirm-template">
+		  <div class="row">
+		  	<div class="col-xs-6">
+		  		<i class="btn green fa fa-caret-left"></i>
+		  		<div class="jconfirm-label"><span class="two-line">Secuencia<br />anterior</span></div>
+		  		<div class="clearfix"></div>
+		  	</div>
+		  	
+		  	<div class="col-xs-6">
+		  		<i class="btn green fa fa-caret-right"></i>
+		  		<div class="jconfirm-label"><span class="two-line">Secuencia<br />siguiente</span></div>
+		  		<div class="clearfix"></div>
+		  	</div>
+		  	
+		  </div>
+
+		  <div class="row">
+		  	<div class="col-xs-6">
+		  		<i class="btn green fa fa-random"></i>
+		  		<div class="jconfirm-label"><span class="two-line">Secuencia<br />aleatoria</span></div>
+		  		<div class="clearfix"></div>
+		  	</div>
+
+		  	<div class="col-xs-6">
+		  		<i class="btn green fa fa-check"></i>
+		  		<div class="jconfirm-label"><span class="one-line">Guardar</span></div>
+		  		<div class="clearfix"></div>
+		  	</div>
+		  </div>
+
+		  <div class="row bottom-margin-20">
+		  	<div class="col-xs-6">
+		  		<div class="jconfirm-label label-text"><span>From:</span><br />Texto a traducir</div>
+		  		<div class="clearfix"></div>
+		  	</div>
+
+		  	<div class="col-xs-6">
+		  		<div class="jconfirm-label label-text"><span>To:</span><br />Traducción</div>
+		  		<div class="clearfix"></div>
+		  	</div>
+		  </div>
+
+		  <div class="row">
+		  	<div class="col-xs-6">
+		  		<div class="jconfirm-label label-text"><span>CPL:</span><br />Caracteres por&nbsp;línea</div>
+		  		<div class="clearfix"></div>
+		  	</div>
+
+		  	<div class="col-xs-6">
+		  		<div class="jconfirm-label label-text"><span>CPS:</span><br />Caracteres por&nbsp;segundo</div>
+		  		<div class="clearfix"></div>
+		  	</div>
+		  </div>
+		</script>
+
+		<!-- <<<< MustacheTemplates -->
 		
 		<?=add_jscript('jquery.nanoscroller.min')?>
 		<?=add_jscript('mustache.min')?>
-		<?=add_jscript('subshuffle', true)?>
+		<?=add_jscript('subshuffle', false)?>
 		<?=add_jscript('modernizr.custom')?>
 
 		<script>
@@ -508,73 +592,6 @@
 
 
 		</script>
-	<div class="container">
-		
-	</div>
-	</body>
-	<script type="template/mustache" id="jconfirm-template">
-	  <div class="row">
-	  	<div class="col-xs-6">
-	  		<i class="btn green fa fa-caret-left"></i>
-	  		<div class="jconfirm-label"><span class="two-line">Secuencia<br />anterior</span></div>
-	  		<div class="clearfix"></div>
-	  	</div>
-	  	
-	  	<div class="col-xs-6">
-	  		<i class="btn green fa fa-caret-right"></i>
-	  		<div class="jconfirm-label"><span class="two-line">Secuencia<br />siguiente</span></div>
-	  		<div class="clearfix"></div>
-	  	</div>
-	  	
-	  </div>
-
-	  <div class="row">
-	  	<div class="col-xs-6">
-	  		<i class="btn green fa fa-random"></i>
-	  		<div class="jconfirm-label"><span class="two-line">Secuencia<br />aleatoria</span></div>
-	  		<div class="clearfix"></div>
-	  	</div>
-
-	  	<div class="col-xs-6">
-	  		<i class="btn green fa fa-check"></i>
-	  		<div class="jconfirm-label"><span class="one-line">Guardar</span></div>
-	  		<div class="clearfix"></div>
-	  	</div>
-	  </div>
-
-	  <div class="row bottom-margin-20">
-	  	<div class="col-xs-6">
-	  		<div class="jconfirm-label label-text"><span>From:</span><br />Texto a traducir</div>
-	  		<div class="clearfix"></div>
-	  	</div>
-
-	  	<div class="col-xs-6">
-	  		<div class="jconfirm-label label-text"><span>To:</span><br />Traducción</div>
-	  		<div class="clearfix"></div>
-	  	</div>
-	  </div>
-
-	  <div class="row">
-	  	<div class="col-xs-6">
-	  		<div class="jconfirm-label label-text"><span>CPL:</span><br />Caracteres por&nbsp;línea</div>
-	  		<div class="clearfix"></div>
-	  	</div>
-
-	  	<div class="col-xs-6">
-	  		<div class="jconfirm-label label-text"><span>CPS:</span><br />Caracteres por&nbsp;segundo</div>
-	  		<div class="clearfix"></div>
-	  	</div>
-	  </div>
-
-
-
-	</script>
-	<script type="template/mustache" id="my-translations-template">
-		{{#items}}
-			<li class="list-item">
-				<a href="#"><span>{{title}}<span> - <span>{{sequence}}</span></a>
-			</li>
-		{{/items}}
-	</script>
+	</body>	
 	<?=add_jscript('jquery-confirm')?>
 </html>

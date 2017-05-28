@@ -168,8 +168,32 @@ class Wikiadictos extends CI_Model
 	}
 
 
-	public function getSubtitleSequences($subId) {
-		
+	public function getSubtitleSequences($subId, $loadMore) {
+		$this->db->select("
+			s.entryID as entryID,
+			s.subID as subID,
+			s.sequence as sequence,
+			s.start_time as start_time,
+			s.start_time_fraction as start_time_fraction,
+			s.end_time as end_time,
+			s.end_time_fraction as end_time_fraction,
+			s.text as text,
+			s.fversion as fversion
+		");
+		$this->db->join("translating t","s.subID = t.subID AND s.fversion = t.fversion AND s.sequence = t.sequence");
+		$this->db->order_by('s.sequence','ASC');
+		$this->db->limit(30);
+		$this->db->where('tokened', 0);
+		if(!is_null($loadMore)) $this->db->where('entryID >',$loadMore);
+		$this->db->where('s.subID', $subId);
+		$query = $this->db->get('subs s');
+
+		if($query->num_rows() > 0)
+		{
+			return $query->result();
+		}
+		return [];
+
 	}
 
 	public function tokenizeSequence($subId, $fversion, $sequence, $userId) {
