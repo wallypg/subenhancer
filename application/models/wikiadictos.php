@@ -55,6 +55,42 @@ class Wikiadictos extends CI_Model
 
 	}
 
+	// check fversion
+	public function userTranslations($userId, $loadMore) {
+		$this->db->select("
+			entryID,
+			fs.subID,
+			title,
+			sequence,
+			start_time,
+			start_time_fraction,
+			end_time,
+			end_time_fraction,
+			text,
+			version,
+			fversion
+		");
+		$this->db->join("files","fs.subID = files.subID");
+		$this->db->where(array(
+			'authorID' => $userId,
+			'original' => 0,
+			'lang_id' => 4
+		));
+		$this->db->where("version = (SELECT MAX(version) FROM subs ss  WHERE ss.sequence = fs.sequence AND ss.subID = fs.subID)");
+		if(!is_null($loadMore)) $this->db->where('entryID <',$loadMore);
+
+		$this->db->order_by('in_date','DESC');
+		$this->db->limit(30);
+		$query = $this->db->get('subs fs');
+
+		// print_r($this->db->last_query());
+		if($query->num_rows() > 0)
+		{
+			return $query->result();
+		}
+		return [];
+	}
+
 	// public function getRandomSequence() {
 	// 	$this->db->select("s.entryID as entryID");
 	// 	$this->db->join("translating t","s.subID = t.subID AND s.fversion = t.fversion AND s.sequence = t.sequence");
@@ -69,7 +105,7 @@ class Wikiadictos extends CI_Model
 	// }
 
 	public function getRandomSequence() {
-		// SELECT `s`.`entryID` as `entryID`, `s`.`subID` as `subID`, `s`.`sequence` as `sequence`, `s`.`start_time` as `start_time`, `s`.`start_time_fraction` as `start_time_fraction`, `s`.`end_time` as `end_time`, `s`.`end_time_fraction` as `end_time_fraction`, `s`.`text` as `text`, `s`.`fversion` as `fversion` FROM `subs` `s` JOIN `translating` `t` ON `s`.`subID` = `t`.`subID` AND `s`.`fversion` = `t`.`fversion` AND `s`.`sequence` = `t`.`sequence` WHERE `tokened` =0 ORDER BY RAND() LIMIT 1
+		// Puede traer líneas de subtítulos cerrados
 		$this->db->select("
 			s.entryID as entryID,
 			s.subID as subID,
@@ -91,7 +127,49 @@ class Wikiadictos extends CI_Model
 		{
 			return $query->row();
 		}
-		return new stdClass();
+		return [];
+	}
+
+	public function getShowsOld() {
+		// Get shows that have pending sequences to translate
+		$this->db->distinct();
+		$this->db->select("
+			sh.title as title,
+			s.subID as subId
+		");
+		$this->db->join("translating t","s.subID = t.subID AND s.fversion = t.fversion AND s.sequence = t.sequence");
+		$this->db->join("files f","f.subID = s.subID");
+		$this->db->join("shows sh","sh.showID = f.showID");
+		$this->db->where('tokened', 0);
+		$query = $this->db->get('subs s');
+
+		if($query->num_rows() > 0)
+		{
+			return $query->result();
+		}
+		return [];
+	}
+
+	public function getSubtitles() {
+		// Get shows that have pending sequences to translate
+		$this->db->select("
+			fi.title as title,
+			fl.subID as subId
+		");
+		$this->db->join("files fi","fi.subID = fl.subID");
+		$this->db->where("fl.state <", 100);
+		$query = $this->db->get('flangs fl');
+
+		if($query->num_rows() > 0)
+		{
+			return $query->result();
+		}
+		return [];
+	}
+
+
+	public function getSubtitleSequences($subId) {
+		
 	}
 
 	public function tokenizeSequence($subId, $fversion, $sequence, $userId) {
@@ -110,5 +188,15 @@ class Wikiadictos extends CI_Model
 		    return false;
 		}
 		return true;
+	}
+
+	// free sequence
+	public function untokenizeSequence() {
+
+	}
+
+
+	public function showName() {
+
 	}
 }

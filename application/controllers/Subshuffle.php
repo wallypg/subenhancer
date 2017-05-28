@@ -3,6 +3,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Subshuffle extends CI_Controller {
 
+	var $defaultMessages;
 
 	function __construct() {
 		parent::__construct();
@@ -17,6 +18,12 @@ class Subshuffle extends CI_Controller {
 		elseif(in_array($this->session->userdata('user'), $forbiddenUsers)) redirect(base_url());
 
 		$this->load->model('wikiadictos');
+
+		$this->defaultMessages = [
+			"empty" => 'Nada para traducir...<br />¡por ahora!<br /><i class="fa fa-smile-o"></i>',
+			"noMore" => '¡Eso es todo, amigos!'
+		];
+
 	}
 
 	public function index() {
@@ -47,6 +54,26 @@ class Subshuffle extends CI_Controller {
 
 	public function test() {
 		$this->folder->view('test');
+	}
+
+	public function log() {
+		// $this->folder->view('test');
+	}
+
+	public function myTranslations($loadMore = null) {
+		$myTranslations = $this->wikiadictos->userTranslations($this->session->userdata['userId'], $loadMore);
+		
+		if(empty($myTranslations)) $myTranslations = $this->defaultMessages;
+
+		echo json_encode($myTranslations);
+		// print_r($myTranslations);
+		// print_r($this->db->last_query());
+	}
+
+	public function subtitles() {
+		$subtitles = $this->wikiadictos->getSubtitles();
+		if(empty($subtitles)) $subtitles = $this->defaultMessages;
+		echo json_encode($subtitles);
 	}
 	
 }

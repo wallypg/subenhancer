@@ -316,4 +316,93 @@ if ( typeof define === 'function' && define.amd ) {
 
 
 
-// shuffle
+
+
+
+
+// ************************************************************ //
+// ************************ SubShuffle ************************ //
+// ************************************************************ //
+
+var subshuffle = function(){
+  var lists = ['my-translations','subtitles'];
+  // show-translations
+  
+  var $container;
+
+  var template = new Array();
+  template['subtitles'] = '{{#items}}<li class="list-item" show-id="{{showId}}"><a>{{title}}</a></li>{{/items}}';
+  template['my-translations'] = '{{#items}}<li class="list-item" data-id="{{entryID}}"><a href="#"><strong>#{{sequence}}</strong> - {{title}}</a></li>{{/items}}<li class="load-more"><a id="my-translations-more">VER MÁS<br /><i class="fa fa-chevron-down"></i></a></li>';
+  template['empty'] = '<li class="empty-list"><a>{{{message}}}</a></li>';
+
+
+  // var showsTemplate = '{{#items}}<li class="list-item" data-id="{{entryID}}"><a href="#"><strong>#{{sequence}}</strong> - {{title}}</a></li>{{/items}}<li class="load-more"><a id="my-translations-more">VER MÁS<br /><i class="fa fa-chevron-down"></i></a></li>';
+  // var myTranslationsTemplate = '{{#items}}<li class="list-item" data-id="{{entryID}}"><a href="#"><strong>#{{sequence}}</strong> - {{title}}</a></li>{{/items}}<li class="load-more"><a id="my-translations-more">VER MÁS<br /><i class="fa fa-chevron-down"></i></a></li>';
+  // var empty = '<li class="empty-list"><a>{{{message}}}</a></li>';
+  // var template = '{{#items}}<li class="list-item"><a href="#"><strong>#{{sequence}}</strong> - {{title}}</a></li>{{/items}}';
+  
+  lists.forEach(function(list){
+    $("#"+list).on('click touchstart',function(){
+      getData(list);
+    });
+  });
+
+  function rebindEvents() {
+    lists.forEach(function(list){
+      $("#"+list+"-more").on('click touchstart',function(){
+        var loadFrom = $(this).parent().prev('.list-item').attr('data-id');
+        getData(list, loadFrom);
+      });
+    });
+  }
+    
+  function camelize(string) {
+    return string.replace (/(?:^|[-_])(\w)/g, function (_, c, pos) {
+      return pos ? c.toUpperCase () : c;
+    })
+  }
+
+  function getData(list, loadMore) {
+    loadMore = loadMore || "";
+    $.get( 'subshuffle/'+camelize(list)+"/"+loadMore, function( data ) {
+      if(loadMore)
+        more(list, JSON.parse(data));
+      else
+        render(list, JSON.parse(data));
+      rebindEvents();
+    });
+  }
+
+  function render(list, items) {
+      if(items.empty == null) {
+        $("#" + list + "-container").html(Mustache.render(template[list], {items : items}));   
+        // $(".nano").nanoScroller();
+      } else {
+        $("#" + list + "-container").html(Mustache.render(template['empty'], {message : items.empty}));           
+      }
+  }
+
+  function more(list, items) {
+    $("#" + list + "-container li:last-child").remove();
+    if(items.noMore == null) {
+      $("#" + list + "-container").append(Mustache.render(template[list], {items : items}));   
+    } else {
+      $("#" + list + "-container").append(Mustache.render(template['empty'], {message : items.noMore}));           
+    }
+  }
+
+}();
+
+
+// (
+//     [entryID] => 194852
+//     [subID] => 167
+//     [title] => Black-ish - 03x04 - Who is Afraid of the Big Black Man
+//     [sequence] => 275
+//     [start_time] => 00:11:14
+//     [start_time_fraction] => 845
+//     [end_time] => 00:11:16
+//     [end_time_fraction] => 779
+//     [text] => Hazlos esperar.
+//     [fversion] => 0
+// )

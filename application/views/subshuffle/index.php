@@ -7,10 +7,10 @@
 		<title>Subshuffle</title>
 		<?=add_style('bootstrap.min')?>
 		<!-- <?=add_style('materialize.min')?> -->
-		<?=add_style('nanoscroller')?>
+		<!-- <?=add_style('nanoscroller')?> -->
 		<?=add_style('font-awesome.min')?>
 		<?=add_style('jquery-confirm')?>
-		<?=add_style('subshuffle')?>
+		<?=add_style('subshuffle', true)?>
 
 
 		<?=add_jscript('jquery-3.1.1.min')?>
@@ -29,33 +29,96 @@
 						<h2 class="icon icon-globe">Menú</h2>
 						<ul>
 							<li>
-								<a class="first-level icon icon-random" href="#">Aleatorio</a>
+								<a class="first-level icon icon-random" href="#">Modo Aleatorio</a>
 							</li>
 
 							<li class="icon icon-arrow-left">
-								<a class="first-level icon icon-translations" href="#">Mis Traducciones</a>
+								<a id="my-translations" class="first-level icon icon-translations" href="#">Mis Traducciones</a>
 								<div class="mp-level">
 									<h2 class="icon icon-translations">Mis Traducciones</h2>
 									<a class="mp-back" href="#">Atrás</a>
-									<div class="nano">										
-									<ul class="nano-content">									
-										<li><a href="#">National Geographic</a></li>
-										<li><a href="#">Physics World</a></li>
-										<li><a href="#">The New Scientist</a></li>
-									</ul>
+									<div class="nano-container custom-scrollbar">
+										<div class="nano">
+											<ul id="my-translations-container" class="nano-content">
+												<div class="loader">
+												  <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+												     width="24px" height="30px" viewBox="0 0 24 30" style="enable-background:new 0 0 50 50;" xml:space="preserve">
+												    <rect x="0" y="13" width="4" height="5" fill="#333">
+												      <animate attributeName="height" attributeType="XML"
+												        values="5;21;5" 
+												        begin="0s" dur="0.6s" repeatCount="indefinite" />
+												      <animate attributeName="y" attributeType="XML"
+												        values="13; 5; 13"
+												        begin="0s" dur="0.6s" repeatCount="indefinite" />
+												    </rect>
+												    <rect x="10" y="13" width="4" height="5" fill="#333">
+												      <animate attributeName="height" attributeType="XML"
+												        values="5;21;5" 
+												        begin="0.15s" dur="0.6s" repeatCount="indefinite" />
+												      <animate attributeName="y" attributeType="XML"
+												        values="13; 5; 13"
+												        begin="0.15s" dur="0.6s" repeatCount="indefinite" />
+												    </rect>
+												    <rect x="20" y="13" width="4" height="5" fill="#333">
+												      <animate attributeName="height" attributeType="XML"
+												        values="5;21;5" 
+												        begin="0.3s" dur="0.6s" repeatCount="indefinite" />
+												      <animate attributeName="y" attributeType="XML"
+												        values="13; 5; 13"
+												        begin="0.3s" dur="0.6s" repeatCount="indefinite" />
+												    </rect>
+												  </svg>
+												</div>
+											</ul>
+										</div>
 									</div>
 								</div>
 							</li>
 
 							<li class="icon icon-arrow-left">
-								<a class="first-level icon icon-film" href="#">Subtítulos</a>
+								<!-- <a class="first-level icon icon-film" href="#">Subtítulos</a> -->
+								<a id="subtitles" class="first-level icon icon-film" href="#">Subtítulos</a>
 								<div class="mp-level">
 									<h2 class="icon icon-film">Subtítulos</h2>
 									<a class="mp-back" href="#">Atrás</a>
-									<ul>
+									<div class="nano-container custom-scrollbar">
+										<div class="nano">
+											<ul id="subtitles-container">
+												<div class="loader">
+												  <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+												     width="24px" height="30px" viewBox="0 0 24 30" style="enable-background:new 0 0 50 50;" xml:space="preserve">
+												    <rect x="0" y="13" width="4" height="5" fill="#333">
+												      <animate attributeName="height" attributeType="XML"
+												        values="5;21;5" 
+												        begin="0s" dur="0.6s" repeatCount="indefinite" />
+												      <animate attributeName="y" attributeType="XML"
+												        values="13; 5; 13"
+												        begin="0s" dur="0.6s" repeatCount="indefinite" />
+												    </rect>
+												    <rect x="10" y="13" width="4" height="5" fill="#333">
+												      <animate attributeName="height" attributeType="XML"
+												        values="5;21;5" 
+												        begin="0.15s" dur="0.6s" repeatCount="indefinite" />
+												      <animate attributeName="y" attributeType="XML"
+												        values="13; 5; 13"
+												        begin="0.15s" dur="0.6s" repeatCount="indefinite" />
+												    </rect>
+												    <rect x="20" y="13" width="4" height="5" fill="#333">
+												      <animate attributeName="height" attributeType="XML"
+												        values="5;21;5" 
+												        begin="0.3s" dur="0.6s" repeatCount="indefinite" />
+												      <animate attributeName="y" attributeType="XML"
+												        values="13; 5; 13"
+												        begin="0.3s" dur="0.6s" repeatCount="indefinite" />
+												    </rect>
+												  </svg>
+												</div>
+											</ul>									
+										</div>
+									</div>
 
 
-										<li class="icon icon-arrow-left">
+										<!-- <li class="icon icon-arrow-left">
 											<a href="#">Blacklist</a>
 											<div class="mp-level">
 												<h2>Blacklist</h2>
@@ -67,9 +130,9 @@
 													<li><a href="#">Linea 312</a></li>
 												</ul>
 											</div>
-										</li>
+										</li> -->
 
-										<li class="icon icon-arrow-left">
+										<!-- <li class="icon icon-arrow-left">
 											<a href="#">Law and Order</a>
 											<div class="mp-level">
 												<h2>Law and Order</h2>
@@ -81,49 +144,53 @@
 													<li><a href="#">Linea 312</a></li>
 												</ul>
 											</div>
-										</li>
-										<li class="icon icon-arrow-left">
+										</li> -->
+										<!-- <li class="icon icon-arrow-left">
 											<a href="#">Better Call Saul</a>
 											<div class="mp-level">
 												<h2>Better Call Saul</h2>
 												<a class="mp-back" href="#">Atrás</a>
-												<div class="nano">													
-												<ul class="nano-content">
-													<li><a href="#">Linea 23</a></li>
-													<li><a href="#">Linea 44</a></li>
-													<li><a href="#">Linea 132</a></li>
-													<li><a href="#">Linea 312</a></li>
-													<li><a href="#">Linea 23</a></li>
-													<li><a href="#">Linea 44</a></li>
-													<li><a href="#">Linea 132</a></li>
-													<li><a href="#">Linea 312</a></li>
-													<li><a href="#">Linea 23</a></li>
-													<li><a href="#">Linea 44</a></li>
-													<li><a href="#">Linea 132</a></li>
-													<li><a href="#">Linea 312</a></li>
-													<li><a href="#">Linea 23</a></li>
-													<li><a href="#">Linea 44</a></li>
-													<li><a href="#">Linea 132</a></li>
-													<li><a href="#">Linea 312</a></li>
-													<li><a href="#">Linea 23</a></li>
-													<li><a href="#">Linea 44</a></li>
-													<li><a href="#">Linea 132</a></li>
-													<li><a href="#">Linea 312</a></li>
-													<li><a href="#">Linea 23</a></li>
-													<li><a href="#">Linea 44</a></li>
-													<li><a href="#">Linea 132</a></li>
-													<li><a href="#">Linea 312</a></li>
-													<li><a href="#">Linea 23</a></li>
-													<li><a href="#">Linea 44</a></li>
-													<li><a href="#">Linea 132</a></li>
-													<li><a href="#">Linea 312</a></li>
-												</ul>
+												<div class="nano-container">
+													
+													<div class="nano">						
+													<ul class="nano-content">
+														<li><a href="#">Linea 23</a></li>
+														<li><a href="#">Linea 44</a></li>
+														<li><a href="#">Linea 132</a></li>
+														<li><a href="#">Linea 312</a></li>
+														<li><a href="#">Linea 23</a></li>
+														<li><a href="#">Linea 44</a></li>
+														<li><a href="#">Linea 132</a></li>
+														<li><a href="#">Linea 312</a></li>
+														<li><a href="#">Linea 23</a></li>
+														<li><a href="#">Linea 44</a></li>
+														<li><a href="#">Linea 132</a></li>
+														<li><a href="#">Linea 312</a></li>
+														<li><a href="#">Linea 23</a></li>
+														<li><a href="#">Linea 44</a></li>
+														<li><a href="#">Linea 132</a></li>
+														<li><a href="#">Linea 312</a></li>
+														<li><a href="#">Linea 23</a></li>
+														<li><a href="#">Linea 44</a></li>
+														<li><a href="#">Linea 132</a></li>
+														<li><a href="#">Linea 312</a></li>
+														<li><a href="#">Linea 23</a></li>
+														<li><a href="#">Linea 44</a></li>
+														<li><a href="#">Linea 132</a></li>
+														<li><a href="#">Linea 312</a></li>
+														<li><a href="#">Linea 23</a></li>
+														<li><a href="#">Linea 44</a></li>
+														<li><a href="#">Linea 132</a></li>
+														<li><a href="#">Linea 312</a></li>
+													</ul>
+													</div>
+
 												</div>
 											</div>
-										</li>
+										</li> -->
 
 
-									</ul>
+									<!-- </ul> -->
 								</div>
 							</li>
 
@@ -174,6 +241,13 @@
 					            <span class="hamb-middle"></span>
 					            <span class="hamb-bottom"></span>
 								<div class="subshuffle">subshuffle</div>
+								<div class="path">#<span>ModoAleatorio</span></div>
+								<!-- <div class="path">#<span>MisTraducciones</span></div> -->
+								<!-- <div class="path">@<span>SubAdictos</span></div> -->
+								<!-- <div class="path">#<span>Subtítulos</span></div> -->
+								<!-- <div class="path">#<span>FlowerShopMystery</span></div> -->
+								<!-- <div class="path">#<span>Black-ish</span></div> -->
+								<!-- <div class="path">#<span>Black-ish - 03x04 - Who is Afraid of the Big Black Man</span></div> -->
 					        </button>
 					        <div class="path">
 					        </div>
@@ -191,14 +265,22 @@
 							<div class="container">
 								<div class="row">
 									<div class="col-md-6 col-md-offset-3">
+										<div class="row sequence-info sleeper-tooltip" tooltip="Nombre del subtítulo">	
+											<div class="col-xs-9 title-info">Black-ish - 03x04 - Who is Afraid of the Big Black Man</div>
+											<div class="col-xs-3 text-right sleeper-tooltip" tooltip="Número de secuencia" flow="right">#&nbsp;<span class="sequence-number">435</span></div>
+										</div>
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-md-6 col-md-offset-3">
 										<div class="row">
-											<div class="col-xs-4 sleeper-tooltip" tooltip="Secuencia anterior">
+											<div class="col-xs-4 sleeper-tooltip" tooltip="Secuencia anterior" flow="down">
 												<i class="btn green fa fa-caret-left prev"></i>
 											</div>
-											<div class="col-xs-4 sleeper-tooltip" tooltip="Secuencia aleatoria">
+											<div class="col-xs-4 sleeper-tooltip" tooltip="Secuencia aleatoria" flow="down">
 												<i class="btn green fa fa-random randomize"></i>
 											</div>
-											<div class="col-xs-4 sleeper-tooltip" tooltip="Secuencia siguiente">
+											<div class="col-xs-4 sleeper-tooltip" tooltip="Secuencia siguiente" flow="down">
 												<i class="btn green fa fa-caret-right next"></i>
 											</div>
 										</div>
@@ -266,13 +348,13 @@
 			</div><!-- /pusher -->
 		</div><!-- /container -->
 		
-		<?=add_jscript('mustache.min')?>
-		<?=add_jscript('subshuffle')?>
-		<?=add_jscript('modernizr.custom')?>
 		<?=add_jscript('jquery.nanoscroller.min')?>
+		<?=add_jscript('mustache.min')?>
+		<?=add_jscript('subshuffle', true)?>
+		<?=add_jscript('modernizr.custom')?>
 
 		<script>
-			$(".nano").nanoScroller();
+			// $(".nano").nanoScroller();
 			new mlPushMenu( document.getElementById( 'mp-menu' ), document.getElementById( 'trigger' ) );
 
 			(function() {
@@ -345,7 +427,7 @@
 	var limit = 2;
 	var textarea = document.getElementById("to-textarea");
 	var spaces = textarea.getAttribute('cols');
-	console.log(spaces);
+	// console.log(spaces);
 
 	textarea.onkeydown = function(event) {
 
@@ -486,6 +568,13 @@
 
 
 
+	</script>
+	<script type="template/mustache" id="my-translations-template">
+		{{#items}}
+			<li class="list-item">
+				<a href="#"><span>{{title}}<span> - <span>{{sequence}}</span></a>
+			</li>
+		{{/items}}
 	</script>
 	<?=add_jscript('jquery-confirm')?>
 </html>

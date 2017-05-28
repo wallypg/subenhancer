@@ -1,4 +1,4 @@
- Spot 1ED760*/
+/*Spot 1ED760*/
 @import url('https://fonts.googleapis.com/css?family=Lato:300,400|Pacifico');
 
 @font-face {
@@ -26,6 +26,24 @@
     src: url('../fonts/roboto/Roboto-Regular.woff2') format('woff2'),
          url('../fonts/roboto/Roboto-Regular.woff') format('woff'),
     	 url("../fonts/roboto/Roboto-Regular.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "Roboto Light";
+    font-style: normal;
+    font-weight: normal;
+    src: url('../fonts/roboto/Roboto-Light.woff2') format('woff2'),
+         url('../fonts/roboto/Roboto-Light.woff') format('woff'),
+    	 url("../fonts/roboto/Roboto-Light.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "Roboto Thin";
+    font-style: normal;
+    font-weight: normal;
+    src: url('../fonts/roboto/Roboto-Thin.woff2') format('woff2'),
+         url('../fonts/roboto/Roboto-Thin.woff') format('woff'),
+    	 url("../fonts/roboto/Roboto-Thin.ttf") format("truetype");
 }
 
 html {
@@ -272,7 +290,7 @@ html, body, .demo-container, .scroller {
 }
 
 .custom-scrollbar::-webkit-scrollbar {	
-	width: 12px;
+	width: 0.6em;
 	background-color: #555;
 }
 
@@ -482,8 +500,9 @@ html, body, .demo-container, .scroller {
 .mp-menu ul li > a {
 	font-family: 'Lato', Calibri, Arial, sans-serif;
 	display: block;
+	z-index: 9999;
 	text-decoration: none;
-	padding: 0.7em 1em 0.9em 1.8em;
+	padding: 0.7em 1.6em 0.9em 1.8em;
 	outline: none;
 	box-shadow: inset 0 -1px rgba(0,0,0,0.2);
 	text-shadow: 0 0 1px rgba(255,255,255,0.1);
@@ -493,7 +512,7 @@ html, body, .demo-container, .scroller {
 	-moz-transition: background 0.3s, box-shadow 0.3s;
 	transition: background 0.3s, box-shadow 0.3s;
 }
-
+    
 .mp-menu ul li::before {
 	position: absolute;
 	font-size: 14px;
@@ -511,6 +530,8 @@ html, body, .demo-container, .scroller {
 	box-shadow: inset 0 -1px rgba(0,0,0,0.2), inset 0 1px rgba(0,0,0,0.2);
 }
 
+.mp-menu ul li.load-more a:hover,
+.mp-menu ul li.list-item a:hover, .mp-menu ul li.list-item a:active,
 .mp-menu ul li a:hover, .mp-menu ul li a:active,
 .mp-level > ul > li:first-child > a:hover {
 	text-decoration: none;
@@ -528,6 +549,35 @@ html, body, .demo-container, .scroller {
 .mp-level.mp-level-overlay > ul > li:first-child > a {
 	box-shadow: inset 0 -1px rgba(0,0,0,0);
 }
+
+.mp-menu ul li.empty-list > a, .mp-menu ul li.load-more > a {
+    font-size: 1.3em;
+    color: #b5b5b5;
+    text-align: center;
+    background: none!important;
+	box-shadow: none;
+}
+
+.mp-menu ul li.load-more > a {
+    background: rgb(25, 25, 25)!important;	
+}
+
+.mp-menu ul li.list-item > a {
+    font-size: 1.1em;
+    color: #eaeaea;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+
+.mp-menu ul li.empty-list a:hover, .mp-menu ul li.empty-list a:active,
+.mp-level > ul > li.empty-list:first-child > a:hover {
+    color: #b5b5b5!important;
+    background: none!important;
+	box-shadow: none;
+}
+
 
 .mp-level > ul > li:first-child > a:hover,
 .mp-level.mp-level-overlay > ul > li:first-child > a {
@@ -598,8 +648,11 @@ li.scroll-offset-block {
 	/*height:300px!important;*/
 }
 
-ul.nano-content{
-	padding-bottom:150px!important;
+.nano-container{
+	position: relative!important;
+	height: calc(100% - 112px)!important;
+	overflow-y: auto;
+	/*height: 600px!important;*/
 }
 
 
@@ -608,10 +661,11 @@ ul.nano-content{
 	-webkit-transition: all 0.35s ease-in-out;
 	position: absolute;
 	left: 55px;
-	top: 3px;
+	top: 0.280em;
 	font-family: 'Pacifico', cursive;
 	font-size: 20px;
 	color: rgb(29, 214, 95);
+	text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.6);
 }
 
 /* <<<< SubShuffle */
@@ -620,7 +674,7 @@ ul.nano-content{
 .info-tooltips-btn {
 	position: absolute;
 	right: 0.8em;
-    top: 0.45em;
+    top: 0.60em;
 	color: #fff;
 	font-size: 23px;
 	width: 20px;
@@ -647,9 +701,9 @@ ul.nano-content{
 
 .info-tooltips-btn .glow {
 	/*position: absolute;*/
-	width: 10px;
+	width: 11px;
 	/*z-index: 0!important;*/
-	height: 10px;
+	height: 11px;
 	background: none;
 	border-radius: 50px;
 	/*top: 6px;*/
@@ -693,6 +747,10 @@ ul.nano-content{
 }
 .activate-tooltip[tooltip]::before,
 .activate-tooltip[tooltip]::after {
+  opacity: 1;
+}
+
+ {
   opacity: 1;
 }
 
@@ -839,7 +897,54 @@ ul.nano-content{
 
 /* Paths >>>> */
 
+.path {
+	opacity: 0;
+	left: 8em;
+    -webkit-transition: all 0.35s ease-in-out;
+    position: absolute;
+    /*left: 8.5em;*/
+    top: 0.4em;
+    font-family: 'Roboto Thin', Arial, Helvetica, sans-serif;
+    font-size: 18px;
+    font-weight: bold;
+    color: rgb(183, 183, 183);
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.6);
+    white-space: nowrap;
+}
+
+.hamburger:hover .path {
+    left: 8.5em;
+    opacity: 1;
+
+}
+
+.mp-pushed .path {
+	left: 8.5em;
+	opacity: 1;
+}
 /* <<<< Paths */
+.sequence-info {
+	font-family: 'Roboto Thin', Arial, Helvetica, sans-serif;
+	font-size: 1.1em;
+	font-weight: bold;
+	color: rgb(183, 183, 183);
+	white-space: nowrap;
+	margin-bottom: 0.5em;
+}
+
+.sequence-info .title-info {
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.sequence-info .sequence-number {
+	font-family: 'Roboto Light', Arial, Helvetica, sans-serif;
+	color: #fafafa;
+}
+
+/* Seq Info >>>> */
+
+/* <<<< Seq Info */
 
 
 /* Hamburguer >>>> */
@@ -1095,11 +1200,11 @@ kbd {
 /* <<<< Menu icons */
 
 
-/* Nano Slider >>>> */
+/* Nano Scrollbar >>>> */
 .nano > .nano-pane > .nano-slider {
 	background: #1ed760;
 }
-/* <<<< Nano Slider */
+/* <<<< Nano Scrollbar */
 
 /* Content Styles >>>> */
 .content {
@@ -1441,3 +1546,67 @@ kbd {
 }
 
 /* <<<< jConfirm */
+
+
+/* Loading >>>> */
+
+/*.loading-bro {
+  margin: 50px auto;
+  width: 150px;
+}
+.loading-bro > h1 {
+  text-align: center;
+  font-size: 2.5em;
+  margin-bottom: 1em;
+  font-weight: 300;
+  color: #8E8E8E;
+}
+
+#load {
+  width: 150px;
+  animation: loading 3s linear infinite;
+}
+#load #loading-inner {
+  stroke-dashoffset: 0;
+  stroke-dasharray: 300;
+  stroke-width: 6;
+  stroke-miterlimit: 10;
+  stroke-linecap: round;
+  animation: loading-circle 2s linear infinite;
+  stroke: #1ed760;
+  fill: transparent;
+}
+
+@keyframes loading {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(200deg);
+  }
+}
+@keyframes loading-circle {
+  0% {
+    stroke-dashoffset: 0;
+  }
+  100% {
+    stroke-dashoffset: -600;
+  }
+}*/
+.loader{
+  
+  /*height: 100px;*/
+  width: 100%;
+  text-align: center;
+  padding: 1em;
+  margin: 2em auto;
+  display: inline-block;
+  vertical-align: top;
+}
+
+svg path,
+svg rect{
+  fill: #1ed760;
+}
+
+/* <<<< Loading */
