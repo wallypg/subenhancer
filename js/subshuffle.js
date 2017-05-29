@@ -185,6 +185,7 @@ if ( typeof define === 'function' && define.amd ) {
 
       // open (or close) the menu
       this.trigger.addEventListener( this.eventtype, function( ev ) {
+        $("#contextModal").modal('hide');
         ev.stopPropagation();
         ev.preventDefault();
         if( self.open ) {

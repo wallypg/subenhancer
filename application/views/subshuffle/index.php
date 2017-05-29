@@ -6,8 +6,8 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
 		<title>Subshuffle</title>
 		<link rel="shortcut icon" href="<?=img_url('subshuffle-favicon-green.ico?adas')?>" type="image/x-icon">
-		<?=add_style('bootstrap.min')?>
 		<!-- <?=add_style('materialize.min')?> -->
+		<?=add_style('bootstrap.min')?>
 		<!-- <?=add_style('nanoscroller')?> -->
 		<?=add_style('font-awesome.min')?>
 		<?=add_style('jquery-confirm')?>
@@ -15,8 +15,8 @@
 
 
 		<?=add_jscript('jquery-3.1.1.min')?>
-		<?=add_jscript('bootstrap.min')?>
 		<?=add_jscript('materialize.min')?>
+		<?=add_jscript('bootstrap')?>
 	</head>
 	<body class="custom-scrollbar">
 
@@ -133,6 +133,7 @@
 								<!-- <div class="path">#<span>FlowerShopMystery</span></div> -->
 								<!-- <div class="path">#<span>Black-ish</span></div> -->
 								<!-- <div class="path">#<span>Black-ish - 03x04 - Who is Afraid of the Big Black Man</span></div> -->
+								<!-- Si subtitula no conduzca -->
 					        </button>
 					        <div class="path">
 					        </div>
@@ -151,6 +152,10 @@
 								<div class="row">
 									<div class="col-md-6 col-md-offset-3">
 										<div class="row sequence-info sleeper-tooltip" tooltip="Nombre del subtítulo">	
+											<!-- <div class="col-xs-1"> -->
+												<!-- <i class="ic ic-eye">view</i> -->
+												<!-- <i class="fa fa-list"></i> -->
+											<!-- </div> -->
 											<div class="col-xs-9 title-info">Black-ish - 03x04 - Who is Afraid of the Big Black Man</div>
 											<div class="col-xs-3 text-right sleeper-tooltip" tooltip="Número de secuencia" flow="right">#&nbsp;<span class="sequence-number">435</span></div>
 										</div>
@@ -166,7 +171,7 @@
 												<i class="btn green fa fa-random randomize"></i>
 											</div>
 											<div class="col-xs-4 sleeper-tooltip" tooltip="Secuencia siguiente" flow="down">
-												<i class="btn green fa fa-caret-right next"></i>
+												<i class="btn green fa fa-caret-right next" data-toggle="modal" data-target="#contextModal" data-backdrop="false"></i>
 											</div>
 										</div>
 										
@@ -210,7 +215,7 @@
 
 										<div class="row">
 											<div class="col-md-12 footer">
-												<span>
+												<span class="adictito sleeper-tooltip" tooltip="test" flow="down">
 													Made with <i class="fa fa-heart pulse"></i> by&nbsp;&nbsp;<a href="http://www.subadictos.net/" target="_blank">SubAdictos.Net</a><br />
 													Powered By <a href="http://wiki-adictos.subadictos.net/" target="_blank">Wiki-Adictos</a>
 												</span>
@@ -232,7 +237,43 @@
 				</div><!-- /scroller -->
 
 			</div><!-- /pusher -->
-		</div><!-- /container -->
+		<!-- Context -->
+		<div class="modal right fade" id="contextModal" role="dialog" aria-labelledby="contextLabel">
+			<div class="modal-dialog">
+				<div id="floating-modal-close" data-dismiss="modal"><span class="close-context thick"></span></div>
+				<div class="modal-content custom-scrollbar">
+
+					<!-- <div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+						<h4 class="modal-title" id="contextLabel">Right Sidebar</h4>
+					</div> -->
+
+					<div class="modal-body">
+						<ul class="tabs clearfix" data-tabgroup="first-tab-group">
+						  <li><a href="#tab1" class="active">English</a></li>
+						  <li><a href="#tab2">Español</a></li>
+						</ul>
+						<section id="first-tab-group" class="tabgroup">
+						  <div id="tab1">
+						    <h2>Heading 1</h2>
+						    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nulla deserunt consectetur ratione id tempore laborum laudantium facilis reprehenderit beatae dolores ipsum nesciunt alias iusto dicta eius itaque blanditiis modi velit.</p>
+						  </div>
+						  <div id="tab2">
+						    <h2>Heading 2</h2>
+						    <p>Adipisci autem obcaecati velit natus quos beatae explicabo at tempora minima voluptates deserunt eum consectetur reiciendis placeat dolorem repellat in nam asperiores impedit voluptas iure repellendus unde eveniet accusamus ex.</p>
+						  </div>
+						</section>
+					</div>
+
+				</div>
+			</div>
+		</div>
+
+		
+
+
+	</div><!-- /container -->
+
 
 
 
@@ -378,7 +419,7 @@
 		
 		<?=add_jscript('jquery.nanoscroller.min')?>
 		<?=add_jscript('mustache.min')?>
-		<?=add_jscript('subshuffle', true)?>
+		<?=add_jscript('subshuffle', false)?>
 		<?=add_jscript('modernizr.custom')?>
 
 		<script>
@@ -440,14 +481,37 @@
 		    } else {
 		        $.alert({
 		          animation: 'top',
-		          type: 'yellow',
+		          type: 'orange',
 		          columnClass: 'col-lg-4 col-lg-offset-4 col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2 col-xs-8 col-xs-offset-2',
 		          title: '<i class="fa fa-lightbulb-o"></i>&nbsp;&nbsp;Watt?',
 		          content: Mustache.render($("#jconfirm-template").html()),
-		          backgroundDismiss: true
+		          backgroundDismiss: true,
+		          buttons: {
+			          okay: {
+			          	text: "GOT IT",
+			          	keys: ['enter']
+			          }		          	
+		          }
 		      });
 		    }
 		});
+
+
+		$('.tabgroup > div').hide();
+		$('.tabgroup > div:first-of-type').show();
+		$('.tabs a').click(function(e){
+		  e.preventDefault();
+		    var $this = $(this),
+		        tabgroup = '#'+$this.parents('.tabs').data('tabgroup'),
+		        others = $this.closest('li').siblings().children('a'),
+		        target = $this.attr('href');
+		    others.removeClass('active');
+		    $this.addClass('active');
+		    $(tabgroup).children('div').hide();
+		    $(target).show();
+		  
+		})
+		    
 
 	  });
 

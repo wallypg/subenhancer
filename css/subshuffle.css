@@ -1,4 +1,4 @@
-/*Spot 1ED760*/
+Spot 1ED760*/
 @import url('https://fonts.googleapis.com/css?family=Lato:300,400|Pacifico');
 
 @font-face {
@@ -751,7 +751,7 @@ li.scroll-offset-block {
 [tooltip]::before,
 [tooltip]::after {
   text-transform: none; /* opinion 2 */
-  font-size: .9em; /* opinion 3 */
+  font-size: 1.3rem; /* opinion 3 */
   line-height: 1;
   user-select: none;
   pointer-events: none;
@@ -776,6 +776,10 @@ li.scroll-offset-block {
   border: 6px solid transparent; /* opinion 4 */
   z-index: 1001; /* absurdity 1 */
 }
+.adictito[tooltip]::before {
+  border: 0px!important;
+}
+
 [tooltip]::after {
   content: attr(tooltip); /* magic! */
   
@@ -799,6 +803,12 @@ li.scroll-offset-block {
   background: #fddb3a;
   color: #3a3a3a;
   z-index: 1000; /* absurdity 2 */
+}
+
+.adictito[tooltip]::after {
+  content: url('../images/adictito-64.png')!important;
+  box-shadow: none!important;
+  background: none!important;
 }
 
 /* Make the tooltips respond to hover */
@@ -1472,6 +1482,10 @@ kbd {
 
 
 /* jConfirm >>>> */
+.jconfirm-bg {
+	background-color: #000!important;
+    opacity: 0.5!important;	
+}
 .jconfirm-box {
 	font-family: 'Roboto', Arial, Helvetica, sans-serif;
 	color: #2b2b2b;
@@ -1507,6 +1521,7 @@ kbd {
 	vertical-align: middle;
 	display: inline-block;
 }
+
 
 .jconfirm-box .jconfirm-label span.one-line {
   /*display: inline-block;
@@ -1627,7 +1642,7 @@ kbd {
 }
 
 .more-loader .loader {
-  margin: 0 auto;
+  margin: 0.38em auto;
   padding: 0;
 }
 
@@ -1637,3 +1652,264 @@ svg rect{
 }
 
 /* <<<< Loading */
+
+/* Context >>>> */
+
+#contextModal .modal-content {
+	font-family: 'Lato', Arial, Helvetica, sans-serif;
+	background-color: #676767;
+	color: #fafafa;
+/*    position: absolute;
+    right: 0;
+    top: 0;
+    background-color: #fff;
+    height: 100%;
+    width: 200px;*/
+}
+
+.modal {
+    bottom: auto;
+    left: auto;
+}
+
+.modal.right .modal-dialog {
+	position: fixed;
+	margin: auto;
+	width: 280px;
+	height: 100%;
+	-webkit-transform: translate3d(0%, 0, 0);
+	    -ms-transform: translate3d(0%, 0, 0);
+	     -o-transform: translate3d(0%, 0, 0);
+	        transform: translate3d(0%, 0, 0);
+}
+
+.modal.right .modal-content {
+	height: 100%;
+	overflow-y: auto;
+}
+
+.modal.right .modal-body {
+	padding: 15px 15px 80px;
+}
+
+.modal.right.fade .modal-dialog {
+	right: -320px;
+	-webkit-transition: opacity 0.3s linear, right 0.3s ease-out;
+	   -moz-transition: opacity 0.3s linear, right 0.3s ease-out;
+	     -o-transition: opacity 0.3s linear, right 0.3s ease-out;
+	        transition: opacity 0.3s linear, right 0.3s ease-out;
+}
+
+.modal.right.fade.in .modal-dialog {
+	right: 0;
+}
+
+.modal-content {
+	border-radius: 0;
+	border: none;
+}
+
+.modal-header {
+	border-bottom-color: #EEEEEE;
+	background-color: #FAFAFA;
+}
+
+#contextModal .modal-body {
+	padding: 0;
+}
+
+/*.wrapper {
+  margin: 30px auto;
+  width: 80%;
+  font-family: sans-serif;
+  color: #555;
+  font-size: 14px;
+  line-height: 24px;
+}*/
+/*h1 {
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+  text-transform: uppercase;
+}
+h1 + p {
+  text-align: center;
+  margin: 20px 0;
+  font-size: 16px;
+}*/
+ul.tabs {
+	list-style-type: none;
+    padding: 0;
+}
+.tabs li {
+  float: left;
+  width: 50%;
+}
+.tabs a {
+  display: block;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: #888;
+  padding: 20px 0;
+  border-bottom: 2px solid #888;
+  background: #f7f7f7;
+}
+.tabs a:hover,
+.tabs a.active {
+  background: #ddd;
+}
+.tabgroup div {
+  padding: 30px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
+}
+.clearfix:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+
+/*#contextModal .modal-dialog:before {
+  content: "";
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  margin-right: 5px;
+}
+*/
+/* <<<< Context */
+
+
+/*.ic {
+  font-size: 32px;
+  color: transparent;
+  user-select: none;
+  position: relative;
+  display: inline-block;
+  box-sizing: border-box;
+  overflow: visible;
+  vertical-align: top;
+  font-style: normal;
+  height: 1em;
+  width: 1em;
+  mix-blend-mode: multiply;
+  cursor: pointer;
+}
+
+.ic:before, .ic:after {
+  background-color: #fff;
+  border-color: #fff;
+  color: #fff;
+  content: "";
+  position: absolute;
+  display: block;
+  box-sizing: border-box;
+}
+
+.ic.ic-eye:before {
+  width: 0.75em;
+  height: 0.75em;
+  top: 0.125em;
+  left: 0.125em;
+  background-color: #000;
+  border-radius: 0 80% 0 80%;
+  transform: rotate(-45deg);
+}
+
+.ic.ic-eye:after {
+  width: 0.5em;
+  height: 0.5em;
+  left: 0.25em;
+  top: 0.25em;
+  border: 0.125em solid;
+  border-radius: 100%;
+  background-color: transparent;
+  transform: scale(0.8);
+}
+
+.ic.ic-eye:hover:before {
+  background-color: #777;
+}*/
+
+#floating-modal-close {
+	position: absolute;
+}
+
+.close-context {
+  position: relative;
+  left: -40px;
+  top: 14px;
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  overflow: hidden;
+}
+.close-context:hover::before, .close-context:hover::after {
+  background: #f44336;
+  cursor: pointer;
+}
+.close-context::before, .close-context::after {
+  content: '';
+  position: absolute;
+  height: 2px;
+  width: 100%;
+  top: 50%;
+  left: 0;
+  margin-top: -1px;
+  background: #d4d4d4;
+}
+.close-context::before {
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+.close-context::after {
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+}
+.close-context.thick::before, .close-context.thick::after {
+  height: 4px;
+  margin-top: -2px;
+}
+    /*font-size: 8px;
+    color: transparent;
+    user-select: none;
+    display: inline-block;
+    box-sizing: border-box;
+    overflow: visible;
+    vertical-align: top;
+    font-style: normal;
+    height: 1em;
+    width: 1em;
+    mix-blend-mode: multiply;
+    cursor: pointer;*/
+
+/*        width: 2.75em;
+    height: 2.75em;
+    top: 0.125em;
+    left: 3.125em;
+    background-color: #000;
+    border-radius: 0 80% 0 80%;
+    transform: rotate(-45deg);*/
+
+        /*width: 2.5em;
+    height: 2.5em;
+    left: 3.25em;
+    top: 0.25em;
+    border: 0.125em solid;
+    border-radius: 100%;
+    background-color: transparent;
+    transform: scale(0.8);*/
+
+
+/*    body.modal-open {
+    overflow: visible;
+}*/
+
+
