@@ -1170,7 +1170,7 @@ li.scroll-offset-block {
 	text-transform: none;
 	line-height: 1;
 	display: inline-block;
-	margin-right: 0.6em;
+	margin-right: 1em;
 	-webkit-font-smoothing: antialiased;
 }
 
@@ -1206,6 +1206,22 @@ li.scroll-offset-block {
 	content: "\f11c";
 }
 
+.icon-logout:before {
+	vertical-align: bottom;
+	content: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNS1jMDIxIDc5LjE1NTc3MiwgMjAxNC8wMS8xMy0xOTo0NDowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIDIwMTQgKFdpbmRvd3MpIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOkNBOEM0QTY0NDRENDExRTdCQUYwQTBBNUQxREQxMjdGIiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOkNBOEM0QTY1NDRENDExRTdCQUYwQTBBNUQxREQxMjdGIj4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6Q0E4QzRBNjI0NEQ0MTFFN0JBRjBBMEE1RDFERDEyN0YiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6Q0E4QzRBNjM0NEQ0MTFFN0JBRjBBMEE1RDFERDEyN0YiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz7ExYTwAAABXklEQVR42pzUzysEYRzH8SE/LhQpIf+AEyU5SLkpN8rFWfkLlJODm5OSKwfExYE/QLa0yUkhcl7htD9mtzXWrvF+8p36mnZm9plPvbZ9vs/Mt+l55hnH931HOfP/UkYJVXgowm3C5Fz3aDM/Ki56Hbt8YDgYtCdcfIwFm+4dofEyuvCNHrzgAXPIpGlYlEY1NFT9s+VHDG3Kq/8/B5j24/OueyQ1bKCuxjmMYSOqYdKmmPm8Wr87POMo7oa4bGIQ85jCI7awl2YNT6R2KONJGe+kXcMv1OR/Vl0zikKaNTTvYyfqWJHaJZbQj1nkMGTz2pjcy9yAqu1iHBkZR57limzUPkZwhSd5wlVMSK0v6iyHn9DkIlRblPqtjE9tNuVNfb4K4kdq23KNF2qYtzkpOmZ+rUndtTkpQa5lbddtvzZRmUEV3U4LZ1XnRu12WZTgyXtZka96MGeS1Q1+BRgA3UqtKpP12ckAAAAASUVORK5CYII=');
+}
+
+.icon-envelope:before {
+	content: "\f0e0";
+}
+
+.icon-legal:before {
+	content: "\f0e3";
+}
+
+.icon-bug:before {
+	content: "\f188";
+}
 
 kbd {
   border:1px solid gray;
@@ -1316,6 +1332,7 @@ kbd {
   transition: all 0.28s ease;
 }
 .from-textarea p {
+  min-height: 3.19em!important;
   color: #d6d6d6;
   font-size: 1.7rem;
   padding-bottom: 0.225em;
@@ -1913,3 +1930,8 @@ ul.tabs {
 }*/
 
 
+
+.alert-red {
+	text-align: center;
+	font-size: 1.8rem;
+}

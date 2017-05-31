@@ -16,7 +16,7 @@
 
 		<?=add_jscript('jquery-3.1.1.min')?>
 		<?=add_jscript('materialize.min')?>
-		<?=add_jscript('bootstrap')?>
+		<?=add_jscript('bootstrap.min')?>
 	</head>
 	<body class="custom-scrollbar">
 
@@ -111,6 +111,16 @@
 								</div>
 							</li>
 
+							<li>
+								<a class="first-level icon icon-legal" href="#">Consideraciones</a>
+							</li>
+							<li>
+								<a class="first-level icon icon-bug" href="#">Reportar bug</a>
+							</li>
+							<li>
+								<a class="first-level icon icon-logout" href="<?=base_url()?>logout">Salir</a>
+							</li>
+
 						</ul>
 							
 					</div>
@@ -156,8 +166,8 @@
 												<!-- <i class="ic ic-eye">view</i> -->
 												<!-- <i class="fa fa-list"></i> -->
 											<!-- </div> -->
-											<div class="col-xs-9 title-info">Black-ish - 03x04 - Who is Afraid of the Big Black Man</div>
-											<div class="col-xs-3 text-right sleeper-tooltip" tooltip="Número de secuencia" flow="right">#&nbsp;<span class="sequence-number">435</span></div>
+											<div class="col-xs-9 title-info"></div>
+											<div class="col-xs-3 text-right sleeper-tooltip" tooltip="Número de secuencia" flow="right">#&nbsp;<span class="sequence-number"></span></div>
 										</div>
 									</div>
 								</div>
@@ -165,21 +175,22 @@
 									<div class="col-md-6 col-md-offset-3">
 										<div class="row">
 											<div class="col-xs-4 sleeper-tooltip" tooltip="Secuencia anterior" flow="down">
-												<i class="btn green fa fa-caret-left prev"></i>
+												<i id="prev" class="btn green fa fa-caret-left prev neighbour-seq"></i>
 											</div>
 											<div class="col-xs-4 sleeper-tooltip" tooltip="Secuencia aleatoria" flow="down">
-												<i class="btn green fa fa-random randomize"></i>
+												<i id="random" class="btn green fa fa-random randomize"></i>
 											</div>
 											<div class="col-xs-4 sleeper-tooltip" tooltip="Secuencia siguiente" flow="down">
-												<i class="btn green fa fa-caret-right next" data-toggle="modal" data-target="#contextModal" data-backdrop="false"></i>
+												<i id="next" class="btn green fa fa-caret-right next neighbour-seq"></i>
 											</div>
 										</div>
-										
+										 <!-- data-toggle="modal" data-target="#contextModal" data-backdrop="false" -->
+
 										<div class="row">
 											<div class="col-md-12 sleeper-tooltip" tooltip="Texto a traducir" flow="left">
 												<div class="from-textarea">
 													<label>From:</label>
-													<p>I'm so glad you brought<br>They Call Me Johan</p>
+													<p></p>
 												</div>
 											</div>
 										</div>
@@ -209,7 +220,7 @@
 
 										<div class="row">
 											<div class="col-md-12 sleeper-tooltip" tooltip="¡Guardar!">
-												<i class="btn green fa fa-check save"></i>
+												<i id="save" class="btn green fa fa-check save"></i>
 											</div>
 										</div>
 
@@ -286,7 +297,7 @@
 
 		<script type="template/mustache" id="my-translations-template">
 			{{#items}}
-				<li class="list-item final-item" seq-id="{{entryID}}">
+				<li class="list-item final-item" seq-id="{{entryID}}" sub-id="{{subID}}" seq-num="{{sequence}}">
 					<a href="#">
 						<strong>#{{sequence}}</strong> - {{title}}
 					</a>
@@ -317,7 +328,7 @@
 
 		<script type="template/mustache" id="subtitle-sequences-template">
 			{{#items}}
-				<li class="list-item final-item" seq-id="{{entryID}}">
+				<li class="list-item final-item" seq-id="{{entryID}}" sub-id="{{subID}}" seq-num="{{sequence}}">
 					<a href="#">
 						<strong>#{{sequence}}</strong> - {{text}}
 					</a>
@@ -419,7 +430,7 @@
 		
 		<?=add_jscript('jquery.nanoscroller.min')?>
 		<?=add_jscript('mustache.min')?>
-		<?=add_jscript('subshuffle', false)?>
+		<?=add_jscript('subshuffle', true)?>
 		<?=add_jscript('modernizr.custom')?>
 
 		<script>
@@ -530,27 +541,28 @@
             case 's':
                 event.preventDefault();
                 shortcut = true;
-                var btnClick = $(".save");
+                var btnClick = $("#save");
                 break;
             case 'i':
                 event.preventDefault();
                 shortcut = true;
-                var btnClick = $(".prev");
+                var btnClick = $("#prev");
                 break;
             case 'o':
                 event.preventDefault();
                 shortcut = true;
-                var btnClick = $(".randomize");
+                var btnClick = $("#random");
                 break;
             case 'p':
                 event.preventDefault();
                 shortcut = true;
-                var btnClick = $(".next");
+                var btnClick = $("#next");
                 break;
 
             }
 
             if(shortcut) {
+            	btnClick.click();
             	btnClick.toggleClass("active-btn");
 				setTimeout(function () {
 				      btnClick.toggleClass("active-btn");

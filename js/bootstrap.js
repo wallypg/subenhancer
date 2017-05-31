@@ -1101,7 +1101,7 @@ if (typeof jQuery === 'undefined') {
   Modal.prototype.backdrop = function (callback) {
     var that = this
     var animate = this.$element.hasClass('fade') ? 'fade' : ''
-    this.options.backdrop = false;
+    // this.options.backdrop = false;
     if (this.isShown && this.options.backdrop) {
       console.log(this.isShown,this.options.backdrop)
       var doAnimate = $.support.transition && animate

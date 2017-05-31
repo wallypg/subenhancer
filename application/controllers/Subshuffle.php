@@ -4,6 +4,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class Subshuffle extends CI_Controller {
 
 	var $defaultMessages;
+	var $subtitlesPendings;
 
 	function __construct() {
 		parent::__construct();
@@ -21,9 +22,11 @@ class Subshuffle extends CI_Controller {
 
 		$this->defaultMessages = [
 			"empty" => 'Nada para traducir...<br />¡por ahora!<br /><i class="fa fa-smile-o"></i>',
-			"noMore" => '¡Eso es todo, amigos!'
+			"noMore" => "¡Eso es todo, amigos!",
+			"noRandom" => "¿Ninguna secuencia aleatoria?<br />Dudoso.\n¡Por favor reportarlo al desarrollador!"
 		];
 
+		$this->subtitlesPendings = $this->wikiadictos->getSubtitlesAndPendingSequences();
 	}
 
 	public function index() {
@@ -56,7 +59,14 @@ class Subshuffle extends CI_Controller {
 	}
 
 	public function test() {
-		print_r($this->wikiadictos->getRandomSequence());
+		// print_r($this->wikiadictos->getRandomSequence());
+		// $this->wikiadictos->getSubtitles();
+		// print_r($this->subtitlesPendings);
+		// print_r($this->wikiadictos->getFileName(167));
+		print_r($this->wikiadictos->getSequence(178,382));
+		print_r($this->db->last_query());
+
+
 		// $this->folder->view('test');
 	}
 
@@ -85,6 +95,36 @@ class Subshuffle extends CI_Controller {
 		if(empty($subtitleSequences)) $subtitleSequences = $this->defaultMessages;
 		echo json_encode($subtitleSequences);
 	}
+
+	public function randomSequence() {
+		$randomSub = rand(0, count($this->subtitlesPendings)-1);
+		$randomSequence = $this->wikiadictos->getRandomSequence($this->subtitlesPendings[$randomSub]->subId, rand(1,$this->subtitlesPendings[$randomSub]->sequences));
+
+		if(empty($randomSequence)) $randomSequence = $this->defaultMessages;
+		else {
+			$randomSequence->title = $this->subtitlesPendings[$randomSub]->title;
+			$randomSequence->hasNext = ($this->wikiadictos->checkSequenceExistence($randomSequence->subID,$randomSequence->sequence+1)) ? 1 : 0;
+			$randomSequence->hasPrev = ($this->wikiadictos->checkSequenceExistence($randomSequence->subID,$randomSequence->sequence-1)) ? 1 : 0;
+		}
+		echo json_encode($randomSequence);
+	}
 	
+	public function getSequence($subId,$sequence) {
+		$sequenceObj = $this->wikiadictos->getSequence($subId,$sequence);
+		// print_r($sequenceObj);
+		// print_r($this->db->last_query());
+		if(empty($sequenceObj)) $sequenceObj = $this->defaultMessages;
+		else {
+			$translatedText = $this->wikiadictos->getTranslatedSequence($subId,$sequence);
+			if(!empty($translatedText)) {
+				$sequenceObj->text_es = $translatedText->text;
+				$sequenceObj->version = $translatedText->version;
+			}
+			$sequenceObj->title = $this->wikiadictos->getFileName($sequenceObj->subID)->title;
+			$sequenceObj->hasNext = ($this->wikiadictos->checkSequenceExistence($sequenceObj->subID,$sequenceObj->sequence+1)) ? 1 : 0;
+			$sequenceObj->hasPrev = ($this->wikiadictos->checkSequenceExistence($sequenceObj->subID,$sequenceObj->sequence-1)) ? 1 : 0;
+		}
+		echo json_encode($sequenceObj);
+	}
 }
 ?>

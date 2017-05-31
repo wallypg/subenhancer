@@ -342,6 +342,7 @@ var subshuffle = function(){
   template['subtitle-sequences'] = $("#subtitle-sequences-template").html();
   
   // Init
+  getRandomSequence();
   loadLoaders();
   $("#my-translations").on(eventtype,function(){
     getTranslationsData();
@@ -350,6 +351,18 @@ var subshuffle = function(){
     var subId = $(this).attr('sub-id');
     getSubtitleSequencesData(subId);
   });
+  $('#random').on(eventtype, function(){
+    getRandomSequence();
+    $("#to-textarea").focus();
+  });
+  $(".neighbour-seq").on(eventtype, function(){
+    // console.log(this);
+    if( $(this).attr("seq-num")!='' )
+      getSequence($(".title-info").attr("sub-id"),$(this).attr("seq-num"));
+    $("#to-textarea").focus();
+  });
+
+
 
   // Methods
   function rebindEvents() {
@@ -389,6 +402,7 @@ var subshuffle = function(){
   function getTranslationsData(loadMore) {
     loadMore = loadMore || "";
     $.get( "subshuffle/myTranslations/"+loadMore, function( data ) {
+      console.log(data);
       if(loadMore)
         more("my-translations", JSON.parse(data));
       else
@@ -400,6 +414,7 @@ var subshuffle = function(){
   function getSubtitleSequencesData(subId, loadMore) {
     loadMore = loadMore || "";
     $.get( 'subshuffle/subtitleSequences/'+subId+'/'+loadMore, function( data ) {
+      console.log(data);
       if(loadMore)
         more("subtitle-sequences", JSON.parse(data),"sub-"+subId);
       else
@@ -428,6 +443,55 @@ var subshuffle = function(){
       $("#" + container + "-container").append(Mustache.render(empty, {message : items.noMore}));           
     }
   }
+
+  function getRandomSequence () {
+    $.get( "subshuffle/randomSequence", function( data ) {
+      placeSequence(JSON.parse(data));
+    });    
+  }
+
+  function getSequence (subId,sequence) {
+    // subId=178;sequence=382;
+    $.get( "subshuffle/getSequence/"+subId+"/"+sequence, function( data ) {
+      placeSequence(JSON.parse(data));
+    });    
+  }
+
+  function placeSequence (sequence) {
+
+    if(sequence.noRandom == null) {
+      $(".from-textarea p").html(nl2br(sequence.text_en));
+      $(".title-info").text(sequence.title).attr('sub-id',sequence.subID);
+      $(".sequence-number").text(sequence.sequence);
+      
+      if(!sequence.hasNext)
+        $("#next").addClass("disabled").attr('seq-num','');
+      else
+        $("#next").removeClass("disabled").attr('seq-num',parseInt(sequence.sequence)+1);
+      
+      if(!sequence.hasPrev)
+        $("#prev").addClass("disabled").attr('seq-num','');
+      else
+        $("#prev").removeClass("disabled").attr('seq-num',parseInt(sequence.sequence)-1);
+
+      if(sequence.text_es) $("#to-textarea").val(sequence.text_es);
+      else $("#to-textarea").val('');
+    } else {
+      $.alert({
+        type: 'red',
+        title: '<i class="fa fa-exclamation-triangle" aria-hidden="true"></i>&nbsp;&nbsp;Errare Humanum Est',
+        content: '<div class="alert-red">'+sequence.noRandom+'</div>',
+        backgroundDismiss: true
+      });
+    }
+
+  }
+
+  function nl2br (str, is_xhtml) {
+      var breakTag = (is_xhtml || typeof is_xhtml === 'undefined') ? '<br />' : '<br>';
+      return (str + '').replace(/([^>\r\n]?)(\r\n|\n\r|\r|\n)/g, '$1' + breakTag + '$2');
+  }
+
 
 }();
 
