@@ -29,9 +29,9 @@
 					<div class="mp-level">
 						<h2 class="icon icon-globe">Menú</h2>
 						<ul>
-							<li>
+							<!-- <li>
 								<a class="first-level icon icon-random" href="#">Modo Aleatorio</a>
-							</li>
+							</li> -->
 
 							<li class="icon icon-arrow-left">
 								<a id="my-translations" class="first-level icon icon-translations" href="#">Mis Traducciones</a>
@@ -57,7 +57,7 @@
 									<div class="nano-container custom-scrollbar">
 										<div class="nano">
 											<ul id="subtitles-container" class="nano-content">
-
+												<li><a><em>[Sólo secuencias sin traducir]</em></a></li>
 												<?php foreach ($subtitles as $key => $subtitle) { ?>
 													<li class="icon icon-arrow-left list-item">
 														<a class="subtitle-item" sub-id="<?=$subtitle->subId;?>"><?=$subtitle->title;?></a>
@@ -136,7 +136,8 @@
 					            <span class="hamb-middle"></span>
 					            <span class="hamb-bottom"></span>
 								<div class="subshuffle">subshuffle</div>
-								<div class="path">#<span>ModoAleatorio</span></div>
+								<div class="path">#<span>beta</span></div>
+								<!-- <div class="path">#<span>ModoAleatorio</span></div> -->
 								<!-- <div class="path">#<span>MisTraducciones</span></div> -->
 								<!-- <div class="path">@<span>SubAdictos</span></div> -->
 								<!-- <div class="path">#<span>Subtítulos</span></div> -->
@@ -208,13 +209,13 @@
 
 										<div class="row subtitle-data">	
 											<div class="col-xs-6 text-left sleeper-tooltip" tooltip="Caracteres por línea" flow="left">
-												<span class="chars first-line-chars">10</span>
+												<span class="chars first-line-chars">0</span>
 												<span>/</span>
-												<span class="chars second-line-chars">13</span>
+												<span class="chars second-line-chars">0</span>
 												&nbsp;<span class="cps-label">CPL</span>
 											</div>
 											<div class="col-xs-6 text-right sleeper-tooltip" tooltip="Caracteres por segundo" flow="right">
-												<span class="cps">25,1</span>&nbsp;<span class="cps-label">CPS</span>
+												<span class="cps">0</span>&nbsp;<span class="cps-label">CPS</span>
 											</div>
 	      								</div>
 
@@ -284,10 +285,19 @@
 
 
 	</div><!-- /container -->
+	
+	<div id="saved">
+		<i class="fa fa-check-circle fa-5x"></i>
+		<div>¡Guardado!</div>	
+	</div>
 
 
-
-
+	<div id="log">
+		<div class="last-random"></div>
+		<div class="last-sequence"></div>
+		<div class="last-translations"></div>	
+		<div class="last-sequences"></div>
+	</div>
 
 
 
@@ -297,8 +307,8 @@
 
 		<script type="template/mustache" id="my-translations-template">
 			{{#items}}
-				<li class="list-item final-item" seq-id="{{entryID}}" sub-id="{{subID}}" seq-num="{{sequence}}">
-					<a href="#">
+				<li class="list-item" seq-id="{{entryID}}">
+					<a href="#" class="final-item" sub-id="{{subID}}" seq-num="{{sequence}}">
 						<strong>#{{sequence}}</strong> - {{title}}
 					</a>
 				</li>
@@ -328,8 +338,8 @@
 
 		<script type="template/mustache" id="subtitle-sequences-template">
 			{{#items}}
-				<li class="list-item final-item" seq-id="{{entryID}}" sub-id="{{subID}}" seq-num="{{sequence}}">
-					<a href="#">
+				<li class="list-item" seq-id="{{entryID}}">
+					<a href="#" class="final-item" sub-id="{{subID}}" seq-num="{{sequence}}">
 						<strong>#{{sequence}}</strong> - {{text}}
 					</a>
 				</li>

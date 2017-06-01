@@ -330,6 +330,7 @@ if ( typeof define === 'function' && define.amd ) {
 // ************************************************************ //
 
 var subshuffle = function(){
+  var log;
   var title;
   var toTranslate;
   var eventtype = mobilecheck() ? 'touchstart' : 'click';
@@ -363,7 +364,6 @@ var subshuffle = function(){
   });
 
 
-
   // Methods
   function rebindEvents() {
     $("#my-translations-more").on(eventtype,function(){
@@ -378,12 +378,10 @@ var subshuffle = function(){
       var loadFrom = $(this).parent().prev('.list-item').attr('seq-id');
       getSubtitleSequencesData(subId, loadFrom);
     });
-
-    $(".final-item>a").on(eventtype, function(){
-      // menu._externalClose();
+    
+    $('.final-item').on(eventtype, function(){
+      getSequence($(this).attr("sub-id"),$(this).attr("seq-num"));
       menu._resetMenu();
-      // $(".hamburger").click();
-      // menu = new mlPushMenu( document.getElementById( 'mp-menu' ), document.getElementById( 'trigger' ) );
     });
   }
 
@@ -402,7 +400,7 @@ var subshuffle = function(){
   function getTranslationsData(loadMore) {
     loadMore = loadMore || "";
     $.get( "subshuffle/myTranslations/"+loadMore, function( data ) {
-      console.log(data);
+      // addLog('last-translations',data);
       if(loadMore)
         more("my-translations", JSON.parse(data));
       else
@@ -414,7 +412,7 @@ var subshuffle = function(){
   function getSubtitleSequencesData(subId, loadMore) {
     loadMore = loadMore || "";
     $.get( 'subshuffle/subtitleSequences/'+subId+'/'+loadMore, function( data ) {
-      console.log(data);
+      // addLog('last-sequences',data);
       if(loadMore)
         more("subtitle-sequences", JSON.parse(data),"sub-"+subId);
       else
@@ -446,20 +444,21 @@ var subshuffle = function(){
 
   function getRandomSequence () {
     $.get( "subshuffle/randomSequence", function( data ) {
+      // addLog('last-random',data);
       placeSequence(JSON.parse(data));
     });    
   }
 
   function getSequence (subId,sequence) {
-    // subId=178;sequence=382;
     $.get( "subshuffle/getSequence/"+subId+"/"+sequence, function( data ) {
+      // addLog('last-sequence',data);
       placeSequence(JSON.parse(data));
     });    
   }
 
   function placeSequence (sequence) {
 
-    if(sequence.noRandom == null) {
+    if(sequence.noSequence == null) {
       $(".from-textarea p").html(nl2br(sequence.text_en));
       $(".title-info").text(sequence.title).attr('sub-id',sequence.subID);
       $(".sequence-number").text(sequence.sequence);
@@ -480,11 +479,19 @@ var subshuffle = function(){
       $.alert({
         type: 'red',
         title: '<i class="fa fa-exclamation-triangle" aria-hidden="true"></i>&nbsp;&nbsp;Errare Humanum Est',
-        content: '<div class="alert-red">'+sequence.noRandom+'</div>',
+        content: '<div class="alert-red">'+sequence.noSequence+'</div>',
         backgroundDismiss: true
       });
+      // <pre class="log-container">'+$('#log').html()+'</pre>
     }
+  }
 
+  function countCps() {
+
+  }
+
+  function countCpl() {
+    
   }
 
   function nl2br (str, is_xhtml) {
@@ -492,6 +499,9 @@ var subshuffle = function(){
       return (str + '').replace(/([^>\r\n]?)(\r\n|\n\r|\r|\n)/g, '$1' + breakTag + '$2');
   }
 
+  function addLog(className, log) {
+    $('#log .'+className).text(log);
+  }
 
 }();
 
@@ -508,3 +518,23 @@ var subshuffle = function(){
 //     [text] => Hazlos esperar.
 //     [fversion] => 0
 // )
+
+// jQuery(document).ready(function() { 
+  
+//   $(document).on('keyup','textarea',function() {
+//     var sequenceNumber = $(this).closest('form').attr('id').substring(2);
+//     var lines = $(this).val().split('\n');
+//     var totalChars = 0;
+//     for(var i = 0; i < lines.length; i++){
+//       if(!i) $('#chars-column-sequence-'+sequenceNumber).html('');
+//       var htmlStriped = lines[i].replace(/<(?:.|\n)*?>/gm, '');
+//       $('#chars-column-sequence-'+sequenceNumber).append(htmlStriped.length+'<br>');
+//       totalChars += parseInt(htmlStriped.length);
+//     }
+//     var secondsDuration = parseFloat($('#cps-column-sequence-'+sequenceNumber).attr('data-seconds'));
+//     var cps = Math.round(totalChars/secondsDuration*100)/100;
+//     $('#cps-column-sequence-'+sequenceNumber).html(cps);
+//     if (cps > 24) $('#cps-column-sequence-'+sequenceNumber).css('background-color', '#f76c6c'); else jQuery('#cps-column-sequence-'+sequenceNumber).css('background-color', '#E5E5E5');
+//   });
+
+// });

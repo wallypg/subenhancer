@@ -23,7 +23,8 @@ class Subshuffle extends CI_Controller {
 		$this->defaultMessages = [
 			"empty" => 'Nada para traducir...<br />¡por ahora!<br /><i class="fa fa-smile-o"></i>',
 			"noMore" => "¡Eso es todo, amigos!",
-			"noRandom" => "¿Ninguna secuencia aleatoria?<br />Dudoso.\n¡Por favor reportarlo al desarrollador!"
+			"noSequence" => "¿Ninguna secuencia para traducir?<br />Dudoso, probablemente sea un error. <br />Por favor reportarlo en la sección \"Reporte de bugs\".<br /> ¡Muchas gracias!"
+			// "noSequence" => "¿Ninguna secuencia para traducir?<br />Mmmm, dudoso. Probablemente sea un error. Por favor copiar el mensaje de abajo y enviarlo en la sección de \"Reporte de bugs\". ¡Muchas gracias!"
 		];
 
 		$this->subtitlesPendings = $this->wikiadictos->getSubtitlesAndPendingSequences();
@@ -35,14 +36,6 @@ class Subshuffle extends CI_Controller {
 		if(empty($subtitles)) $subtitles = $this->defaultMessages;
 		$data['subtitles'] = $subtitles;
 		$this->folder->view('index',$data);
-
-		// if($randomSequence = $this->wikiadictos->getRandomSequence()){
-		// 	$tokenized = $this->wikiadictos->tokenizeSequence(
-		// 		$randomSequence->subID,
-		// 		$randomSequence->fversion,
-		// 		$randomSequence->sequence,
-		// 		$this->session->userdata('user')
-		// 	);
 
 		// 	if($tokenized) {
 		// 		$data['sequenceInfo'] = $randomSequence;

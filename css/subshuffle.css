@@ -1,4 +1,4 @@
-Spot 1ED760*/
+/*Spot 1ED760*/
 @import url('https://fonts.googleapis.com/css?family=Lato:300,400|Pacifico');
 
 @font-face {
@@ -81,6 +81,18 @@ a:hover, a:focus {
 	outline: none;
 }
 
+#log {
+	display:none!important;
+	opacity:0!important;
+	width:0px!important;
+	height:0px!important;
+}
+
+.log-container {
+	min-height: 30px;
+	max-height: 100px;
+	overflow-y: auto;
+}
 
 .clearfix:before,
 .clearfix:after {
@@ -1223,6 +1235,35 @@ li.scroll-offset-block {
 	content: "\f188";
 }
 
+#saved {
+	display: none;
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	margin-left:-78px;
+	margin-top:-160px;
+	z-index: 99999;
+	text-align: center;
+	width:156px;
+}
+#saved>div {
+	position: absolute;
+	background-color: rgba(71, 71, 71, 0.51);
+	top:73px;
+	margin-top:-20px;
+	width:100%;
+	margin:0 auto;
+	font-family: 'Roboto', Arial, Helvetica, sans-serif; 
+	color: #ffffff;
+    font-size: 28px;
+	opacity: 1;
+}
+#saved i {
+	font-size: 180px;
+	color:#5eff5e;
+	opacity: 0.6;
+}
+
 kbd {
   border:1px solid gray;
   font-size:0.9em;
@@ -1237,10 +1278,16 @@ kbd {
 .shortcuts span {
 	float: right;
 }
-.mp-menu ul.shortcuts, .mp-menu ul.shortcuts li {
+.mp-menu ul.shortcuts, .mp-menu ul.shortcuts li, {
     cursor: default!important;
 }
-.mp-menu ul.shortcuts li a:hover, .mp-menu ul.shortcuts li a:active, .mp-level > ul.shortcuts > li:first-child > a:hover {
+.mp-level ul#subtitles-container > li:first-child > a {
+    cursor: default!important;
+    font-size: 1em;
+}
+.mp-menu ul.shortcuts li a:hover, .mp-menu ul.shortcuts li a:active,
+.mp-level ul#subtitles-container > li:first-child > a:active, .mp-level ul#subtitles-container > li:first-child > a:hover
+{
     color: #fff;
     background-color: transparent;
     cursor: default;
