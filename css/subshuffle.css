@@ -1301,6 +1301,13 @@ li.scroll-offset-block {
     transition: width 2s, height 4s;*/
 }
 
+@media screen and (max-width: 560px) {
+	#welcome {
+	    font-size: 35px!important;
+	}
+}
+
+
 #welcome .first-message {
 	position: absolute;
 	width:100%;
