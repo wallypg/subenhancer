@@ -45,10 +45,11 @@ class Subtitlehub extends CI_Controller {
 		  			}
 		  			if(!$this->session->userdata('isLoggedIn')) {
 		  				$this->load->model('wikiadictos');
-		  				// $this->load->database('wikiadictos', 'TRUE');
-
 		  				if($_SESSION['userId'] = $this->wikiadictos->findUser($postArray['username'], md5($postArray['password']))) {
-		  					$this->session->set_userdata( array('isLoggedIn' => true, 'user' => $postArray['username']) );
+		  					
+		  					$firstLogIn = $this->wikiadictos->firstLogIn($this->session->userdata('userId'));
+
+		  					$this->session->set_userdata( array('isLoggedIn' => true, 'user' => $postArray['username'], 'firstLogIn' => $firstLogIn) );
 		  					$this->wikiadictos->updateLoginInfo($this->session->userdata('userId'));
 		  					$return = 'true';
 		  				}		  				

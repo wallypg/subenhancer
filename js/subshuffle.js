@@ -186,6 +186,7 @@ if ( typeof define === 'function' && define.amd ) {
       // open (or close) the menu
       this.trigger.addEventListener( this.eventtype, function( ev ) {
         $("#contextModal").modal('hide');
+        $(this).find(".flashing").removeClass("flashing");
         ev.stopPropagation();
         ev.preventDefault();
         if( self.open ) {
@@ -362,6 +363,15 @@ var subshuffle = function(){
       getSequence($(".title-info").attr("sub-id"),$(this).attr("seq-num"));
     $("#to-textarea").focus();
   });
+  $('#save').on(eventtype, function(){
+    saveSequence();
+  });
+
+  // var textarea = document.getElementById("to-textarea");
+  // textarea.onkeydown = function(event) {
+  //   console.log(event);
+  // }
+
 
 
   // Methods
@@ -382,6 +392,7 @@ var subshuffle = function(){
     $('.final-item').on(eventtype, function(){
       getSequence($(this).attr("sub-id"),$(this).attr("seq-num"));
       menu._resetMenu();
+      $("#to-textarea").focus();
     });
   }
 
@@ -445,15 +456,40 @@ var subshuffle = function(){
   function getRandomSequence () {
     $.get( "subshuffle/randomSequence", function( data ) {
       // addLog('last-random',data);
-      placeSequence(JSON.parse(data));
+      var obj = JSON.parse(data);   
+      obj['duration'] = calcDuration(obj.start_time, obj.start_time_fraction, obj.end_time, obj.end_time_fraction);
+      if(obj.text_es !== undefined) {
+        // obj['cpl'] = cpl(obj.text_es);
+
+        obj['cps'] = cps(obj.text_es, obj.duration);
+        // obj['cps'] = ((Math.round(totalChars(obj.text_es)/duration*100)/100).toString()).replace('.',',');
+      }
+      // console.log(obj);
+      placeSequence(obj);
     });    
   }
 
   function getSequence (subId,sequence) {
     $.get( "subshuffle/getSequence/"+subId+"/"+sequence, function( data ) {
       // addLog('last-sequence',data);
-      placeSequence(JSON.parse(data));
+      var obj = JSON.parse(data);   
+      obj['duration'] = calcDuration(obj.start_time, obj.start_time_fraction, obj.end_time, obj.end_time_fraction);
+      if(obj.text_es !== undefined) {
+        // obj['cpl'] = cpl(obj.text_es);
+
+        obj['cps'] = cps(obj.text_es, obj.duration);
+        // obj['cps'] = ((Math.round(totalChars(obj.text_es)/duration*100)/100).toString()).replace('.',',');
+
+      }
+      // console.log(obj);
+      placeSequence(obj);
     });    
+  }
+
+  function saveSequence() {
+    console.log("¡Guradado!");
+    $('#saved').fadeIn();
+    setTimeout(function(){ $('#saved').fadeOut(); }, 3000);
   }
 
   function placeSequence (sequence) {
@@ -462,7 +498,8 @@ var subshuffle = function(){
       $(".from-textarea p").html(nl2br(sequence.text_en));
       $(".title-info").text(sequence.title).attr('sub-id',sequence.subID);
       $(".sequence-number").text(sequence.sequence);
-      
+      $("#to-textarea").attr("data-duration", sequence.duration);
+
       if(!sequence.hasNext)
         $("#next").addClass("disabled").attr('seq-num','');
       else
@@ -473,8 +510,20 @@ var subshuffle = function(){
       else
         $("#prev").removeClass("disabled").attr('seq-num',parseInt(sequence.sequence)-1);
 
-      if(sequence.text_es) $("#to-textarea").val(sequence.text_es);
-      else $("#to-textarea").val('');
+      if(sequence.text_es) {
+        $("#to-textarea").val(sequence.text_es);
+        $(".cps").text(sequence.cps);
+        if( (sequence.cps).replace(",", ".") > 25 ) $(".cps").addClass('over-cps');
+        else $(".cps").removeClass('over-cps');
+        // $(".chars").text(sequence.cpl);
+        cpl(sequence.text_es);
+      } else {
+        $("#to-textarea").val('');
+        $(".cps").text('0').removeClass('over-cps');
+        // $(".chars").text('0 / 0');
+        $(".first-line-chars").text(0);
+        $(".second-line-chars").text(0);
+      }
     } else {
       $.alert({
         type: 'red',
@@ -486,13 +535,50 @@ var subshuffle = function(){
     }
   }
 
-  function countCps() {
-
+  function calcDuration(startTime, startFraction, endTime, endFraction) {
+    return (timestampToSeconds(endTime, endFraction) - timestampToSeconds(startTime, startFraction)).toFixed(3);
   }
 
-  function countCpl() {
-    
+  function timestampToSeconds (hhmmss, ms) {
+    var a = hhmmss.split(':');
+    var seconds = (+a[0]) * 60 * 60 + (+a[1]) * 60 + (+a[2]) + parseFloat('0.' + ms);
+    return seconds;
   }
+
+  function cpl(text) {
+    var lines = text.split('\n');
+    var firstLineChars = 0;
+    var secondLineChars = 0;
+
+    for(var i = 0; i < lines.length; i++){
+      var cleanedText = lines[i].replace(/<(?:.|\n)*?>/gm, '').trim();      
+      
+      // console.log(cleanedText);
+      if(i === 0) {
+        if(cleanedText) firstLineChars = cleanedText.length;
+      } else {
+        if(cleanedText) secondLineChars = cleanedText.length;
+      }
+    }
+    $(".first-line-chars").text(firstLineChars);
+    $(".second-line-chars").text(secondLineChars);
+  }
+
+  function cps(text, duration) {
+    var cps = ((Math.round(totalChars(text)/duration*100)/100).toString()).replace('.',',');
+    return cps;
+  }
+
+  function totalChars(text) {
+    var lines = text.split('\n');
+    var totalChars = 0;
+    for(var i = 0; i < lines.length; i++){
+      var cleanedText = lines[i].replace(/<(?:.|\n)*?>/gm, '');
+      totalChars += parseInt(cleanedText.length);
+    }
+    return totalChars;
+  }
+
 
   function nl2br (str, is_xhtml) {
       var breakTag = (is_xhtml || typeof is_xhtml === 'undefined') ? '<br />' : '<br>';
@@ -502,6 +588,11 @@ var subshuffle = function(){
   function addLog(className, log) {
     $('#log .'+className).text(log);
   }
+
+  return {
+    cpl : cpl,
+    cps : cps
+  };
 
 }();
 
@@ -527,9 +618,9 @@ var subshuffle = function(){
 //     var totalChars = 0;
 //     for(var i = 0; i < lines.length; i++){
 //       if(!i) $('#chars-column-sequence-'+sequenceNumber).html('');
-//       var htmlStriped = lines[i].replace(/<(?:.|\n)*?>/gm, '');
-//       $('#chars-column-sequence-'+sequenceNumber).append(htmlStriped.length+'<br>');
-//       totalChars += parseInt(htmlStriped.length);
+//       var cleanedText = lines[i].replace(/<(?:.|\n)*?>/gm, '');
+//       $('#chars-column-sequence-'+sequenceNumber).append(cleanedText.length+'<br>');
+//       totalChars += parseInt(cleanedText.length);
 //     }
 //     var secondsDuration = parseFloat($('#cps-column-sequence-'+sequenceNumber).attr('data-seconds'));
 //     var cps = Math.round(totalChars/secondsDuration*100)/100;

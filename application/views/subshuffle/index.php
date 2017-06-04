@@ -12,8 +12,7 @@
 		<?=add_style('font-awesome.min')?>
 		<?=add_style('jquery-confirm')?>
 		<?=add_style('subshuffle', true)?>
-
-
+		
 		<?=add_jscript('jquery-3.1.1.min')?>
 		<?=add_jscript('materialize.min')?>
 		<?=add_jscript('bootstrap.min')?>
@@ -86,6 +85,7 @@
 									<a class="mp-back" href="#">Atrás</a>
 									<div class="nano">										
 									<ul class="nano-content shortcuts">
+										<li><a><em>[Sólo funcionan cuando el cursor se&nbsp;encuentra en el campo de traducción]</em></a></li>
 										<li>
 											<a>
 												Guardar: <span><kbd>Ctrl</kbd> + <kbd>s</kbd></span>
@@ -112,10 +112,10 @@
 							</li>
 
 							<li>
-								<a class="first-level icon icon-legal" href="#">Consideraciones</a>
+								<a class="first-level icon icon-legal rules <?=($firstLogIn) ? 'rules-flashing' : ''?>" href="#">Consideraciones</a>
 							</li>
 							<li>
-								<a class="first-level icon icon-bug" href="#">Reportar bug</a>
+								<a class="first-level icon icon-bug report-bug" href="#">Reportar bug</a>
 							</li>
 							<li>
 								<a class="first-level icon icon-logout" href="<?=base_url()?>logout">Salir</a>
@@ -132,9 +132,9 @@
 						<!-- Top Navigation -->
 						<div class="codrops-top clearfix">
 							<button type="button" class="hamburger is-closed" id="trigger">
-					            <span class="hamb-top"></span>
-					            <span class="hamb-middle"></span>
-					            <span class="hamb-bottom"></span>
+					            <span class="hamb-top <?=($firstLogIn) ? 'flashing' : ''?>"></span>
+					            <span class="hamb-middle <?=($firstLogIn) ? 'flashing' : ''?>"></span>
+					            <span class="hamb-bottom <?=($firstLogIn) ? 'flashing' : ''?>"></span>
 								<div class="subshuffle">subshuffle</div>
 								<div class="path">#<span>beta</span></div>
 								<!-- <div class="path">#<span>ModoAleatorio</span></div> -->
@@ -199,7 +199,7 @@
 										<div class="row">
 											<div class="col-md-12 sleeper-tooltip" tooltip="Traducción" flow="left">
 										        <div class="container-textarea">
-											        <div class="form-group-textarea">
+											        <div class="form-group-textarea textarea-alert" tooltip="Máximo: 42 caracteres por línea, 2 líneas">
 											        	<textarea id="to-textarea" required="required" cols="42" rows="2" wrap="hard"></textarea>
 		      											<label class="control-label" for="to-textarea">To:</label><i class="bar"></i>
 		      										</div>
@@ -209,13 +209,10 @@
 
 										<div class="row subtitle-data">	
 											<div class="col-xs-6 text-left sleeper-tooltip" tooltip="Caracteres por línea" flow="left">
-												<span class="chars first-line-chars">0</span>
-												<span>/</span>
-												<span class="chars second-line-chars">0</span>
-												&nbsp;<span class="cps-label">CPL</span>
+												<span class="chars first-line-chars">0</span>&nbsp;<span>/</span>&nbsp;<span class="chars second-line-chars">0</span>&nbsp;&nbsp;<span class="cps-label">CPL</span>
 											</div>
 											<div class="col-xs-6 text-right sleeper-tooltip" tooltip="Caracteres por segundo" flow="right">
-												<span class="cps">0</span>&nbsp;<span class="cps-label">CPS</span>
+												<span class="cps">0</span>&nbsp;&nbsp;<span class="cps-label">CPS</span>
 											</div>
 	      								</div>
 
@@ -290,6 +287,15 @@
 		<i class="fa fa-check-circle fa-5x"></i>
 		<div>¡Guardado!</div>	
 	</div>
+
+	<div id="bug-sent">
+		<i class="fa fa-bug fa-5x"></i>
+		<div>¡Bug reportado, muchas gracias!<br />En breve lo estaremos investigando...</div>	
+	</div>
+
+	<!-- <div id="welcome">
+		<div class="text-1">Bienvenido a Subshuffle.</div>
+	</div> -->
 
 
 	<div id="log">
@@ -436,6 +442,70 @@
 		  </div>
 		</script>
 
+
+		<script type="template/mustache" id="considerations-template">
+		<div class="row">
+			<div class="col-xs-12">
+			Antes de realizar cualquier traducción, lee el <a href="http://www.subadictos.net/foros/showthread.php?t=4248" target="_blank">Manual de estilo de Traducción SubAdictos</a>. A&nbsp;continuación se enumeran algunas de las consideraciones más importantes:
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-xs-1">1.</div>
+			<div class="col-xs-11">
+				<strong>MUY IMPORTANTE:</strong> No pueden tomarse ni basarse en traducciones de otros subtítulos que ya existen en ESPAÑOL. Tampoco se pueden utilizar traductores automáticos.
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-xs-1">2.</div>
+			<div class="col-xs-11">
+				Cada subtítulo deber tener un máximo de 2 líneas y cada línea un máximo de 40 caracteres. Las líneas largas, si no se pueden reducir, el corrector se encargará de dividirlas.
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-xs-1">3.</div>
+			<div class="col-xs-11">
+				Si hablan dos personas y el guión (-) inicial no está, habrá que agregarlo. Luego del guión inicial (-), debe ir un espacio.
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-xs-1">4.</div>
+			<div class="col-xs-11">
+				Eliminar los wow, ups, oh, ah, hey, ey, etc. que aparezcan, ya que estos NO SE TRADUCEN NI SE DEJAN EN EL SUBTÍTULO.
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-xs-1">5.</div>
+			<div class="col-xs-11">
+				Recuerden siempre poner los signos de apertura de interrogación (¿) y exclamación (¡).
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-xs-1">6.</div>
+			<div class="col-xs-11">
+				Se deben eliminar los <strong>puntos suspensivos</strong> del final de le línea, estos serán agregados en la corrección.
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-xs-1">7.</div>
+			<div class="col-xs-11">
+				Si queda alguna parte con dudas poner al final de la línea <strong>[REVISAR]</strong> (de esa forma), así el subtitle workshop la toma como un warning de subtítulos para sordos y es más fácil para el corrector.
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-xs-1">8.</div>
+			<div class="col-xs-11">
+				Si se debe eliminar alguna línea COMPLETA poner <strong>[ELIMINAR]</strong> (de esa forma), así el subtitle workshop la toma como un warning de subtítulos para sordos y es más fácil para el corrector.
+			</div>
+		</div>
+		</script>
+
 		<!-- <<<< MustacheTemplates -->
 		
 		<?=add_jscript('jquery.nanoscroller.min')?>
@@ -517,6 +587,92 @@
 		    }
 		});
 
+		$(".rules").on("click", function(){
+			if($(this).hasClass('rules-flashing')) {
+				$(this).removeClass("rules-flashing");
+				$.post( "subshuffle/checkedConsiderations");
+			}
+			
+
+			menu._resetMenu();
+			$.alert({
+	          animation: 'top',
+	          type: 'purple',
+	          columnClass: 'col-lg-8 col-lg-offset-2 considerations',
+	          title: '<i class="fa fa-gavel"></i>&nbsp;&nbsp;Consideraciones para los traductores',
+	          content: Mustache.render($("#considerations-template").html()),
+	          backgroundDismiss: false,
+	          buttons: {
+		          okay: {
+		          	text: "¡Leí y acepto los Términos y Condiciones!"
+		          }		          	
+	          }
+	        });		    
+		});
+
+		$('.report-bug').on('click',function(){
+			menu._resetMenu();
+			$.confirm({
+			    title: '<i class="fa fa-bug"></i>&nbsp;&nbsp;Reportar bug',
+				type: 'red',
+				columnClass: 'col-md-6 col-md-offset-3',
+			    content: '' +
+			    '<form action="" id="reportForm">' +
+			    '<div class="form-group bug-reporter">' +
+			    '<label>Describe el problema:</label>' +
+			    '<textarea rows="6" class="report form-control" name="report" required />' +
+			    '</div>' +
+			    '</form>',
+			    buttons: {
+			        formSubmit: {
+			            text: 'Enviar',
+			            btnClass: 'btn-submit',
+			            action: function () {
+			                var report = this.$content.find('.report').val();
+			                if(!report){
+			                    $.alert('Descripción insuficiente.');
+			                    return false;
+			                } else {
+			                	$.post( "subshuffle/reportBug", { report : report }, function(data){
+			                		if(data) {
+			                			$('#bug-sent').fadeIn();
+			                			setTimeout(function(){ $('#bug-sent').fadeOut(); }, 3000);
+			                		} else {
+			                			$.confirm({
+										   title: 'Error inception :/',
+										    content: 'Hubo un error reportando el error, mejor envía un mail a "<strong>wallytarantino@gmail.com</strong>". Muchas gracias y perdón por tantos inconvenientes, ¡por suerte es la versión beta!',
+										    autoClose: 'cancel|20000',
+										    buttons: {
+										        cancel: {
+										        	text: 'Ya le mando',
+										        	btnClass: 'errorInception',
+										        	action: function () {
+										        	}
+										        }
+										    }
+										});
+			                		}
+			                	});
+			                }
+			            }
+			        },
+			        cancel: {
+			        	text: 'Cancelar',
+			        	action: function () {}
+			        }
+			    },
+			    onContentReady: function () {
+			        // bind to events
+			        var jc = this;
+			        this.$content.find('form').on('submit', function (e) {
+			            // if the user submits the form by pressing enter in the field.
+			            e.preventDefault();
+			            jc.$$formSubmit.trigger('click'); // reference the button and click it
+			        });
+			    }
+			});
+		});
+
 
 		$('.tabgroup > div').hide();
 		$('.tabgroup > div:first-of-type').show();
@@ -541,7 +697,6 @@
 	var limit = 2;
 	var textarea = document.getElementById("to-textarea");
 	var spaces = textarea.getAttribute('cols');
-	// console.log(spaces);
 
 	textarea.onkeydown = function(event) {
 
@@ -568,7 +723,6 @@
                 shortcut = true;
                 var btnClick = $("#next");
                 break;
-
             }
 
             if(shortcut) {
@@ -578,22 +732,93 @@
 				      btnClick.toggleClass("active-btn");
 				}, 300);
             }
-        }
-
-
-		var lines = textarea.value.split("\n");
-		if(event.keyCode == 10 || event.keyCode == 13) {
-			if(lines.length >= limit) {
-				textarea.style.color = '#D42D25';
-		        setTimeout(function(){
-		            textarea.style.color = '';
-		        },500);
-				return false;
+        } else {
+        	if(event.keyCode == 10 || event.keyCode == 13) {
+        		var lines = textarea.value.split("\n");
+				if(lines.length >= limit) {
+					textarea.style.color = '#D42D25';
+					$(textarea).parent().addClass('activate-tooltip');
+			        setTimeout(function(){
+			            textarea.style.color = '';
+			            $(textarea).parent().removeClass('activate-tooltip');
+			        }, 1000);
+					return false;
+				}
 			}
-		} else {
+        }
+	};
 
-		  //  for (var i = 0; i < lines.length; i++) 
-		  //  {
+	textarea.onkeyup = function(event) {
+		if (event.ctrlKey || event.metaKey) {
+			var shortcut = false;
+            switch (String.fromCharCode(event.which).toLowerCase()) {
+            case 'v':
+            	translationControl ();
+            	break;
+            }
+
+            if(shortcut) {
+            	btnClick.click();
+            	btnClick.toggleClass("active-btn");
+				setTimeout(function () {
+				      btnClick.toggleClass("active-btn");
+				}, 300);
+            }
+        } else {
+        	if(event.keyCode != 10 && event.keyCode != 13) {
+				translationControl ();        	
+        	}
+        }
+	}
+
+	function translationControl () {
+		var lines = textarea.value.split("\n");
+		// if(event.keyCode == 10 || event.keyCode == 13) {
+		// 	if(lines.length >= limit) {
+		// 		textarea.style.color = '#D42D25';
+		//         setTimeout(function(){
+		//             textarea.style.color = '';
+		//         },500);
+		// 		return false;
+		// 	}
+		// } else {
+		var firstLine = lines[0];
+		var secondLine = lines[1];
+
+		if(firstLine.length > spaces) {
+			// var output = [firstLine.slice(0, spaces), "\n", firstLine.slice(spaces), secondLine].join('');
+
+			var cutPosition = firstLine.lastIndexOf(" ");
+			if(cutPosition < 10 || cutPosition > spaces) cutPosition = spaces;
+
+			secondLine = ([firstLine.slice(cutPosition), secondLine].join('')).trim();
+			firstLine = (firstLine.slice(0, cutPosition)).trim();
+		}
+
+		var output = firstLine;
+
+		if(secondLine) {
+			if(secondLine.length > spaces) {
+				secondLine = secondLine.slice(0,spaces);
+				textarea.style.color = '#D42D25';
+				$(textarea).parent().addClass('activate-tooltip');
+		        setTimeout(function(){
+					$(textarea).parent().removeClass('activate-tooltip');
+		            textarea.style.color = '';
+		        },1000);
+			}
+			output += "\n"+secondLine;
+		}
+
+		subshuffle.cpl(output);
+		var cps = subshuffle.cps(output, $(textarea).attr('data-duration'));
+		$(".cps").text(cps);
+		if(cps.replace(",", ".") > 25) $(".cps").addClass('over-cps');
+		else $(".cps").removeClass('over-cps');
+		textarea.value = output;
+
+		   // for (var i = 0; i < lines.length; i++) 
+		   // {
 		  //        if (lines[i].length <= spaces) continue;
 		  //        var j = 0;
 		         
@@ -615,10 +840,8 @@
 		  //   }    
 		  //  textarea.value = lines.slice(0, limit).join("\n");
 
-		}
-		    
-
-	};
+		// }
+	}
 
 
 

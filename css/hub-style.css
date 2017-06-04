@@ -355,3 +355,13 @@ p {
 .text--center {
   text-align: center;
 }
+
+.wikia {
+  padding-top:14px;
+  color:#fff;
+  text-align: center;
+}
+
+.wikia a {
+  color: #29a1d2;;
+}

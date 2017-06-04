@@ -18,6 +18,21 @@ class Wikiadictos extends CI_Model
 		return false;
 	}
 
+	public function firstLogIn($userId) {
+		$query = $this->db->get_where("subshuffle_first_login", array("user_id" => $userId));
+		
+		if($query->num_rows() == 1) $return = false;
+		else {
+			$return = true;
+			$this->db->insert('subshuffle_first_login', array('user_id' => $userId) );
+		}
+		return $return;
+	}
+
+	public function reportBug($userId, $report) {
+		$this->db->insert('subshuffle_reports', array('user_id' => $userId, 'report' => $report) );
+	}
+
 	public function updateLoginInfo($userId) {
 		$this->db->set('last', date('Y-m-d H:i:s'));
 		// $this->db->set('navegate', 'subshuffle/login');
