@@ -293,9 +293,22 @@
 		<div>¡Bug reportado, muchas gracias!<br />En breve lo estaremos investigando...</div>	
 	</div>
 
-	<!-- <div id="welcome">
-		<div class="text-1">Bienvenido a Subshuffle.</div>
-	</div> -->
+<?php if($firstLogIn) { ?>
+	<div id="welcome">
+		<div class="first-message">¡Bienvenido!</div>
+		<div class="last-message">
+			<div class="fade-in five">¡Happy subtitling!</div>
+		</div>
+		<div class="second-message">
+			<div>				
+				<div class="fade-in one">Subadictos presenta...</div>
+				<div class="fade-in two"><span>Subshuffle</span>.</div>
+				<span class="fade-in three">La herramienta de&nbsp;subtitulación colaborativa que nadie pedía...</span>
+				<span class="fade-in four">pero que todos merecemos.</span>
+			</div>			
+		</div>
+	</div>
+<?php } ?>
 
 
 	<div id="log">
@@ -523,6 +536,12 @@
 
 	  $(document).ready(function () {
 
+	  	<?php if($firstLogIn) { ?>
+		  	setTimeout(function () {
+			    $('#welcome').fadeOut('slow');
+			}, 15000);
+		<?php } ?>
+
 	  	if (window.matchMedia('(max-width: 540px)').matches) document.getElementById("to-textarea").setAttribute("rows", "4");
 	  //         var trigger = $('.hamburger'),
 	  //           isClosed = false;
@@ -548,13 +567,6 @@
 	  // });  
 
 	 
-
-	  	// PARA LOS ATAJOS
-	 	// var btnClick = $("#next");
-		// btnClick.toggleClass("active-btn");
-		// setTimeout(function () {
-		//       btnClick.toggleClass("active-btn");
-		// }, 300);
 		
 		$(".info-tooltips-btn").on("click", function(){
 			if (window.matchMedia('(min-width: 992px)').matches) {

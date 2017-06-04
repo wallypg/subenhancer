@@ -1275,7 +1275,8 @@ li.scroll-offset-block {
 }
 
 #welcome {
-	display: block;
+	/*display: block;*/
+	display: table;
 	position: fixed;
 	top: 0;
 	bottom: 0;
@@ -1284,19 +1285,156 @@ li.scroll-offset-block {
 	width: 100%;
 	height: 100%;
 	z-index: 9999999;
-	background-color: rgba(10, 10, 10, 0.8);
-}
-#welcome .text-1 {
-	position: absolute;
+	background-color: rgba(10, 10, 10, 0.95);
 	font-family: 'Roboto Thin', Arial, Helvetica, sans-serif; 
 	font-size: 50px;
-	width:100%;
-	/*margin:auto;*/
 	text-align: center;
-	top: 45%;
-	/*left: 50%;*/
-	color: #fff;
+	color: #dedede;	
+
+/*	-webkit-animation:fadeOutAll 13s linear;
+  	-moz-animation:fadeOutAll 13s linear;
+  	animation:fadeOutAll 13s linear;*/
+	
+	/*-webkit-transition-delay: 13s;
+    transition-delay: 13s;
+	-webkit-transition: visibility 1s, height 4s;
+    transition: width 2s, height 4s;*/
 }
+
+#welcome .first-message {
+	position: absolute;
+	width:100%;
+	top: 50%;
+	margin-top:-36px;
+	opacity: 0;
+	-webkit-animation:fadeInOut 2.5s linear;
+  	-moz-animation:fadeInOut 2.5s linear;
+  	animation:fadeInOut 2.5s linear;
+}
+#welcome .second-message {
+	position: relative;
+	display: table-cell;
+    vertical-align: middle;
+    padding: 0 50px;
+	width:100%;
+	/*margin-top: -203px;*/
+	/*top: 50%;*/
+	opacity: 0;
+	-webkit-animation:fadeOutSecond 12s linear;
+  	-moz-animation:fadeOutSecond 12s linear;
+  	animation:fadeOutSecond 12s linear;
+}
+#welcome .second-message>div {
+	max-width: 965px;
+	margin: auto;	
+}
+#welcome .last-message {
+	position: absolute;
+	width:100%!important;
+	top: 50%;
+	margin-top:-61px;
+	/*opacity: 1;*/
+	/*-webkit-animation:fadeOutLast 12.1s linear;*/
+  	/*-moz-animation:fadeOutLast 12.1s linear;*/
+  	/*animation:fadeOutLast 12.1s linear;*/
+}
+#welcome .second-message .two span {
+	/*color: #fff;*/
+	color: #1ED760;
+}
+
+@-webkit-keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+@-moz-keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+@keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+@keyframes fadeInOut {
+  /*0%,100% { opacity: 0 }*/
+  0% { opacity: 0 }
+  10% { opacity: 1 }
+  50% { opacity: 1 }
+  90% { opacity: 1 }
+  100% { opacity: 0 }
+}
+@keyframes fadeOutSecond {
+  0% { opacity: 1 }
+  95% { opacity: 1 }
+  100% { opacity: 0 }
+}
+@keyframes fadeOutLast {
+  0% { opacity: 0 }
+  95% { opacity: 0 }
+  100% { opacity: 1 }
+}
+
+/*@keyframes fadeOutAll {
+  from {
+            visibility: visible;
+       }
+   50% {
+            visibility: visible;
+       }
+   to  {
+            visibility: hidden;
+       }
+}
+*/
+#welcome .fade-in {
+  opacity:0;  /* make things invisible upon start */
+  -webkit-animation:fadeIn ease-in 1;  /* call our keyframe named fadeIn, use animattion ease-in and repeat it only 1 time */
+  -moz-animation:fadeIn ease-in 1;
+  animation:fadeIn ease-in 1;
+
+  -webkit-animation-fill-mode:forwards;  /* this makes sure that after animation is done we remain at the last keyframe value (opacity: 1)*/
+  -moz-animation-fill-mode:forwards;
+  animation-fill-mode:forwards;
+
+  -webkit-animation-duration:1s;
+  -moz-animation-duration:1s;
+  animation-duration:1s;
+}
+
+#welcome .fade-in.one {
+  -webkit-animation-delay: 3s;
+  -moz-animation-delay: 3s;
+  animation-delay: 3s;
+}
+
+#welcome .fade-in.two {
+  -webkit-animation-delay: 4.5s;
+  -moz-animation-delay:4.5s;
+  animation-delay: 4.5s;
+	padding-bottom: 1em;
+}
+
+#welcome .fade-in.three {
+  -webkit-animation-delay: 7s;
+  -moz-animation-delay: 7s;
+  animation-delay: 7s;
+}
+
+#welcome .fade-in.four {
+  -webkit-animation-delay: 9s;
+  -moz-animation-delay: 9s;
+  animation-delay: 9s;
+}
+
+#welcome .fade-in.five {
+  -webkit-animation-delay: 12s;
+  -moz-animation-delay: 12s;
+  animation-delay: 12s;
+}
+
+/*#welcome .fade-in.six {
+  -webkit-animation-delay: 9s;
+  -moz-animation-delay: 9s;
+  animation-delay: 9s;
+}*/
+
+/*#welcome .fade-in.three {
+  -webkit-animation-delay: 1.6s;
+  -moz-animation-delay: 1.6s;
+  animation-delay: 1.6s;
+}*/
+
 
 #saved, #bug-sent {
 	display: none;
