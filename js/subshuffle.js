@@ -487,7 +487,7 @@ var subshuffle = function(){
   }
 
   function saveSequence() {
-    console.log("¡Guradado!");
+    console.log("¡Guardado!");
     $('#saved').fadeIn();
     setTimeout(function(){ $('#saved').fadeOut(); }, 3000);
   }

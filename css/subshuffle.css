@@ -1443,7 +1443,7 @@ li.scroll-offset-block {
 }*/
 
 
-#saved, #bug-sent {
+#saved, #bug-sent, #save-error {
 	display: none;
 	position: fixed;
 	top: 50%;
@@ -1458,7 +1458,7 @@ li.scroll-offset-block {
 	width:310px;
 	margin-left: -155px;
 }
-#saved>div, #bug-sent>div {
+#saved>div, #bug-sent>div, #save-error>div {
 	position: absolute;
 	background-color: rgba(71, 71, 71, 0.51);
 	top:73px;
@@ -1469,6 +1469,9 @@ li.scroll-offset-block {
 	color: #ffffff;
     font-size: 28px;
 	opacity: 1;
+}
+#save-error>div {
+	top:70px;
 }
 #bug-sent>div {
 	font-family: 'Roboto Light', Arial, Helvetica, sans-serif; 
@@ -1481,6 +1484,11 @@ li.scroll-offset-block {
 #saved i, #bug-sent i {
 	font-size: 180px;
 	color:#5eff5e;
+	opacity: 0.6;
+}
+#save-error i {
+	font-size: 180px;
+	color: #f44336;
 	opacity: 0.6;
 }
 

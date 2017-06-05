@@ -288,6 +288,16 @@
 		<div>¡Guardado!</div>	
 	</div>
 
+	<div id="save-error">
+		<i class="fa fa-times-circle fa-5x"></i>
+		<div>¡Error!</div>	
+	</div>
+
+	<!-- <div id="locked">
+		<i class="fa fa-lock fa-5x"></i>
+		<div>¡Secuencia tomada!</div>	
+	</div> -->
+
 	<div id="bug-sent">
 		<i class="fa fa-bug fa-5x"></i>
 		<div>¡Bug reportado, muchas gracias!<br />En breve lo estaremos investigando...</div>	
@@ -295,7 +305,7 @@
 
 <?php if($firstLogIn) { ?>
 	<div id="welcome">
-		<div class="first-message">¡Bienvenido!</div>
+		<div class="first-message">¡Bienvenid@!</div>
 		<div class="last-message">
 			<div class="fade-in five">¡Happy subtitling!</div>
 		</div>
@@ -527,6 +537,14 @@
 		<?=add_jscript('modernizr.custom')?>
 
 		<script>
+			window.onbeforeunload = function(){
+			   $.post( "subshuffle/untokenizeSequence");
+			}
+			window.addEventListener("beforeunload", function(e){
+			   $.post( "subshuffle/untokenizeSequence");
+			}, false);
+
+
 			// $(".nano").nanoScroller();
 			var menu = new mlPushMenu( document.getElementById( 'mp-menu' ), document.getElementById( 'trigger' ) );
 

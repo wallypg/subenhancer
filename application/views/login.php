@@ -52,7 +52,7 @@
 	      </form>
 	    </div>
       <div class="wikia">
-        ¡Inicia sesión con tu usuario de <span style="display: inline-block;">wiki-adictos</span> o&nbsp;regístrate&nbsp;<a href="http://wiki-adictos.subadictos.net/newaccount.php" target="_blank">aquí</a> para empezar a traducir con <i><a href="<?=base_url()?>subshuffle">Subshuffle</a></i>, la&nbsp;nueva herramienta de SubAdictos!
+        Inicia sesión con tu usuario de <span style="display: inline-block;">wiki-adictos</span> o&nbsp;regístrate&nbsp;<a href="http://wiki-adictos.subadictos.net/newaccount.php" target="_blank">aquí</a> para empezar a traducir con <i><a href="<?=base_url()?>subshuffle">Subshuffle</a></i>, la&nbsp;nueva herramienta de SubAdictos.
       </div>
     </div>
   </div>

@@ -41,13 +41,15 @@ class Wikiadictos extends CI_Model
 	}
 
 	public function getTranslatedSequence($subId, $sequence) {
+		// **
 		$this->db->select("text,version");
 		$this->db->where(array(
 			'subID' => $subId,
 			'sequence' => $sequence,
 			'original' => 0
 		));
-		$this->db->where("version = (SELECT MAX(version) FROM subs ss  WHERE ss.sequence = fs.sequence AND ss.subID = fs.subID AND original = 0)");
+		// $this->db->where("version = (SELECT MAX(version) FROM subs ss  WHERE ss.sequence = fs.sequence AND ss.subID = fs.subID AND original = 0)");
+		$this->db->where("last = 1");
 		$query = $this->db->get('subs fs');
 
 		if($query->num_rows() == 1)
@@ -123,6 +125,7 @@ class Wikiadictos extends CI_Model
 	// check fversion
 	public function userTranslations($userId, $loadMore) {
 		// fversion
+		// **
 		$this->db->select("
 			entryID,
 			fs.subID,
@@ -141,7 +144,8 @@ class Wikiadictos extends CI_Model
 			'original' => 0
 		));
 		// 'lang_id' => 4
-		$this->db->where("version = (SELECT MAX(version) FROM subs ss  WHERE ss.sequence = fs.sequence AND ss.subID = fs.subID)");
+		// $this->db->where("version = (SELECT MAX(version) FROM subs ss  WHERE ss.sequence = fs.sequence AND ss.subID = fs.subID)");
+		$this->db->where("last = 1");
 		if(!is_null($loadMore)) $this->db->where('entryID <',$loadMore);
 
 		$this->db->order_by('in_date','DESC');
@@ -198,7 +202,7 @@ class Wikiadictos extends CI_Model
 		{
 			return $query->row();
 		}
-		return [];		
+		return [];
 	}
 
 	public function getSubtitles() {
@@ -247,13 +251,14 @@ class Wikiadictos extends CI_Model
 
 	}
 
-	public function tokenizeSequence($subId, $fversion, $sequence, $userId) {
+	public function tokenizeSequence($subId, $sequence, $userId) {
+		// $fversion, 'fversion' => $fversion,
 		$this->db->trans_start();
 		$this->db->set('tokened', 1);
+		$this->db->set('tokentime', date('Y-m-d H:i:s') );
 		$this->db->set('userID', $userId);
 		$this->db->where(array(
 			'subID' => $subId,
-			'fversion' => $fversion,
 			'sequence' => $sequence
 		));
 		$this->db->update('translating');
@@ -266,10 +271,84 @@ class Wikiadictos extends CI_Model
 	}
 
 	// free sequence
-	public function untokenizeSequence() {
+	public function untokenizeSequence($subId, $sequence) {
+		$this->db->trans_start();
+		$this->db->set('tokened', 0);
+		$this->db->where(array(
+			'subID' => $subId,
+			'sequence' => $sequence
+		));
+		$this->db->update('translating');
+		$this->db->trans_complete();
+
+		if ($this->db->trans_status() === FALSE) {
+		    return false;
+		}
+		return true;
+	}
+
+	public function unLast ($subId, $sequence) {
+		$this->db->trans_start();
+		$this->db->set('last', 0);
+		$this->db->where(array(
+			'subID' => $subId,
+			'sequence' => $sequence
+		));
+		$this->db->update('subs');
+		$this->db->trans_complete();
+
+		if ($this->db->trans_status() === FALSE) {
+		    return false;
+		}
+		return true;
+	}
+
+	public function checkSequenceToken($subId, $sequence) {
+		// Devuelve id usuario, 0 o null
+		$this->db->select('tokened');
+		$this->db->where( array('subID' => $subId, 'sequence' => $sequence) );
+		$query = $this->db->get('translating');
+		
+		if($query->num_rows() == 1) {
+			$return = ($query->row()->tokened) ? $query->row()->userID : 0;
+		} else $return = null;
+
+		return $return;
+	}
+
+	public function deleteFromTranslating($subId, $sequence) {
+		$this->db->trans_start();
+		$this->db->where( array('subID' => $subId, 'sequence' => $sequence) );
+		$this->db->delete('translating');
+		$this->db->trans_complete();
+
+		if ($this->db->trans_status() === FALSE) {
+		    return false;
+		}
+		return true;
+	}
+
+	public function saveSequence() {
 
 	}
 
+	public function freeLockedSequences($userId=null) {
+		$this->db->trans_start();
+		$this->db->set('tokened', 0);
+		// $where = "tokened = 1 AND (tokentime < '". date("Y-m-d H:i:s", strtotime('-3 hours')) ."' OR userId='". $userId ."')";
+		// $this->db->where($where);
+		$this->db->where(array(
+			'tokened' => 1,
+			'tokentime <' => date("Y-m-d H:i:s", strtotime('-3 hours'))
+		));
+		$this->db->update('translating');
+		$this->db->trans_complete();
+
+		if ($this->db->trans_status() === FALSE) {
+		    return false;
+		}
+		return true;
+	}
 
 	public function getFileName($subId) {
 		$this->db->select("title as title");

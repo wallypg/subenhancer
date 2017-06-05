@@ -62,6 +62,12 @@ class Subtitlehub extends CI_Controller {
 
 
 	public function logout() {
+		// Destokenizar última secuencia de subshuffle si existe
+		if( !is_null( $this->session->userdata('savedCurrent') ) && !$this->session->userdata('savedCurrent') ) {
+			$this->load->model('wikiadictos');
+			$this->wikiadictos->untokenizeSequence($this->session->userdata('currentSub'), $this->session->userdata('currentSeq'));
+		}
+		
 		$this->session->unset_userdata('isLoggedIn');
 		session_destroy();
 		redirect(base_url());
