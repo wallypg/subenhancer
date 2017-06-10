@@ -108,11 +108,12 @@ class Subshuffle extends CI_Controller {
 			// print_r($randomSequence);
 			// die();
 			if( !is_null( $this->session->userdata('savedCurrent') ) && !$this->session->userdata('savedCurrent') ) {
-				$this->wikiadictos->untokenizeSequence($this->session->userdata('subId'), $this->session->userdata('sequence'));
+				// $this->wikiadictos->untokenizeSequence($this->session->userdata('subId'), $this->session->userdata('sequence'));
 			}
 			$this->session->set_userdata( array(
 				'savedCurrent' => false,
 				'currentVersion' => null,
+				'tokened' => null,
 				'subId' => $randomSequence->subID,
 				'sequence' => $randomSequence->sequence,
 				'start_time' => $randomSequence->start_time,
@@ -133,22 +134,36 @@ class Subshuffle extends CI_Controller {
 		if( is_null($subId) || is_null($sequence) || !is_numeric($subId) || !is_numeric($sequence)) die('Argumentos incorrectos.');
 
 		$sequenceObj = $this->wikiadictos->getSequence($subId,$sequence);		
+
 		if(empty($sequenceObj)) $sequenceObj = $this->defaultMessages;
 		else {
-			$translatedText = $this->wikiadictos->getTranslatedSequence($subId,$sequence);
-			if(!empty($translatedText)) {
-				$sequenceObj->text_es = $translatedText->text;
-				$sequenceObj->version = $translatedText->version;
+			$checkSequence = $this->wikiadictos->checkSequenceToken($subId,$sequence,$this->session->userdata('userId'));
+
+			$sequenceObj->version = null;
+			$sequenceObj->usertoken = ( $checkSequence != null ) ? $checkSequence : null;
+			if( is_null($checkSequence) ) {
+				$translatedText = $this->wikiadictos->getTranslatedSequence($subId,$sequence);
+				if(!empty($translatedText)) {
+					$sequenceObj->text_es = $translatedText->text;
+					$sequenceObj->version = $translatedText->version;
+				}
+
+				if($checkSequence === 0) $this->wikiadictos->tokenizeSequence($sequenceObj->subID, $sequenceObj->sequence, $this->session->userdata('userId'));
 			}
+
+
 			$sequenceObj->title = $this->wikiadictos->getFileName($sequenceObj->subID)->title;
 			$sequenceObj->hasNext = ($this->wikiadictos->checkSequenceExistence($sequenceObj->subID,$sequenceObj->sequence+1)) ? 1 : 0;
 			$sequenceObj->hasPrev = ($this->wikiadictos->checkSequenceExistence($sequenceObj->subID,$sequenceObj->sequence-1)) ? 1 : 0;
 
-			if( !is_null( $this->session->userdata('savedCurrent') ) && !$this->session->userdata('savedCurrent') ) {
+			// if( !is_null( $this->session->userdata('savedCurrent') ) && !$this->session->userdata('savedCurrent') && $this->session->userdata('tokened') == null ) {
+			// if( !$this->session->userdata('savedCurrent') && $this->session->userdata('tokened') == null ) {
 				$this->wikiadictos->untokenizeSequence($this->session->userdata('subId'), $this->session->userdata('sequence'));
-			}
+			// }
+
 			$this->session->set_userdata( array(
 				'savedCurrent' => false,
+				'tokened' => $sequenceObj->usertoken,
 				'currentVersion' => $sequenceObj->version,
 				'subId' => $sequenceObj->subID,
 				'sequence' => $sequenceObj->sequence,
@@ -157,7 +172,6 @@ class Subshuffle extends CI_Controller {
 				'end_time' => $sequenceObj->end_time,
 				'end_time_fraction' => $sequenceObj->end_time_fraction
 			) );
-			$this->wikiadictos->tokenizeSequence($sequenceObj->subID, $sequenceObj->sequence, $this->session->userdata('userId'));
 
 		}
 		echo json_encode($sequenceObj);
@@ -180,7 +194,7 @@ class Subshuffle extends CI_Controller {
 		// 	'authorID' => $this->session->userdata('userId'),
 		// 	'version' => $this->session->userdata('version') + 1,
 		// 	'original' => 0,
-		// 	'locked' => ,
+		// 	'locked' => 0,
 		// 	'in_date' => date("Y-m-d H:i:s"),
 		// 	'start_time' => $this->session->userdata('start_time'),
 		// 	'start_time_fraction' => $this->session->userdata('start_time_fraction'),
@@ -189,7 +203,7 @@ class Subshuffle extends CI_Controller {
 		// 	'text' => ,
 		// 	'lang_id' => 4,
 		// 	'edited_seq' => $this->session->userdata('sequence'),
-		// 	'last' => ,
+		// 	'last' => 1,
 		// 	'estart_time' => $this->session->userdata('estart_time'),
 		// 	'estart_time_fraction' => $this->session->userdata('estart_time_fraction'),
 		// 	'eend_time' => $this->session->userdata('eend_time'),
@@ -197,7 +211,6 @@ class Subshuffle extends CI_Controller {
 		// 	'fversion' => 0,
 		// 	'tested' => 0
 		// );
-
 
 	}
 	

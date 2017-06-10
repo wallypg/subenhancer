@@ -303,16 +303,17 @@ class Wikiadictos extends CI_Model
 		return true;
 	}
 
-	public function checkSequenceToken($subId, $sequence) {
-		// Devuelve id usuario, 0 o null
-		$this->db->select('tokened');
-		$this->db->where( array('subID' => $subId, 'sequence' => $sequence) );
-		$query = $this->db->get('translating');
+	public function checkSequenceToken($subId, $sequence, $userId) {
+		// Devuelve nombre usuario, 0 o null
+		$this->db->select('tokened, username');
+		$this->db->where( array('subID' => $subId, 'sequence' => $sequence, 't.userID <>' => $userId) );
+		$this->db->join('users u','u.userID = t.userID');
+		$query = $this->db->get('translating t');
 		
 		if($query->num_rows() == 1) {
-			$return = ($query->row()->tokened) ? $query->row()->userID : 0;
+			$return = ($query->row()->tokened) ? $query->row()->username : 0;
 		} else $return = null;
-
+		// print_r($this->db->last_query());die();
 		return $return;
 	}
 

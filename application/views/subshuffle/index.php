@@ -243,6 +243,11 @@
 							Made with <i class="fa fa-heart pulse"></i> by&nbsp;&nbsp;<a href="http://www.subadictos.net/" target="_blank">SubAdictos.Net</a>
 						</span>
 					</div> -->
+					<?php if($firstLogIn) { ?>
+						<div class="hand-pointer">
+							<i class="fa fa-hand-pointer-o fa-3x"></i>
+						</div>
+					<?php } ?>
 				</div><!-- /scroller -->
 
 			</div><!-- /pusher -->
@@ -293,15 +298,16 @@
 		<div>¡Error!</div>	
 	</div>
 
-	<!-- <div id="locked">
+	<div id="locked">
 		<i class="fa fa-lock fa-5x"></i>
-		<div>¡Secuencia tomada!</div>	
-	</div> -->
+		<div>Secuencia tomada por <span></span></div>
+	</div>
 
 	<div id="bug-sent">
 		<i class="fa fa-bug fa-5x"></i>
 		<div>¡Bug reportado, muchas gracias!<br />En breve lo estaremos investigando...</div>	
 	</div>
+
 
 <?php if($firstLogIn) { ?>
 	<div id="welcome">

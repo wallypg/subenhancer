@@ -187,6 +187,7 @@ if ( typeof define === 'function' && define.amd ) {
       this.trigger.addEventListener( this.eventtype, function( ev ) {
         $("#contextModal").modal('hide');
         $(this).find(".flashing").removeClass("flashing");
+        $('.hand-pointer').hide();
         ev.stopPropagation();
         ev.preventDefault();
         if( self.open ) {
@@ -524,6 +525,17 @@ var subshuffle = function(){
         $(".first-line-chars").text(0);
         $(".second-line-chars").text(0);
       }
+
+      if(sequence.usertoken) {
+        $('#locked span').text(sequence.usertoken);
+        $('#to-textarea').prop('disabled',true);
+        $('#locked').show();
+      } else {
+        $('#locked span').text('');
+        $('#to-textarea').prop('disabled',false);
+        $('#locked').hide();
+      }
+
     } else {
       $.alert({
         type: 'red',

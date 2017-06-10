@@ -1443,7 +1443,7 @@ li.scroll-offset-block {
 }*/
 
 
-#saved, #bug-sent, #save-error {
+#saved, #bug-sent, #save-error, #locked {
 	display: none;
 	position: fixed;
 	top: 50%;
@@ -1454,11 +1454,16 @@ li.scroll-offset-block {
 	text-align: center;
 	width:156px;
 }
+#locked {
+	margin-top:-160px;
+	width: 270px;
+	margin-left:-135px;
+}
 #bug-sent {
 	width:310px;
 	margin-left: -155px;
 }
-#saved>div, #bug-sent>div, #save-error>div {
+#saved>div, #bug-sent>div, #save-error>div, #locked>div {
 	position: absolute;
 	background-color: rgba(71, 71, 71, 0.51);
 	top:73px;
@@ -1473,6 +1478,9 @@ li.scroll-offset-block {
 #save-error>div {
 	top:70px;
 }
+#locked>div {
+	top: 56px;
+}
 #bug-sent>div {
 	font-family: 'Roboto Light', Arial, Helvetica, sans-serif; 
 	top: 64px;
@@ -1484,6 +1492,11 @@ li.scroll-offset-block {
 #saved i, #bug-sent i {
 	font-size: 180px;
 	color:#5eff5e;
+	opacity: 0.6;
+}
+#locked i {
+	font-size: 180px;
+	color:#FFEB3B;
 	opacity: 0.6;
 }
 #save-error i {
@@ -1523,6 +1536,28 @@ kbd {
     cursor: default;
 }
 
+.hand-pointer {
+	position:absolute;
+	top:48px;
+	left:48px;
+	transform: rotate(-25deg);
+	-webkit-animation:ud 0.4s infinite;-moz-animation:ud 0.8s infinite;
+}
+
+@-webkit-keyframes ud 
+{
+  50% {
+    top:50px;
+    left:50px;
+  }
+}
+@-moz-keyframes ud 
+{
+  50% {
+    top:50px;
+    left:50px;
+  }
+}
 /* <<<< Menu icons */
 
 
