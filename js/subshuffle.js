@@ -359,13 +359,12 @@ var subshuffle = function(){
     $("#to-textarea").focus();
   });
   $(".neighbour-seq").on(eventtype, function(){
-    // console.log(this);
     if( $(this).attr("seq-num")!='' )
       getSequence($(".title-info").attr("sub-id"),$(this).attr("seq-num"));
     $("#to-textarea").focus();
   });
   $('#save').on(eventtype, function(){
-    saveSequence();
+    clickSave();
   });
 
   // var textarea = document.getElementById("to-textarea");
@@ -435,7 +434,6 @@ var subshuffle = function(){
 
   function render(list, items, container) {
       container = container || list;
-
       if(items.empty == null) {
         $("#" + container + "-container").html(Mustache.render(template[list], {items : items}));   
         // $(".nano").nanoScroller();
@@ -458,93 +456,165 @@ var subshuffle = function(){
     $.get( "subshuffle/randomSequence", function( data ) {
       // addLog('last-random',data);
       var obj = JSON.parse(data);   
-      obj['duration'] = calcDuration(obj.start_time, obj.start_time_fraction, obj.end_time, obj.end_time_fraction);
-      if(obj.text_es !== undefined) {
-        // obj['cpl'] = cpl(obj.text_es);
 
-        obj['cps'] = cps(obj.text_es, obj.duration);
-        // obj['cps'] = ((Math.round(totalChars(obj.text_es)/duration*100)/100).toString()).replace('.',',');
-      }
-      // console.log(obj);
-      placeSequence(obj);
+      if(obj.noSequence == null) {
+        obj['duration'] = calcDuration(obj.start_time, obj.start_time_fraction, obj.end_time, obj.end_time_fraction);
+        if(obj.text_es !== undefined) {
+          // obj['cpl'] = cpl(obj.text_es);
+
+          obj['cps'] = cps(obj.text_es, obj.duration);
+          // obj['cps'] = ((Math.round(totalChars(obj.text_es)/duration*100)/100).toString()).replace('.',',');
+        }
+        // console.log(obj);
+        placeSequence(obj);
+      } else showError('random error',obj.noSequence);
     });    
   }
 
   function getSequence (subId,sequence) {
     $.get( "subshuffle/getSequence/"+subId+"/"+sequence, function( data ) {
       // addLog('last-sequence',data);
-      var obj = JSON.parse(data);   
-      obj['duration'] = calcDuration(obj.start_time, obj.start_time_fraction, obj.end_time, obj.end_time_fraction);
-      if(obj.text_es !== undefined) {
-        // obj['cpl'] = cpl(obj.text_es);
+      var obj = JSON.parse(data);
 
-        obj['cps'] = cps(obj.text_es, obj.duration);
-        // obj['cps'] = ((Math.round(totalChars(obj.text_es)/duration*100)/100).toString()).replace('.',',');
+      if(obj.noSequence == null) {
+        obj['duration'] = calcDuration(obj.start_time, obj.start_time_fraction, obj.end_time, obj.end_time_fraction);
+        if(obj.text_es !== undefined) {
+          // obj['cpl'] = cpl(obj.text_es);
 
-      }
-      // console.log(obj);
-      placeSequence(obj);
+          obj['cps'] = cps(obj.text_es, obj.duration);
+          // obj['cps'] = ((Math.round(totalChars(obj.text_es)/duration*100)/100).toString()).replace('.',',');
+
+        }
+        // console.log(obj);
+        placeSequence(obj);
+      } else showError('sequence error',obj.noSequence);
     });    
   }
 
-  function saveSequence() {
-    console.log("¡Guardado!");
-    $('#saved').fadeIn();
-    setTimeout(function(){ $('#saved').fadeOut(); }, 3000);
+  function clickSave() {
+    var $translated = $('.sequence-info .translated');
+    if(!$('#save').hasClass('disabled')) {
+      if($translated.hasClass('translated-true')) {
+        $.confirm({
+          animation: 'top',
+          columnClass: 'save-confirm col-lg-6 col-lg-offset-3 col-sm-8 col-sm-offset-2 col-xs-8 col-xs-offset-2',
+          title: '<i class="fa fa-question-circle"></i>&nbsp;&nbsp;To save or not to save?',
+          content: '¡Esa es la cuestión! La secuencia que intentas guardar ya estaba traducida, ¿quieres&nbsp;sobreescribirla?',
+          buttons: {
+            okay: {
+               btnClass: 'btn btn-save',
+               text: "To save&nbsp;&nbsp;&nbsp;:)",
+               keys: ['enter'],
+               action: function () {
+                saveSequence($translated);
+              }
+            },
+            cancel: {
+               text: '¡NO!',
+              action: function () {
+              }
+            }
+          }
+      });
+
+      } else {
+        saveSequence($translated);
+      }
+
+    }
+  }
+
+  function showError(title, message){
+    $.alert({
+      type: 'red',
+      title: '<i class="fa fa-exclamation-triangle" aria-hidden="true"></i>&nbsp;&nbsp;Oops, '+title,
+      content: '<div class="alert-red">'+message+'</div>',
+      backgroundDismiss: true
+    });
+  }
+
+  function saveSequence($translated) {
+    $.post( "subshuffle/saveSequence", { translation : $('#to-textarea').val() }, function(data){
+      data = JSON.parse(data);
+      if(data.error) {
+        $('#save-error').fadeIn();
+        setTimeout(function(){ 
+          $('#save-error').fadeOut();
+          showError('save error',data.error);
+        }, 3000);
+      } else {
+        $translated.show();
+        $('#saved').fadeIn();
+        setTimeout(function(){ $('#saved').fadeOut(); }, 3000);
+      }
+    });
+    
   }
 
   function placeSequence (sequence) {
+    console.log(sequence);
+    $(".title-info").text(sequence.title).attr('sub-id',sequence.subID).attr('title',sequence.title);
+    $(".sequence-number").text(sequence.sequence);
+    $(".from-textarea p").html(nl2br(sequence.text_en));
+    $("#to-textarea").attr("data-duration", sequence.duration);
 
-    if(sequence.noSequence == null) {
-      $(".from-textarea p").html(nl2br(sequence.text_en));
-      $(".title-info").text(sequence.title).attr('sub-id',sequence.subID);
-      $(".sequence-number").text(sequence.sequence);
-      $("#to-textarea").attr("data-duration", sequence.duration);
+    // existe linea siguiente
+    if(!sequence.hasNext)
+      $("#next").addClass("disabled").attr('seq-num','');
+    else
+      $("#next").removeClass("disabled").attr('seq-num',parseInt(sequence.sequence)+1);
+    
+    // existe linea anterior
+    if(!sequence.hasPrev)
+      $("#prev").addClass("disabled").attr('seq-num','');
+    else
+      $("#prev").removeClass("disabled").attr('seq-num',parseInt(sequence.sequence)-1);
 
-      if(!sequence.hasNext)
-        $("#next").addClass("disabled").attr('seq-num','');
-      else
-        $("#next").removeClass("disabled").attr('seq-num',parseInt(sequence.sequence)+1);
+    if(sequence.translated) {
+
+      $('.sequence-info .translated').show().addClass('translated-true');
+      $('#to-textarea').val(sequence.text_es);
+      $('.cps').text(sequence.cps);
+      if( (sequence.cps).replace(",", ".") > 25 ) $(".cps").addClass('over-cps');
+      else $(".cps").removeClass('over-cps');
+      cpl(sequence.text_es);
+
+    } else {
+
+      $('.sequence-info .translated').hide().removeClass('translated-true');
+      $("#to-textarea").val('');
+      $(".cps").text('0').removeClass('over-cps');
+      $(".first-line-chars").text(0);
+      $(".second-line-chars").text(0);
       
-      if(!sequence.hasPrev)
-        $("#prev").addClass("disabled").attr('seq-num','');
-      else
-        $("#prev").removeClass("disabled").attr('seq-num',parseInt(sequence.sequence)-1);
-
-      if(sequence.text_es) {
-        $("#to-textarea").val(sequence.text_es);
-        $(".cps").text(sequence.cps);
-        if( (sequence.cps).replace(",", ".") > 25 ) $(".cps").addClass('over-cps');
-        else $(".cps").removeClass('over-cps');
-        // $(".chars").text(sequence.cpl);
-        cpl(sequence.text_es);
-      } else {
-        $("#to-textarea").val('');
-        $(".cps").text('0').removeClass('over-cps');
-        // $(".chars").text('0 / 0');
-        $(".first-line-chars").text(0);
-        $(".second-line-chars").text(0);
-      }
-
-      if(sequence.usertoken) {
-        $('#locked span').text(sequence.usertoken);
+      if(sequence.taken) {
+        $('#locked span').text(sequence.taken);
         $('#to-textarea').prop('disabled',true);
+        $('#save').addClass('disabled');
         $('#locked').show();
       } else {
         $('#locked span').text('');
         $('#to-textarea').prop('disabled',false);
+        $('#save').removeClass('disabled');
         $('#locked').hide();
       }
 
-    } else {
-      $.alert({
-        type: 'red',
-        title: '<i class="fa fa-exclamation-triangle" aria-hidden="true"></i>&nbsp;&nbsp;Errare Humanum Est',
-        content: '<div class="alert-red">'+sequence.noSequence+'</div>',
-        backgroundDismiss: true
-      });
-      // <pre class="log-container">'+$('#log').html()+'</pre>
     }
+
+    // if(sequence.text_es) {
+    //   $("#to-textarea").val(sequence.text_es);
+    //   $(".cps").text(sequence.cps);
+    //   if( (sequence.cps).replace(",", ".") > 25 ) $(".cps").addClass('over-cps');
+    //   else $(".cps").removeClass('over-cps');
+    //   // $(".chars").text(sequence.cpl);
+    //   cpl(sequence.text_es);
+    // } else {
+    //   $("#to-textarea").val('');
+    //   $(".cps").text('0').removeClass('over-cps');
+    //   // $(".chars").text('0 / 0');
+    //   $(".first-line-chars").text(0);
+    //   $(".second-line-chars").text(0);
+    // }
   }
 
   function calcDuration(startTime, startFraction, endTime, endFraction) {
@@ -585,7 +655,7 @@ var subshuffle = function(){
     var lines = text.split('\n');
     var totalChars = 0;
     for(var i = 0; i < lines.length; i++){
-      var cleanedText = lines[i].replace(/<(?:.|\n)*?>/gm, '');
+      var cleanedText = lines[i].replace(/<(?:.|\n)*?>/gm, '').trim();
       totalChars += parseInt(cleanedText.length);
     }
     return totalChars;

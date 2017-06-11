@@ -49,7 +49,7 @@ class Subtitlehub extends CI_Controller {
 		  					
 		  					$firstLogIn = $this->wikiadictos->firstLogIn($this->session->userdata('userId'));
 
-		  					$this->session->set_userdata( array('isLoggedIn' => true, 'user' => $postArray['username'], 'firstLogIn' => $firstLogIn) );
+		  					$this->session->set_userdata( array('isLoggedIn' => true, 'user' => $postArray['username'], 'firstLogIn' => $firstLogIn, 'subshuffle' => true, 'skipped' => '') );
 		  					$this->wikiadictos->updateLoginInfo($this->session->userdata('userId'));
 		  					$return = 'true';
 		  				}		  				
@@ -63,9 +63,9 @@ class Subtitlehub extends CI_Controller {
 
 	public function logout() {
 		// Destokenizar última secuencia de subshuffle si existe
-		if( !is_null( $this->session->userdata('savedCurrent') ) && !$this->session->userdata('savedCurrent') ) {
+		if( $this->session->userdata('subshuffle') ) {
 			$this->load->model('wikiadictos');
-			$this->wikiadictos->untokenizeSequence($this->session->userdata('currentSub'), $this->session->userdata('currentSeq'));
+			$this->wikiadictos->untokenizeUserSequences($this->session->userdata('userId'));
 		}
 		
 		$this->session->unset_userdata('isLoggedIn');

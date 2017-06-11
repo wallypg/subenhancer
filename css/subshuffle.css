@@ -1452,7 +1452,7 @@ li.scroll-offset-block {
 	margin-top:-160px;
 	z-index: 99999;
 	text-align: center;
-	width:156px;
+	/*width:156px;*/
 }
 #locked {
 	margin-top:-160px;
@@ -1464,26 +1464,25 @@ li.scroll-offset-block {
 	margin-left: -155px;
 }
 #saved>div, #bug-sent>div, #save-error>div, #locked>div {
-	position: absolute;
-	background-color: rgba(71, 71, 71, 0.51);
-	top:73px;
-	margin-top:-20px;
-	width:100%;
+	/*position: absolute;*/
+	padding: 2px 16px 6px;
+    position: relative;
+    background-color: rgba(2, 2, 2, 0.8);
+	/*background-color: rgba(71, 71, 71, 0.51);*/
+	/*top:73px;*/
+	/*margin-top:-20px;*/
+	/*width:100%;*/
 	margin:0 auto;
-	font-family: 'Roboto', Arial, Helvetica, sans-serif; 
+	font-family: 'Lato', Arial, Helvetica, sans-serif; 
 	color: #ffffff;
     font-size: 28px;
 	opacity: 1;
 }
-#save-error>div {
-	top:70px;
-}
-#locked>div {
-	top: 56px;
-}
 #bug-sent>div {
-	font-family: 'Roboto Light', Arial, Helvetica, sans-serif; 
+	position: absolute;
+	width:100%;	
 	top: 64px;
+	font-family: 'Roboto Light', Arial, Helvetica, sans-serif; 
 	font-size: 17px;
 	border-radius: 8px;
     padding: 5px;
@@ -1503,6 +1502,31 @@ li.scroll-offset-block {
 	font-size: 180px;
 	color: #f44336;
 	opacity: 0.6;
+}
+
+.translated {
+	position: absolute;
+    top: -13px;
+    right: -5px;
+    font-size: 18px;
+    color: #1dd65f;
+}
+
+.sequence-info .translated {
+	display: none;
+}
+
+/*.sequence-info .translated-true {
+	display: block!important;
+}*/
+
+.jconfirm-label .translated {
+	right: initial;
+    top: -8px;
+}
+
+a.chill {
+	color: #2196f3
 }
 
 kbd {
@@ -1846,7 +1870,7 @@ kbd {
 	font-weight: bold;
 	font-size: 16px;
 	/*line-height: 18px;*/
-	height: 40px;
+	/*height: 40px;*/
 	line-height: 40px;
 	color: #4c4c4c;
 	float: left;
@@ -1914,8 +1938,8 @@ kbd {
 	color: #848383;
 }
 
-.jconfirm-box .bottom-margin-20 {
-	margin-bottom: 20px;
+.jconfirm-box .bottom-margin-10 {
+	margin-bottom: 10px;
 }
 
 @media screen and (max-width: 580px) {
@@ -2305,6 +2329,24 @@ ul.tabs {
 
 .jconfirm-box .jconfirm-buttons .btn.btn-submit:hover{
     background-color: #c1392b!important;
+}
+
+.jconfirm-box .jconfirm-buttons .btn.btn-save{
+    background-color: #009688!important;
+    color:#fff;
+}
+
+.jconfirm-box .jconfirm-buttons .btn.btn-save:hover{
+    background-color: #05796e!important;
+}
+
+.save-confirm .fa-question-circle {
+	color: #009688
+}
+
+.save-confirm .jconfirm-content-pane {
+	margin-bottom: 30px!important;
+	font-size: 16px;
 }
 
 .bug-reporter label {

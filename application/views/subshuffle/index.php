@@ -56,7 +56,7 @@
 									<div class="nano-container custom-scrollbar">
 										<div class="nano">
 											<ul id="subtitles-container" class="nano-content">
-												<li><a><em>[Sólo secuencias sin traducir]</em></a></li>
+												<li><a><em>[Secuencias libres y sin traducir]</em></a></li>
 												<?php foreach ($subtitles as $key => $subtitle) { ?>
 													<li class="icon icon-arrow-left list-item">
 														<a class="subtitle-item" sub-id="<?=$subtitle->subId;?>"><?=$subtitle->title;?></a>
@@ -168,7 +168,7 @@
 												<!-- <i class="fa fa-list"></i> -->
 											<!-- </div> -->
 											<div class="col-xs-9 title-info"></div>
-											<div class="col-xs-3 text-right sleeper-tooltip" tooltip="Número de secuencia" flow="right">#&nbsp;<span class="sequence-number"></span></div>
+											<div class="col-xs-3 text-right sleeper-tooltip" tooltip="Número de secuencia" flow="right">#&nbsp;<span class="sequence-number"></span><span class="translated sleeper-tooltip" tooltip="¡Secuencia ya traducida!"><i title="¡Secuencia ya traducida!" class="fa fa-check-circle"></i></span></div>
 										</div>
 									</div>
 								</div>
@@ -300,7 +300,7 @@
 
 	<div id="locked">
 		<i class="fa fa-lock fa-5x"></i>
-		<div>Secuencia tomada por <span></span></div>
+		<div>Secuencia tomada<br />por <span></span></div>
 	</div>
 
 	<div id="bug-sent">
@@ -319,7 +319,7 @@
 			<div>				
 				<div class="fade-in one">Subadictos presenta...</div>
 				<div class="fade-in two"><span>Subshuffle</span>.</div>
-				<span class="fade-in three">La herramienta de&nbsp;subtitulación colaborativa que nadie pedía...</span>
+				<span class="fade-in three">La plataforma de&nbsp;subtitulado colaborativo que nadie pedía...</span>
 				<span class="fade-in four">pero que todos merecemos.</span>
 			</div>			
 		</div>
@@ -417,6 +417,19 @@
 		</script>
 
 		<script type="template/mustache" id="jconfirm-template">
+		  <div class="row bottom-margin-10">
+		  	<div class="col-xs-6">
+		  		<div class="jconfirm-label label-text"><span>#:</span><br />Número de secuencia</div>
+		  		<div class="clearfix"></div>
+		  	</div>
+		  	
+		  	<div class="col-xs-6">
+		  		<div class="jconfirm-label label-text"><span>#<i class="fa fa-check-circle translated"></i>&nbsp;&nbsp;&nbsp;&nbsp;:</span><br />Secuencia traducida</div>		  		
+		  		<div class="clearfix"></div>
+		  	</div>
+		  	
+		  </div>
+
 		  <div class="row">
 		  	<div class="col-xs-6">
 		  		<i class="btn green fa fa-caret-left"></i>
@@ -446,7 +459,7 @@
 		  	</div>
 		  </div>
 
-		  <div class="row bottom-margin-20">
+		  <div class="row bottom-margin-10">
 		  	<div class="col-xs-6">
 		  		<div class="jconfirm-label label-text"><span>From:</span><br />Texto a traducir</div>
 		  		<div class="clearfix"></div>
@@ -535,6 +548,9 @@
 		</div>
 		</script>
 
+
+		</script>
+
 		<!-- <<<< MustacheTemplates -->
 		
 		<?=add_jscript('jquery.nanoscroller.min')?>
@@ -609,7 +625,7 @@
 		        $.alert({
 		          animation: 'top',
 		          type: 'orange',
-		          columnClass: 'col-lg-4 col-lg-offset-4 col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2 col-xs-8 col-xs-offset-2',
+		          columnClass: 'col-lg-6 col-lg-offset-3 col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2 col-xs-8 col-xs-offset-2',
 		          title: '<i class="fa fa-lightbulb-o"></i>&nbsp;&nbsp;Watt?',
 		          content: Mustache.render($("#jconfirm-template").html()),
 		          backgroundDismiss: true,
@@ -617,7 +633,7 @@
 			          okay: {
 			          	text: "GOT IT",
 			          	keys: ['enter']
-			          }		          	
+			          }
 		          }
 		      });
 		    }
